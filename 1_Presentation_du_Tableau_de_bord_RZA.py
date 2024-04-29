@@ -30,7 +30,9 @@ Tableau de bord du réseau des zones ateliers:
 - Visualisation des indicateurs du Dataverse
 """
 
-st.image("nuage-de-mots.png", use_column_width=True)
+left_co, center_co,last_co = st.columns(3)
+with center_co:
+    st.image("nuage-de-mots.png", width=450)
 
 
 st.sidebar.success("Selectionner une page ci-dessus")
