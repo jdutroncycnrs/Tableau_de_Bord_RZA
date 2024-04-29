@@ -11,6 +11,7 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+########### LOGOS ##################################################
 col1, col2 = st.columns(2)
 logo1 = Image.open("logo_CNRS.png")
 logo2 = Image.open("logo_RZA.png")
@@ -29,10 +30,11 @@ Tableau de bord du réseau des zones ateliers:
 - Visualisation des indicateurs du Geonetwork
 - Visualisation des indicateurs du Dataverse
 """
-
-left_co, center_co,last_co = st.columns(3)
+########## NUAGE DE MOTS ###########################################
+Nuage_mots = Image.open("nuage-de-mots.png")
+left_co,center_co,last_co = st.columns(3)
 with center_co:
-    st.image("nuage-de-mots.png", width=450)
+    st.image(Nuage_mots, width=450)
 
 
 st.sidebar.success("Selectionner une page ci-dessus")
