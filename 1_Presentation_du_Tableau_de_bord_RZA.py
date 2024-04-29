@@ -5,7 +5,21 @@ from PIL import Image
 st.set_page_config(
     page_title="Tableau de Bord RZA",
     page_icon="👋",
+    initial_sidebar_state="expanded",
+    menu_items={'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
+
+col1, col2 = st.columns(2)
+logo1 = Image.open("logo_CNRS.png")
+logo2 = Image.open("logo_RZA.png")
+
+with col1:
+    st.image(logo1, width=100)
+with col2:
+    st.image(logo2, width=300)
+
 
 ########### TITRE DE BIENVENUE #####################################
 st.title('Bienvenue sur le Tableau de Bord "Science Ouverte du RZA"')
@@ -16,8 +30,7 @@ Tableau de bord du réseau des zones ateliers:
 - Visualisation des indicateurs du Dataverse
 """
 
-#st.image(r"data\images\nuage-de-mots.png")
-st.image("logo_CNRS.png", width=300, caption='logo du CNRS')
-st.image("logo_RZA.png",width=300, caption='logo du RZA')
+st.image("nuage-de-mots.png", use_column_width=True)
+
 
 st.sidebar.success("Selectionner une page ci-dessus")
