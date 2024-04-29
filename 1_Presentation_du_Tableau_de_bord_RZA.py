@@ -1,10 +1,13 @@
 import streamlit as st
+from PIL import Image
 
+########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
     page_title="Tableau de Bord RZA",
     page_icon="👋",
 )
 
+########### TITRE DE BIENVENUE #####################################
 st.title('Bienvenue sur le Tableau de Bord "Science Ouverte du RZA"')
 
 """
@@ -14,7 +17,7 @@ Tableau de bord du réseau des zones ateliers:
 """
 
 #st.image(r"data\images\nuage-de-mots.png")
-st.image("data\images\logo_CNRS.png", width=300)
-st.image("data\images\logo_RZA.png",width=300)
+st.image(Image.open("data\images\logo_CNRS.png"), width=300)
+st.image(Image.open("data\images\logo_RZA.png"),width=300)
 
 st.sidebar.success("Selectionner une page ci-dessus")
