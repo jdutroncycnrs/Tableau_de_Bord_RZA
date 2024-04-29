@@ -17,4 +17,4 @@ Tableau de bord du réseau des zones ateliers:
 st.image("data\images\logo_CNRS.png", width=300)
 st.image("data\images\logo_RZA.png",width=300)
 
-st.sidebar.success("Select a page above.")
+st.sidebar.success("Selectionner une page ci-dessus")
