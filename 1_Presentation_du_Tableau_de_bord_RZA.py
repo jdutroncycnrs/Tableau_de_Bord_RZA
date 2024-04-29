@@ -23,7 +23,8 @@ with col2:
 
 
 ########### TITRE DE BIENVENUE #####################################
-st.title('Bienvenue sur le Tableau de Bord "Science Ouverte du RZA"')
+st.title('Bienvenue sur le Tableau de Bord')
+st.title('Science Ouverte du RZA')
 
 """
 Tableau de bord du réseau des zones ateliers:
