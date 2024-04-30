@@ -11,7 +11,7 @@ liste_ZAs= ['ZA1','ZA2','ZA3']
 Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
 
 ##################################### LECTURE DATA ###########################################
-data = pd.read_csv("data\Enregistrements_190424.csv")
+data = pd.read_csv("pages\data\Enregistrements_190424.csv")
 
 ##################################### TRAITEMENT PREALABLE ###################################
 data_dates=data[["createDate"]]
