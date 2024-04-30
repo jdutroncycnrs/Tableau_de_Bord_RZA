@@ -2,8 +2,18 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime
-
 pd.options.mode.chained_assignment = None
+
+########### TITRE DE L'ONGLET ######################################
+st.set_page_config(
+    page_title="Analyse des GN",
+    page_icon="👋",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
+)
 
 st.title("Analyse des catalogues")
 
