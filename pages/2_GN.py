@@ -20,11 +20,20 @@ nb_enregistrements = len(data_dates)
 data_dates.dropna(subset="Date" ,inplace=True)
 data_dates['Date'] = pd.to_datetime(data_dates['Date'], format='mixed', utc=True)
 data_dates.sort_values(by="Date", inplace=True)
-data_dates.loc[:,'Compte']=np.arange(len(data_dates))+1
+data_dates.loc[:,'Compte_cumulé']=np.arange(len(data_dates))+1
 data_dates['Year']=0
 for i in range(len(data_dates)):
     data_dates.loc[i,'Year']=datetime.date(data_dates.loc[i,'Date']).year
-#data_dates.set_index('Date', inplace=True)
+
+data_dates_bis =data_dates.copy()
+data_dates_bis.set_index('Date', inplace=True)
+data_dates_resampled =data_dates_bis.resample(rule="ME").size()
+liste_dates = data_dates_resampled.index.values
+liste_comptes = data_dates_resampled.values
+df = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_mensuel']).T
+df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
+for i in range(len(df)):
+    df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
 
 start_date_year = data_dates['Year'].iloc[0]
 end_date_year = data_dates['Year'].iloc[-1]
@@ -36,7 +45,7 @@ with st.container(border=True):
     with row1[0]:
         selection_dates = st.slider('Zoomer sur une période plus récente',min_value=start_date_year,max_value=end_date_year)
         nb_enregistrements = len(data_dates[data_dates.Year >= selection_dates])
-        st.scatter_chart(data=data_dates[data_dates.Year >= selection_dates], x='Date', y='Compte',height=300)
+        st.scatter_chart(data=data_dates[data_dates.Year >= selection_dates], x='Date', y='Compte_cumulé',height=300)
     
     with row1[1]:
         wch_colour_box = (0,204,102)
@@ -65,7 +74,7 @@ with st.container(border=True):
                                 </style><BR><span style='font-size: 25px; 
                                 margin-top: 0;'>{sline}</style></span></p>"""
         st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-
+        st.bar_chart(data=df[df.Year >= selection_dates], x='Date', y='Compte_mensuel',height=300)
 
 with st.container(border=True):
     row2 = st.columns(2)
