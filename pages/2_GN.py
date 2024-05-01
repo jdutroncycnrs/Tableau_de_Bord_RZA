@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import re
 pd.options.mode.chained_assignment = None
 
 ########### TITRE DE L'ONGLET ######################################
@@ -22,10 +23,10 @@ Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
 
 ##################################### LECTURE DATA ###########################################
 data = pd.read_csv("pages/data/Enregistrements_190424.csv")
+data.rename(columns={"createDate":"Date"}, inplace=True)
 
-##################################### TRAITEMENT PREALABLE ###################################
-data_dates=data[["createDate"]]
-data_dates.rename(columns={"createDate":"Date"}, inplace=True)
+##################################### TRAITEMENT PREALABLE DATES###################################
+data_dates=data[["Date"]]
 nb_enregistrements = len(data_dates)
 data_dates.dropna(subset="Date" ,inplace=True)
 data_dates['Date'] = pd.to_datetime(data_dates['Date'], format='mixed', utc=True)
@@ -48,7 +49,24 @@ for i in range(len(df)):
 start_date_year = data_dates['Year'].iloc[0]
 end_date_year = data_dates['Year'].iloc[-1]
 
+##################################### TRAITEMENT PREALABLE MAP ###################################
+data['long']=0
+data['lat']=0
+data_maps = data.drop(columns=['Org','popularity','resourceType','uuid'])
+data_maps.dropna(subset= 'location', inplace=True)
+data_maps['location'].astype(str)
+for i in range(len(data_maps)):
+    if data_maps['location'].iloc[i][0]=="0":
+        data_maps['location'].iloc[i]=np.NaN
+data_maps.dropna(subset= 'location', inplace=True)
+for i in range(len(data_maps)):
+    lat_i = float(re.split(",", data_maps['location'].iloc[i])[0].replace('"','').replace('[',''))
+    long_i = float(re.split(",", data_maps['location'].iloc[i])[1].replace('"','').replace('[',''))
+    data_maps['lat'].iloc[i]=lat_i
+    data_maps['long'].iloc[i]=long_i
+
 ###################################### VISUALISATION #########################################
+st.subheader('Evolution temporelle')
 with st.container(border=True):
     row1 = st.columns(2)
 
@@ -86,10 +104,12 @@ with st.container(border=True):
         st.markdown(lnk + htmlstr, unsafe_allow_html=True)
         st.bar_chart(data=df[df.Year >= selection_dates], x='Date', y='Compte_mensuel',height=300)
 
+st.subheader('Evolution spatiale')
 with st.container(border=True):
     row2 = st.columns(2)
 
     with row2[0]:
         st.write('à remplir')
+        st.map(data_maps[data_maps['lat']>35][data_maps['long']<6],latitude='lat',longitude='long',zoom=4.5)
     with row2[1]:
         st.write('à remplir')
