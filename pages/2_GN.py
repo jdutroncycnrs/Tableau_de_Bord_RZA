@@ -82,18 +82,39 @@ nb_enregistrements = len(data)
 ##################################### TRAITEMENT PREALABLE MAP ###################################
 data['long']=0
 data['lat']=0
-data['location'].astype(str)
+
 for i in range(len(data)):
     try:
-        lat_i = float(re.split(",", data['location'].iloc[i])[0].replace('"','').replace('[',''))
-        data['lat'].iloc[i]=lat_i
+        l = re.split(']',data['location'][i])
+        l2 = l[0][20:]
+        l3 = re.split(',',l2)
+        long_i = l3[0]
+        lat_i = l3[1]
+        try:
+            data.loc[i,'lat']=float(lat_i.replace('\n','').replace(" ",''))
+        except:
+            data.loc[i,'lat']=""
+        try:
+            data.loc[i,'long']=float(long_i.replace('\n','').replace(" ",''))
+        except:
+            data.loc[i,'long']=""
     except:
         pass
-    try:
-        long_i = float(re.split(",", data['location'].iloc[i])[1].replace('"','').replace('[',''))
-        data['long'].iloc[i]=long_i
-    except:
-        pass
+
+#################################### AVEC MON GN LOCAL ##########################################
+#data['location'].astype(str)
+#for i in range(len(data)):
+#    try:
+#        lat_i = float(re.split(",", data['location'].iloc[i])[0].replace('"','').replace('[',''))
+#        data['lat'].iloc[i]=lat_i
+#    except:
+#        pass
+#    try:
+#       long_i = float(re.split(",", data['location'].iloc[i])[1].replace('"','').replace('[',''))
+#        data['long'].iloc[i]=long_i
+#    except:
+#        pass
+##################################################################################################
 
 data_maps = data.copy()
 data_maps.dropna(subset= 'location', inplace=True)
@@ -143,7 +164,7 @@ with st.container(border=True):
     row2 = st.columns(2)
 
     with row2[0]:
-        st.map(data[data['lat']>35][data['long']<6][data.Year >= selection_dates],latitude='lat',longitude='long',zoom=4.5)
+        st.map(data[data['lat']>45][data['long']<6][data['long']>-6][data.Year >= selection_dates],latitude='lat',longitude='long',zoom=4)
     with row2[1]:
         wch_colour_box = (0,204,102)
         wch_colour_font = (250,250,250)
