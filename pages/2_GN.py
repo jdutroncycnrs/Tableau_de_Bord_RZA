@@ -117,8 +117,6 @@ for i in range(len(data)):
 ##################################################################################################
 
 data_maps = data.copy()
-data_maps.dropna(subset= 'location', inplace=True)
-nb_enregistrements_avec_localisation = len(data_maps)
 
 ###################################### VISUALISATION #########################################
 st.subheader('Evolution temporelle')
@@ -164,6 +162,8 @@ with st.container(border=True):
     row2 = st.columns(2)
 
     with row2[0]:
+        data_maps = data_maps[data_maps['lat']>45][data_maps['long']<6][data_maps['long']>-6][data.Year >= selection_dates]
+        nb_enregistrements_avec_localisation = len(data_maps)
         st.map(data[data['lat']>45][data['long']<6][data['long']>-6][data.Year >= selection_dates],latitude='lat',longitude='long',zoom=4)
     with row2[1]:
         wch_colour_box = (0,204,102)
@@ -173,7 +173,7 @@ with st.container(border=True):
         iconname = "fas fa-asterisk"
         sline = nb_enregistrements_avec_localisation
         lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-        i = "Nombre d'enregistrements localisés"
+        i = "Nombre d'enregistrements localisés sur la carte à gauche"
 
         htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
                                                     {wch_colour_box[1]}, 
