@@ -3,7 +3,7 @@ import re
 
 data = pd.read_csv("pages/data/Enregistrements_RZA_030524.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
-data.drop(columns=['Date','any.langfre'], inplace=True)
+data.drop(columns=['any.langfre'], inplace=True)
 
 liste_columns_data = data.columns.values
 for c in liste_columns_data:
