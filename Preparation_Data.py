@@ -50,19 +50,9 @@ data['Year']=0
 for i in range(len(data)):
     data.loc[i,'Year']=datetime.date(data.loc[i,'Date']).year
 
-data_bis =data.copy()
-data_bis.set_index('Date', inplace=True)
-data_resampled =data_bis.resample(rule="3D").size()
-liste_dates = data_resampled.index.values
-liste_comptes = data_resampled.values
-df = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_mensuel']).T
-df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
-for i in range(len(df)):
-    df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
-
 start_date_year = data['Year'].iloc[0]
 end_date_year = data['Year'].iloc[-1]
-nb_enregistrements = len(data)
+
 ##################################### TRAITEMENT PREALABLE MAP ###################################
 data['long']=0
 data['lat']=0
