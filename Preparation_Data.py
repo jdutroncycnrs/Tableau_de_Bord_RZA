@@ -44,53 +44,9 @@ data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=T
 #data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True) 
 ########################################################################
 
-data.sort_values(by="Date", inplace=True)
-data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
-data['Year']=0
-for i in range(len(data)):
-    data.loc[i,'Year']=datetime.date(data.loc[i,'Date']).year
+#########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
 
-start_date_year = data['Year'].iloc[0]
-end_date_year = data['Year'].iloc[-1]
-
-##################################### TRAITEMENT PREALABLE MAP ###################################
-data['long']=0
-data['lat']=0
-
-for i in range(len(data)):
-    try:
-        l = re.split(']',data['location'][i])
-        l2 = l[0][20:]
-        l3 = re.split(',',l2)
-        long_i = l3[0]
-        lat_i = l3[1]
-        try:
-            data.loc[i,'lat']=float(lat_i.replace('\n','').replace(" ",''))
-        except:
-            data.loc[i,'lat']=""
-        try:
-            data.loc[i,'long']=float(long_i.replace('\n','').replace(" ",''))
-        except:
-            data.loc[i,'long']=""
-    except:
-        pass
-
-#################################### AVEC MON GN LOCAL ##########################################
-#data['location'].astype(str)
-#for i in range(len(data)):
-#    try:
-#        lat_i = float(re.split(",", data['location'].iloc[i])[0].replace('"','').replace('[',''))
-#        data['lat'].iloc[i]=lat_i
-#    except:
-#        pass
-#    try:
-#       long_i = float(re.split(",", data['location'].iloc[i])[1].replace('"','').replace('[',''))
-#        data['long'].iloc[i]=long_i
-#    except:
-#        pass
-##################################################################################################
-
-data_ =data.drop(columns=['Date','location','Compte_cumulé','Year','long','lat'])
+data_ =data.drop(columns=['Date','location'])
 
 liste_columns_data = data_.columns.values
 
@@ -186,6 +142,52 @@ print('ZABR:',len(data_bis['ZABR'][data_bis['ZABR']==1]))
 print('ZAL:',len(data_bis['ZAL'][data_bis['ZAL']==1]))
 print('ZAPygar:',len(data_bis['ZAPygar'][data_bis['ZAPygar']==1]))
 
-test = pd.concat([data,data_bis], axis=1)
+dat = pd.concat([data,data_bis], axis=1)
 
-test.to_csv("pages/data/Data_ready.csv")
+#######################################
+
+dat['Year']=0
+for i in range(len(dat)):
+    dat.loc[i,'Year']=datetime.date(dat.loc[i,'Date']).year
+
+start_date_year = dat['Year'].iloc[0]
+end_date_year = dat['Year'].iloc[-1]
+
+##################################### TRAITEMENT PREALABLE MAP ###################################
+dat['long']=0
+dat['lat']=0
+
+for i in range(len(dat)):
+    try:
+        l = re.split(']',dat['location'][i])
+        l2 = l[0][20:]
+        l3 = re.split(',',l2)
+        long_i = l3[0]
+        lat_i = l3[1]
+        try:
+            dat.loc[i,'lat']=float(lat_i.replace('\n','').replace(" ",''))
+        except:
+            dat.loc[i,'lat']=""
+        try:
+            dat.loc[i,'long']=float(long_i.replace('\n','').replace(" ",''))
+        except:
+            dat.loc[i,'long']=""
+    except:
+        pass
+
+#################################### AVEC MON GN LOCAL ##########################################
+#data['location'].astype(str)
+#for i in range(len(data)):
+#    try:
+#        lat_i = float(re.split(",", data['location'].iloc[i])[0].replace('"','').replace('[',''))
+#        data['lat'].iloc[i]=lat_i
+#    except:
+#        pass
+#    try:
+#       long_i = float(re.split(",", data['location'].iloc[i])[1].replace('"','').replace('[',''))
+#        data['long'].iloc[i]=long_i
+#    except:
+#        pass
+##################################################################################################
+
+dat.to_csv("pages/data/Data_ready.csv")
