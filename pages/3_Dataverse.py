@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 st.title("Analyse des entrepôts")
-liste_ZAs= ['ZA1','ZA2','ZA3']
+liste_ZAs= ['ZAA','ZA2','ZA3']
 Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
 
 with st.container(border=True):

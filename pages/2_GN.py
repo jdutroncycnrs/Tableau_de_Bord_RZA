@@ -18,11 +18,20 @@ st.set_page_config(
 
 st.title("Analyse des catalogues")
 
-liste_ZAs= ['ZA1','ZA2','ZA3']
+liste_ZAs= ['ZAA','ZA2','ZA3']
 Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+#st.write(Selection_ZA)
 
 ###################################### LECTURE DATA NETTOYEES #########################################
-data = pd.read_csv("pages/data/Data_ready.csv")
+dat = pd.read_csv("pages/data/Data_ready.csv")
+dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
+dat.sort_values(by="Date", inplace=True)
+
+data = dat[dat['ZAA']==1]
+data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+#st.dataframe(data)
+#dat_ = dat[['Date','location','Year','Compte_cumulé','lat','long',Selection_ZA[0]]]
+#data = dat_[dat_[Selection_ZA[0]]==1]
 
 data_bis =data.copy()
 data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
