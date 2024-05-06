@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-data = pd.read_csv("pages/data/Enregistrements_RZA_030524-2.csv")
+data = pd.read_csv("pages/data/Enregistrements_RZA_060524.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 
 ##################################### TRAITEMENT PREALABLE DATES###################################
@@ -46,7 +46,7 @@ data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=T
 
 #########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
 
-data_ =data.drop(columns=['Date','location'])
+data_ =data.drop(columns=['Date','location','Org',"resourceTitleObject.default","cl_useConstraints.default",'uuid','format','owner','recordOwner',"standardNameObject.default"])
 
 liste_columns_data = data_.columns.values
 
@@ -64,16 +64,16 @@ liste_index= data2.index.values
 liste_columns_data2 = data2.columns.values
 data_bis = pd.DataFrame(index=liste_index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar'])
 
-rechercheZAA = ['ZAA', 'Zone Atelier Alpes']
-rechercheZAAJ = ['ZAAJ', 'Zone Atelier Arc Jurassien']
-rechercheZAAR = ['ZAAR', 'Zone Atelier Armorique']
-rechercheZAEU = ['ZAEU', 'Zone Atelier Environnementale Urbaine']
-rechercheZAS = ['ZAS','Zone Atelier Seine']
-rechercheZAM = ['ZAM', 'Zone Atelier Moselle']
-rechercheZABRI = ['ZABRI','Zone Atelier Brest Iroise']
-rechercheZABR = ['ZABR','Zone Atelier Bassin du Rhone']
-rechercheZAL = ['ZAL','Zone Atelier Loire']
-rechercheZAPygar = ['ZAPygar', 'Zone Atelier Pyrénées Garonne' ]
+rechercheZAA = [' zaa']
+rechercheZAAJ = ['zaaj']
+rechercheZAAR = ['zaar']
+rechercheZAEU = ['zaeu']
+rechercheZAS = ['zas']
+rechercheZAM = ['zam']
+rechercheZABRI = ['zabri']
+rechercheZABR = ['zabr']
+rechercheZAL = ['zal']
+rechercheZAPygar = ['zapygar']
 
 for c in liste_columns_data2:
     for i in range(len(data2)):
