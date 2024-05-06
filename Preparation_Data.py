@@ -190,4 +190,64 @@ for i in range(len(dat)):
 #        pass
 ##################################################################################################
 
+for i in range(len(dat)):
+    if dat.loc[i,'format']=='-':
+        dat.loc[i,'format']='non renseigné'
+
+for i in range(len(dat)):
+    try:
+        l = dat.loc[i,'format']
+        dat.loc[i,'format']=re.split(',',l)[0].replace('.','').lower().replace('excel','xls')
+        if dat.loc[i,'format']=='shape':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='shp':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='shapefile':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='esri shapefile (shp)':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='shapefile (shp)':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='xlsx':
+            dat.loc[i,'format']='xls'
+        if dat.loc[i,'format']=='tif':
+            dat.loc[i,'format']='geotiff'
+        if dat.loc[i,'format']=='tiff':
+            dat.loc[i,'format']='geotiff'
+        if dat.loc[i,'format']=='texte':
+            dat.loc[i,'format']='txt'
+        if dat.loc[i,'format']=='jpeg2000':
+            dat.loc[i,'format']='jpeg'
+        if dat.loc[i,'format']=='jpg':
+            dat.loc[i,'format']='jpeg'
+        if dat.loc[i,'format']=='application/pdf':
+            dat.loc[i,'format']='pdf'
+    except:
+        pass
+
+for i in range(len(dat)):
+    if dat.loc[i,'Org']=='-':
+        dat.loc[i,'Org']='non renseigné'
+
+for i in range(len(dat)):
+    try:
+        l = dat.loc[i,'Org']
+        dat.loc[i,'Org']=re.split(',',l)[0].lower()
+        if dat.loc[i,'Org']=='letg umr 6554 cnrs':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='sorbonne université - metis':
+            dat.loc[i,'Org']='umr 7619 metis sorbonne université'
+        if dat.loc[i,'Org']=='sorbonne université - umr 7619 metis':
+            dat.loc[i,'Org']='umr 7619 metis sorbonne université'
+        if dat.loc[i,'Org']=='cnrs - eccorev (fr3098)':
+            dat.loc[i,'Org']='eccorev (fr3098) - cnrs'
+        if dat.loc[i,'Org']=='cnrs - eccorev (fr3098) - ohm bassin minier de Provence':
+            dat.loc[i,'Org']='eccorev (fr3098) - cnrs'
+        if dat.loc[i,'Org']=='letg-rennes costel':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='letg-rennes umr 6554 cnrs université de rennes 2' :
+            dat.loc[i,'Org']='umr6554 letg cnrs'            
+    except:
+        pass
+
 dat.to_csv("pages/data/Data_ready.csv")
