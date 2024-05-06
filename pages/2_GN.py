@@ -224,4 +224,17 @@ with st.container(border=True):
             st.map(data[data.Year >= selection_dates][data['lat']>45],latitude='lat',longitude='long',zoom=zoom)
         else:
             zoom = zoom_monde
-        
+
+st.subheader('Formats des publications')
+liste_index = data.index.values
+df_formats = data['format']
+cnt = df_formats.value_counts()
+df = pd.DataFrame(cnt)
+st.bar_chart(df)
+
+
+st.subheader('Organisations publiantes')
+df_orga = data['Org']
+cnt_orga = df_orga.value_counts()
+df_orga = pd.DataFrame(cnt_orga)
+st.bar_chart(df_orga)
