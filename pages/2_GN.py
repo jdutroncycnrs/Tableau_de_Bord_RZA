@@ -111,7 +111,7 @@ df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
 for i in range(len(df)):
     df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
 
-start_date_year = data['Year'].iloc[0]
+start_date_year = data['Year'].iloc[0]-1
 end_date_year = data['Year'].iloc[-1]
 data_maps = data.copy()
 
@@ -234,6 +234,7 @@ st.bar_chart(df)
 
 st.subheader('Organisations publiantes')
 df_orga = data['Org']
-cnt_orga = df_orga.value_counts()[0:15]
+cnt_orga = df_orga.value_counts()[0:25]
+st.table(cnt_orga)
 df_orga = pd.DataFrame(cnt_orga)
 st.bar_chart(df_orga)

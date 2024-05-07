@@ -235,18 +235,48 @@ for i in range(len(dat)):
         dat.loc[i,'Org']=re.split(',',l)[0].lower()
         if dat.loc[i,'Org']=='letg umr 6554 cnrs':
             dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='letg-rennes costelletg-rennes umr 6554 cnrs université de rennes 2':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='letg rennes umr 6554 cnrs université de rennes 2':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
         if dat.loc[i,'Org']=='sorbonne université - metis':
             dat.loc[i,'Org']='umr 7619 metis sorbonne université'
         if dat.loc[i,'Org']=='sorbonne université - umr 7619 metis':
             dat.loc[i,'Org']='umr 7619 metis sorbonne université'
+        if dat.loc[i,'Org']=='upmc - umr 7619 metis':
+            dat.loc[i,'Org']='umr 7619 metis sorbonne université'
+        if dat.loc[i,'Org']=='sorbonne université - métis':
+            dat.loc[i,'Org']='umr 7619 metis sorbonne université'
+        if dat.loc[i,'Org']=='upsorbonne université - umr 7619 metis':
+            dat.loc[i,'Org']='umr 7619 metis sorbonne université'
         if dat.loc[i,'Org']=='cnrs - eccorev (fr3098)':
             dat.loc[i,'Org']='eccorev (fr3098) - cnrs'
-        if dat.loc[i,'Org']=='cnrs - eccorev (fr3098) - ohm bassin minier de Provence':
+        if dat.loc[i,'Org']=='cnrs - eccorev (fr3098) - ohm bassin minier de provence':
             dat.loc[i,'Org']='eccorev (fr3098) - cnrs'
         if dat.loc[i,'Org']=='letg-rennes costel':
             dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='letg':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
         if dat.loc[i,'Org']=='letg-rennes umr 6554 cnrs université de rennes 2' :
             dat.loc[i,'Org']='umr6554 letg cnrs'            
+        if dat.loc[i,'Org']=="umr 1069 sas inrae - l'institut agro rennes-angers":
+            dat.loc[i,'Org']='umr 1069 sas inra - agrocampus ouest'
+        if dat.loc[i,'Org']=='ens de lyon - umr 5600 evs' :
+            dat.loc[i,'Org']='umr 5600 evs - ens de lyon'    
+        if dat.loc[i,'Org']=='cnrs leca' :
+            dat.loc[i,'Org']='leca' 
+        if dat.loc[i,'Org']=='ecobio umr 6553 cnrs université de rennes 1' :
+            dat.loc[i,'Org']='ecobio umr 6553'
+        if dat.loc[i,'Org']=='ecobio umr 6553 cnrs université de rennes' :
+            dat.loc[i,'Org']='ecobio umr 6553'
+        if dat.loc[i,'Org']=='umr 6553 cnrs ecobio' :
+            dat.loc[i,'Org']='ecobio umr 6553'
+        if dat.loc[i,'Org']=='umr 6553 ecobio' :
+            dat.loc[i,'Org']='ecobio umr 6553'
+        if dat.loc[i,'Org']=='umr ecobio 6553 cnrs université de rennes 1' :
+            dat.loc[i,'Org']='ecobio umr 6553'
+        if dat.loc[i,'Org']=='bagap umr 0980' :
+            dat.loc[i,'Org']='bagap umr 0980 inrae agrocampus ouest esa' 
     except:
         pass
 
