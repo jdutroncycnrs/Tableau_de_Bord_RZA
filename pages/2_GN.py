@@ -226,17 +226,24 @@ with st.container(border=True):
             zoom = zoom_monde
 
 
-df_formats = data['format']
-cnt = df_formats.value_counts()[0:9]
+data_format = data['format']
+cnt = data_format.value_counts()[0:9]
 somme_formats_vis = cnt.values.sum()
-df = pd.DataFrame(cnt.values, index=cnt.index.values,columns=['compte'])
+df_format = pd.DataFrame(cnt.values, index=cnt.index.values,columns=['compte_format'])
 st.subheader(f'Formats des publications {somme_formats_vis}/{nb_enregistrements}')
-st.bar_chart(df)
+st.bar_chart(df_format)
 
 
-df_orga = data['Org']
-cnt_orga = df_orga.value_counts()[0:10]
+data_orga = data['Org']
+cnt_orga = data_orga.value_counts()[0:10]
 somme_orga_vis = cnt_orga.values.sum()
-df_orga = pd.DataFrame(cnt_orga)
+df_orga = pd.DataFrame(cnt_orga.values, index=cnt_orga.index.values, columns=['compte_orga'])
 st.subheader(f'Organisations publiantes {somme_orga_vis}/{nb_enregistrements}')
 st.bar_chart(df_orga)
+
+
+data_thematiques = data['cl_topic.langfre']
+cnt_thematiques = data_thematiques.value_counts()
+df_thematiques = pd.DataFrame(cnt_thematiques.values, index=cnt_thematiques.index.values,columns=['compte_thema'])
+st.subheader(f'Thématiques')
+st.bar_chart(df_thematiques)

@@ -310,4 +310,15 @@ for i in range(len(dat)):
     except:
         pass
 
+for i in range(len(dat)):
+    if dat.loc[i,'cl_topic.langfre']=='-':
+        dat.loc[i,'cl_topic.langfre']='non renseigné'
+
+for i in range(len(dat)):
+    try:
+        l = dat.loc[i,'cl_topic.langfre']
+        dat.loc[i,'cl_topic.langfre']=re.split(',',l)[0].lower()
+    except:
+        pass
+
 dat.to_csv("pages/data/Data_ready.csv")
