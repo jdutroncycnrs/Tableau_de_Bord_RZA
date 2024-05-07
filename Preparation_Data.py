@@ -255,6 +255,8 @@ for i in range(len(dat)):
             dat.loc[i,'Org']='eccorev (fr3098) - cnrs'
         if dat.loc[i,'Org']=='letg-rennes costel':
             dat.loc[i,'Org']='umr6554 letg cnrs'
+        if dat.loc[i,'Org']=='ietr umr cnrs 6164 / letg-rennes umr 6554 cnrs université de rennes 2':
+            dat.loc[i,'Org']='umr6554 letg cnrs'
         if dat.loc[i,'Org']=='letg':
             dat.loc[i,'Org']='umr6554 letg cnrs'
         if dat.loc[i,'Org']=='letg-rennes umr 6554 cnrs université de rennes 2' :
@@ -262,6 +264,10 @@ for i in range(len(dat)):
         if dat.loc[i,'Org']=="umr 1069 sas inrae - l'institut agro rennes-angers":
             dat.loc[i,'Org']='umr 1069 sas inra - agrocampus ouest'
         if dat.loc[i,'Org']=='ens de lyon - umr 5600 evs' :
+            dat.loc[i,'Org']='umr 5600 evs - ens de lyon'
+        if dat.loc[i,'Org']=='evs umr 5600 cnrs université de lyon' :
+            dat.loc[i,'Org']='umr 5600 evs - ens de lyon'
+        if dat.loc[i,'Org']=='umr 5600' :
             dat.loc[i,'Org']='umr 5600 evs - ens de lyon'    
         if dat.loc[i,'Org']=='cnrs leca' :
             dat.loc[i,'Org']='leca' 
@@ -276,7 +282,27 @@ for i in range(len(dat)):
         if dat.loc[i,'Org']=='umr ecobio 6553 cnrs université de rennes 1' :
             dat.loc[i,'Org']='ecobio umr 6553'
         if dat.loc[i,'Org']=='bagap umr 0980' :
-            dat.loc[i,'Org']='bagap umr 0980 inrae agrocampus ouest esa' 
+            dat.loc[i,'Org']='bagap umr 0980 inrae agrocampus'
+        if dat.loc[i,'Org']=='inrae bagap' :
+            dat.loc[i,'Org']='bagap umr 0980 inrae agrocampus'
+        if dat.loc[i,'Org']=='bagap umr 0980 inrae agrocampus ouest esa' :
+            dat.loc[i,'Org']='bagap umr 0980 inrae agrocampus'
+        if dat.loc[i,'Org']=='mines saint-etienne - centre spin - peg' :
+            dat.loc[i,'Org']='mines saint-etienne - centre spin'
+        if dat.loc[i,'Org']=='mines saint-etienne' :
+            dat.loc[i,'Org']='mines saint-etienne - centre spin'
+        if dat.loc[i,'Org']=='mines saint-etienne - centre spn - gse' :
+            dat.loc[i,'Org']='mines saint-etienne - centre spin'
+        if dat.loc[i,'Org']=='irstea grenoble - ur dtm' :
+            dat.loc[i,'Org']='irstea grenoble'
+        if dat.loc[i,'Org']=='irstea' :
+            dat.loc[i,'Org']='irstea grenoble' 
+        if dat.loc[i,'Org']=='espace umr 7300 cnrs uma' :
+            dat.loc[i,'Org']='umr 7300 espace cnrs'
+        if dat.loc[i,'Org']=='espace umr 7300 cnrs au' :
+            dat.loc[i,'Org']='umr 7300 espace cnrs'
+        if dat.loc[i,'Org']=='inra' :
+            dat.loc[i,'Org']='umr 1069 sas inra - agrocampus ouest'
     except:
         pass
 

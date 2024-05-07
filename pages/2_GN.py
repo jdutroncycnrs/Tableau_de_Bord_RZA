@@ -235,6 +235,5 @@ st.bar_chart(df)
 st.subheader('Organisations publiantes')
 df_orga = data['Org']
 cnt_orga = df_orga.value_counts()[0:25]
-st.table(cnt_orga)
 df_orga = pd.DataFrame(cnt_orga)
 st.bar_chart(df_orga)
