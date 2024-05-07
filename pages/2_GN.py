@@ -225,15 +225,18 @@ with st.container(border=True):
         else:
             zoom = zoom_monde
 
-st.subheader('Formats des publications')
+
 df_formats = data['format']
 cnt = df_formats.value_counts()[0:9]
+somme_formats_vis = cnt.values.sum()
 df = pd.DataFrame(cnt.values, index=cnt.index.values,columns=['compte'])
+st.subheader(f'Formats des publications {somme_formats_vis}/{nb_enregistrements}')
 st.bar_chart(df)
 
 
-st.subheader('Organisations publiantes')
 df_orga = data['Org']
 cnt_orga = df_orga.value_counts()[0:10]
+somme_orga_vis = cnt_orga.values.sum()
 df_orga = pd.DataFrame(cnt_orga)
+st.subheader(f'Organisations publiantes {somme_orga_vis}/{nb_enregistrements}')
 st.bar_chart(df_orga)
