@@ -267,6 +267,8 @@ for i in range(len(dat)):
             dat.loc[i,'Org']='umr 5600 evs - ens de lyon'
         if dat.loc[i,'Org']=='evs umr 5600 cnrs université de lyon' :
             dat.loc[i,'Org']='umr 5600 evs - ens de lyon'
+        if dat.loc[i,'Org']=='ecole des mines de saint-etienne- umr 5600 evs' :
+            dat.loc[i,'Org']='umr 5600 evs - ens de lyon'
         if dat.loc[i,'Org']=='umr 5600' :
             dat.loc[i,'Org']='umr 5600 evs - ens de lyon'    
         if dat.loc[i,'Org']=='cnrs leca' :
@@ -294,12 +296,14 @@ for i in range(len(dat)):
         if dat.loc[i,'Org']=='mines saint-etienne - centre spn - gse' :
             dat.loc[i,'Org']='mines saint-etienne - centre spin'
         if dat.loc[i,'Org']=='irstea grenoble - ur dtm' :
-            dat.loc[i,'Org']='irstea grenoble'
-        if dat.loc[i,'Org']=='irstea' :
-            dat.loc[i,'Org']='irstea grenoble' 
+            dat.loc[i,'Org']='irstea'
+        if dat.loc[i,'Org']=='irstea lyon-villeurbanne' :
+            dat.loc[i,'Org']='irstea' 
         if dat.loc[i,'Org']=='espace umr 7300 cnrs uma' :
             dat.loc[i,'Org']='umr 7300 espace cnrs'
         if dat.loc[i,'Org']=='espace umr 7300 cnrs au' :
+            dat.loc[i,'Org']='umr 7300 espace cnrs'
+        if dat.loc[i,'Org']=='umr espace 7300' :
             dat.loc[i,'Org']='umr 7300 espace cnrs'
         if dat.loc[i,'Org']=='inra' :
             dat.loc[i,'Org']='umr 1069 sas inra - agrocampus ouest'

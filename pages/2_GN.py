@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import re
+import plotly.graph_objects as go
+import plotly.express as px
 pd.options.mode.chained_assignment = None
 
 ########### TITRE DE L'ONGLET ######################################
@@ -234,6 +236,9 @@ st.bar_chart(df)
 
 st.subheader('Organisations publiantes')
 df_orga = data['Org']
-cnt_orga = df_orga.value_counts()[0:25]
+cnt_orga = df_orga.value_counts()[0:10]
 df_orga = pd.DataFrame(cnt_orga)
-st.bar_chart(df_orga)
+#st.bar_chart(df_orga)
+
+fig = px.bar(df_orga)
+st.plotly_chart(fig)
