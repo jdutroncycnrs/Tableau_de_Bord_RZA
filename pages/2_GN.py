@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 import re
+import plotly.express as px
 pd.options.mode.chained_assignment = None
 
 ########### TITRE DE L'ONGLET ######################################
@@ -247,3 +248,8 @@ cnt_thematiques = data_thematiques.value_counts()
 df_thematiques = pd.DataFrame(cnt_thematiques.values, index=cnt_thematiques.index.values,columns=['compte_thema'])
 st.subheader(f'Thématiques')
 st.bar_chart(df_thematiques)
+
+
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+st.plotly_chart(fig)
