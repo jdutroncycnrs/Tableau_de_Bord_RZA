@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-data = pd.read_csv("pages/data/Enregistrements_RZA_070524.csv")
+data = pd.read_csv("pages/data/Enregistrements_RZA_100524.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 
 ##################################### TRAITEMENT PREALABLE DATES###################################
