@@ -308,6 +308,10 @@ for i in range(len(dat)):
             dat.loc[i,'Org']='umr 7300 espace cnrs'
         if dat.loc[i,'Org']=='inra' :
             dat.loc[i,'Org']='umr 1069 sas inra - agrocampus ouest'
+        if dat.loc[i,'Org']=='zaa-ltser' :
+            dat.loc[i,'Org']='zaa'
+        if dat.loc[i,'Org']=="direction régionale de l’environnement de l’aménagement et du logement d'auvergne-rhône-alpes (dreal auvergne-rhône-alpes)" :
+            dat.loc[i,'Org']='dreal'
     except:
         pass
 

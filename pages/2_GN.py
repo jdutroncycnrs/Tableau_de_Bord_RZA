@@ -99,7 +99,6 @@ else:
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 #######################################################################################################
 
-
 data_bis =data.copy()
 data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
 data_bis.set_index('Date', inplace=True)
