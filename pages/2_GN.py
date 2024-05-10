@@ -4,6 +4,7 @@ import numpy as np
 from datetime import datetime
 import re
 import plotly.express as px
+import plotly.graph_objects as go
 pd.options.mode.chained_assignment = None
 
 ########### TITRE DE L'ONGLET ######################################
@@ -124,7 +125,18 @@ with st.container(border=True):
     with row1[0]:
         selection_dates = st.slider(':red[Zoomer sur une période plus récente]',min_value=start_date_year,max_value=end_date_year)
         nb_enregistrements = len(data[data.Year >= selection_dates])
-        st.scatter_chart(data=data[data.Year >= selection_dates], x='Date', y='Compte_cumulé',height=300)
+        fig1 = go.Figure()
+        fig1.add_trace(go.Scatter(
+            x=data['Date'][data.Year >= selection_dates], 
+            y=data['Compte_cumulé'][data.Year >= selection_dates],
+            mode='lines+markers'))
+        fig1.update_layout(
+            title='Cumul dans le temps des enregistrements',
+            xaxis_title='Date',
+            yaxis_title='Compte cumulé',
+            width=500,
+            height=400)
+        st.plotly_chart(fig1)
     
     with row1[1]:
         wch_colour_box = (250,120,120)
@@ -153,7 +165,20 @@ with st.container(border=True):
                                 </style><BR><span style='font-size: 25px; 
                                 margin-top: 0;'>{sline}</style></span></p>"""
         st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-        st.bar_chart(data=df[df.Year >= selection_dates], x='Date', y='Compte_mensuel',height=300)
+
+        fig2 = go.Figure()
+        fig2.add_trace(go.Bar(
+            x=df['Date'][df.Year >= selection_dates],
+            y=df['Compte_mensuel'][df.Year >= selection_dates]
+        ))
+        fig2.update_layout(
+            title='Cumul hebdomadaire des enregistrements',
+            xaxis_title='Date',
+            yaxis_title='Compte',
+            width=500,
+            height=400)
+        st.plotly_chart(fig2)
+        #st.bar_chart(data=df[df.Year >= selection_dates], x='Date', y='Compte_mensuel',height=300)
 
 st.subheader('Evolution spatiale')
 with st.container(border=True):
@@ -227,29 +252,48 @@ with st.container(border=True):
             zoom = zoom_monde
 
 
-data_format = data['format']
-cnt = data_format.value_counts()[0:9]
-somme_formats_vis = cnt.values.sum()
-df_format = pd.DataFrame(cnt.values, index=cnt.index.values,columns=['compte_format'])
-st.subheader(f'Formats des publications {somme_formats_vis}/{nb_enregistrements}')
-st.bar_chart(df_format)
 
+with st.container(border=True):
+    row3 = st.columns(2)
 
-data_orga = data['Org']
-cnt_orga = data_orga.value_counts()[0:10]
-somme_orga_vis = cnt_orga.values.sum()
-df_orga = pd.DataFrame(cnt_orga.values, index=cnt_orga.index.values, columns=['compte_orga'])
-st.subheader(f'Organisations publiantes {somme_orga_vis}/{nb_enregistrements}')
-st.bar_chart(df_orga)
+    with row3[0]:
 
+        data_format = data['format']
+        cnt = data_format.value_counts()[0:9]
+        somme_formats_vis = cnt.values.sum()
+        st.subheader(f'Pour {somme_formats_vis} Enregistrements/{nb_enregistrements}')
 
-data_thematiques = data['cl_topic.langfre']
-cnt_thematiques = data_thematiques.value_counts()
-df_thematiques = pd.DataFrame(cnt_thematiques.values, index=cnt_thematiques.index.values,columns=['compte_thema'])
-st.subheader(f'Thématiques')
-st.bar_chart(df_thematiques)
+        fig3 = go.Figure()
+        fig3.add_trace(go.Bar(
+            y=cnt.index.values,
+            x=cnt.values,
+            orientation='h'
+        ))
+        fig3.update_layout(
+            title='Formats publiés',
+            xaxis_title='Compte',
+            yaxis_title='Formats',
+            width=500,
+            height=400)
+        st.plotly_chart(fig3)
 
+    with row3[1]:
 
-data_canada = px.data.gapminder().query("country == 'Canada'")
-fig = px.bar(data_canada, x='year', y='pop')
-st.plotly_chart(fig)
+        data_orga = data['Org']
+        cnt_orga = data_orga.value_counts()[0:10]
+        somme_orga_vis = cnt_orga.values.sum()
+        st.subheader(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
+
+        fig4 = go.Figure()
+        fig4.add_trace(go.Bar(
+            y=cnt_orga.index.values,
+            x=cnt_orga.values,
+            orientation='h'
+        ))
+        fig4.update_layout(
+            title='Organisations publiantes',
+            xaxis_title='Compte',
+            yaxis_title='Organisations',
+            width=500,
+            height=400)
+        st.plotly_chart(fig4)

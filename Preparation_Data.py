@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-data = pd.read_csv("pages/data/Enregistrements_RZA_060524.csv")
+data = pd.read_csv("pages/data/Enregistrements_RZA_070524.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 
 ##################################### TRAITEMENT PREALABLE DATES###################################
@@ -46,9 +46,10 @@ data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=T
 
 #########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
 
-data_ =data.drop(columns=['Date','location','Org',"resourceTitleObject.default","cl_useConstraints.default",'uuid','format','owner','recordOwner',"standardNameObject.default"])
+data_ =data.drop(columns=['Date','location','Org',"resourceTitleObject.default",'uuid','format','recordOwner'])
 
 liste_columns_data = data_.columns.values
+print(liste_columns_data)
 
 for c in liste_columns_data:
     for i in range(len(data_)):
@@ -311,14 +312,23 @@ for i in range(len(dat)):
         pass
 
 for i in range(len(dat)):
-    if dat.loc[i,'cl_topic.langfre']=='-':
-        dat.loc[i,'cl_topic.langfre']='non renseigné'
+    if dat.loc[i,'cl_topic.default']=='-':
+        dat.loc[i,'cl_topic.default']='non renseigné'
 
+liste_thematiques = []
 for i in range(len(dat)):
     try:
-        l = dat.loc[i,'cl_topic.langfre']
-        dat.loc[i,'cl_topic.langfre']=re.split(',',l)[0].lower()
+        l = dat.loc[i,'cl_topic.default']
+        liste_thematiques.append(re.split(',',l.lower()))
     except:
         pass
 
-dat.to_csv("pages/data/Data_ready.csv")
+data_ter = pd.DataFrame(index=liste_index,columns=['cl_topic'])
+for i in range(len(data_ter)):
+    data_ter.loc[i,'cl_topic']=liste_thematiques[i]
+
+dat_ = pd.concat([dat,data_ter], axis=1)
+
+print(dat_.loc[0,'cl_topic'][0])
+
+dat_.to_csv("pages/data/Data_ready.csv")
