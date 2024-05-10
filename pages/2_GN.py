@@ -261,29 +261,28 @@ with st.container(border=True):
         data_format = data['format']
         cnt = data_format.value_counts()[0:9]
         somme_formats_vis = cnt.values.sum()
-        st.subheader(f'Pour {somme_formats_vis} Enregistrements/{nb_enregistrements}')
+        
+        colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red']
 
         fig3 = go.Figure()
-        fig3.add_trace(go.Bar(
-            y=cnt.index.values,
-            x=cnt.values,
-            orientation='h'
-        ))
+        fig3.add_trace(go.Pie(labels=cnt.index.values, values=cnt.values))
+        fig3.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                  marker=dict(colors=colors, line=dict(color='#000000', width=2)))
         fig3.update_layout(
             title='Formats publiés',
             xaxis_title='Compte',
             yaxis_title='Formats',
             width=500,
-            height=400)
+            height=500)
         st.plotly_chart(fig3)
+        st.markdown(f'Pour {somme_formats_vis} Enregistrements/{nb_enregistrements}')
 
     with row3[1]:
 
         data_orga = data['Org']
         cnt_orga = data_orga.value_counts()[0:10]
         somme_orga_vis = cnt_orga.values.sum()
-        st.subheader(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
-
+        
         fig4 = go.Figure()
         fig4.add_trace(go.Bar(
             y=cnt_orga.index.values,
@@ -293,7 +292,7 @@ with st.container(border=True):
         fig4.update_layout(
             title='Organisations publiantes',
             xaxis_title='Compte',
-            yaxis_title='Organisations',
             width=500,
-            height=400)
+            height=500)
         st.plotly_chart(fig4)
+        st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
