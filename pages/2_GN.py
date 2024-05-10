@@ -295,3 +295,57 @@ with st.container(border=True):
             height=500)
         st.plotly_chart(fig4)
         st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
+
+with st.container(border=True):
+    st.dataframe(data)
+    
+    fig5 = go.Figure()
+    if len(Selection_ZA)!=0:
+        for za in Selection_ZA:
+            fig5.add_trace(go.Box(
+                y=data['tagNumber'][data[za]==1],
+                name=za
+            ))
+    else:
+        fig5.add_trace(go.Box(
+                y=data['tagNumber'],
+                name='Tout les enregistrements'
+            ))
+    fig5.update_layout(
+            title='Nombre de mots clés',
+            yaxis_title='Nombre',
+            width=500,
+            height=500)
+    st.plotly_chart(fig5)
+
+
+    liste_tagNumber = []
+    for i,x in enumerate(data.columns):
+        if 'Number' in data.columns[i]:
+            liste_tagNumber.append(x)
+    liste_tagNumber.remove('tagNumber')
+
+    data_numbers = data[liste_tagNumber]
+    listes_to_drop = []
+    for i,x in enumerate(liste_tagNumber):
+        c=0
+        for u in range(len(data_numbers)):
+            try:
+                if data_numbers.loc[u,x]=='-':
+                    c += 1
+            except:
+                pass
+        if (c/(len(data)))>0.90:
+            listes_to_drop.append(x)
+    data_numbers.drop(columns=listes_to_drop, inplace=True)
+        
+    fig6 = go.Figure()
+    fig6.add_trace(go.Heatmap(
+        x=data_numbers.columns,
+        z=data_numbers
+    ))
+    fig6.update_layout(
+            title='Catégories des mots clés',
+            width=1000,
+            height=1000)
+    st.plotly_chart(fig6)

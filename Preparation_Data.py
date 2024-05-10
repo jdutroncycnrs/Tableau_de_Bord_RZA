@@ -335,4 +335,10 @@ dat_ = pd.concat([dat,data_ter], axis=1)
 
 print(dat_.loc[0,'cl_topic'][0])
 
+"""for i,x in enumerate(dat_.columns):
+    if 'Number' in dat_.columns[i]:
+            for u in range(len(dat_)):
+                if dat_.loc[u,dat_.columns[i]]=='-':
+                    dat_.loc[u,dat_.columns[i]]=np.NaN"""
+
 dat_.to_csv("pages/data/Data_ready.csv")
