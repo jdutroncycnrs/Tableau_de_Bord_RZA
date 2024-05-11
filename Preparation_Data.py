@@ -6,7 +6,8 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-data = pd.read_csv("pages/data/Enregistrements_RZA_100524.csv")
+fichier = 'Enregistrements_RZA_100524'
+data = pd.read_csv(f"pages/data/{fichier}.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 
 ##################################### TRAITEMENT PREALABLE DATES###################################
@@ -341,4 +342,4 @@ for i,x in enumerate(dat_.columns):
                 if dat_.loc[u,dat_.columns[i]]=="0":
                     dat_.loc[u,dat_.columns[i]]="-"
 
-dat_.to_csv("pages/data/Data_ready.csv")
+dat_.to_csv(f"pages/data/{fichier}_ready.csv")
