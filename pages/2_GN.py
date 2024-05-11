@@ -101,8 +101,8 @@ else:
 
 piq_one_check = st.sidebar.checkbox("Selection d'un enregistrement unique")
 if piq_one_check==True:
-    piq_one = st.sidebar.selectbox(label='Enregistrements',options=data.index.values)
-    data = data[data.index==piq_one]
+    piq_one = st.sidebar.selectbox(label='Enregistrements',options=data['resourceTitleObject.default'])
+    data = data[data['resourceTitleObject.default']==piq_one]
 
 data_bis =data.copy()
 data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
@@ -301,34 +301,65 @@ with st.container(border=True):
         st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
 
 with st.container(border=True):
-
     fig5 = go.Figure()
     if len(Selection_ZA)!=0:
         for za in Selection_ZA:
-            fig5.add_trace(go.Box(
-                y=data['tagNumber'][data[za]==1],
-                name=za
-            ))
+            fig5.add_trace(go.Histogram(
+                x=data['popularity'][data[za]==1],
+                name=za,
+                xbins=dict(
+                    start=-0.0,
+                    end=80.0,
+                    size=0.5)
+    ))
     else:
-        fig5.add_trace(go.Box(
-                y=data['tagNumber'],
-                name='Tout les enregistrements'
-            ))
+        fig5.add_trace(go.Histogram(
+                x=data['popularity'],
+                name='Tout les enregistrements',
+                xbins=dict(
+                    start=-0.0,
+                    end=80.0,
+                    size=0.5
+            )))
     fig5.update_layout(
-            title='Nombre de mots clés',
+            title='Popularité des enregistrements',
             yaxis_title='Nombre',
             width=1000,
             height=500)
     st.plotly_chart(fig5)
+    st.markdown(f"La popularité la plus élevée = {max(data['popularity'])}" )
+
+
+with st.container(border=True):
+
+    fig6 = go.Figure()
+    if len(Selection_ZA)!=0:
+        for za in Selection_ZA:
+            fig6.add_trace(go.Box(
+                y=data['tagNumber'][data[za]==1],
+                name=za
+            ))
+    else:
+        fig6.add_trace(go.Box(
+                y=data['tagNumber'],
+                name='Tout les enregistrements'
+            ))
+    fig6.update_layout(
+            title='Nombre de mots clés',
+            yaxis_title='Nombre',
+            width=1000,
+            height=500)
+    st.plotly_chart(fig6)
     
 
     liste_tagNumber = []
     for i,x in enumerate(data.columns):
         if 'Number' in data.columns[i]:
             liste_tagNumber.append(x)
-    liste_tagNumber.remove('tagNumber')
+    #liste_tagNumber.remove('tagNumber')
 
     data_numbers = data[liste_tagNumber]
+    data_numbers.drop(columns=['tagNumber'],inplace=True)
     listes_to_drop = []
     for i,x in enumerate(liste_tagNumber):
         c=0
@@ -345,16 +376,55 @@ with st.container(border=True):
     for k in range(len(data_numbers.columns)):
         liste_columns.append(data_numbers.columns[k].replace('Number', ''))
 
-    fig6 = go.Figure()
-    fig6.add_trace(go.Heatmap(
-        x=liste_columns,
-        z=data_numbers
-    ))
-    fig6.update_layout(
-            title='Catégories des mots clés',
-            width=1000,
-            height=1000)
-    st.plotly_chart(fig6)
+
+    st.write(len(data_numbers))
+    if len(data_numbers)<50:
+        fig7 = go.Figure()
+        fig7.add_trace(go.Heatmap(
+            x=liste_columns,
+            z=data_numbers,
+            colorscale = 'Viridis',
+            text=data_numbers,
+            texttemplate="%{text}",
+            textfont={"size":20}
+        ))
+        fig7.update_layout(
+                title='Catégories des mots clés',
+                width=1000,
+                height=300)
+        st.plotly_chart(fig7)
+
+    elif len(data_numbers)<750:
+        fig7 = go.Figure()
+        fig7.add_trace(go.Heatmap(
+            x=liste_columns,
+            z=data_numbers,
+            colorscale = 'Viridis'
+            #text=data_numbers,
+            #texttemplate="%{text}",
+            #textfont={"size":10}
+        ))
+        fig7.update_layout(
+                title='Catégories des mots clés',
+                width=1000,
+                height=500)
+        st.plotly_chart(fig7)
+
+    else:
+        fig7 = go.Figure()
+        fig7.add_trace(go.Heatmap(
+            x=liste_columns,
+            z=data_numbers,
+            colorscale = 'Viridis'
+            #text=data_numbers,
+            #texttemplate="%{text}",
+            #textfont={"size":10}
+        ))
+        fig7.update_layout(
+                title='Catégories des mots clés',
+                width=1000,
+                height=1000)
+        st.plotly_chart(fig7)
 
     if piq_one_check==True:
         data['new_index']=np.arange(0,len(data))
@@ -363,4 +433,7 @@ with st.container(border=True):
         for i,x in enumerate(data.columns):
             if data.loc[0,x]!='-':
                 l_to_keep.append(x)
-        st.dataframe(data[l_to_keep])
+        
+        data_to_show = data[l_to_keep]
+        data_to_show.drop(columns=['Date','groupPublished','popularity','Unnamed: 0','location'], inplace=True)
+        st.dataframe(data_to_show)
