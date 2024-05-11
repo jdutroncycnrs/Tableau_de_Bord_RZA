@@ -99,7 +99,7 @@ else:
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 #######################################################################################################
 
-piq_one_check = st.sidebar.checkbox("Choix d'un enregistrement")
+piq_one_check = st.sidebar.checkbox("Selection d'un enregistrement unique")
 if piq_one_check==True:
     piq_one = st.sidebar.selectbox(label='Enregistrements',options=data.index.values)
     data = data[data.index==piq_one]
@@ -317,7 +317,7 @@ with st.container(border=True):
     fig5.update_layout(
             title='Nombre de mots clés',
             yaxis_title='Nombre',
-            width=500,
+            width=1000,
             height=500)
     st.plotly_chart(fig5)
     
@@ -338,7 +338,7 @@ with st.container(border=True):
                     c += 1
             except:
                 pass
-        if (c/(len(data_numbers)))>0.9:
+        if (c/(len(data_numbers)))>0.99:
             listes_to_drop.append(x)
     data_numbers.drop(columns=listes_to_drop, inplace=True)
     liste_columns = []
@@ -355,3 +355,8 @@ with st.container(border=True):
             width=1000,
             height=1000)
     st.plotly_chart(fig6)
+
+    if piq_one_check==True:
+        st.dataframe(data)
+        l = ['Date','cl_topic.default','groupPublished','resourceTitleObject.default']
+        st.dataframe(data[l])
