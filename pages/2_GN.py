@@ -99,6 +99,11 @@ else:
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 #######################################################################################################
 
+piq_one_check = st.sidebar.checkbox("Choix d'un enregistrement")
+if piq_one_check==True:
+    piq_one = st.sidebar.selectbox(label='Enregistrements',options=data.index.values)
+    data = data[data.index==piq_one]
+
 data_bis =data.copy()
 data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
 data_bis.set_index('Date', inplace=True)
