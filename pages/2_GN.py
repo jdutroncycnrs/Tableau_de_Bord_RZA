@@ -184,7 +184,6 @@ with st.container(border=True):
     row2 = st.columns(2)
 
     with row2[0]:
-        #data_maps = data_maps[data_maps['lat']>45][data_maps['long']<6][data_maps['long']>-6][data.Year >= selection_dates]
         nb_enregistrements_avec_localisation = len(dat)
         wch_colour_box = (250,120,120)
         wch_colour_font = (250,250,250)
@@ -297,8 +296,7 @@ with st.container(border=True):
         st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
 
 with st.container(border=True):
-    st.dataframe(data)
-    
+
     fig5 = go.Figure()
     if len(Selection_ZA)!=0:
         for za in Selection_ZA:
@@ -317,7 +315,7 @@ with st.container(border=True):
             width=500,
             height=500)
     st.plotly_chart(fig5)
-
+    
 
     liste_tagNumber = []
     for i,x in enumerate(data.columns):
@@ -329,19 +327,22 @@ with st.container(border=True):
     listes_to_drop = []
     for i,x in enumerate(liste_tagNumber):
         c=0
-        for u in range(len(data_numbers)):
+        for j,u in enumerate(data_numbers.index):
             try:
                 if data_numbers.loc[u,x]=='-':
                     c += 1
             except:
                 pass
-        if (c/(len(data)))>0.90:
+        if (c/(len(data_numbers)))>0.9:
             listes_to_drop.append(x)
     data_numbers.drop(columns=listes_to_drop, inplace=True)
-        
+    liste_columns = []
+    for k in range(len(data_numbers.columns)):
+        liste_columns.append(data_numbers.columns[k].replace('Number', ''))
+
     fig6 = go.Figure()
     fig6.add_trace(go.Heatmap(
-        x=data_numbers.columns,
+        x=liste_columns,
         z=data_numbers
     ))
     fig6.update_layout(
