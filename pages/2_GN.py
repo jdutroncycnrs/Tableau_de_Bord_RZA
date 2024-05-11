@@ -357,6 +357,10 @@ with st.container(border=True):
     st.plotly_chart(fig6)
 
     if piq_one_check==True:
-        st.dataframe(data)
-        l = ['Date','cl_topic.default','groupPublished','resourceTitleObject.default']
-        st.dataframe(data[l])
+        data['new_index']=np.arange(0,len(data))
+        data.set_index('new_index', inplace=True)
+        l_to_keep = []
+        for i,x in enumerate(data.columns):
+            if data.loc[0,x]!='-':
+                l_to_keep.append(x)
+        st.dataframe(data[l_to_keep])
