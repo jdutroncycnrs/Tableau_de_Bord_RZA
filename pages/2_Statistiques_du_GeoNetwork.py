@@ -185,7 +185,6 @@ with st.container(border=True):
             width=500,
             height=400)
         st.plotly_chart(fig2)
-        #st.bar_chart(data=df[df.Year >= selection_dates], x='Date', y='Compte_mensuel',height=300)
 
 st.subheader('Evolution spatiale')
 with st.container(border=True):
@@ -445,6 +444,5 @@ with st.container(border=True):
                 liste_tagNumber_bis.append(x)
         data_to_show.drop(columns=liste_tagNumber_bis, inplace=True)
         liste_ZAs_bis =liste_ZAs.copy()
-        liste_ZAs_bis.remove(Selection_ZA_str)
         data_to_show.drop(columns=liste_ZAs_bis, inplace=True)  
         st.table(data_to_show)
