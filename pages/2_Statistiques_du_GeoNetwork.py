@@ -285,7 +285,8 @@ else:
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
             st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1)
         with row2[1]:
-            nb_enregistrements_avec_localisation = len(data)
+            nb_enregistrements_avec_localisation = len(data[data.Year >= selection_dates])
+            data_mappees = data[data['lat']>40]
             zoom_france = 3
             zoom_monde = 1
             if len(Selection_ZA)>0:
@@ -316,10 +317,10 @@ else:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom)
 
-                st.map(data[data.Year >= selection_dates][data['lat']>45],latitude='lat',longitude='long',zoom=zoom)
             else:
-                zoom = zoom_monde
+                pass
 
 
 
@@ -328,7 +329,7 @@ else:
 
         with row3[0]:
 
-            data_format = data['format']
+            data_format = data['format'][data.Year >= selection_dates]
             cnt = data_format.value_counts()[0:9]
             somme_formats_vis = cnt.values.sum()
             
@@ -349,7 +350,7 @@ else:
 
         with row3[1]:
 
-            data_orga = data['Org']
+            data_orga = data['Org'][data.Year >= selection_dates]
             cnt_orga = data_orga.value_counts()[0:10]
             somme_orga_vis = cnt_orga.values.sum()
             
@@ -371,7 +372,7 @@ else:
 
     with st.container(border=True):
         
-        data_useC = data['cl_useConstraints.default']
+        data_useC = data['cl_useConstraints.default'][data.Year >= selection_dates]
         cnt_useC = data_useC.value_counts()
         fig = go.Figure()
         fig.add_trace(go.Pie(labels=cnt_useC.index.values, values=cnt_useC.values))
@@ -384,11 +385,13 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
     with st.container(border=True):
+        data_pop = data.copy()
+        data_pop_ = data_pop[data_pop.Year >= selection_dates]
         fig5 = go.Figure()
         if len(Selection_ZA)!=0:
             for za in Selection_ZA:
                 fig5.add_trace(go.Histogram(
-                    x=data['popularity'][data[za]==1],
+                    x=data_pop_['popularity'][data_pop_[za]==1],
                     name=za,
                     xbins=dict(
                         start=-0.0,
@@ -397,7 +400,7 @@ else:
         ))
         else:
             fig5.add_trace(go.Histogram(
-                    x=data['popularity'],
+                    x=data_pop_['popularity'],
                     name='Tout les enregistrements',
                     xbins=dict(
                         start=-0.0,
@@ -410,21 +413,22 @@ else:
                 width=1000,
                 height=500)
         st.plotly_chart(fig5)
-        st.markdown(f"La popularité la plus élevée = {max(data['popularity'])}" )
+        st.markdown(f"La popularité la plus élevée = {max(data_pop_['popularity'])}" )
 
 
     with st.container(border=True):
-
+        data_tagNumber = data.copy()
+        data_tagNumber_ = data_tagNumber[data_tagNumber.Year >= selection_dates]
         fig6 = go.Figure()
         if len(Selection_ZA)!=0:
             for za in Selection_ZA:
                 fig6.add_trace(go.Box(
-                    y=data['tagNumber'][data[za]==1],
+                    y=data_tagNumber_['tagNumber'][data_tagNumber_[za]==1],
                     name=za
                 ))
         else:
             fig6.add_trace(go.Box(
-                    y=data['tagNumber'],
+                    y=data_tagNumber_['tagNumber'],
                     name='Tout les enregistrements'
                 ))
         fig6.update_layout(
@@ -441,7 +445,7 @@ else:
                 liste_tagNumber.append(x)
         #liste_tagNumber.remove('tagNumber')
 
-        data_numbers = data[liste_tagNumber]
+        data_numbers = data[liste_tagNumber][data.Year >= selection_dates]
         data_numbers.drop(columns=['tagNumber'],inplace=True)
         listes_to_drop = []
         for i,x in enumerate(liste_tagNumber):
