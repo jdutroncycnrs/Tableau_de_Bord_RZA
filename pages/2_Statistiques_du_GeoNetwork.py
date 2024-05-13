@@ -160,6 +160,7 @@ if piq_one_check==True:
         st.metric(label='Status', value=str(data.loc[0,'cl_status.default']))
         st.metric(label='Distributeur', value=str(data.loc[0,'groupPublished']))
         st.metric(label="Contrainte d'usage", value=str(data.loc[0,'cl_useConstraints.default']))
+        st.metric(label='Popularité', value=str(data.loc[0,'popularity']))
 
     if data.loc[0,'lat']==0:
         pass
@@ -196,7 +197,9 @@ else:
             fig1.add_trace(go.Scatter(
                 x=data['Date'][data.Year >= selection_dates], 
                 y=data['Compte_cumulé'][data.Year >= selection_dates],
-                mode='lines+markers'))
+                mode='lines+markers',
+                line=dict(color='rgb(240,80,80)', width=1),
+                marker=dict(color='white',size=0.2)))
             fig1.update_layout(
                 title='Cumul dans le temps des enregistrements',
                 xaxis_title='Date',
@@ -238,6 +241,8 @@ else:
                 x=df['Date'][df.Year >= selection_dates],
                 y=df['Compte_mensuel'][df.Year >= selection_dates]
             ))
+            fig2.update_traces(marker_color='rgb(240,100,70)', marker_line_color='rgb(240,80,80)',
+                  marker_line_width=3)
             fig2.update_layout(
                 title='Cumul hebdomadaire des enregistrements',
                 xaxis_title='Date',
@@ -327,7 +332,7 @@ else:
             cnt = data_format.value_counts()[0:9]
             somme_formats_vis = cnt.values.sum()
             
-            colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red']
+            colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red','blue']
 
             fig3 = go.Figure()
             fig3.add_trace(go.Pie(labels=cnt.index.values, values=cnt.values))
@@ -354,6 +359,8 @@ else:
                 x=cnt_orga.values,
                 orientation='h'
             ))
+            fig4.update_traces(marker_color='rgb(240,100,70)', marker_line_color='rgb(240,80,80)',
+                  marker_line_width=3)
             fig4.update_layout(
                 title='Organisations publiantes',
                 xaxis_title='Compte',
@@ -361,6 +368,20 @@ else:
                 height=500)
             st.plotly_chart(fig4)
             st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
+
+    with st.container(border=True):
+        
+        data_useC = data['cl_useConstraints.default']
+        cnt_useC = data_useC.value_counts()
+        fig = go.Figure()
+        fig.add_trace(go.Pie(labels=cnt_useC.index.values, values=cnt_useC.values))
+        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig.update_layout(
+                title="Contraintes d'usage",
+                width=500,
+                height=500)
+        st.plotly_chart(fig, use_container_width=True)
 
     with st.container(border=True):
         fig5 = go.Figure()
@@ -487,3 +508,5 @@ else:
                     width=1000,
                     height=1000)
             st.plotly_chart(fig7)
+
+        st.markdown('Matrice filtrée à 15 mots clés maxi (et 1% des cas (outliers) sont absents)')
