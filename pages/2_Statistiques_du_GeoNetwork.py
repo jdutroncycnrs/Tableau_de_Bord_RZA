@@ -146,10 +146,7 @@ if piq_one_check==True:
     data = data[data['resourceTitleObject.default']==piq_one]
     data['new_index']=np.arange(0,len(data))
     data.set_index('new_index', inplace=True)
-    if data.loc[0,'lat']==0:
-        pass
-    else:
-        st.map(data,latitude='lat',longitude='long',zoom=8)
+    
     col1, col2 = st.columns(2)
     with col1:
         st.metric(label='Date', value=str(data.loc[0,'Date']))
@@ -164,6 +161,10 @@ if piq_one_check==True:
         st.metric(label='Distributeur', value=str(data.loc[0,'groupPublished']))
         st.metric(label="Contrainte d'usage", value=str(data.loc[0,'cl_useConstraints.default']))
 
+    if data.loc[0,'lat']==0:
+        pass
+    else:
+        st.map(data,latitude='lat',longitude='long',zoom=8)
       
     data_to_show = data.copy()
     data_to_show.drop(columns=['cl_topic.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','cl_topic','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
