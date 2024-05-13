@@ -320,6 +320,10 @@ for i in range(len(dat)):
     if dat.loc[i,'cl_topic.default']=='-':
         dat.loc[i,'cl_topic.default']='non renseigné'
 
+for i in range(len(dat)):
+    if dat.loc[i,'cl_useConstraints.default']=='-':
+        dat.loc[i,'cl_useConstraints.default']='non renseigné'
+
 liste_thematiques = []
 for i in range(len(dat)):
     try:

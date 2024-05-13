@@ -351,17 +351,19 @@ else:
         with row3[1]:
 
             data_orga = data['Org'][data.Year >= selection_dates]
-            cnt_orga = data_orga.value_counts()[0:10]
+            cnt_orga = data_orga.value_counts()[1:10]
+            #cnt_orga_bis = data_orga.value_counts()[0:1]
             somme_orga_vis = cnt_orga.values.sum()
             
             fig4 = go.Figure()
-            fig4.add_trace(go.Bar(
-                y=cnt_orga.index.values,
-                x=cnt_orga.values,
-                orientation='h'
-            ))
-            fig4.update_traces(marker_color='rgb(240,100,70)', marker_line_color='rgb(240,80,80)',
-                  marker_line_width=3)
+            for i in range(10):
+                cnt_orga_ = data_orga.value_counts()[i:i+1]
+                fig4.add_trace(go.Bar(
+                        y=cnt_orga_.index.values,
+                        x=cnt_orga_.values,
+                        orientation='h',
+                        showlegend=False,
+                        ))
             fig4.update_layout(
                 title='Organisations publiantes',
                 xaxis_title='Compte',
