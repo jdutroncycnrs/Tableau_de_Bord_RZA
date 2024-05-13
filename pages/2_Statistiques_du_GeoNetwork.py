@@ -131,26 +131,38 @@ if piq_one_check==True:
     def reset_counter():
         st.session_state.count = 0
 
+    col01,col02,col03 = st.columns(3)
+    with col01:
+        piq_one = st.selectbox(label='',options=data['resourceTitleObject.default'], index=st.session_state.count)
+    with col02:
+        st.markdown('')
+        st.markdown('')
+        st.button(':heavy_plus_sign:',on_click=increment_counter)
+    with col03:
+        st.markdown('')
+        st.markdown('')
+        st.button('reset',on_click=reset_counter)
+
+    data = data[data['resourceTitleObject.default']==piq_one]
+    data['new_index']=np.arange(0,len(data))
+    data.set_index('new_index', inplace=True)
+    if data.loc[0,'lat']==0:
+        pass
+    else:
+        st.map(data,latitude='lat',longitude='long',zoom=8)
     col1, col2 = st.columns(2)
     with col1:
-        st.button(':heavy_plus_sign:',on_click=increment_counter)
-        piq_one = st.selectbox(label='',options=data['resourceTitleObject.default'], index=st.session_state.count)
-        data = data[data['resourceTitleObject.default']==piq_one]
-        data['new_index']=np.arange(0,len(data))
-        data.set_index('new_index', inplace=True)
+        st.metric(label='Date', value=str(data.loc[0,'Date']))
+        st.metric(label='Format', value=str(data.loc[0,'format']))
+        st.metric(label='Organisation', value=str(data.loc[0,'Org']))
+        st.metric(label="Contrainte d'accès", value=str(data.loc[0,'cl_accessConstraints.default']))
+        st.metric(label='Thématique générale', value=str(data.loc[0,'cl_topic.default']))
 
-        st.table(data['Date'])
-        st.table(data['uuid'])
-        st.table(data['format'])
-        st.table(data['cl_status.default'])
-        st.table(data['Org'])
-        st.table(data['groupPublished'])
-        st.table(data['cl_accessConstraints.default'])
-        st.table(data['cl_useConstraints.default'])
-        st.table(data['cl_hierarchyLevel.default'])
-        st.table(data['cl_topic.default'])
     with col2:
-        st.button('reset',on_click=reset_counter)
+        st.metric(label='Identifiant', value=str(data.loc[0,'uuid']))
+        st.metric(label='Status', value=str(data.loc[0,'cl_status.default']))
+        st.metric(label='Distributeur', value=str(data.loc[0,'groupPublished']))
+        st.metric(label="Contrainte d'usage", value=str(data.loc[0,'cl_useConstraints.default']))
 
       
     data_to_show = data.copy()
