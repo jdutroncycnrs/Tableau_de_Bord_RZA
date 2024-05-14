@@ -23,12 +23,11 @@ st.title("Analyse des catalogues de cat.InDoRes")
 
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar']
 
-Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
-
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
-
 if all_ZAs==True:
     Selection_ZA = liste_ZAs
+else:
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
 
 if len(Selection_ZA)>0:
     Selection_ZA_str = Selection_ZA[0]
@@ -549,7 +548,7 @@ else:
     ########### MOTS CLES #################
 
     data_mots_cles = data[['Date','mot_clés']][data.Year >= selection_dates]
-    data_mots_cles['new_index']=np.arange(0,len(data))
+    data_mots_cles['new_index']=np.arange(0,len(data_mots_cles))
     data_mots_cles.set_index('new_index', inplace=True)
     liste_mots_cles_generale = []
     for i in range(len(data_mots_cles)):
