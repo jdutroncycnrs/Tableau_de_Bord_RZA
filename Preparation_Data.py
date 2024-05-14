@@ -46,27 +46,43 @@ data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=T
 ########################################################################
 
 #########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
+data_mots_cles = data.copy()
 
-data_ =data.drop(columns=['Date','location','Org',"resourceTitleObject.default",'uuid','format','recordOwner'])
+data_mots_cles.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','popularity','location','Org','format','uuid','recordOwner'], inplace=True)
+l_to_supp = []
 
-liste_columns_data = data_.columns.values
-print(liste_columns_data)
+liste_tagNumber_bis = []
+for i,x in enumerate(data_mots_cles.columns):
+    if 'Number' in data_mots_cles.columns[i]:
+        liste_tagNumber_bis.append(x)
+data_mots_cles.drop(columns=liste_tagNumber_bis, inplace=True)
+for j in range(len(data_mots_cles)):
+    try:
+        data_mots_cles.loc[j,'mot_clés']=data_mots_cles.loc[j,data_mots_cles.columns[0]]
+        try:
+            for c in range(1,len(data_mots_cles.columns)):
+                data_mots_cles.loc[j,'mot_clés'] +=',' + data_mots_cles.loc[j,data_mots_cles.columns[c]].replace('^',' ')
+        except:
+            pass
+    except:
+        pass
+print(len(data_mots_cles.columns))
 
-for c in liste_columns_data:
-    for i in range(len(data_)):
-        l = data_.loc[i,c]
-        data_.loc[i,c] = re.split(',',l)
+data_ = pd.concat([data,data_mots_cles['mot_clés']],axis=1)
 
-data_.to_csv('temp/data')
+print(data_.head())
 
-data2 = pd.read_csv('temp/data')
-data2.drop(columns=['Unnamed: 0'], inplace=True)
+##############################################################################################################################
 
-liste_index= data2.index.values
-liste_columns_data2 = data2.columns.values
-data_bis = pd.DataFrame(index=liste_index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar'])
+data_to_filter =data_[['groupPublished','mot_clés']]
 
-rechercheZAA = [' zaa']
+data_to_filter['filtre']=data_to_filter['groupPublished']+data_to_filter['mot_clés']
+df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar'])
+data_bis = pd.concat([data_to_filter,df],axis=1)
+
+print(re.split(',',data_bis.loc[0,'filtre'])[0])
+
+rechercheZAA = ['zaa']
 rechercheZAAJ = ['zaaj']
 rechercheZAAR = ['zaar']
 rechercheZAEU = ['zaeu']
@@ -77,61 +93,59 @@ rechercheZABR = ['zabr']
 rechercheZAL = ['zal']
 rechercheZAPygar = ['zapygar']
 
-for c in liste_columns_data2:
-    for i in range(len(data2)):
-        lis = data2.loc[i,c]
-        for u in rechercheZAA:
-            if u in lis:
-                data_bis.loc[i,'ZAA']=1
-            else:
-                pass
-        for u in rechercheZAAJ:
-            if u in lis:
-                data_bis.loc[i,'ZAAJ']=1
-            else:
-                pass
-        for u in rechercheZAAR:
-            if u in lis:
-                data_bis.loc[i,'ZAAR']=1
-            else:
-                pass
-        for u in rechercheZAEU:
-            if u in lis:
-                data_bis.loc[i,'ZAEU']=1
-            else:
-                pass
-        for u in rechercheZAS:
-            if u in lis:
-                data_bis.loc[i,'ZAS']=1
-            else:
-                pass
-        for u in rechercheZAM:
-            if u in lis:
-                data_bis.loc[i,'ZAM']=1
-            else:
-                pass
-        for u in rechercheZABRI:
-            if u in lis:
-                data_bis.loc[i,'ZABRI']=1
-            else:
-                pass
-        for u in rechercheZABR:
-            if u in lis:
-                data_bis.loc[i,'ZABR']=1
-            else:
-                pass
-        for u in rechercheZAL:
-            if u in lis:
-                data_bis.loc[i,'ZAL']=1
-            else:
-                pass
-        for u in rechercheZAPygar:
-            if u in lis:
-                data_bis.loc[i,'ZAPygar']=1
-            else:
-                pass
 
-data_bis.to_csv('temp/data_bis')
+for i in range(len(data_bis)):
+    lis = re.split(',',data_bis.loc[i,'groupPublished'])
+    for u in lis:
+        if u.strip().lower() in rechercheZAA:
+            data_bis.loc[i,'ZAA']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAAJ:
+            data_bis.loc[i,'ZAAJ']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAAR:
+            data_bis.loc[i,'ZAAR']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAEU:
+            data_bis.loc[i,'ZAEU']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAS:
+            data_bis.loc[i,'ZAS']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAM:
+            data_bis.loc[i,'ZAM']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZABRI:
+            data_bis.loc[i,'ZABRI']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZABR:
+            data_bis.loc[i,'ZABR']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAL:
+            data_bis.loc[i,'ZAL']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAPygar:
+            data_bis.loc[i,'ZAPygar']=1
+        else:
+            pass
 
 print('ZAA:',len(data_bis['ZAA'][data_bis['ZAA']==1]))
 print('ZAAJ:',len(data_bis['ZAAJ'][data_bis['ZAAJ']==1]))
@@ -224,6 +238,20 @@ for i in range(len(dat)):
             dat.loc[i,'format']='jpeg'
         if dat.loc[i,'format']=='application/pdf':
             dat.loc[i,'format']='pdf'
+        if dat.loc[i,'format']=='application/vndms-xls':
+            dat.loc[i,'format']='xls'
+        if dat.loc[i,'format']=='application/msword':
+            dat.loc[i,'format']='doc'
+        if dat.loc[i,'format']=='application/vndopenxmlformats-officedocumentspreadsheetmlsheet':
+            dat.loc[i,'format']='xls'
+        if dat.loc[i,'format']=='application/x-shapefile':
+            dat.loc[i,'format']='esri shapefile'
+        if dat.loc[i,'format']=='application/vndoasisopendocumenttext':
+            dat.loc[i,'format']='doc'
+        if dat.loc[i,'format']=='application/vndgoogle-earthkml+xml':
+            dat.loc[i,'format']='autre'
+        if dat.loc[i,'format']=='application/vndfddsnmseed':
+            dat.loc[i,'format']='autre'
     except:
         pass
 
@@ -342,26 +370,11 @@ for i in range(len(dat)):
     if dat.loc[i,'cl_status.default']=='underdevelopment':
         dat.loc[i,'cl_status.default']='under development'
 
-liste_thematiques = []
-for i in range(len(dat)):
-    try:
-        l = dat.loc[i,'cl_topic.default']
-        liste_thematiques.append(re.split(',',l.lower()))
-    except:
-        pass
 
-data_ter = pd.DataFrame(index=liste_index,columns=['cl_topic'])
-for i in range(len(data_ter)):
-    data_ter.loc[i,'cl_topic']=liste_thematiques[i]
+for i,x in enumerate(dat.columns):
+    if 'Number' in dat.columns[i]:
+            for u in range(len(dat)):
+                if dat.loc[u,dat.columns[i]]=="0":
+                    dat.loc[u,dat.columns[i]]="-"
 
-dat_ = pd.concat([dat,data_ter], axis=1)
-
-print(dat_.loc[0,'cl_topic'][0])
-
-for i,x in enumerate(dat_.columns):
-    if 'Number' in dat_.columns[i]:
-            for u in range(len(dat_)):
-                if dat_.loc[u,dat_.columns[i]]=="0":
-                    dat_.loc[u,dat_.columns[i]]="-"
-
-dat_.to_csv(f"pages/data/{fichier}_ready.csv")
+dat.to_csv(f"pages/data/{fichier}_ready.csv")

@@ -5,6 +5,7 @@ from datetime import datetime
 import re
 import plotly.express as px
 import plotly.graph_objects as go
+import time
 pd.options.mode.chained_assignment = None
 
 ########### TITRE DE L'ONGLET ######################################
@@ -168,7 +169,7 @@ if piq_one_check==True:
         st.map(data,latitude='lat',longitude='long',zoom=8)
       
     data_to_show = data.copy()
-    data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','cl_topic','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
+    data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
     l_to_supp = []
     for i,x in enumerate(data_to_show.columns):
         if data_to_show.loc[0,x]=='-':
@@ -182,7 +183,20 @@ if piq_one_check==True:
     data_to_show.drop(columns=liste_tagNumber_bis, inplace=True)
     liste_ZAs_bis =liste_ZAs.copy()
     data_to_show.drop(columns=liste_ZAs_bis, inplace=True)
-    st.dataframe(data_to_show)
+    try:
+        data_to_show['mot_clés']=data_to_show.loc[0,data_to_show.columns[0]]
+        try:
+            for c in range(1,len(data_to_show.columns)):
+                data_to_show['mot_clés'] +=',' + data_to_show.loc[0,data_to_show.columns[c]]
+        except:
+            pass
+
+        l= re.split(',', data_to_show.loc[0,'mot_clés'])
+        l2 = list(set(l))
+        for i in range(len(l2)):
+            st.metric(label=f'mot clé {i+1}', value=l2[i])
+    except:
+        pass
 
 else:
 
@@ -531,3 +545,39 @@ else:
             st.plotly_chart(fig7)
 
         st.markdown('Matrice filtrée à 15 mots clés maxi (et 1% des cas (outliers) sont absents)')
+
+    ########### MOTS CLES #################
+
+    data_mots_cles = data[['Date','mot_clés']][data.Year >= selection_dates]
+    data_mots_cles['new_index']=np.arange(0,len(data))
+    data_mots_cles.set_index('new_index', inplace=True)
+    liste_mots_cles_generale = []
+    for i in range(len(data_mots_cles)):
+        li = re.split(',',data_mots_cles.loc[i,'mot_clés'])
+        for lii in li:
+            if lii != '-':
+                liste_mots_cles_generale.append(lii.strip().lower())
+        
+    liste_mots_cles_generale_ = list(set(liste_mots_cles_generale))
+    
+    st.metric(label='Nombre de mots clés dans la sélection filtrée :', value=len(liste_mots_cles_generale))
+    st.metric(label='Nombre de mots clés différents dans la sélection filtrée :', value=len(liste_mots_cles_generale_))
+
+    with st.spinner('Les mots clés les plus fréquemment utilisés arrivent dans un instant...'):
+
+        dico = {}
+        for mot in liste_mots_cles_generale:
+            dico[mot]=liste_mots_cles_generale.count(mot)
+        
+        df_mots_cles = pd.DataFrame(list(dico.items()),columns=['mot clé','compte'])
+        df_mots_cles.sort_values(by='compte',ascending=False, inplace=True)
+
+        fig8 = go.Figure()
+        fig8.add_trace(go.Bar( 
+            x=df_mots_cles['mot clé'].head(20),
+            y=df_mots_cles['compte'].head(20)))
+        fig8.update_layout(
+                        title='Mots clés les plus fréquents',
+                        width=1000,
+                        height=500)
+        st.plotly_chart(fig8)
