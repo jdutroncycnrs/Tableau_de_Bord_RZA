@@ -343,7 +343,7 @@ else:
         with row3[0]:
 
             data_format = data['format'][data.Year >= selection_dates]
-            cnt = data_format.value_counts()[0:9]
+            cnt = data_format.value_counts()[0:6]
             somme_formats_vis = cnt.values.sum()
             
             colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red','blue']
@@ -417,6 +417,7 @@ else:
     with st.container(border=True):
         data_pop = data.copy()
         data_pop_ = data_pop[data_pop.Year >= selection_dates]
+        m = max(data_pop_['popularity'])
         fig5 = go.Figure()
         if len(Selection_ZA)!=0:
             for za in Selection_ZA:
@@ -443,7 +444,7 @@ else:
                 width=1000,
                 height=500)
         st.plotly_chart(fig5)
-        st.markdown(f"La popularité la plus élevée = {max(data_pop_['popularity'])}" )
+        st.markdown(f"La popularité la plus élevée = {m}" )
 
 
     with st.container(border=True):

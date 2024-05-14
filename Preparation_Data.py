@@ -252,6 +252,8 @@ for i in range(len(dat)):
             dat.loc[i,'format']='autre'
         if dat.loc[i,'format']=='application/vndfddsnmseed':
             dat.loc[i,'format']='autre'
+        if dat.loc[i,'format']=='orthophotos et orthomosaïques = geotiff images individuelles rvb = jpeg ; irt = tiff':
+            dat.loc[i,'format']='geotiff'
     except:
         pass
 
