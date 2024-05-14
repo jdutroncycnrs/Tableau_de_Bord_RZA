@@ -415,6 +415,37 @@ else:
             st.plotly_chart(fig_)
 
     with st.container(border=True):
+        data_topics = data[['Date','cl_topic.default']][data.Year >= selection_dates]
+        data_topics['new_index']=np.arange(0,len(data_topics))
+        data_topics.set_index('new_index', inplace=True)
+        liste_topics = []
+        for i in range(len(data_topics)):
+            lti = re.split(',',data_topics.loc[i,'cl_topic.default'])
+            for j in lti:
+                liste_topics.append(j.strip().lower() )
+
+        liste_topics_ =list(set(liste_topics))
+        dico_topics = {}
+        for top in liste_topics:
+            dico_topics[top]=liste_topics.count(top)
+                
+        df_topics = pd.DataFrame(list(dico_topics.items()),columns=['topics','compte'])
+        df_topics_ = df_topics.T
+
+        fig9 = go.Figure()
+        fig9.add_trace(go.Heatmap(
+            x=df_topics_.loc['topics', :].values,
+            z=df_topics_,
+            colorscale='bluered_r'))
+        fig9.update_yaxes(visible=False,range=[0.9, 1.1])
+        fig9.update_xaxes(tickangle=45)
+        fig9.update_layout(
+            title='Occurence des Thématiques',
+                width=1000,
+                height=500)
+        st.plotly_chart(fig9,use_container_width=True)
+
+    with st.container(border=True):
         data_pop = data.copy()
         data_pop_ = data_pop[data_pop.Year >= selection_dates]
         m = max(data_pop_['popularity'])
