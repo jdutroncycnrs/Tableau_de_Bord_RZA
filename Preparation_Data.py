@@ -324,6 +324,24 @@ for i in range(len(dat)):
     if dat.loc[i,'cl_useConstraints.default']=='-':
         dat.loc[i,'cl_useConstraints.default']='non renseigné'
 
+for i in range(len(dat)):
+    l = dat.loc[i,'cl_useConstraints.default']
+    dat.loc[i,'cl_useConstraints.default']=re.split(',',l)[0].strip().lower()
+    if dat.loc[i,'cl_useConstraints.default']=='license':
+        dat.loc[i,'cl_useConstraints.default']='licence'
+    if dat.loc[i,'cl_useConstraints.default']=='license_ use:licence cc-by':
+        dat.loc[i,'cl_useConstraints.default']='licence cc-by'
+    if dat.loc[i,'cl_useConstraints.default']=='otherrestictions':
+        dat.loc[i,'cl_useConstraints.default']='other restrictions'
+
+for i in range(len(dat)):
+    l = dat.loc[i,'cl_status.default']
+    dat.loc[i,'cl_status.default']=re.split(',',l)[0].strip().lower()
+    if dat.loc[i,'cl_status.default']=='-':
+        dat.loc[i,'cl_status.default']='non renseigné'
+    if dat.loc[i,'cl_status.default']=='underdevelopment':
+        dat.loc[i,'cl_status.default']='under development'
+
 liste_thematiques = []
 for i in range(len(dat)):
     try:

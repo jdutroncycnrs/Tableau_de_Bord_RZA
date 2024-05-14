@@ -168,7 +168,7 @@ if piq_one_check==True:
         st.map(data,latitude='lat',longitude='long',zoom=8)
       
     data_to_show = data.copy()
-    data_to_show.drop(columns=['cl_topic.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','cl_topic','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
+    data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','cl_topic','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
     l_to_supp = []
     for i,x in enumerate(data_to_show.columns):
         if data_to_show.loc[0,x]=='-':
@@ -181,8 +181,8 @@ if piq_one_check==True:
             liste_tagNumber_bis.append(x)
     data_to_show.drop(columns=liste_tagNumber_bis, inplace=True)
     liste_ZAs_bis =liste_ZAs.copy()
-    data_to_show.drop(columns=liste_ZAs_bis, inplace=True)  
-    st.table(data_to_show)
+    data_to_show.drop(columns=liste_ZAs_bis, inplace=True)
+    st.dataframe(data_to_show)
 
 else:
 
@@ -373,18 +373,33 @@ else:
             st.markdown(f'Pour {somme_orga_vis} enregistrements/{nb_enregistrements}')
 
     with st.container(border=True):
-        
-        data_useC = data['cl_useConstraints.default'][data.Year >= selection_dates]
-        cnt_useC = data_useC.value_counts()
-        fig = go.Figure()
-        fig.add_trace(go.Pie(labels=cnt_useC.index.values, values=cnt_useC.values))
-        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-        fig.update_layout(
-                title="Contraintes d'usage",
-                width=500,
-                height=500)
-        st.plotly_chart(fig, use_container_width=True)
+        row4 = st.columns([0.7,0.3])
+        with row4[0]:
+            data_useC = data['cl_useConstraints.default'][data.Year >= selection_dates]
+            cnt_useC = data_useC.value_counts()
+            fig = go.Figure()
+            fig.add_trace(go.Pie(labels=cnt_useC.index.values, values=cnt_useC.values))
+            fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                        marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig.update_layout(
+                    title="Contraintes d'usage",
+                    width=500,
+                    height=500)
+            st.plotly_chart(fig, use_container_width=True)
+
+        with row4[1]:
+            data_status = data['cl_status.default'][data.Year >= selection_dates]
+            cnt_status = data_status.value_counts()
+            cnt_status_df = pd.DataFrame(cnt_status)
+            fig_ = go.Figure()
+            fig_.add_trace(go.Table(cells=dict(values=[cnt_status_df.index.values ,cnt_status_df.values],
+                                               fill_color='grey',
+                                               line_color='white')))
+            fig_.update_layout(
+                    title="Status",
+                    width=300,
+                    height=500)
+            st.plotly_chart(fig_)
 
     with st.container(border=True):
         data_pop = data.copy()
