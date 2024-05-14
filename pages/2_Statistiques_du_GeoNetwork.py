@@ -562,21 +562,23 @@ else:
     st.metric(label='Nombre de mots clés dans la sélection filtrée :', value=len(liste_mots_cles_generale))
     st.metric(label='Nombre de mots clés différents dans la sélection filtrée :', value=len(liste_mots_cles_generale_))
 
-    with st.spinner('Les mots clés les plus fréquemment utilisés arrivent dans un instant...'):
 
-        dico = {}
-        for mot in liste_mots_cles_generale:
-            dico[mot]=liste_mots_cles_generale.count(mot)
-        
-        df_mots_cles = pd.DataFrame(list(dico.items()),columns=['mot clé','compte'])
-        df_mots_cles.sort_values(by='compte',ascending=False, inplace=True)
+    if st.button('Cliquez pour voir les mots les plus utilisés'):
+        with st.spinner('On vous concocte ça rapidement...'):
 
-        fig8 = go.Figure()
-        fig8.add_trace(go.Bar( 
-            x=df_mots_cles['mot clé'].head(20),
-            y=df_mots_cles['compte'].head(20)))
-        fig8.update_layout(
-                        title='Mots clés les plus fréquents',
-                        width=1000,
-                        height=500)
-        st.plotly_chart(fig8)
+            dico = {}
+            for mot in liste_mots_cles_generale:
+                dico[mot]=liste_mots_cles_generale.count(mot)
+            
+            df_mots_cles = pd.DataFrame(list(dico.items()),columns=['mot clé','compte'])
+            df_mots_cles.sort_values(by='compte',ascending=False, inplace=True)
+
+            fig8 = go.Figure()
+            fig8.add_trace(go.Bar( 
+                x=df_mots_cles['mot clé'].head(20),
+                y=df_mots_cles['compte'].head(20)))
+            fig8.update_layout(
+                            title='Mots clés les plus fréquents',
+                            width=1000,
+                            height=500)
+            st.plotly_chart(fig8)
