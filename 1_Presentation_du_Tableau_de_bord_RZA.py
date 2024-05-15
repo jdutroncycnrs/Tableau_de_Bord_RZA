@@ -24,14 +24,19 @@ with col2:
 
 
 ########### TITRE DE BIENVENUE #####################################
-st.title('Bienvenue sur le Tableau de Bord')
+tit = 'Bienvenue sur le Tableau de Bord'
+s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
+st.markdown(s_tit,unsafe_allow_html=True)
+
 st.title(':green[Science Ouverte du RZA]')
 
-"""
-Tableau de bord du réseau des zones ateliers:
-- Visualisation des indicateurs du Geonetwork
+soustext = """Tableau de bord du réseau des zones ateliers:\n
+- Visualisation des indicateurs du Geonetwork\n
 - Visualisation des indicateurs du Dataverse
 """
+s_soustext= f"<p style='font-size:25px;color:rgb(140,140,140)'>{soustext}</p>"
+st.markdown(s_soustext,unsafe_allow_html=True)
+
 ########## NUAGE DE MOTS ###########################################
 Nuage_mots = Image.open("nuage-de-mots.png")
 left_co,center_co,last_co = st.columns(3)
