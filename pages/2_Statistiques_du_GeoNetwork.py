@@ -165,22 +165,7 @@ piq_one_check = st.sidebar.checkbox("Selection d'un enregistrement unique")
 
 date_fichier = st.sidebar.markdown(f'Le fichier utilisé : {fichier}')
 
-data_bis =data.copy()
-data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
-data_bis.set_index('Date', inplace=True)
 
-data_resampled =data_bis.resample(rule="3D").size()
-liste_dates = data_resampled.index.values
-liste_comptes = data_resampled.values
-
-df = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_mensuel']).T
-df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
-for i in range(len(df)):
-    df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
-
-start_date_year = data['Year'].iloc[0]-1
-end_date_year = data['Year'].iloc[-1]
-data_maps = data.copy()
 
 ###################################### VISUALISATION #################################################
 
@@ -226,7 +211,7 @@ if piq_one_check==True:
     if data.loc[0,'lat']==0:
         pass
     else:
-        st.map(data,latitude='lat',longitude='long',zoom=8,color='#ebbe31')
+        st.map(data,latitude='lat',longitude='long',zoom=8,color='#FEBB5F')
       
     data_to_show = data.copy()
     data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
@@ -258,7 +243,24 @@ if piq_one_check==True:
     except:
         pass
 
-else:
+elif len(data)!=0:
+
+    data_bis =data.copy()
+    data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
+    data_bis.set_index('Date', inplace=True)
+
+    data_resampled =data_bis.resample(rule="3D").size()
+    liste_dates = data_resampled.index.values
+    liste_comptes = data_resampled.values
+
+    df = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_mensuel']).T
+    df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
+    for i in range(len(df)):
+        df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
+
+    start_date_year = data['Year'].iloc[0]-1
+    end_date_year = data['Year'].iloc[-1]
+    data_maps = data.copy()
 
     st1 = 'Evolution temporelle'
     s_st1 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st1}</p>"
@@ -317,7 +319,7 @@ else:
                 x=df['Date'][df.Year >= selection_dates],
                 y=df['Compte_mensuel'][df.Year >= selection_dates]
             ))
-            fig2.update_traces(marker_color='#ebbe31', marker_line_color='#ebbe31',
+            fig2.update_traces(marker_color='#FEBB5F', marker_line_color='#FEBB5F',
                   marker_line_width=3)
             fig2.update_layout(
                 title='Cumul hebdomadaire des enregistrements',
@@ -361,7 +363,7 @@ else:
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{sline}</style></span></p>"""
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-            st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1,color='#ebbe31')
+            st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1,color='#FEBB5F')
         with row2[1]:
             nb_enregistrements_avec_localisation = len(data[data.Year >= selection_dates])
             data_mappees = data[data['lat']>40]
@@ -395,7 +397,7 @@ else:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#ebbe31')
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
 
             elif len(Selection_OHM)>0:
                 zoom = zoom_france
@@ -425,7 +427,7 @@ else:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#ebbe31')
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
             else:
                 pass
 
@@ -440,7 +442,7 @@ else:
             cnt = data_format.value_counts()[0:6]
             somme_formats_vis = cnt.values.sum()
             
-            colors = ['yellow', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red','blue']
+            colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 
             fig3 = go.Figure()
             fig3.add_trace(go.Pie(labels=cnt.index.values, values=cnt.values))
@@ -458,7 +460,7 @@ else:
         with row3[1]:
 
             data_orga = data['Org'][data.Year >= selection_dates]
-            cnt_orga = data_orga.value_counts()[1:10]
+            cnt_orga = data_orga.value_counts()[0:10]
             somme_orga_vis = cnt_orga.values.sum()
             
             fig4 = go.Figure()
@@ -469,6 +471,7 @@ else:
                         x=cnt_orga_.values,
                         orientation='h',
                         showlegend=False,
+                        marker=dict(color=colors[i])
                         ))
             fig4.update_layout(
                 title='Organisations publiantes',
@@ -500,7 +503,7 @@ else:
             fig_ = go.Figure()
             fig_.add_trace(go.Table(cells=dict(values=[cnt_status_df.index.values ,cnt_status_df.values],
                                                #fill_color='lightgrey',
-                                               line_color='yellow')))
+                                               line_color='#FEBB5F')))
             fig_.update_layout(
                     title="Status",
                     width=300,
@@ -529,7 +532,10 @@ else:
         fig9.add_trace(go.Heatmap(
             x=df_topics_.loc['topics', :].values,
             z=df_topics_,
-            colorscale='viridis'))
+            colorscale='solar',
+            text=df_topics_,
+            texttemplate="%{text}",
+            textfont={"size":10}))
         fig9.update_yaxes(visible=False,range=[0.9, 1.1])
         fig9.update_xaxes(tickangle=45)
         fig9.update_layout(
@@ -544,7 +550,7 @@ else:
         m = max(data_pop_['popularity'])
         fig5 = go.Figure()
         if len(Selection_ZA)!=0:
-            for za in Selection_ZA:
+            for i,za in enumerate(Selection_ZA):
                 fig5.add_trace(go.Histogram(
                     x=data_pop_['popularity'][data_pop_[za]==1],
                     name=za,
@@ -552,10 +558,10 @@ else:
                         start=-0.0,
                         end=80.0,
                         size=0.5),
-                    
+                    marker_color=colors[i]
         ))
         elif len(Selection_OHM)!=0:
-            for ohm in Selection_OHM:
+            for i, ohm in enumerate(Selection_OHM):
                 fig5.add_trace(go.Histogram(
                     x=data_pop_['popularity'][data_pop_[ohm]==1],
                     name=ohm,
@@ -563,6 +569,7 @@ else:
                         start=-0.0,
                         end=80.0,
                         size=0.5),
+                    marker_color=colors[i]
         ))
         else:
             fig5.add_trace(go.Histogram(
@@ -572,7 +579,7 @@ else:
                         start=-0.0,
                         end=80.0,
                         size=0.5),
-                    marker_color='#ebbe31'))
+                    marker_color='#FEBB5F'))
         fig5.update_layout(
                 title='Popularité des enregistrements',
                 yaxis_title='Nombre',
@@ -587,22 +594,24 @@ else:
         data_tagNumber_ = data_tagNumber[data_tagNumber.Year >= selection_dates]
         fig6 = go.Figure()
         if len(Selection_ZA)!=0:
-            for za in Selection_ZA:
+            for i, za in enumerate(Selection_ZA):
                 fig6.add_trace(go.Box(
                     y=data_tagNumber_['tagNumber'][data_tagNumber_[za]==1],
-                    name=za
+                    name=za,
+                    marker_color=colors[i]
                 ))
         elif len(Selection_OHM)!=0:
-            for ohm in Selection_OHM:
+            for i, ohm in enumerate(Selection_OHM):
                 fig6.add_trace(go.Box(
                     y=data_tagNumber_['tagNumber'][data_tagNumber_[ohm]==1],
-                    name=ohm
+                    name=ohm,
+                    marker_color=colors[i]
                 ))
         else:
             fig6.add_trace(go.Box(
                     y=data_tagNumber_['tagNumber'],
                     name='Tout les enregistrements',
-                    marker_color='#ebbe31'
+                    marker_color='#FEBB5F'
                 ))
         fig6.update_layout(
                 title='Nombre de mots clés',
@@ -643,7 +652,7 @@ else:
             fig7.add_trace(go.Heatmap(
                 x=liste_columns,
                 z=data_numbers,
-                colorscale = 'Viridis',
+                colorscale = 'solar',
                 #text=data_numbers,
                 #texttemplate="%{text}",
                 #textfont={"size":20}
@@ -659,7 +668,7 @@ else:
             fig7.add_trace(go.Heatmap(
                 x=liste_columns,
                 z=data_numbers,
-                colorscale = 'Viridis'
+                colorscale = 'solar'
                 #text=data_numbers,
                 #texttemplate="%{text}",
                 #textfont={"size":10}
@@ -675,7 +684,7 @@ else:
             fig7.add_trace(go.Heatmap(
                 x=liste_columns,
                 z=data_numbers,
-                colorscale = 'Viridis'
+                colorscale = 'solar'
                 #text=data_numbers,
                 #texttemplate="%{text}",
                 #textfont={"size":10}
@@ -720,10 +729,12 @@ else:
             fig8.add_trace(go.Bar( 
                 x=df_mots_cles['mot clé'].head(20),
                 y=df_mots_cles['compte'].head(20)))
-            fig8.update_traces(marker_color='#ebbe31', marker_line_color='#ebbe31',
+            fig8.update_traces(marker_color='#FEBB5F', marker_line_color='#FEBB5F',
                   marker_line_width=3)
             fig8.update_layout(
                             title='Mots clés les plus fréquents',
                             width=1000,
                             height=500)
             st.plotly_chart(fig8)
+else:
+    st.write("Il n'y a aucune donnée à visualiser")

@@ -433,6 +433,8 @@ for i in range(len(dat)):
             dat.loc[i,'Org']='zaa'
         if dat.loc[i,'Org']=="direction régionale de l’environnement de l’aménagement et du logement d'auvergne-rhône-alpes (dreal auvergne-rhône-alpes)" :
             dat.loc[i,'Org']='dreal'
+        if dat.loc[i,'Org']=="asters - cen 74" :
+            dat.loc[i,'Org']='asters cen 74'
     except:
         pass
 
