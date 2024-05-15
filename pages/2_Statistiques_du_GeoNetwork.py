@@ -28,19 +28,15 @@ all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True:
     Selection_ZA = liste_ZAs
 else:
-    labZA = 'visible'
-    labOHM = 'visible'
-    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs, label_visibility=labZA)
-    Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs,label_visibility=labOHM)
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+    Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs)
 
 if len(Selection_ZA)>0:
-    labOHM = 'hidden'
     Selection_ZA_str = Selection_ZA[0]
     for i in range(1,len(Selection_ZA)):
         Selection_ZA_str+="+" + Selection_ZA[i]
 
 if len(Selection_OHM)>0:
-    labZA = 'hidden'
     Selection_OHM_str = Selection_OHM[0]
     for i in range(1,len(Selection_OHM)):
         Selection_OHM_str+="+" + Selection_OHM[i]
