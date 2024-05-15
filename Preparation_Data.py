@@ -77,7 +77,7 @@ print(data_.head())
 data_to_filter =data_[['groupPublished','mot_clés']]
 
 data_to_filter['filtre']=data_to_filter['groupPublished']+data_to_filter['mot_clés']
-df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar','OHM_BMP'])
+df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar','OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim'])
 data_bis = pd.concat([data_to_filter,df],axis=1)
 
 print(re.split(',',data_bis.loc[0,'filtre'])[0])
@@ -93,7 +93,18 @@ rechercheZABR = ['zabr']
 rechercheZAL = ['zal']
 rechercheZAPygar = ['zapygar']
 rechercheOHMbmp = ['ohm_bmp']
-
+rechercheOHMITES = ['ohmi_tes']
+rechercheOHMHV = ['ohm_hv']
+rechercheOHMVR = ['ohm_vr']
+rechercheOHMIPIC = ['ohmi_pic']
+rechercheOHMIEST = ['ohmi_est']
+rechercheOHMLM = ['ohm_lm']
+rechercheOHMOY = ['ohm_oyapock']
+rechercheOHMINUN = ['ohmi_nun']
+rechercheOHMCAR = ['ohm_car']
+rechercheOHMPDB = ['ohm_pdb']
+rechercheOHMIPata = ['ohmi_pata']
+rechercheOHMFES = ['ohm_fes']
 
 for i in range(len(data_bis)):
     lis = re.split(',',data_bis.loc[i,'groupPublished'])
@@ -145,9 +156,71 @@ for i in range(len(data_bis)):
     for u in lis:
         if u.strip().lower() in rechercheZAPygar:
             data_bis.loc[i,'ZAPygar']=1
+        else:
+            pass
     for u in lis:
         if u.strip().lower() in rechercheOHMbmp:
-            data_bis.loc[i,'OHM_BMP']=1
+            data_bis.loc[i,'OHM_BMProvence']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMITES:
+            data_bis.loc[i,'OHMI_Tessekere']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMHV:
+            data_bis.loc[i,'OHM_Pyrenees']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMVR:
+            data_bis.loc[i,'OHM_VRhone']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMIPIC:
+            data_bis.loc[i,'OHMI_Pima']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMIEST:
+            data_bis.loc[i,'OHMI_Estarreja']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMLM:
+            data_bis.loc[i,'OHM_Mediterraneen']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMOY:
+            data_bis.loc[i,'OHM_Oyapock']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMINUN:
+            data_bis.loc[i,'OHMI_Nunavik']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMCAR:
+            data_bis.loc[i,'OHM_Caraibes']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMPDB:
+            data_bis.loc[i,'OHM_PDBitche']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMIPata:
+            data_bis.loc[i,'OHMI_Patagonia']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheOHMFES:
+            data_bis.loc[i,'OHM_Fessenheim']=1
         else:
             pass
 
@@ -161,7 +234,19 @@ print('ZABRI:',len(data_bis['ZABRI'][data_bis['ZABRI']==1]))
 print('ZABR:',len(data_bis['ZABR'][data_bis['ZABR']==1]))
 print('ZAL:',len(data_bis['ZAL'][data_bis['ZAL']==1]))
 print('ZAPygar:',len(data_bis['ZAPygar'][data_bis['ZAPygar']==1]))
-print('OHM_BMP:',len(data_bis['OHM_BMP'][data_bis['OHM_BMP']==1]))
+print('OHM_BMProvence',len(data_bis['OHM_BMProvence'][data_bis['OHM_BMProvence']==1]))
+print('OHMI_Tessekere',len(data_bis['OHMI_Tessekere'][data_bis['OHMI_Tessekere']==1]))
+print('OHM_Pyrenees',len(data_bis['OHM_Pyrenees'][data_bis['OHM_Pyrenees']==1]))
+print('OHM_VRhone',len(data_bis['OHM_VRhone'][data_bis['OHM_VRhone']==1]))
+print('OHMI_Pima',len(data_bis['OHMI_Pima'][data_bis['OHMI_Pima']==1]))
+print('OHMI_Estarreja',len(data_bis['OHMI_Estarreja'][data_bis['OHMI_Estarreja']==1]))
+print('OHM_Mediterraneen',len(data_bis['OHM_Mediterraneen'][data_bis['OHM_Mediterraneen']==1]))
+print('OHM_Oyapock',len(data_bis['OHM_Oyapock'][data_bis['OHM_Oyapock']==1]))
+print('OHMI_Nunavik',len(data_bis['OHMI_Nunavik'][data_bis['OHMI_Nunavik']==1]))
+print('OHM_Caraibes',len(data_bis['OHM_Caraibes'][data_bis['OHM_Caraibes']==1]))
+print('OHM_PDBitche',len(data_bis['OHM_PDBitche'][data_bis['OHM_PDBitche']==1]))
+print('OHMI_Patagonia',len(data_bis['OHMI_Patagonia'][data_bis['OHMI_Patagonia']==1]))
+print('OHM_Fessenheim',len(data_bis['OHM_Fessenheim'][data_bis['OHM_Fessenheim']==1]))
 
 dat = pd.concat([data,data_bis], axis=1)
 

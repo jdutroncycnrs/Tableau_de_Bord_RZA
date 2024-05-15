@@ -8,6 +8,7 @@ import plotly.graph_objects as go
 import time
 pd.options.mode.chained_assignment = None
 
+
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
     page_title="Analyse des GN",
@@ -19,14 +20,17 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
-st.title("Analyse des catalogues de cat.InDoRes")
+title = "Analyse des catalogues de cat.InDoRes"
+s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
+st.markdown(s_title,unsafe_allow_html=True)
 
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar']
-liste_OHMs =['OHM_BMP']
+liste_OHMs =['OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim']
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True:
     Selection_ZA = liste_ZAs
+    Selection_OHM = []
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
     Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs)
@@ -105,6 +109,51 @@ elif len(Selection_OHM)==1:
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==2:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==3:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==4:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==5:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==6:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==7:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==8:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==9:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1],dat[dat[Selection_OHM[8]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==10:
+    data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1],dat[dat[Selection_OHM[8]]==1],dat[dat[Selection_OHM[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 else:
     data = dat.copy()
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
@@ -177,7 +226,7 @@ if piq_one_check==True:
     if data.loc[0,'lat']==0:
         pass
     else:
-        st.map(data,latitude='lat',longitude='long',zoom=8)
+        st.map(data,latitude='lat',longitude='long',zoom=8,color='#ebbe31')
       
     data_to_show = data.copy()
     data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
@@ -211,19 +260,21 @@ if piq_one_check==True:
 
 else:
 
-    st.subheader('Evolution temporelle')
+    st1 = 'Evolution temporelle'
+    s_st1 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st1}</p>"
+    st.markdown(s_st1,unsafe_allow_html=True)
     with st.container(border=True):
         row1 = st.columns(2)
 
         with row1[0]:
-            selection_dates = st.slider(':red[Zoomer sur une période plus récente]',min_value=start_date_year,max_value=end_date_year)
+            selection_dates = st.slider(':grey[Zoomer sur une période plus récente]',min_value=start_date_year,max_value=end_date_year)
             nb_enregistrements = len(data[data.Year >= selection_dates])
             fig1 = go.Figure()
             fig1.add_trace(go.Scatter(
                 x=data['Date'][data.Year >= selection_dates], 
                 y=data['Compte_cumulé'][data.Year >= selection_dates],
                 mode='lines+markers',
-                line=dict(color='rgb(240,80,80)', width=1),
+                line=dict(color='#ebbe31', width=1),
                 marker=dict(color='white',size=0.2)))
             fig1.update_layout(
                 title='Cumul dans le temps des enregistrements',
@@ -234,8 +285,8 @@ else:
             st.plotly_chart(fig1)
         
         with row1[1]:
-            wch_colour_box = (250,120,120)
-            wch_colour_font = (250,250,250)
+            wch_colour_box = (250,250,220)
+            wch_colour_font = (90,90,90)
             fontsize = 25
             valign = "right"
             iconname = "fas fa-asterisk"
@@ -266,7 +317,7 @@ else:
                 x=df['Date'][df.Year >= selection_dates],
                 y=df['Compte_mensuel'][df.Year >= selection_dates]
             ))
-            fig2.update_traces(marker_color='rgb(240,100,70)', marker_line_color='rgb(240,80,80)',
+            fig2.update_traces(marker_color='#ebbe31', marker_line_color='#ebbe31',
                   marker_line_width=3)
             fig2.update_layout(
                 title='Cumul hebdomadaire des enregistrements',
@@ -276,14 +327,16 @@ else:
                 height=400)
             st.plotly_chart(fig2)
 
-    st.subheader('Evolution spatiale')
+    st2 = 'Evolution spatiale'
+    s_st2 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st2}</p>"
+    st.markdown(s_st2,unsafe_allow_html=True)
     with st.container(border=True):
         row2 = st.columns(2)
 
         with row2[0]:
             nb_enregistrements_avec_localisation = len(dat)
-            wch_colour_box = (250,120,120)
-            wch_colour_font = (250,250,250)
+            wch_colour_box = (250,250,220)
+            wch_colour_font = (90,90,90)
             fontsize = 25
             valign = "right"
             iconname = "fas fa-asterisk"
@@ -308,7 +361,7 @@ else:
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{sline}</style></span></p>"""
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-            st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1)
+            st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1,color='#ebbe31')
         with row2[1]:
             nb_enregistrements_avec_localisation = len(data[data.Year >= selection_dates])
             data_mappees = data[data['lat']>40]
@@ -316,8 +369,8 @@ else:
             zoom_monde = 1
             if len(Selection_ZA)>0:
                 zoom = zoom_france
-                wch_colour_box = (250,120,120)
-                wch_colour_font = (250,250,250)
+                wch_colour_box = (250,250,220)
+                wch_colour_font = (90,90,90)
                 fontsize = 15
                 valign = "right"
                 iconname = "fas fa-asterisk"
@@ -342,12 +395,12 @@ else:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom)
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#ebbe31')
 
             elif len(Selection_OHM)>0:
                 zoom = zoom_france
-                wch_colour_box = (250,120,120)
-                wch_colour_font = (250,250,250)
+                wch_colour_box = (250,250,100)
+                wch_colour_font = (90,90,90)
                 fontsize = 15
                 valign = "right"
                 iconname = "fas fa-asterisk"
@@ -372,7 +425,7 @@ else:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom)
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#ebbe31')
             else:
                 pass
 
@@ -387,7 +440,7 @@ else:
             cnt = data_format.value_counts()[0:6]
             somme_formats_vis = cnt.values.sum()
             
-            colors = ['gold', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red','blue']
+            colors = ['yellow', 'mediumturquoise', 'darkorange', 'lightgreen','cyan','rose','violet','green','red','blue']
 
             fig3 = go.Figure()
             fig3.add_trace(go.Pie(labels=cnt.index.values, values=cnt.values))
@@ -406,7 +459,6 @@ else:
 
             data_orga = data['Org'][data.Year >= selection_dates]
             cnt_orga = data_orga.value_counts()[1:10]
-            #cnt_orga_bis = data_orga.value_counts()[0:1]
             somme_orga_vis = cnt_orga.values.sum()
             
             fig4 = go.Figure()
@@ -447,8 +499,8 @@ else:
             cnt_status_df = pd.DataFrame(cnt_status)
             fig_ = go.Figure()
             fig_.add_trace(go.Table(cells=dict(values=[cnt_status_df.index.values ,cnt_status_df.values],
-                                               fill_color='grey',
-                                               line_color='white')))
+                                               #fill_color='lightgrey',
+                                               line_color='yellow')))
             fig_.update_layout(
                     title="Status",
                     width=300,
@@ -477,7 +529,7 @@ else:
         fig9.add_trace(go.Heatmap(
             x=df_topics_.loc['topics', :].values,
             z=df_topics_,
-            colorscale='bluered_r'))
+            colorscale='viridis'))
         fig9.update_yaxes(visible=False,range=[0.9, 1.1])
         fig9.update_xaxes(tickangle=45)
         fig9.update_layout(
@@ -499,7 +551,18 @@ else:
                     xbins=dict(
                         start=-0.0,
                         end=80.0,
-                        size=0.5)
+                        size=0.5),
+                    
+        ))
+        elif len(Selection_OHM)!=0:
+            for ohm in Selection_OHM:
+                fig5.add_trace(go.Histogram(
+                    x=data_pop_['popularity'][data_pop_[ohm]==1],
+                    name=ohm,
+                    xbins=dict(
+                        start=-0.0,
+                        end=80.0,
+                        size=0.5),
         ))
         else:
             fig5.add_trace(go.Histogram(
@@ -508,8 +571,8 @@ else:
                     xbins=dict(
                         start=-0.0,
                         end=80.0,
-                        size=0.5
-                )))
+                        size=0.5),
+                    marker_color='#FFFF00'))
         fig5.update_layout(
                 title='Popularité des enregistrements',
                 yaxis_title='Nombre',
@@ -529,10 +592,17 @@ else:
                     y=data_tagNumber_['tagNumber'][data_tagNumber_[za]==1],
                     name=za
                 ))
+        elif len(Selection_OHM)!=0:
+            for ohm in Selection_OHM:
+                fig6.add_trace(go.Box(
+                    y=data_tagNumber_['tagNumber'][data_tagNumber_[ohm]==1],
+                    name=ohm
+                ))
         else:
             fig6.add_trace(go.Box(
                     y=data_tagNumber_['tagNumber'],
-                    name='Tout les enregistrements'
+                    name='Tout les enregistrements',
+                    marker_color='#FFFF00'
                 ))
         fig6.update_layout(
                 title='Nombre de mots clés',
