@@ -22,17 +22,28 @@ st.set_page_config(
 st.title("Analyse des catalogues de cat.InDoRes")
 
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar']
+liste_OHMs =['OHM_BMP']
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True:
     Selection_ZA = liste_ZAs
 else:
-    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+    labZA = 'visible'
+    labOHM = 'visible'
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs, label_visibility=labZA)
+    Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs,label_visibility=labOHM)
 
 if len(Selection_ZA)>0:
+    labOHM = 'hidden'
     Selection_ZA_str = Selection_ZA[0]
     for i in range(1,len(Selection_ZA)):
         Selection_ZA_str+="+" + Selection_ZA[i]
+
+if len(Selection_OHM)>0:
+    labZA = 'hidden'
+    Selection_OHM_str = Selection_OHM[0]
+    for i in range(1,len(Selection_OHM)):
+        Selection_OHM_str+="+" + Selection_OHM[i]
 
 ###################################### LECTURE DATA NETTOYEES #########################################
 fichier= 'Enregistrements_RZA_100524_ready'
@@ -90,6 +101,11 @@ elif len(Selection_ZA)==9:
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==10:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_OHM)==1:
+    data = dat[dat[Selection_OHM[0]]==1]
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
     data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
@@ -332,6 +348,35 @@ else:
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
                 st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom)
 
+            elif len(Selection_OHM)>0:
+                zoom = zoom_france
+                wch_colour_box = (250,120,120)
+                wch_colour_font = (250,250,250)
+                fontsize = 15
+                valign = "right"
+                iconname = "fas fa-asterisk"
+                sline = nb_enregistrements_avec_localisation
+                lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+                i = Selection_OHM_str
+
+                htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 18px; 
+                                        padding-bottom: 18px; 
+                                        line-height:25px;
+                                        text-align:center'>
+                                        <i class='{iconname} fa-xs'></i> {i}
+                                        </style><BR><span style='font-size: 25px; 
+                                        margin-top: 0;'>{sline}</style></span></p>"""
+                st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom)
             else:
                 pass
 

@@ -77,7 +77,7 @@ print(data_.head())
 data_to_filter =data_[['groupPublished','mot_clés']]
 
 data_to_filter['filtre']=data_to_filter['groupPublished']+data_to_filter['mot_clés']
-df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar'])
+df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar','OHM_BMP'])
 data_bis = pd.concat([data_to_filter,df],axis=1)
 
 print(re.split(',',data_bis.loc[0,'filtre'])[0])
@@ -92,6 +92,7 @@ rechercheZABRI = ['zabri']
 rechercheZABR = ['zabr']
 rechercheZAL = ['zal']
 rechercheZAPygar = ['zapygar']
+rechercheOHMbmp = ['ohm_bmp']
 
 
 for i in range(len(data_bis)):
@@ -144,6 +145,9 @@ for i in range(len(data_bis)):
     for u in lis:
         if u.strip().lower() in rechercheZAPygar:
             data_bis.loc[i,'ZAPygar']=1
+    for u in lis:
+        if u.strip().lower() in rechercheOHMbmp:
+            data_bis.loc[i,'OHM_BMP']=1
         else:
             pass
 
@@ -157,6 +161,7 @@ print('ZABRI:',len(data_bis['ZABRI'][data_bis['ZABRI']==1]))
 print('ZABR:',len(data_bis['ZABR'][data_bis['ZABR']==1]))
 print('ZAL:',len(data_bis['ZAL'][data_bis['ZAL']==1]))
 print('ZAPygar:',len(data_bis['ZAPygar'][data_bis['ZAPygar']==1]))
+print('OHM_BMP:',len(data_bis['OHM_BMP'][data_bis['OHM_BMP']==1]))
 
 dat = pd.concat([data,data_bis], axis=1)
 
