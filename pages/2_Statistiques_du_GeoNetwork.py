@@ -720,6 +720,8 @@ else:
             fig8.add_trace(go.Bar( 
                 x=df_mots_cles['mot clé'].head(20),
                 y=df_mots_cles['compte'].head(20)))
+            fig8.update_traces(marker_color='#ebbe31', marker_line_color='#ebbe31',
+                  marker_line_width=3)
             fig8.update_layout(
                             title='Mots clés les plus fréquents',
                             width=1000,
