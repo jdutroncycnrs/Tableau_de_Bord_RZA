@@ -572,7 +572,7 @@ else:
                         start=-0.0,
                         end=80.0,
                         size=0.5),
-                    marker_color='#FFFF00'))
+                    marker_color='#ebbe31'))
         fig5.update_layout(
                 title='Popularité des enregistrements',
                 yaxis_title='Nombre',
@@ -602,7 +602,7 @@ else:
             fig6.add_trace(go.Box(
                     y=data_tagNumber_['tagNumber'],
                     name='Tout les enregistrements',
-                    marker_color='#FFFF00'
+                    marker_color='#ebbe31'
                 ))
         fig6.update_layout(
                 title='Nombre de mots clés',
