@@ -46,7 +46,7 @@ if len(Selection_OHM)>0:
         Selection_OHM_str+="+" + Selection_OHM[i]
 
 ###################################### LECTURE DATA NETTOYEES #########################################
-fichier= 'Enregistrements_RZA_100524_ready'
+fichier= 'Enregistrements_RZA_150524_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)
@@ -193,6 +193,8 @@ if piq_one_check==True:
     data['new_index']=np.arange(0,len(data))
     data.set_index('new_index', inplace=True)
     
+    #st.metric(label='Auteur(e)',value=str(data.loc[0,'contact']))
+
     col1, col2 = st.columns(2)
     with col1:
         st.metric(label='Date', value=str(data.loc[0,'Date']))
@@ -736,5 +738,10 @@ elif len(data)!=0:
                             width=1000,
                             height=500)
             st.plotly_chart(fig8)
+
+############## TEST CONTACT ##############################################################################
+#    data_contacts = data['contact'].unique()
+#   st.table(data_contacts)
+
 else:
     st.write("Il n'y a aucune donnée à visualiser")

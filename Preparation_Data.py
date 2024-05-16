@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-fichier = 'Enregistrements_RZA_100524'
+fichier = 'Enregistrements_RZA_150524'
 data = pd.read_csv(f"pages/data/{fichier}.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 
@@ -470,5 +470,12 @@ for i,x in enumerate(dat.columns):
             for u in range(len(dat)):
                 if dat.loc[u,dat.columns[i]]=="0":
                     dat.loc[u,dat.columns[i]]="-"
+
+for i in range(len(dat)):
+    try:
+        l1 = re.split(':',dat.loc[i,'contact'])[7]
+        dat.loc[i,'contact']=re.split(',',l1)[0].replace('"','').replace('[','').replace(']','')
+    except:
+        pass
 
 dat.to_csv(f"pages/data/{fichier}_ready.csv")
