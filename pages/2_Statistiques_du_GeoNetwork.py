@@ -177,7 +177,7 @@ if piq_one_check==True:
     def reset_counter():
         st.session_state.count = 0
 
-    col01,col02,col03 = st.columns(3)
+    col01,col02,col03 = st.columns([0.8,0.1,0.1])
     with col01:
         piq_one = st.selectbox(label='',options=data['resourceTitleObject.default'], index=st.session_state.count)
     with col02:
