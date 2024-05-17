@@ -28,12 +28,18 @@ liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar
 liste_OHMs =['OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim']
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
-if all_ZAs==True:
+
+
+if all_ZAs==True :
     Selection_ZA = liste_ZAs
     Selection_OHM = []
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
-    Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs)
+    OHMs= st.sidebar.checkbox("Pour filtrer un OHM")
+    if OHMs==False:
+        Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs, disabled=True)
+    else:
+        Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs)
 
 if len(Selection_ZA)>0:
     Selection_ZA_str = Selection_ZA[0]
