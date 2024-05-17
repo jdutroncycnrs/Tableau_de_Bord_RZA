@@ -52,7 +52,7 @@ if len(Selection_OHM)>0:
         Selection_OHM_str+="+" + Selection_OHM[i]
 
 ###################################### LECTURE DATA NETTOYEES #########################################
-fichier= 'Enregistrements_RZA_150524_ready'
+fichier= 'Enregistrements_RZA_100524_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)
@@ -593,7 +593,7 @@ elif len(data)!=0:
                 yaxis_title='Nombre',
                 width=1000,
                 height=500)
-        st.plotly_chart(fig5)
+        st.plotly_chart(fig5,use_container_width=True)
         st.markdown(f"La popularité la plus élevée = {m}" )
 
 
@@ -626,7 +626,7 @@ elif len(data)!=0:
                 yaxis_title='Nombre',
                 width=1000,
                 height=500)
-        st.plotly_chart(fig6)
+        st.plotly_chart(fig6,use_container_width=True)
         
 
         liste_tagNumber = []
@@ -669,7 +669,7 @@ elif len(data)!=0:
                     title='Catégories des mots clés',
                     width=1000,
                     height=500)
-            st.plotly_chart(fig7)
+            st.plotly_chart(fig7,use_container_width=True)
 
         elif len(data_numbers)<750:
             fig7 = go.Figure()
@@ -685,7 +685,7 @@ elif len(data)!=0:
                     title='Catégories des mots clés',
                     width=1000,
                     height=700)
-            st.plotly_chart(fig7)
+            st.plotly_chart(fig7,use_container_width=True)
 
         else:
             fig7 = go.Figure()
@@ -701,7 +701,7 @@ elif len(data)!=0:
                     title='Catégories des mots clés',
                     width=1000,
                     height=1000)
-            st.plotly_chart(fig7)
+            st.plotly_chart(fig7,use_container_width=True)
 
         st.markdown('Matrice filtrée à 15 mots clés maxi (et 1% des cas (outliers) sont absents)')
 
@@ -743,7 +743,7 @@ elif len(data)!=0:
                             title='Mots clés les plus fréquents',
                             width=1000,
                             height=500)
-            st.plotly_chart(fig8)
+            st.plotly_chart(fig8,use_container_width=True)
 
 ############## TEST CONTACT ##############################################################################
 #    data_contacts = data['contact'].unique()
