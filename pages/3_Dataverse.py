@@ -47,12 +47,28 @@ with col2:
     b1 = st.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
 
 fichier = f'tableau_dataverses-{d}.csv'
+if path.exists(f"pages/data/{fichier}"):
+            test = pd.read_csv(f"pages/data/{fichier}")
+
+            fig = px.sunburst(test, path=['niv0','niv1', 'niv2'], values='val')
+            fig.update_layout(
+                title='Visuel des différents Dataverses dans Data.InDoRes',
+                width=1000,
+                height=1000)
+            st.plotly_chart(fig,use_container_width=True)
+else:
+     st.write('Il est nécessaire de mettre à jour vos entrepôts')
+
 if b1==True:
     with st.spinner("Récupération des entrepôts existants"):
         if path.exists(f"pages/data/{fichier}"):
             test = pd.read_csv(f"pages/data/{fichier}")
 
             fig = px.sunburst(test, path=['niv0','niv1', 'niv2'], values='val')
+            fig.update_layout(
+                title='Visuel des différents Dataverses dans Data.InDoRes',
+                width=1000,
+                height=1000)
             st.plotly_chart(fig,use_container_width=True)
         else:
             # On peut aller chercher le contenu du dataverse
@@ -93,6 +109,10 @@ if b1==True:
             df_liste_dataverses_1['Dataverses_niv2']=liste
             df_liste_dataverses_1['Ids_niv2']=ids
             df_liste_dataverses_1.to_csv(f"pages/data/liste_dataverses.csv")
+            
+            df_liste_dataverses_2=pd.DataFrame(data=[liste,ids], index=['Dataverses_niv2','Ids_niv2'])
+            df_liste_dataverses_2=df_liste_dataverses_2.T
+            df_liste_dataverses_2.to_csv(f"pages/data/liste_dataverses2.csv")
 
             data = pd.read_csv(f"pages/data/liste_dataverses.csv")
             data.drop(columns=['Unnamed: 0'], inplace=True)
@@ -113,6 +133,10 @@ if b1==True:
             new_data['niv0']="Data_InDoRes"
             new_data.to_csv(f"pages/data/{fichier}")
             fig = px.sunburst(new_data, path=['niv0','niv1', 'niv2'], values='val')
+            fig.update_layout(
+                title='Visuel des différents Dataverses dans Data.InDoRes',
+                width=1000,
+                height=1000)
             st.plotly_chart(fig,use_container_width=True)
 else:
     new_data = pd.read_csv(f"pages/data/{fichier}")
