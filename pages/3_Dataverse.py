@@ -107,6 +107,7 @@ if b1==True:
                     new_data.loc[i,'niv1']=data.loc[j,'Dataverses_niv1']
                     new_data.loc[i,'ids_niv1']=data.loc[j,'Ids']
                     new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').replace("'",''))[k]
+                    new_data.loc[i,'ids_niv2']=re.split(',',data.loc[j,'Ids_niv2'].replace('[','').replace(']','').replace("'",''))[k]
                     i+=1
             new_data['val']=1
             new_data['niv0']="Data_InDoRes"
