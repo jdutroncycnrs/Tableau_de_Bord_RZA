@@ -73,19 +73,25 @@ if b1==True:
             # A partir de ce tableau, pour chacun des dataverses répertoriés (niv1), on récupère les noms des sous-dataverses (niv2) 
             # On enregistre ces infos dans un csv
             liste = []
+            ids = []
             for i in range(len(df_liste_dataverses_1)):
                 datav = api.get_dataverse_contents(df_liste_dataverses_1.loc[i,'Ids'])
                 datav_dv = datav.json()
                 liste_dataverses_2 = []
+                ids_niv2 = []
                 for d in range(len(datav_dv['data'])):
                     try:
                         if datav_dv['data'][d]['type']=="dataverse":
                             liste_dataverses_2.append(datav_dv['data'][d]['title'])
+                            ids_niv2.append(datav_dv['data'][d]['id'])
                     except:
                             liste_dataverses_2.append()
+                            ids_niv2.append()
                 liste.append(liste_dataverses_2)
+                ids.append(ids_niv2)
             
             df_liste_dataverses_1['Dataverses_niv2']=liste
+            df_liste_dataverses_1['Ids_niv2']=ids
             df_liste_dataverses_1.to_csv(f"pages/data/liste_dataverses.csv")
 
             data = pd.read_csv(f"pages/data/liste_dataverses.csv")
