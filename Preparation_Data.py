@@ -6,9 +6,14 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-fichier = 'Enregistrements_RZA_150524'
+fichier = 'Enregistrements_RZA_220524'
 data = pd.read_csv(f"pages/data/{fichier}.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
+data.rename(columns={"dateStamp":"Datestamp"}, inplace=True)
+data.rename(columns={"changeDate":"Date_changement"}, inplace=True)
+data.rename(columns={"creationDateForResource":"CreationDate"}, inplace=True)
+data.rename(columns={"revisionDateForResource":"RevisionDate"}, inplace=True)
+data.rename(columns={"publicationDateForResource":"PublicationDate"}, inplace=True)
 
 ##################################### TRAITEMENT PREALABLE DATES###################################
 dico = {'Jan':'01',
@@ -35,11 +40,56 @@ dico2 = {' 1,':' 01',
 for i in range(len(data)):
     for term, num in dico.items():
         data.loc[i,'Date'] = data.loc[i,'Date'].replace(term,num).replace('@','/')
+        data.loc[i,'Datestamp'] = data.loc[i,'Datestamp'].replace(term,num).replace('@','/')
+        data.loc[i,'CreationDate'] = data.loc[i,'CreationDate'].replace(term,num).replace('@','/')
+        data.loc[i,'RevisionDate'] = data.loc[i,'RevisionDate'].replace(term,num).replace('@','/')
+        data.loc[i,'PublicationDate'] = data.loc[i,'PublicationDate'].replace(term,num).replace('@','/')
     for term, num in dico2.items():
         data.loc[i,'Date'] = data.loc[i,'Date'].replace(term,num).replace(',','')
+        data.loc[i,'Datestamp'] = data.loc[i,'Datestamp'].replace(term,num).replace(',','')
+        data.loc[i,'CreationDate'] = data.loc[i,'CreationDate'].replace(term,num).replace(',','')
+        data.loc[i,'RevisionDate'] = data.loc[i,'RevisionDate'].replace(term,num).replace(',','')
+        data.loc[i,'PublicationDate'] = data.loc[i,'PublicationDate'].replace(term,num).replace(',','')
     data.loc[i,'Date'] = re.split('/',data.loc[i,'Date'])[0][0:-1].replace(' ','-')+re.split('/',data.loc[i,'Date'])[1]
+    try:
+        data.loc[i,'Datestamp'] = re.split('/',data.loc[i,'Datestamp'])[0][0:-1].replace(' ','-')+re.split('/',data.loc[i,'Datestamp'])[1]
+    except:
+        pass
+    try:
+        data.loc[i,'CreationDate'] = re.split('/',data.loc[i,'CreationDate'])[0][0:-1].replace(' ','-')+re.split('/',data.loc[i,'CreationDate'])[1]
+    except:
+        pass
+    try:
+        data.loc[i,'RevisionDate'] = re.split('/',data.loc[i,'RevisionDate'])[0][0:-1].replace(' ','-')+re.split('/',data.loc[i,'RevisionDate'])[1]
+    except:
+        pass
+    try:
+        data.loc[i,'PublicationDate'] = re.split('/',data.loc[i,'PublicationDate'])[0][0:-1].replace(' ','-')+re.split('/',data.loc[i,'PublicationDate'])[1]
+    except:
+        pass
 
 data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=True)
+
+for i in range(len(data)):
+    try:
+        data.loc[i,'Datestamp'] = pd.to_datetime(data.loc[i,'Datestamp'], format='mixed', utc=True)
+    except:
+        data.loc[i,'Datestamp'] = np.NaN
+for i in range(len(data)):
+    try:
+        data.loc[i,'CreationDate'] = pd.to_datetime(data.loc[i,'CreationDate'], format='mixed', utc=True)
+    except:
+        data.loc[i,'CreationDate'] = np.NaN
+for i in range(len(data)):
+    try:
+        data.loc[i,'RevisionDate'] = pd.to_datetime(data.loc[i,'RevisionDate'], format='mixed', utc=True)
+    except:
+        data.loc[i,'RevisionDate'] = np.NaN
+for i in range(len(data)):
+    try:
+        data.loc[i,'PublicationDate'] = pd.to_datetime(data.loc[i,'PublicationDate'], format='mixed', utc=True)
+    except:
+        data.loc[i,'PublicationDate'] = np.NaN
 
 ######################## AVEC MON GN LOCAL #############################
 #data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True) 
@@ -48,7 +98,7 @@ data['Date'] = pd.to_datetime(data['Date'], format='%m-%d-%Y %H:%M:%S.%f', utc=T
 #########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
 data_mots_cles = data.copy()
 
-data_mots_cles.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','popularity','location','Org','format','uuid','recordOwner'], inplace=True)
+data_mots_cles.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','Datestamp','groupPublished','popularity','location','Org','format','uuid','recordOwner'], inplace=True)
 l_to_supp = []
 
 liste_tagNumber_bis = []
@@ -71,6 +121,7 @@ print(len(data_mots_cles.columns))
 data_ = pd.concat([data,data_mots_cles['mot_clés']],axis=1)
 
 print(data_.head())
+print(data_.columns.values)
 
 ##############################################################################################################################
 
@@ -248,8 +299,8 @@ print('OHM_PDBitche',len(data_bis['OHM_PDBitche'][data_bis['OHM_PDBitche']==1]))
 print('OHMI_Patagonia',len(data_bis['OHMI_Patagonia'][data_bis['OHMI_Patagonia']==1]))
 print('OHM_Fessenheim',len(data_bis['OHM_Fessenheim'][data_bis['OHM_Fessenheim']==1]))
 
-dat = pd.concat([data,data_bis], axis=1)
-
+dat = pd.concat([data_,data_bis], axis=1)
+print(dat.columns.values)
 #######################################
 
 dat['Year']=0

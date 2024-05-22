@@ -5,6 +5,7 @@ from datetime import datetime
 import re
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import time
 pd.options.mode.chained_assignment = None
 
@@ -52,10 +53,12 @@ if len(Selection_OHM)>0:
         Selection_OHM_str+="+" + Selection_OHM[i]
 
 ###################################### LECTURE DATA NETTOYEES #########################################
-fichier= 'Enregistrements_RZA_100524_ready'
+fichier= 'Enregistrements_RZA_220524_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)
+#dat['Datestamp'] = pd.to_datetime(dat['Datestamp'], format='mixed', utc=True)
+#dat.sort_values(by="Datestamp", inplace=True)
 for i in range(len(dat)):
     dat.loc[i,'Year']=datetime.date(dat.loc[i,'Date']).year
 
@@ -64,107 +67,109 @@ if len(Selection_ZA)==1:
     data = dat[dat[Selection_ZA[0]]==1]
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==2:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==3:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==4:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==5:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==6:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==7:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==8:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==9:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==10:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==1:
     data = dat[dat[Selection_OHM[0]]==1]
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==2:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==3:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==4:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==5:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==6:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==7:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==8:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==9:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1],dat[dat[Selection_OHM[8]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_OHM)==10:
     data = pd.concat([dat[dat[Selection_OHM[0]]==1],dat[dat[Selection_OHM[1]]==1],dat[dat[Selection_OHM[2]]==1],dat[dat[Selection_OHM[3]]==1],dat[dat[Selection_OHM[4]]==1],dat[dat[Selection_OHM[5]]==1],dat[dat[Selection_OHM[6]]==1],dat[dat[Selection_OHM[7]]==1],dat[dat[Selection_OHM[8]]==1],dat[dat[Selection_OHM[9]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 else:
     data = dat.copy()
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
-    data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+    #data['Datestamp'] = pd.to_datetime(dat['Datestamp'], format='mixed', utc=True)
+    #data.sort_values(by="Datestamp", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 #######################################################################################################
 
 piq_one_check = st.sidebar.checkbox("Selection d'un enregistrement unique")
@@ -222,7 +227,7 @@ if piq_one_check==True:
         st.map(data,latitude='lat',longitude='long',zoom=8,color='#FEBB5F')
       
     data_to_show = data.copy()
-    data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Compte_cumulé','Year','long','lat','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
+    data_to_show.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','groupPublished','Year','long','lat','popularity','Unnamed: 0','location','Org','format','uuid','recordOwner'], inplace=True)
     l_to_supp = []
     for i,x in enumerate(data_to_show.columns):
         if data_to_show.loc[0,x]=='-':
@@ -252,49 +257,104 @@ if piq_one_check==True:
         pass
 
 elif len(data)!=0:
+    ############################ Date #################################################
+    data_date =data.copy()
+    data_date['Date'] = pd.to_datetime(data_date['Date'], format='mixed', utc=True)
+    data_date.sort_values(by="Date", inplace=True)
+    data_date.set_index('Date', inplace=True)
+    data_date_resampled =data_date.resample(rule="6ME").size()
+    liste_dates = data_date_resampled.index.values
+    liste_comptes = data_date_resampled.values
+    df_date = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_resampled']).T
+    df_date['Date'] = pd.to_datetime(df_date['Date'], format='mixed', utc=True)
 
-    data_bis =data.copy()
-    data_bis['Date'] = pd.to_datetime(data_bis['Date'], format='mixed', utc=True)
-    data_bis.set_index('Date', inplace=True)
 
-    data_resampled =data_bis.resample(rule="3D").size()
-    liste_dates = data_resampled.index.values
-    liste_comptes = data_resampled.values
+    data_datestamp =data.copy()
+    data_datestamp['Datestamp'] = pd.to_datetime(data_datestamp['Datestamp'], format='mixed', utc=True)
+    data_datestamp.sort_values(by='Datestamp', inplace=True)
+    data_datestamp.set_index('Datestamp', inplace=True)
+    data_datestamp_resampled =data_datestamp.resample(rule="6ME").size()
+    liste_datesstamp = data_datestamp_resampled.index.values
+    liste_comptesstamp = data_datestamp_resampled.values
+    df_datestamp = pd.DataFrame([liste_datesstamp,liste_comptesstamp], index=['Datestamp','Datestamp_resampled']).T
+    df_datestamp['Datestamp'] = pd.to_datetime(df_datestamp['Datestamp'], format='mixed', utc=True)
 
-    df = pd.DataFrame([liste_dates,liste_comptes], index=['Date','Compte_mensuel']).T
-    df['Date'] = pd.to_datetime(df['Date'], format='mixed', utc=True)
-    for i in range(len(df)):
-        df.loc[i,'Year']=datetime.date(df.loc[i,'Date']).year
 
-    start_date_year = data['Year'].iloc[0]-1
-    end_date_year = data['Year'].iloc[-1]
-    data_maps = data.copy()
+    data_revidate =data.copy()
+    data_revidate.dropna(subset='RevisionDate',axis=0)
+    data_revidate['RevisionDate'] = pd.to_datetime(data_revidate['RevisionDate'], format='mixed', utc=True)
+    data_revidate.sort_values(by="RevisionDate", inplace=True)
+    data_revidate.set_index('RevisionDate', inplace=True)
+    data_revidate_resampled =data_revidate.resample(rule="6ME").size()
+    liste_revidates = data_revidate_resampled.index.values
+    liste_revicomptes = data_revidate_resampled.values
+    df_revidate = pd.DataFrame([liste_revidates,liste_revicomptes], index=['RevisionDate','RevisionDate_resampled']).T
+    df_revidate['RevisionDate'] = pd.to_datetime(df_revidate['RevisionDate'], format='mixed', utc=True)
 
+
+    data_creadate =data.copy()
+    data_creadate.dropna(subset='CreationDate',axis=0)
+    data_creadate['CreationDate'] = pd.to_datetime(data_creadate['CreationDate'], format='mixed', utc=True)
+    data_creadate.sort_values(by='CreationDate', inplace=True)
+    data_creadate.set_index('CreationDate', inplace=True)
+    data_creadate_resampled =data_creadate.resample(rule="6ME").size()
+    liste_creadates = data_creadate_resampled.index.values
+    liste_creacomptes = data_creadate_resampled.values
+    df_creadate = pd.DataFrame([liste_creadates,liste_creacomptes], index=['CreationDate','CreationDate_resampled']).T
+    df_creadate['CreationDate'] = pd.to_datetime(df_creadate['CreationDate'], format='mixed', utc=True)
+
+
+    data_publidate =data.copy()
+    data_publidate.dropna(subset='PublicationDate',axis=0)
+    data_publidate['PublicationDate'] = pd.to_datetime(data_publidate['PublicationDate'], format='mixed', utc=True)
+    data_publidate.sort_values(by='PublicationDate', inplace=True)
+    data_publidate.set_index('PublicationDate', inplace=True)
+    data_publidate_resampled =data_publidate.resample(rule="6ME").size()
+    liste_publidates = data_publidate_resampled.index.values
+    liste_publicomptes = data_publidate_resampled.values
+    df_publidate = pd.DataFrame([liste_publidates,liste_publicomptes], index=['PublicationDate','PublicationDate_resampled']).T
+    df_publidate['PublicationDate'] = pd.to_datetime(df_publidate['PublicationDate'], format='mixed', utc=True)
+
+
+
+    ########################## Year pour filtration #################################
+    for i in range(len(df_date)):
+        df_date.loc[i,'Year']=datetime.date(df_date.loc[i,'Date']).year
+    start_date_year = int(df_date['Year'].iloc[0])-1
+    end_date_year = int(df_date['Year'].iloc[-1])
+
+    for i in range(len(df_datestamp)):
+        df_datestamp.loc[i,'Year']=datetime.date(df_datestamp.loc[i,'Datestamp']).year
+    start_datestamp_year = int(df_datestamp['Year'].iloc[0])-1
+    end_datestamp_year = int(df_datestamp['Year'].iloc[-1])
+
+    for i in range(len(df_revidate)):
+        df_revidate.loc[i,'Year']=datetime.date(df_revidate.loc[i,'RevisionDate']).year
+    start_revidate_year = int(df_revidate['Year'].iloc[0])-1
+    end_revidate_year = int(df_revidate['Year'].iloc[-1])
+
+    for i in range(len(df_creadate)):
+        df_creadate.loc[i,'Year']=datetime.date(df_creadate.loc[i,'CreationDate']).year
+    start_creadate_year = int(df_creadate['Year'].iloc[0])-1
+    end_creadate_year = int(df_creadate['Year'].iloc[-1])
+
+    for i in range(len(df_publidate)):
+        df_publidate.loc[i,'Year']=datetime.date(df_publidate.loc[i,'PublicationDate']).year
+    start_publidate_year = int(df_publidate['Year'].iloc[0])-1
+    end_publidate_year = int(df_publidate['Year'].iloc[-1])
+
+    ###################################################################################
     st1 = 'Evolution temporelle'
     s_st1 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st1}</p>"
     st.markdown(s_st1,unsafe_allow_html=True)
     with st.container(border=True):
-        row1 = st.columns(2)
+        row1_ = st.columns(2)
 
-        with row1[0]:
-            selection_dates = st.slider(':grey[Zoomer sur une période plus récente]',min_value=start_date_year,max_value=end_date_year)
-            nb_enregistrements = len(data[data.Year >= selection_dates])
-            fig1 = go.Figure()
-            fig1.add_trace(go.Scatter(
-                x=data['Date'][data.Year >= selection_dates], 
-                y=data['Compte_cumulé'][data.Year >= selection_dates],
-                mode='lines+markers',
-                line=dict(color='#ebbe31', width=1),
-                marker=dict(color='white',size=0.2)))
-            fig1.update_layout(
-                title='Cumul dans le temps des enregistrements',
-                xaxis_title='Date',
-                yaxis_title='Compte cumulé',
-                width=500,
-                height=400)
-            st.plotly_chart(fig1)
-        
-        with row1[1]:
+        with row1_[0]:
+            selection_dates_input = st.number_input('Choix de la date de début',min_value=start_creadate_year,max_value=end_creadate_year)
+            nb_enregistrements = len(data[data.Year >= selection_dates_input])
+
+        with row1_[1]:
             wch_colour_box = (250,250,220)
             wch_colour_font = (90,90,90)
             fontsize = 25
@@ -322,20 +382,46 @@ elif len(data)!=0:
                                     margin-top: 0;'>{sline}</style></span></p>"""
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
-            fig2 = go.Figure()
-            fig2.add_trace(go.Bar(
-                x=df['Date'][df.Year >= selection_dates],
-                y=df['Compte_mensuel'][df.Year >= selection_dates]
-            ))
-            fig2.update_traces(marker_color='#FEBB5F', marker_line_color='#FEBB5F',
-                  marker_line_width=3)
-            fig2.update_layout(
-                title='Cumul hebdomadaire des enregistrements',
-                xaxis_title='Date',
-                yaxis_title='Compte',
-                width=500,
-                height=400)
-            st.plotly_chart(fig2)
+        fig2 = make_subplots(rows=2,cols=1, subplot_titles=("Dates associées aux données (par semestre)","Dates associées aux métadonnées"),shared_xaxes=True)
+        fig2.add_trace(go.Bar(
+            x=df_creadate['CreationDate'][df_creadate.Year >= selection_dates_input],
+            y=df_creadate['CreationDate_resampled'][df_creadate.Year >= selection_dates_input],
+            name='Creation Date',
+            marker_color='#FEBB5F'
+            ),row=1,col=1)
+        fig2.add_trace(go.Bar(
+            x=df_publidate['PublicationDate'][df_publidate.Year >= selection_dates_input],
+            y=df_publidate['PublicationDate_resampled'][df_publidate.Year >= selection_dates_input],
+            name='Publication Date',
+            marker_color='#9281C0'
+            ),row=1,col=1)
+        fig2.add_trace(go.Bar(
+            x=df_revidate['RevisionDate'][df_revidate.Year >= selection_dates_input],
+            y=df_revidate['RevisionDate_resampled'][df_revidate.Year >= selection_dates_input],
+            name='Revision Date',
+            marker_color='#FE938C' 
+            ),row=1,col=1)
+
+        fig2.add_trace(go.Bar(
+            x=df_date['Date'][df_date.Year >= selection_dates_input],
+            y=df_date['Compte_resampled'][df_date.Year >= selection_dates_input],
+            name= 'Date',
+            marker_color='#FE938C'
+            ),row=2,col=1)
+        fig2.add_trace(go.Bar(
+            x=df_datestamp['Datestamp'][df_datestamp.Year >= selection_dates_input],
+            y=df_datestamp['Datestamp_resampled'][df_datestamp.Year >= selection_dates_input],
+            name= 'Datestamp',
+            marker_color='#FEBB5F'
+            ),row=2,col=1)
+        fig2.update_layout(
+            xaxis_title='Date',
+            yaxis_title='Compte',
+            height=1000)
+        #fig2.update_layout(barmode='stack')
+        st.plotly_chart(fig2, use_container_width=True)
+
+    ################################################################################################################################    
 
     st2 = 'Evolution spatiale'
     s_st2 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st2}</p>"
@@ -371,9 +457,9 @@ elif len(data)!=0:
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{sline}</style></span></p>"""
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-            st.map(dat[dat.Year >= selection_dates],latitude='lat',longitude='long',zoom=1,color='#FEBB5F')
+            st.map(dat[dat.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=1,color='#FEBB5F')
         with row2[1]:
-            nb_enregistrements_avec_localisation = len(data[data.Year >= selection_dates])
+            nb_enregistrements_avec_localisation = len(data[data.Year >= selection_dates_input])
             data_mappees = data[data['lat']>40]
             zoom_france = 3
             zoom_monde = 1
@@ -405,7 +491,7 @@ elif len(data)!=0:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
+                st.map(data_mappees[data_mappees.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
 
             elif len(Selection_OHM)>0:
                 zoom = zoom_france
@@ -435,7 +521,7 @@ elif len(data)!=0:
                                         </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{sline}</style></span></p>"""
                 st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-                st.map(data_mappees[data_mappees.Year >= selection_dates],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
+                st.map(data_mappees[data_mappees.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
             else:
                 pass
 
@@ -446,7 +532,7 @@ elif len(data)!=0:
 
         with row3[0]:
 
-            data_format = data['format'][data.Year >= selection_dates]
+            data_format = data['format'][data.Year >= selection_dates_input]
             cnt = data_format.value_counts()[0:6]
             somme_formats_vis = cnt.values.sum()
             
@@ -467,7 +553,7 @@ elif len(data)!=0:
 
         with row3[1]:
 
-            data_orga = data['Org'][data.Year >= selection_dates]
+            data_orga = data['Org'][data.Year >= selection_dates_input]
             cnt_orga = data_orga.value_counts()[0:10]
             somme_orga_vis = cnt_orga.values.sum()
             
@@ -492,7 +578,7 @@ elif len(data)!=0:
     with st.container(border=True):
         row4 = st.columns([0.7,0.3])
         with row4[0]:
-            data_useC = data['cl_useConstraints.default'][data.Year >= selection_dates]
+            data_useC = data['cl_useConstraints.default'][data.Year >= selection_dates_input]
             cnt_useC = data_useC.value_counts()
             fig = go.Figure()
             fig.add_trace(go.Pie(labels=cnt_useC.index.values, values=cnt_useC.values))
@@ -505,7 +591,7 @@ elif len(data)!=0:
             st.plotly_chart(fig, use_container_width=True)
 
         with row4[1]:
-            data_status = data['cl_status.default'][data.Year >= selection_dates]
+            data_status = data['cl_status.default'][data.Year >= selection_dates_input]
             cnt_status = data_status.value_counts()
             cnt_status_df = pd.DataFrame(cnt_status)
             fig_ = go.Figure()
@@ -519,7 +605,7 @@ elif len(data)!=0:
             st.plotly_chart(fig_)
 
     with st.container(border=True):
-        data_topics = data[['Date','cl_topic.default']][data.Year >= selection_dates]
+        data_topics = data[['Date','cl_topic.default']][data.Year >= selection_dates_input]
         data_topics['new_index']=np.arange(0,len(data_topics))
         data_topics.set_index('new_index', inplace=True)
         liste_topics = []
@@ -554,7 +640,7 @@ elif len(data)!=0:
 
     with st.container(border=True):
         data_pop = data.copy()
-        data_pop_ = data_pop[data_pop.Year >= selection_dates]
+        data_pop_ = data_pop[data_pop.Year >= selection_dates_input]
         m = max(data_pop_['popularity'])
         fig5 = go.Figure()
         if len(Selection_ZA)!=0:
@@ -599,7 +685,7 @@ elif len(data)!=0:
 
     with st.container(border=True):
         data_tagNumber = data.copy()
-        data_tagNumber_ = data_tagNumber[data_tagNumber.Year >= selection_dates]
+        data_tagNumber_ = data_tagNumber[data_tagNumber.Year >= selection_dates_input]
         fig6 = go.Figure()
         if len(Selection_ZA)!=0:
             for i, za in enumerate(Selection_ZA):
@@ -635,7 +721,7 @@ elif len(data)!=0:
                 liste_tagNumber.append(x)
         #liste_tagNumber.remove('tagNumber')
 
-        data_numbers = data[liste_tagNumber][data.Year >= selection_dates]
+        data_numbers = data[liste_tagNumber][data.Year >= selection_dates_input]
         data_numbers.drop(columns=['tagNumber'],inplace=True)
         listes_to_drop = []
         for i,x in enumerate(liste_tagNumber):
@@ -707,7 +793,7 @@ elif len(data)!=0:
 
     ########### MOTS CLES #################
 
-    data_mots_cles = data[['Date','mot_clés']][data.Year >= selection_dates]
+    data_mots_cles = data[['Date','mot_clés']][data.Year >= selection_dates_input]
     data_mots_cles['new_index']=np.arange(0,len(data_mots_cles))
     data_mots_cles.set_index('new_index', inplace=True)
     liste_mots_cles_generale = []
@@ -723,27 +809,27 @@ elif len(data)!=0:
     st.metric(label='Nombre de mots clés différents dans la sélection filtrée :', value=len(liste_mots_cles_generale_))
 
 
-    if st.button('Cliquez pour voir les mots les plus utilisés'):
-        with st.spinner('On vous concocte ça rapidement...'):
+    #if st.button('Cliquez pour voir les mots les plus utilisés'):
+        #with st.spinner('On vous concocte ça rapidement...'):
 
-            dico = {}
-            for mot in liste_mots_cles_generale:
-                dico[mot]=liste_mots_cles_generale.count(mot)
+            #dico = {}
+            #for mot in liste_mots_cles_generale:
+                #dico[mot]=liste_mots_cles_generale.count(mot)
             
-            df_mots_cles = pd.DataFrame(list(dico.items()),columns=['mot clé','compte'])
-            df_mots_cles.sort_values(by='compte',ascending=False, inplace=True)
+            #df_mots_cles = pd.DataFrame(list(dico.items()),columns=['mot clé','compte'])
+            #df_mots_cles.sort_values(by='compte',ascending=False, inplace=True)
 
-            fig8 = go.Figure()
-            fig8.add_trace(go.Bar( 
-                x=df_mots_cles['mot clé'].head(20),
-                y=df_mots_cles['compte'].head(20)))
-            fig8.update_traces(marker_color='#FEBB5F', marker_line_color='#FEBB5F',
-                  marker_line_width=3)
-            fig8.update_layout(
-                            title='Mots clés les plus fréquents',
-                            width=1000,
-                            height=500)
-            st.plotly_chart(fig8,use_container_width=True)
+            #fig8 = go.Figure()
+            #fig8.add_trace(go.Bar( 
+                #x=df_mots_cles['mot clé'].head(20),
+                #y=df_mots_cles['compte'].head(20)))
+            #fig8.update_traces(marker_color='#FEBB5F', marker_line_color='#FEBB5F',
+                  #marker_line_width=3)
+            #fig8.update_layout(
+                            #title='Mots clés les plus fréquents',
+                            #width=1000,
+                            #height=500)
+            #st.plotly_chart(fig8,use_container_width=True)
 
 ############## TEST CONTACT ##############################################################################
 #    data_contacts = data['contact'].unique()
