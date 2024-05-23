@@ -386,32 +386,24 @@ elif len(data)!=0:
         fig2.add_trace(go.Bar(
             x=df_creadate['CreationDate'][df_creadate.Year >= selection_dates_input],
             y=df_creadate['CreationDate_resampled'][df_creadate.Year >= selection_dates_input],
-            name='Creation Date',
-            legendgroup=1,
-            marker_color='#FEBB5F'
-            ),row=1,col=1)
+            name='Creation Date Data',
+            marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))),row=1,col=1)
         fig2.add_trace(go.Bar(
             x=df_publidate['PublicationDate'][df_publidate.Year >= selection_dates_input],
             y=df_publidate['PublicationDate_resampled'][df_publidate.Year >= selection_dates_input],
-            name='Publication Date',
-            legendgroup=1,
-            marker_color='#9281C0'
-            ),row=1,col=1)
+            name='Publication Date Data',
+            marker=dict(color='#9281C0',line=dict(color='#9281C0',width=3))),row=1,col=1)
         fig2.add_trace(go.Bar(
             x=df_revidate['RevisionDate'][df_revidate.Year >= selection_dates_input],
             y=df_revidate['RevisionDate_resampled'][df_revidate.Year >= selection_dates_input],
-            name='Revision Date',
-            legendgroup=1,
-            marker_color='#FE938C' 
-            ),row=1,col=1)
+            name='Revision Date Data',
+            marker=dict(color='#FE938C' , line=dict(color='#FE938C',width=3))),row=1,col=1)
 
         fig2.add_trace(go.Bar(
             x=df_date['Date'][df_date.Year >= selection_dates_input],
             y=df_date['Compte_resampled'][df_date.Year >= selection_dates_input],
-            name= 'Date',
-            legendgroup=2,
-            marker_color='#FE938C'
-            ),row=2,col=1)
+            name= 'Date de la fiche catalogue',
+            marker=dict(color='#FEBB5F' , line=dict(color='#FEBB5F',width=3))),row=2,col=1)
         #fig2.add_trace(go.Bar(
         #    x=df_datestamp['Datestamp'][df_datestamp.Year >= selection_dates_input],
         #    y=df_datestamp['Datestamp_resampled'][df_datestamp.Year >= selection_dates_input],
@@ -424,9 +416,13 @@ elif len(data)!=0:
             yaxis1_title='Compte',
             xaxis2_title='Date',
             yaxis2_title='Compte',
-            legend_tracegroupgap = 250,
-            height=600)
-        fig2.update_layout(barmode='stack')
+            barmode='stack',
+            height=600,
+            legend=dict(
+            yanchor="top",
+            y=0.6,
+            xanchor="left",
+            x=0.99))
         st.plotly_chart(fig2, use_container_width=True)
 
     ################################################################################################################################    

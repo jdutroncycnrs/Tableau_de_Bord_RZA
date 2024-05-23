@@ -98,7 +98,7 @@ for i in range(len(data)):
 #########################################  TRAITEMENT MOTS CLES / FILTRE ZA ############################################
 data_mots_cles = data.copy()
 
-data_mots_cles.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','Datestamp','groupPublished','popularity','location','Org','format','uuid','recordOwner'], inplace=True)
+data_mots_cles.drop(columns=['cl_topic.default','cl_status.default','cl_hierarchyLevel.default','cl_accessConstraints.default','cl_useConstraints.default','resourceTitleObject.default','Date','Datestamp','RevisionDate','PublicationDate','CreationDate','groupPublished','popularity','location','Org','format','uuid','recordOwner'], inplace=True)
 l_to_supp = []
 
 liste_tagNumber_bis = []
