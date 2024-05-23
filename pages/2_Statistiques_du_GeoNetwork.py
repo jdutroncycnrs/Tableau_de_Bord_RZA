@@ -382,23 +382,26 @@ elif len(data)!=0:
                                     margin-top: 0;'>{sline}</style></span></p>"""
             st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
-        fig2 = make_subplots(rows=2,cols=1, subplot_titles=("Dates associées aux données (par semestre)","Dates associées aux métadonnées"),shared_xaxes=True)
+        fig2 = make_subplots(rows=2,cols=1, subplot_titles=("Dates associées aux données (par semestre)","Dates associées aux métadonnées (par semestre)"),shared_xaxes=True)
         fig2.add_trace(go.Bar(
             x=df_creadate['CreationDate'][df_creadate.Year >= selection_dates_input],
             y=df_creadate['CreationDate_resampled'][df_creadate.Year >= selection_dates_input],
             name='Creation Date',
+            legendgroup=1,
             marker_color='#FEBB5F'
             ),row=1,col=1)
         fig2.add_trace(go.Bar(
             x=df_publidate['PublicationDate'][df_publidate.Year >= selection_dates_input],
             y=df_publidate['PublicationDate_resampled'][df_publidate.Year >= selection_dates_input],
             name='Publication Date',
+            legendgroup=1,
             marker_color='#9281C0'
             ),row=1,col=1)
         fig2.add_trace(go.Bar(
             x=df_revidate['RevisionDate'][df_revidate.Year >= selection_dates_input],
             y=df_revidate['RevisionDate_resampled'][df_revidate.Year >= selection_dates_input],
             name='Revision Date',
+            legendgroup=1,
             marker_color='#FE938C' 
             ),row=1,col=1)
 
@@ -406,19 +409,24 @@ elif len(data)!=0:
             x=df_date['Date'][df_date.Year >= selection_dates_input],
             y=df_date['Compte_resampled'][df_date.Year >= selection_dates_input],
             name= 'Date',
+            legendgroup=2,
             marker_color='#FE938C'
             ),row=2,col=1)
-        fig2.add_trace(go.Bar(
-            x=df_datestamp['Datestamp'][df_datestamp.Year >= selection_dates_input],
-            y=df_datestamp['Datestamp_resampled'][df_datestamp.Year >= selection_dates_input],
-            name= 'Datestamp',
-            marker_color='#FEBB5F'
-            ),row=2,col=1)
+        #fig2.add_trace(go.Bar(
+        #    x=df_datestamp['Datestamp'][df_datestamp.Year >= selection_dates_input],
+        #    y=df_datestamp['Datestamp_resampled'][df_datestamp.Year >= selection_dates_input],
+        #    name= 'Datestamp',
+        #    legendgroup=2,
+        #    marker_color='#FEBB5F'
+        #    ),row=2,col=1)
         fig2.update_layout(
-            xaxis_title='Date',
-            yaxis_title='Compte',
-            height=1000)
-        #fig2.update_layout(barmode='stack')
+            xaxis1_title='Date',
+            yaxis1_title='Compte',
+            xaxis2_title='Date',
+            yaxis2_title='Compte',
+            legend_tracegroupgap = 250,
+            height=600)
+        fig2.update_layout(barmode='stack')
         st.plotly_chart(fig2, use_container_width=True)
 
     ################################################################################################################################    
