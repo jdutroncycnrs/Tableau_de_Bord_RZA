@@ -8,7 +8,9 @@ import re
 import numpy as np
 import datetime
 import plotly.express as px
+import plotly.graph_objects as go
 import glob
+import time
 
 from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
@@ -184,27 +186,42 @@ if b1==True:
 
 st.title("Analyse des entrepôts")
 liste_ZAs = ['Zone atelier territoires uranifères',' Zone Atelier Seine',' Zone atelier Loire',' Zone atelier bassin du Rhône',' Zone atelier bassin de la Moselle',' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier Plaine et Val de Sèvre',' Zone atelier environnementale urbaine',' Zone atelier Hwange',' Zone atelier Pyrénées Garonne',' Zone atelier Brest Iroise']
-Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs,max_selections=1)
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8']
+all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
+if all_ZAs==True :
+    Selection_ZA = liste_ZAs
+else:
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+
 
 if len(Selection_ZA)!=0:
-    s = int(data['ids_niv2'][data['niv2']==Selection_ZA[0]].values)
-    datav = api.get_dataverse_contents(s)
-    datav_contenu = datav.json()
-    st.write(datav_contenu)
- 
-
-with st.container(border=True):
-    row1 = st.columns(2)
-
-    with row1[0]:
-        st.write('à remplir')
-    with row1[1]:
-        st.write('à remplir')
-
-with st.container(border=True):
-    row2 = st.columns(2)
-
-    with row2[0]:
-        st.write('à remplir')
-    with row2[1]:
-        st.write('à remplir')
+    with st.container(border=True):
+        progress_text = "Operation en cours. Attendez svp."
+        my_bar = st.progress(0, text=progress_text)
+        liste_contenu = []
+        for i in range(len(Selection_ZA)):
+            time.sleep(0.01)
+            s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
+            datav = api.get_dataverse_contents(s)
+            datav_contenu = datav.json()
+            liste_contenu.append(len(datav_contenu["data"]))
+            my_bar.progress(i + 1, text=progress_text)
+    
+        df = pd.DataFrame(liste_contenu,index=Selection_ZA,columns=['Nombre_dépôts'])
+        st.table(df)
+        fig0= go.Figure()
+        for i, za in enumerate(df.index.values):
+            selec = df.index.values[i:i+1]
+            selec_len = df['Nombre_dépôts'].values[i:i+1]
+            fig0.add_trace(go.Bar(
+                        x=selec,
+                        y=selec_len,
+                        name=za,
+                        marker=dict(color=colors[i])
+                    ))
+        fig0.update_layout(
+                                title='Nombre de dépôts répertoriées au 06/06/24',
+                                width=1000,
+                                height=500)
+        st.plotly_chart(fig0,use_container_width=True)
+        my_bar.empty()

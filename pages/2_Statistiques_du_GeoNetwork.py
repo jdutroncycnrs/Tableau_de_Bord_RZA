@@ -21,16 +21,19 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+########## TITRE DE LA PAGE ############################################
 title = "Analyse des catalogues de cat.InDoRes"
 s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
 st.markdown(s_title,unsafe_allow_html=True)
 
+
+######################################################################## Attention les ZA et OHM à sélectionner inscrits en dur ###############
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar']
 liste_OHMs =['OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim']
 
+
+###################### SELECTION SIDEBAR ######################################################################################################
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
-
-
 if all_ZAs==True :
     Selection_ZA = liste_ZAs
     Selection_OHM = []
@@ -42,6 +45,7 @@ else:
     else:
         Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs)
 
+########################## TRANSFORMATION SELECTION EN STRING POUR CERTAINS AFFICHAGES #####################""""
 if len(Selection_ZA)>0:
     Selection_ZA_str = Selection_ZA[0]
     for i in range(1,len(Selection_ZA)):
@@ -53,6 +57,7 @@ if len(Selection_OHM)>0:
         Selection_OHM_str+="+" + Selection_OHM[i]
 
 ###################################### LECTURE DATA NETTOYEES #########################################
+####### FICHIER A LIRE ####################
 fichier= 'Enregistrements_RZA_220524_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
@@ -180,6 +185,7 @@ date_fichier = st.sidebar.markdown(f'Le fichier utilisé : {fichier}')
 
 ###################################### VISUALISATION #################################################
 
+##################### AFFICHAGE ENREGISTREMENT UNIQUE ###############
 if piq_one_check==True:
     if 'count' not in st.session_state:
         st.session_state.count = 0
@@ -255,7 +261,7 @@ if piq_one_check==True:
             st.metric(label=f'mot clé {i+1}', value=l2[i])
     except:
         pass
-
+########  AFFICHAGE D'ENREGISTREMENTS ET STATISTIQUES #################
 elif len(data)!=0:
     ############################ Date #################################################
     data_date =data.copy()
@@ -315,8 +321,6 @@ elif len(data)!=0:
     df_publidate = pd.DataFrame([liste_publidates,liste_publicomptes], index=['PublicationDate','PublicationDate_resampled']).T
     df_publidate['PublicationDate'] = pd.to_datetime(df_publidate['PublicationDate'], format='mixed', utc=True)
 
-
-
     ########################## Year pour filtration #################################
     for i in range(len(df_date)):
         df_date.loc[i,'Year']=datetime.date(df_date.loc[i,'Date']).year
@@ -343,7 +347,7 @@ elif len(data)!=0:
     start_publidate_year = int(df_publidate['Year'].iloc[0])-1
     end_publidate_year = int(df_publidate['Year'].iloc[-1])
 
-    ###################################################################################
+    ##############################   PARTIE TEMPORELLE   ####################################
     st1 = 'Evolution temporelle'
     s_st1 = f"<p style='font-size:30px;color:rgb(140,140,140)'>{st1}</p>"
     st.markdown(s_st1,unsafe_allow_html=True)
