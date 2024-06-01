@@ -22,6 +22,7 @@ st.set_page_config(
 )
 
 ######################################################################## Attention les ZA et OHM à sélectionner inscrits en dur ###############
+liste_ZAs_= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA']
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar']
 liste_OHMs =['OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim']
 
@@ -29,10 +30,10 @@ liste_OHMs =['OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI
 ###################### SELECTION SIDEBAR ######################################################################################################
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :
-    Selection_ZA = liste_ZAs
+    Selection_ZA = liste_ZAs_
     Selection_OHM = []
 else:
-    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
     OHMs= st.sidebar.checkbox("Pour filtrer un OHM")
     if OHMs==False:
         Selection_OHM= st.sidebar.multiselect(label="OHMs", options=liste_OHMs, disabled=True)
@@ -52,7 +53,7 @@ if len(Selection_OHM)>0:
 
 ###################################### LECTURE DATA NETTOYEES #########################################
 ####### FICHIER A LIRE ####################
-fichier= 'Enregistrements_RZA_220524_ready'
+fichier= 'Enregistrements_RZA_010624_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)
@@ -177,7 +178,7 @@ date_fichier = st.sidebar.markdown(f'Le fichier utilisé : {fichier}')
 
 data_test = data.copy()
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8']
-
+colors2 = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','grey','grey','grey','grey','grey','grey']
 len_zas= []
 for za in Selection_ZA:
     len_zas.append(len(data_test[data_test[za]==1]))
@@ -190,10 +191,21 @@ for i, za in enumerate(Selection_ZA):
                 x=selec,
                 y=selec_len,
                 name=za,
-                marker=dict(color=colors[i])
+                marker=dict(color=colors2[i])
             ))
 fig8.update_layout(
                         title='Nombre de fiches répertoriées au 06/06/24',
                         width=1000,
                         height=500)
 st.plotly_chart(fig8)
+
+
+data_url = data.copy()
+for i in range(len(data_url)):
+    if data_url.loc[i,'linkUrlProtocolDOI']=='-':
+        data_url.loc[i,'linkUrlProtocolDOI']=np.NaN
+data_url.dropna(subset='linkUrlProtocolDOI', axis=0,inplace=True)
+st.write(data_url[['linkUrlProtocolDOI','Org','linkUrl']])
+
+st.write(data_url['linkUrlProtocolDOI'].unique())
+st.write(len(data_url['linkUrlProtocolDOI'].unique()))

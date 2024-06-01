@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-fichier = 'Enregistrements_RZA_220524'
+fichier = 'Enregistrements_RZA_010624'
 data = pd.read_csv(f"pages/data/{fichier}.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 data.rename(columns={"dateStamp":"Datestamp"}, inplace=True)
@@ -128,7 +128,7 @@ print(data_.columns.values)
 data_to_filter =data_[['groupPublished','mot_clés']]
 
 data_to_filter['filtre']=data_to_filter['groupPublished']+data_to_filter['mot_clés']
-df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar','OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim'])
+df = pd.DataFrame(index=data.index,columns=['ZAA','ZAAJ','ZAAR','ZAEU','ZAS','ZAM','ZABRI','ZABR','ZAL','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA','OHM_BMProvence','OHMI_Tessekere','OHM_Pyrenees','OHM_VRhone','OHMI_Pima','OHMI_Estarreja','OHM_Mediterraneen','OHM_Oyapock','OHMI_Nunavik','OHM_Caraibes','OHM_PDBitche','OHMI_Patagonia','OHM_Fessenheim'])
 data_bis = pd.concat([data_to_filter,df],axis=1)
 
 print(re.split(',',data_bis.loc[0,'filtre'])[0])
@@ -143,6 +143,11 @@ rechercheZABRI = ['zabri']
 rechercheZABR = ['zabr']
 rechercheZAL = ['zal']
 rechercheZAPygar = ['zapygar']
+rechercheZATU = ['zatu']
+rechercheZAPVS = ['zapvs']
+rechercheZARG = ['zarg']
+rechercheZACAM = ['zacam']
+rechercheZATA = ['zata']
 rechercheOHMbmp = ['ohm_bmp']
 rechercheOHMITES = ['ohmi_tes']
 rechercheOHMHV = ['ohm_hv']
@@ -207,6 +212,31 @@ for i in range(len(data_bis)):
     for u in lis:
         if u.strip().lower() in rechercheZAPygar:
             data_bis.loc[i,'ZAPygar']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZATU:
+            data_bis.loc[i,'ZATU']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZAPVS:
+            data_bis.loc[i,'ZAPVS']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZARG:
+            data_bis.loc[i,'ZARG']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZACAM:
+            data_bis.loc[i,'ZACAM']=1
+        else:
+            pass
+    for u in lis:
+        if u.strip().lower() in rechercheZATA:
+            data_bis.loc[i,'ZATA']=1
         else:
             pass
     for u in lis:

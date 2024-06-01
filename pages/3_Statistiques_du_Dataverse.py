@@ -185,13 +185,16 @@ if b1==True:
 
 
 st.title("Analyse des entrepôts")
-liste_ZAs = ['Zone atelier territoires uranifères',' Zone Atelier Seine',' Zone atelier Loire',' Zone atelier bassin du Rhône',' Zone atelier bassin de la Moselle',' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier Plaine et Val de Sèvre',' Zone atelier environnementale urbaine',' Zone atelier Hwange',' Zone atelier Pyrénées Garonne',' Zone atelier Brest Iroise']
-colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8']
+liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA']
+liste_ZAs_ = [' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier environnementale urbaine',' Zone atelier bassin du Rhône',' Zone atelier Brest Iroise',' Zone atelier bassin de la Moselle',' Zone atelier Loire',' Zone Atelier Seine',' Zone atelier Pyrénées Garonne','Zone atelier territoires uranifères',' Zone atelier Plaine et Val de Sèvre',' Zone atelier Hwange','Zone atelier Environnementale Rurale','Zone atelier Santé Environnement Camargue','Zone atelier Antarctique et terres Australes']
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
+colors2 = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','grey','grey','grey']
+
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :
-    Selection_ZA = liste_ZAs
+    Selection_ZA = liste_ZAs_
 else:
-    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs)
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
 
 if len(Selection_ZA)!=0:
@@ -201,13 +204,16 @@ if len(Selection_ZA)!=0:
         liste_contenu = []
         for i in range(len(Selection_ZA)):
             time.sleep(0.01)
-            s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
-            datav = api.get_dataverse_contents(s)
-            datav_contenu = datav.json()
-            liste_contenu.append(len(datav_contenu["data"]))
+            try:
+                s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
+                datav = api.get_dataverse_contents(s)
+                datav_contenu = datav.json()
+                liste_contenu.append(len(datav_contenu["data"]))
+            except:
+                liste_contenu.append(0)
             my_bar.progress(i + 1, text=progress_text)
     
-        df = pd.DataFrame(liste_contenu,index=Selection_ZA,columns=['Nombre_dépôts'])
+        df = pd.DataFrame(liste_contenu,index=liste_ZAs,columns=['Nombre_dépôts'])
         st.table(df)
         fig0= go.Figure()
         for i, za in enumerate(df.index.values):
@@ -217,7 +223,7 @@ if len(Selection_ZA)!=0:
                         x=selec,
                         y=selec_len,
                         name=za,
-                        marker=dict(color=colors[i])
+                        marker=dict(color=colors2[i])
                     ))
         fig0.update_layout(
                                 title='Nombre de dépôts répertoriées au 06/06/24',
