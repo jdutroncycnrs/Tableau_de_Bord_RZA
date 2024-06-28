@@ -78,7 +78,6 @@ with col03:
 
 
 i= piq_one
-st.write(piq_one)
 url_ = url + i
 resp = requests.get(url_,headers=headers)
 rr=resp.json()
@@ -130,6 +129,13 @@ for j in range(len(df)):
             pass
 df.to_csv(f'pages/data/{i}.csv')
 
-df_ = df[['K0','K1','Valeurs']]
-
+df_ = df[['K0','K2','K4','K6','K7','Valeurs']]
 st.dataframe(df_)
+
+st.metric(label='Titre', value=str(df['Valeurs'][df['K0']=='gmd:identificationInfo'][df['K2']=='gmd:citation'][df['K4']=='gmd:title'][df['K6']=='#text:'].values[0]))
+st.metric(label='Langue', value=str(df['Valeurs'][df['K0']=='gmd:language'][df['K2']=='#text:'].values[0]))
+st.metric(label='Encodage', value=str(df['Valeurs'][df['K0']=='gmd:characterSet'][df['K2']=='@codeListValue:'].values[0]))
+st.metric(label='Datestamp', value=str(df['Valeurs'][df['K0']=='gmd:dateStamp'][df['K2']=='#text:'].values[0]))
+st.metric(label='Standard', value=str(df['Valeurs'][df['K0']=='gmd:metadataStandardName'][df['K2']=='#text:'].values[0]))
+st.metric(label='Version du standard', value=str(df['Valeurs'][df['K0']=='gmd:metadataStandardVersion'][df['K2']=='#text:'].values[0]))
+st.metric(label='Système de référence', value=str(df['Valeurs'][df['K0']=='gmd:referenceSystemInfo'][df['K2']=='gmd:referenceSystemIdentifier'][df['K4']=='gmd:code'][df['K6']=='#text:'].values[0]))
