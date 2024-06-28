@@ -58,7 +58,7 @@ if len(Selection_OHM)>0:
 
 ###################################### LECTURE DATA NETTOYEES #########################################
 ####### FICHIER A LIRE ####################
-fichier= 'Enregistrements_RZA_220524_ready'
+fichier= 'Enregistrements_RZA_020624_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)

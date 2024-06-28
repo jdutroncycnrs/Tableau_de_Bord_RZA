@@ -7,6 +7,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import time
+import seaborn as sns
+import matplotlib.pyplot as plt
 pd.options.mode.chained_assignment = None
 
 
@@ -53,7 +55,7 @@ if len(Selection_OHM)>0:
 
 ###################################### LECTURE DATA NETTOYEES #########################################
 ####### FICHIER A LIRE ####################
-fichier= 'Enregistrements_RZA_010624_ready'
+fichier= 'Enregistrements_RZA_020624_ready'
 dat = pd.read_csv(f"pages/data/{fichier}.csv")
 dat['Date'] = pd.to_datetime(dat['Date'], format='mixed', utc=True)
 dat.sort_values(by="Date", inplace=True)
@@ -110,6 +112,36 @@ elif len(Selection_ZA)==9:
     #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
 elif len(Selection_ZA)==10:
     data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_ZA)==11:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_ZA)==12:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1  
+elif len(Selection_ZA)==13:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_ZA)==14:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
+elif len(Selection_ZA)==15:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1]],axis=0)
+    data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
+    data.sort_values(by="Date", inplace=True)
+    #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1 
+elif len(Selection_ZA)==16:
+    data = pd.concat([dat[dat[Selection_ZA[0]]==1],dat[dat[Selection_ZA[1]]==1],dat[dat[Selection_ZA[2]]==1],dat[dat[Selection_ZA[3]]==1],dat[dat[Selection_ZA[4]]==1],dat[dat[Selection_ZA[5]]==1],dat[dat[Selection_ZA[6]]==1],dat[dat[Selection_ZA[7]]==1],dat[dat[Selection_ZA[8]]==1],dat[dat[Selection_ZA[9]]==1],dat[dat[Selection_ZA[10]]==1],dat[dat[Selection_ZA[11]]==1],dat[dat[Selection_ZA[12]]==1],dat[dat[Selection_ZA[13]]==1],dat[dat[Selection_ZA[14]]==1],dat[dat[Selection_ZA[15]]==1]],axis=0)
     data['Date'] = pd.to_datetime(data['Date'], format='mixed', utc=True)
     data.sort_values(by="Date", inplace=True)
     #data.loc[:,'Compte_cumulé']=np.arange(len(data))+1
@@ -191,6 +223,7 @@ for i, za in enumerate(Selection_ZA):
                 x=selec,
                 y=selec_len,
                 name=za,
+                text=selec_len,
                 marker=dict(color=colors2[i])
             ))
 fig8.update_layout(
@@ -201,11 +234,85 @@ st.plotly_chart(fig8)
 
 
 data_url = data.copy()
-for i in range(len(data_url)):
-    if data_url.loc[i,'linkUrlProtocolDOI']=='-':
-        data_url.loc[i,'linkUrlProtocolDOI']=np.NaN
-data_url.dropna(subset='linkUrlProtocolDOI', axis=0,inplace=True)
-st.write(data_url[['linkUrlProtocolDOI','Org','linkUrl']])
+data_url['index']=np.arange(0,len(data_url))
+data_url.set_index('index', inplace=True)
+st.write(len(data_url))
+st.write(Selection_ZA)
+data_columns = data.columns.values
+liste_col_link = []
+for i,x in enumerate(data_columns):
+    if 'link' in data_columns[i]:
+        liste_col_link.append(x)
 
-st.write(data_url['linkUrlProtocolDOI'].unique())
-st.write(len(data_url['linkUrlProtocolDOI'].unique()))
+data_link = data_url[liste_col_link]
+l=['linkUrlProtocolDOI','linkUrl','linkProtocol','linkUrlProtocol','linkUrlProtocoldoi',
+   'linkUrlProtocolESRIArcGIShttpconfiguration','linkUrlProtocolnull','linkUrlProtocolOGCEDR',
+   'linkUrlProtocolOGCWCS','linkUrlProtocolOGCWFS','linkUrlProtocolOGCWFS100httpgetcapabilities',
+   'linkUrlProtocolOGCWMS','linkUrlProtocolOGCWMS111httpgetmap','linkUrlProtocolUKST',
+   'linkUrlProtocolWWWDOWNLOAD','linkUrlProtocolWWWDOWNLOAD10ftpdownload','linkUrlProtocolWWWDOWNLOAD10httpdownload',
+   'linkUrlProtocolWWWLINK','linkUrlProtocolWWWLINK10httplink','linkUrlProtocolWWWLINK10httppartners']
+
+data_link['test']= data_link[l[0]]
+for col in l[1:]:
+    data_link['test2'] = data_link['test'] + data_link[col]
+    data_link['test'] = data_link['test2']
+
+for i in range(len(data_link)):
+    try:
+        data_link.loc[i,'test']=str(data_link.loc[i,'test']).replace('-','').strip()
+    except:
+        data_link.loc[i,'test']=''
+
+for i in range(len(data_link)):
+    try:
+        if "doi" in str(data_link.loc[i,'test']):
+            data_link.loc[i,'DOI']=1
+        else:
+            data_link.loc[i,'DOI']=0
+    except:
+        data_link.loc[i,'DOI']=0
+l0 =[]
+for i in range(len(data_link)):
+    l1= []
+    l1.append(data_link.loc[i,'DOI'])
+    l0.append(l1)
+fig9 = go.Figure()
+fig9.add_trace(go.Heatmap(
+    x=['DOI'],
+    y=data_link['DOI'].index.values,
+    z=l0))
+fig9.update_layout(
+                title='DOI catalogués',
+                yaxis_title='Index',
+                width=250,
+                height=600)
+st.plotly_chart(fig9)
+
+st.write(len(data_link[data_link['DOI']==1.0]))
+
+#st.table(data_link['test'][data_link['DOI']==1.0])
+
+data_link_bis = pd.concat([data_link,data_url['resourceTitleObject.default']], axis=0)
+data_link_ter = data[data['resourceTitleObject.default']=="Shapefile de la Zone atelier environnementale urbaine de Strasbourg"]
+st.write(data_link_ter['linkUrl'])
+
+
+fichier2 = "doi"
+dat2 = pd.read_csv(f"pages/data/{fichier2}.csv")
+dat2.rename(columns={"Unnamed: 2":"Sources"}, inplace=True)
+
+st.dataframe(dat2)
+
+dat2_count = dat2['Sources'].value_counts()
+st.write(dat2_count)
+fig1= go.Figure()
+fig1.add_trace(go.Pie(labels=dat2_count.index.values, values=dat2_count.values))
+fig1.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+fig1.update_layout(
+                title='DOI trouvés',
+                xaxis_title='Compte',
+                yaxis_title='Pointage',
+                width=500,
+                height=500)
+st.plotly_chart(fig1,use_container_width=True)

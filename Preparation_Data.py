@@ -6,7 +6,7 @@ import re
 pd.options.mode.chained_assignment = None
 
 ##################################### LECTURE DATA ###########################################
-fichier = 'Enregistrements_RZA_010624'
+fichier = 'Enregistrements_RZA_020624'
 data = pd.read_csv(f"pages/data/{fichier}.csv")
 data.rename(columns={"createDate":"Date"}, inplace=True)
 data.rename(columns={"dateStamp":"Datestamp"}, inplace=True)
