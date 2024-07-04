@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
 	<gmd:fileIdentifier>
-		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">fc86ebf4-4f49-4b8d-8bf0-b0c4b768b85b</gco:CharacterString>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">5b87aa03-48f0-4ed1-b0d5-329cbfc3edbf</gco:CharacterString>
 	</gmd:fileIdentifier>
 	<gmd:language>
 		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">fre</gco:CharacterString>
@@ -10,7 +10,7 @@
 		<gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"></gmd:MD_CharacterSetCode>
 	</gmd:characterSet>
 	<gmd:dateStamp>
-		<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2012-08-07T15:12:29</gco:DateTime>
+		<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2012-09-04T10:39:56</gco:DateTime>
 	</gmd:dateStamp>
 	<gmd:metadataStandardName>
 		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">ISO 19115:2003/19139</gco:CharacterString>
@@ -22,8 +22,8 @@
 		<gmd:MD_ReferenceSystem>
 			<gmd:referenceSystemIdentifier>
 				<gmd:RS_Identifier>
-					<gmd:code>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Aucun</gco:CharacterString>
+					<gmd:code xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
+						<gco:CharacterString></gco:CharacterString>
 					</gmd:code>
 				</gmd:RS_Identifier>
 			</gmd:referenceSystemIdentifier>
@@ -34,12 +34,12 @@
 			<gmd:citation>
 				<gmd:CI_Citation>
 					<gmd:title>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Rï¿½seau de suivi piï¿½zomï¿½trique de la nappe villafranchienne de Mauguio-Lunel</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Colonne stratigraphique des terrains mesozoiques,gorges de La Balme</gco:CharacterString>
 					</gmd:title>
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2003-11-19T15:02:00</gco:DateTime>
+								<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2007-07-17T15:02:00</gco:DateTime>
 							</gmd:date>
 							<gmd:dateType>
 								<gmd:CI_DateTypeCode codeListValue="revision" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"></gmd:CI_DateTypeCode>
@@ -49,7 +49,7 @@
 					<gmd:date>
 						<gmd:CI_Date>
 							<gmd:date>
-								<gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">1996-01-01</gco:Date>
+								<gco:Date></gco:Date>
 							</gmd:date>
 							<gmd:dateType>
 								<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="creation"></gmd:CI_DateTypeCode>
@@ -67,7 +67,7 @@
 						</gmd:CI_Date>
 					</gmd:date>
 					<gmd:edition>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">2003-11-19T15:02:00</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">2007-07-17T15:02:00</gco:CharacterString>
 					</gmd:edition>
 					<gmd:presentationForm>
 						<gmd:CI_PresentationFormCode codeListValue="tableDigital" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"></gmd:CI_PresentationFormCode>
@@ -75,15 +75,19 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Cette donnï¿½e est dï¿½crite de maniï¿½re prï¿½cise sur le site web de gestion des fiches descriptives des dispositifs de collecte du bassin Rhï¿½ne Mï¿½diterranï¿½e Corse. Pour de plus amples informations consulter le site indiquï¿½ dans la caractï¿½ristique "Site web".</gco:CharacterString>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Colonne stratigraphique synthétique des terrains mesozoiques, gorges de la Balme:
+-Ensemble d'informationsur la composittion du sol(épaisseur et nature de chaque couche)
+Thèse Philippe Michal 1988
+But : Action de recherche ZABR/agence de l'eau RMC "échanges nappes/Rhone"  : Echanges nappes/Rhône
+Thèse  : Modes d'alimentation d'une nappe alluviale:nappe de la vallée du Rhône entre La Balme et St Genix sur Guiers(Savoie)</gco:CharacterString>
 			</gmd:abstract>
 			<gmd:pointOfContact>
 				<gmd:CI_ResponsibleParty>
-					<gmd:individualName xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
-						<gco:CharacterString></gco:CharacterString>
+					<gmd:individualName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Frédéric Paran</gco:CharacterString>
 					</gmd:individualName>
 					<gmd:organisationName>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">D.I.R.E.N. Languedoc-Roussillon</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Mines Saint-Etienne - Centre SPIN - GSE</gco:CharacterString>
 					</gmd:organisationName>
 					<gmd:positionName xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
 						<gco:CharacterString></gco:CharacterString>
@@ -102,20 +106,20 @@
 							</gmd:phone>
 							<gmd:address>
 								<gmd:CI_Address>
-									<gmd:deliveryPoint xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
-										<gco:CharacterString></gco:CharacterString>
+									<gmd:deliveryPoint>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">158 cours Fauriel CS 62362</gco:CharacterString>
 									</gmd:deliveryPoint>
-									<gmd:deliveryPoint xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
-										<gco:CharacterString></gco:CharacterString>
+									<gmd:deliveryPoint>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Mines Saint-Etienne - Centre SPIN - GSE</gco:CharacterString>
 									</gmd:deliveryPoint>
-									<gmd:city xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
-										<gco:CharacterString></gco:CharacterString>
+									<gmd:city>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Saint-Etienne</gco:CharacterString>
 									</gmd:city>
 									<gmd:administrativeArea xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
 										<gco:CharacterString></gco:CharacterString>
 									</gmd:administrativeArea>
-									<gmd:postalCode xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
-										<gco:CharacterString></gco:CharacterString>
+									<gmd:postalCode>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">42023</gco:CharacterString>
 									</gmd:postalCode>
 									<gmd:country>
 										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">France</gco:CharacterString>
@@ -138,14 +142,14 @@
 						<gmd:MD_MaintenanceFrequencyCode codeListValue="unknown" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"></gmd:MD_MaintenanceFrequencyCode>
 					</gmd:maintenanceAndUpdateFrequency>
 					<gmd:userDefinedMaintenanceFrequency>
-						<gts:TM_PeriodDuration xmlns:gts="http://www.isotc211.org/2005/gts">1 jour</gts:TM_PeriodDuration>
+						<gts:TM_PeriodDuration xmlns:gts="http://www.isotc211.org/2005/gts">P0Y0M0DT0H0M0S</gts:TM_PeriodDuration>
 					</gmd:userDefinedMaintenanceFrequency>
 				</gmd:MD_MaintenanceInformation>
 			</gmd:resourceMaintenance>
 			<gmd:graphicOverview>
 				<gmd:MD_BrowseGraphic>
 					<gmd:fileName>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://cat.indores.fr/geonetwork/srv/api/records/fc86ebf4-4f49-4b8d-8bf0-b0c4b768b85b/attachments/</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://cat.indores.fr/geonetwork/srv/api/records/5b87aa03-48f0-4ed1-b0d5-329cbfc3edbf/attachments/</gco:CharacterString>
 					</gmd:fileName>
 					<gmd:fileDescription>
 						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">thumbnail</gco:CharacterString>
@@ -155,7 +159,7 @@
 			<gmd:graphicOverview>
 				<gmd:MD_BrowseGraphic>
 					<gmd:fileName>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://cat.indores.fr/geonetwork/srv/api/records/fc86ebf4-4f49-4b8d-8bf0-b0c4b768b85b/attachments/</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://cat.indores.fr/geonetwork/srv/api/records/5b87aa03-48f0-4ed1-b0d5-329cbfc3edbf/attachments/</gco:CharacterString>
 					</gmd:fileName>
 					<gmd:fileDescription>
 						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">large_thumbnail</gco:CharacterString>
@@ -165,7 +169,7 @@
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">hydrogï¿½ologique</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">hydrogéologique</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
 						<gmd:MD_KeywordTypeCode codeListValue="discipline" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"></gmd:MD_KeywordTypeCode>
@@ -178,7 +182,13 @@
 						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">France</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:keyword>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Hï¿½rault</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Isère</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Savoie</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Rhône de Genève à Vienne</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
 						<gmd:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"></gmd:MD_KeywordTypeCode>
@@ -188,10 +198,7 @@
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">chronique</gco:CharacterString>
-					</gmd:keyword>
-					<gmd:keyword>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Eau souterraine</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">document</gco:CharacterString>
 					</gmd:keyword>
 					<gmd:type>
 						<gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"></gmd:MD_KeywordTypeCode>
@@ -207,7 +214,7 @@
 						<gmd:MD_RestrictionCode codeListValue="" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"></gmd:MD_RestrictionCode>
 					</gmd:useConstraints>
 					<gmd:otherConstraints>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Mise ï¿½ disposition des donnï¿½es au cas par cas (charte)</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Mise à disposition des données au cas par cas (charte)</gco:CharacterString>
 					</gmd:otherConstraints>
 					<gmd:otherConstraints xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
 						<gco:CharacterString></gco:CharacterString>
@@ -243,7 +250,7 @@
 						<gmd:EX_TemporalExtent>
 							<gmd:extent>
 								<gml:TimePeriod xmlns:gml="http://www.opengis.net/gml" gml:id="N101D0">
-									<gml:beginPosition>1996-01-01T15:02:00</gml:beginPosition>
+									<gml:beginPosition>T15:02:00</gml:beginPosition>
 									<gml:endPosition>T15:02:00</gml:endPosition>
 								</gml:TimePeriod>
 							</gmd:extent>
@@ -256,23 +263,23 @@
 					<gmd:geographicElement>
 						<gmd:EX_GeographicBoundingBox>
 							<gmd:westBoundLongitude>
-								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">4.08691</gco:Decimal>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">5.48577464788789</gco:Decimal>
 							</gmd:westBoundLongitude>
 							<gmd:eastBoundLongitude>
-								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">6.81152</gco:Decimal>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">5.75887323943706</gco:Decimal>
 							</gmd:eastBoundLongitude>
 							<gmd:southBoundLatitude>
-								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">42.96173</gco:Decimal>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">45.5848695652173</gco:Decimal>
 							</gmd:southBoundLatitude>
 							<gmd:northBoundLatitude>
-								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">46.74103</gco:Decimal>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">45.7314456521738</gco:Decimal>
 							</gmd:northBoundLatitude>
 						</gmd:EX_GeographicBoundingBox>
 					</gmd:geographicElement>
 				</gmd:EX_Extent>
 			</gmd:extent>
-			<gmd:supplementalInformation>
-				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Dï¿½partement : Dï¿½partement de l'Hï¿½rault</gco:CharacterString>
+			<gmd:supplementalInformation xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
+				<gco:CharacterString></gco:CharacterString>
 			</gmd:supplementalInformation>
 		</gmd:MD_DataIdentification>
 	</gmd:identificationInfo>
@@ -281,10 +288,10 @@
 			<gmd:distributionFormat>
 				<gmd:MD_Format>
 					<gmd:name>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">non renseignï¿½</gco:CharacterString>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">non renseigné</gco:CharacterString>
 					</gmd:name>
-					<gmd:version>
-						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Non encore implï¿½mentï¿½</gco:CharacterString>
+					<gmd:version xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="unknown">
+						<gco:CharacterString></gco:CharacterString>
 					</gmd:version>
 					<gmd:specification xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
 						<gco:CharacterString></gco:CharacterString>
@@ -296,7 +303,7 @@
 					<gmd:onLine>
 						<gmd:CI_OnlineResource>
 							<gmd:linkage>
-								<gmd:URL>http://www.rdbrmc.com/RESEAUX/presentation/main/index.php</gmd:URL>
+								<gmd:URL></gmd:URL>
 							</gmd:linkage>
 							<gmd:protocol>
 								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--partners</gco:CharacterString>
