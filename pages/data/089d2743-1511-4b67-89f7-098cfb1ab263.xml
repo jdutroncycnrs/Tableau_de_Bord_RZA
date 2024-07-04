@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gmd:MD_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+	<gmd:fileIdentifier>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">089d2743-1511-4b67-89f7-098cfb1ab263</gco:CharacterString>
+	</gmd:fileIdentifier>
+	<gmd:language>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">fre</gco:CharacterString>
+	</gmd:language>
+	<gmd:characterSet>
+		<gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"></gmd:MD_CharacterSetCode>
+	</gmd:characterSet>
+	<gmd:parentIdentifier>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">64f1934f-57e9-419e-aa96-f51570fc6479</gco:CharacterString>
+	</gmd:parentIdentifier>
+	<gmd:hierarchyLevel>
+		<gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset"></gmd:MD_ScopeCode>
+	</gmd:hierarchyLevel>
+	<gmd:contact>
+		<gmd:CI_ResponsibleParty>
+			<gmd:individualName>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Fanny Arnaud</gco:CharacterString>
+			</gmd:individualName>
+			<gmd:organisationName>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
+			</gmd:organisationName>
+			<gmd:positionName>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Ingénieur d'études</gco:CharacterString>
+			</gmd:positionName>
+			<gmd:contactInfo>
+				<gmd:CI_Contact>
+					<gmd:phone>
+						<gmd:CI_Telephone>
+							<gmd:voice>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">04 37 37 64 94</gco:CharacterString>
+							</gmd:voice>
+						</gmd:CI_Telephone>
+					</gmd:phone>
+					<gmd:address>
+						<gmd:CI_Address>
+							<gmd:deliveryPoint>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">15 Parvis René Descartes BP 7000</gco:CharacterString>
+							</gmd:deliveryPoint>
+							<gmd:city>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Lyon</gco:CharacterString>
+							</gmd:city>
+							<gmd:postalCode>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">69007</gco:CharacterString>
+							</gmd:postalCode>
+							<gmd:country>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">France</gco:CharacterString>
+							</gmd:country>
+							<gmd:electronicMailAddress>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">fanny.arnaud@ens-lyon.fr</gco:CharacterString>
+							</gmd:electronicMailAddress>
+						</gmd:CI_Address>
+					</gmd:address>
+				</gmd:CI_Contact>
+			</gmd:contactInfo>
+			<gmd:role>
+				<gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact"></gmd:CI_RoleCode>
+			</gmd:role>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2024-04-02T13:38:33.427534Z</gco:DateTime>
+	</gmd:dateStamp>
+	<gmd:metadataStandardName>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">ISO 19115:2003/19139</gco:CharacterString>
+	</gmd:metadataStandardName>
+	<gmd:metadataStandardVersion>
+		<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1.0</gco:CharacterString>
+	</gmd:metadataStandardVersion>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Modélisation du transport solide par charriage du Rhône français (2017)</gco:CharacterString>
+					</gmd:title>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2017-12-22T00:00:00</gco:DateTime>
+							</gmd:date>
+							<gmd:dateType>
+								<gmd:CI_DateTypeCode codeListValue="publication" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"></gmd:CI_DateTypeCode>
+							</gmd:dateType>
+						</gmd:CI_Date>
+					</gmd:date>
+					<gmd:presentationForm>
+						<gmd:CI_PresentationFormCode codeListValue="documentDigital" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"></gmd:CI_PresentationFormCode>
+					</gmd:presentationForm>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:abstract>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Estimation du transport solide par charriage dans les différents secteurs du Rhône français : capacités annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs débits de crue.</gco:CharacterString>
+			</gmd:abstract>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Daniel Vázquez Tarrío</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:organisationName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">CEREGE</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Post-doctorant</gco:CharacterString>
+					</gmd:positionName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">CEREGE Technopôle Arbois</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Aix-en-Provence</gco:CharacterString>
+									</gmd:city>
+									<gmd:postalCode>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">13545</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">France</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">vazqueztarrio@cerege.fr</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="author"></gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Michal Tal</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:organisationName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">CEREGE</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Maître de Conférences</gco:CharacterString>
+					</gmd:positionName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:phone>
+								<gmd:CI_Telephone>
+									<gmd:voice>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">04 42 97 15 63</gco:CharacterString>
+									</gmd:voice>
+								</gmd:CI_Telephone>
+							</gmd:phone>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">CEREGE Technopôle Arbois</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Aix-en-Provence</gco:CharacterString>
+									</gmd:city>
+									<gmd:postalCode>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">13545</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">France</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">tal@cerege.fr</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode" codeListValue="principalInvestigator"></gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:resourceMaintenance></gmd:resourceMaintenance>
+			<gmd:graphicOverview>
+				<gmd:MD_BrowseGraphic>
+					<gmd:fileName>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://cat.indores.fr/geonetwork/srv/api/records/089d2743-1511-4b67-89f7-098cfb1ab263/attachments/DanielVasquez_Modelisation.jpg</gco:CharacterString>
+					</gmd:fileName>
+					<gmd:fileDescription>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">large_thumbnail</gco:CharacterString>
+					</gmd:fileDescription>
+					<gmd:fileType>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">jpg</gco:CharacterString>
+					</gmd:fileType>
+				</gmd:MD_BrowseGraphic>
+			</gmd:graphicOverview>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Hydrographie</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"></gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date>
+										<gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2008-06-01</gco:Date>
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"></gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:identifier>
+								<gmd:MD_Identifier>
+									<gmd:code>
+										<gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+									</gmd:code>
+								</gmd:MD_Identifier>
+							</gmd:identifier>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Rhône</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place"></gmd:MD_KeywordTypeCode>
+					</gmd:type>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">OSR</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Compétence</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Charriage</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Modélisation</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Transport solide</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">OHM VR</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"></gmd:MD_KeywordTypeCode>
+					</gmd:type>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:resourceConstraints>
+				<gmd:MD_LegalConstraints>
+					<gmd:useLimitation>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Mention obligatoire sur tout support de diffusion : "Ces données ont été produites dans le cadre de l'Observatoire des Sédiments du Rhône".</gco:CharacterString>
+					</gmd:useLimitation>
+					<gmd:useLimitation>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Utilisation commerciale directe ou indirecte interdite.</gco:CharacterString>
+					</gmd:useLimitation>
+					<gmd:useConstraints>
+						<gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="intellectualPropertyRights"></gmd:MD_RestrictionCode>
+					</gmd:useConstraints>
+				</gmd:MD_LegalConstraints>
+			</gmd:resourceConstraints>
+			<gmd:resourceConstraints>
+				<gmd:MD_SecurityConstraints>
+					<gmd:classification>
+						<gmd:MD_ClassificationCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ClassificationCode" codeListValue="unclassified"></gmd:MD_ClassificationCode>
+					</gmd:classification>
+				</gmd:MD_SecurityConstraints>
+			</gmd:resourceConstraints>
+			<gmd:spatialRepresentationType>
+				<gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="textTable"></gmd:MD_SpatialRepresentationTypeCode>
+			</gmd:spatialRepresentationType>
+			<gmd:language>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">fre</gco:CharacterString>
+			</gmd:language>
+			<gmd:characterSet>
+				<gmd:MD_CharacterSetCode codeListValue="utf8" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"></gmd:MD_CharacterSetCode>
+			</gmd:characterSet>
+			<gmd:topicCategory>
+				<gmd:MD_TopicCategoryCode>inlandWaters</gmd:MD_TopicCategoryCode>
+			</gmd:topicCategory>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:description>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Cours du Rhône français</gco:CharacterString>
+					</gmd:description>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">4.114</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">6.1617</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">43.239</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">46.22</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:temporalElement>
+						<gmd:EX_TemporalExtent>
+							<gmd:extent>
+								<gml:TimePeriod xmlns:gml="http://www.opengis.net/gml" gml:id="d30238e371a1050910">
+									<gml:beginPosition>2016-11-02T01:00:00</gml:beginPosition>
+									<gml:endPosition>2017-12-31T23:59:00</gml:endPosition>
+								</gml:TimePeriod>
+							</gmd:extent>
+						</gmd:EX_TemporalExtent>
+					</gmd:temporalElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+			<gmd:supplementalInformation>
+				<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Action I.4 du programme OSR4 : "Modélisation des évolutions morphodynamiques du chenal sur le long terme". 
+Projet OHM VR "Past and present controls on bed evolution, sediment distribution, and transport capacities in the Rhône River" (2017).</gco:CharacterString>
+			</gmd:supplementalInformation>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:distributionInfo xmlns:che="http://www.geocat.ch/2008/che">
+		<gmd:MD_Distribution>
+			<gmd:distributionFormat xmlns:date="http://exslt.org/dates-and-times">
+				<gmd:MD_Format>
+					<gmd:name>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Base de données</gco:CharacterString>
+					</gmd:name>
+					<gmd:version>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">2017</gco:CharacterString>
+					</gmd:version>
+				</gmd:MD_Format>
+			</gmd:distributionFormat>
+			<gmd:transferOptions>
+				<gmd:MD_DigitalTransferOptions>
+					<gmd:onLine xmlns:date="http://exslt.org/dates-and-times">
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>http://www.graie.org/osr/</gmd:URL>
+							</gmd:linkage>
+							<gmd:protocol>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--link</gco:CharacterString>
+							</gmd:protocol>
+							<gmd:name>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Site de l'OSR</gco:CharacterString>
+							</gmd:name>
+							<gmd:description>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Site web de l'Observatoire des Sédiments du Rhône</gco:CharacterString>
+							</gmd:description>
+						</gmd:CI_OnlineResource>
+					</gmd:onLine>
+					<gmd:onLine xmlns:date="http://exslt.org/dates-and-times">
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>http://www.graie.org/osr/IMG/pdf/2018.01_rapport_final_1.4_v9_drm.pdf</gmd:URL>
+							</gmd:linkage>
+							<gmd:protocol>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--link</gco:CharacterString>
+							</gmd:protocol>
+							<gmd:name>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Action I.4 OSR4</gco:CharacterString>
+							</gmd:name>
+							<gmd:description>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Rapport de synthèse Action I.4 OSR4</gco:CharacterString>
+							</gmd:description>
+						</gmd:CI_OnlineResource>
+					</gmd:onLine>
+					<gmd:onLine xmlns:date="http://exslt.org/dates-and-times">
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>https://www.graie.org/ISRivers/docs/papers/2018/24B41-070VAZ.pdf</gmd:URL>
+							</gmd:linkage>
+							<gmd:protocol>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--link</gco:CharacterString>
+							</gmd:protocol>
+							<gmd:name>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">I.S. Rivers 2018</gco:CharacterString>
+							</gmd:name>
+							<gmd:description>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Vázquez-Tarrío et al., 2018</gco:CharacterString>
+							</gmd:description>
+						</gmd:CI_OnlineResource>
+					</gmd:onLine>
+					<gmd:onLine>
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>https://www.sciencedirect.com/science/article/pii/S0048969718349532</gmd:URL>
+							</gmd:linkage>
+							<gmd:protocol>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WWW:LINK-1.0-http--link</gco:CharacterString>
+							</gmd:protocol>
+							<gmd:name>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Article dans STOTEN</gco:CharacterString>
+							</gmd:name>
+							<gmd:description>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Vazquez et al., 2019</gco:CharacterString>
+							</gmd:description>
+						</gmd:CI_OnlineResource>
+					</gmd:onLine>
+				</gmd:MD_DigitalTransferOptions>
+			</gmd:transferOptions>
+		</gmd:MD_Distribution>
+	</gmd:distributionInfo>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:scope>
+				<gmd:DQ_Scope>
+					<gmd:level>
+						<gmd:MD_ScopeCode codeListValue="dataset" codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"></gmd:MD_ScopeCode>
+					</gmd:level>
+				</gmd:DQ_Scope>
+			</gmd:scope>
+			<gmd:report>
+				<gmd:DQ_DomainConsistency>
+					<gmd:result xmlns:gn="http://www.fao.org/geonetwork">
+						<gmd:DQ_ConformanceResult>
+							<gmd:specification>
+								<gmd:CI_Citation>
+									<gmd:title>
+										<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gco:CharacterString>
+									</gmd:title>
+									<gmd:date>
+										<gmd:CI_Date>
+											<gmd:date>
+												<gco:Date xmlns:gco="http://www.isotc211.org/2005/gco">2013-10-21</gco:Date>
+											</gmd:date>
+											<gmd:dateType>
+												<gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication"></gmd:CI_DateTypeCode>
+											</gmd:dateType>
+										</gmd:CI_Date>
+									</gmd:date>
+								</gmd:CI_Citation>
+							</gmd:specification>
+							<gmd:explanation>
+								<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Non évalué</gco:CharacterString>
+							</gmd:explanation>
+						</gmd:DQ_ConformanceResult>
+					</gmd:result>
+				</gmd:DQ_DomainConsistency>
+			</gmd:report>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:statement>
+						<gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Les estimations du transport solide par charriage ont été réalisées à partir : 
+- des sorties du modèle hydraulique 1D d'IRSTEA Lyon (MAGE) qui simule les différentes gammes de débits de la courbe des débits classés
+- des données granulométriques issues de la thèse d’Elsa Parrot (2015)
+- de l’équation de Recking</gco:CharacterString>
+					</gmd:statement>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+</gmd:MD_Metadata>
