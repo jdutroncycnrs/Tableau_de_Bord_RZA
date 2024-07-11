@@ -102,6 +102,8 @@ with st.container(border=True):
         ###################################################################################################
         try:
             df = pd.read_csv(f'pages/data/{i}.csv',index_col=[0])
+            d_test = df_fair['Validation'][df_fair['identifieur']==i]
+            st.sidebar.write(d_test)
         except:
             url_ = url + i
             resp = requests.get(url_,headers=headers)
@@ -602,7 +604,7 @@ with st.container(border=True):
 
 #################################################################################################################################
 #################################################################################################################################
-with st.container(border=True):
+with st.sidebar:
 
     sub_title = f"EVALUATION FAIR"
     s_sub_title = f"<p style='font-size:25px;color:rgb{couleur_subtitles}'>{sub_title}</p>"
@@ -623,7 +625,7 @@ with st.container(border=True):
         st.session_state.R1_1 = False
         st.session_state.R1_2 = False
         st.session_state.R1_3 = False
-        st.session_state.Validation = False
+        st.session_state.V = False
 
     if button1 or button2:
         reset_checkboxes()
@@ -655,38 +657,35 @@ with st.container(border=True):
     if 'R1_3' not in st.session_state:
         st.session_state.R1_3 = False
     if 'V' not in st.session_state:
-        st.session_state.Validation = False
+        st.session_state.V = False
 
-    col1,col2,col3,col4 = st.columns(4)
-    with col1:
-        F1 = st.checkbox("F1 Unique_ID",value=st.session_state.F1,key='F1')
-        F2 = st.checkbox("F2 Riche_MD",value=st.session_state.F2,key='F2')
-        F3 = st.checkbox("F3 ID_des_Datas",value=st.session_state.F3,key='F3')
-        F4 = st.checkbox("F4 Indexing",value=st.session_state.F4,key='F4')
-    with col2:
-        A1_1 = st.checkbox("A1.1 URL_data/gratuit",value=st.session_state.A1_1,key='A1_1')
-        A1_2 = st.checkbox("A1.2 URL_data/auth",value=st.session_state.A1_2,key='A1_2')
-        A2 = st.checkbox("A2 MD_access_without_data",value=st.session_state.A2,key='A2')
-    with col3:
-        I1 = st.checkbox("I1 FAIR_Format",value=st.session_state.I1,key='I1')
-        I2 = st.checkbox("I2 Vocabularies",value=st.session_state.I2,key='I2')
-        I3 = st.checkbox("I3 Autres_refs",value=st.session_state.I3,key='I3')
-    with col4:
-        R1_1 = st.checkbox("R1.1 Droits",value=st.session_state.R1_1,key='R1_1')
-        R1_2 = st.checkbox("R1.2 Genealogie",value=st.session_state.R1_2,key='R1_2')
-        R1_3 = st.checkbox("R1.3 Structuration",value=st.session_state.R1_3,key='R1_3')
+    
+    F1 = st.checkbox("F1 Unique_ID",value=st.session_state.F1,key='F1')
+    F2 = st.checkbox("F2 Riche_MD",value=st.session_state.F2,key='F2')
+    F3 = st.checkbox("F3 ID_des_Datas",value=st.session_state.F3,key='F3')
+    F4 = st.checkbox("F4 Indexing",value=st.session_state.F4,key='F4')
 
-    Validation = st.checkbox("Validation",value=st.session_state.Validation,key='V')
+    A1_1 = st.checkbox("A1.1 URL_data/gratuit",value=st.session_state.A1_1,key='A1_1')
+    A1_2 = st.checkbox("A1.2 URL_data/auth",value=st.session_state.A1_2,key='A1_2')
+    A2 = st.checkbox("A2 MD_access_without_data",value=st.session_state.A2,key='A2')
 
-    dfi = pd.DataFrame(data=[[i, F1,F2,F3,F4,A1_1,A1_2,A2,I1,I2,I3,R1_1,R1_2,R1_3,Validation]],columns=['identifieur','F1','F2','F3','F4','A1_1','A1_2','A2','I1','I2','I3','R1_1','R1_2','R1_3','Validation'])
+    I1 = st.checkbox("I1 FAIR_Format",value=st.session_state.I1,key='I1')
+    I2 = st.checkbox("I2 Vocabularies",value=st.session_state.I2,key='I2')
+    I3 = st.checkbox("I3 Autres_refs",value=st.session_state.I3,key='I3')
+
+    R1_1 = st.checkbox("R1.1 Droits",value=st.session_state.R1_1,key='R1_1')
+    R1_2 = st.checkbox("R1.2 Genealogie",value=st.session_state.R1_2,key='R1_2')
+    R1_3 = st.checkbox("R1.3 Structuration",value=st.session_state.R1_3,key='R1_3')
+
+    V = st.checkbox("Validation",value=st.session_state.V,key='V')
+
+    dfi = pd.DataFrame(data=[[i, F1,F2,F3,F4,A1_1,A1_2,A2,I1,I2,I3,R1_1,R1_2,R1_3,V]],columns=['identifieur','F1','F2','F3','F4','A1_1','A1_2','A2','I1','I2','I3','R1_1','R1_2','R1_3','Validation'])
 
     df_fair_i = pd.concat([dfi, df_fair], axis=0)
     df_fair = df_fair_i
     df_fair.drop_duplicates(subset='identifieur', inplace=True)
     df_fair.to_csv('test_fair.csv')
 
-st.sidebar.markdown(f'FAIR')
-st.sidebar.table(df_fair[df_fair['identifieur']==i].T)
 
 st.dataframe(df_fair)
 try:
