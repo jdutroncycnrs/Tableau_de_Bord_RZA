@@ -102,7 +102,7 @@ with st.container(border=True):
         ###################################################################################################
         try:
             df = pd.read_csv(f'pages/data/{i}.csv',index_col=[0])
-            d_test = df_fair['Validation'][df_fair['identifieur']==i]
+            d_test = df_fair.loc[i,'Validation']
             st.sidebar.write(d_test)
         except:
             url_ = url + i
@@ -630,34 +630,50 @@ with st.sidebar:
     if button1 or button2:
         reset_checkboxes()
 
-    if 'F1' not in st.session_state:
-        st.session_state.F1 = False
-    if 'F2' not in st.session_state:
-        st.session_state.F2 = False
-    if 'F3' not in st.session_state:
-        st.session_state.F3 = False
-    if 'F4' not in st.session_state:
-        st.session_state.F4 = False
-    if 'A1_1' not in st.session_state:
-        st.session_state.A1_1 = False
-    if 'A1_2' not in st.session_state:
-        st.session_state.A1_2 = False
-    if 'A2' not in st.session_state:
-        st.session_state.A2 = False
-    if 'I1' not in st.session_state:
-        st.session_state.I1 = False
-    if 'I2' not in st.session_state:
-        st.session_state.I2 = False      
-    if 'I3' not in st.session_state:
-        st.session_state.I3 = False
-    if 'R1_1' not in st.session_state:
-        st.session_state.R1_1 = False
-    if 'R1_2' not in st.session_state:
-        st.session_state.R1_2 = False
-    if 'R1_3' not in st.session_state:
-        st.session_state.R1_3 = False
-    if 'V' not in st.session_state:
-        st.session_state.V = False
+    if d_test==False:
+        if 'F1' not in st.session_state:
+            st.session_state.F1 = False
+        if 'F2' not in st.session_state:
+            st.session_state.F2 = False
+        if 'F3' not in st.session_state:
+            st.session_state.F3 = False
+        if 'F4' not in st.session_state:
+            st.session_state.F4 = False
+        if 'A1_1' not in st.session_state:
+            st.session_state.A1_1 = False
+        if 'A1_2' not in st.session_state:
+            st.session_state.A1_2 = False
+        if 'A2' not in st.session_state:
+            st.session_state.A2 = False
+        if 'I1' not in st.session_state:
+            st.session_state.I1 = False
+        if 'I2' not in st.session_state:
+            st.session_state.I2 = False      
+        if 'I3' not in st.session_state:
+            st.session_state.I3 = False
+        if 'R1_1' not in st.session_state:
+            st.session_state.R1_1 = False
+        if 'R1_2' not in st.session_state:
+            st.session_state.R1_2 = False
+        if 'R1_3' not in st.session_state:
+            st.session_state.R1_3 = False
+        if 'V' not in st.session_state:
+            st.session_state.V = False
+    else:
+        st.session_state.F1 = df_fair.loc[i,'F1']
+        st.session_state.F2 = df_fair.loc[i,'F2']
+        st.session_state.F3 = df_fair.loc[i,'F3']
+        st.session_state.F4 = df_fair.loc[i,'F4']
+        st.session_state.A1_1 = df_fair.loc[i,'A1.1']
+        st.session_state.A1_2 = df_fair.loc[i,'A1.2']
+        st.session_state.A2 = df_fair.loc[i,'A2']
+        st.session_state.I1 = df_fair.loc[i,'I1']
+        st.session_state.I2 = df_fair.loc[i,'I2']
+        st.session_state.I3 = df_fair.loc[i,'I3']
+        st.session_state.R1_1 = df_fair.loc[i,'R1.1']
+        st.session_state.R1_2 = df_fair.loc[i,'R1.2']
+        st.session_state.R1_3 = df_fair.loc[i,'R1.3']
+        st.session_state.V = df_fair.loc[i,'Validation']
 
     
     F1 = st.checkbox("F1 Unique_ID",value=st.session_state.F1,key='F1')
@@ -684,6 +700,7 @@ with st.sidebar:
     df_fair_i = pd.concat([dfi, df_fair], axis=0)
     df_fair = df_fair_i
     df_fair.drop_duplicates(subset='identifieur', inplace=True)
+    df_fair.set_index('identifieur',inplace=True)
     df_fair.to_csv('test_fair.csv')
 
 
