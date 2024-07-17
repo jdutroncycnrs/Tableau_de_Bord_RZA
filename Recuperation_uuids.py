@@ -8,7 +8,7 @@ import re
 import pandas as pd
 
 
-def scraping_GN():
+def scraping_GN(date):
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
 
@@ -32,23 +32,23 @@ def scraping_GN():
         uniquement_la_selection = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, uniquement_la_selection_xpath)))
         uniquement_la_selection.click()
 
+        time.sleep(5)
+        current_url = driver.current_url
+
+        with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt","w") as file:
+            file.write(current_url)
+
+        m = True
+
     except Exception as e:
         print(f"Exception occurred: {e}")
-
-    time.sleep(5)
-    current_url = driver.current_url
-
-    with open("pages/data/uuid_cat_InDoRes.txt","w") as file:
-        file.write(current_url)
-
-    m = "la Récup est OK"
+        m = False
 
     driver.quit()
-
     return m
 
-def uuids_cleaning():
-    with open(f"pages/data/uuid_cat_InDoRes.txt") as file:
+def uuids_cleaning(date):
+    with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt") as file:
         t = file.read()
     t2 =t[70:]
     list_uuid_brutes= re.split(',', t2)
@@ -70,6 +70,19 @@ def uuids_cleaning():
         except:
             new_list_uuid2.append(new_list_uuid[j])
     df_uuid = pd.DataFrame(data= new_list_uuid2,columns=["uuid_cat_InDoRes"])
-    df_uuid.to_csv(f"pages/data/uuid_cat_InDoRes_clean.csv")
-    m2 = "Cleaning ok"
-    return m2
+    df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
+
+def transcript_json(json_data, file, prefix=""):
+    if isinstance(json_data, dict):
+        for key, value in json_data.items():
+            if isinstance(value, dict) or isinstance(value, list):
+                transcript_json(value,file, f"{prefix}.{key}" if prefix else key)
+            else:
+                #print(f"{prefix}.{key}: {value}" if prefix else f"{key}: {value}")
+                file.write(f"{prefix}.{key}:!{value}," if prefix else f"{key}:!{value},")
+    elif isinstance(json_data, list):
+        for item in json_data:
+            transcript_json(item,file, prefix)
+    else:
+        #print(f"{prefix}: {json_data}" if prefix else f"{json_data}")
+        file.write(f"{prefix}:!{json_data}," if prefix else f"{json_data},")
