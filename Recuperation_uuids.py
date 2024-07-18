@@ -47,6 +47,35 @@ def scraping_GN(date):
     driver.quit()
     return m
 
+def recup_group(uuid):
+    chrome_options = Options()
+    #chrome_options.add_experimental_option("detach", True)
+
+    driver = webdriver.Chrome(chrome_options)
+    driver.get(f'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/metadata/{uuid}')
+
+    try:
+        accepter_button = driver.find_element(By.CSS_SELECTOR, "p.cookie-warning-actions > button.btn-info").click()
+        group = driver.find_element(By.XPATH, "/html/body/div[2]/main/div[2]/div/div[2]/div/div/div[3]/div[3]/div/div/div/div[8]/div[2]/div/div[4]/span[3]/strong")      
+    except:
+        try:
+            group = driver.find_element(By.CSS_SELECTOR, "strong.ng-binding:nth-child(2)")
+        except:
+            try:
+                group = driver.find_element(By.XPATH, "/html/body/div[2]/main/div[2]/div/div[2]/div/div/div[5]/div[3]/div/div/div/div[9]/div[2]/div/div[4]/span[3]/strong")
+            except:
+                try:
+                    group = driver.find_element(By.XPATH, "/html/body/div[2]/main/div[2]/div/div[2]/div/div/div[5]/div[3]/div/div/div/div[8]/div[2]/div/div[4]/span[3]/strong")
+                except:
+                    try:
+                        group = driver.find_element(By.XPATH, "strong.ng-binding:nth-child(1)")
+                    except:
+                        print('error, aie')
+
+    g = group.text
+    driver.quit()
+    return g
+
 def uuids_cleaning(date):
     with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt") as file:
         t = file.read()

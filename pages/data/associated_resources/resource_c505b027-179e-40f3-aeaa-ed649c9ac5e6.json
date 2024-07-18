@@ -1,0 +1,299 @@
+{
+    "parent": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": null,
+                "url": null,
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Parcelle_2020_fin",
+                            "langeng": "Parcelle_2020_fin"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=Parcelle_2020_fin&BBOX=76.51468469504263,11.72502735466647,76.6609402102264,11.81579382584565"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Vector file representing the Berambadi watershed located in southern India, Karnataka State.",
+                    "langeng": "Vector file representing the Berambadi watershed located in southern India, Karnataka State."
+                },
+                "resourceTitleObject": {
+                    "default": "Plot delemitation of the berambadi watershed as of 2020-11-01 (ATCHA project)",
+                    "langeng": "Plot delemitation of the berambadi watershed as of 2020-11-01 (ATCHA project)"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "DOI",
+                        "function": "",
+                        "name": "Digital Object Identifier (DOI)",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://doi.org/10.35110/24f156b3-1240-414b-b643-cdc82c484772",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Parcelle_2020_fin.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/24f156b3-1240-414b-b643-cdc82c484772/attachments/Parcelle_2020_fin.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "Parcelle_2020_fin",
+                        "applicationProfile": "",
+                        "description": "plot of the berambadi watershed in 2019-2020 (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "Parcelle_2020_fin",
+                        "applicationProfile": "",
+                        "description": "plot of the berambadi watershed in 2019-2020 (OGC:WFS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4128",
+                "cl_status": [
+                    {
+                        "key": "historicalArchive"
+                    }
+                ],
+                "uuid": "24f156b3-1240-414b-b643-cdc82c484772",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "24f156b3-1240-414b-b643-cdc82c484772"
+        }
+    ],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "remote",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "https://portail.indigeo.fr/geonetwork/srv/fre/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=d6bfd6ad-de02-461c-b4dd-2df1fabed38f",
+                "initiativeType": ""
+            },
+            "_source": {
+                "resourceTitleObject": {
+                    "default": ""
+                }
+            },
+            "_id": "d6bfd6ad-de02-461c-b4dd-2df1fabed38f"
+        }
+    ],
+    "children": [],
+    "hasfeaturecats": [],
+    "brothersAndSisters": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "corn_med",
+                            "langeng": "corn_med"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=corn_med&BBOX=76.51468469504263,11.72502735466647,76.6609402102264,11.81579382584565"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Vector file representing the distribution of maize in the Berambadi watershed located in southern India, Karnataka State.",
+                    "langeng": "Vector file representing the distribution of maize in the Berambadi watershed located in southern India, Karnataka State."
+                },
+                "resourceTitleObject": {
+                    "default": "classification of land use and in particular of maize plots using a medium fusion level dataset for the berambadi watershed. Rabi season 2019-2020 (ATCHA project)",
+                    "langeng": "classification of land use and in particular of maize plots using a medium fusion level dataset for the berambadi watershed. Rabi season 2019-2020 (ATCHA project)"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "corn_med.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/ad6fe696-ae96-474a-9ea9-2f7784dac18f/attachments/corn_med.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "corn_med",
+                        "applicationProfile": "",
+                        "description": "Corn-med_Berambadi_2020 cr\u00e9\u00e9e le 2021-06-16 14:04:31 (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "corn_med",
+                        "applicationProfile": "",
+                        "description": "Corn-med_Berambadi_2020 cr\u00e9\u00e9e le 2021-06-16 14:04:31 (OGC:WFS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wfs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "corn_med.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/ad6fe696-ae96-474a-9ea9-2f7784dac18f/attachments/corn_med.zip",
+                        "group": 0
+                    }
+                ],
+                "id": "4472",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "ad6fe696-ae96-474a-9ea9-2f7784dac18f",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "ad6fe696-ae96-474a-9ea9-2f7784dac18f"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "corn_bas",
+                            "langeng": "corn_bas"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=corn_bas&BBOX=76.51468469504263,11.72502735466647,76.6609402102264,11.81579382584565"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Vector file representing the distribution of maize in the Berambadi watershed located in southern India, Karnataka State.",
+                    "langeng": "Vector file representing the distribution of maize in the Berambadi watershed located in southern India, Karnataka State."
+                },
+                "resourceTitleObject": {
+                    "default": "classification of land use and in particular of maize plots using a low fusion level dataset for the berambadi watershed. Rabi season 2019-2020 (ATCHA project)",
+                    "langeng": "classification of land use and in particular of maize plots using a low fusion level dataset for the berambadi watershed. Rabi season 2019-2020 (ATCHA project)"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "corn_bas.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/9adb79fe-be08-4bf4-9ca1-ed6f35c89bf0/attachments/corn_bas.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "corn_bas",
+                        "applicationProfile": "",
+                        "description": "Corn_Berambadi_2020 (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "corn_bas",
+                        "applicationProfile": "",
+                        "description": "Corn_Berambadi_2020 (OGC:WFS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-RENNES/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4427",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "9adb79fe-be08-4bf4-9ca1-ed6f35c89bf0",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "9adb79fe-be08-4bf4-9ca1-ed6f35c89bf0"
+        }
+    ],
+    "hassources": [],
+    "associated": []
+}
