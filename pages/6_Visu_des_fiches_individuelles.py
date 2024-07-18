@@ -31,6 +31,9 @@ headers_json = {"accept":"application/json",
 headers_xml = {"accept":"application/xml",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
 
+headers_text = {"accept":"text/plain",
+           "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
+
 couleur_subtitles = (250,100,0)
 
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS #########################
@@ -83,8 +86,10 @@ with st.container(border=True):
         st.markdown('')
         button2 =st.button('R',on_click=reset_counter)
 
+########## CONNEXION AU GEONETWORK ############################################
+
     try:
-        df = pd.read_csv(f'pages/data/{identifieur}.csv',index_col=[0])
+        df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
     except:
         url_ = url + identifieur
         resp1 = requests.get(url_,headers=headers_json)
@@ -92,13 +97,30 @@ with st.container(border=True):
             resp_json=resp1.json()
             with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
                 json.dump(resp_json, f, indent=4)
-            
+     
         resp2 = requests.get(url_,headers=headers_xml)
         if resp2.status_code == 200:
             xml_content = resp2.text
             with open(f"pages/data/fiches_xml/{identifieur}.xml", 'w') as file:
                 file.write(xml_content)
 
+        url_asso = url + identifieur +"/associated?rows=100"
+        resp_asso = requests.get(url_asso,headers=headers_json)
+        if resp_asso.status_code == 200:
+            resp_asso_json=resp_asso.json()
+            with open(f"pages/data/associated_resources/resource_{identifieur}.json", "w") as f:
+                json.dump(resp_asso_json, f, indent=4)
+
+        url_attach = url + identifieur +"/attachments"
+        resp_attach = requests.get(url_attach,headers=headers_json)
+        if resp_attach.status_code == 200:
+            resp_attach_json=resp_attach.json()
+            with open(f"pages/data/attachments/attachments_{identifieur}.json", "w") as f:
+                json.dump(resp_attach_json, f, indent=4)
+
+
+################ TRAITEMENT DU JSON #############################################################
+    try:
         with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
             data = json.load(f)
 
@@ -130,6 +152,10 @@ with st.container(border=True):
                 except:
                     pass
         df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
-
-    visu = df[['Clés','Valeurs']]
-    st.dataframe(visu, use_container_width=True)
+        visu = df[['Clés','Valeurs']]
+        st.dataframe(visu, use_container_width=True)
+    
+    except:
+        st.write("Le processus n'a pas fonctionné")
+##########################################################################################
+    
