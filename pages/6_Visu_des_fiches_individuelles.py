@@ -52,38 +52,6 @@ if len(fi)!=0:
 else:
     st.write('Il est nécessaire de mettre à jour la récupération des uuids')
 
-########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
-
-RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
-if RecupIdentifiants:
-    with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
-        m = scraping_GN(d)   
-        uuids_cleaning(d)
-        st.experimental_rerun()
-
-admin_pass = 'admin'
-admin_action = st.sidebar.text_input(label="Pour l'administrateur")
-
-if admin_action == admin_pass:
-    Recup_groupes = st.sidebar.button('recup des groupes')
-    if Recup_groupes:
-        with st.spinner("La récup des groupes est en cours"):
-            groupes = []
-            liste_u = []
-            for i in range(len(uuids)):
-                u = uuids.loc[i,'uuid_cat_InDoRes']
-                try:
-                    g = recup_group(uuid=u)
-                    groupes.append(g)
-                    liste_u.append(u)
-                except:
-                    g = ""
-                    groupes.append(g)
-                    liste_u.append(u)
-
-            df_group = pd.DataFrame({'Identifiant':liste_u, 'Groupe':groupes})
-            df_group.to_csv("pages/data/infos_MD/infos_groupes.csv")
-
 
 ########## TITRE DE LA PAGE ############################################
 title = "Visualisation des fiches GN"
@@ -113,6 +81,70 @@ with st.container(border=True):
         st.markdown('')
         st.markdown('')
         button2 =st.button('R',on_click=reset_counter)
+
+########## VISUALISATION DU GROUPE ############################################
+
+    group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
+    #st.sidebar.markdown(group_['Groupe'][group_.Identifiant==identifieur].values[0])
+    wch_colour_box = (250,250,220)
+    wch_colour_font = (90,90,90)
+    fontsize = 25
+    valign = "right"
+    iconname = "fas fa-asterisk"
+    sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
+    lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+    i = "Groupe associé à la fiche"
+
+    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                        {wch_colour_box[1]}, 
+                                                        {wch_colour_box[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: {fontsize}px; 
+                                    border-radius: 7px; 
+                                    padding-left: 12px; 
+                                    padding-top: 18px; 
+                                    padding-bottom: 18px; 
+                                    line-height:25px;
+                                    text-align:center'>
+                                    <i class='{iconname} fa-xs'></i> {i}
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{sline}</style></span></p>"""
+    st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
+
+
+########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
+
+    RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
+    if RecupIdentifiants:
+        with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
+            m = scraping_GN(d)   
+            uuids_cleaning(d)
+            st.experimental_rerun()
+
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+    if admin_action == admin_pass:
+        Recup_groupes = st.sidebar.button('recup des groupes')
+        if Recup_groupes:
+            with st.spinner("La récup des groupes est en cours"):
+                groupes = []
+                liste_u = []
+                for i in range(len(uuids)):
+                    u = uuids.loc[i,'uuid_cat_InDoRes']
+                    try:
+                        g = recup_group(uuid=u)
+                        groupes.append(g)
+                        liste_u.append(u)
+                    except:
+                        g = ""
+                        groupes.append(g)
+                        liste_u.append(u)
+
+                df_group = pd.DataFrame({'Identifiant':liste_u, 'Groupe':groupes})
+                df_group.to_csv("pages/data/infos_MD/infos_groupes.csv")
 
 ########## CONNEXION AU GEONETWORK ############################################
 
@@ -247,6 +279,22 @@ try:
     Tel_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:"].values[0]
 except:
     Tel_contact = ""
+try:
+    DeliveryPoint = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:"].values[0]
+except:
+    DeliveryPoint = ""
+try:
+    CodePostal = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:"].values[0]
+except:
+    CodePostal = ""
+try:
+    Ville = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:"].values[0]
+except:
+    Ville = ""
+try:
+    Pays = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:"].values[0]
+except:
+    Pays =""
 
 try:
     SystemReference =  df['Valeurs'][df['Clés']=="gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£gmd:RS_Identifier£gmd:code£gco:CharacterString£#text:"].values
@@ -257,6 +305,10 @@ try:
     Titre = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
 except:
     Titre = ""
+try: 
+    FicheParent = df['Valeurs'][df['Clés']=="gmd:parentIdentifier£gco:CharacterString£#text:"].values[0]
+except:
+    FicheParent = ""
 try:
     Abstract =df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£#text:"].values[0]
 except:
@@ -278,19 +330,56 @@ try:
 except:
     Freq_maj = ""
 
-#try:
-    #themes = []
-    #cpt_th = 0
-    #cpt_mots = 0
-    #for l in range(len(df)):
-    #    if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-    #        themes.append([cpt_th,df.loc[l,'Valeurs']])
-    #        cpt_th +=1
-     #       cpt_mots = 0
-     #   if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
-     #      cpt_mots += 1
-#except:
-    #themes = ""
+Type_dates = []
+Dates = []
+try:
+    for li in range(len(df)):
+        if df.loc[li,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeListValue:":
+            Type_dates.append(df.loc[li,'Valeurs'])
+except:
+    pass
+try:
+    for l in range(len(df)):
+        if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:Date£#text:":
+            Dates.append(df.loc[l,'Valeurs'])
+except:
+    pass
+liste_dates = []
+for da in range(len(Type_dates)):
+    liste_dates.append([Type_dates[da],Dates[da]])
+
+Liste_Theme = []
+Liste_Thesaurus = []
+Mots_cles = []
+for u in range(len(df)):
+    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+        Liste_Theme.append([u,df.loc[u,'Valeurs']])
+for u in range(len(df)):
+    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+        Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
+for u in range(len(df)):
+    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
+        Mots_cles.append([u,df.loc[u,'Valeurs']])
+
+theme_thesaurus_motsCles = []
+mm = 0    
+for th in range(len(Liste_Theme)):
+    liste_mots_cles = []
+    try:
+        if Liste_Theme[th][0]< Liste_Thesaurus[th][0]:
+            for m in range(mm+1,len(Mots_cles)):
+                if Mots_cles[m][0]<Liste_Theme[th][0]:
+                    liste_mots_cles.append(Mots_cles[m][1])
+                    mm = m
+            theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],Liste_Thesaurus[th][1]])
+    except:
+        for m in range(mm+1,len(Mots_cles)):
+            if Mots_cles[m][0]<Liste_Theme[th][0]:
+                liste_mots_cles.append(Mots_cles[m][1])
+        theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],""])
+
+st.write(theme_thesaurus_motsCles)
+
 
 ######### VISUALISATION #######################################################
 
@@ -345,14 +434,36 @@ with st.container(border=True):
 
     col1,col2,col3,col4 = st.columns(4)
     with col1:
-        s2i = 'Nom du standard'
+        s2i = 'Adresse'
         s_s2i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2i}</p>"
         st.markdown(s_s2i,unsafe_allow_html=True)
-        st.markdown(Standard)
+        st.markdown(DeliveryPoint)
     with col2:
-        s2j = 'Version du standard'
+        s2j = 'Code Postal'
         s_s2j = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2j}</p>"
         st.markdown(s_s2j,unsafe_allow_html=True)
+        st.markdown(CodePostal)
+    with col3:
+        s2k = 'Ville'
+        s_s2k = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2k}</p>"
+        st.markdown(s_s2k,unsafe_allow_html=True)
+        st.markdown(Ville)
+    with col4:
+        s2l = 'Pays'
+        s_s2l = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2l}</p>"
+        st.markdown(s_s2l,unsafe_allow_html=True)
+        st.markdown(Pays)
+
+    col1,col2,col3,col4 = st.columns(4)
+    with col1:
+        s2m = 'Nom du standard'
+        s_s2m = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2m}</p>"
+        st.markdown(s_s2m,unsafe_allow_html=True)
+        st.markdown(Standard)
+    with col2:
+        s2n = 'Version du standard'
+        s_s2n = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2n}</p>"
+        st.markdown(s_s2n,unsafe_allow_html=True)
         st.markdown(Version_standard)
     with col3:
         pass
@@ -383,64 +494,88 @@ with st.container(border=True):
     s_s4 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s4}</p>"
     st.markdown(s_s4,unsafe_allow_html=True)
 
-    s4a = 'Titre'
-    s_s4a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4a}</p>"
-    st.markdown(s_s4a,unsafe_allow_html=True)
-    st.markdown(Titre)
+    col1,col2 = st.columns(2)
+    with col1:
+        s4a = 'Titre'
+        s_s4a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4a}</p>"
+        st.markdown(s_s4a,unsafe_allow_html=True)
+        st.markdown(Titre)
+    with col2:
+        s4a_ = 'Fiche Parent'
+        s_s4a_ = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4a_}</p>"
+        st.markdown(s_s4a_,unsafe_allow_html=True)
+        st.markdown(FicheParent)
 
     s4b = 'Résumé'
     s_s4b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4b}</p>"
     st.markdown(s_s4b,unsafe_allow_html=True)
     st.markdown(Abstract)
 
-    col1,col2,col3,col4 = st.columns(4)
+    col1,col2,col3 = st.columns(3)
+    with col1:
+        s4d = 'Purpose'
+        s_s4d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4d}</p>"
+        st.markdown(s_s4d,unsafe_allow_html=True)
+        st.markdown(Purpose)
+    with col2:
+        s4e = 'Status'
+        s_s4e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4e}</p>"
+        st.markdown(s_s4e,unsafe_allow_html=True)
+        st.markdown(Status)
+    with col3:
+        s4f = 'Fréquence de maj'
+        s_s4f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4f}</p>"
+        st.markdown(s_s4f,unsafe_allow_html=True)
+        st.markdown(Freq_maj)
+
+    col1,col2,col3 =st.columns(3)
     with col1:
         s4c = 'Date (création)'
         s_s4c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4c}</p>"
         st.markdown(s_s4c,unsafe_allow_html=True)
         st.markdown(Date_creation)
     with col2:
-        s4d = 'Purpose'
-        s_s4d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4d}</p>"
-        st.markdown(s_s4d,unsafe_allow_html=True)
-        st.markdown(Purpose)
+        try:
+            s4g = f'Date ({liste_dates[0][0]})'
+            s_s4g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4g}</p>"
+            st.markdown(s_s4g,unsafe_allow_html=True)
+            st.markdown(liste_dates[0][1])
+        except:
+            pass
     with col3:
-        s4e = 'Status'
-        s_s4e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4e}</p>"
-        st.markdown(s_s4e,unsafe_allow_html=True)
-        st.markdown(Status)
-    with col4:
-        s4f = 'Fréquence de maj'
-        s_s4f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4f}</p>"
-        st.markdown(s_s4f,unsafe_allow_html=True)
-        st.markdown(Freq_maj)
+        try:
+            s4h = f'Date ({liste_dates[1][0]})'
+            s_s4h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4h}</p>"
+            st.markdown(s_s4h,unsafe_allow_html=True)
+            st.markdown(liste_dates[1][1])
+        except:
+            pass
 
 with st.container(border=True):
     s5 = "MOTS CLES"
     s_s5 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s5}</p>"
     st.markdown(s_s5,unsafe_allow_html=True)
 
+    col1,col2,col3 = st.columns(3)
+    with col1:
+        s5a = f'Thésaurus éventuel'
+        s_s5a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5a}</p>"
+        st.markdown(s_s5a,unsafe_allow_html=True)
+    with col2:
+        s5b = f'Type de mots clés'
+        s_s5b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5b}</p>"
+        st.markdown(s_s5b,unsafe_allow_html=True)
+    with col3:
+        s5c = f'Mots Clés'
+        s_s5c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5c}</p>"
+        st.markdown(s_s5c,unsafe_allow_html=True)
 
-    #col1,col2,col3,col4 = st.columns(4)
-    #for t in range(len(themes)):
-    #    if len(themes[t])==2:
-    #        if themes[t][0]==0:
-     #           theme1 = themes[t][1]
-      #      elif themes[t][0]==1:
-      #          theme2 = themes[t][1]
-      #      elif themes[t][0]==2:
-       #         theme3 = themes[t][1]
-    #with col1:
-    #    s5a = theme1
-    #    s_s5a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5a}</p>"
-    #    st.markdown(s_s5a,unsafe_allow_html=True)
-   # with col2:
-    #    s5b = theme2
-    #    s_s5b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5b}</p>"
-    #    st.markdown(s_s5b,unsafe_allow_html=True)
-    #with col3:
-    #    s5c = theme3
-    #    s_s5c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5c}</p>"
-     #   st.markdown(s_s5c,unsafe_allow_html=True)
-    #with col4:
-   #    pass
+    for j in range(len(theme_thesaurus_motsCles)):
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            st.markdown(theme_thesaurus_motsCles[j][2])
+        with col2:
+            st.markdown(theme_thesaurus_motsCles[j][1])
+        with col3:
+            for i in range(len(theme_thesaurus_motsCles[j][0])):
+                st.markdown(theme_thesaurus_motsCles[j][0][i])
