@@ -407,6 +407,27 @@ try:
 except:
     AutreContrainte =""
 
+try:
+    Format = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
+except:
+    Format = ""
+try:
+    Online_links = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
+except:
+    Online_links = ""
+try:
+    Online_protocols = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:protocol£gco:CharacterString£#text:"].values
+except:
+    Online_protocols = ""
+try:
+    Online_nom = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:name£gco:CharacterString£#text:"].values
+except:
+    Online_nom = ""
+try:
+    Online_description = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:description£gco:CharacterString£#text:"].values
+except:
+    Online_description = ""
+
 ######### VISUALISATION #######################################################
 
 with st.container(border=True):
@@ -632,3 +653,57 @@ with st.container(border=True):
         s_s6d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6d}</p>"
         st.markdown(s_s6d,unsafe_allow_html=True)
         st.markdown(AutreContrainte)
+
+with st.container(border=True):
+    s7 = "DISTRIBUTION"
+    s_s7 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s7}</p>"
+    st.markdown(s_s7,unsafe_allow_html=True)
+
+    col1,col2 = st.columns([0.7,0.3])
+    with col1:
+        s7b = "URL"
+        s_s7b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7b}</p>"
+        st.markdown(s_s7b,unsafe_allow_html=True)
+        try:
+            for x in range(len(Online_links)):
+                    st.markdown(Online_links[x])
+        except:
+            pass
+    with col2:
+        s7c = "Protocole"
+        s_s7c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7c}</p>"
+        st.markdown(s_s7c,unsafe_allow_html=True)
+        try:
+            for x in range(len(Online_protocols)):
+                    st.markdown(Online_protocols[x])
+        except:
+            pass
+    
+    col1,col2,col3 = st.columns([0.3,0.4,0.3])
+    with col1:
+        s7d = "Nom de la ressource"
+        s_s7d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7d}</p>"
+        st.markdown(s_s7d,unsafe_allow_html=True)
+        try:
+            for x in range(len(Online_nom)):
+                    st.markdown(Online_nom[x])
+        except:
+            pass
+    with col2:
+        s7e = "Description de la ressource"
+        s_s7e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7e}</p>"
+        st.markdown(s_s7e,unsafe_allow_html=True)
+        try:
+            for x in range(len(Online_description)):
+                    st.markdown(Online_description[x])
+        except:
+            pass
+    with col3:
+        s7a = "Format"
+        s_s7a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7a}</p>"
+        st.markdown(s_s7a,unsafe_allow_html=True)
+        try:
+            for x in range(len(Format)):
+                    st.markdown(Format[x])
+        except:
+            pass
