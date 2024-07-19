@@ -428,6 +428,19 @@ try:
 except:
     Online_description = ""
 
+try:
+    Niveau = df['Valeurs'][df['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:scope£gmd:DQ_Scope£gmd:level£gmd:MD_ScopeCode£@codeListValue:"].values[0]
+except:
+    Niveau = ""
+try:
+    Conformite = df['Valeurs'][df['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:report£gmd:DQ_DomainConsistency£gmd:result£gmd:DQ_ConformanceResult£gmd:pass£gco:Boolean£#text:"].values[0]
+except:
+    Conformite = ""
+try:
+    Genealogie = df['Valeurs'][df['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:lineage£gmd:LI_Lineage£gmd:statement£gco:CharacterString£#text:"].values[0]
+except:
+    Genealogie = ""
+
 ######### VISUALISATION #######################################################
 
 with st.container(border=True):
@@ -707,3 +720,26 @@ with st.container(border=True):
                     st.markdown(Format[x])
         except:
             pass
+
+with st.container(border=True):
+    s8 = "QUALITE"
+    s_s8 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s8}</p>"
+    st.markdown(s_s8,unsafe_allow_html=True)
+
+    col1,col2 = st.columns(2)
+    with col1:
+        s8a = "Niveau"
+        s_s8a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8a}</p>"
+        st.markdown(s_s8a,unsafe_allow_html=True)
+        st.markdown(Niveau)
+
+    with col2:
+        s8b = "Conformité"
+        s_s8b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8b}</p>"
+        st.markdown(s_s8b,unsafe_allow_html=True)
+        st.markdown(Conformite)
+
+    s8c = "Généalogie"
+    s_s8c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8c}</p>"
+    st.markdown(s_s8c,unsafe_allow_html=True)
+    st.markdown(Genealogie)
