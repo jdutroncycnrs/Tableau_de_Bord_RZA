@@ -38,16 +38,12 @@ with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
     resp = api.get_info_version()
     response = resp.json()
 
-col1, col2 = st.columns(2)
-with col1:
-    d = datetime.date.today()
-    if response['status']=='OK':
-        st.write(f"La connexion est établie avec Data.InDoRes")
-    else: 
-        st.write(f"La connexion a échoué, vous n'êtes pas connecté à Data.InDoRes")
 
-with col2:
-    b1 = st.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
+d = datetime.date.today()
+if response['status']=='OK':
+    st.write(f"La connexion est établie avec Data.InDoRes")
+else: 
+    st.write(f"La connexion a échoué, vous n'êtes pas connecté à Data.InDoRes")
 
 fichier = f'tableau_dataverses-{d}.csv'
 fi = glob.glob(f"pages/data/tableau_dataverses*.csv")
@@ -63,6 +59,84 @@ if len(fi)!=0:
     st.plotly_chart(fig,use_container_width=True)
 else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
+
+
+st.title("Analyse des entrepôts")
+liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA']
+liste_ZAs_ = [' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier environnementale urbaine',' Zone atelier bassin du Rhône',' Zone atelier Brest Iroise',' Zone atelier bassin de la Moselle',' Zone atelier Loire',' Zone Atelier Seine',' Zone atelier Pyrénées Garonne','Zone atelier territoires uranifères',' Zone atelier Plaine et Val de Sèvre',' Zone atelier Hwange','Zone atelier Environnementale Rurale','Zone atelier Santé Environnement Camargue','Zone atelier Antarctique et terres Australes']
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
+colors2 = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','grey','grey','grey']
+
+all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
+if all_ZAs==True :
+    Selection_ZA = liste_ZAs_
+else:
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
+
+
+if len(Selection_ZA)!=0:
+    with st.container(border=True):
+        progress_text = "Operation en cours. Attendez svp."
+        my_bar = st.progress(0, text=progress_text)
+        liste_contenu = []
+        liste_identifiers_dataset = []
+        for i in range(len(Selection_ZA)):
+            time.sleep(0.01)
+            try:
+                s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
+                datav = api.get_dataverse_contents(s)
+                datav_contenu = datav.json()
+                if datav_contenu["data"][0]['type']!="dataverse":
+                    liste_contenu.append(len(datav_contenu["data"]))
+                    st.write(datav_contenu["data"])
+                else:
+                    st.write(datav_contenu["data"])
+                    s = datav_contenu["data"][0]['id']
+                    datav_bis = api.get_dataverse_contents(s)
+                    datav_contenu_bis = datav_bis.json()
+                    st.write(datav_contenu_bis["data"])
+                    liste_contenu.append(0)
+                try:
+                    for i in range(len(datav_contenu["data"])):
+                        liste_identifiers_dataset.append(datav_contenu["data"][i]['identifier'])
+                except:
+                    pass
+            except:
+                liste_contenu.append(0)
+            my_bar.progress(i + 1, text=progress_text)
+    
+        df = pd.DataFrame(liste_contenu,index=liste_ZAs,columns=['Nombre_dépôts'])
+        fig0= go.Figure()
+        for i, za in enumerate(df.index.values):
+            selec = df.index.values[i:i+1]
+            selec_len = df['Nombre_dépôts'].values[i:i+1]
+            fig0.add_trace(go.Bar(
+                        x=selec,
+                        y=selec_len,
+                        name=za,
+                        marker=dict(color=colors2[i])
+                    ))
+        fig0.update_layout(
+                                title='Nombre de dépôts répertoriées au 06/06/24',
+                                width=1000,
+                                height=500)
+        st.plotly_chart(fig0,use_container_width=True)
+        my_bar.empty()
+
+
+        authority = "10.48579"
+        st.write(liste_identifiers_dataset)
+        
+        for identifier in liste_identifiers_dataset:
+            dataset = api.get_dataset(identifier=f"doi:{authority}/{identifier}")
+            dataset_ = dataset.json()
+            st.write(dataset_["data"]["latestVersion"]["metadataBlocks"]["citation"]["fields"][0]["value"])     
+
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+if admin_action == admin_pass:
+    b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
 
 if b1==True:
     with st.spinner("Récupération des entrepôts existants"):
@@ -184,73 +258,3 @@ if b1==True:
         st.plotly_chart(fig,use_container_width=True)
 
 
-st.title("Analyse des entrepôts")
-liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA']
-liste_ZAs_ = [' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier environnementale urbaine',' Zone atelier bassin du Rhône',' Zone atelier Brest Iroise',' Zone atelier bassin de la Moselle',' Zone atelier Loire',' Zone Atelier Seine',' Zone atelier Pyrénées Garonne','Zone atelier territoires uranifères',' Zone atelier Plaine et Val de Sèvre',' Zone atelier Hwange','Zone atelier Environnementale Rurale','Zone atelier Santé Environnement Camargue','Zone atelier Antarctique et terres Australes']
-colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
-colors2 = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','grey','grey','grey']
-
-all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
-if all_ZAs==True :
-    Selection_ZA = liste_ZAs_
-else:
-    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
-
-
-if len(Selection_ZA)!=0:
-    with st.container(border=True):
-        progress_text = "Operation en cours. Attendez svp."
-        my_bar = st.progress(0, text=progress_text)
-        liste_contenu = []
-        liste_identifiers_dataset = []
-        for i in range(len(Selection_ZA)):
-            time.sleep(0.01)
-            try:
-                s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
-                datav = api.get_dataverse_contents(s)
-                datav_contenu = datav.json()
-                if datav_contenu["data"][0]['type']!="dataverse":
-                    liste_contenu.append(len(datav_contenu["data"]))
-                    st.write(datav_contenu["data"])
-                else:
-                    st.write(datav_contenu["data"])
-                    s = datav_contenu["data"][0]['id']
-                    datav_bis = api.get_dataverse_contents(s)
-                    datav_contenu_bis = datav_bis.json()
-                    st.write(datav_contenu_bis["data"])
-                    liste_contenu.append(0)
-                try:
-                    for i in range(len(datav_contenu["data"])):
-                        liste_identifiers_dataset.append(datav_contenu["data"][i]['identifier'])
-                except:
-                    pass
-            except:
-                liste_contenu.append(0)
-            my_bar.progress(i + 1, text=progress_text)
-    
-        df = pd.DataFrame(liste_contenu,index=liste_ZAs,columns=['Nombre_dépôts'])
-        fig0= go.Figure()
-        for i, za in enumerate(df.index.values):
-            selec = df.index.values[i:i+1]
-            selec_len = df['Nombre_dépôts'].values[i:i+1]
-            fig0.add_trace(go.Bar(
-                        x=selec,
-                        y=selec_len,
-                        name=za,
-                        marker=dict(color=colors2[i])
-                    ))
-        fig0.update_layout(
-                                title='Nombre de dépôts répertoriées au 06/06/24',
-                                width=1000,
-                                height=500)
-        st.plotly_chart(fig0,use_container_width=True)
-        my_bar.empty()
-
-
-        authority = "10.48579"
-        st.write(liste_identifiers_dataset)
-        
-        for identifier in liste_identifiers_dataset:
-            dataset = api.get_dataset(identifier=f"doi:{authority}/{identifier}")
-            dataset_ = dataset.json()
-            st.write(dataset_["data"]["latestVersion"]["metadataBlocks"]["citation"]["fields"][0]["value"])

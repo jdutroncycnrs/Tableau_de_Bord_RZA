@@ -5,6 +5,8 @@ import glob
 import requests
 import json
 import re
+import numpy as np
+import plotly.express as px
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group
 from Traitement_records import transcript_json
 
@@ -85,15 +87,16 @@ with st.container(border=True):
 ########## VISUALISATION DU GROUPE ############################################
 
     group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
-    #st.sidebar.markdown(group_['Groupe'][group_.Identifiant==identifieur].values[0])
+    #group_['Groupe'].fillna('Aucun groupe', inplace=True)
+    #group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
     wch_colour_box = (250,250,220)
     wch_colour_font = (90,90,90)
     fontsize = 25
     valign = "right"
-    iconname = "fas fa-asterisk"
     sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
     lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-    i = "Groupe associé à la fiche"
+    #i = "Groupe associé à la fiche"
 
     htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
                                                         {wch_colour_box[1]}, 
@@ -108,7 +111,6 @@ with st.container(border=True):
                                     padding-bottom: 18px; 
                                     line-height:25px;
                                     text-align:center'>
-                                    <i class='{iconname} fa-xs'></i> {i}
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{sline}</style></span></p>"""
     st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
@@ -198,6 +200,7 @@ with st.container(border=True):
         df_infos.reset_index(inplace=True)
         df_infos.drop(columns='index',inplace=True)
         df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
       
 
 ################ TRAITEMENT DU JSON #############################################################
@@ -234,7 +237,7 @@ with st.container(border=True):
                     pass
         df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
         visu = df[['Clés','Valeurs']]
-        st.dataframe(visu, use_container_width=True)
+        #st.dataframe(visu, use_container_width=True)
     
     except:
         st.write("Le processus n'a pas fonctionné")
