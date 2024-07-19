@@ -70,7 +70,7 @@ if admin_action == admin_pass:
         with st.spinner("La récup des groupes est en cours"):
             groupes = []
             liste_u = []
-            for i in range(50):
+            for i in range(len(uuids)):
                 u = uuids.loc[i,'uuid_cat_InDoRes']
                 try:
                     g = recup_group(uuid=u)
@@ -278,20 +278,19 @@ try:
 except:
     Freq_maj = ""
 
-try:
-    themes = []
-    cpt_th = 0
-    cpt_mots = 0
-    for l in range(len(df)):
-        if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-            themes.append([cpt_th,df.loc[l,'Valeurs']])
-            cpt_th +=1
-            cpt_mots = 0
-        if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
-            themes.append([cpt_th,cpt_mots,df.loc[l,'Valeurs']])
-            cpt_mots += 1
-except:
-    themes = ""
+#try:
+    #themes = []
+    #cpt_th = 0
+    #cpt_mots = 0
+    #for l in range(len(df)):
+    #    if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+    #        themes.append([cpt_th,df.loc[l,'Valeurs']])
+    #        cpt_th +=1
+     #       cpt_mots = 0
+     #   if df.loc[l,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
+     #      cpt_mots += 1
+#except:
+    #themes = ""
 
 ######### VISUALISATION #######################################################
 
@@ -422,26 +421,26 @@ with st.container(border=True):
     st.markdown(s_s5,unsafe_allow_html=True)
 
 
-    col1,col2,col3,col4 = st.columns(4)
-    for t in range(len(themes)):
-        if len(themes[t])==2:
-            if themes[t][0]==0:
-                theme1 = themes[t][1]
-            elif themes[t][0]==1:
-                theme2 = themes[t][1]
-            elif themes[t][0]==2:
-                theme3 = themes[t][1]
-    with col1:
-        s5a = theme1
-        s_s5a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5a}</p>"
-        st.markdown(s_s5a,unsafe_allow_html=True)
-    with col2:
-        s5b = theme2
-        s_s5b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5b}</p>"
-        st.markdown(s_s5b,unsafe_allow_html=True)
-    with col3:
-        s5c = theme3
-        s_s5c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5c}</p>"
-        st.markdown(s_s5c,unsafe_allow_html=True)
-    with col4:
-        pass
+    #col1,col2,col3,col4 = st.columns(4)
+    #for t in range(len(themes)):
+    #    if len(themes[t])==2:
+    #        if themes[t][0]==0:
+     #           theme1 = themes[t][1]
+      #      elif themes[t][0]==1:
+      #          theme2 = themes[t][1]
+      #      elif themes[t][0]==2:
+       #         theme3 = themes[t][1]
+    #with col1:
+    #    s5a = theme1
+    #    s_s5a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5a}</p>"
+    #    st.markdown(s_s5a,unsafe_allow_html=True)
+   # with col2:
+    #    s5b = theme2
+    #    s_s5b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5b}</p>"
+    #    st.markdown(s_s5b,unsafe_allow_html=True)
+    #with col3:
+    #    s5c = theme3
+    #    s_s5c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5c}</p>"
+     #   st.markdown(s_s5c,unsafe_allow_html=True)
+    #with col4:
+   #    pass
