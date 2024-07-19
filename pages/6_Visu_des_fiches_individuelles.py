@@ -116,13 +116,6 @@ with st.container(border=True):
 
 ########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
 
-    RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
-    if RecupIdentifiants:
-        with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
-            m = scraping_GN(d)   
-            uuids_cleaning(d)
-            st.experimental_rerun()
-
     admin_pass = 'admin'
     admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
@@ -145,6 +138,13 @@ with st.container(border=True):
 
                 df_group = pd.DataFrame({'Identifiant':liste_u, 'Groupe':groupes})
                 df_group.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
+        RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
+        if RecupIdentifiants:
+            with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
+                m = scraping_GN(d)   
+                uuids_cleaning(d)
+                st.experimental_rerun()
 
 ########## CONNEXION AU GEONETWORK ############################################
 
@@ -345,21 +345,33 @@ try:
 except:
     pass
 liste_dates = []
-for da in range(len(Type_dates)):
-    liste_dates.append([Type_dates[da],Dates[da]])
+try:
+    for da in range(len(Type_dates)):
+        liste_dates.append([Type_dates[da],Dates[da]])
+except:
+    pass
 
 Liste_Theme = []
 Liste_Thesaurus = []
 Mots_cles = []
-for u in range(len(df)):
-    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-        Liste_Theme.append([u,df.loc[u,'Valeurs']])
-for u in range(len(df)):
-    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
-        Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
-for u in range(len(df)):
-    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
-        Mots_cles.append([u,df.loc[u,'Valeurs']])
+try:
+    for u in range(len(df)):
+        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+            Liste_Theme.append([u,df.loc[u,'Valeurs']])
+except:
+    pass
+try:
+    for u in range(len(df)):
+        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+            Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
+except:
+    pass
+try:
+    for u in range(len(df)):
+        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
+            Mots_cles.append([u,df.loc[u,'Valeurs']])
+except:
+    pass
 
 theme_thesaurus_motsCles = []
 mm = 0    
@@ -377,6 +389,23 @@ for th in range(len(Liste_Theme)):
             if Mots_cles[m][0]<Liste_Theme[th][0]:
                 liste_mots_cles.append(Mots_cles[m][1])
         theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],""])
+
+try:
+    UseLimitation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
+except:
+    UseLimitation =""
+try:
+    UseContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
+except:
+    UseContrainte =""
+try:
+    AccesContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
+except:
+    AccesContrainte =""
+try:
+    AutreContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:otherConstraints£gco:CharacterString£#text:"].values[0]
+except:
+    AutreContrainte =""
 
 ######### VISUALISATION #######################################################
 
@@ -576,3 +605,30 @@ with st.container(border=True):
         with col3:
             for i in range(len(theme_thesaurus_motsCles[j][0])):
                 st.markdown(theme_thesaurus_motsCles[j][0][i])
+
+with st.container(border=True):
+    s6 = "CONTRAINTES"
+    s_s6 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s6}</p>"
+    st.markdown(s_s6,unsafe_allow_html=True)
+
+    col1,col2,col3,col4 = st.columns(4)
+    with col1:
+        s6a = "Limite d'Accès"
+        s_s6a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6a}</p>"
+        st.markdown(s_s6a,unsafe_allow_html=True)
+        st.markdown(AccesContrainte)
+    with col2:
+        s6b = "Contrainte d'usage"
+        s_s6b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6b}</p>"
+        st.markdown(s_s6b,unsafe_allow_html=True)
+        st.markdown(UseContrainte)
+    with col3:
+        s6c = "Limite d'Usage"
+        s_s6c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6c}</p>"
+        st.markdown(s_s6c,unsafe_allow_html=True)
+        st.markdown(UseLimitation)
+    with col4:
+        s6d = "Limite d'Usage"
+        s_s6d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6d}</p>"
+        st.markdown(s_s6d,unsafe_allow_html=True)
+        st.markdown(AutreContrainte)
