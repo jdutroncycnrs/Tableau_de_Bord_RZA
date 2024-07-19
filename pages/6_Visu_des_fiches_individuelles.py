@@ -378,9 +378,6 @@ for th in range(len(Liste_Theme)):
                 liste_mots_cles.append(Mots_cles[m][1])
         theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],""])
 
-st.write(theme_thesaurus_motsCles)
-
-
 ######### VISUALISATION #######################################################
 
 with st.container(border=True):
