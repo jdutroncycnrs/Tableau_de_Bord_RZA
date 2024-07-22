@@ -94,7 +94,7 @@ else:
 
 ############################################################################
 
-st.title("Analyse des entrepôts")
+st.title("Analyse des sous-entrepôts dans Data.InDoRes")
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :
@@ -107,6 +107,8 @@ else:
 if len(Selection_ZA)!=0:
     Nombre_depots = []
     with st.container(border=True):
+        progress_text = "Operation en cours. Attendez svp."
+        my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
             s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
             cpt = 0
@@ -121,6 +123,7 @@ if len(Selection_ZA)!=0:
             except:
                 pass
             Nombre_depots.append(cpt)
+            my_bar.progress(i + 1, text=progress_text)
 
         df = pd.DataFrame(Nombre_depots,index=Selection_ZA,columns=['Nombre_dépôts'])
         fig0= go.Figure()
@@ -138,6 +141,7 @@ if len(Selection_ZA)!=0:
                                 width=1000,
                                 height=600)
         st.plotly_chart(fig0,use_container_width=True)
+        my_bar.empty()
 
 
 ##########POUR L'ADMINISTRATEUR ########################################
