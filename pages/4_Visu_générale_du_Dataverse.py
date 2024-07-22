@@ -111,16 +111,19 @@ if len(Selection_ZA)!=0:
         my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
-            s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
-            cpt = 0
             try:
-                datav_contenu = Recup_contenu_dataverse(api,s)
-                for j in range(len(datav_contenu['data'])):
-                    try:
-                        identifieur = datav_contenu["data"][j]['identifier']
-                        cpt +=1
-                    except:
-                        pass
+                s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
+                cpt = 0
+                try:
+                    datav_contenu = Recup_contenu_dataverse(api,s)
+                    for j in range(len(datav_contenu['data'])):
+                        try:
+                            identifieur = datav_contenu["data"][j]['identifier']
+                            cpt +=1
+                        except:
+                            pass
+                except:
+                    pass
             except:
                 pass
             Nombre_depots.append(cpt)
