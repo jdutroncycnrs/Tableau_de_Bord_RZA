@@ -91,8 +91,6 @@ if len(fi)!=0:
 else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
-data['ids_niv2'] = data['ids_niv2'].astype('Int64')
-
 ############################################################################
 
 st.title("Analyse des sous-entrepôts dans Data.InDoRes")
@@ -114,6 +112,7 @@ if len(Selection_ZA)!=0:
             time.sleep(0.1)
             try:
                 s = str(data['ids_niv2'][data['niv2']==Selection_ZA[i]].iloc[0])[0:-2]
+                st.write(s)
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
@@ -163,3 +162,6 @@ if admin_action == admin_pass:
 
 
 ############################################################################
+
+test = Recup_contenu_dataverse(api,'10296')
+st.write(test)
