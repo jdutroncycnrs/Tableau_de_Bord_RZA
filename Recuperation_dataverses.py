@@ -5,6 +5,12 @@ from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 
+def Recup_contenu_dataverse(api,s):
+    datav = api.get_dataverse_contents(s)
+    datav_contenu = datav.json()
+    return datav_contenu
+
+
 def Recup_dataverses(api, fichier):
     # On peut aller chercher le contenu du dataverse
         # le status est rappelé puis on a une clé "data" dans laquelle on retrouve son contenu.

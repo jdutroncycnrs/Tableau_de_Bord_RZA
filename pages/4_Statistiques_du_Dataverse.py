@@ -16,7 +16,7 @@ from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 
-from Recuperation_dataverses import Recup_dataverses
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -52,9 +52,25 @@ d = datetime.date.today()
 fichier = f'tableau_dataverses-{d}.csv'
 
 liste_ZAs= ['ZAA','ZAAJ','ZAAR','ZAEU','ZABR','ZABRI','ZAM','ZAL','ZAS','ZAPygar','ZATU','ZAPVS','ZAH','ZARG','ZACAM','ZATA']
-liste_ZAs_ = [' Zone atelier Alpes',' Zone atelier arc jurassien',' Zone atelier Armorique',' Zone atelier environnementale urbaine',' Zone atelier bassin du Rhône',' Zone atelier Brest Iroise',' Zone atelier bassin de la Moselle',' Zone atelier Loire',' Zone Atelier Seine',' Zone atelier Pyrénées Garonne','Zone atelier territoires uranifères',' Zone atelier Plaine et Val de Sèvre',' Zone atelier Hwange','Zone atelier Environnementale Rurale','Zone atelier Santé Environnement Camargue','Zone atelier Antarctique et terres Australes']
+
+liste_ZAs_ = ['Zone atelier territoires uranifères',
+              ' Zone Atelier Seine',
+              ' Zone atelier Loire',
+              ' Zone atelier bassin du Rhône',
+              ' Zone atelier bassin de la Moselle',
+              ' Zone atelier Alpes',
+              ' Zone atelier arc jurassien',
+              ' Zone atelier Armorique',
+              ' Zone atelier Plaine et Val de Sèvre',
+              ' Zone atelier environnementale urbaine',
+              ' Zone atelier Hwange',
+              ' Zone atelier Pyrénées Garonne',
+              ' Zone atelier Brest Iroise',
+              ' Zone Atelier Antarctique et Terres Australes',
+              ' Zone Atelier Santé Environnement Camargue',
+              ' Zone Atelier Argonne']
+
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
-colors2 = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','grey','grey','grey']
 
 ############################################################################
 
@@ -75,6 +91,7 @@ if len(fi)!=0:
 else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
+
 ############################################################################
 
 st.title("Analyse des entrepôts")
@@ -88,8 +105,39 @@ else:
 ############################################################################
 
 if len(Selection_ZA)!=0:
+    Nombre_depots = []
     with st.container(border=True):
-        pass
+        for i in range(len(Selection_ZA)):
+            s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
+            cpt = 0
+            try:
+                datav_contenu = Recup_contenu_dataverse(api,s)
+                for j in range(len(datav_contenu['data'])):
+                    try:
+                        identifieur = datav_contenu["data"][j]['identifier']
+                        cpt +=1
+                    except:
+                        pass
+            except:
+                pass
+            Nombre_depots.append(cpt)
+
+        df = pd.DataFrame(Nombre_depots,index=Selection_ZA,columns=['Nombre_dépôts'])
+        fig0= go.Figure()
+        for i, za in enumerate(df.index.values):
+            selec = df.index.values[i:i+1]
+            selec_len = df['Nombre_dépôts'].values[i:i+1]
+            fig0.add_trace(go.Bar(
+                        x=selec,
+                        y=selec_len,
+                        name=za,
+                        marker=dict(color=colors[i])
+                    ))
+        fig0.update_layout(
+                                title=f'Nombre de dépôts répertoriées au {d}',
+                                width=1000,
+                                height=600)
+        st.plotly_chart(fig0,use_container_width=True)
 
 
 ##########POUR L'ADMINISTRATEUR ########################################
