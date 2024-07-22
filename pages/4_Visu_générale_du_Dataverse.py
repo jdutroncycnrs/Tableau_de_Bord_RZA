@@ -113,7 +113,7 @@ if len(Selection_ZA)!=0:
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
             try:
-                s = data['ids_niv2'][data['niv2']==Selection_ZA[i]].iloc[0]
+                s = str(data['ids_niv2'][data['niv2']==Selection_ZA[i]].iloc[0])[0:-2]
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
