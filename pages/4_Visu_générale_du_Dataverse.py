@@ -101,6 +101,9 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
+st.dataframe(data)
+st.write(str(data['ids_niv2'][data['niv2']==' Zone Atelier Argonne'].iloc[0])[0:-2])
+
 ############################################################################
 
 if len(Selection_ZA)!=0:
@@ -112,7 +115,7 @@ if len(Selection_ZA)!=0:
             time.sleep(0.1)
             try:
                 s = str(data['ids_niv2'][data['niv2']==Selection_ZA[i]].iloc[0])[0:-2]
-                st.write(s)
+                #st.write(s)
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
@@ -125,7 +128,8 @@ if len(Selection_ZA)!=0:
                 except:
                     pass
             except:
-                st.write(Selection_ZA[i])
+                pass
+                #st.write(Selection_ZA[i])
             Nombre_depots.append(cpt)
             my_bar.progress(i + 1, text=progress_text)
 
