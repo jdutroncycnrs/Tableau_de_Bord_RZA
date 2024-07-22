@@ -111,22 +111,25 @@ if len(Selection_ZA)!=0:
         my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
-            p = data['ids_niv2'][data['niv2']==Selection_ZA[i]]
-            p_ = p.iloc[0]
-            s = int(p_)
-            cpt = 0
             try:
-                datav_contenu = Recup_contenu_dataverse(api,s)
-                for j in range(len(datav_contenu['data'])):
-                    try:
-                        identifieur = datav_contenu["data"][j]['identifier']
-                        cpt +=1
-                    except:
-                        pass
+                p = data['ids_niv2'][data['niv2']==Selection_ZA[i]]
+                p_ = p.iloc[0]
+                s = int(p_)
+                cpt = 0
+                try:
+                    datav_contenu = Recup_contenu_dataverse(api,s)
+                    for j in range(len(datav_contenu['data'])):
+                        try:
+                            identifieur = datav_contenu["data"][j]['identifier']
+                            cpt +=1
+                        except:
+                            pass
+                except:
+                    pass
+                Nombre_depots.append(cpt)
+                my_bar.progress(i + 1, text=progress_text)
             except:
                 pass
-            Nombre_depots.append(cpt)
-            my_bar.progress(i + 1, text=progress_text)
 
         df = pd.DataFrame(Nombre_depots,index=Selection_ZA,columns=['Nombre_dépôts'])
         fig0= go.Figure()
