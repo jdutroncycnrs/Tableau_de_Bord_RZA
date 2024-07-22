@@ -91,6 +91,7 @@ if len(fi)!=0:
 else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
+data['ids_niv2'] = data['ids_niv2'].astype('double')
 
 ############################################################################
 
@@ -111,8 +112,7 @@ if len(Selection_ZA)!=0:
         my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
-            p = data['ids_niv2'][data['niv2']==Selection_ZA[i]].values
-            s = int(p.item())
+            s = data['ids_niv2'][data['niv2']==Selection_ZA[i]].values.item()
             cpt = 0
             try:
                 datav_contenu = Recup_contenu_dataverse(api,s)
