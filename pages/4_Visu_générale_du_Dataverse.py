@@ -112,7 +112,7 @@ if len(Selection_ZA)!=0:
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
             p = data['ids_niv2'][data['niv2']==Selection_ZA[i]]
-            p_ = p.values[0]
+            p_ = p.iloc[0]
             s = int(p_)
             cpt = 0
             try:
