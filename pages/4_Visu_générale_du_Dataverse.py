@@ -111,8 +111,9 @@ if len(Selection_ZA)!=0:
         my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
             time.sleep(0.1)
-            s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]])
-            st.write(s)
+            p = data['ids_niv2'][data['niv2']==Selection_ZA[i]]
+            p_ = p.values[0]
+            s = int(p_)
             cpt = 0
             try:
                 datav_contenu = Recup_contenu_dataverse(api,s)
