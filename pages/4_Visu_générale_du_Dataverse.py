@@ -101,8 +101,6 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
-st.dataframe(data)
-st.write(str(data['ids_niv2'][data['niv2']==' Zone Atelier Argonne'].iloc[0])[0:-2])
 
 ############################################################################
 
