@@ -110,6 +110,7 @@ if len(Selection_ZA)!=0:
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
         for i in range(len(Selection_ZA)):
+            time.sleep(0.1)
             s = int(data['ids_niv2'][data['niv2']==Selection_ZA[i]].values)
             cpt = 0
             try:
