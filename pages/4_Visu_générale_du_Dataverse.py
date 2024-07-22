@@ -164,6 +164,3 @@ if admin_action == admin_pass:
 
 
 ############################################################################
-
-test = Recup_contenu_dataverse(api,'10296')
-st.write(test)
