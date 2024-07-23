@@ -322,11 +322,32 @@ except:
         Pays = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:"].values
     except:
         Pays =""
+try:
+    Email = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:electronicMailAddress£gco:CharacterString£#text:"].values[0]
+except:
+    Email = ""
+
 
 try:
     SystemReference =  df['Valeurs'][df['Clés']=="gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£gmd:RS_Identifier£gmd:code£gco:CharacterString£#text:"].values
 except:
     SystemReference = ""
+try:
+    westBoundLongitude = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£gco:Decimal£#text:"].values[0]
+except:
+    westBoundLongitude = ""
+try:
+    EastBoundLongitude = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£gco:Decimal£#text:"].values[0]
+except:
+    EastBoundLongitude = ""
+try:
+    SouthBoundLatitude = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£gco:Decimal£#text:"].values[0]
+except:
+    SouthBoundLatitude = ""
+try:
+    NorthBoundLatitude = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£gco:Decimal£#text:"].values[0]
+except:
+    NorthBoundLatitude = ""
 
 try: 
     Titre = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
@@ -402,7 +423,26 @@ except:
 
 theme_thesaurus_motsCles = []
 mm = 0    
-for th in range(len(Liste_Theme)):
+for th in range(1):
+    liste_mots_cles = []
+    try:
+        if Liste_Theme[th][0]< Liste_Thesaurus[th][0]:
+            for m in range(mm,len(Mots_cles)):
+                if Mots_cles[m][0]<Liste_Theme[th][0]:
+                    liste_mots_cles.append(Mots_cles[m][1])
+                    mm = m
+            theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],Liste_Thesaurus[th][1]])
+    except:
+        try:
+            for m in range(mm,len(Mots_cles)):
+                if Mots_cles[m][0]<Liste_Theme[th][0]:
+                    liste_mots_cles.append(Mots_cles[m][1])
+                    mm = m
+            theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],"Aucun thésaurus"])
+        except:
+            theme_thesaurus_motsCles.append([liste_mots_cles,"Aucun thème","Aucun thésaurus"])
+
+for th in range(1,len(Liste_Theme)):
     liste_mots_cles = []
     try:
         if Liste_Theme[th][0]< Liste_Thesaurus[th][0]:
@@ -412,10 +452,14 @@ for th in range(len(Liste_Theme)):
                     mm = m
             theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],Liste_Thesaurus[th][1]])
     except:
-        for m in range(mm+1,len(Mots_cles)):
-            if Mots_cles[m][0]<Liste_Theme[th][0]:
-                liste_mots_cles.append(Mots_cles[m][1])
-        theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],""])
+        try:
+            for m in range(mm+1,len(Mots_cles)):
+                if Mots_cles[m][0]<Liste_Theme[th][0]:
+                    liste_mots_cles.append(Mots_cles[m][1])
+                    mm = m
+            theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],"Aucun thésaurus"])
+        except:
+            theme_thesaurus_motsCles.append([liste_mots_cles,"Aucun thème","Aucun thésaurus"])
 
 try:
     UseLimitation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
@@ -549,7 +593,7 @@ with st.container(border=True):
         for x in range(len(Pays)):
             st.markdown(Pays[x])
 
-    col1,col2,col3,col4 = st.columns(4)
+    col1,col2,col3 = st.columns([0.25,0.25,0.5])
     with col1:
         s2m = 'Nom du standard'
         s_s2m = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2m}</p>"
@@ -561,12 +605,13 @@ with st.container(border=True):
         st.markdown(s_s2n,unsafe_allow_html=True)
         st.markdown(Version_standard)
     with col3:
-        pass
-    with col4:
-        pass
+        s2o = 'Adresse email du contact'
+        s_s2o = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2o}</p>"
+        st.markdown(s_s2o,unsafe_allow_html=True)
+        st.markdown(Email)
 
 with st.container(border=True):
-    s3 = "SYSTEME DE REFERENCE"
+    s3 = "SYSTEME DE REFERENCE & LIMITES GEOGRAPHIQUES"
     s_s3 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s3}</p>"
     st.markdown(s_s3,unsafe_allow_html=True)
 
@@ -583,6 +628,28 @@ with st.container(border=True):
         pass
     with col4:
         pass
+
+    col1,col2,col3,col4 = st.columns(4)
+    with col1:
+        s3c = 'Longitude Ouest'
+        s_s3c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3c}</p>"
+        st.markdown(s_s3c,unsafe_allow_html=True)
+        st.markdown(westBoundLongitude)
+    with col2:
+        s3d = 'Longitude Est'
+        s_s3d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3d}</p>"
+        st.markdown(s_s3d,unsafe_allow_html=True)
+        st.markdown(EastBoundLongitude)
+    with col3:
+        s3e = 'Latitude Sud'
+        s_s3e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3e}</p>"
+        st.markdown(s_s3e,unsafe_allow_html=True)
+        st.markdown(SouthBoundLatitude)
+    with col4:
+        s3f = 'Latitude Nord'
+        s_s3f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3f}</p>"
+        st.markdown(s_s3f,unsafe_allow_html=True)
+        st.markdown(NorthBoundLatitude)
 
 with st.container(border=True):
     s4 = "IDENTIFICATION"
