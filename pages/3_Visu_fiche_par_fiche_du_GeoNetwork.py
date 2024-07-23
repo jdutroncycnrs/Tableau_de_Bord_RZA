@@ -845,5 +845,3 @@ with st.container(border=True):
     s_s8c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8c}</p>"
     st.markdown(s_s8c,unsafe_allow_html=True)
     st.markdown(Genealogie)
-
-st.dataframe(df[['Clés','Valeurs']])
