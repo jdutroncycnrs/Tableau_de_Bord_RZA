@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gfc:FC_FeatureCatalogue xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                         xmlns:gco="http://www.isotc211.org/2005/gco"
+                         xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                         xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                         xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                         xmlns:gts="http://www.isotc211.org/2005/gts"
+                         xmlns:srv="http://www.isotc211.org/2005/srv"
+                         xmlns:gml="http://www.opengis.net/gml/3.2"
+                         xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                         xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         uuid="Donnees_haies_Nouzilly_VdL_dsd"
+                         xsi:schemaLocation="http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd">
+  <gmx:name>
+      <gco:CharacterString>- Feature Catalogue</gco:CharacterString>
+  </gmx:name>
+  <gmx:scope>
+      <gco:CharacterString>geoflow:shp</gco:CharacterString>
+  </gmx:scope>
+  <gmx:scope>
+      <gco:CharacterString>openfairviewer:ogc_filters</gco:CharacterString>
+  </gmx:scope>
+  <gmx:fieldOfApplication>
+      <gco:CharacterString>Open Science</gco:CharacterString>
+  </gmx:fieldOfApplication>
+  <gmx:fieldOfApplication>
+      <gco:CharacterString>FAIR</gco:CharacterString>
+  </gmx:fieldOfApplication>
+  <gmx:versionNumber>
+      <gco:CharacterString>20210329T094048</gco:CharacterString>
+  </gmx:versionNumber>
+  <gmx:versionDate>
+      <gco:DateTime>2021-03-29T09:41:01Z</gco:DateTime>
+  </gmx:versionDate>
+  <gfc:producer>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Antoine Savoie</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>INRAE, UE PAO</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:positionName>
+            <gco:CharacterString>Engineer</gco:CharacterString>
+         </gmd:positionName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice>
+                        <gco:CharacterString>(+33)247427569</gco:CharacterString>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing"/>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>Centre Val de Loire</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Nouzilly</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:postalCode>
+                        <gco:CharacterString>37380</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>antoine.savoie@inrae.fr</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://www6.val-de-loire.inrae.fr/uepao</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:name>
+                        <gco:CharacterString>Unité Expérimentale de Physiologie Animale de l'Orfrasière</gco:CharacterString>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="owner"
+                             codeSpace="ISOTC211/19115">owner</gmd:CI_RoleCode>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gfc:producer>
+  <gfc:functionalLanguage>
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gfc:functionalLanguage>
+  <gfc:featureType>
+      <gfc:FC_FeatureType>
+         <gfc:typeName>
+            <gco:LocalName>Donnees_haies_Nouzilly_VdL</gco:LocalName>
+         </gfc:typeName>
+         <gfc:code>
+            <gco:CharacterString>Donnees_haies_Nouzilly_VdL</gco:CharacterString>
+         </gfc:code>
+         <gfc:isAbstract>
+            <gco:Boolean>false</gco:Boolean>
+         </gfc:isAbstract>
+         <gfc:featureCatalogue gco:nilReason="missing"/>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>OBJECTID</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>OBJECTID</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="variable">xsd:decimal</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>type</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>type</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="attribute">xsd:string</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>commentair</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>commentair</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="attribute">xsd:string</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Shape_Leng</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>Shape_Leng</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="variable">xsd:decimal</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Methode</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>Methode</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="attribute">xsd:string</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>the_geom</gco:LocalName>
+               </gfc:memberName>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:code>
+                  <gco:CharacterString>the_geom</gco:CharacterString>
+               </gfc:code>
+               <gfc:valueMeasurementUnit gco:nilReason="missing"/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gmx:Anchor xlink:href="attribute">gml:LineStringPropertyType</gmx:Anchor>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+      </gfc:FC_FeatureType>
+  </gfc:featureType>
+  <gfc:definitionSource>
+      <gfc:FC_DefinitionSource>
+         <gfc:source>
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Linéaire de haies du site INRAE de Nouzilly (37)</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2021-03-29</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"
+                                             codeSpace="ISOTC211/19115">publication</gmd:CI_DateTypeCode>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:edition>
+                  <gco:CharacterString>20210329T094048</gco:CharacterString>
+               </gmd:edition>
+               <gmd:editionDate>
+                  <gco:Date>2021-03-29</gco:Date>
+               </gmd:editionDate>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>Donnees_haies_Nouzilly_VdL</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+               <gmd:presentationForm>
+                  <gmd:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"
+                                               codeListValue="mapDigital"
+                                               codeSpace="ISOTC211/19115">mapDigital</gmd:CI_PresentationFormCode>
+               </gmd:presentationForm>
+            </gmd:CI_Citation>
+         </gfc:source>
+      </gfc:FC_DefinitionSource>
+  </gfc:definitionSource>
+  <!--Metadata Creation date/time: 2021-03-29T09:41:01-->
+  <!--ISO 19139 XML generated by geometa R package - Version 0.6-3-->
+  <!--ISO 19139 XML compliance: NO-->
+  <!--geometa R package information:	Contact: Emmanuel Blondel emmanuel.blondel1@gmail.com	URL: https://github.com/eblondel/geometa/wiki	BugReports: https://github.com/eblondel/geometa/issues-->
+</gfc:FC_FeatureCatalogue>

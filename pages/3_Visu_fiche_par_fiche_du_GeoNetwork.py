@@ -7,6 +7,7 @@ import json
 import re
 import numpy as np
 import plotly.express as px
+import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group
 from Traitement_records import transcript_json
 
@@ -54,74 +55,29 @@ if len(fi)!=0:
 else:
     st.write('Il est nécessaire de mettre à jour la récupération des uuids')
 
-
-########## TITRE DE LA PAGE ############################################
-title = "Visualisation des fiches GN"
-s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
-st.markdown(s_title,unsafe_allow_html=True)
-
-if 'count' not in st.session_state:
-    st.session_state.count = 0
-def increment_counter():
-    st.session_state.count += 1
-def reset_counter():
-    st.session_state.count = 0
-
-with st.container(border=True):
-    s1 = "IDENTIFIEUR"
-    s_s1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s1}</p>"
-    st.markdown(s_s1,unsafe_allow_html=True)
-
-    col01,col02,col03 = st.columns([0.8,0.1,0.1])
-    with col01:
-        identifieur = st.selectbox(label='',options=uuids['uuid_cat_InDoRes'], index=st.session_state.count)
-    with col02:
-        st.markdown('')
-        st.markdown('')
-        button1 = st.button(':heavy_plus_sign:',on_click=increment_counter)
-    with col03:
-        st.markdown('')
-        st.markdown('')
-        button2 =st.button('R',on_click=reset_counter)
-
-########## VISUALISATION DU GROUPE ############################################
-
-    group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
-    #group_['Groupe'].fillna('Aucun groupe', inplace=True)
-    #group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
-
-    wch_colour_box = (250,250,220)
-    wch_colour_font = (90,90,90)
-    fontsize = 25
-    valign = "right"
-    sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
-    lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-    #i = "Groupe associé à la fiche"
-
-    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
-                                                        {wch_colour_box[1]}, 
-                                                        {wch_colour_box[2]}, 0.75); 
-                                    color: rgb({wch_colour_font[0]}, 
-                                            {wch_colour_font[1]}, 
-                                            {wch_colour_font[2]}, 0.75); 
-                                    font-size: {fontsize}px; 
-                                    border-radius: 7px; 
-                                    padding-left: 12px; 
-                                    padding-top: 18px; 
-                                    padding-bottom: 18px; 
-                                    line-height:25px;
-                                    text-align:center'>
-                                    </style><BR><span style='font-size: 25px; 
-                                    margin-top: 0;'>{sline}</style></span></p>"""
-    st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
-
+group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
+#group_['Groupe'].fillna('Aucun groupe', inplace=True)
+#group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
+liste_groupes = set(group_['Groupe'])
+choix_groupe = st.sidebar.checkbox('Choisir un groupe')
+if choix_groupe:
+    st.sidebar.markdown('Par défaut: Groupe exemple')
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes)
+    if len(selection_group)==0:
+        selection_group = ['Groupe exemple']
+    selected_uuids = group_['Identifiant'][group_['Groupe'].isin(selection_group)]
+    selected_uuids_ = selected_uuids.reset_index(drop=True)
+    st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
+else:
+    selected_uuids_ = uuids['uuid_cat_InDoRes']
+    st.sidebar.metric('NOMBRE FICHES VISUALISEES',len(selected_uuids_))
 
 ########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
 
-    admin_pass = 'admin'
-    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
-    if admin_action == admin_pass:
+if admin_action == admin_pass:
         Recup_groupes = st.sidebar.button('recup des groupes')
         if Recup_groupes:
             with st.spinner("La récup des groupes est en cours"):
@@ -148,99 +104,158 @@ with st.container(border=True):
                 uuids_cleaning(d)
                 st.experimental_rerun()
 
+########## TITRE DE LA PAGE ############################################
+title = "Visualisation des fiches GN"
+s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
+st.markdown(s_title,unsafe_allow_html=True)
+
+if 'count' not in st.session_state:
+    st.session_state.count = 0
+def increment_counter():
+    st.session_state.count += 1
+def reset_counter():
+    st.session_state.count = 0
+
+with st.container(border=True):
+    s1 = "IDENTIFIEUR"
+    s_s1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s1}</p>"
+    st.markdown(s_s1,unsafe_allow_html=True)
+
+    if st.session_state.count > len(selected_uuids_):
+        st.session_state.count = 0
+
+    col01,col02,col03 = st.columns([0.8,0.1,0.1])
+    with col01:
+        identifieur = st.selectbox(label='',options=selected_uuids_, index=st.session_state.count)
+    with col02:
+        st.markdown('')
+        st.markdown('')
+        button1 = st.button(':heavy_plus_sign:',on_click=increment_counter)
+    with col03:
+        st.markdown('')
+        st.markdown('')
+        button2 =st.button('R',on_click=reset_counter)
+
+########## VISUALISATION DU GROUPE ############################################
+
+wch_colour_box = (250,250,220)
+wch_colour_font = (90,90,90)
+fontsize = 25
+valign = "right"
+sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
+lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+#i = "Groupe associé à la fiche"
+
+htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                        {wch_colour_box[1]}, 
+                                                        {wch_colour_box[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: {fontsize}px; 
+                                    border-radius: 7px; 
+                                    padding-left: 12px; 
+                                    padding-top: 18px; 
+                                    padding-bottom: 18px; 
+                                    line-height:25px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{sline}</style></span></p>"""
+st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
+
 ########## CONNEXION AU GEONETWORK ############################################
 
-    try:
-        df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
-    except:
-        url_ = url + identifieur
-        resp1 = requests.get(url_,headers=headers_json)
-        if resp1.status_code == 200:
-            resp_json=resp1.json()
-            with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
-                json.dump(resp_json, f, indent=4)
+try:
+    df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
+except:
+    url_ = url + identifieur
+    resp1 = requests.get(url_,headers=headers_json)
+    if resp1.status_code == 200:
+        resp_json=resp1.json()
+        with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
+            json.dump(resp_json, f, indent=4)
      
-        resp2 = requests.get(url_,headers=headers_xml)
-        if resp2.status_code == 200:
-            xml_content = resp2.text
-            with open(f"pages/data/fiches_xml/{identifieur}.xml", 'w') as file:
-                file.write(xml_content)
+    resp2 = requests.get(url_,headers=headers_xml)
+    if resp2.status_code == 200:
+        xml_content = resp2.text
+        with open(f"pages/data/fiches_xml/{identifieur}.xml", 'w') as file:
+            file.write(xml_content)
 
-        url_asso = url + identifieur +"/associated?rows=100"
-        resp_asso = requests.get(url_asso,headers=headers_json)
-        if resp_asso.status_code == 200:
-            resp_asso_json=resp_asso.json()
-            with open(f"pages/data/associated_resources/resource_{identifieur}.json", "w") as f:
-                json.dump(resp_asso_json, f, indent=4)
+    url_asso = url + identifieur +"/associated?rows=100"
+    resp_asso = requests.get(url_asso,headers=headers_json)
+    if resp_asso.status_code == 200:
+        resp_asso_json=resp_asso.json()
+        with open(f"pages/data/associated_resources/resource_{identifieur}.json", "w") as f:
+            json.dump(resp_asso_json, f, indent=4)
 
-        url_attach = url + identifieur +"/attachments"
-        resp_attach = requests.get(url_attach,headers=headers_json)
-        if resp_attach.status_code == 200:
-            resp_attach_json=resp_attach.json()
-            with open(f"pages/data/attachments/attachments_{identifieur}.json", "w") as f:
-                json.dump(resp_attach_json, f, indent=4)
+    url_attach = url + identifieur +"/attachments"
+    resp_attach = requests.get(url_attach,headers=headers_json)
+    if resp_attach.status_code == 200:
+        resp_attach_json=resp_attach.json()
+        with open(f"pages/data/attachments/attachments_{identifieur}.json", "w") as f:
+            json.dump(resp_attach_json, f, indent=4)
 
     
+try:
+    df_infos = pd.read_csv("pages/data/infos_MD/infos_groupes.csv",index_col=[0])
+except:
+    df_infos = pd.DataFrame(columns=['Identifiant','Groupe'])
+    df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
+liste_id = list(df_infos.Identifiant)
+if identifieur in liste_id:
+    pass
+else:
     try:
-        df_infos = pd.read_csv("pages/data/infos_MD/infos_groupes.csv",index_col=[0])
+        g = recup_group(uuid=identifieur)
     except:
-        df_infos = pd.DataFrame(columns=['Identifiant','Groupe'])
-        df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
-    liste_id = list(df_infos.Identifiant)
-    if identifieur in liste_id:
-        pass
-    else:
-        try:
-            g = recup_group(uuid=identifieur)
-        except:
-            g = ""
-        d = pd.DataFrame(data = [[identifieur,g]],columns=['Identifiant','Groupe'])
-        df_infos_ = pd.concat([df_infos,d], axis=0)
-        df_infos = df_infos_
-        df_infos.reset_index(inplace=True)
-        df_infos.drop(columns='index',inplace=True)
-        df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
+        g = ""
+    d = pd.DataFrame(data = [[identifieur,g]],columns=['Identifiant','Groupe'])
+    df_infos_ = pd.concat([df_infos,d], axis=0)
+    df_infos = df_infos_
+    df_infos.reset_index(inplace=True)
+    df_infos.drop(columns='index',inplace=True)
+    df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
 
       
 
 ################ TRAITEMENT DU JSON #############################################################
-    try:
-        with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
-            data = json.load(f)
+try:
+    with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
+        data = json.load(f)
 
-        with open(f'pages/data/fiches_txt/{identifieur}.txt', 'w') as file:
-            transcript_json(data, file)
+    with open(f'pages/data/fiches_txt/{identifieur}.txt', 'w') as file:
+        transcript_json(data, file)
 
-        with open(f'pages/data/fiches_txt/{identifieur}.txt', 'r') as f:
-            d = f.read()
+    with open(f'pages/data/fiches_txt/{identifieur}.txt', 'r') as f:
+        d = f.read()
 
-        listi = re.split('µ',d)
+    listi = re.split('µ',d)
 
-        df = pd.DataFrame(listi, columns=['Results'])
-        for u in range(len(df)):
-            p = re.split('§',df.loc[u,'Results'])
+    df = pd.DataFrame(listi, columns=['Results'])
+    for u in range(len(df)):
+        p = re.split('§',df.loc[u,'Results'])
+        try:
+            df.loc[u,'Valeurs']=p[1]
+        except:
+            pass
+        try:
+            df.loc[u,'Clés']=p[0].replace('.','£')
+        except:
+            pass
+
+    for j in range(len(df)):
+        pp = re.split('£',df.loc[j,'Clés'])
+        for k in range(15):
             try:
-                df.loc[u,'Valeurs']=p[1]
+                df.loc[j,f'K{k}']=pp[k]
             except:
                 pass
-            try:
-                df.loc[u,'Clés']=p[0].replace('.','£')
-            except:
-                pass
-
-        for j in range(len(df)):
-            pp = re.split('£',df.loc[j,'Clés'])
-            for k in range(15):
-                try:
-                    df.loc[j,f'K{k}']=pp[k]
-                except:
-                    pass
-        df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
-        visu = df[['Clés','Valeurs']]
-        #st.dataframe(visu, use_container_width=True)
+    df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
+    visu = df[['Clés','Valeurs']]
+    #st.dataframe(visu, use_container_width=True)
     
-    except:
-        st.write("Le processus n'a pas fonctionné")
+except:
+    st.write("Le processus n'a pas fonctionné")
 #########  VARIABLES ########################################################
 try:
     Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]

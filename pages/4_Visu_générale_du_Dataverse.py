@@ -105,7 +105,6 @@ Selected_dataverses = dataverses[['niv2','ids_niv2']][dataverses['niv2'].isin(Se
 Selected_dataverses.reset_index(inplace=True)
 Selected_dataverses.drop(columns='index', inplace=True)
 Selected_dataverses['ids_niv2'] = Selected_dataverses['ids_niv2'].astype(str)
-st.dataframe(Selected_dataverses)
 
 
 ############################################################################
@@ -132,7 +131,6 @@ if len(Selected_dataverses)!=0:
                     pass
             except:
                 pass
-                #st.write(Selection_ZA[i])
             Nombre_depots.append(cpt)
             my_bar.progress(i + 1, text=progress_text)
 
