@@ -80,9 +80,9 @@ visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
 
 if len(fi)!=0:
     fich = fi[-1]
-    data = pd.read_csv(fich)
+    dataverses = pd.read_csv(fich)
     if visu_sunburst:
-        fig = px.sunburst(data, path=['niv0','niv1', 'niv2','niv3'], values='val')
+        fig = px.sunburst(dataverses, path=['niv0','niv1', 'niv2','niv3'], values='val')
         fig.update_layout(
             title=f'Visuel des différents Dataverses dans Data.InDoRes via {fich}',
             width=1000,
@@ -101,19 +101,24 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
+Selected_dataverses = dataverses[['niv2','ids_niv2']][dataverses['niv2'].isin(Selection_ZA)]
+Selected_dataverses.reset_index(inplace=True)
+Selected_dataverses.drop(columns='index', inplace=True)
+Selected_dataverses['ids_niv2'] = Selected_dataverses['ids_niv2'].astype(str)
+st.dataframe(Selected_dataverses)
+
 
 ############################################################################
 
-if len(Selection_ZA)!=0:
+if len(Selected_dataverses)!=0:
     Nombre_depots = []
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
-        for i in range(len(Selection_ZA)):
+        for i in range(len(Selected_dataverses)):
             time.sleep(0.1)
             try:
-                s = str(data['ids_niv2'][data['niv2']==Selection_ZA[i]].iloc[0])[0:-2]
-                #st.write(s)
+                s = Selected_dataverses.loc[i,'ids_niv2'][0:-2]
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
