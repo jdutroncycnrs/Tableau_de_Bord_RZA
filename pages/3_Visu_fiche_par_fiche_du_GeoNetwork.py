@@ -267,37 +267,61 @@ try:
 except:
     Version_standard = ""
 try:
-    Nom_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
+    Nom_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
 except:
-    Nom_contact = ""
+    try:
+        Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+    except:
+        Nom_contact = ""
 try:
-    Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values[0]
+    Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
 except:
-    Organisation_contact = ""
+    try:
+        Organisation_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+    except:
+        Organisation_contact = ""
 try:
-    Position_contact =df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values[0]
+    Position_contact =df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
 except:
-    Position_contact = ""
+    try:
+        Position_contact =df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
+    except:
+        Position_contact = ""
 try:
-    Tel_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:"].values[0]
+    Tel_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:"].values
 except:
-    Tel_contact = ""
+    try:
+        Tel_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:"].values
+    except:
+        Tel_contact = ""
 try:
-    DeliveryPoint = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:"].values[0]
+    DeliveryPoint = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:"].values
 except:
-    DeliveryPoint = ""
+    try:
+        DeliveryPoint = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:"].values
+    except:
+        DeliveryPoint = ""
 try:
-    CodePostal = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:"].values[0]
+    CodePostal = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:"].values
 except:
-    CodePostal = ""
+    try:
+        CodePostal = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:"].values
+    except:
+        CodePostal = ""
 try:
-    Ville = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:"].values[0]
+    Ville = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:"].values
 except:
-    Ville = ""
+    try:
+        Ville = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:"].values
+    except:
+        Ville = ""
 try:
-    Pays = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:"].values[0]
+    Pays = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:"].values
 except:
-    Pays =""
+    try:
+        Pays = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:"].values
+    except:
+        Pays =""
 
 try:
     SystemReference =  df['Valeurs'][df['Clés']=="gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£gmd:RS_Identifier£gmd:code£gco:CharacterString£#text:"].values
@@ -371,7 +395,7 @@ except:
     pass
 try:
     for u in range(len(df)):
-        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:":
+        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
             Mots_cles.append([u,df.loc[u,'Valeurs']])
 except:
     pass
@@ -478,44 +502,52 @@ with st.container(border=True):
         s2e = 'Nom du contact'
         s_s2e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2e}</p>"
         st.markdown(s_s2e,unsafe_allow_html=True)
-        st.markdown(Nom_contact)
+        for x in range(len(Nom_contact)):
+            st.markdown(Nom_contact[x])
     with col2:
         s2f = 'Position du contact'
         s_s2f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2f}</p>"
         st.markdown(s_s2f,unsafe_allow_html=True)
-        st.markdown(Position_contact)
+        for x in range(len(Position_contact)):
+            st.markdown(Position_contact[x])
     with col3:
         s2g = 'Orga du contact'
         s_s2g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2g}</p>"
         st.markdown(s_s2g,unsafe_allow_html=True)
-        st.markdown(Organisation_contact)
+        for x in range(len(Organisation_contact)):
+            st.markdown(Organisation_contact[x])
     with col4:
         s2h = 'Tel du contact'
         s_s2h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2h}</p>"
         st.markdown(s_s2h,unsafe_allow_html=True)
-        st.markdown(Tel_contact)
+        for x in range(len(Tel_contact)):
+            st.markdown(Tel_contact[x])
 
     col1,col2,col3,col4 = st.columns(4)
     with col1:
         s2i = 'Adresse'
         s_s2i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2i}</p>"
         st.markdown(s_s2i,unsafe_allow_html=True)
-        st.markdown(DeliveryPoint)
+        for x in range(len(DeliveryPoint)):
+            st.markdown(DeliveryPoint[x])
     with col2:
         s2j = 'Code Postal'
         s_s2j = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2j}</p>"
         st.markdown(s_s2j,unsafe_allow_html=True)
-        st.markdown(CodePostal)
+        for x in range(len(CodePostal)):
+            st.markdown(CodePostal[x])
     with col3:
         s2k = 'Ville'
         s_s2k = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2k}</p>"
         st.markdown(s_s2k,unsafe_allow_html=True)
-        st.markdown(Ville)
+        for x in range(len(Ville)):
+            st.markdown(Ville[x])
     with col4:
         s2l = 'Pays'
         s_s2l = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2l}</p>"
         st.markdown(s_s2l,unsafe_allow_html=True)
-        st.markdown(Pays)
+        for x in range(len(Pays)):
+            st.markdown(Pays[x])
 
     col1,col2,col3,col4 = st.columns(4)
     with col1:
@@ -746,3 +778,5 @@ with st.container(border=True):
     s_s8c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8c}</p>"
     st.markdown(s_s8c,unsafe_allow_html=True)
     st.markdown(Genealogie)
+
+st.dataframe(df[['Clés','Valeurs']])
