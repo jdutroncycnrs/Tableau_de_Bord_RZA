@@ -475,6 +475,11 @@ try:
 except:
     pass
 
+try:
+    SupplementInfo = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:supplementalInformation£gco:CharacterString£#text:"].values[0]
+except:
+    SupplementInfo = ""
+
 Liste_Theme = []
 Liste_Thesaurus = []
 Mots_cles = []
@@ -591,6 +596,7 @@ try:
     Scope = df['Valeurs'][df['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:scope£gmd:DQ_Scope£gmd:levelDescription£gmd:MD_ScopeDescription£gmd:attributes£#text:"].values[0]
 except:
     Scope = ""
+
 
 ######### VISUALISATION #######################################################
 
@@ -792,6 +798,11 @@ with st.container(border=True):
             st.markdown(liste_dates[1][1])
         except:
             pass
+    
+    s4i = f'Info Supplémentaire'
+    s_s4i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4i}</p>"
+    st.markdown(s_s4i,unsafe_allow_html=True)
+    st.markdown(SupplementInfo)
 
 with st.container(border=True):
     s5 = "MOTS CLES"
@@ -933,4 +944,25 @@ with st.container(border=True):
         st.markdown(s_s8d,unsafe_allow_html=True)
         st.markdown(Scope)
 
-st.dataframe(df[['Clés','Valeurs']])
+
+liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
+                   Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
+                   westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude, Titre,
+                   FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
+                   UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
+                   Format, Online_links, Online_protocols, Online_description, Online_nom,
+                   Niveau, Conformite, Genealogie, Scope, sline]
+
+
+liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
+                    'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
+                    'Longitude ouest', 'Longitude est', 'Latitude sud', 'Latitude nord', 'Titre',
+                    'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
+                    'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
+                    'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
+                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé']
+
+
+df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
+
+st.dataframe(df_variables_evaluation)
