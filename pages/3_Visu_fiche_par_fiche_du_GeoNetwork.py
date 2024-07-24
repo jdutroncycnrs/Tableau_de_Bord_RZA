@@ -121,12 +121,18 @@ with st.container(border=True):
     s_s1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s1}</p>"
     st.markdown(s_s1,unsafe_allow_html=True)
 
+    st.write(st.session_state.count)
     if st.session_state.count > len(selected_uuids_):
+        st.write('Vous êtes au bout!')
         st.session_state.count = 0
 
     col01,col02,col03 = st.columns([0.8,0.1,0.1])
     with col01:
-        identifieur = st.selectbox(label='',options=selected_uuids_, index=st.session_state.count)
+        try:
+            identifieur = st.selectbox(label='',options=selected_uuids_, index=st.session_state.count)
+        except: 
+            identifieur = ""
+            reset_counter()
     with col02:
         st.markdown('')
         st.markdown('')
@@ -136,13 +142,19 @@ with st.container(border=True):
         st.markdown('')
         button2 =st.button('R',on_click=reset_counter)
 
+    if st.session_state.count > len(selected_uuids_):
+        st.write('Vous êtes au bout!')
+
 ########## VISUALISATION DU GROUPE ############################################
 
 wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 25
 valign = "right"
-sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
+try:
+    sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
+except:
+    sline = ""
 lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 #i = "Groupe associé à la fiche"
 
@@ -172,29 +184,40 @@ except:
     resp1 = requests.get(url_,headers=headers_json)
     if resp1.status_code == 200:
         resp_json=resp1.json()
-        with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
-            json.dump(resp_json, f, indent=4)
+        try:
+            with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
+                json.dump(resp_json, f, indent=4)
+        except:
+            st.markdown("Cette fiche n'est pas lisible")
      
     resp2 = requests.get(url_,headers=headers_xml)
     if resp2.status_code == 200:
         xml_content = resp2.text
-        with open(f"pages/data/fiches_xml/{identifieur}.xml", 'w') as file:
-            file.write(xml_content)
+        try:
+            with open(f"pages/data/fiches_xml/{identifieur}.xml", 'w') as file:
+                file.write(xml_content)
+        except:
+            pass
 
     url_asso = url + identifieur +"/associated?rows=100"
     resp_asso = requests.get(url_asso,headers=headers_json)
     if resp_asso.status_code == 200:
         resp_asso_json=resp_asso.json()
-        with open(f"pages/data/associated_resources/resource_{identifieur}.json", "w") as f:
-            json.dump(resp_asso_json, f, indent=4)
+        try:
+            with open(f"pages/data/associated_resources/resource_{identifieur}.json", "w") as f:
+                json.dump(resp_asso_json, f, indent=4)
+        except:
+            pass
 
     url_attach = url + identifieur +"/attachments"
     resp_attach = requests.get(url_attach,headers=headers_json)
     if resp_attach.status_code == 200:
         resp_attach_json=resp_attach.json()
-        with open(f"pages/data/attachments/attachments_{identifieur}.json", "w") as f:
-            json.dump(resp_attach_json, f, indent=4)
-
+        try:
+            with open(f"pages/data/attachments/attachments_{identifieur}.json", "w") as f:
+                json.dump(resp_attach_json, f, indent=4)
+        except:
+            pass
     
 try:
     df_infos = pd.read_csv("pages/data/infos_MD/infos_groupes.csv",index_col=[0])
@@ -260,7 +283,10 @@ except:
 try:
     Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
 except:
-    Langue = ""
+    try:
+        Langue = df['Valeurs'][df['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
+    except:
+        Langue = ""
 try:
     JeuDeCaracteres = df['Valeurs'][df['Clés']=="gmd:characterSet£gmd:MD_CharacterSetCode£@codeListValue:"].values[0]
 except:
@@ -268,15 +294,27 @@ except:
 try:
     Type = df['Valeurs'][df['Clés']=="gmd:hierarchyLevel£gmd:MD_ScopeCode£@codeListValue:"].values[0]
 except:
-    Type =""
+    try:
+        Type = df['Valeurs'][df['Clés']=="gfc:featureType£gfc:FC_FeatureType£gfc:typeName£gco:LocalName£#text:"].values[0]
+    except:
+        Type =""
 try:
     Date = df['Valeurs'][df['Clés']=="gmd:dateStamp£gco:DateTime£#text:"].values[0]
 except:
-    Date = ""
+    try:
+        Date = df['Valeurs'][df['Clés']=="gfc:versionDate£gco:DateTime£#text:"].values[0]
+    except:
+        try:
+            Date = df['Valeurs'][df['Clés']=="gmx:versionDate£gco:DateTime£#text:"].values[0]
+        except:
+            Date = ""
 try:
     Standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
 except:
-    Standard = ""
+    try:
+        Standard = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+    except:
+        Standard = ""
 try:
     Version_standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardVersion£gco:CharacterString£#text:"].values[0]
 except:
@@ -287,7 +325,10 @@ except:
     try:
         Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
     except:
-        Nom_contact = ""
+        try:
+            Nom_contact = df['Valeurs'][df['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
+        except: 
+            Nom_contact = ""
 try:
     Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
 except:
@@ -367,7 +408,10 @@ except:
 try: 
     Titre = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
 except:
-    Titre = ""
+    try:
+        Titre = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
+    except:
+        Titre = ""
 try: 
     FicheParent = df['Valeurs'][df['Clés']=="gmd:parentIdentifier£gco:CharacterString£#text:"].values[0]
 except:
@@ -860,3 +904,5 @@ with st.container(border=True):
     s_s8c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8c}</p>"
     st.markdown(s_s8c,unsafe_allow_html=True)
     st.markdown(Genealogie)
+
+st.dataframe(df[['Clés','Valeurs']])
