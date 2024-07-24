@@ -1039,3 +1039,18 @@ liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date
 df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
 
 st.dataframe(df_variables_evaluation)
+
+
+col1,col2,col3 = st.sidebar.columns(3)
+with col1:
+    st.dataframe(df_variables_evaluation[['F1', 'F2']].T.values)
+with col2:
+    st.dataframe(df_variables_evaluation[['F3', 'F4']].T.values)
+with col3:
+    st.dataframe(df_variables_evaluation[['A1', 'A2']].T.values)
+
+col1,col2 = st.sidebar.columns(2)
+with col1:
+    st.dataframe(df_variables_evaluation[['I1', 'I2', 'I3']].T.values)
+with col2:
+    st.dataframe(df_variables_evaluation[['R1', 'R2', 'R3']].T.values)
