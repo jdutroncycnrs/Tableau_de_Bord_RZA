@@ -177,6 +177,8 @@ st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
 try:
     df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
+    F1 = True
+    A2 = True
 except:
     url_ = url + identifieur
     resp1 = requests.get(url_,headers=headers_json)
@@ -185,8 +187,12 @@ except:
         try:
             with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
                 json.dump(resp_json, f, indent=4)
+            F1 = True
+            A2 = True
         except:
             st.markdown("Cette fiche n'est pas lisible")
+            F1 = False
+            A2 = False
      
     resp2 = requests.get(url_,headers=headers_xml)
     if resp2.status_code == 200:
@@ -542,6 +548,18 @@ for th in range(1,len(Liste_Theme)):
         except:
             theme_thesaurus_motsCles.append([liste_mots_cles,"Aucun thème","Aucun thésaurus"])
 
+Thesaurus = []
+for i in range(len(Liste_Thesaurus)):
+    Thesaurus.append(Liste_Thesaurus[i][1])
+
+Themes = []
+for i in range(len(Liste_Theme)):
+    Themes.append(Liste_Theme[i][1])
+
+Keywords = []
+for i in range(len(Mots_cles)):
+    Keywords.append(Mots_cles[i][1])
+
 try:
     UseLimitation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
 except:
@@ -597,6 +615,58 @@ try:
 except:
     Scope = ""
 
+######### EVALUATION #######################################################
+
+if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0:
+    F2 = True
+else:
+    F2 = False
+
+if len(Online_links)==0:
+    for i in range(len(Online_links)):
+        if 'doi' in Online_links[i] or 'attachments' in Online_links[i]:
+            F3 = True
+else:
+    F3 = False
+
+if sline in (['Aucun groupe', 'Groupe exemple']):
+    F4 = False
+else:
+    F4 = True
+if len(Online_links)==0:
+    A1 = True
+else:
+    A1 = False
+
+for i in range(len(Format)):
+    if Format[i] in ['GeoTiff']:
+        I1 = True
+    else:
+        I1 = False
+
+if len(Thesaurus)==0:
+    I2 = False
+else:
+    I2 = True
+
+if len(Keywords)==0:
+    I3 = False
+else:
+    I3 = True
+
+if len(UseLimitation)==0 and  len(UseContrainte)==0 and len(AccesContrainte)==0 and len(AutreContrainte)==0:
+    R1 = False
+elif len(UseContrainte)!=0 or len(UseLimitation)!=0:
+    R1 = True
+else:
+    R1 = False
+
+if len(Genealogie)==0:
+    R2 = False
+else:
+    R2 = True
+
+R3 = False
 
 ######### VISUALISATION #######################################################
 
@@ -855,7 +925,7 @@ with st.container(border=True):
         st.markdown(s_s6c,unsafe_allow_html=True)
         st.markdown(UseLimitation)
     with col4:
-        s6d = "Limite d'Usage"
+        s6d = "Autre contrainte"
         s_s6d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6d}</p>"
         st.markdown(s_s6d,unsafe_allow_html=True)
         st.markdown(AutreContrainte)
@@ -945,13 +1015,15 @@ with st.container(border=True):
         st.markdown(Scope)
 
 
+
 liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
                    Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
                    westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude, Titre,
                    FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
                    UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
                    Format, Online_links, Online_protocols, Online_description, Online_nom,
-                   Niveau, Conformite, Genealogie, Scope, sline]
+                   Niveau, Conformite, Genealogie, Scope, sline, Thesaurus, Themes, Keywords, 
+                   F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
 
 
 liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
@@ -960,7 +1032,8 @@ liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date
                     'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                     'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                     'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé']
+                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé', 'Thesaurus', 'Thèmes', 'Mots Clés',
+                    'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
 
 
 df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
