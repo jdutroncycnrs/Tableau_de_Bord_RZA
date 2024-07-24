@@ -70,6 +70,23 @@ liste_ZAs_ = ['Zone atelier territoires uranifères',
               ' Zone Atelier Santé Environnement Camargue',
               ' Zone Atelier Argonne']
 
+liste_ZAs_bis = [['Zone atelier territoires uranifères','36'],
+              [' Zone Atelier Seine','37'],
+              [' Zone atelier Loire','38'],
+              [' Zone atelier bassin du Rhône','39'],
+              [' Zone atelier bassin de la Moselle','40'],
+              [' Zone atelier Alpes','42'],
+              [' Zone atelier arc jurassien','43'],
+              [' Zone atelier Armorique','44'],
+              [' Zone atelier Plaine et Val de Sèvre','45'],
+              [' Zone atelier environnementale urbaine','46'],
+              [' Zone atelier Hwange','47'],
+              [' Zone atelier Pyrénées Garonne','48'],
+              [' Zone atelier Brest Iroise','49'],
+              [' Zone Atelier Antarctique et Terres Australes','10295'],
+              [' Zone Atelier Santé Environnement Camargue','10296'],
+              [' Zone Atelier Argonne','10297']]
+
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
 
 ############################################################################
@@ -101,23 +118,34 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
-Selected_dataverses = dataverses[['niv2','ids_niv2']][dataverses['niv2'].isin(Selection_ZA)]
-Selected_dataverses.reset_index(inplace=True)
-Selected_dataverses.drop(columns='index', inplace=True)
-Selected_dataverses['ids_niv2'] = Selected_dataverses['ids_niv2'].astype(str)
+#Selected_dataverses = dataverses[['niv2','ids_niv2']][dataverses['niv2'].isin(Selection_ZA)]
+#Selected_dataverses.reset_index(inplace=True)
+#Selected_dataverses.drop(columns='index', inplace=True)
+#Selected_dataverses['ids_niv2'] = Selected_dataverses['ids_niv2'].astype(str)
+
+def find_indices(lst, elements):
+    indices = []
+    for element in elements:
+        try:
+            indices.append(lst.index(element))
+        except ValueError:
+            pass  # Element not found in the list
+    return indices
+
+ids = find_indices(liste_ZAs_, Selection_ZA)
 
 
 ############################################################################
 
-if len(Selected_dataverses)!=0:
+if len(Selection_ZA)!=0:
     Nombre_depots = []
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
-        for i in range(len(Selected_dataverses)):
+        for i in range(len(Selection_ZA)):
             time.sleep(0.1)
             try:
-                s = Selected_dataverses.loc[i,'ids_niv2'][0:-2]
+                s = liste_ZAs_bis[ids[i]][1]
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
