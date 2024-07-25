@@ -41,6 +41,8 @@ couleur_subtitles = (250,100,0)
 taille_subtitles = "25px"
 couleur_subsubtitles = (150,0,150)
 taille_subsubtitles = "25px"
+couleur_True = (0,200,0)
+couleur_False = (200,0,0)
 
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS #########################
 
@@ -167,7 +169,7 @@ htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]},
                                     padding-left: 12px; 
                                     padding-top: 18px; 
                                     padding-bottom: 18px; 
-                                    line-height:25px;
+                                    line-height:5px;
                                     text-align:center'>
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{sline}</style></span></p>"""
@@ -178,7 +180,9 @@ st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
 try:
     df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
     F1 = True
+    F1c = couleur_True
     A2 = True
+    A2c = couleur_True
 except:
     url_ = url + identifieur
     resp1 = requests.get(url_,headers=headers_json)
@@ -188,11 +192,15 @@ except:
             with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
                 json.dump(resp_json, f, indent=4)
             F1 = True
+            F1c = couleur_True
             A2 = True
+            A2c = couleur_True
         except:
             st.markdown("Cette fiche n'est pas lisible")
             F1 = False
+            F1c = couleur_False
             A2 = False
+            A2c = couleur_False
      
     resp2 = requests.get(url_,headers=headers_xml)
     if resp2.status_code == 200:
@@ -619,54 +627,81 @@ except:
 
 if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0:
     F2 = True
+    F2c = couleur_True
 else:
     F2 = False
+    F2c = couleur_False
 
-if len(Online_links)==0:
+if len(Online_links)!=0:
     for i in range(len(Online_links)):
         if 'doi' in Online_links[i] or 'attachments' in Online_links[i]:
             F3 = True
+            F3c = couleur_True
+        else:
+            F3 = False
+            F3c = couleur_False
 else:
     F3 = False
+    F3c = couleur_False
 
 if sline in (['Aucun groupe', 'Groupe exemple']):
     F4 = False
+    F4c = couleur_False
 else:
     F4 = True
+    F4c = couleur_True
 if len(Online_links)==0:
     A1 = True
+    A1c = couleur_True
 else:
     A1 = False
+    A1c = couleur_False
 
-for i in range(len(Format)):
-    if Format[i] in ['GeoTiff']:
-        I1 = True
-    else:
-        I1 = False
+if len(Format)!=0:
+    for i in range(len(Format)):
+        if Format[i] in ['GeoTiff']:
+            I1 = True
+            I1c = couleur_True
+        else:
+            I1 = False
+            I1c = couleur_False
+else:
+    I1 = False
+    I1c = couleur_False
 
 if len(Thesaurus)==0:
     I2 = False
+    I2c = couleur_False
 else:
     I2 = True
+    I2c = couleur_True
 
 if len(Keywords)==0:
     I3 = False
+    I3c = couleur_False
 else:
     I3 = True
+    I3c = couleur_True
 
 if len(UseLimitation)==0 and  len(UseContrainte)==0 and len(AccesContrainte)==0 and len(AutreContrainte)==0:
     R1 = False
+    R1c = couleur_False
 elif len(UseContrainte)!=0 or len(UseLimitation)!=0:
     R1 = True
+    R1c = couleur_True
 else:
     R1 = False
+    R1c = couleur_False
 
 if len(Genealogie)==0:
     R2 = False
+    R2c = couleur_False
 else:
     R2 = True
+    R2c = couleur_True
 
 R3 = False
+R3c = couleur_False
 
 ######### VISUALISATION #######################################################
 
@@ -1040,17 +1075,228 @@ df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_colu
 
 st.dataframe(df_variables_evaluation)
 
+####################### VISUALISATION FAIR ####################################################
 
-col1,col2,col3 = st.sidebar.columns(3)
+st.sidebar.markdown('Evaluation FAIR')
+
+lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+
+col0,col1,col2,col3, col4 = st.sidebar.columns([0.1,0.22,0.22,0.22,0.22])
+with col0:
+    st.markdown("F")
 with col1:
-    st.dataframe(df_variables_evaluation[['F1', 'F2']].T.values)
+    htmlstr = f"""<p style='background-color: rgb({F1c[0]}, 
+                                                        {F1c[1]}, 
+                                                        {F1c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75);  
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:10px;
+                                    text-align:left'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 with col2:
-    st.dataframe(df_variables_evaluation[['F3', 'F4']].T.values)
+    htmlstr = f"""<p style='background-color: rgb({F2c[0]}, 
+                                                        {F2c[1]}, 
+                                                        {F2c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 with col3:
-    st.dataframe(df_variables_evaluation[['A1', 'A2']].T.values)
+    htmlstr = f"""<p style='background-color: rgb({F3c[0]}, 
+                                                        {F3c[1]}, 
+                                                        {F3c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col4:
+    htmlstr = f"""<p style='background-color: rgb({F4c[0]}, 
+                                                        {F4c[1]}, 
+                                                        {F4c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
-col1,col2 = st.sidebar.columns(2)
+col0,col1,col2 = st.sidebar.columns([0.1,0.45,0.45])
+with col0:
+    st.markdown("A")
 with col1:
-    st.dataframe(df_variables_evaluation[['I1', 'I2', 'I3']].T.values)
+    htmlstr = f"""<p style='background-color: rgb({A1c[0]}, 
+                                                        {A1c[1]}, 
+                                                        {A1c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 with col2:
-    st.dataframe(df_variables_evaluation[['R1', 'R2', 'R3']].T.values)
+    htmlstr = f"""<p style='background-color: rgb({A2c[0]}, 
+                                                        {A2c[1]}, 
+                                                        {A2c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+
+col0,col1,col2,col3 = st.sidebar.columns([0.1,0.3,0.3,0.3])
+with col0:
+    st.markdown("I")
+with col1:
+    htmlstr = f"""<p style='background-color: rgb({I1c[0]}, 
+                                                        {I1c[1]}, 
+                                                        {I1c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col2:
+    htmlstr = f"""<p style='background-color: rgb({I2c[0]}, 
+                                                        {I2c[1]}, 
+                                                        {I2c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col3:
+    htmlstr = f"""<p style='background-color: rgb({I3c[0]}, 
+                                                        {I3c[1]}, 
+                                                        {I3c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+
+col0,col1,col2,col3 = st.sidebar.columns([0.1,0.3,0.3,0.3])
+with col0:
+    st.markdown("R")
+with col1:
+    htmlstr = f"""<p style='background-color: rgb({R1c[0]}, 
+                                                        {R1c[1]}, 
+                                                        {R1c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col2:
+    htmlstr = f"""<p style='background-color: rgb({R2c[0]}, 
+                                                        {R2c[1]}, 
+                                                        {R2c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:center'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col3:
+    htmlstr = f"""<p style='background-color: rgb({R3c[0]}, 
+                                                        {R3c[1]}, 
+                                                        {R3c[2]}, 0.75); 
+                                    color: rgb({wch_colour_font[0]}, 
+                                            {wch_colour_font[1]}, 
+                                            {wch_colour_font[2]}, 0.75); 
+                                    font-size: 10px; 
+                                    border-radius: 7px; 
+                                    padding-left: 5px; 
+                                    padding-top: 5px; 
+                                    padding-bottom: 5px; 
+                                    line-height:8px;
+                                    text-align:left'>
+                                    </style><BR><span style='font-size: 25px; 
+                                    margin-top: 0;'>{""}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
