@@ -1077,7 +1077,6 @@ st.dataframe(df_variables_evaluation)
 
 ####################### VISUALISATION FAIR ####################################################
 
-st.sidebar.markdown('Evaluation FAIR')
 
 lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 
