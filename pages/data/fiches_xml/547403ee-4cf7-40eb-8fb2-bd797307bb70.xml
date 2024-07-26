@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd ../schema.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>547403ee-4cf7-40eb-8fb2-bd797307bb70</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+  </gmd:language>
+  <gmd:characterSet>
+      <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="series"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Françoise LE MOAL</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Françoise LE MOAL</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Françoise LE MOAL</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:individualName>
+         <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>ECOBIO UMR 6553 CNRS Université de Rennes 1</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">ECOBIO UMR 6553 CNRS Université de Rennes 1</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">ECOBIO UMR 6553 CNRS Université de Rennes 1</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:organisationName>
+         <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString/>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR"/>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:positionName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR"/>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:deliveryPoint>
+                     <gmd:city gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:postalCode>
+                     <gmd:country gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR"/>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:country>
+                     <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>francoise.le-moal@univ-rennes1.fr</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">francoise.le-moal@univ-rennes1.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">francoise.le-moal@univ-rennes1.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+      <gco:DateTime>2020-02-12T10:36:26</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale>
+      <gmd:PT_Locale id="EN">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="FR">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>WGS 1984</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">WGS 1984</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">WGS 1984</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:code>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>InterArctic-Enchainec</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">InterArctic-Enchainec</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">InterArctic-Enchainec</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:DateTime>2019-05-16T10:00:00</gco:DateTime>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeListValue="publication"
+                                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:edition gco:nilReason="missing">
+                  <gco:CharacterString/>
+               </gmd:edition>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>https://www.osuris.fr/geonetwork/srv/metadata/547403ee-4cf7-40eb-8fb2-bd797307bb70</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+               <gmd:presentationForm>
+                  <gmd:CI_PresentationFormCode codeListValue="documentDigital"
+                                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"/>
+               </gmd:presentationForm>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Titre:
+
+Un millénaire d’interactions entre sociétés et leurs environnements en Arctique et Subarctique (Canada et Groenland).
+
+
+Résumé
+
+Le projet InterArctic est centré sur la vulnérabilité, la résilience et l'adaptation de sociétés humaines nordiques face aux changements globaux. L'actuel réchauffement rapide du climat arctique a déjà entrainé de nombreux changements dans les comportements sociaux, économiques et culturels des populations habitant ces régions et plus de changements sont à venir. Ces changements perturbent le fragile équilibre entre sociétés et environnement. Les populations arctiques doivent faire face à ces challenges et, dans un tel contexte, observer et étudier les événements du passé donnent l'opportunité d'explorer les relations complexes entre climat, écologie et sociétés humaines, qui peuvent aider à proposer des scénarios d'évolution selon certaines prévisions. Le cadre chronologique de ce projet couvre le dernier millénaire, une période assez bien documentée. La région d'étude concerne le nord-est du Canada (Nunavik et Labrador-Nunatsiavut) et le Groenland (nord et sud). Il y a environ 1000 ans cal. AD. Certains territoires de ces régions, furent témoins de la rencontre des fermiers européens provenant de la Scandinavie et des chasseurs-cueilleurs-pêcheurs provenant de la Béringie. Présentement, ces deux styles de vie continuent à coexister, avec des activités agricoles dans le sud de Groenland et la chasse, la pêche et la cueillette sur les côtes de Nunavut, du Nunavik et du Labrador et du nord de Groenland. Dans ces secteurs d'étude, notre but est de documenter 1000 ans d'interactions entre les Thule/Inuit (Dorset pro parte) et les Norois et leur environnement à travers une approche interdisciplinaire exploitant toute une variété d'archives sédimentaires. L'exploitation des archives pédo-sédimentaires (dépôts lacustres et tourbeux, cryosols, sols anthropisés) et les analyses multiproxies paléoenvironnementales renseigneront sur l'évolution paysagère et sur la part prise par les forçages climatiques et anthropiques sur les processus écologiques. Les sites archéologiques et plus spécifiquement les sols archéologiques, les écofacts et artefacts trouvés en leur sein livreront de précieuses informations sur la nature de ces interactions. En parallèle quand cela sera possible, une approche en géographie culturelle sera conduite selon des interviews semi-dirigés pour enquêter sur la mémoire humaine des aînés, la perception et les perspectives en matière de changements environnementaux et sociaux.
+Plusieurs modes de diffusion des connaissances acquises par Inter sont identifiés et adaptés aux diverses audiences et partenaires : académiques (communications dans colloques, et articles dans revues internationales), communautés et autorités locales. C'est une priorité pour nous de disséminer les résultats de nos travaux sur le terrain et en laboratoire auprès d'un public non-spécialiste, tout particulièrement en direction de la jeunesse vivant dans les communautés Inuit, selon un site web interactif et une page Facebook.
+
+Mots clés :
+
+Arctique, Subarctique, Groenland, Nunavik, Labrador-Nunatsiavut, Canada, Norois, Fermes, Interactions Homme-milieu, Thule, Inuit, Archives naturelles, Établissements archéologiques, Artefacts archéologiques, Matières premières, Changements climatiques, Environnements, Paysage, Écosystèmes, Biodiversité, Changements globaux, Changements sociaux, Flore, Faune, Sols, ADN ancien, Perception, Mémoire, Héritages, Holocène, Dernier millénaire.</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Title:
+InterActic : A millennium of interaction between societies and environments in Arctic and sub-Arctic regions (Canada and Greenland)
+
+Abstract
+
+The InterArctic project focuses on vulnerability, resilience and adaptation of northern societies facing global change. The rapid current warming of Arctic and Subarctic climates has already produced many changes in the social, economic and cultural behavior of the populations inhabiting these regions and more changes are expected to come. Few of the changes are considered to be positive or not disturbing the fragile balance between human and the environment. Populations of these areas have to face these challenges, and in this context, looking at the past provides the opportunity to document the complex relationships between climate, ecology and human societies, which may provide deeper understanding into ways of better facing the future. The chronological frame of the project encompasses the last millennium, a well-documented period by both ice core data and historical archives. The study area includes Eastern Canada (Nunavik, Nunavut and Nunatsiavut) and Greenland (South and North). Around 1000 years cal. AD, some of these areas witnessed the meeting between European farmers coming from Scandinavia, and hunters-fishers arriving from Beringia. Today, these two lifestyles are still coexisting, with farming in South Greenland, and hunters/gatherers/fishers in Nunavik, Nunavut, Labrador coast and Greenland. Within these study areas, our aim is to document 1000 years of interactions between Thule/Inuit people, Norse settlers and their environment, through an interdisciplinary approach exploiting different kinds of natural archives. The use of pedo-sedimentary archives (lakes, peat deposits, cryosols, anthrosols) and palaeoenvironmental multiproxy analyses will highlight landscape evolution, climatic and anthropogenic forcings upon ecological processes. Archaeological sites, and more specifically archaeological soils, ecofacts and artefacts, will give precious information about the nature of these interactions. The complementary anthropological/cultural approach will focus on human memory, perception, practices and prospects of environmental and social changes, archaeological heritage and past settlement location choices, of six communities in Greenland and Canada. These issues will be explored in an interdisciplinary work through open interviews and co-design workshops bringing Inuit elders and youth together with project researchers. Coproduced knowledge (blending traditional and scientific), including Inuit visual documentation of the community changes and the writing of science fiction narratives, as well as cognitive maps (Inuit internal representation), will then be shared through innovative educational projects such as an interactive web platform designed to share project results, involving local partners in Greenland and Canada as well as French secondary schools and universities.
+
+Keywords:
+
+Arctic, Subarctic, Greenland, Nunavik, Labrador-Nunatsiavut, Canada, Norse, Farming, Interaction Human-environment, Thule, Inuit, Natural-archives, Archaeological settlements, Archaeological-artefacts, Raw-materials, Climate, Environment, Landscape, Ecosytems, Biodiversity, Global-changes, Social-changes, Flora, Fauna, Soils, PalenvDNA, Perception, Memory, Heritage, Holocene, Last-Millenium</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Titre:
+
+Un millénaire d’interactions entre sociétés et leurs environnements en Arctique et Subarctique (Canada et Groenland).
+
+
+Résumé
+
+Le projet InterArctic est centré sur la vulnérabilité, la résilience et l'adaptation de sociétés humaines nordiques face aux changements globaux. L'actuel réchauffement rapide du climat arctique a déjà entrainé de nombreux changements dans les comportements sociaux, économiques et culturels des populations habitant ces régions et plus de changements sont à venir. Ces changements perturbent le fragile équilibre entre sociétés et environnement. Les populations arctiques doivent faire face à ces challenges et, dans un tel contexte, observer et étudier les événements du passé donnent l'opportunité d'explorer les relations complexes entre climat, écologie et sociétés humaines, qui peuvent aider à proposer des scénarios d'évolution selon certaines prévisions. Le cadre chronologique de ce projet couvre le dernier millénaire, une période assez bien documentée. La région d'étude concerne le nord-est du Canada (Nunavik et Labrador-Nunatsiavut) et le Groenland (nord et sud). Il y a environ 1000 ans cal. AD. Certains territoires de ces régions, furent témoins de la rencontre des fermiers européens provenant de la Scandinavie et des chasseurs-cueilleurs-pêcheurs provenant de la Béringie. Présentement, ces deux styles de vie continuent à coexister, avec des activités agricoles dans le sud de Groenland et la chasse, la pêche et la cueillette sur les côtes de Nunavut, du Nunavik et du Labrador et du nord de Groenland. Dans ces secteurs d'étude, notre but est de documenter 1000 ans d'interactions entre les Thule/Inuit (Dorset pro parte) et les Norois et leur environnement à travers une approche interdisciplinaire exploitant toute une variété d'archives sédimentaires. L'exploitation des archives pédo-sédimentaires (dépôts lacustres et tourbeux, cryosols, sols anthropisés) et les analyses multiproxies paléoenvironnementales renseigneront sur l'évolution paysagère et sur la part prise par les forçages climatiques et anthropiques sur les processus écologiques. Les sites archéologiques et plus spécifiquement les sols archéologiques, les écofacts et artefacts trouvés en leur sein livreront de précieuses informations sur la nature de ces interactions. En parallèle quand cela sera possible, une approche en géographie culturelle sera conduite selon des interviews semi-dirigés pour enquêter sur la mémoire humaine des aînés, la perception et les perspectives en matière de changements environnementaux et sociaux.
+Plusieurs modes de diffusion des connaissances acquises par Inter sont identifiés et adaptés aux diverses audiences et partenaires : académiques (communications dans colloques, et articles dans revues internationales), communautés et autorités locales. C'est une priorité pour nous de disséminer les résultats de nos travaux sur le terrain et en laboratoire auprès d'un public non-spécialiste, tout particulièrement en direction de la jeunesse vivant dans les communautés Inuit, selon un site web interactif et une page Facebook.
+
+Mots clés :
+
+Arctique, Subarctique, Groenland, Nunavik, Labrador-Nunatsiavut, Canada, Norois, Fermes, Interactions Homme-milieu, Thule, Inuit, Archives naturelles, Établissements archéologiques, Artefacts archéologiques, Matières premières, Changements climatiques, Environnements, Paysage, Écosystèmes, Biodiversité, Changements globaux, Changements sociaux, Flore, Faune, Sols, ADN ancien, Perception, Mémoire, Héritages, Holocène, Dernier millénaire.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:abstract>
+         <gmd:purpose xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Présentation du projet</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Presentation of the project</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Présentation du projet</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:purpose>
+         <gmd:status>
+            <gmd:MD_ProgressCode codeListValue="underDevelopment"
+                                 codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"/>
+         </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Dominique MARGUERIE</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Dominique MARGUERIE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Dominique MARGUERIE</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:individualName>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>ECOBIO UMR 6553 CNRS Université de Rennes 1</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">ECOBIO UMR 6553 CNRS Université de Rennes 1</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">ECOBIO UMR 6553 CNRS Université de Rennes 1</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString/>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR"/>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:positionName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:voice>
+                           <gmd:facsimile gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString/>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR"/>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:deliveryPoint>
+                           <gmd:city gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:city>
+                           <gmd:administrativeArea gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:postalCode>
+                           <gmd:country gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString/>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR"/>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:country>
+                           <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>dominique.marguerie@univ-rennes1.fr</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">dominique.marguerie@univ-rennes1.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">dominique.marguerie@univ-rennes1.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="originator"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Najat BHIRY</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Najat BHIRY</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Najat BHIRY</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:individualName>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Centre d'Etudes Nordiques Université Laval, Québec, CANADA</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Centre d'Etudes Nordiques Université Laval, Québec, CANADA</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Centre d'Etudes Nordiques Université Laval, Québec, CANADA</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>najat.bhiry@cen.ulaval.ca</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">najat.bhiry@cen.ulaval.ca</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">najat.bhiry@cen.ulaval.ca</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="originator"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Dominique TODISCO</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Dominique TODISCO</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Dominique TODISCO</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:individualName>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>IDEES UMR 6266 CNRS Université de Rouen</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">IDEES UMR 6266 CNRS Université de Rouen</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">IDEES UMR 6266 CNRS Université de Rouen</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>dominique.todisco@univ-rouen.fr</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">dominique.todisco@univ-rouen.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">dominique.todisco@univ-rouen.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="originator"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeListValue="asNeeded"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"/>
+               </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://www.osuris.fr/geonetwork/srv/api/records/547403ee-4cf7-40eb-8fb2-bd797307bb70/attachments/Logo%20InterArctic.jpg</gco:CharacterString>
+               </gmd:fileName>
+               <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>logo_interarctic</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">logo_interarctic</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">logo_interarctic</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:fileDescription>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>environnement</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">environnement</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">environment</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>évaluation environnementale</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">évaluation environnementale</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">environmental assessment</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>société (humaine)</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">société (humaine)</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">society</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>recherche</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">recherche</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">research</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>impact sur l'environnement</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">impact sur l'environnement</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">environmental impact</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>biosphère</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">biosphère</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">biosphere</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>climat</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">climat</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">climate</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>paléoécologie</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">paléoécologie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">palaeoecology</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>donnée environnementale</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">donnée environnementale</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">environmental data</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>GEMET</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">GEMET</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2012-07-20</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                                          xlink:href="https://www.osuris.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Arctique</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Arctique</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Arctic</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Subarctique</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Subarctique</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Subarctic</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Groenland</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Groenland</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Greenland</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Nunavik</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Nunavik</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Nunavik</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Labrador-Nunatsiavut</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Labrador-Nunatsiavut</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Labrador-Nunatsiavut</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Canada</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Canada</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Canada</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Norois</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Norse</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Norois</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Fermes</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Farming</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Fermes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Interactions Homme-milieu</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Interaction Human-environment</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Interactions Homme-milieu</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Thule</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Thule</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Thule</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Inuit</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Inuit</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Inuit</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Archives naturelles</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Archives naturelles</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Natural-archives</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Établissements archéologiques</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Établissements archéologiques</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Archaeological settlements</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Artefacts archéologiques</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Archaeological-artefacts</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Artefacts archéologiques</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Matières premières</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Raw-materials</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Matières premières</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Changements climatiques</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Climate-changes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Changements climatiques</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Paysage</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Paysage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Landscape</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Écosystème</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Ecosytem</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Écosystème</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Biodiversité</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Biodiversity</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Biodiversité</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Changements globaux</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Global-changes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Changements globaux</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Changements sociaux</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Changements sociaux</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Social-changes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Flore</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Flore</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Flora</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="discipline"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Faune</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Fauna</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Faune</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="discipline"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Sol</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Soil</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Sol</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="discipline"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>ADN ancien</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">PalenvDNA</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">ADN ancien</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Perception</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Perception</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Perception</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Mémoire</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Memory</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Mémoire</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Héritage</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Héritage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Heritage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Holocène</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Holocène</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Holocene</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="temporal"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Dernier millénaire</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Dernier millénaire</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Last-Millenium</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="temporal"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeListValue="copyright"
+                                          codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+               </gmd:accessConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeListValue="restricted"
+                                          codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Contacter le porteur de projet</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Contacter le porteur de projet</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Contact the project manager</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+            <gmd:MD_SpatialRepresentationTypeCode codeListValue="vector"
+                                                  codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+                  <gmd:MD_RepresentativeFraction>
+                     <gmd:denominator>
+                        <gco:Integer>5000</gco:Integer>
+                     </gmd:denominator>
+                  </gmd:MD_RepresentativeFraction>
+               </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:language>
+         <gmd:characterSet>
+            <gmd:MD_CharacterSetCode codeListValue="utf8"
+                                     codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>climatologyMeteorologyAtmosphere</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>imageryBaseMapsEarthCover</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>society</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>biota</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="d1e468a1049886">
+                           <gml:beginPosition>2018-01-01</gml:beginPosition>
+                           <gml:endPosition>2021-12-31</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-83.84765625</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-29.70703125</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>52.09211117</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>68.87091276</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+         <gmd:supplementalInformation gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString/>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR"/>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:supplementalInformation>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:che="http://www.geocat.ch/2008/che">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+            <gmd:MD_Format>
+               <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>pdf</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">pdf</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">pdf</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>2019.021</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions/>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeListValue="series"
+                                    codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Données acquises sur le terrain.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Data collected in the field.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Données acquises sur le terrain.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmx:MX_ScopeCode xmlns:gmx="http://www.isotc211.org/2005/gmx" codeList="" codeListValue=""/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

@@ -1,0 +1,87 @@
+{
+    "associated": [],
+    "hassources": [],
+    "hasfeaturecats": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "text": {
+                            "default": "large_thumbnail",
+                            "langfre": "large_thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/fre/resources.get?uuid=971ab238-cad8-44d0-8a71-c2043b0d082b&fname=b49.png"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "LETG-BREST:meteo_L93",
+                            "langfre": "LETG-BREST:meteo_L93"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=LETG-BREST:meteo_L93&BBOX=-5.166105923758831,47.755414896558584,-3.471054128787508,48.774601734867595"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Spatialisation des pr\u00e9cipitations \u00e0 l'\u00e9chelle du d\u00e9partement du Finist\u00e8re",
+                    "langfre": "Spatialisation des pr\u00e9cipitations \u00e0 l'\u00e9chelle du d\u00e9partement du Finist\u00e8re"
+                },
+                "resourceTitleObject": {
+                    "default": "Stations de mesures m\u00e9t\u00e9orologiques du r\u00e9seau M\u00e9t\u00e9o France dans le Finist\u00e8re (en activit\u00e9 depuis 1970)",
+                    "langfre": "Stations de mesures m\u00e9t\u00e9orologiques du r\u00e9seau M\u00e9t\u00e9o France dans le Finist\u00e8re (en activit\u00e9 depuis 1970)"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-BREST:meteo_L93",
+                        "applicationProfile": "",
+                        "description": "LETG-BREST:meteo_L93",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-BREST:meteo_L93",
+                        "applicationProfile": "",
+                        "description": "LETG-BREST:meteo_L93",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4420",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "971ab238-cad8-44d0-8a71-c2043b0d082b",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "971ab238-cad8-44d0-8a71-c2043b0d082b"
+        }
+    ],
+    "services": []
+}

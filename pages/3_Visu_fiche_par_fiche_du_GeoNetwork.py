@@ -145,6 +145,54 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
 
+if admin_action == admin_pass:
+        RecupAllFiches = st.sidebar.button("Récupération de toutes les fiches")
+        if RecupAllFiches:
+            with st.spinner("Récup de l'ensemble des fiches en cours"):
+                alluuids = uuids['uuid_cat_InDoRes']
+                for i in range(len(alluuids)):
+                    print(i)
+                    try:
+                        df = pd.read_csv(f'pages/data/fiches_csv/{alluuids[i]}.csv',index_col=[0])
+                    except:
+                        url_ = url + alluuids[i]
+                        resp1 = requests.get(url_,headers=headers_json)
+                        if resp1.status_code == 200:
+                            resp_json=resp1.json()
+                            try:
+                                with open(f"pages/data/fiches_json/{alluuids[i]}.json", "w") as f:
+                                    json.dump(resp_json, f, indent=4)
+                            except:
+                                pass
+                        resp2 = requests.get(url_,headers=headers_xml)
+                        if resp2.status_code == 200:
+                            xml_content = resp2.text
+                            try:
+                                with open(f"pages/data/fiches_xml/{alluuids[i]}.xml", 'w') as file:
+                                    file.write(xml_content)
+                            except:
+                                pass
+
+                        url_asso = url + alluuids[i] +"/associated?rows=100"
+                        resp_asso = requests.get(url_asso,headers=headers_json)
+                        if resp_asso.status_code == 200:
+                            resp_asso_json=resp_asso.json()
+                            try:
+                                with open(f"pages/data/associated_resources/resource_{alluuids[i]}.json", "w") as f:
+                                    json.dump(resp_asso_json, f, indent=4)
+                            except:
+                                pass
+
+                        url_attach = url + alluuids[i] +"/attachments"
+                        resp_attach = requests.get(url_attach,headers=headers_json)
+                        if resp_attach.status_code == 200:
+                            resp_attach_json=resp_attach.json()
+                            try:
+                                with open(f"pages/data/attachments/attachments_{alluuids[i]}.json", "w") as f:
+                                    json.dump(resp_attach_json, f, indent=4)
+                            except:
+                                pass
+
 ########## VISUALISATION DU GROUPE ############################################
 
 wch_colour_box = (250,250,220)
@@ -236,6 +284,7 @@ try:
 except:
     df_infos = pd.DataFrame(columns=['Identifiant','Groupe'])
     df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
 liste_id = list(df_infos.Identifiant)
 if identifieur in liste_id:
     pass

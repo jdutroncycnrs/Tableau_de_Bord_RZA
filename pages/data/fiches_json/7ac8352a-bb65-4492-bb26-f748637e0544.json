@@ -1,0 +1,914 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "7ac8352a-bb65-4492-bb26-f748637e0544"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Philippe MARTIN"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "ESPACE UMR 7300 CNRS AU"
+                }
+            },
+            "gmd:positionName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Professeur"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "04 90 16 26 95"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "74 rue Louis Pasteur"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Avignon"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "84029"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "philippe.martin@univ-avignon.fr"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:onlineResource": {
+                        "gmd:CI_OnlineResource": {
+                            "gmd:linkage": {
+                                "gmd:URL": "http://www.umrespace.org/"
+                            },
+                            "gmd:protocol": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "WWW:LINK-1.0-http--link"
+                                }
+                            },
+                            "gmd:name": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Site Internet de l'UMR ESPACE"
+                                }
+                            },
+                            "gmd:description": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:function": {
+                                "gmd:CI_OnLineFunctionCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                    "@codeListValue": "information"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "owner",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2019-06-26T12:52:36"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "#text": [
+            "\n    \"\n    ",
+            "\n    \"\n  "
+        ],
+        "gmd:MD_ReferenceSystem": {
+            "#text": [
+                "\n      \"\n      ",
+                "\n      \"\n    "
+            ],
+            "gmd:referenceSystemIdentifier": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "LAMBERT 93"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "HydroPop : Mesures de d\u00e9bits de basses eaux dans le bassin des Gardons aux stations temporaires"
+                        }
+                    },
+                    "gmd:date": [
+                        {
+                            "#text": [
+                                "\n            \"\n            ",
+                                "\n            \"\n          "
+                            ],
+                            "gmd:CI_Date": {
+                                "#text": [
+                                    "\n              \"\n              ",
+                                    "\n              \"\n              ",
+                                    "\n              \"\n            "
+                                ],
+                                "gmd:date": {
+                                    "gco:Date": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "2015-04-02"
+                                    }
+                                },
+                                "gmd:dateType": {
+                                    "#text": [
+                                        "\n                \"\n                ",
+                                        "\n                \"\n              "
+                                    ],
+                                    "gmd:CI_DateTypeCode": {
+                                        "@codeListValue": "creation",
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "#text": [
+                                "\n            \"\n            ",
+                                "\n            \"\n          "
+                            ],
+                            "gmd:CI_Date": {
+                                "#text": [
+                                    "\n              \"\n              ",
+                                    "\n              \"\n              ",
+                                    "\n              \"\n            "
+                                ],
+                                "gmd:date": {
+                                    "gco:Date": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "2015-12-12"
+                                    }
+                                },
+                                "gmd:dateType": {
+                                    "#text": [
+                                        "\n                \"\n                ",
+                                        "\n                \"\n              "
+                                    ],
+                                    "gmd:CI_DateTypeCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                        "@codeListValue": "publication"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "gmd:editionDate": {
+                        "gco:Date": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "2019-06-24"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Donn\u00e9es de d\u00e9bit et de temp\u00e9rature de basses eaux \u00e0 haute r\u00e9solution temporelle (5 minutes) \u00e9tablies \u00e0 11 stations hydrom\u00e9triques.\nUne mesure de conductivit\u00e9 en continu \u00e0 5 minutes est r\u00e9alis\u00e9e sur 2 de ces stations (Galeizon, Gardon d'Al\u00e8s).\n\nCadre : programme de recherche HydroPop, Vers une hydrologie populaire et participative. Ce programme s'int\u00e9resse \u00e0 la s\u00e9cheresse dans les C\u00e9vennes con\u00e7ue comme une tension entre la ressource en eau et la demande soci\u00e9tale. \n\nBut: Evaluation locale de la ressource en eau (quantit\u00e9 et qualit\u00e9 dont temp\u00e9rature) en p\u00e9riode estivale. D\u00e9termination des \u00e9tiages, mod\u00e9lisation des tarissements, \u00e9valuation des d\u00e9bits sp\u00e9cifiques. El\u00e9ments de connaissance transmis pour \u00e9tablir une gestion quantitative de l'eau en p\u00e9riode de tension (s\u00e9cheresse).\n\nLieu: Bassin versant des Gardons en amont de Ners\n\nP\u00e9riode: 2015-2021"
+                }
+            },
+            "gmd:status": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:MD_ProgressCode": {
+                    "@codeListValue": "onGoing",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+                }
+            },
+            "gmd:pointOfContact": {
+                "gmd:CI_ResponsibleParty": {
+                    "gmd:individualName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Philippe MARTIN"
+                        }
+                    },
+                    "gmd:organisationName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "ESPACE UMR 7300 CNRS AU"
+                        }
+                    },
+                    "gmd:positionName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Professeur"
+                        }
+                    },
+                    "gmd:contactInfo": {
+                        "gmd:CI_Contact": {
+                            "gmd:phone": {
+                                "gmd:CI_Telephone": {
+                                    "gmd:voice": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "04 90 16 26 95"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:address": {
+                                "gmd:CI_Address": {
+                                    "gmd:deliveryPoint": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "74 rue Louis Pasteur"
+                                        }
+                                    },
+                                    "gmd:city": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Avignon"
+                                        }
+                                    },
+                                    "gmd:administrativeArea": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:postalCode": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "84029"
+                                        }
+                                    },
+                                    "gmd:country": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "France"
+                                        }
+                                    },
+                                    "gmd:electronicMailAddress": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "philippe.martin@univ-avignon.fr"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:onlineResource": {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "http://www.umrespace.org/"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:LINK-1.0-http--link"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Site Internet de l'UMR ESPACE"
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:function": {
+                                        "gmd:CI_OnLineFunctionCode": {
+                                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                            "@codeListValue": "information"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gmd:role": {
+                        "gmd:CI_RoleCode": {
+                            "@codeListValue": "owner",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                        }
+                    }
+                }
+            },
+            "gmd:resourceMaintenance": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "#text": [
+                            "\n            \"\n            ",
+                            "\n            \"\n          "
+                        ],
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "annually",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    },
+                    "gmd:contact": {
+                        "gmd:CI_ResponsibleParty": {
+                            "gmd:individualName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Philippe MARTIN"
+                                }
+                            },
+                            "gmd:organisationName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "ESPACE UMR 7300 CNRS AU"
+                                }
+                            },
+                            "gmd:positionName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Professeur"
+                                }
+                            },
+                            "gmd:contactInfo": {
+                                "gmd:CI_Contact": {
+                                    "gmd:phone": {
+                                        "gmd:CI_Telephone": {
+                                            "gmd:voice": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "04 90 16 26 95"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "gmd:address": {
+                                        "gmd:CI_Address": {
+                                            "gmd:deliveryPoint": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "74 rue Louis Pasteur"
+                                                }
+                                            },
+                                            "gmd:city": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Avignon"
+                                                }
+                                            },
+                                            "gmd:administrativeArea": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "@gco:nilReason": "missing",
+                                                "gco:CharacterString": null
+                                            },
+                                            "gmd:postalCode": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "84029"
+                                                }
+                                            },
+                                            "gmd:country": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "France"
+                                                }
+                                            },
+                                            "gmd:electronicMailAddress": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "philippe.martin@univ-avignon.fr"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "gmd:onlineResource": {
+                                        "gmd:CI_OnlineResource": {
+                                            "gmd:linkage": {
+                                                "gmd:URL": "http://www.umrespace.org/"
+                                            },
+                                            "gmd:protocol": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "WWW:LINK-1.0-http--link"
+                                                }
+                                            },
+                                            "gmd:name": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Site Internet de l'UMR ESPACE"
+                                                }
+                                            },
+                                            "gmd:description": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "@gco:nilReason": "missing",
+                                                "gco:CharacterString": null
+                                            },
+                                            "gmd:function": {
+                                                "gmd:CI_OnLineFunctionCode": {
+                                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                                    "@codeListValue": "information"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:role": {
+                                "gmd:CI_RoleCode": {
+                                    "@codeListValue": "owner",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://cat.indores.fr/geonetwork/srv/api/records/7ac8352a-bb65-4492-bb26-f748637e0544/attachments/Hydropop_Carte.png"
+                        }
+                    },
+                    "gmd:fileDescription": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "large_thumbnail"
+                        }
+                    },
+                    "gmd:fileType": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "png"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Hydrographie"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Quantitatif"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "D\u00e9bit extr\u00eame"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Qualit\u00e9"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Affluent"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Hydrom\u00e9trie"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Eaux de surface"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Hydrologie"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Bassin versant"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Vocabulaire M\u00e9taZABR"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2016-08-25"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.vocab",
+                                                "#text": "geonetwork.thesaurus.external.theme.vocab"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "S\u00e9cheresse"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Etiage"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Au cas par cas, voir avec le propri\u00e9taire des donn\u00e9es"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Convention \u00e0 \u00e9tablir"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "textTable",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:spatialResolution": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "#text": [
+                            "\n            \"\n            ",
+                            "\n            \"\n          "
+                        ],
+                        "gmd:MD_RepresentativeFraction": {
+                            "#text": [
+                                "\n              \"\n              ",
+                                "\n              \"\n            "
+                            ],
+                            "gmd:denominator": {
+                                "#text": [
+                                    "\n                \"\n                ",
+                                    "\n                \"\n              "
+                                ],
+                                "gco:Integer": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "100000"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:topicCategory": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:MD_TopicCategoryCode": "geoscientificInformation"
+            },
+            "gmd:extent": {
+                "#text": [
+                    "\n        \"\n        ",
+                    "\n        \"\n      "
+                ],
+                "gmd:EX_Extent": {
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "#text": [
+                                    "\n                \"\n                ",
+                                    "\n                \"\n              "
+                                ],
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "3.649822999723255"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "#text": [
+                                    "\n                \"\n                ",
+                                    "\n                \"\n              "
+                                ],
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "4.267803956754506"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "#text": [
+                                    "\n                \"\n                ",
+                                    "\n                \"\n              "
+                                ],
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "44.10178749633053"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "#text": [
+                                    "\n                \"\n                ",
+                                    "\n                \"\n              "
+                                ],
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "44.28099735580929"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:date": "http://exslt.org/dates-and-times",
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": null,
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": {
+                        "gmd:CI_OnlineResource": {
+                            "gmd:linkage": {
+                                "gmd:URL": "https://cat.indores.fr/geonetwork/srv/api/records/7ac8352a-bb65-4492-bb26-f748637e0544/attachments/MLD.jpg"
+                            },
+                            "gmd:protocol": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                }
+                            },
+                            "gmd:name": {
+                                "gmx:MimeFileType": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@type": "image/pjpeg",
+                                    "#text": "MLD.jpg"
+                                }
+                            },
+                            "gmd:description": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "MLD"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:DQ_DataQuality": {
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Deux stations b\u00e9n\u00e9ficient de seuils artificiels (Galeizon, La Blaqui\u00e8re), toutes les autres ont des seuils naturels. Certains sont rocheux donc stables d'ann\u00e9e en ann\u00e9e, d'autres ont des seuils alluviaux mobiles. Toutes les stations ont au moins \u00e9t\u00e9 \u00e9quip\u00e9es de deux sondes hydrom\u00e9triques immerg\u00e9es.\nL'\u00e9quipe hydrom\u00e9trique r\u00e9cup\u00e8re les mesures de pression d'eau, de temp\u00e9rature et de conductivit\u00e9 et proc\u00e8de aux corrections (d\u00e9rive, probl\u00e8mes de tarage...) puis aux calculs des d\u00e9bits. Les mesures de temp\u00e9rature sont norm\u00e9es avec un thermom\u00e8tre haute pr\u00e9cision tout comme les mesures de conductivit\u00e9.\nLes courbes de tarage sont syst\u00e9matiquement v\u00e9rifi\u00e9es par des jaugeages chimiques (chlorure de sodium) en d\u00e9but de saison. Si le seuil a vari\u00e9 sous l'effet d'une crue, la courbe est reconstruite. \nLes donn\u00e9es \u00e0 5 minutes ont une bonne pr\u00e9cision. Elles permettent de calculer des barres d'erreur \u00e0 1% pour les d\u00e9bits horaires ou moyens journaliers.\n\nContributeurs: UMR 7300 ESPACE - Avignon, IMT Mines Al\u00e8s"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

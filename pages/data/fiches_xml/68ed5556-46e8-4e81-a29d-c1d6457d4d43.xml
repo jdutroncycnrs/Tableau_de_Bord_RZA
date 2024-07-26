@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>68ed5556-46e8-4e81-a29d-c1d6457d4d43</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="service"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>other</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact xmlns:gml="http://www.opengis.net/gml">
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Service GéoSAS</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>UMR 1069 SAS INRAE - Institut Agro</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>65 rue de Saint-Brieuc</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Rennes</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>35042</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>geosas_adm@framalistes.org</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://www6.inrae.fr/ore_agrhys</gmd:URL>
+                     </gmd:linkage>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:gml="http://www.opengis.net/gml">
+      <gco:DateTime>2024-01-11T16:54:09</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:identificationInfo xmlns:gml="http://www.opengis.net/gml"
+                           xmlns:date="http://exslt.org/dates-and-times">
+      <srv:SV_ServiceIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Service de visualisation ORE AgrHys [GéoSAS]</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:DateTime>2012-12-15T12:00:00</gco:DateTime>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>fr-130005127-umrsas-ore-wms</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract>
+            <gco:CharacterString>Service de visualisation cartographique (WMS) de l'Observatoire de Recherche en Environnement (ORE) AgrHys de l'INRA. GéoSAS, portail de l'information géographique de l'Unité Mixte de Recherche, Sol Agro et hydrosystèmes, Spatialisation. UMR 1069 SAS INRAE - L'Institut Agro Rennes-Angers</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Contact ORE AgrHyS</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>UMR 1069 SAS INRAE - L'Institut Agro Rennes-Angers</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>00 33 (0)2 98 95 99 64</gco:CharacterString>
+                           </gmd:voice>
+                           <gmd:facsimile>
+                              <gco:CharacterString>00 33 (0)2 98 95 26 06</gco:CharacterString>
+                           </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>65 rue de Saint-Brieuc</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Rennes</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>35042</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>France</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>agrhys-admin@inrae.fr</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>https://www6.inrae.fr/ore_agrhys</gmd:URL>
+                           </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="pointOfContact"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                                   codeListValue="notPlanned"/>
+               </gmd:maintenanceAndUpdateFrequency>
+               <gmd:updateScopeDescription/>
+               <gmd:maintenanceNote gco:nilReason="missing">
+                  <gco:CharacterString/>
+               </gmd:maintenanceNote>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://geosas.fr/metadata/ore/img/logo%20agrhys.jpg</gco:CharacterString>
+               </gmd:fileName>
+               <gmd:fileDescription>
+                  <gco:CharacterString>thumbnail</gco:CharacterString>
+               </gmd:fileDescription>
+               <gmd:fileType>
+                  <gco:CharacterString>jpg</gco:CharacterString>
+               </gmd:fileType>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:resourceFormat>
+            <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>JPEG</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.0</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:resourceFormat>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Hydrographie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Installations de suivi environnemental</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>external.place.inspire-theme</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date gco:nilReason="unknown"/>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Kerbernez</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Naizin</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>external.place.ore</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date gco:nilReason="unknown"/>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>humanGeographicViewer</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>INSPIRE Service taxonomy</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2010-04-22</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://geosas.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-service-taxonomy">geonetwork.thesaurus.external.theme.inspire-service-taxonomy</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Usage libre sous réserve des mentions obligatoires sur tout document de diffusion : "Source : UMR 1069 SAS INRAE - Institut Agro"</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Licence ouverte : https://www.etalab.gouv.fr/licence-ouverte-open-licence</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="license"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints>
+                  <gco:CharacterString>Pas de restriction d’accès public</gco:CharacterString>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <srv:serviceType>
+            <gco:LocalName codeSpace="www.w3c.org">view</gco:LocalName>
+         </srv:serviceType>
+         <srv:serviceTypeVersion>
+            <gco:CharacterString>1.3.0</gco:CharacterString>
+         </srv:serviceTypeVersion>
+         <srv:accessProperties>
+            <gmd:MD_StandardOrderProcess/>
+         </srv:accessProperties>
+         <srv:extent>
+            <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-4.1748</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-2.65869</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>47.91412</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>48.18878</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+         </srv:extent>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:coupledResource/>
+         <srv:couplingType>
+            <srv:SV_CouplingType codeListValue="loose"
+                                 codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#SV_CouplingType"/>
+         </srv:couplingType>
+         <srv:containsOperations>
+            <srv:SV_OperationMetadata>
+               <srv:operationName>
+                  <gco:CharacterString>GetCapabilities</gco:CharacterString>
+               </srv:operationName>
+               <srv:DCP>
+                  <srv:DCPList codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#DCPList"
+                               codeListValue="WebServices"/>
+               </srv:DCP>
+               <srv:DCP/>
+               <srv:DCP/>
+               <srv:connectPoint>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://geosas.fr/geoserver/ore/ows?SERVICE=WMS&amp;</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS-1.1.1-http-get-capabilities</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description>
+                        <gco:CharacterString>https://geosas.fr/geoserver/ore/ows?SERVICE=WMS&amp;</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeListValue="order"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </srv:connectPoint>
+            </srv:SV_OperationMetadata>
+         </srv:containsOperations>
+         <srv:operatesOn uuidref="de5e7c54-2b13-445b-a2dc-b8145b846a98"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=de5e7c54-2b13-445b-a2dc-b8145b846a98"/>
+         <srv:operatesOn uuidref="404bc60a-2943-44b5-9f35-9b13cd7895b5"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=404bc60a-2943-44b5-9f35-9b13cd7895b5"/>
+         <srv:operatesOn uuidref="f5ceee60-c8db-4a96-a4f4-a7c922b43c8f"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=f5ceee60-c8db-4a96-a4f4-a7c922b43c8f"/>
+         <srv:operatesOn uuidref="da406a60-7d10-4d21-afae-3ae13a788db8"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=da406a60-7d10-4d21-afae-3ae13a788db8"/>
+         <srv:operatesOn uuidref="1216db12-7dd2-4c57-ade7-beea76ae5f61"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=1216db12-7dd2-4c57-ade7-beea76ae5f61"/>
+         <srv:operatesOn uuidref="69598356-e3af-4e5b-9b66-d936a3faa136"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=69598356-e3af-4e5b-9b66-d936a3faa136"/>
+         <srv:operatesOn uuidref="2b98c6f5-2c15-48f3-af81-5cc3c811d4a1"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=2b98c6f5-2c15-48f3-af81-5cc3c811d4a1"/>
+         <srv:operatesOn uuidref="81de9c74-704f-409a-9bf2-00b070185920"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=81de9c74-704f-409a-9bf2-00b070185920"/>
+         <srv:operatesOn uuidref="83ce86db-7caf-4a1c-8898-3a749ac2bbaf"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=83ce86db-7caf-4a1c-8898-3a749ac2bbaf"/>
+         <srv:operatesOn uuidref="5514e0c5-4406-4880-9cff-4df6f39c0f4f"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=5514e0c5-4406-4880-9cff-4df6f39c0f4f"/>
+         <srv:operatesOn uuidref="29e85205-f44a-420c-ae17-afb1d1b055f4"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=29e85205-f44a-420c-ae17-afb1d1b055f4"/>
+         <srv:operatesOn uuidref="e97d3159-e1ae-4939-8af0-acd588ba75b0"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=e97d3159-e1ae-4939-8af0-acd588ba75b0"/>
+         <srv:operatesOn uuidref="97a6907d-cb13-4655-806b-6a64739d991c"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=97a6907d-cb13-4655-806b-6a64739d991c"/>
+      </srv:SV_ServiceIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+            <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>WMS</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.3.0</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://geosas.fr/geoserver/ore/ows?service=WMS&amp;version=1.3.0&amp;request=getcapabilities</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:name>
+                     <gmd:description gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:metadataConstraints xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_LegalConstraints>
+         <gmd:useLimitation>
+            <gco:CharacterString>Usage libre sous réserve des mentions obligatoires sur tout document de diffusion : "Source : UMR 1069 SAS INRAE - Institut Agro - Rennes Angers"</gco:CharacterString>
+         </gmd:useLimitation>
+         <gmd:useLimitation>
+            <gco:CharacterString>https://www.etalab.gouv.fr/licence-ouverte-open-licence</gco:CharacterString>
+         </gmd:useLimitation>
+         <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                    codeListValue="license"/>
+         </gmd:accessConstraints>
+         <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                    codeListValue="license"/>
+         </gmd:useConstraints>
+      </gmd:MD_LegalConstraints>
+  </gmd:metadataConstraints>
+</gmd:MD_Metadata>

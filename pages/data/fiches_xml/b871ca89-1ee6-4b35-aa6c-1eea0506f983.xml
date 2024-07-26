@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gfc:FC_FeatureCatalogue xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                         xmlns:gco="http://www.isotc211.org/2005/gco"
+                         xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         uuid="b871ca89-1ee6-4b35-aa6c-1eea0506f983"
+                         xsi:schemaLocation="http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd">
+  <gfc:name>
+      <gco:CharacterString>Dictionnaire de données pour 'Le thème végétation sur l'île Molène et ses Ledenez en 1990'</gco:CharacterString>
+  </gfc:name>
+  <gfc:scope>
+      <gco:CharacterString/>
+  </gfc:scope>
+  <gfc:fieldOfApplication>
+      <gco:CharacterString/>
+  </gfc:fieldOfApplication>
+  <gfc:versionNumber>
+      <gco:CharacterString/>
+  </gfc:versionNumber>
+  <gfc:versionDate>
+      <gco:DateTime xmlns:gml="http://www.opengis.net/gml" xmlns:gmx="http://www.isotc211.org/2005/gmx">2019-02-12T08:45:41</gco:DateTime>
+  </gfc:versionDate>
+  <gfc:featureType>
+      <gfc:FC_FeatureType id="">
+         <gfc:typeName>
+            <gco:LocalName>Table attributaire</gco:LocalName>
+         </gfc:typeName>
+         <gfc:definition>
+            <gco:CharacterString>Définition de la table d'attributs</gco:CharacterString>
+         </gfc:definition>
+         <gfc:isAbstract>
+            <gco:Boolean>false</gco:Boolean>
+         </gfc:isAbstract>
+         <gfc:featureCatalogue xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#"/>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>poten_veg</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Libellés des potentialités théoriques de la végétation</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:featureType/>
+               <gfc:valueMeasurementUnit>
+                  <gml:UnitDefinition xmlns:gml="http://www.opengis.net/gml" gml:id="unknown">
+                     <gml:identifier codeSpace="unknown"/>
+                  </gml:UnitDefinition>
+               </gfc:valueMeasurementUnit>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>form_veget</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Libellés des principales formations végétales en 1990</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>0</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>physio_veget</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Libellés des physionomies de la végétation en 1990</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>dynam_veg</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Libellés des différents stades végétaux en 1990</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>stade_init</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Libellés des stades initiaux de la végétation</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+      </gfc:FC_FeatureType>
+  </gfc:featureType>
+</gfc:FC_FeatureCatalogue>
