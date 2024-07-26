@@ -44,6 +44,26 @@ taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)
 
+liste_gr =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
+           'ZAAJ','Zone Atelier Arc Jurassien' , 'ZAAJ - Arc Jurassien',
+           'ZAAR','zaar', 'Zone Atelier Armorique','ZAAr - Armorique','ZAAr',
+           'ZAEU','zaeu','Zone atelier environnementale urbaine','ZAEU - Environnementale Urbaine',
+           'ZABR','zabr','Zone atelier bassin du Rhône','ZABR - Bassin du Rhône',
+           'ZABRI','zabri','Zone atelier Brest Iroise','ZABrI - Brest Iroise',
+           'ZAM','zam','Zone atelier bassin de la Moselle', 'ZAM - Moselle',
+           'ZAL','zal','Zone atelier Loire','ZAL - Loire',
+           'ZAS','zas','Zone Atelier Seine', 'ZAS - Seine',
+           'ZAPygar','Zone atelier Pyrénées Garonne', 'ZAPYGAR - Pyrénées-Garonne'
+           'ZACAM','Zone Atelier Santé Environnement Camargue', 'ZACAM - Sante Environnement Camargue',
+           'ZATU','Zone atelier territoires uranifères', 'ZATU - Territoires Uranifères',
+           'ZATA','Zone Atelier Antarctique et Terres Australes',
+           'ZARG','Zone Atelier Argonne', 'ZARG - Argonne',
+           'ZAPVS','Zone atelier Plaine et Val de Sèvre', 'ZAPVS - Plaine et Val de Sèvre',
+           'ZAH', 'Zone Atelier Hwange', 'ZAHV - Hwange',
+           'OHMi Nunavik', 'OHM Oyapock', 'OHM Pays de Bitche', 'OHM Bassin Minier de Provence', 
+           'OHMi Téssékéré', 'OHM Vallée du Rhône','OHMi Estarreja','OHM Pyrénées - haut Vicdessos', 
+           'OHM Littoral méditerranéen', 'OHMi Pima County']
+
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS #########################
 
 fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
@@ -61,10 +81,45 @@ group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
 #group_['Groupe'].fillna('Aucun groupe', inplace=True)
 #group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
 liste_groupes = set(group_['Groupe'])
-choix_groupe = st.sidebar.checkbox('Choisir un groupe')
-if choix_groupe:
+liste_groupes_ZA = ['zaaj', 'zaa', 'ZA', 'zabri', 'zaeu', 'zapygar',  'zabr', 'zaar', 'zam', 'zas', 'zal']
+liste_groupes_OHM = ['OHMi Nunavik', 'OHM Oyapock', 'OHM Pays de Bitche', 'OHM Bassin Minier de Provence', 'OHMi Téssékéré', 
+                     'OHM Vallée du Rhône','OHMi Estarreja', 'OHM Pyrénées - haut Vicdessos', 'OHM Littoral méditerranéen', 'OHMi Pima County']
+
+
+if 'checkbox1' not in st.session_state:
+    st.session_state.checkbox1 = False
+if 'checkbox2' not in st.session_state:
+    st.session_state.checkbox2 = False
+
+# Function to handle checkbox1 change
+def handle_checkbox1_change():
+    if st.session_state.checkbox1:
+        st.session_state.checkbox2 = False
+
+# Function to handle checkbox2 change
+def handle_checkbox2_change():
+    if st.session_state.checkbox2:
+        st.session_state.checkbox1 = False
+
+col1,col2 =st.sidebar.columns(2)
+choix_groupe_OHM = False
+with col1:
+    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
+with col2:
+    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
+
+
+if checkbox1:
     st.sidebar.markdown('Par défaut: Groupe exemple')
-    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes)
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes_ZA)
+    if len(selection_group)==0:
+        selection_group = ['Groupe exemple']
+    selected_uuids = group_['Identifiant'][group_['Groupe'].isin(selection_group)]
+    selected_uuids_ = selected_uuids.reset_index(drop=True)
+    st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
+elif checkbox2:
+    st.sidebar.markdown('Par défaut: Groupe exemple')
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes_OHM)
     if len(selection_group)==0:
         selection_group = ['Groupe exemple']
     selected_uuids = group_['Identifiant'][group_['Groupe'].isin(selection_group)]
@@ -73,6 +128,7 @@ if choix_groupe:
 else:
     selected_uuids_ = uuids['uuid_cat_InDoRes']
     st.sidebar.metric('NOMBRE FICHES VISUALISEES',len(selected_uuids_))
+
 
 ########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
 
@@ -145,6 +201,8 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
 
+########## RECUP EVENTUELLE DE L'ENSEMBLE DES FICHES ############################################
+
 if admin_action == admin_pass:
         RecupAllFiches = st.sidebar.button("Récupération de toutes les fiches")
         if RecupAllFiches:
@@ -200,9 +258,9 @@ wch_colour_font = (90,90,90)
 fontsize = 25
 valign = "right"
 try:
-    sline = group_['Groupe'][group_.Identifiant==identifieur].values[0]
+    groupe = group_['Groupe'][group_.Identifiant==identifieur].values[0]
 except:
-    sline = ""
+    groupe = ""
 lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 #i = "Groupe associé à la fiche"
 
@@ -220,7 +278,7 @@ htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]},
                                     line-height:5px;
                                     text-align:center'>
                                     </style><BR><span style='font-size: 25px; 
-                                    margin-top: 0;'>{sline}</style></span></p>"""
+                                    margin-top: 0;'>{groupe}</style></span></p>"""
 st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
 ########## CONNEXION AU GEONETWORK ############################################
@@ -617,6 +675,17 @@ Keywords = []
 for i in range(len(Mots_cles)):
     Keywords.append(Mots_cles[i][1])
 
+groupe2 = 'Aucune mention'
+Titre_Keywords = Titre.split()
+for k in Keywords:
+    Titre_Keywords.append(k)
+
+for s in Titre_Keywords:
+    if s in liste_gr:
+        groupe2 = s
+    else:
+        pass
+
 try:
     UseLimitation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
 except:
@@ -693,7 +762,7 @@ else:
     F3 = False
     F3c = couleur_False
 
-if sline in (['Aucun groupe', 'Groupe exemple']):
+if groupe in (['Aucun groupe', 'Groupe exemple']):
     F4 = False
     F4c = couleur_False
 else:
@@ -1106,7 +1175,7 @@ liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, V
                    FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
                    UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
                    Format, Online_links, Online_protocols, Online_description, Online_nom,
-                   Niveau, Conformite, Genealogie, Scope, sline, Thesaurus, Themes, Keywords, 
+                   Niveau, Conformite, Genealogie, Scope, groupe, groupe2, Thesaurus, Themes, Keywords, 
                    F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
 
 
@@ -1116,7 +1185,7 @@ liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date
                     'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                     'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                     'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé', 'Thesaurus', 'Thèmes', 'Mots Clés',
+                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés',
                     'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
 
 
