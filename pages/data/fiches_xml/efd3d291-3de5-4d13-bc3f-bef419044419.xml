@@ -7,9 +7,9 @@
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>efd3d291-3de5-4d13-bc3f-bef419044419</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -33,14 +33,14 @@
             <gco:CharacterString>UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
          </gmd:organisationName>
          <gmd:positionName>
-            <gco:CharacterString>Ingénieur d'études</gco:CharacterString>
+            <gco:CharacterString>Ingénieure de recherche</gco:CharacterString>
          </gmd:positionName>
          <gmd:contactInfo>
             <gmd:CI_Contact>
                <gmd:phone>
                   <gmd:CI_Telephone>
                      <gmd:voice>
-                        <gco:CharacterString>04 37 37 64 94</gco:CharacterString>
+                        <gco:CharacterString>04 37 37 65 40</gco:CharacterString>
                      </gmd:voice>
                   </gmd:CI_Telephone>
                </gmd:phone>
@@ -66,8 +66,8 @@
             </gmd:CI_Contact>
          </gmd:contactInfo>
          <gmd:role>
-            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
-                             codeListValue="pointOfContact"/>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
          </gmd:role>
       </gmd:CI_ResponsibleParty>
   </gmd:contact>
@@ -112,7 +112,7 @@
                <gmd:identifier xmlns:gn="http://www.fao.org/geonetwork">
                   <gmd:MD_Identifier>
                      <gmd:code>
-                        <gco:CharacterString>2017-LECOMTE-SEIGNEMARTIN-EvoSurfCasier1974_2009</gco:CharacterString>
+                        <gco:CharacterString>2017-SEIGNEMARTIN-EvoSurfCasierPDR</gco:CharacterString>
                      </gmd:code>
                   </gmd:MD_Identifier>
                </gmd:identifier>
@@ -139,13 +139,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                </gmd:positionName>
                <gmd:contactInfo>
                   <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice>
-                              <gco:CharacterString>04 37 37 63 36</gco:CharacterString>
-                           </gmd:voice>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
                      <gmd:address>
                         <gmd:CI_Address>
                            <gmd:deliveryPoint>
@@ -186,13 +179,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                </gmd:positionName>
                <gmd:contactInfo>
                   <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice>
-                              <gco:CharacterString>04 37 37 63 51</gco:CharacterString>
-                           </gmd:voice>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
                      <gmd:address>
                         <gmd:CI_Address>
                            <gmd:deliveryPoint>
@@ -244,9 +230,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                            <gmd:country>
                               <gco:CharacterString>France</gco:CharacterString>
                            </gmd:country>
-                           <gmd:electronicMailAddress gco:nilReason="missing">
-                              <gco:CharacterString/>
-                           </gmd:electronicMailAddress>
                         </gmd:CI_Address>
                      </gmd:address>
                   </gmd:CI_Contact>
@@ -270,13 +253,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                </gmd:positionName>
                <gmd:contactInfo>
                   <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice>
-                              <gco:CharacterString>04 37 37 64 94</gco:CharacterString>
-                           </gmd:voice>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
                      <gmd:address>
                         <gmd:CI_Address>
                            <gmd:deliveryPoint>
@@ -307,7 +283,7 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
          <gmd:graphicOverview>
             <gmd:MD_BrowseGraphic>
                <gmd:fileName>
-                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/efd3d291-3de5-4d13-bc3f-bef419044419/attachments/mignatureGSOHM.PNG</gco:CharacterString>
+                  <gco:CharacterString>https://elvis.ens-lyon.fr/geonetwork/srv/api/records/efd3d291-3de5-4d13-bc3f-bef419044419/attachments/mignatureGSOHM.PNG</gco:CharacterString>
                </gmd:fileName>
                <gmd:fileDescription>
                   <gco:CharacterString>large_thumbnail</gco:CharacterString>
@@ -334,42 +310,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Occupation des terres</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
-                                          codeListValue="theme"/>
-               </gmd:type>
-               <gmd:thesaurusName>
-                  <gmd:CI_Citation>
-                     <gmd:title>
-                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
-                     </gmd:title>
-                     <gmd:date>
-                        <gmd:CI_Date>
-                           <gmd:date>
-                              <gco:Date>2008-06-01</gco:Date>
-                           </gmd:date>
-                           <gmd:dateType>
-                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
-                                                   codeListValue="publication"/>
-                           </gmd:dateType>
-                        </gmd:CI_Date>
-                     </gmd:date>
-                     <gmd:identifier>
-                        <gmd:MD_Identifier>
-                           <gmd:code>
-                              <gmx:Anchor xlink:href="http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
-                           </gmd:code>
-                        </gmd:MD_Identifier>
-                     </gmd:identifier>
-                  </gmd:CI_Citation>
-               </gmd:thesaurusName>
-            </gmd:MD_Keywords>
-         </gmd:descriptiveKeywords>
-         <gmd:descriptiveKeywords>
-            <gmd:MD_Keywords>
-               <gmd:keyword>
                   <gco:CharacterString>Casiers Girardon</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
@@ -385,6 +325,42 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                   <gmd:MD_KeywordTypeCode codeListValue="theme"
                                           codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"/>
                </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Occupation des terres</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>Registre de thème INSPIRE</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2023-01-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://elvis.ens-lyon.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
             </gmd:MD_Keywords>
          </gmd:descriptiveKeywords>
          <gmd:resourceConstraints>
@@ -409,7 +385,6 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                </gmd:classification>
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
-         <gmd:resourceConstraints/>
          <gmd:spatialRepresentationType>
             <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
                                                   codeListValue="vector"/>
@@ -463,13 +438,13 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
             </gmd:EX_Extent>
          </gmd:extent>
          <gmd:supplementalInformation>
-            <gco:CharacterString>Projet OHM VR "Evaluation de la capacité des arbres à enregistrer une contamination métallique (VOLET N°2) : mieux caractériser les sédiments pour mieux comprendre les risques de transfert (2017).</gco:CharacterString>
+            <gco:CharacterString>Projet OHM VR "Evaluation de la capacité des arbres à enregistrer une contamination métallique (VOLET N°2) : mieux caractériser les sédiments pour mieux comprendre les risques de transfert" (2017).</gco:CharacterString>
          </gmd:supplementalInformation>
       </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
-  <gmd:distributionInfo xmlns:date="http://exslt.org/dates-and-times">
+  <gmd:distributionInfo>
       <gmd:MD_Distribution>
-         <gmd:distributionFormat>
+         <gmd:distributionFormat xmlns:date="http://exslt.org/dates-and-times">
             <gmd:MD_Format>
                <gmd:name>
                   <gco:CharacterString>SHP</gco:CharacterString>
@@ -479,13 +454,13 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                </gmd:version>
             </gmd:MD_Format>
          </gmd:distributionFormat>
-         <gmd:distributor/>
+         <gmd:distributor xmlns:date="http://exslt.org/dates-and-times"/>
          <gmd:transferOptions>
             <gmd:MD_DigitalTransferOptions>
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.in2p3.fr/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
@@ -496,6 +471,10 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                      <gmd:description>
                         <gco:CharacterString>Site web de l'OHM Vallée du Rhône</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
                <gmd:onLine>
@@ -512,38 +491,50 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
                      <gmd:description>
                         <gco:CharacterString>Seignemartin et al., 2018</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/ftp/Fiche_de_synthese/APR_2016/27_WEB_OHMVR_Seignemartin.pdf</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.in2p3.fr/images/pdf/27-WEB-OHMVR_Seignemartin.pdf</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                        <gmx:MimeFileType type="">WWW:LINK-1.0-http--link</gmx:MimeFileType>
                      </gmd:protocol>
                      <gmd:name>
-                        <gco:CharacterString>Projet 2016</gco:CharacterString>
+                        <gco:CharacterString>Projet OHM VR 2016</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
                         <gco:CharacterString>Fiche de synthèse 2016</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/ftp/Fiche_de_synthese/APR_2017/35_WEB_OHMVR_2017_Seignemartin_VF_DRM.pdf</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.in2p3.fr/images/pdf/35-WEB_OHMVR_2017_Seignemartin_VF_DRM.pdf</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                        <gmx:MimeFileType type="">WWW:LINK-1.0-http--link</gmx:MimeFileType>
                      </gmd:protocol>
                      <gmd:name>
-                        <gco:CharacterString>Projet 2017</gco:CharacterString>
+                        <gco:CharacterString>Projet OHM VR 2017</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
                         <gco:CharacterString>Fiche de synthèse 2017</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
             </gmd:MD_DigitalTransferOptions>
@@ -592,8 +583,7 @@ L'objectif est d'observer les processus de terrestrialisation et de végétalisati
          <gmd:lineage>
             <gmd:LI_Lineage>
                <gmd:statement>
-                  <gco:CharacterString>Couche de polygones dont la géométrie a été créée par Bianca Räpple (thèse 2012-2018). Couche modifiée et renseignée par Gabrielle Seignemartin et Pierre-Hugo Lecomte (APR OHM VR 2017).
-
+                  <gco:CharacterString>Couche de polygones dont la géométrie a été créée par Bianca Raepple (thèse 2012-2018). Couche modifiée et renseignée par Gabrielle Seignemartin et Pierre-Hugo Lecomte (APR OHM VR 2017).
 Le chiffrage des surfaces a été obtenu après : 
 - la digitalisation des géométries des ouvrages Girardon (B. Räpple, 2014)
 - le géoréférencement de photographies aériennes (1974, 1986, 1993, 2009, source : IGN) (G. Seignemartin, 2017)

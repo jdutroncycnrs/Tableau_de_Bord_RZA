@@ -158,6 +158,117 @@
                 ],
                 "op5": "1",
                 "resourceAbstractObject": {
+                    "default": "Available data include monitoring data (weather parameters,piezometric levels and pumping flow rates). Note that soil and flux tower parameters are available in the dataset Soil-atmosphere exchange.",
+                    "langeng": "Available data include monitoring data (weather parameters,piezometric levels and pumping flow rates). Note that soil and flux tower parameters are available in the dataset Soil-atmosphere exchange."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Monitoring of all water cycle components and characterization of subsurface hydraulic properties on the Guidel site starting from 1991.",
+                    "langeng": "SNO H+ : Monitoring of all water cycle components and characterization of subsurface hydraulic properties on the Guidel site starting from 1991."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "water_cycle_hydraulic_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "text/html; charset=iso-8859-1",
+                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_water_cycle_hydraulic.csv.tgz",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "water_cycle_weather_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "text/html; charset=iso-8859-1",
+                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_water_cycle_weather.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "12497",
+                "uuid": "SNO-HPLUS-GUIDEL-WATER-CYCLE",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-GUIDEL-WATER-CYCLE"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
                     "default": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs.",
                     "langeng": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs."
                 },
@@ -325,117 +436,6 @@
                 "featured": false
             },
             "_id": "SNO-HPLUS-GUIDEL-GEOCHEMICAL-CYCLE"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "SNO H+",
-                            "langeng": "SNO H+"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "10.26169/hplus.all",
-                            "langeng": "10.26169/hplus.all",
-                            "link": "http://dx.doi.org/10.26169/hplus.all"
-                        },
-                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "Logo",
-                            "langeng": "Logo"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Available data include monitoring data (weather parameters,piezometric levels and pumping flow rates). Note that soil and flux tower parameters are available in the dataset Soil-atmosphere exchange.",
-                    "langeng": "Available data include monitoring data (weather parameters,piezometric levels and pumping flow rates). Note that soil and flux tower parameters are available in the dataset Soil-atmosphere exchange."
-                },
-                "resourceTitleObject": {
-                    "default": "SNO H+ : Monitoring of all water cycle components and characterization of subsurface hydraulic properties on the Guidel site starting from 1991.",
-                    "langeng": "SNO H+ : Monitoring of all water cycle components and characterization of subsurface hydraulic properties on the Guidel site starting from 1991."
-                },
-                "link": [
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "DOI",
-                        "applicationProfile": "",
-                        "description": "Digital Object Identifier",
-                        "mimeType": "",
-                        "url": "http://dx.doi.org/10.26169/hplus.all",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Information on H+ website",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Data on H+ data portal",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr/en/database/acces-database",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "water_cycle_hydraulic_dataset",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "text/html; charset=iso-8859-1",
-                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_water_cycle_hydraulic.csv.tgz",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "water_cycle_weather_dataset",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "text/html; charset=iso-8859-1",
-                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_water_cycle_weather.csv.tgz",
-                        "group": 0
-                    }
-                ],
-                "id": "12497",
-                "uuid": "SNO-HPLUS-GUIDEL-WATER-CYCLE",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "SNO-HPLUS-GUIDEL-WATER-CYCLE"
         }
     ]
 }

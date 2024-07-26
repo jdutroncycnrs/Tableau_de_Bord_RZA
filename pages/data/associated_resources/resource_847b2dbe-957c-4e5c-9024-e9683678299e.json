@@ -105,6 +105,255 @@
                 "op1": "1",
                 "overview": [
                     {
+                        "data": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAHMAAACMCAYAAABPh5YqAAAX10lEQVR42u1da3Ab13WG+06btomTTp9J2pm2aZN24iZp0yR14uadTNtJk0xnOtNJJ9P2TzNtk2bapmmn5UzEfVC0ZFHW27YsyZasp2VbL0uyXpast6y3KPGxABYvggQIgLLSSJRuv+9iQYMQSOLuLogFCMzcIQlisbv323POd84959xQqMle9oIFb+nTtF8If//7vxExjPcPaNqXBnX9OxiLLMPYOmiar+H3PoxhjALGOIZwfhbk+4Zxw9L1Y/h9y4CuP4bx7bBhfDHS3f0+vP/r/H6eJ9R++fsSHR0/wsnt1/UPhXX9LwHAfwHADQDkdfyex7jngOV18HtyGOcsTXsW3/89no/n5fl5HW00XL4GDOPnMaGfgNT8J6Rl/aCmnXYmW8zaMIxR/DxFcPEAfRfX8HBfT8/PtdGpRQpDoQcA4rsxid/EJL6I0Ytxc1YBnHrwOnrxcO3Cw/UfkNjfbEtrJYCbNv1or2n+7IBpfhiT9CQmLInxBsbdgIBYTR3/wLnOVRGoYV4/72NOA2nPm/erUF9fgTQ+HyAJVJZYEi9I7Ff7581715wDMaZp74AkfgUTsQl2KNOkIFaOHB9KkiYw4QdbHsQrHR0/AVX6CJ7i1RixFgGxckRpLqyurk/yflsTyCVL3oqb/F/crIVxu0WBLI3bIHGDIEnzaE9bSRrf2g+HHDd40UefsFnGPWigi7z/vo6O5nVpSNtJ33EzHbipxBwDsXKkoZW0pnVnIpr2cdzEC46bMauTZz36qLAee0yEH39cRJYtE5GVK+VP/s33+f8G+akvMPDQNCB24Mlzwm4Xy+Ki9YrQSJDsTZtEfPdukTp6VAxduCCGr18XwzduiOH+fjEyOChGLEv+5N/y/d5e+Tl+nsfx+PDy5fL76gzoXUjoZcs0vyyEeCC4ahUXJ51/Xf92XZgqJtrq7hbhJUtEbNs2kTpxQoKUHR4W2WxWZHM5MVooiNGxMTF68+bMg5/D53mcPB7fw+9LHT8uYlu3yvPwfIOmWQ9Q4xj/RjsaOFB5QQwAYMLnO8Fv/1Qm1GLkiSckgENnzxZBqwUsrwPnSV+6JOIvvijPby1c6DegBczXo32m+WuBAnSws/MXcXErMG75CaK9YYMYOnVKjNh2UepmA8TKgfPy/EMnT0p1bC1a5CegnK8V4c7OXw4akP/nxw2GIQGx558XQ+fOiUw83hgApxiZVEoMvf66iG3fLsL+gfpDSOhKzmOjF4ofxMUs8Yux2uvWSXJC+1Wz7ZvtgevKjoxIkmU/+6xvEjpgGMsT3d3vbIiNpGoA0VnmVSKt+fNFFDYpBTU2ms8HE8CpBq536PTpok3FffghoVHT/JVZtaFcOAaQhlcbGe7pEYk9e8RILNZcIFZIKm1q4uWXRXjxYq+AvjFgmgbnd9akku4HTpz1cuGRFSuK7BRuQdMCWTayo6MiDXtKKfWa3WBp2re4UF93MMPFBKq464uF32Zv3Cid98DaRQ9SysCEvXmzV/80bun6F+oqkVZX10M4yRm3AXOG0eJQq5mhodYDsgxQ3l9i924vYcN7nGfwkg/WxX4Odne/B7p8m9sQHZ3u5MGDUh21JIhVgg7JQ4ekv+wS0HGZCmoY7/Z9GYspjk7eqSuikzxypPnYqg9sN/Xqq/L+XQKaZ3Yi599PwvMZfHHYNZCvvTZ7YbigESNK6LFj7iNHxUXuT/mibvt6en4SX3jQjZ2kzZCqtUUYq2tAcf9S5S5Y4G6BW9MOEAfPaZCM7rsFMrF//5yVyGo2NHHggGtAw4bxr57SOfvApvBFA26Wq+K7ds15iazmi3L91M26KXzPfquz8yFXQKZJejTtcTfhOnvtWpFNp9sAVgvWw22JrlnjRjqJw2JXCWKWYXzeqaZSIzxLlojha9fawE0z0pif8NKlbgC9gfE5JSCvd3e/01nWUioRoD1IgbnOORfEjcty/Lgb+znOxQ0mkdecVcdQknJGXVeXiO/YIZeH2oDVYD8xT8xicBH2Yyj1czVl+ckAARdLXQTOGZdsA1X7GO7rk/OmOteUzpoCCWHT/F0cMKQaPKc/2bDUjmYdmC+6Ky6kM0Wcalmr/B9lqVy+XGTa6tUdux0ediWd0J7/PXO1crEWREkqmYNazxvOlcbYmMjjaS7AXytkMqKAB6iAyZCDf+N9/p+fyzURoMwrUpZOTRuctoobuvivVfN5ovQpmbNTBwDzBC+XEzn6rPG4yEYiktbHz54V9okTIgpGODHwd/zMGTF05Yr83GgyKXLZrPyO3BtvBJsMYf5c+J43IZ1/NWUMVjZmUFjiYt4Lk5H9spWc9AJBZAgwkRAjIFRDV69K8KKV4M0w7FOnROryZTEyMCBylGDnAQmq7ZSuiloeEXFaV7VssL+z8/fwz/NKUvn002KEUuBRAgsAcYyL1ZCmIUhe8uJFEYOUqYA35cBDkDh/XjLHAiU1oIByHqOrV6vazderEiH88++d3jm1M9hXXnEdICCIY7R/TFvEREvVCWnyBcBqkko1zJwjTNpYEIMauKbk/v2qtjMNbfqNSUBemD//ZwY0bbnK6ggLdlTCdtIGcuCi87SB0aiInztXN/CmG0kQNpKmfMBSV9IwKWHMq1J6iaYtTXR0/PSbcVhN+x1L119RWRVh6UCmBuIj1ShBZHEOCUxvr4idPt0QEMsHpXQ0FhOFAPnGJEL2+vWqqyr7IIi//aaKNc3P4s2ICvGRQYIZLk6CCJeB5XTJS5fuZ6ANHrTLmXA4UIAmueapRoQsZoKUL0DTXt6peWVk0SIxDJY4HSu9CXVKEKlK7ZMnAwXiJEBhp6kxgkKMGBJVTDG5A5/z72Ss1gkULFKK+KxaJbJVSIRUqXg/B59QkpmASeJ0jDcHVygIgHJeOb9KsVrDWCh7JlxnXaWm7VU5OP7SS9WBhEqlTQyyJE6ncvOwWUHwReMvvKAaDdrDGpXQQFfXbzElQeXgFMlDJVOFi5GCXWwaaawinYwe5UdHGw5oCgRRddGazS9C7P2mlBoCplVZN0l/MQVHvylBLPdFoVEyltVwl4WFVIqM9gfhrq4PhiCiX1PKJujpmZSVngfZISNsdiDLXZbc0FBDpZPzq5pnyx6E9DH/XSmEt2bNpPTJm3iKZey0RcDkYEy4kdLJ+VUO7en6dxjGW6xyEEvUy0N4YyA9ccfmtAqYMkLUyJAfzs2GHIpgLgpBN29WOUjGY8uc7EIqJaMW0R07AhcUcM1sQUDGGlngxAwExmnVGO1G+pkHlJgsbra8HK8A+xJZvFhmmkWggu1Dh5peSkmESmDKZblbt8QYAyE0K1UG/5f3c80U88ssR0XJ3BeydP2CykGsdi4Hk2o2smTJBNNl1J/VwzYkOHr4sIgePTpB/YPmijCwQSnkoN0funxZZJiUFolIjZNPJCS7pcuSYJcR+KI8hmCXBo+jS8Z1U36eAfwxrxkPOG4I51IE81xINdE5DRdkEpi46Pgzz0xZkxnB/2w4wZGdO0Vkzx4RPXJE2A0AtzTxyfPnpU0kAMxaGOnrExkM/uRith/rqPwOBk+y0ajIJZNysT2vAizBxDUqgnk9pFqql65Y9qJ6GT54sPZuW2BpkQ0bROS550QEIEdxrO1Mtt+SxzQSAsRrluPq1YnB96umn9Qh9stsCcapmf5SqDGNhdeoWvoXUu1zx/43lSfO46l2VXvI7pNLl4rwqlUiDNUc2bRJxKCeY44KdAMgJU9KG5se4lopgZREqSa59NYgdc+HhtfATIq8k8YyLZiQbMVc2lhIZemrmmRKVYsnLuK+OnhSVrxsLwr1LFuMPvWUsHftEvarrxZV87FjxQFyUJlBMMKGF+GwXDCnRBK4oAb7qYaZXTHGZLWpwISdVpy/MCVTzWYyrbLCoaahH2Eyb71bfHZ3i8jTT4sofN3Y3r0yhpmFBFIK78taAIhUcQQ6gf9NNXicBL4BoDM3SdrUygAFbSb+58ZmXlRis3iqqnUKyYHN2StXzkoj3jDcoCQAHSYYDmGREoq/qVbJSjlod9i+TfafLR8V71Hb8PM8lqpwNld9+CBlbVvaUo9s9jzBPOLFz5wAk31baZPclaopjRikM00gHXdipAQKwCuBwsB/opaF8RJRwucnHgAH4FgdE8wqSVKG7pA3P/MQI0DbVQ5KVESAJhEh+lckH/AvfbGh1WLD8GkzcG/y8P8ysJMl0AisH5NvO6qZpCkDbUNbPBs5S0wvzZeiTowA7dunSoC2hQY6O5cpScXWrTOmV9KGkhQVMBkZPGFxuiIAgZEippyESXJAdmZaaqM65TGxNWvE8KFDIosbHi5zKept50oMNMuW4KVEtDqdk+fJcXGcbgtjs1u2qK6aLA2FDeN7SpIBhqnSdIJ+KPNUx1gPEouJHJ70DC4+BZaaYG/19etl0CG+dq0ELc6Bv/m/NHzQDJ17dmRucEYfVTeJFn/6pX7lA0l2vn+/JJYFRzI5v5Enn1RNHfku1ezfKK1nQrK8dtkiwGRwBVy0zDIn0KmUuBmPizxVGx18SqBfWe0+khUZfKCUKl6bDP8RPIY3oUIj27aJyMaNIspu1/g7x6CCw0XkeqZiG3HWCYX6DeNjSi3UoP5km20fC4RYmpBjl2WQD8kmAxyoJyhSSvHQlex0DO9x0BeOAawYOIMNaYsyhMmdGSBlDIrIsWKFsLgwATfLxt8ZfD7PxfAyUjkSjaq6eeNhTfuoTIBW7VLJhrl+ACmrvHAjUnUFIDFaqX6FthRjYq+U0mDAA7ZeBj+4+0KJG3D3BwZF5s8X8XXrxChIGwPzuSr8g/3gVfcfGzTN94bYvR9/HFQiQVARnouFoErYprSZl8oSjDyxN15ls0PTlCSP5M2GJNrgGUkQmiw+PwZTwqTr6YLuJJlKpk/XXyGOTOh6u1NnotS/wG3nrZxTqsBlpVZYyE5BwoahVgkWR4pbdkC9DsN9ykLj5KEyZTEw84lrzP9RraRmvYnV0fG20JkVK37cMox/UWkTQxLE2KJb1Sob7DZhbu2UGX0sF2QhEgPoeFAJXN5Z2FbOaIe2UkzmugsV/k/EsVhroml/oVLOR72fqKHWpCqYkGgSnZbKGYL/m8tkfOERDMoo1poMAcw/L+9l8Pt486jqthVZdnRWBTOdFonNm0WUa5lQRXIVpAXSM0d9SM/kfNpTLPRPM46wUPrNkr6FC9/mbN5dc30mWZzMOlAFE6oo8dxzEx29ogR21y4RPXCgIRkIQcq15XxyXpVUrK6vmrQ3Jzv1W6b5LaV9vMDYEnv3KhMhBgqSTCMs96NA2el/yQwEONIRsLnoyy8LmykmdLRpX4MIMq8J18i+DnmPapbzyPlUrJzOAbd/vq+xsLPfZa8Sq129WrmngVz7xESEp+sbR3+sp0dugygdbTrda9dK1WzDVsecgHhDAHYerhg0SRimhrsOZS9fFjmPNZ4jrAqAC6OoYq/JYEHli6XU+OdupUbBeIrcND7Mw9eKqpV7FyUZxEA65HTOwfgsBu8hzfaePcVshBK4FdkIrgaPd75nIgz30ksivHJl8fy4Du5blmX1mNccWzZGxLkUpZI7LOycVAI/qUmFpv2D6i5CrCXMJJNqYOIpTlOl1Gtn26VLRQQSIyWZ6pqhtdLYt68YG8X78nfnfX7Gxt/ywdixQ9pyCVwVZsnoTgxSlIcb4UcZA+cvor6wf4tFtlN3fi5Gg6Kqkyf38VK8Aa6icJG5mfaOlqE4XDOzEQvQLn4VF3HB38X1RHtZkznt/iWG8YRy7zw8VdyOULmF2uCgjJYw5FWnHWT9S1MBMRuBqs2xZN7HOhR2hnbZO2/ljI0Q++fN+5hyK28yW6gp5dAeV0vAAnMw/qNc2YfdS9JVYfC6weAytkoAsyyRZ3okHtZcHYqJEuq9f2SL76rEp1ozRMswtirfPOxU2ks7b9oep9HhGHxRGZBm4WtvrxiFH5fGTTPuyYVrG3a6lLkwMcB+ax7lx+G6Y2DlqS1bpPrMXbkiCni4xgCejKfWsbRP9v1xlzO1qaad/MSbu7lnVdkmNzRTVbc1B+dv3ZJt2bjiwHzTsWy2CDrTUzjxrPPgA8BMt/LB90rvO78TKDlYF8LvAWgFZ9F8NnfJlRvAqaanalrG0rQv19QJ2lG17+I+VKr7mZCuJw8fnjv7fXmojOY8uejRfo8lmHK5S2VzGqD/t+w4rKxuYe+GoaraoM2gXtXCdqWR7DeMrx/s6PgxpR0UrmnaOxzpvKucDgl22268P3WjfdU+P2Vx2C3X3e5LHTHNT6vWokxkI3Blvb1RzWQ7ifmQdtIdww736foj7vcCgzhDRz/q2sHevVveQBvIIpDcUsvDRuPdQlW93hdEmDfvPaoB+PJiWy62znWVm4UvLRscKqZPlo2rxMH7/pmgwAOa9g3V3u3lgKaOHp27uxAxiI7797DDLXuxf71mV2Sml71gwYMDuv4Yvvi227pLuf3iHNu1T7ogrCp3r1pvW7q+gEl3vm5VLFNLDGO/2z2n5fZSsBn1CCoEdTc+LjbPWFMzXUN9TdvbZxjv9383eIg5E4dUmyZOUrnd3bJjIzO2W3k3eN4f9/nysBu83C8T5u3PfFOvU2xZ/E2c7IdelpGYDEbHuSUDAr29Ior788Bai4F0Xf9Hq6Pjp0L1fHFlG3p8mZtgwqRyvUWL5DpetkWIEe+D1c5y53dv7QDuchNa8JS3hGbjRUKEkz7jZtfbSQNPL0sd2BCpWfem5nXz+nkfHuzjhESCaK7znfDUuJvfds+AOhvDkfVJW9pMJCcWkwFzmfLhvTkH53E7C7lCs/2S6ZmdnQ+xpbRKs/7p2C4TgKmq6rG3mK/SmE7L62QDSB+ksbQV1L5+Xf9Q3QhPjQz3A7ChZ3xZ4XdsKdMXmVcUNL+U18Pr4kPH6/SrVQ7nj4LRMCAnABXiAfYHhx961rUPWgVUPvFUvyRJbHPNkNisb7aK8xFAnp8ppbweKYn+9TvifF3gJjP3JTI3ElCpcot1nrd9z4pbuFDYGzeK1KlTYoRdRljjUi8WjO/l9/M8bBrFWsmwYovtWqM7sk6EqjUoQJYvaPdp2kedbaju1CXRiu1PV62SE8wmxmyXyhbcjCq5dXF4HI9nmSG/j9/L75drjvVLKuP8HII2+xPOWyiILydD4SNORdm9umbQsTqZXTIx6bRhXCeM79wp2WWKm6KePy/7z8kuXE5TRP7N9/l/fo6f53E8nt8jg+H1bhlXnJcTzK4LLJCTEsKKbktv3QGtAjBDhhONFNlziDUrpcGShlLfAfYbmP10Ts5HH+OtDSc7SqE/TXsfVO6xuqnc5hvcs+vkpFrKZnnxybNM84/rRYqaDkiSHU37eFNJZKUN7S+WCh7xzW1pvnFXaijD+MRBr2kfgQC0uEXVhbkIJoC8PKDrfxh4sqPih9LoOxuUzxUJ5arSJS7qB86P9ANQPqGOym11G3qHqpVuWssBWa5ywegexs0ebmGWS81z1Orq+mTLqNZpbSibL4Kmt6iNPMPITtOTHRW3hf4W9+JoMTAjXEVqeYmcokr7AwxttYDKZSbd6bCu/0Forr5kgjVUkkOK7jQ12ZkLNrImUgSHGpPymqcksUa5H7D9YdP80zljI2sB1HFbrjUZmDcYspzzElk1sACb42yac7cJAgJXB0zzwy3rR/phQ50F7iCvtvC6TsiF5WYNms/qAreuP+IscI8HMCBwHBL56baNrPHFiXIiRecCBuYFstY2kG4CC8XVlnBAgLQHTfOP2mTHAymSgMIhb6ANHZcagkC2yY53G8rGDA0iReOS7MBGtiXSRxsKCf0UJvbULCaJ3WNiN/zfz7RtZD1YLhx0L8W+isNiyksbyDraUAIKablSx8ACv7e3qZOvmonlSreluB56px6rH/Rz20DOog2lLXOWz8Z9DJqftgzj823V2gBA+4qRoks+gXm1HdlpMCly9v+MegQyPtjV9XDb/QgIKXJCf+Mu/MgLkuy0AwLBkVBpQ4ukqFZAx2XFcttGBtOGDprmZxWC8xcA5hcmtipsvwJoQ4u1LdEZbWQr1H7MBRtKMuOw3EqVOz5gGJcl2Wn7kU1EijTtIwDuQFlrOP48TPbbBrIJI0UElPuCMmAOovOUTL5qA9m8L6ur65eY+cef7dlov5rm9f/sPGQPJfRFeAAAAABJRU5ErkJggg==",
+                        "url": "https://geosas.fr/geonetwork/srv/api/records/476e2304-dd2b-4434-9d47-6c95225fdd98/attachments/frayere.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Les fray\u00e8res de lamproie marine Petromyzon marinus sont localis\u00e9es dans le cadre de l'Observatoire S\u00e9lune. Cette esp\u00e8ce \u00e9tant migratrice, sa colonisation de la S\u00e9lune et de ses affluents sera probablement influenc\u00e9e par l'effacement des barrages de la S\u00e9lune.\n\nLes fray\u00e8res se caract\u00e9risent par une d\u00e9pression accompagn\u00e9e d\u2019un d\u00f4me d\u2019\u00e9jection s\u00e9dimentaire imm\u00e9diatement en aval. Les pierres retourn\u00e9es sur le d\u00f4me sont plus claires ce qui rend les nids facilement visibles et identifiables jusqu\u2019\u00e0 plusieurs semaines apr\u00e8s le frai.",
+                    "langeng": "The spawning grounds of the sea lamprey Petromyzon marinus are located within the perimeter of the S\u00e9lune Observatory. As this species is migratory, its colonisation of the S\u00e9lune river and its tributaries will probably be influenced by the removal of the S\u00e9lune dams.\n\nThe spawning grounds are characterised by a depression accompanied by a sediment ejection dome immediately downstream. The stones returned to the dome are lighter, making the nests easily visible and identifiable for up to several weeks after spawning.",
+                    "langfre": "Les fray\u00e8res de lamproie marine Petromyzon marinus sont localis\u00e9es dans le cadre de l'Observatoire S\u00e9lune. Cette esp\u00e8ce \u00e9tant migratrice, sa colonisation de la S\u00e9lune et de ses affluents sera probablement influenc\u00e9e par l'effacement des barrages de la S\u00e9lune.\n\nLes fray\u00e8res se caract\u00e9risent par une d\u00e9pression accompagn\u00e9e d\u2019un d\u00f4me d\u2019\u00e9jection s\u00e9dimentaire imm\u00e9diatement en aval. Les pierres retourn\u00e9es sur le d\u00f4me sont plus claires ce qui rend les nids facilement visibles et identifiables jusqu\u2019\u00e0 plusieurs semaines apr\u00e8s le frai."
+                },
+                "resourceTitleObject": {
+                    "default": "Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune",
+                    "langeng": "Sea lamprey spawning grounds - S\u00e9lune Observatory",
+                    "langfre": "Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune"
+                },
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "v_bioc_lamproie_frayere",
+                        "applicationProfile": "",
+                        "description": "Visualiser \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\"",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9charger \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\" au format Shapefile",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_bioc_lamproie_frayere&outputFormat=SHAPE-ZIP",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9charger \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\" au format CSV",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_bioc_lamproie_frayere&outputFormat=csv",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Observatoire S\u00e9lune",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://programme-selune.com/fr/observatoire/",
+                        "group": 0
+                    }
+                ],
+                "id": "3811",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "476e2304-dd2b-4434-9d47-6c95225fdd98",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "476e2304-dd2b-4434-9d47-6c95225fdd98"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "url": "https://geosas.fr/img/metadata/selune/logo/eau.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Les mesures sont acquises avec une fr\u00e9quence au moins horaire depuis au plus 2014. Depuis 2019, ces stations rel\u00e8vent de l'Observatoire S\u00e9lune, qui est en charge du suivi des param\u00e8tres environnementaux (biotiques et abiotiques).\n\nToutes les stations mesurent la turbidit\u00e9, le niveau d\u2019eau, la conductivit\u00e9. Certaines des stations mesurent des param\u00e8tres physico-chimiques suppl\u00e9mentaires comme le pH et l\u2019oxyg\u00e8ne dissous ou la concentration en chlorophylle. Des pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9s en plus sur les stations amont (Pont de Virey) et aval (Pont de Signy), en vue d'analyse chimique en laboratoire.\n\nCette couche donne les localisations des stations de mesure des flux.",
+                    "langeng": "Stations for continuous measurement of hydrological, physical, chemical and sediment parameters have been installed on the S\u00e9lune river, as part of the scientific program to monitor the leveling of the S\u00e9lune dams. Measurements have been taken on at least an hourly basis since 2014 at the latest. Since 2019, these stations have been part of the S\u00e9lune Observatory, which is responsible for monitoring environmental parameters (biotic and abiotic).\n\nAll stations measure turbidity, water level and conductivity. Some stations measure additional physico-chemical parameters such as pH, dissolved oxygen and chlorophyll concentration. Samples are also taken at upstream (Pont de Virey) and downstream (Pont de Signy) stations, for laboratory chemical analysis.\n\nThis layer shows the location of flow measurement stations.",
+                    "langfre": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Les mesures sont acquises avec une fr\u00e9quence au moins horaire depuis au plus 2014. Depuis 2019, ces stations rel\u00e8vent de l'Observatoire S\u00e9lune, qui est en charge du suivi des param\u00e8tres environnementaux (biotiques et abiotiques).\n\nToutes les stations mesurent la turbidit\u00e9, le niveau d\u2019eau, la conductivit\u00e9. Certaines des stations mesurent des param\u00e8tres physico-chimiques suppl\u00e9mentaires comme le pH et l\u2019oxyg\u00e8ne dissous ou la concentration en chlorophylle. Des pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9s en plus sur les stations amont (Pont de Virey) et aval (Pont de Signy), en vue d'analyse chimique en laboratoire.\n\nCette couche donne les localisations des stations de mesure des flux."
+                },
+                "resourceTitleObject": {
+                    "default": "Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune",
+                    "langeng": "Hydro-sediment flow measurement stations (2014-2027) - S\u00e9lune Observatory",
+                    "langfre": "Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune"
+                },
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "v_abiot_hydro_sctr_hydro",
+                        "applicationProfile": "",
+                        "description": "Visualiser \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\"",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9charger \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\" au format Shapefile",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_sctr_hydro&outputFormat=SHAPE-ZIP",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9charger \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\" au format CSV",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_sctr_hydro&outputFormat=csv",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Observatoire S\u00e9lune",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://programme-selune.com/fr/observatoire/",
+                        "group": 0
+                    }
+                ],
+                "id": "3871",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "6c581e6a-dfd1-4d33-877d-3cd7b302f428",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "6c581e6a-dfd1-4d33-877d-3cd7b302f428"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "url": "https://geosas.fr/img/metadata/selune/logo/eau.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Sur 2 d'entre elles, un suivi des concentrations en \u00e9l\u00e9ments chimiques a \u00e9t\u00e9 mis en place.\n\nDes pr\u00e9l\u00e8vements manuels hebdomadaires ou automatiques \u00e0 plus haute fr\u00e9quence lors de crues sont r\u00e9alis\u00e9s sur ces stations. Les analyses chimiques sur ces pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9es au laboratoire de l\u2019unit\u00e9 mixte de recherche SAS et qui contribuent au suivi des param\u00e8tres environnementaux abiotiques, et rel\u00e8vent donc de l'Observatoire S\u00e9lune.\n\nLes concentrations analys\u00e9es portent sur les \u00e9l\u00e9ments de la phase dissoute (phosphore dissous, anions majeurs, silice dissoute, ammonium) et de la phase particulaire (mati\u00e8res en suspension, teneur en carbone et en azote de celles-ci, Phosphore total).",
+                    "langfre": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Sur 2 d'entre elles, un suivi des concentrations en \u00e9l\u00e9ments chimiques a \u00e9t\u00e9 mis en place.\n\nDes pr\u00e9l\u00e8vements manuels hebdomadaires ou automatiques \u00e0 plus haute fr\u00e9quence lors de crues sont r\u00e9alis\u00e9s sur ces stations. Les analyses chimiques sur ces pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9es au laboratoire de l\u2019unit\u00e9 mixte de recherche SAS et qui contribuent au suivi des param\u00e8tres environnementaux abiotiques, et rel\u00e8vent donc de l'Observatoire S\u00e9lune.\n\nLes concentrations analys\u00e9es portent sur les \u00e9l\u00e9ments de la phase dissoute (phosphore dissous, anions majeurs, silice dissoute, ammonium) et de la phase particulaire (mati\u00e8res en suspension, teneur en carbone et en azote de celles-ci, Phosphore total)."
+                },
+                "resourceTitleObject": {
+                    "default": "Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune",
+                    "langfre": "Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune"
+                },
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "v_abiot_hydro_chimie",
+                        "applicationProfile": "",
+                        "description": "Visualiser \"Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune\"",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9charger \"Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune\" au format CSV",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_chimie&outputFormat=csv",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Observatoire S\u00e9lune",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://programme-selune.com/observatoire-selune",
+                        "group": 0
+                    }
+                ],
+                "id": "3782",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "35dfec55-ce37-46d3-9a75-e33330170ed1",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "35dfec55-ce37-46d3-9a75-e33330170ed1"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
                         "data": "data:image/png;base64, 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",
                         "url": "https://geosas.fr/img/metadata/selune/logo/eau.png"
                     }
@@ -352,255 +601,6 @@
                 "featured": false
             },
             "_id": "905316e3-3fda-4446-b797-5f180dc67398"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "data:image/png;base64, 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",
-                        "url": "https://geosas.fr/geonetwork/srv/api/records/476e2304-dd2b-4434-9d47-6c95225fdd98/attachments/frayere.png"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Les fray\u00e8res de lamproie marine Petromyzon marinus sont localis\u00e9es dans le cadre de l'Observatoire S\u00e9lune. Cette esp\u00e8ce \u00e9tant migratrice, sa colonisation de la S\u00e9lune et de ses affluents sera probablement influenc\u00e9e par l'effacement des barrages de la S\u00e9lune.\n\nLes fray\u00e8res se caract\u00e9risent par une d\u00e9pression accompagn\u00e9e d\u2019un d\u00f4me d\u2019\u00e9jection s\u00e9dimentaire imm\u00e9diatement en aval. Les pierres retourn\u00e9es sur le d\u00f4me sont plus claires ce qui rend les nids facilement visibles et identifiables jusqu\u2019\u00e0 plusieurs semaines apr\u00e8s le frai.",
-                    "langeng": "The spawning grounds of the sea lamprey Petromyzon marinus are located within the perimeter of the S\u00e9lune Observatory. As this species is migratory, its colonisation of the S\u00e9lune river and its tributaries will probably be influenced by the removal of the S\u00e9lune dams.\n\nThe spawning grounds are characterised by a depression accompanied by a sediment ejection dome immediately downstream. The stones returned to the dome are lighter, making the nests easily visible and identifiable for up to several weeks after spawning.",
-                    "langfre": "Les fray\u00e8res de lamproie marine Petromyzon marinus sont localis\u00e9es dans le cadre de l'Observatoire S\u00e9lune. Cette esp\u00e8ce \u00e9tant migratrice, sa colonisation de la S\u00e9lune et de ses affluents sera probablement influenc\u00e9e par l'effacement des barrages de la S\u00e9lune.\n\nLes fray\u00e8res se caract\u00e9risent par une d\u00e9pression accompagn\u00e9e d\u2019un d\u00f4me d\u2019\u00e9jection s\u00e9dimentaire imm\u00e9diatement en aval. Les pierres retourn\u00e9es sur le d\u00f4me sont plus claires ce qui rend les nids facilement visibles et identifiables jusqu\u2019\u00e0 plusieurs semaines apr\u00e8s le frai."
-                },
-                "resourceTitleObject": {
-                    "default": "Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune",
-                    "langeng": "Sea lamprey spawning grounds - S\u00e9lune Observatory",
-                    "langfre": "Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune"
-                },
-                "link": [
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "v_bioc_lamproie_frayere",
-                        "applicationProfile": "",
-                        "description": "Visualiser \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\"",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "",
-                        "applicationProfile": "",
-                        "description": "T\u00e9l\u00e9charger \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\" au format Shapefile",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_bioc_lamproie_frayere&outputFormat=SHAPE-ZIP",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "",
-                        "applicationProfile": "",
-                        "description": "T\u00e9l\u00e9charger \"Fray\u00e8res de lamproies marines - Observatoire S\u00e9lune\" au format CSV",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_bioc_lamproie_frayere&outputFormat=csv",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Observatoire S\u00e9lune",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://programme-selune.com/fr/observatoire/",
-                        "group": 0
-                    }
-                ],
-                "id": "3811",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "476e2304-dd2b-4434-9d47-6c95225fdd98",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "476e2304-dd2b-4434-9d47-6c95225fdd98"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "data:image/png;base64, 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",
-                        "url": "https://geosas.fr/img/metadata/selune/logo/eau.png"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Les mesures sont acquises avec une fr\u00e9quence au moins horaire depuis au plus 2014. Depuis 2019, ces stations rel\u00e8vent de l'Observatoire S\u00e9lune, qui est en charge du suivi des param\u00e8tres environnementaux (biotiques et abiotiques).\n\nToutes les stations mesurent la turbidit\u00e9, le niveau d\u2019eau, la conductivit\u00e9. Certaines des stations mesurent des param\u00e8tres physico-chimiques suppl\u00e9mentaires comme le pH et l\u2019oxyg\u00e8ne dissous ou la concentration en chlorophylle. Des pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9s en plus sur les stations amont (Pont de Virey) et aval (Pont de Signy), en vue d'analyse chimique en laboratoire.\n\nCette couche donne les localisations des stations de mesure des flux.",
-                    "langeng": "Stations for continuous measurement of hydrological, physical, chemical and sediment parameters have been installed on the S\u00e9lune river, as part of the scientific program to monitor the leveling of the S\u00e9lune dams. Measurements have been taken on at least an hourly basis since 2014 at the latest. Since 2019, these stations have been part of the S\u00e9lune Observatory, which is responsible for monitoring environmental parameters (biotic and abiotic).\n\nAll stations measure turbidity, water level and conductivity. Some stations measure additional physico-chemical parameters such as pH, dissolved oxygen and chlorophyll concentration. Samples are also taken at upstream (Pont de Virey) and downstream (Pont de Signy) stations, for laboratory chemical analysis.\n\nThis layer shows the location of flow measurement stations.",
-                    "langfre": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Les mesures sont acquises avec une fr\u00e9quence au moins horaire depuis au plus 2014. Depuis 2019, ces stations rel\u00e8vent de l'Observatoire S\u00e9lune, qui est en charge du suivi des param\u00e8tres environnementaux (biotiques et abiotiques).\n\nToutes les stations mesurent la turbidit\u00e9, le niveau d\u2019eau, la conductivit\u00e9. Certaines des stations mesurent des param\u00e8tres physico-chimiques suppl\u00e9mentaires comme le pH et l\u2019oxyg\u00e8ne dissous ou la concentration en chlorophylle. Des pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9s en plus sur les stations amont (Pont de Virey) et aval (Pont de Signy), en vue d'analyse chimique en laboratoire.\n\nCette couche donne les localisations des stations de mesure des flux."
-                },
-                "resourceTitleObject": {
-                    "default": "Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune",
-                    "langeng": "Hydro-sediment flow measurement stations (2014-2027) - S\u00e9lune Observatory",
-                    "langfre": "Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune"
-                },
-                "link": [
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "v_abiot_hydro_sctr_hydro",
-                        "applicationProfile": "",
-                        "description": "Visualiser \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\"",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "",
-                        "applicationProfile": "",
-                        "description": "T\u00e9l\u00e9charger \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\" au format Shapefile",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_sctr_hydro&outputFormat=SHAPE-ZIP",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "",
-                        "applicationProfile": "",
-                        "description": "T\u00e9l\u00e9charger \"Stations de mesure des flux hydro-s\u00e9dimentaires (2014-2027) - Observatoire S\u00e9lune\" au format CSV",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_sctr_hydro&outputFormat=csv",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Observatoire S\u00e9lune",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://programme-selune.com/fr/observatoire/",
-                        "group": 0
-                    }
-                ],
-                "id": "3871",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "6c581e6a-dfd1-4d33-877d-3cd7b302f428",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "6c581e6a-dfd1-4d33-877d-3cd7b302f428"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "data:image/png;base64, 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",
-                        "url": "https://geosas.fr/img/metadata/selune/logo/eau.png"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Sur 2 d'entre elles, un suivi des concentrations en \u00e9l\u00e9ments chimiques a \u00e9t\u00e9 mis en place.\n\nDes pr\u00e9l\u00e8vements manuels hebdomadaires ou automatiques \u00e0 plus haute fr\u00e9quence lors de crues sont r\u00e9alis\u00e9s sur ces stations. Les analyses chimiques sur ces pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9es au laboratoire de l\u2019unit\u00e9 mixte de recherche SAS et qui contribuent au suivi des param\u00e8tres environnementaux abiotiques, et rel\u00e8vent donc de l'Observatoire S\u00e9lune.\n\nLes concentrations analys\u00e9es portent sur les \u00e9l\u00e9ments de la phase dissoute (phosphore dissous, anions majeurs, silice dissoute, ammonium) et de la phase particulaire (mati\u00e8res en suspension, teneur en carbone et en azote de celles-ci, Phosphore total).",
-                    "langfre": "Des stations de mesure en continu de param\u00e8tres hydrologiques, physiques, chimiques et s\u00e9dimentaires ont \u00e9t\u00e9 install\u00e9es sur le fleuve S\u00e9lune, dans le cadre du programme scientifique de suivi de l\u2019arasement des barrages de la S\u00e9lune. Sur 2 d'entre elles, un suivi des concentrations en \u00e9l\u00e9ments chimiques a \u00e9t\u00e9 mis en place.\n\nDes pr\u00e9l\u00e8vements manuels hebdomadaires ou automatiques \u00e0 plus haute fr\u00e9quence lors de crues sont r\u00e9alis\u00e9s sur ces stations. Les analyses chimiques sur ces pr\u00e9l\u00e8vements sont r\u00e9alis\u00e9es au laboratoire de l\u2019unit\u00e9 mixte de recherche SAS et qui contribuent au suivi des param\u00e8tres environnementaux abiotiques, et rel\u00e8vent donc de l'Observatoire S\u00e9lune.\n\nLes concentrations analys\u00e9es portent sur les \u00e9l\u00e9ments de la phase dissoute (phosphore dissous, anions majeurs, silice dissoute, ammonium) et de la phase particulaire (mati\u00e8res en suspension, teneur en carbone et en azote de celles-ci, Phosphore total)."
-                },
-                "resourceTitleObject": {
-                    "default": "Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune",
-                    "langfre": "Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune"
-                },
-                "link": [
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "v_abiot_hydro_chimie",
-                        "applicationProfile": "",
-                        "description": "Visualiser \"Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune\"",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/selune/wms?SERVICE=WMS&REQUEST=GetCapabilities",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "",
-                        "applicationProfile": "",
-                        "description": "T\u00e9l\u00e9charger \"Analyses chimiques de l'eau (2014-2027) - Observatoire S\u00e9lune\" au format CSV",
-                        "mimeType": "",
-                        "url": "https://geosas.fr/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeName=selune:v_abiot_hydro_chimie&outputFormat=csv",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Observatoire S\u00e9lune",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://programme-selune.com/observatoire-selune",
-                        "group": 0
-                    }
-                ],
-                "id": "3782",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "35dfec55-ce37-46d3-9a75-e33330170ed1",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "35dfec55-ce37-46d3-9a75-e33330170ed1"
         },
         {
             "origin": "catalog",

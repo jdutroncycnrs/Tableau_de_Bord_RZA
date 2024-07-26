@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>f953b614-d036-4ee5-a89b-0634ac57c212</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                 xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                 xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                 xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                     xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                     xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                     xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                       xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                       xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                       xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Pierre, Stéphan</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>UMR6554 LETG CNRS</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:positionName>
+            <gco:CharacterString>Chargé de recherche</gco:CharacterString>
+         </gmd:positionName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice>
+                        <gco:CharacterString>06 63 69 70 29</gco:CharacterString>
+                     </gmd:voice>
+                     <gmd:facsimile>
+                        <gco:CharacterString>02 98 49 87 03</gco:CharacterString>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>Institut Universitaire Européen de la Mer, Technopole Brest-Iroise, Place Nicolas Copernic</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Plouzané</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:postalCode>
+                        <gco:CharacterString>29280</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>pierre.stephan@univ-brest.fr</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                  xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                  xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                  xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gco:DateTime>2019-02-07T16:34:17Z</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                             xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                             xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                             xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                                xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                                xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                                xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:referenceSystemInfo xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                            xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                            xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                            xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code>
+                  <gco:CharacterString>WGS 1984</gco:CharacterString>
+               </gmd:code>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:referenceSystemInfo xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                            xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                            xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                            xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code>
+                  <gco:CharacterString>RGF93 / Lambert-93 (EPSG:2154)</gco:CharacterString>
+               </gmd:code>
+               <gmd:codeSpace>
+                  <gco:CharacterString>EPSG</gco:CharacterString>
+               </gmd:codeSpace>
+               <gmd:version>
+                  <gco:CharacterString>7.4</gco:CharacterString>
+               </gmd:version>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                           xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                           xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                           xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>MNT de l’anse du Pédel en 2013</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:DateTime>2013-02-11T12:02:00</gco:DateTime>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeListValue="creation"
+                                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:edition gco:nilReason="missing"/>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>https://portail.indigeo.fr/geonetwork/srv/metadata/f953b614-d036-4ee5-a89b-0634ac57c212</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+               <gmd:presentationForm>
+                  <gmd:CI_PresentationFormCode codeListValue="modelDigital"
+                                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"/>
+               </gmd:presentationForm>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract>
+            <gco:CharacterString>Restitution de la topographie de l’anse du Pédel (rade de Brest) en 2013 à partir de mesures planimétriques au DGPS</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:purpose>
+            <gco:CharacterString>But de recherche.</gco:CharacterString>
+         </gmd:purpose>
+         <gmd:status>
+            <gmd:MD_ProgressCode codeListValue="completed"
+                                 codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"/>
+         </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Pierre, Stéphan</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>UMR6554 LETG CNRS</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:positionName>
+                  <gco:CharacterString>Chargé de recherche</gco:CharacterString>
+               </gmd:positionName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>06 63 69 70 29</gco:CharacterString>
+                           </gmd:voice>
+                           <gmd:facsimile>
+                              <gco:CharacterString>02 98 49 87 03</gco:CharacterString>
+                           </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>Technopole Brest-Iroise</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Plouzané</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:postalCode>
+                              <gco:CharacterString>29280</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>France</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>pierre.stephan@univ-brest.fr</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="author"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeListValue="notPlanned"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"/>
+               </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/vignette.png</gco:CharacterString>
+               </gmd:fileName>
+               <gmd:fileDescription>
+                  <gco:CharacterString>large_thumbnail</gco:CharacterString>
+               </gmd:fileDescription>
+               <gmd:fileType>
+                  <gco:CharacterString>png</gco:CharacterString>
+               </gmd:fileType>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Modèle Numérique de Terrain</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeListValue="theme"
+                                          codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Géomorphologie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Géologie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeListValue="discipline"
+                                          codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>France</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>BRETAGNE</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Finistère</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Plougastel-Daoulas</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>ZABRI</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="intellectualPropertyRights"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints>
+                  <gco:CharacterString>Le partenaire fournisseur n’est pas en mesure de garantir l’exactitude, la mise à jour, l’intégrité, l’exhaustivité des données et en particulier qu'elles sont exemptes d'erreurs ou d'imprécisions, notamment de localisation, d’identification ou de qualification. Aucune garantie quant à l'aptitude des données à un usage particulier n'est apportée par le partenaire fournisseur. Les utilisateurs utilisent les données sous leur responsabilité pleine et entière, sans recours possible contre le partenaire fournisseur dont la responsabilité ne saurait être engagée du fait d’un dommage résultant directement ou indirectement de l’utilisation de ces données. En particulier, il appartient aux utilisateurs d’apprécier, sous leur seule responsabilité : l'opportunité d'utiliser les données; la compatibilité des fichiers avec leurs systèmes informatiques; l’adéquation des données à leurs besoins; qu’ils disposent de la compétence suffisante pour utiliser les données. Le fournisseur partenaire n’est en aucune façon responsable des éléments extérieurs aux données et notamment des outils d’analyse, matériels, logiciels, réseaux..., utilisés pour consulter et/ou traiter les données. L’utilisateur veille à vérifier que l’actualité des informations mises à disposition est compatible avec l’usage qu’il en fait</gco:CharacterString>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+            <gmd:MD_SpatialRepresentationTypeCode codeListValue="grid"
+                                                  codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+                  <gmd:MD_RepresentativeFraction>
+                     <gmd:denominator>
+                        <gco:Integer>1</gco:Integer>
+                     </gmd:denominator>
+                  </gmd:MD_RepresentativeFraction>
+               </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gco:CharacterString>fre</gco:CharacterString>
+         </gmd:language>
+         <gmd:characterSet>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="d82713e435a1052958">
+                           <gml:beginPosition>2013-02-11T12:03:00</gml:beginPosition>
+                           <gml:endPosition>2013-02-26T12:03:00</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-4.3429347241216</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-4.330575104981</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>48.353854492188</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>48.362094238282</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                         xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                         xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                         xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+            <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>GeoTIFF</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.0</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/PED_2013_02_11.tif</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="image/x-tiff">PED_2013_02_11.tif</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Fichier Raster (.géotif) du MNT de résolution 25x25cm</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/PED_2013_02_11.txt</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="text/plain">PED_2013_02_11.txt</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Fichier (.txt) du semis de points issu des levés</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/LR__pedel_26_02_13.txt</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="text/plain">LR__pedel_26_02_13.txt</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>fichier (.txt) des lignes de rupture de pente issues des levés</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/Erreurs_mesures_Pedel.pdf</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="application/pdf">Erreurs_mesures_Pedel.pdf</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Fiche (.pdf) des points de calage permettant l'estimation des marges d'erreur associées à la mesure</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/f953b614-d036-4ee5-a89b-0634ac57c212/attachments/MNT_PEDEL_2013_02_L93.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="application/zip">MNT_PEDEL_2013_02_L93.zip</gmx:MimeFileType>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geoserver/LETG-BREST/wms</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>MNT_PEDEL_2013_02_L93</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>MNT de l’anse du Pédel en 2013 (OGC:WMS)</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geoserver/LETG-BREST/wcs</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WCS</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>MNT_PEDEL_2013_02_L93</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>MNT de l’anse du Pédel en 2013 (OGC:WCS)</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                        xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+                        xmlns:gmlcov="http://www.opengis.net/gmlcov/1.0"
+                        xmlns:gmlrgrid="http://www.opengis.net/gml/3.3/rgrid">
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeListValue="dataset"
+                                    codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:result>
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title>
+                              <gco:CharacterString>règlement (ue) n o 1089/2010 de la commission du 23 novembre 2010 portant modalités d'application de la directive 2007/2/ce du parlement européen et du conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gco:CharacterString>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date>2013-10-21</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation>
+                        <gco:CharacterString>L’article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalités techniques de
+l’interopérabilité : il s’agit du règlement relatif à l’interopérabilité : règlement n°1253/2013 du
+21 octobre 2013 modifiant et complétant le règlement n°1089/2010 du 23 novembre 2010</gco:CharacterString>
+                     </gmd:explanation>
+                     <gmd:pass>
+                        <gco:Boolean>true</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement>
+                  <gco:CharacterString>Fichiers (.txt) des coordonnées métriques X, Y, et Z en Lambert 93. Fichier Raster (.Geotif) du MNT. Le levé topo-morphologique de l’estran a été réalisé au DGPS (Type TRIMBLE 5700/5800) en mode RTK (stop and go). Les mesures ont été obtenues dans les systèmes de projection Lambert 93. Les altitudes ont été raccordées au Référentiel Altitudinal Français RAF98 à partir de stations fixe du réseau RGP (http://rgp.ign.fr) de l’IGN situées à Brest, Guipavas et Pont-de-Buis-lès-Quimerch en utilisant un protocole de traitement des données sous le logiciel GraphNet.
+Le protocole de mesure et l'estimation des marges d'erreur inhérentes à la mesure renvoient à la fiche PDF. La marge d'erreur inhérente à la mesure est estimée entre +/- 4 cm en X et Y ; +/- 2 cm en Z.</gco:CharacterString>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

@@ -64,78 +64,6 @@
                             "default": "thumbnail",
                             "langfre": "thumbnail"
                         },
-                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=213a76cf-2fed-45ff-a53d-62f57b051b2c&fname=images1950_s.png"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb).",
-                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb)."
-                },
-                "resourceTitleObject": {
-                    "default": "Schorres de l'Anse de l'Aiguillon en 1950",
-                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1950"
-                },
-                "format": [
-                    "ESRI Shapefile"
-                ],
-                "link": [
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "LETG-NANTES:schorres_1950",
-                        "applicationProfile": "",
-                        "description": "LETG-NANTES:schorres_1950",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/wms",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WFS",
-                        "function": "",
-                        "name": "LETG-NANTES:schorres_1950",
-                        "applicationProfile": "",
-                        "description": "LETG-NANTES:schorres_1950",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/wfs",
-                        "group": 0
-                    }
-                ],
-                "id": "4119",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "213a76cf-2fed-45ff-a53d-62f57b051b2c",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "213a76cf-2fed-45ff-a53d-62f57b051b2c"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "thumbnail",
-                            "langfre": "thumbnail"
-                        },
                         "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=d8f1b9b5-cfa9-457a-8adf-5d98c323a14c&fname=image2010_s.png"
                     }
                 ],
@@ -389,6 +317,78 @@
                 "featured": false
             },
             "_id": "af1c30c9-c96b-473c-853c-7ef09a8e0633"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=213a76cf-2fed-45ff-a53d-62f57b051b2c&fname=images1950_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb).",
+                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb)."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 1950",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1950"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1950",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1950",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1950",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1950",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4119",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "213a76cf-2fed-45ff-a53d-62f57b051b2c",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "213a76cf-2fed-45ff-a53d-62f57b051b2c"
         },
         {
             "origin": "catalog",

@@ -1,0 +1,612 @@
+{
+    "@xmlns:fra": "http://www.cnig.gouv.fr/2005/fra",
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gml": "http://www.opengis.net/gml",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.cnig.gouv.fr/2005/fra http://eden.ign.fr/xsd/fra/20060106/fra/fra.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "51cd994e-cc5e-4fe6-8d37-514609d5b029"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "gmd:MD_ScopeCode": {
+            "@codeListValue": "dataset",
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode"
+        }
+    },
+    "gmd:hierarchyLevelName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Pr\u00e9cision sur le niveau de hi\u00e9rarchie (non INSPIRE)"
+        }
+    },
+    "gmd:contact": {
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Laurence LESTEL"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Sorbonne Universit\u00e9 - Metis"
+                }
+            },
+            "gmd:positionName": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@gco:nilReason": "missing",
+                "gco:CharacterString": null
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:facsimile": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "4, Place Jussieu"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Paris"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "75252"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "wm-archiseine@upmc.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "pointOfContact",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2020-02-04T08:00:34"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "EPSG:2154"
+                        }
+                    },
+                    "gmd:codeSpace": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "fra:FRA_DataIdentification": {
+            "@xmlns:fra": "http://www.cnig.gouv.fr/2005/fra",
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@gco:isoType": "gmd:MD_DataIdentification",
+            "gmd:citation": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Aisne: Cours de l'Aisne de Soissons \u00e0 Berneuil"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2015-04-30"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "creation"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "http://Archiseine/agregat_aisne_soissons_berneuil_1837"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Cette carte a pour but d'indiquer l'emplacement de projets d'\u00e9cluse sur l'Aisne entre Soissons et Berneuil.\n\nUne s\u00e9rie de nouvelles \u00e9cluses sont sugg\u00e9r\u00e9es ainsi que l'assainissement du chemin de halage pr\u00e8s de Crouy. Des \u00e9cluses ont effectivement \u00e9t\u00e9 r\u00e9alis\u00e9es pr\u00e8s de Choisy au Bac, Rethondes, Fontenoy, et Vic-sur-Aisne.\nA Villeneuve-Saint-Germain, une \u00e9cluse a bien \u00e9t\u00e9 r\u00e9alis\u00e9e mais de l'autre c\u00f4t\u00e9 de la rivi\u00e8re.\nCompl\u00e9t\u00e9 par un canal de d\u00e9rivation, cet am\u00e9nagement permet de raccourcir le temps de navigation.\n\nLe document est tr\u00e8s simplement lav\u00e9. La v\u00e9g\u00e9tation n'est pas figur\u00e9e et seuls les chemins\nprincipaux sont indiqu\u00e9s. Elle ne poss\u00e8de ni titre, ni bordure, ni signature."
+                }
+            },
+            "gmd:pointOfContact": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:CI_ResponsibleParty": {
+                    "gmd:individualName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Laurence LESTEL"
+                        }
+                    },
+                    "gmd:organisationName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "UPMC - Archives nationales"
+                        }
+                    },
+                    "gmd:positionName": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    },
+                    "gmd:contactInfo": {
+                        "gmd:CI_Contact": {
+                            "gmd:phone": {
+                                "gmd:CI_Telephone": {
+                                    "gmd:voice": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:facsimile": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    }
+                                }
+                            },
+                            "gmd:address": {
+                                "gmd:CI_Address": {
+                                    "gmd:deliveryPoint": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "4, place Jussieu"
+                                        }
+                                    },
+                                    "gmd:city": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Paris"
+                                        }
+                                    },
+                                    "gmd:administrativeArea": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:postalCode": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "75252"
+                                        }
+                                    },
+                                    "gmd:country": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "France"
+                                        }
+                                    },
+                                    "gmd:electronicMailAddress": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "wm-archiseine@upmc.fr"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gmd:role": {
+                        "gmd:CI_RoleCode": {
+                            "@codeListValue": "originator",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://georchestra.archiseine.metis.upmc.fr/geoserver/Archiseine/wms?service=WMS&version=1.1.0&request=GetMap&layers=Archiseine:EAT_Aisne_Soissons_Berneuil_1837&styles=&bbox=697733.9465353873,6918762.615145524,728187.4224529959,6925733.228768168&width=768&height=330&srs=EPSG:2154&format=image%2Fpng"
+                        }
+                    },
+                    "gmd:fileDescription": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "large_thumbnail"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_Keywords": {
+                    "gmd:keyword": [
+                        {
+                            "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "carte de navigation"
+                            }
+                        },
+                        {
+                            "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "\u00e9cluse"
+                            }
+                        },
+                        {
+                            "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "am\u00e9nagement technique de l'eau"
+                            }
+                        }
+                    ],
+                    "gmd:type": {
+                        "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+                        "gmd:MD_KeywordTypeCode": {
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                            "@codeListValue": "theme"
+                        }
+                    },
+                    "gmd:thesaurusName": {
+                        "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+                        "gmd:CI_Citation": {
+                            "gmd:title": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Th\u00e9saurus"
+                                }
+                            },
+                            "gmd:date": {
+                                "gmd:CI_Date": {
+                                    "gmd:date": {
+                                        "gco:DateTime": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "2015-05-05T15:13:52"
+                                        }
+                                    },
+                                    "gmd:dateType": {
+                                        "gmd:CI_DateTypeCode": {
+                                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                            "@codeListValue": "publication"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:identifier": {
+                                "gmd:MD_Identifier": {
+                                    "gmd:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "geonetwork.thesaurus.external.theme.thesaurus"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:resourceConstraints": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_LegalConstraints": {
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "copyright",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "copyright",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "grid",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:language": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8"
+                }
+            },
+            "gmd:topicCategory": {
+                "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                "gmd:MD_TopicCategoryCode": "inlandWaters"
+            },
+            "gmd:extent": [
+                {
+                    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml",
+                                        "@gml:id": "d348560e431a1050910",
+                                        "gml:beginPosition": "1837-01-01",
+                                        "gml:endPosition": "1837-12-31"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+                    "gmd:EX_Extent": {
+                        "gmd:description": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "De Soissons \u00e0 Berneuil"
+                            }
+                        },
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "2.96877"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "3.3883"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "49.38845"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "49.41233"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:che": "http://www.geocat.ch/2008/che",
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "GeoTIFF"
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "1.0"
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": {
+                        "gmd:CI_OnlineResource": {
+                            "gmd:linkage": {
+                                "gmd:URL": "https://georchestra.archiseine.metis.upmc.fr/geoserver/wms?"
+                            },
+                            "gmd:protocol": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "OGC:WMS"
+                                }
+                            },
+                            "gmd:name": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Archiseine:EAT_Aisne_Soissons_Berneuil_1837"
+                                }
+                            },
+                            "gmd:description": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "EAT_Aisne_Soissons_Berneuil_1837"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "dataset",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:report": {
+                "gmd:DQ_DomainConsistency": {
+                    "gmd:result": {
+                        "gmd:DQ_ConformanceResult": {
+                            "gmd:specification": {
+                                "gmd:CI_Citation": {
+                                    "gmd:title": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "INSPIRE Data Specification on Hydrography - Guidelines v 3.0.1"
+                                        }
+                                    },
+                                    "gmd:date": {
+                                        "gmd:CI_Date": {
+                                            "gmd:date": {
+                                                "gco:Date": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "2000-01-01"
+                                                }
+                                            },
+                                            "gmd:dateType": {
+                                                "gmd:CI_DateTypeCode": {
+                                                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                    "@codeListValue": "publication"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:explanation": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-- Information sur l'\u00e9valuation de la conformit\u00e9 (non INSPIRE) --"
+                                }
+                            },
+                            "gmd:pass": {
+                                "gco:Boolean": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "false"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Service des Cartes et Plans des Archives Nationales. Cote AN F/14/10078/1/11.\n\nNum\u00e9risation en 2014. G\u00e9or\u00e9f\u00e9rencement en 2014 par Julie DAVODET.\n\nM\u00e9tadonn\u00e9es par Julie DAVODET et Juliette AUDET.\n\nMise en ligne en avril 2015."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

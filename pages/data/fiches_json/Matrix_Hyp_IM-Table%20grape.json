@@ -1,0 +1,1454 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Matrix_Hyp_IM-Table grape"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "en",
+            "@codeSpace": "ISO 639-2",
+            "#text": "en"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset",
+            "@codeSpace": "ISOTC211/19115"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Chantal MAURY"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "INRAE, ESA, USC GRAPPE"
+                }
+            },
+            "gmd:positionName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Enseignante-chercheur"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing"
+                            },
+                            "gmd:facsimile": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing"
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "42 rue Georges Morel"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Beaucouz\u00e9"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "49070"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "c.maury@groupe-esa.com"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact",
+                    "@codeSpace": "ISOTC211/19115"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2021-09-10T09:37:10"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:dataSetURI": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Matrix_Hyp_IM-Table grape"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "4326"
+                        }
+                    },
+                    "gmd:codeSpace": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "EPSG"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Commercial table grapes analyzed by hyperspectral imaging and total phenolic content,total anthocyanin content and Total Soluble Solids"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2021-01-28"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "creation",
+                                    "@codeSpace": "ISOTC211/19115"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": [
+                        {
+                            "gmd:MD_Identifier": {
+                                "gmd:code": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Matrix_Hyp_IM-Table grape"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:MD_Identifier": {
+                                "gmd:code": {
+                                    "gmx:Anchor": {
+                                        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                        "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                        "@xlink:href": "http://dx.doi.org/10.70112/QOIXCQ",
+                                        "@xlink:title": "DOI",
+                                        "@xlink:actuate": "onRequest",
+                                        "#text": "doi:10.70112/QOIXCQ"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "gmd:citedResponsibleParty": [
+                        {
+                            "gmd:CI_ResponsibleParty": {
+                                "gmd:individualName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Vanessa LANCON-VERDIER"
+                                    }
+                                },
+                                "gmd:organisationName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "INRAE, ESA, USC GRAPPE"
+                                    }
+                                },
+                                "gmd:positionName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Assistante-ing\u00e9nieur,"
+                                    }
+                                },
+                                "gmd:contactInfo": {
+                                    "gmd:CI_Contact": {
+                                        "gmd:phone": {
+                                            "gmd:CI_Telephone": {
+                                                "gmd:voice": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                },
+                                                "gmd:facsimile": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                }
+                                            }
+                                        },
+                                        "gmd:address": {
+                                            "gmd:CI_Address": {
+                                                "gmd:deliveryPoint": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "42 rue Georges Morel"
+                                                    }
+                                                },
+                                                "gmd:city": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "Beaucouz\u00e9"
+                                                    }
+                                                },
+                                                "gmd:postalCode": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "49070"
+                                                    }
+                                                },
+                                                "gmd:country": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "France"
+                                                    }
+                                                },
+                                                "gmd:electronicMailAddress": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "v.lancon-verdier@groupe-esa.com"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:role": {
+                                    "gmd:CI_RoleCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                        "@codeListValue": "owner",
+                                        "@codeSpace": "ISOTC211/19115"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_ResponsibleParty": {
+                                "gmd:individualName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Pierre PICOUET"
+                                    }
+                                },
+                                "gmd:organisationName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "INRAE, ESA, USC GRAPPE"
+                                    }
+                                },
+                                "gmd:positionName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Enseignante-chercheur"
+                                    }
+                                },
+                                "gmd:contactInfo": {
+                                    "gmd:CI_Contact": {
+                                        "gmd:phone": {
+                                            "gmd:CI_Telephone": {
+                                                "gmd:voice": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                },
+                                                "gmd:facsimile": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                }
+                                            }
+                                        },
+                                        "gmd:address": {
+                                            "gmd:CI_Address": {
+                                                "gmd:deliveryPoint": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "42 rue Georges Morel"
+                                                    }
+                                                },
+                                                "gmd:city": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "Beaucouz\u00e9"
+                                                    }
+                                                },
+                                                "gmd:postalCode": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "49070"
+                                                    }
+                                                },
+                                                "gmd:country": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "France"
+                                                    }
+                                                },
+                                                "gmd:electronicMailAddress": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "p.picouet@groupe-esa.com"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:role": {
+                                    "gmd:CI_RoleCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                        "@codeListValue": "owner",
+                                        "@codeSpace": "ISOTC211/19115"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_ResponsibleParty": {
+                                "gmd:individualName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Chantal MAURY"
+                                    }
+                                },
+                                "gmd:organisationName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "INRAE, ESA, USC GRAPPE"
+                                    }
+                                },
+                                "gmd:positionName": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Enseignante-chercheur"
+                                    }
+                                },
+                                "gmd:contactInfo": {
+                                    "gmd:CI_Contact": {
+                                        "gmd:phone": {
+                                            "gmd:CI_Telephone": {
+                                                "gmd:voice": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                },
+                                                "gmd:facsimile": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "@gco:nilReason": "missing"
+                                                }
+                                            }
+                                        },
+                                        "gmd:address": {
+                                            "gmd:CI_Address": {
+                                                "gmd:deliveryPoint": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "42 rue Georges Morel"
+                                                    }
+                                                },
+                                                "gmd:city": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "Beaucouz\u00e9"
+                                                    }
+                                                },
+                                                "gmd:postalCode": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "49070"
+                                                    }
+                                                },
+                                                "gmd:country": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "France"
+                                                    }
+                                                },
+                                                "gmd:electronicMailAddress": {
+                                                    "gco:CharacterString": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "c.maury@groupe-esa.com"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:role": {
+                                    "gmd:CI_RoleCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                        "@codeListValue": "owner",
+                                        "@codeSpace": "ISOTC211/19115"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode",
+                            "@codeListValue": "mapDigital",
+                            "@codeSpace": "ISOTC211/19115"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Table grape quality is of importance for consumers and thus for producers. Its objective quality is usually determined by destructive methods mainly based on sugar content. This study proposed to evaluate the possibility of hyperspectral imaging to characterize table grapes quality through its sugar (TSS),total flavonoid (TF),and total anthocyanin (TA) contents. Different data pre-treatments (WD,SNV,and 1st and 2nd derivative) and different methods were tested to get the best prediction models:PLS with full spectra and then Multiple Linear Regression (MLR) were realized after selecting the optimal wavelengths thanks to the regression coefficients (\u03b2-coefficients) and the Variable Importance in Projection (VIP) scores. All models were good at showing that hyperspectral imaging is a relevant method to predict sugar,total flavonoid,and total anthocyanin contents. The best predictions were obtained from optimal wavelength selection based on \u03b2-coefficients for TSS and from VIPs optimal wavelength windows using SNV pre-treatment for total flavonoid and total anthocyanin content. Thus,good prediction models were proposed in order to characterize grapes while reducing the data sets and limit the data storage to enable an industrial use"
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": ""
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Vanessa LANCON-VERDIER"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Assistante-ing\u00e9nieur,"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "v.lancon-verdier@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "owner",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Pierre PICOUET"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Enseignante-chercheur"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "p.picouet@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "owner",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Chantal MAURY"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Enseignante-chercheur"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "c.maury@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "owner",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "O. GABRIELLI"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Engineer"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:city": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:postalCode": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "o.gabrielli@unicatt.it"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "publisher",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Vanessa LANCON-VERDIER"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Assistante-ing\u00e9nieur,"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "v.lancon-verdier@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "publisher",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Pierre PICOUET"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Enseignante-chercheur"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "p.picouet@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "publisher",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Chantal MAURY"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Enseignante-chercheur"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "c.maury@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "publisher",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Chantal MAURY"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRAE, ESA, USC GRAPPE"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Enseignante-chercheur"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "42 rue Georges Morel"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Beaucouz\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "49070"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "c.maury@groupe-esa.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact",
+                                "@codeSpace": "ISOTC211/19115"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode",
+                            "@codeListValue": "asNeeded",
+                            "@codeSpace": "ISOTC211/19115"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": [
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "https://img.shields.io/badge/DOI-10.70112/QOIXCQ-informational.svg"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "http://dx.doi.org/10.70112/QOIXCQ",
+                                "#text": "10.70112/QOIXCQ"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "http://wheintz.github.io/assets/img/Dynafor.jpg"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Logo"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": ".xlsx"
+                        }
+                    },
+                    "gmd:version": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    },
+                    "gmd:specification": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": {
+                "gmd:MD_Keywords": {
+                    "gmd:keyword": [
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "table grape"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "phenolic content"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "sugar content"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "varieties"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "hyperspectralimaging_ GEOGRAPHIC:France"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Angers"
+                            }
+                        }
+                    ],
+                    "gmd:type": {
+                        "gmd:MD_KeywordTypeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                            "@codeListValue": "GENERAL",
+                            "@codeSpace": "ISOTC211/19115"
+                        }
+                    }
+                }
+            },
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "license_ \nuse:Licence CC-By",
+                            "@codeSpace": "ISOTC211/19115"
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "en",
+                    "@codeSpace": "ISO 639-2",
+                    "#text": "en"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8"
+                }
+            },
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-0.763010195212077"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-0.304330995993327"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "47.3353575601811"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "47.587897948071"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:temporalElement": {
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimeInstant": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                    "@gml:id": "ID1",
+                                    "gml:timePosition": "2021"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:supplementalInformation": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@gco:nilReason": "missing"
+            }
+        }
+    },
+    "gmd:contentInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_FeatureCatalogueDescription": {
+            "gmd:complianceCode": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "true"
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "en"
+                }
+            },
+            "gmd:includedWithDataset": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gmd:featureCatalogueCitation": {
+                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                "@uuidref": "Matrix_Hyp_IM-Table grape_dsd",
+                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/eng/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=Matrix_Hyp_IM-Table grape_dsd"
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:MD_Distribution": {
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://dx.doi.org/10.70112/QOIXCQ"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "DOI"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Digital Object Identifier"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.1007/s11367-019-01684-w_"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "publication"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Imagerie hyperspectrale pour caract\u00e9riser les raisins de table"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@xmlns:gmi": "http://standards.iso.org/iso/19115/-2/gmi/1.0",
+        "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+        "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+                            "@codeListValue": "dataset",
+                            "@codeSpace": "ISOTC211/19115"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "This work has been made in the frame of O3VINS project to test the ability of hyperspectral imaging to predict quality attributes of table grapes.Hyperspectral imaging spectra from one side and phenolic content realized in wine maceration conditions were performed on commercial table grapes from different varieties."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

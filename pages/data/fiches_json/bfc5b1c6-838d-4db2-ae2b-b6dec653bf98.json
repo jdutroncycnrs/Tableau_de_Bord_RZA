@@ -1,0 +1,456 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "bfc5b1c6-838d-4db2-ae2b-b6dec653bf98"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2016-12-20T16:39:01"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Exp\u00e9riences en laboratoire d'hydraulique - OSR"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:DateTime": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2016-12-20T16:00:00"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeListValue": "publication",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "http://localhost:8080/geonetwork/srv/metadata/bfc5b1c6-838d-4db2-ae2b-b6dec653bf98"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeListValue": "tableDigital",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Les donn\u00e9es acquises dans le laboratoire d'hydraulique d'Irstea concernent l'\u00e9tude exp\u00e9rimentale d'un pi\u00e8ge \u00e0 particules avec pour objectifs de quantifier le rendement du pi\u00e9geage des s\u00e9diments et \u00e9ventuellement son am\u00e9lioration (design, positionnement...). \nLes donn\u00e9es sont relatives \u00e0 plusieurs exp\u00e9riences men\u00e9es entre 2015 et 2017 avec des s\u00e9diments calibr\u00e9s (silice) et des s\u00e9diments naturels. Les param\u00e8tres mesur\u00e9s sont: \nd\u00e9bit de l'exp\u00e9rience, vitesses de l'\u00e9coulement, concentrations en mati\u00e8res en suspension, granulom\u00e9trie..."
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "C\u00e9line Berni"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "IRSTEA Lyon - HH"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Chercheur Irstea"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "04 72 20 87 87"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "5 rue de la Doua, CS70077"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Villeurbanne"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "69626"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "celine.berni@irstea.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "principalInvestigator"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Fabien Thollet"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "IRSTEA Lyon - HH"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ing\u00e9nieur d'\u00e9tudes"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "04 72 20 86 22"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "5 rue de la Doua, CS70077"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Villeurbanne"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "69626"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "fabien.thollet@irstea.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "annually",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Installations de suivi environnemental"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Pi\u00e8ges \u00e0 particules"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Laboratoire d'hydraulique"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "OSR"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Flux polluants"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "intellectualPropertyRights"
+                        }
+                    },
+                    "gmd:otherConstraints": [
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Contacter Irstea pour l'acc\u00e8s aux donn\u00e9es"
+                            }
+                        },
+                        {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Utilisation commerciale directe ou indirecte interdite."
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "environment"
+            },
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:geographicElement": null
+                }
+            },
+            "gmd:supplementalInformation": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Axe 3 du programme OSR4"
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:date": "http://exslt.org/dates-and-times",
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:MD_Distribution": {
+            "gmd:distributor": null,
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": null
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gml": "http://www.opengis.net/gml",
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "nonGeographicDataset",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:report": null,
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Les donn\u00e9es acquises dans le laboratoire d'hydraulique d'Irstea concernent l'\u00e9tude exp\u00e9rimentale d'un pi\u00e8ge \u00e0 particules avec pour objectifs de quantifier le rendement du pi\u00e9geage des s\u00e9diments et \u00e9ventuellement son am\u00e9lioration (design, positionnement...). \nLes donn\u00e9es sont relatives \u00e0 plusieurs exp\u00e9riences men\u00e9es entre 2015 et 2017 avec des s\u00e9diments calibr\u00e9s (silice) et des s\u00e9diments naturels. Les param\u00e8tres mesur\u00e9s sont: \nd\u00e9bit de l'exp\u00e9rience, vitesses de l'\u00e9coulement, concentrations en mati\u00e8res en suspension, granulom\u00e9trie..."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

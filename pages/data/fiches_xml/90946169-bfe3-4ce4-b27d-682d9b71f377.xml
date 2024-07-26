@@ -7,9 +7,9 @@
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>90946169-bfe3-4ce4-b27d-682d9b71f377</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -72,7 +72,7 @@
       </gmd:CI_ResponsibleParty>
   </gmd:contact>
   <gmd:dateStamp>
-      <gco:DateTime>2019-09-24T15:26:12Z</gco:DateTime>
+      <gco:DateTime>2019-09-24T17:26:12</gco:DateTime>
   </gmd:dateStamp>
   <gmd:metadataStandardName>
       <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
@@ -213,7 +213,7 @@
          <gmd:graphicOverview>
             <gmd:MD_BrowseGraphic>
                <gmd:fileName>
-                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/90946169-bfe3-4ce4-b27d-682d9b71f377/attachments/Vignette_Berger2014-2016.png</gco:CharacterString>
+                  <gco:CharacterString>https://elvis.ens-lyon.fr/geonetwork/srv/api/records/90946169-bfe3-4ce4-b27d-682d9b71f377/attachments/Vignette_Berger2014-2016.png</gco:CharacterString>
                </gmd:fileName>
                <gmd:fileDescription>
                   <gco:CharacterString>large_thumbnail</gco:CharacterString>
@@ -288,7 +288,7 @@
                      <gmd:identifier>
                         <gmd:MD_Identifier>
                            <gmd:code>
-                              <gmx:Anchor xlink:href="http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                              <gmx:Anchor xlink:href="https://elvis.evs.ens-lyon.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
                            </gmd:code>
                         </gmd:MD_Identifier>
                      </gmd:identifier>
@@ -364,7 +364,7 @@
                   <gmd:EX_TemporalExtent>
                      <gmd:extent>
                         <gml:TimePeriod gml:id="d16247e350a1050910">
-                           <gml:beginPosition>1000-01-01</gml:beginPosition>
+                           <gml:beginPosition>1100-01-01</gml:beginPosition>
                            <gml:endPosition>2017-12-31</gml:endPosition>
                         </gml:TimePeriod>
                      </gmd:extent>

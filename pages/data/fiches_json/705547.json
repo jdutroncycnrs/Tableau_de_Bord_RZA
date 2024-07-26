@@ -1,0 +1,806 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "705547"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ScopeCode": {
+            "@codeListValue": "dataset",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+        }
+    },
+    "gmd:hierarchyLevelName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@gco:nilReason": "missing",
+        "gco:CharacterString": null
+    },
+    "gmd:contact": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Fanny Arnaud"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR 5600 EVS - ENS de Lyon"
+                }
+            },
+            "gmd:positionName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Ing\u00e9nieur d'\u00e9tudes"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "04 37 37 64 94"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "15 Parvis Ren\u00e9 Descartes BP 7000"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lyon"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "69007"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "fanny.arnaud@ens-lyon.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2019-08-15T01:15:30"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "RGF93 / Lambert-93 (EPSG:2154)"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Cartographie diachronique (1945-2009) des unit\u00e9s paysag\u00e8res dans les casiers Girardon des Vieux Rh\u00f4ne"
+                        }
+                    },
+                    "gmd:alternateTitle": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "2014-RAEPPLE-SEDIMGIRARDON-01"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2014-03-07"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeListValue": "creation",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "@xmlns:gn": "http://www.fao.org/geonetwork",
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2014-RAEPPLE-SEDIMGIRARDON-01"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode",
+                            "@codeListValue": "mapDigital"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Couche vectorielle de polygones repr\u00e9sentant les unit\u00e9s paysag\u00e8res dans les casiers Girardon des Vieux Rh\u00f4ne. Cartographie diachronique (PBN 1945, 2008; PDR 1948/9, 1958, 1986, 2006/7/9; MON 1949, 2006/7; DZM 1947, 1954/5, 1976, 2006/7/9) repr\u00e9sentant les unit\u00e9s suivantes : eau, v\u00e9g\u00e9tation ligneuse, s\u00e9diments nus, herbac\u00e9es, zones agricoles, infrastructures."
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Bianca R\u00e4pple"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR 5600 EVS - ENS de Lyon"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Doctorante"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "04 37 37 64 94"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "15 Parvis Ren\u00e9 Descartes BP 7000"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Lyon"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "69007"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "bianca.raepple@ens-lyon.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Herv\u00e9 Pi\u00e9gay"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR 5600 EVS - ENS de Lyon"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Directeur de Recherche"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "04 37 37 63 51"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "15 Parvis Ren\u00e9 Descartes BP 7000"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Lyon"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "69007"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "herve.piegay@ens-lyon.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "principalInvestigator"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://cat.indores.fr/geonetwork/srv/api/records/705547/attachments/VignetteSEDIM.jpg"
+                        }
+                    },
+                    "gmd:fileDescription": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "large_thumbnail"
+                        }
+                    },
+                    "gmd:fileType": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "jpg"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "OHM VR"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Rh\u00f4ne"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeListValue": "place",
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Casiers Girardon"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Unit\u00e9s paysag\u00e8res"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Cartographie"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Occupation des terres"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": [
+                {
+                    "gmd:MD_LegalConstraints": {
+                        "gmd:useLimitation": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Mention obligatoire sur tout support de diffusion : \"Ces travaux ont b\u00e9n\u00e9fici\u00e9 du soutien du LabEx DRIIHM et de l'OHM Vall\u00e9e du Rh\u00f4ne\"."
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Utilisation commerciale direct oui indirect interdite."
+                                }
+                            }
+                        ],
+                        "gmd:accessConstraints": {
+                            "gmd:MD_RestrictionCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                                "@codeListValue": "intellectualPropertyRights"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_SecurityConstraints": {
+                        "gmd:classification": {
+                            "gmd:MD_ClassificationCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ClassificationCode",
+                                "@codeListValue": "unclassified"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "vector",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "1500"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": [
+                {
+                    "gmd:MD_TopicCategoryCode": "imageryBaseMapsEarthCover"
+                },
+                {
+                    "gmd:MD_TopicCategoryCode": "inlandWaters"
+                }
+            ],
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:description": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Pierre-B\u00e9nite, P\u00e9age-de-Roussillon, Mont\u00e9limar, Donz\u00e8re-Mondragon."
+                        }
+                    },
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "4.6362012"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "4.9069018"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "44.1853055"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "45.7101079"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:temporalElement": {
+                        "@xmlns:gn": "http://www.fao.org/geonetwork",
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimePeriod": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml",
+                                    "@gml:id": "d15980e405a1050910",
+                                    "gml:beginPosition": "1945-01-01",
+                                    "gml:endPosition": "2009-12-31"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:supplementalInformation": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Projet OHM VR \"Etude de la s\u00e9dimentation des casiers Girardon du Rh\u00f4ne : approche historique pour une \u00e9valuation des potentialit\u00e9s \u00e9cologiques et des risques en mati\u00e8re de pollution\" (2013)."
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:date": "http://exslt.org/dates-and-times",
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "SHP"
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "10.3"
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://ohm-vr.org/"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Site web de l'OHM VR"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Site web de l'OHM Vall\u00e9e du Rh\u00f4ne"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://ohm-vr.org/ftp/Fiche_de_synthese/APR_2013/5.Raepple_ficheCOS.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "5.Raepple_ficheCOS"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Fiche synth\u00e9tique du projet"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://onlinelibrary.wiley.com/doi/10.1002/hyp.10361/abstract"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Article dans Hydrological Processes"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "D\u017eub\u00e1kov\u00e1 et al., 2015"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "dataset",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:report": {
+                "gmd:DQ_DomainConsistency": {
+                    "gmd:result": {
+                        "@xmlns:gn": "http://www.fao.org/geonetwork",
+                        "gmd:DQ_ConformanceResult": {
+                            "gmd:specification": {
+                                "gmd:CI_Citation": {
+                                    "gmd:title": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services"
+                                        }
+                                    },
+                                    "gmd:date": {
+                                        "gmd:CI_Date": {
+                                            "gmd:date": {
+                                                "gco:Date": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "2013-10-21"
+                                                }
+                                            },
+                                            "gmd:dateType": {
+                                                "gmd:CI_DateTypeCode": {
+                                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                    "@codeListValue": "publication"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:explanation": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Non \u00e9valu\u00e9"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Cartographie r\u00e9alis\u00e9e par photo-interpr\u00e9tation manuelle de prises de vue a\u00e9riennes de l'IGN g\u00e9or\u00e9f\u00e9renc\u00e9es (avant 2006), d'ortho-photographies de l'IGN (apr\u00e8s 2006), et de mod\u00e8les LiDAR (D\u017eub\u00e1kov\u00e1 et al., 2015). Travail au 1/1500e. Bas\u00e9 dans certains cas sur des travaux pr\u00e9liminaires d'autres op\u00e9rateurs : Robin Gruel (PBN 1945, MON 1949), Alvaro Tena-Pagan (DZM 1947, 1954/5, 1976), Patrick Modrack (PDR 1948/9, 1958, 1986), Oriane Villet (MON 2006/7)."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

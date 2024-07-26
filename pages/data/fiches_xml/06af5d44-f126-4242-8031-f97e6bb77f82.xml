@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gfc:FC_FeatureCatalogue xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                         xmlns:gco="http://www.isotc211.org/2005/gco"
+                         xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         uuid="06af5d44-f126-4242-8031-f97e6bb77f82"
+                         xsi:schemaLocation="http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd">
+  <gfc:name>
+      <gco:CharacterString>Dictionnaire de données pour 'Localisation des pêcheurs à pied en rade de Brest (17/09/1997)'</gco:CharacterString>
+  </gfc:name>
+  <gfc:scope>
+      <gco:CharacterString/>
+  </gfc:scope>
+  <gfc:fieldOfApplication>
+      <gco:CharacterString/>
+  </gfc:fieldOfApplication>
+  <gfc:versionNumber>
+      <gco:CharacterString/>
+  </gfc:versionNumber>
+  <gfc:versionDate>
+      <gco:DateTime xmlns:gmx="http://www.isotc211.org/2005/gmx">2013-01-28T13:17:38</gco:DateTime>
+  </gfc:versionDate>
+  <gfc:featureType>
+      <gfc:FC_FeatureType id="">
+         <gfc:typeName>
+            <gco:LocalName>Table attributaire</gco:LocalName>
+         </gfc:typeName>
+         <gfc:definition>
+            <gco:CharacterString>Définition de la table d'attributs</gco:CharacterString>
+         </gfc:definition>
+         <gfc:isAbstract>
+            <gco:Boolean>false</gco:Boolean>
+         </gfc:isAbstract>
+         <gfc:featureCatalogue xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#"/>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>NBPAP_TOT</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Nombre total de pêcheurs à pied</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:featureType/>
+               <gfc:valueMeasurementUnit>
+                  <gml:UnitDefinition xmlns:gml="http://www.opengis.net/gml" gml:id="unknown">
+                     <gml:identifier codeSpace="unknown"/>
+                  </gml:UnitDefinition>
+               </gfc:valueMeasurementUnit>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>DATE</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Date d'observation</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>DATE</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>NBPAP_SAB</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Nombre de pêcheurs à pied en substrat sableux</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>NBPAP_ROC</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Nombre de pêcheurs à pied en substrat rocheux</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer/>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="true" xsi:nil="true"/>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+      </gfc:FC_FeatureType>
+  </gfc:featureType>
+</gfc:FC_FeatureCatalogue>

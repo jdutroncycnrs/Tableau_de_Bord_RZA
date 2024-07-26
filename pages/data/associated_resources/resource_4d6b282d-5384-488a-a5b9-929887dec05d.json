@@ -84,118 +84,6 @@
                     {
                         "data": "",
                         "text": {
-                            "default": "Carroyage_L93",
-                            "langfre": "Carroyage_L93"
-                        },
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=Carroyage_L93&BBOX=-4.858136051019908,48.345569439675195,-4.857912233312715,48.34569496604593"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Carroyage et sous-carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022 (ANR GEOPRAS)",
-                    "langfre": "Carroyage et sous-carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022 (ANR GEOPRAS)"
-                },
-                "resourceTitleObject": {
-                    "default": "Carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022",
-                    "langfre": "Carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022"
-                },
-                "format": [
-                    "ESRI Shapefile"
-                ],
-                "link": [
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "download",
-                        "name": "Carroyage_L93.zip",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/a6ca689a-8fee-4473-bf1f-186ecfd17fc4/attachments/Carroyage_L93.zip",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "Carroyage_L93",
-                        "applicationProfile": "",
-                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WMS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WFS",
-                        "function": "",
-                        "name": "Carroyage_L93",
-                        "applicationProfile": "",
-                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WFS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wfs",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "download",
-                        "name": "Sous_Carroyage_L93.zip",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/a6ca689a-8fee-4473-bf1f-186ecfd17fc4/attachments/Sous_Carroyage_L93.zip",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "Sous_Carroyage_L93",
-                        "applicationProfile": "",
-                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WMS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WFS",
-                        "function": "",
-                        "name": "Sous_Carroyage_L93",
-                        "applicationProfile": "",
-                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WFS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wfs",
-                        "group": 0
-                    }
-                ],
-                "id": "9443",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "a6ca689a-8fee-4473-bf1f-186ecfd17fc4",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "a6ca689a-8fee-4473-bf1f-186ecfd17fc4"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
                             "default": "Beniguet_MNE_20220821_generalview",
                             "langfre": "Beniguet_MNE_20220821_generalview"
                         },
@@ -370,6 +258,118 @@
                 "featured": false
             },
             "_id": "2fd455d3-0cca-4547-9c65-5a8d4ba64197"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Carroyage_L93",
+                            "langfre": "Carroyage_L93"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=Carroyage_L93&BBOX=-4.858136051019908,48.345569439675195,-4.857912233312715,48.34569496604593"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Carroyage et sous-carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022 (ANR GEOPRAS)",
+                    "langfre": "Carroyage et sous-carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022 (ANR GEOPRAS)"
+                },
+                "resourceTitleObject": {
+                    "default": "Carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022",
+                    "langfre": "Carroyage du chantier de fouilles de B\u00e9niguet pour l'ann\u00e9e 2022"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "download",
+                        "name": "Carroyage_L93.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/a6ca689a-8fee-4473-bf1f-186ecfd17fc4/attachments/Carroyage_L93.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "Carroyage_L93",
+                        "applicationProfile": "",
+                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "Carroyage_L93",
+                        "applicationProfile": "",
+                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WFS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wfs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "download",
+                        "name": "Sous_Carroyage_L93.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/a6ca689a-8fee-4473-bf1f-186ecfd17fc4/attachments/Sous_Carroyage_L93.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "Sous_Carroyage_L93",
+                        "applicationProfile": "",
+                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "Sous_Carroyage_L93",
+                        "applicationProfile": "",
+                        "description": "Carroyage du chantier de fouilles de B\u00e9niguet (OGC:WFS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "9443",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "a6ca689a-8fee-4473-bf1f-186ecfd17fc4",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "a6ca689a-8fee-4473-bf1f-186ecfd17fc4"
         },
         {
             "origin": "catalog",

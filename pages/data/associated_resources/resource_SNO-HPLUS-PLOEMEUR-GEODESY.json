@@ -148,107 +148,6 @@
                 ],
                 "op5": "1",
                 "resourceAbstractObject": {
-                    "default": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed).",
-                    "langeng": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed)."
-                },
-                "resourceTitleObject": {
-                    "default": "SNO H+ : Dataset on soil-atmosphere interactions on the Ploemeur site.",
-                    "langeng": "SNO H+ : Dataset on soil-atmosphere interactions on the Ploemeur site."
-                },
-                "link": [
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "DOI",
-                        "applicationProfile": "",
-                        "description": "Digital Object Identifier",
-                        "mimeType": "",
-                        "url": "http://dx.doi.org/10.26169/hplus.all",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Information on H+ website",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Data on H+ data portal",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr/en/database/acces-database",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "Soil_atmosphere_interface_dataset",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr/documents/requests/lsbb/HPLU_DAT_ploemeur_soil_atmosphere_interface.csv.tgz",
-                        "group": 0
-                    }
-                ],
-                "id": "3946",
-                "uuid": "SNO-HPLUS-PLOEMEUR-SOIL-ATMOSPHERE-INTERFACE",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "SNO-HPLUS-PLOEMEUR-SOIL-ATMOSPHERE-INTERFACE"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "SNO H+",
-                            "langeng": "SNO H+"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "10.26169/hplus.all",
-                            "langeng": "10.26169/hplus.all",
-                            "link": "http://dx.doi.org/10.26169/hplus.all"
-                        },
-                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "Logo",
-                            "langeng": "Logo"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
                     "default": "Available dataset includes monitoring data anions,cations,dic,doc,dissolved gases and isotopes",
                     "langeng": "Available dataset includes monitoring data anions,cations,dic,doc,dissolved gases and isotopes"
                 },
@@ -527,6 +426,107 @@
                 "featured": false
             },
             "_id": "SNO-HPLUS-PLOEMEUR-WATER-CYCLE"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed).",
+                    "langeng": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed)."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Dataset on soil-atmosphere interactions on the Ploemeur site.",
+                    "langeng": "SNO H+ : Dataset on soil-atmosphere interactions on the Ploemeur site."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Soil_atmosphere_interface_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/documents/requests/lsbb/HPLU_DAT_ploemeur_soil_atmosphere_interface.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3946",
+                "uuid": "SNO-HPLUS-PLOEMEUR-SOIL-ATMOSPHERE-INTERFACE",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-PLOEMEUR-SOIL-ATMOSPHERE-INTERFACE"
         }
     ]
 }

@@ -20,7 +20,7 @@
                             "default": "large_thumbnail",
                             "langfre": "large_thumbnail"
                         },
-                        "url": "https://cat.indores.fr/geonetwork/srv/api/records/d6724eae-dd5b-407d-865b-15200bd523ee/attachments/bathy1921.png"
+                        "url": "https://elvis.ens-lyon.fr/geonetwork/srv/api/records/d6724eae-dd5b-407d-865b-15200bd523ee/attachments/bathy1921.png"
                     }
                 ],
                 "op5": [
@@ -31,8 +31,8 @@
                     "126"
                 ],
                 "resourceAbstractObject": {
-                    "default": "21 planches cartographiques en couleur, non g\u00e9or\u00e9f\u00e9renc\u00e9es, dress\u00e9es de 1921 \u00e0 1922, repr\u00e9sentant le chenal de navigation avec indications bathym\u00e9triques en isobathes.",
-                    "langfre": "21 planches cartographiques en couleur, non g\u00e9or\u00e9f\u00e9renc\u00e9es, dress\u00e9es de 1921 \u00e0 1922, repr\u00e9sentant le chenal de navigation avec indications bathym\u00e9triques en isobathes."
+                    "default": "21 planches cartographiques en couleur, non g\u00e9or\u00e9f\u00e9renc\u00e9es, lev\u00e9es en 1921 et 1922, repr\u00e9sentant le chenal de navigation avec les indications bathym\u00e9triques en isobathes.",
+                    "langfre": "21 planches cartographiques en couleur, non g\u00e9or\u00e9f\u00e9renc\u00e9es, lev\u00e9es en 1921 et 1922, repr\u00e9sentant le chenal de navigation avec les indications bathym\u00e9triques en isobathes."
                 },
                 "groupOwner": "124",
                 "resourceTitleObject": {
@@ -45,32 +45,22 @@
                 "link": [
                     {
                         "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne",
+                        "function": "information",
+                        "name": "Site de l'OHM VR",
+                        "applicationProfile": "",
+                        "description": "Site web de l'OHM Vall\u00e9e du Rh\u00f4ne",
+                        "mimeType": "",
+                        "url": "https://ohm-vallee-du-rhone.fr/",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "information",
+                        "name": "Site de l'OSR",
                         "applicationProfile": "",
                         "description": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne",
                         "mimeType": "",
-                        "url": "http://www.graie.org/osr/",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Rapport_Synthese_OSR2_v9-vf",
-                        "applicationProfile": "",
-                        "description": "Rapport de Synth\u00e8se de l'OSR2",
-                        "mimeType": "",
-                        "url": "http://www.graie.org/osr/IMG/pdf/Rapport_Synthese_OSR2_v9-vf.pdf",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "A1_Rapport_cartographique",
-                        "applicationProfile": "",
-                        "description": "Rapport de synth\u00e8se de l'Action 1",
-                        "mimeType": "",
-                        "url": "http://www.graie.org/osr/IMG/pdf/A1_Rapport_cartographique.pdf",
+                        "url": "https://observatoire-sediments-rhone.fr/",
                         "group": 0
                     }
                 ],

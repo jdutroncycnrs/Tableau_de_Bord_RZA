@@ -268,98 +268,6 @@
                     {
                         "data": "",
                         "text": {
-                            "default": "Beniguet_ORTHO_20220803_generalview",
-                            "langfre": "Beniguet_ORTHO_20220803_generalview"
-                        },
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=Beniguet_ORTHO_20220803_generalview&BBOX=-4.858542406174557,48.34515673554954,-4.857146606512235,48.346348989463166"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "Orthophotographie a\u00e9rienne du chantier de fouilles de B\u00e9niguet du 03/08/2022 obtenue par photogramm\u00e9trie drone (ANR GEOPRAS)",
-                    "langfre": "Orthophotographie a\u00e9rienne du chantier de fouilles de B\u00e9niguet du 03/08/2022 obtenue par photogramm\u00e9trie drone (ANR GEOPRAS)"
-                },
-                "resourceTitleObject": {
-                    "default": "Orthophotographie a\u00e9rienne chantier de fouilles de B\u00e9niguet du 03/08/2022",
-                    "langfre": "Orthophotographie a\u00e9rienne chantier de fouilles de B\u00e9niguet du 03/08/2022"
-                },
-                "format": [
-                    "GeoTIFF"
-                ],
-                "link": [
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "download",
-                        "name": "Beniguet_ORTHO_20220803_generalview.zip",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/1347c5fa-a510-4d5f-b009-230df4cad217/attachments/Beniguet_ORTHO_20220803_generalview.zip",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "Beniguet_ORTHO_20220803_generalview",
-                        "applicationProfile": "",
-                        "description": "Orthophotographie a\u00e9rienne de B\u00e9niguet le 03/08/2022 (OGC:WMS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WCS",
-                        "function": "",
-                        "name": "Beniguet_ORTHO_20220803_generalview",
-                        "applicationProfile": "",
-                        "description": "Orthophotographie a\u00e9rienne de B\u00e9niguet le 03/08/2022 (OGC:WCS)",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "download",
-                        "name": "Rapport_photogram_20220803_generalview.pdf",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/1347c5fa-a510-4d5f-b009-230df4cad217/attachments/Rapport_photogram_20220803_generalview.pdf",
-                        "group": 0
-                    }
-                ],
-                "id": "11855",
-                "cl_status": [
-                    {
-                        "key": "completed"
-                    }
-                ],
-                "uuid": "1347c5fa-a510-4d5f-b009-230df4cad217",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "1347c5fa-a510-4d5f-b009-230df4cad217"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
                             "default": "ORTHO_Beniguet_2023_09_10cm",
                             "langfre": "ORTHO_Beniguet_2023_09_10cm"
                         },
@@ -442,6 +350,98 @@
                 "featured": false
             },
             "_id": "4d6b282d-5384-488a-a5b9-929887dec05d"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Beniguet_ORTHO_20220803_generalview",
+                            "langfre": "Beniguet_ORTHO_20220803_generalview"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:4326&WIDTH=400&HEIGHT=400&FORMAT=image/png&STYLES=&LAYERS=Beniguet_ORTHO_20220803_generalview&BBOX=-4.858542406174557,48.34515673554954,-4.857146606512235,48.346348989463166"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Orthophotographie a\u00e9rienne du chantier de fouilles de B\u00e9niguet du 03/08/2022 obtenue par photogramm\u00e9trie drone (ANR GEOPRAS)",
+                    "langfre": "Orthophotographie a\u00e9rienne du chantier de fouilles de B\u00e9niguet du 03/08/2022 obtenue par photogramm\u00e9trie drone (ANR GEOPRAS)"
+                },
+                "resourceTitleObject": {
+                    "default": "Orthophotographie a\u00e9rienne chantier de fouilles de B\u00e9niguet du 03/08/2022",
+                    "langfre": "Orthophotographie a\u00e9rienne chantier de fouilles de B\u00e9niguet du 03/08/2022"
+                },
+                "format": [
+                    "GeoTIFF"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "download",
+                        "name": "Beniguet_ORTHO_20220803_generalview.zip",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/1347c5fa-a510-4d5f-b009-230df4cad217/attachments/Beniguet_ORTHO_20220803_generalview.zip",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "Beniguet_ORTHO_20220803_generalview",
+                        "applicationProfile": "",
+                        "description": "Orthophotographie a\u00e9rienne de B\u00e9niguet le 03/08/2022 (OGC:WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WCS",
+                        "function": "",
+                        "name": "Beniguet_ORTHO_20220803_generalview",
+                        "applicationProfile": "",
+                        "description": "Orthophotographie a\u00e9rienne de B\u00e9niguet le 03/08/2022 (OGC:WCS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "download",
+                        "name": "Rapport_photogram_20220803_generalview.pdf",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/api/records/1347c5fa-a510-4d5f-b009-230df4cad217/attachments/Rapport_photogram_20220803_generalview.pdf",
+                        "group": 0
+                    }
+                ],
+                "id": "11855",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "1347c5fa-a510-4d5f-b009-230df4cad217",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "1347c5fa-a510-4d5f-b009-230df4cad217"
         }
     ]
 }

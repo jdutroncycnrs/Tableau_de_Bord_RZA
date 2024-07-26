@@ -7,9 +7,9 @@
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>e7999fd8-fe5b-4f94-ab1c-608a4193d35f</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -204,7 +204,7 @@
          <gmd:graphicOverview>
             <gmd:MD_BrowseGraphic>
                <gmd:fileName>
-                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/e7999fd8-fe5b-4f94-ab1c-608a4193d35f/attachments/VignetteLabeur.png</gco:CharacterString>
+                  <gco:CharacterString>https://elvis.ens-lyon.fr/geonetwork/srv/api/records/e7999fd8-fe5b-4f94-ab1c-608a4193d35f/attachments/VignetteLabeur.png</gco:CharacterString>
                </gmd:fileName>
                <gmd:fileDescription>
                   <gco:CharacterString>large_thumbnail</gco:CharacterString>
@@ -343,7 +343,7 @@
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.in2p3.fr/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
@@ -375,7 +375,7 @@
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/ftp/Fiche_de_synthese/APR_2013/8.Honegger_ficheCOS.pdf</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.in2p3.fr/ftp/Fiche_de_synthese/APR_2013/8.Honegger_ficheCOS.pdf</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>

@@ -74,6 +74,73 @@
             "properties": null,
             "_source": {
                 "op1": "1",
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais breton extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 9h35. Capteur SODA photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 5.3 cm. Conditions d'acquisition:Vent NE:7.6 \u00e0 8m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X.",
+                    "langfre": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais breton extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 9h35. Capteur SODA photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 5.3 cm. Conditions d'acquisition:Vent NE:7.6 \u00e0 8m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X."
+                },
+                "resourceTitleObject": {
+                    "default": "Image DSM drone (Marais Breton 2022-06-13) - Recherche",
+                    "langfre": "Image DSM drone (Marais Breton 2022-06-13) - Recherche"
+                },
+                "format": [
+                    "GeoTIFF"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "maraisbreton_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "lien WMS",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WCS",
+                        "function": "",
+                        "name": "maraisbreton_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "lien WCS",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "maraisbreton_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "Attention, le t\u00e9l\u00e9chargement peut prendre du temps \u00e0 se lancer !",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs?service=WCS&version=2.0.1&request=GetCoverage&CoverageId=maraisbreton_2022_06_13_DSM&format=image/geotiff",
+                        "group": 0
+                    }
+                ],
+                "id": "4290",
+                "uuid": "621a7285-ae5f-4986-b007-dd09f56f50cb",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "621a7285-ae5f-4986-b007-dd09f56f50cb"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
                 "overview": [
                     {
                         "data": "",
@@ -145,73 +212,6 @@
                 "featured": false
             },
             "_id": "d824e1b8-8356-417f-9e7b-0395594be51d"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "op5": "1",
-                "resourceAbstractObject": {
-                    "default": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais breton extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 9h35. Capteur SODA photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 5.3 cm. Conditions d'acquisition:Vent NE:7.6 \u00e0 8m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X.",
-                    "langfre": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais breton extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 9h35. Capteur SODA photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 5.3 cm. Conditions d'acquisition:Vent NE:7.6 \u00e0 8m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X."
-                },
-                "resourceTitleObject": {
-                    "default": "Image DSM drone (Marais Breton 2022-06-13) - Recherche",
-                    "langfre": "Image DSM drone (Marais Breton 2022-06-13) - Recherche"
-                },
-                "format": [
-                    "GeoTIFF"
-                ],
-                "link": [
-                    {
-                        "protocol": "OGC:WMS",
-                        "function": "",
-                        "name": "maraisbreton_2022_06_13_DSM",
-                        "applicationProfile": "",
-                        "description": "lien WMS",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/D2T/wms",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "OGC:WCS",
-                        "function": "",
-                        "name": "maraisbreton_2022_06_13_DSM",
-                        "applicationProfile": "",
-                        "description": "lien WCS",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "maraisbreton_2022_06_13_DSM",
-                        "applicationProfile": "",
-                        "description": "Attention, le t\u00e9l\u00e9chargement peut prendre du temps \u00e0 se lancer !",
-                        "mimeType": "",
-                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs?service=WCS&version=2.0.1&request=GetCoverage&CoverageId=maraisbreton_2022_06_13_DSM&format=image/geotiff",
-                        "group": 0
-                    }
-                ],
-                "id": "4290",
-                "uuid": "621a7285-ae5f-4986-b007-dd09f56f50cb",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "621a7285-ae5f-4986-b007-dd09f56f50cb"
         }
     ]
 }

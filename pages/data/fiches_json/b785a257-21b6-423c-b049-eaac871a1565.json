@@ -1,0 +1,886 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "b785a257-21b6-423c-b049-eaac871a1565"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8"
+        }
+    },
+    "gmd:parentIdentifier": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "@gco:nilReason": "missing",
+        "gco:CharacterString": null
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Iwan Le Berre"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR6554 LETG CNRS"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33(0)298498859"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technopole Brest-Iroise, Place Nicolas Copernic"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Plouzan\u00e9"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "29280"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "iwan.leberre@univ-brest.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2021-06-22T11:51:46"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": [
+        {
+            "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+            "gmd:MD_ReferenceSystem": {
+                "gmd:referenceSystemIdentifier": {
+                    "gmd:RS_Identifier": {
+                        "gmd:code": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "32620"
+                            }
+                        },
+                        "gmd:codeSpace": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "EPSG"
+                            }
+                        },
+                        "gmd:version": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "7.4"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+            "gmd:MD_ReferenceSystem": {
+                "gmd:referenceSystemIdentifier": {
+                    "gmd:RS_Identifier": {
+                        "gmd:code": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "WGS 84 / UTM zone 20N (EPSG:32620)"
+                            }
+                        },
+                        "gmd:codeSpace": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "EPSG"
+                            }
+                        },
+                        "gmd:version": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "8.6"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:identificationInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Bati portuaire de Basse-Terre en 1999"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:DateTime": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2019-09-02T14:00:00"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "publication"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "https://portail.indigeo.fr/geonetwork/srv/metadata/b785a257-21b6-423c-b049-eaac871a1565"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Emprise et nature des b\u00e2timents portuaires de Basse-Terre, num\u00e9ris\u00e9s d'apr\u00e8s la photographie a\u00e9rienne IGN de 1999."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": "completed"
+                }
+            },
+            "gmd:pointOfContact": {
+                "gmd:CI_ResponsibleParty": {
+                    "gmd:individualName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Iwan Le Berre"
+                        }
+                    },
+                    "gmd:organisationName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "UMR6554 LETG CNRS"
+                        }
+                    },
+                    "gmd:contactInfo": {
+                        "gmd:CI_Contact": {
+                            "gmd:phone": {
+                                "gmd:CI_Telephone": {
+                                    "gmd:voice": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "+33(0)298498859"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:address": {
+                                "gmd:CI_Address": {
+                                    "gmd:deliveryPoint": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technopole Brest-Iroise, Place Nicolas Copernic"
+                                        }
+                                    },
+                                    "gmd:city": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Plouzan\u00e9"
+                                        }
+                                    },
+                                    "gmd:postalCode": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "29280"
+                                        }
+                                    },
+                                    "gmd:country": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "France"
+                                        }
+                                    },
+                                    "gmd:electronicMailAddress": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "iwan.leberre@univ-brest.fr"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gmd:role": {
+                        "gmd:CI_RoleCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                            "@codeListValue": "pointOfContact"
+                        }
+                    }
+                }
+            },
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode",
+                            "@codeListValue": "notPlanned"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "commerce"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "industrie"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Cara\u00efbes (les)"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "transport maritime"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "infrastructure"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "port"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "activit\u00e9 \u00e9conomique"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "mer"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "b\u00e2timent industriel"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - Concepts, version 2.4"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2010-01-13"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.gemet",
+                                                "#text": "geonetwork.thesaurus.external.theme.gemet"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "R\u00e9seaux de transport"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lieux de production et sites industriels"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "B\u00e2timents"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "INSPIRE themes"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "North America"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Continents, countries, sea regions of the world."
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2015-07-17"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.place.regions",
+                                                "#text": "geonetwork.thesaurus.external.place.regions"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Guadeloupe"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "R\u00e9gions administratives de France"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2016-12-12"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.place.RegionFR_2017",
+                                                "#text": "geonetwork.thesaurus.external.place.RegionFR_2017"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "OHM Littoral Cara\u00efbe"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Basse-Terre"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Utilisation libre sous r\u00e9serve de mentionner la source (a minima le nom du producteur) et la date de sa derni\u00e8re mise \u00e0 jour"
+                        }
+                    },
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "otherRestrictions"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "intellectualPropertyRights"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Le partenaire fournisseur n\u2019est pas en mesure de garantir l\u2019exactitude, la mise \u00e0 jour, l\u2019int\u00e9grit\u00e9, l\u2019exhaustivit\u00e9 des donn\u00e9es et en particulier qu'elles sont exemptes d'erreurs ou d'impr\u00e9cisions, notamment de localisation, d\u2019identification ou de qualification. Aucune garantie quant \u00e0 l'aptitude des donn\u00e9es \u00e0 un usage particulier n'est apport\u00e9e par le partenaire fournisseur. Les utilisateurs utilisent les donn\u00e9es sous leur responsabilit\u00e9 pleine et enti\u00e8re, sans recours possible contre le partenaire fournisseur dont la responsabilit\u00e9 ne saurait \u00eatre engag\u00e9e du fait d\u2019un dommage r\u00e9sultant directement ou indirectement de l\u2019utilisation de ces donn\u00e9es. En particulier, il appartient aux utilisateurs d\u2019appr\u00e9cier, sous leur seule responsabilit\u00e9 : l'opportunit\u00e9 d'utiliser les donn\u00e9es; la compatibilit\u00e9 des fichiers avec leurs syst\u00e8mes informatiques; l\u2019ad\u00e9quation des donn\u00e9es \u00e0 leurs besoins; qu\u2019ils disposent de la comp\u00e9tence suffisante pour utiliser les donn\u00e9es. Le fournisseur partenaire n\u2019est en aucune fa\u00e7on responsable des \u00e9l\u00e9ments ext\u00e9rieurs aux donn\u00e9es et notamment des outils d\u2019analyse, mat\u00e9riels, logiciels, r\u00e9seaux..., utilis\u00e9s pour consulter et/ou traiter les donn\u00e9es. L\u2019utilisateur veille \u00e0 v\u00e9rifier que l\u2019actualit\u00e9 des informations mises \u00e0 disposition est compatible avec l\u2019usage qu\u2019il en fait"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                    "@codeListValue": "vector"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "1000"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "transportation"
+            },
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                        "@gml:id": "d6897522e611a1052958",
+                                        "gml:beginPosition": "1950-01-01",
+                                        "gml:endPosition": "1950-12-31"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "@xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+                        "gmd:description": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "France"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "@xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+                        "gmd:description": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Guadeloupe"
+                            }
+                        },
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-61.73683518"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-61.73099869"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "15.99360751"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "16.00037308"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "@xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+                        "gmd:description": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Guadeloupe"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "ESRI Shapefile"
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "1.0"
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": null
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+                            "@codeListValue": "dataset"
+                        }
+                    }
+                }
+            },
+            "gmd:report": {
+                "gmd:DQ_DomainConsistency": {
+                    "gmd:result": {
+                        "@xmlns:gn": "http://www.fao.org/geonetwork",
+                        "gmd:DQ_ConformanceResult": {
+                            "gmd:specification": {
+                                "gmd:CI_Citation": {
+                                    "gmd:title": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "r\u00e8glement (ue) n o 1089/2010 de la commission du 23 novembre 2010 portant modalit\u00e9s d'application de la directive 2007/2/ce du parlement europ\u00e9en et du conseil en ce qui concerne l'interop\u00e9rabilit\u00e9 des s\u00e9ries et des services de donn\u00e9es g\u00e9ographiques"
+                                        }
+                                    },
+                                    "gmd:date": {
+                                        "gmd:CI_Date": {
+                                            "gmd:date": {
+                                                "gco:Date": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "2019-09-30"
+                                                }
+                                            },
+                                            "gmd:dateType": {
+                                                "gmd:CI_DateTypeCode": {
+                                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                    "@codeListValue": "publication"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:explanation": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "L\u2019article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalit\u00e9s techniques de\nl\u2019interop\u00e9rabilit\u00e9 : il s\u2019agit du r\u00e8glement relatif \u00e0 l\u2019interop\u00e9rabilit\u00e9 : r\u00e8glement n\u00b01253/2013 du\n21 octobre 2013 modifiant et compl\u00e9tant le r\u00e8glement n\u00b01089/2010 du 23 novembre 2010"
+                                }
+                            },
+                            "gmd:pass": {
+                                "gco:Boolean": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "true"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Num\u00e9risation des b\u00e2timents portuaires \u00e0 partir de la photographies a\u00e9riennes IGN de 1999 rectifi\u00e9e d'apr\u00e8s la BD Ortho IGN 2013. Compl\u00e9ments (nature et vocation des b\u00e2timents) recherch\u00e9s dans divers fonds d'archives (AD971, GPMG, BNF, etc.). Travail r\u00e9alis\u00e9 par Charlotte Laffargue dans le cadre de son stage de master 2 (Sciences de la mer et du littoral, mention EGEL) sur la Trajectoire portuaire de Guadeloupe (sept. 2019), sous la direction d'Iwan Le Berre. Travail soutenu par l'OHM Littoral Cara\u00efbe (AAP 2018).\nCe travail a b\u00e9n\u00e9fici\u00e9 d\u2019une aide de l\u2019Etat g\u00e9r\u00e9e par l\u2019Agence Nationale de la Recherche au titre du Labex DRIIHM, programme \u00ab Investissements d\u2019avenir \u00bb portant la r\u00e9f\u00e9rence 526 ANR-11-LABX-0010 \u00bb"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "associated": [],
+    "hassources": [],
+    "hasfeaturecats": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "text": {
+                            "default": "large_thumbnail",
+                            "langfre": "large_thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/fre/resources.get?uuid=13a9101a-4851-46dd-ad62-235952f89508&fname=b65.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Description de la nature s\u00e9dimentaire de l'estran \u00e0 partir : - du trait de c\u00f4te de la France m\u00e9tropolitaine du SHOM (TCFMS) - des donn\u00e9es de la base de donn\u00e9es photogramm\u00e9triques du SHOM (distinction roche-s\u00e9diment) - des donn\u00e9es de l'inventaire s\u00e9dimentologique r\u00e9alis\u00e9 par G\u00e9omer au cours de l'\u00e9t\u00e9 1998 (H\u00e9naff et Le Berre, 1999)",
+                    "langfre": "Description de la nature s\u00e9dimentaire de l'estran \u00e0 partir : - du trait de c\u00f4te de la France m\u00e9tropolitaine du SHOM (TCFMS) - des donn\u00e9es de la base de donn\u00e9es photogramm\u00e9triques du SHOM (distinction roche-s\u00e9diment) - des donn\u00e9es de l'inventaire s\u00e9dimentologique r\u00e9alis\u00e9 par G\u00e9omer au cours de l'\u00e9t\u00e9 1998 (H\u00e9naff et Le Berre, 1999)"
+                },
+                "resourceTitleObject": {
+                    "default": "Estran - Nature s\u00e9dimentaire (source : G\u00e9omer-SHOM)",
+                    "langfre": "Estran - Nature s\u00e9dimentaire (source : G\u00e9omer-SHOM)"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-BREST:Sedim_estran_Geomer_L93",
+                        "applicationProfile": "",
+                        "description": "Estran - Nature s\u00e9dimentaire (source : G\u00e9omer-SHOM)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-BREST:Sedim_estran_Geomer_L93",
+                        "applicationProfile": "",
+                        "description": "Estran - Nature s\u00e9dimentaire (source : G\u00e9omer-SHOM)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4110",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "13a9101a-4851-46dd-ad62-235952f89508",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "13a9101a-4851-46dd-ad62-235952f89508"
+        }
+    ],
+    "services": []
+}

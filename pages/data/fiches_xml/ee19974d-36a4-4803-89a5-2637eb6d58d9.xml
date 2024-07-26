@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>ee19974d-36a4-4803-89a5-2637eb6d58d9</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+  </gmd:language>
+  <gmd:characterSet>
+      <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="series"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName>
+      <gco:CharacterString>Experimental services and series of datasets from the Joseph Fourier Alpine Station</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Jardin du Lautaret</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Jardin du Lautaret</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:individualName>
+         <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Université Grenoble-Alpes</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Université Grenoble-Alpes</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Le Lautaret, Col du Lautaret</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Le Lautaret, Col du Lautaret</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Villar-d'Arène</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>05480</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>France</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:country>
+                     <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>lautaret-dir@univ-grenoble-alpes.fr</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">lautaret-dir@univ-grenoble-alpes.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="resourceProvider"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:contact>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Jardin du Lautaret</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Jardin du Lautaret</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:individualName>
+         <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Université Grenoble-Alpes</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Université Grenoble-Alpes</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Le Lautaret, Col du Lautaret</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Le Lautaret, Col du Lautaret</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Villar-d'Arène</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>05480</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>France</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:country>
+                     <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>lautaret-dir@univ-grenoble-alpes.fr</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">lautaret-dir@univ-grenoble-alpes.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="resourceProvider"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+      <gco:DateTime>2023-05-26T13:14:37.374Z</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale>
+      <gmd:PT_Locale id="FR">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue=""/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="EN">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/0/4937</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">http://www.opengis.net/def/crs/EPSG/0/4937</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:code>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Lautaret garden</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Lautaret garden</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Jardin du Lautaret</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2009-10-23</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="creation"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/catalog.search#/metadata/ee19974d-36a4-4803-89a5-2637eb6d58d9</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+               <gmd:citedResponsibleParty>
+                  <gmd:CI_ResponsibleParty>
+                     <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Jardin du Lautaret</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Jardin du Lautaret</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:individualName>
+                     <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Université Grenoble-Alpes</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Université Grenoble-Alpes</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:organisationName>
+                     <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                           <gmd:phone>
+                              <gmd:CI_Telephone>
+                                 <gmd:voice gco:nilReason="missing">
+                                    <gco:CharacterString/>
+                                 </gmd:voice>
+                                 <gmd:facsimile gco:nilReason="missing">
+                                    <gco:CharacterString/>
+                                 </gmd:facsimile>
+                              </gmd:CI_Telephone>
+                           </gmd:phone>
+                           <gmd:address>
+                              <gmd:CI_Address>
+                                 <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>Le Lautaret, Col du Lautaret</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#EN">Le Lautaret, Col du Lautaret</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:deliveryPoint>
+                                 <gmd:city>
+                                    <gco:CharacterString>Villar-d'Arène</gco:CharacterString>
+                                 </gmd:city>
+                                 <gmd:administrativeArea gco:nilReason="missing">
+                                    <gco:CharacterString/>
+                                 </gmd:administrativeArea>
+                                 <gmd:postalCode>
+                                    <gco:CharacterString>05480</gco:CharacterString>
+                                 </gmd:postalCode>
+                                 <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>France</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:country>
+                                 <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>lautaret-dir@univ-grenoble-alpes.fr</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#EN">lautaret-dir@univ-grenoble-alpes.fr</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:electronicMailAddress>
+                              </gmd:CI_Address>
+                           </gmd:address>
+                        </gmd:CI_Contact>
+                     </gmd:contactInfo>
+                     <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="owner"/>
+                     </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+               </gmd:citedResponsibleParty>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>The research station of the Jardin du Lautaret is a set of infrastructures and human resources at the service of alpine environmental research, spread over two sites open all year round. One is located on the campus of the University Grenoble Alpes (dept 38), it is divided into greenhouses, arboretum, experimental zone. The other is located at the Col du Lautaret (dept 05) at an altitude of 2100m. The site of altitude gathers an Alpine Botanical Garden (20000m2), three buildings, an experimental zone. This structure provides field support for scientific projects on a territory of 500 km2, and also analyses in two laboratories, accommodation for 46 people, and botanical expertise. It organizes, in its multimedia room and meeting rooms, trainings, thematic schools, conferences, seminars. The research themes developed mainly concern the ecology of environments in relation to climate, socio-ecosystems, adaptation of living organisms, the physical environment and biogeochemical cycles. Some projects have been carried out since 1980, others operate on a multi-year basis. The station also welcomes foreign researchers within the framework of the Trans National access of eLTER.</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">The research station of the Jardin du Lautaret is a set of infrastructures and human resources at the service of alpine environmental research, spread over two sites open all year round. One is located on the campus of the University Grenoble Alpes (dept 38), it is divided into greenhouses, arboretum, experimental zone. The other is located at the Col du Lautaret (dept 05) at an altitude of 2100m. The site of altitude gathers an Alpine Botanical Garden (20000m2), three buildings, an experimental zone. This structure provides field support for scientific projects on a territory of 500 km2, and also analyses in two laboratories, accommodation for 46 people, and botanical expertise. It organizes, in its multimedia room and meeting rooms, trainings, thematic schools, conferences, seminars. The research themes developed mainly concern the ecology of environments in relation to climate, socio-ecosystems, adaptation of living organisms, the physical environment and biogeochemical cycles. Some projects have been carried out since 1980, others operate on a multi-year basis. The station also welcomes foreign researchers within the framework of the Trans National access of eLTER.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">La station de recherche du Jardin du Lautaret est un ensemble d'infrastructures et de moyens humains au service de la recherche environnementale alpine, répartis sur deux sites ouverts toute l’année. L’un se situe au campus de l’Université Grenoble Alpes (dépt 38), il  se décline en serres, arboretum, zone expérimentale. L’autre est localisé au col du Lautaret (dépt 05) par 2100m d’altitude. Le site d’altitude regroupe sur 20000m2 un Jardin botanique alpin, trois bâtiments, une zone expérimentale. Cette structure assure le support terrain des projets scientifiques sur un territoire de 500 km2, et également des analyses dans deux laboratoires, l’hébergement pour 46 personnes, et des expertises botaniques. Elle organise, dans sa salle multimédia et ses salles de réunion des formations, écoles thématiques, conférences, séminaires. Les thèmes de recherche développés portent principalement sur l’écologie des milieux en lien avec le climat, les socio-écosystèmes, l’adaptation du vivant, le milieu physique et cycles biogéochimiques. Certains projets sont assurés depuis 1980, d’autres fonctionnent sur une base pluriannuelle. La station accueille également des chercheurs étrangers dans le cadre des Trans National access du eLTER.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:abstract>
+         <gmd:credit xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>The SAJF is a core partner in the Zone Atelier Alpes, a structure of CNRS/INEE
+created in 2008 which develops research in the theme of "Diversity, functioning and services of alpine (geo-socio-eco)systems in a context of climate changes and land use mutations” by developing long-term field based experiments and monitoring protocols with tight collaboration with the managers and stakeholders in the areas studied.</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">The SAJF is a core partner in the Zone Atelier Alpes, a structure of CNRS/INEE
+created in 2008 which develops research in the theme of "Diversity, functioning and services of alpine (geo-socio-eco)systems in a context of climate changes and land use mutations” by developing long-term field based experiments and monitoring protocols with tight collaboration with the managers and stakeholders in the areas studied.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">La SAJF est le partenaire principal de la Zone Atelier Alpes (structure du CNRS/INEE), créée en 2008, focalisée sur le thème de 'Diversité, fonctionnement et utilisations des systèmes alpins (au sens Géographique, Sociologique, Ecologique) dans le contexte des changements globaux et les mutations des activités pastorales'.  la ZAA développe des suivis à long terme de zones précises, en collaboration étroite avec leurs managers et les acteurs locaux impliqués dans leur gestion.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:credit>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                                   codeListValue="asNeeded"/>
+               </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://geonetwork.osug.fr/srv/api/records/ee19974d-36a4-4803-89a5-2637eb6d58d9/attachments/LogoLautaret.png</gco:CharacterString>
+               </gmd:fileName>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>alpine plant</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">alpine plant</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">plante alpine</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>water chemistry</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">water chemistry</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">chimie de l'eau</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>atmospheric chemistry</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">atmospheric chemistry</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">chimie atmosphérique</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>alpine ecosystem</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">alpine ecosystem</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">écosystème alpin</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>AnaEE-France</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">AnaEE-France</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">AnaEE-France</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>alpine environment</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">alpine environment</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">environnement alpin</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>theme.anaeeThes.rdf</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">theme.anaeeThes.rdf</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2021-06-10</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/thesaurus.download?ref=external.theme.anaeeThes">geonetwork.thesaurus.external.theme.anaeeThes</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Environmental monitoring facilities</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Environmental monitoring facilities</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Installations de suivi environnemental</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0 INSPIRE themes</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">GEMET - INSPIRE themes, version 1.0 INSPIRE themes</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Grenoble</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Grenoble</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Grenoble</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>AnaEE-France Locations</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">AnaEE-France Locations</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2021-05-11</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/thesaurus.download?ref=local.place.anaee-france_locations">geonetwork.thesaurus.local.place.anaee-france_locations</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>soil chemistry</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">soil chemistry</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">chimie du sol</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>theme.VariableAnaEE.rdf</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">theme.VariableAnaEE.rdf</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2017-06-13</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/thesaurus.download?ref=external.theme.VariableAnaEE">geonetwork.thesaurus.external.theme.VariableAnaEE</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>pluviometry</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">pluviometry</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">pluviométrie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>soil temperature</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">soil temperature</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">température du sol</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>air temperature</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">air temperature</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">température de l'air</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>agricultural practicies</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">agricultural practicies</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">pratiques agricoles</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>soil moisture</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">soil moisture</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">humidité du sol</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>air humidity</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">air humidity</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">humidité de l'air</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>wind speed</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">wind speed</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">vitesse du vent</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>global radiation</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">global radiation</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">rayonnement global</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>evapotranspiration</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">evapotranspiration</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">évapotranspiration</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>CO2 flux</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">CO2 flux</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">flux de CO2</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>vegetation height</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">vegetation height</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">hauteur de la végétation</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>litter</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">litter</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">litière</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>primary production</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">primary production</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">production primaire</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>plant respiration</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">plant respiration</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">respiration de la plante</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>plant carbon content</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">plant carbon content</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">teneur en carbone dans la plante</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>atmospheric pressure</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">atmospheric pressure</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">pression atmosphérique</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>air oxygen</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">air oxygen</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">oygène de l'air</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Plant traits</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Plant traits</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">traits des plantes</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>theme.variableAnaEE.rdf</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">theme.variableAnaEE.rdf</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2017-07-21</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="http://w3.avignon.inra.fr/geonetwork_anaee/srv/eng/thesaurus.download?ref=external.theme.variableAnaEE">geonetwork.thesaurus.external.theme.variableAnaEE</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_Constraints>
+               <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>intellectual property rights</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">intellectual property rights</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:useLimitation>
+            </gmd:MD_Constraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="intellectualPropertyRights"/>
+               </gmd:accessConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="intellectualPropertyRights"/>
+               </gmd:useConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+                  <gmd:MD_RepresentativeFraction>
+                     <gmd:denominator>
+                        <gco:Integer>50000</gco:Integer>
+                     </gmd:denominator>
+                  </gmd:MD_RepresentativeFraction>
+               </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </gmd:language>
+         <gmd:characterSet>
+            <gmd:MD_CharacterSetCode codeListValue="utf8"
+                                     codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>structure</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent xmlns:xs="http://www.w3.org/2001/XMLSchema">
+               <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Grenoble</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Grenoble</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:description>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>5.62</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>5.82</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>45.08</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>45.28</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+               <gmd:temporalElement xmlns:gn="http://www.fao.org/geonetwork">
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="d1215386e716a1051934">
+                           <gml:beginPosition/>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:date="http://exslt.org/dates-and-times">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+            <gmd:MD_Format>
+               <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>inapplicable</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">inapplicable</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>inapplicable</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://www.jardindulautaret.com/</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Lautaret website</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Lautaret website</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Site internet du Lautaret</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeListValue="dataset"
+                                    codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:result xmlns:gn="http://www.fao.org/geonetwork">
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">Commission Regulation (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date>2010-12-08</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Not evaluated</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Not evaluated</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:explanation>
+                     <gmd:pass>
+                        <gco:Boolean>undefined</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Lautaret garden is an heritage of an historical alpine plant garden. Researches on Alpine plants run since 1920, and now it is completed with new projects on environment (snow and snow chemistry, atmospheric gases etc.).
+
+Lautaret garden is a service of AnaEE-France Infrastructure.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Lautaret garden is an heritage of an historical alpine plant garden. Researches on Alpine plants run since 1920, and now it is completed with new projects on environment (snow and snow chemistry, atmospheric gases etc.).
+
+Lautaret garden is a service of AnaEE-France Infrastructure.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Le jardin du Lautaret est un héritage d'un jardin de plantes alpines. Les recherches sur les plantes alpines datent de 1920, et maintenant elles se complètent de recherches portant sur l'environnement physique (chimie de la neige, chimie atmosphérique etc).
+
+Le jardin du Lautaret est un des services de l'infrastructure AnaEE-France.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

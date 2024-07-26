@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>7e7b0ef8-096a-45e0-ad72-f74b4a51812f</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    "
+    <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+    "
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Véronique GOUY</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>IRSTEA</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:positionName>
+            <gco:CharacterString>Chercheur</gco:CharacterString>
+         </gmd:positionName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice>
+                        <gco:CharacterString>04 72 20 87 94</gco:CharacterString>
+                     </gmd:voice>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>5 rue de la Doua BP 32108</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>VILLEURBANNE Cedex</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>69616</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>veronique.gouy@irstea.fr</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.irstea.fr/accueil</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Site Internet de l'IRSTEA</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+      <gco:DateTime>2019-06-29T17:16:29</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:identificationInfo>
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+        "
+        <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Suivi du transfert des produits phytosanitaires au sein d'une bande enherbée et évaluation de sa capacité d'atténuation des transferts dans les écoulements de sub-surface et le ruissellement</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+            "
+            <gmd:CI_Date>
+              "
+              <gmd:date>
+                        <gco:Date>2002-01-01</gco:Date>
+                     </gmd:date>
+              "
+              <gmd:dateType>
+                "
+                <gmd:CI_DateTypeCode codeListValue="creation"
+                                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"/>
+                "
+              </gmd:dateType>
+              "
+            </gmd:CI_Date>
+            "
+          </gmd:date>
+               <gmd:date>
+            "
+            <gmd:CI_Date>
+              "
+              <gmd:date>
+                        <gco:Date>2014-12-31</gco:Date>
+                     </gmd:date>
+              "
+              <gmd:dateType>
+                "
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"/>
+                "
+              </gmd:dateType>
+              "
+            </gmd:CI_Date>
+            "
+          </gmd:date>
+               <gmd:editionDate>
+                  <gco:Date>2019-06-28</gco:Date>
+               </gmd:editionDate>
+               <gmd:presentationForm>
+            "
+            <gmd:CI_PresentationFormCode codeListValue="tableDigital"
+                                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"/>
+            "
+          </gmd:presentationForm>
+            </gmd:CI_Citation>
+        "
+      </gmd:citation>
+         <gmd:abstract>
+            <gco:CharacterString>Ce site expérimental se situe à Saint Joseph en amont du bassin versant de la Morcille dans le Beaujolais : il est constitué d'un versant composé d'une parcelle de vigne (2800 m²) et d'une prairie en aval au sein de laquelle une placette enherbée (24 m²) a été isolée et instrumentée afin d'étudier son efficacité à atténuer les transferts de produits phytosanitaires issus de la parcelle de vigne en amont. Les données sur ce site ont été acquises dans le cadre de la thèse de Jean-Guillaume Lacas (Cemagref, 2005), du post-doc d'Arnaud Boivin (Cemagref, 2007) et de stages de master (Irstea, Druguet, 2012 ; Sarr, 2013 ; Liger et al, 2015). Elles recouvrent des données de débit, de concentrations et de flux de produits phytosanitaires dans le ruissellement de surface en entrée et en sortie de la placette enherbée, des mesures de volumes d'eau et de concentrations en produits phytosanitaires dans des lysimètres recueillant l'eau infiltrée à 50 cm de profondeur selon un transect amont-aval au sein de la placette enherbée et, à partir de 2011, des mesures de niveaux piézométriques et de concentrations en produits phytosanitaires et en traceurs (iodures et bromures) dans la nappe sous la placette enherbée à plusieurs profondeurs selon un transect amont-aval au sein de la placette enherbée. Ces données ont été acquises dans des conditions naturelles ou en simulation "physique" de ruissellement ou d'injection d'une solution de pesticides et de traceurs dans la nappe en amont de la placette. Ont été réalisés des prélèvements ponctuels manuels ou par échantillonnage automatique asservi au volume ou au temps passé. Les analyses de phytosanitaires ont été faites sur la phase dissoute uniquement. Quelques mesures par échantillonnage passif ont également été réalisées dans le nappe.</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:purpose>
+            <gco:CharacterString>Connaissance de la dynamique de transfert des produits phytosanitaires au sein d'une bande enherbée</gco:CharacterString>
+         </gmd:purpose>
+         <gmd:status>
+        "
+        <gmd:MD_ProgressCode codeListValue="completed"
+                                 codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"/>
+        "
+      </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Véronique GOUY</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>IRSTEA</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:positionName>
+                  <gco:CharacterString>Chercheur</gco:CharacterString>
+               </gmd:positionName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>04 72 20 87 94</gco:CharacterString>
+                           </gmd:voice>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>5 rue de la Doua BP 32108</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>VILLEURBANNE Cedex</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>69616</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>France</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>veronique.gouy@irstea.fr</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>http://www.irstea.fr/accueil</gmd:URL>
+                           </gmd:linkage>
+                           <gmd:protocol>
+                              <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                           </gmd:protocol>
+                           <gmd:name>
+                              <gco:CharacterString>Site Internet d'IRSTEA</gco:CharacterString>
+                           </gmd:name>
+                           <gmd:description gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:description>
+                           <gmd:function>
+                              <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                         codeListValue="information"/>
+                           </gmd:function>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="pointOfContact"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+        "
+        <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+            "
+            <gmd:MD_MaintenanceFrequencyCode codeListValue="annually"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"/>
+            "
+          </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+        "
+      </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/7e7b0ef8-096a-45e0-ad72-f74b4a51812f/attachments/Versant-BE-StJoseph.JPG</gco:CharacterString>
+               </gmd:fileName>
+               <gmd:fileDescription>
+                  <gco:CharacterString>large_thumbnail</gco:CharacterString>
+               </gmd:fileDescription>
+               <gmd:fileType>
+                  <gco:CharacterString>JPG</gco:CharacterString>
+               </gmd:fileType>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Installations de suivi environnemental</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>viticulture</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>pesticide</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>analyse physico-chimique</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>qualité de l'eau</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>flux de polluant</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>ruissellement</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>hydrométrie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>GEMET</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2009-09-22</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>écoulement de sub-surface</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Site Ardières-Morcille</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>rétention de pesticides</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>nappe</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>au cas par cas</gco:CharacterString>
+               </gmd:useLimitation>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+        "
+        <gmd:MD_SpatialRepresentationTypeCode codeListValue=""
+                                                  codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"/>
+        "
+      </gmd:spatialRepresentationType>
+         <gmd:language>
+            <gco:CharacterString>fre</gco:CharacterString>
+         </gmd:language>
+         <gmd:characterSet>
+        "
+        <gmd:MD_CharacterSetCode codeListValue="utf8"
+                                     codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+        "
+      </gmd:characterSet>
+         <gmd:topicCategory>
+        "
+        <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+        "
+      </gmd:topicCategory>
+         <gmd:extent>
+        "
+        <gmd:EX_Extent>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+              "
+              <gmd:extent>
+                        <gml:TimePeriod gml:id="d132821e435a1052958">
+                           <gml:beginPosition>Premières mesures en 2002</gml:beginPosition>
+                           <gml:endPosition>2014</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+              "
+            </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+        "
+      </gmd:extent>
+         <gmd:extent>
+        "
+        <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                "
+                <gco:Decimal>4.637310505131609</gco:Decimal>
+                "
+              </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                "
+                <gco:Decimal>4.639670849064714</gco:Decimal>
+                "
+              </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                "
+                <gco:Decimal>46.17501645361227</gco:Decimal>
+                "
+              </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                "
+                <gco:Decimal>46.176264556223316</gco:Decimal>
+                "
+              </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+        "
+      </gmd:extent>
+         <gmd:supplementalInformation>
+            <gco:CharacterString>Site du versant de Saint-Joseph - Commune de Villié Morgon</gco:CharacterString>
+         </gmd:supplementalInformation>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:date="http://exslt.org/dates-and-times">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat/>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL/>
+                     </gmd:linkage>
+                     <gmd:name>
+                        <gco:CharacterString>Thèse Jean-Guillaume Lacas 2005</gco:CharacterString>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://saam.irstea.fr/</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:name>
+                        <gco:CharacterString>Site Atelier Ardières-Morcille</gco:CharacterString>
+                     </gmd:name>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/7e7b0ef8-096a-45e0-ad72-f74b4a51812f/attachments/these-JG-Lacas2005.pdf</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="application/pdf">these-JG-Lacas2005.pdf</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Thèse Jean-Guillaume Lacas 2015</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://cat.indores.fr/geonetwork/srv/api/records/7e7b0ef8-096a-45e0-ad72-f74b4a51812f/attachments/rapportAERMC2015-finalV8.pdf</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gmx:MimeFileType type="application/pdf">rapportAERMC2015-finalV8.pdf</gmx:MimeFileType>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Rapport final pour l'AERM&amp;C</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement>
+                  <gco:CharacterString>données mésurées sur site. Détail sur le mode d'acquisition sur le site SAAM (voir lien plus haut)</gco:CharacterString>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

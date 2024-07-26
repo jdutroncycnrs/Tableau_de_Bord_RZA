@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gfc:FC_FeatureCatalogue xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                         xmlns:gco="http://www.isotc211.org/2005/gco"
+                         xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                         uuid="208178e2-a6c6-410c-94ac-3108b9e43a35"
+                         xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmx:name xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gco:CharacterString>Data dictionary for the dataset : Indicators of sensitivity, exposure, adaptive capacity and vulnerability of scallop fishing vessels to the risk of harmful algal blooms (HABs) in the eastern English Channel</gco:CharacterString>
+  </gmx:name>
+  <gmx:scope xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gco:CharacterString>Catalogue d'attributs</gco:CharacterString>
+  </gmx:scope>
+  <gmx:versionNumber xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmx:versionNumber>
+  <gmx:versionDate xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gco:DateTime>2022-09-23T15:18:23</gco:DateTime>
+  </gmx:versionDate>
+  <gmx:language xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmx:language>
+  <gmx:locale xmlns:gmx="http://www.isotc211.org/2005/gmx"/>
+  <gmx:locale xmlns:gmx="http://www.isotc211.org/2005/gmx"/>
+  <gmx:locale xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gmd:PT_Locale>
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="" codeListValue="fre"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="" codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmx:locale>
+  <gmx:locale xmlns:gmx="http://www.isotc211.org/2005/gmx">
+      <gmd:PT_Locale>
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="" codeListValue="eng"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="" codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmx:locale>
+  <gfc:featureType>
+      <gfc:FC_FeatureType uuid="acdb78e4-b6f1-4353-98b1-35f7a4a89a5e">
+         <gfc:typeName>
+            <gco:LocalName>Data dictionary</gco:LocalName>
+         </gfc:typeName>
+         <gfc:definition>
+            <gco:CharacterString/>
+         </gfc:definition>
+         <gfc:isAbstract>
+            <gco:Boolean>false</gco:Boolean>
+         </gfc:isAbstract>
+         <gfc:featureCatalogue/>
+         <gfc:constrainedBy>
+            <gfc:FC_Constraint>
+               <gfc:description>
+                  <gco:CharacterString>Le partenaire fournisseur n’est pas en mesure de garantir l’exactitude, la mise à jour, l’intégrité, l’exhaustivité des données et en particulier qu'elles sont exemptes d'erreurs ou d'imprécisions, notamment de localisation, d’identification ou de qualification. Aucune garantie quant à l'aptitude des données à un usage particulier n'est apportée par le partenaire fournisseur. Les utilisateurs utilisent les données sous leur responsabilité pleine et entière, sans recours possible contre le partenaire fournisseur dont la responsabilité ne saurait être engagée du fait d’un dommage résultant directement ou indirectement de l’utilisation de ces données. En particulier, il appartient aux utilisateurs d’apprécier, sous leur seule responsabilité : l'opportunité d'utiliser les données; la compatibilité des fichiers avec leurs systèmes informatiques; l’adéquation des données à leurs besoins; qu’ils disposent de la compétence suffisante pour utiliser les données. Le fournisseur partenaire n’est en aucune façon responsable des éléments extérieurs aux données et notamment des outils d’analyse, matériels, logiciels, réseaux..., utilisés pour consulter et/ou traiter les données. L’utilisateur veille à vérifier que l’actualité des informations mises à disposition est compatible avec l’usage qu’il en fait.</gco:CharacterString>
+               </gfc:description>
+            </gfc:FC_Constraint>
+         </gfc:constrainedBy>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Zone</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Names of the scallop production and management areas in the Eastern Channel. Also known as 'sanitary zones', these zones were created in 2012 to manage the health risk caused by phycotoxin contamination by scallops.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>ID</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Identifier of the variable Zone.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>NUMERIC</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Season</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Scallop fishing season in the Eastern Channel.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Start</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Starting date of the shell fishing season.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:definitionReference/>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>DATE</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>End</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Ending date of the shell fishing season.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>DATE</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Vess.Cat</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Codes of the scallop vessels categories (fleet sub-class).</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers using passive gears &lt;15m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CAD-T1</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers using passive gears between 15m and 16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CAD-T2</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers using passive gears &gt;=16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CAD-T3</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers-Dredgers &lt;15m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CD-T1</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers-Dredgers between 15m and 16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CD-T2</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Trawlers-Dredgers &gt;=16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>CD-T3</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Exclusive Dredgers &lt;15m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DE-T1</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Exclusive Dredgers between 15m and 16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DE-T2</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Exclusive Dredgers &gt;=16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DE-T3</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Polyvalent Dredgers &lt;15m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DP-T1</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Polyvalent Dredgers between 15m and 16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DP-T2</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Polyvalent Dredgers &gt;=16m</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>DP-T3</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Sens.Ind</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Sensitivity indicator of shell fishing vessels.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Exp.Ind</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Exposure indicator of shell fishing vessels to HAB risk.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Adapt.Ind</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Adaptation capacity indicator of shell fishing vessels.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Vul.Ind</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Vulnerability indicator of shell fishing vessels.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Vul.Ind2</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Vulnerability indicator normalised between 0 and 1.</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>INTEGER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+         <gfc:carrierOfCharacteristics>
+            <gfc:FC_FeatureAttribute>
+               <gfc:memberName>
+                  <gco:LocalName>Vul.Class</gco:LocalName>
+               </gfc:memberName>
+               <gfc:definition>
+                  <gco:CharacterString>Vulnerability classes (qualitative classification).</gco:CharacterString>
+               </gfc:definition>
+               <gfc:cardinality>
+                  <gco:Multiplicity>
+                     <gco:range>
+                        <gco:MultiplicityRange>
+                           <gco:lower>
+                              <gco:Integer>1</gco:Integer>
+                           </gco:lower>
+                           <gco:upper>
+                              <gco:UnlimitedInteger isInfinite="false" xsi:nil="false">1</gco:UnlimitedInteger>
+                           </gco:upper>
+                        </gco:MultiplicityRange>
+                     </gco:range>
+                  </gco:Multiplicity>
+               </gfc:cardinality>
+               <gfc:valueType>
+                  <gco:TypeName>
+                     <gco:aName>
+                        <gco:CharacterString>CHARACTER</gco:CharacterString>
+                     </gco:aName>
+                  </gco:TypeName>
+               </gfc:valueType>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Index between 0 and 0.2</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>Lowest</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Index between 0.2 and 0.4</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>Low</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Index between 0.4 and 0.6</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>Moderate</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Index between 0.6 and 0.8</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>High</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+               <gfc:listedValue>
+                  <gfc:FC_ListedValue>
+                     <gfc:label>
+                        <gco:CharacterString>Index between 0.8 and 1</gco:CharacterString>
+                     </gfc:label>
+                     <gfc:code>
+                        <gco:CharacterString>Highest</gco:CharacterString>
+                     </gfc:code>
+                  </gfc:FC_ListedValue>
+               </gfc:listedValue>
+            </gfc:FC_FeatureAttribute>
+         </gfc:carrierOfCharacteristics>
+      </gfc:FC_FeatureType>
+  </gfc:featureType>
+</gfc:FC_FeatureCatalogue>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>a836dc21-97ef-4d16-b12c-83a3b35b51fa</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                               codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact xmlns:gml="http://www.opengis.net/gml">
+      <gmd:CI_ResponsibleParty>
+         <gmd:organisationName gco:nilReason="missing">
+            <gco:CharacterString/>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:electronicMailAddress gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue=""/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:contact xmlns:gml="http://www.opengis.net/gml">
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Stéphane PESCE</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>IRSTEA - UR RiverLy</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:positionName>
+            <gco:CharacterString>Directeur de recherche</gco:CharacterString>
+         </gmd:positionName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice>
+                        <gco:CharacterString>04 72 20 87 95</gco:CharacterString>
+                     </gmd:voice>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>5 rue de la Doua, CS 20244</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>VILLEURBANNE Cedex</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>69625</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>stephane.pesce@irstea.fr</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://www.irstea.fr/fr/recherche/unites-de-recherche/riverly</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Site Internet de l'UR RiverLy</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:gml="http://www.opengis.net/gml">
+      <gco:DateTime>2019-07-15T14:47:38</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:referenceSystemInfo xmlns:gml="http://www.opengis.net/gml">
+    "
+    <gmd:MD_ReferenceSystem>
+      "
+      <gmd:referenceSystemIdentifier>
+        "
+        <gmd:RS_Identifier>
+               <gmd:code>
+                  <gco:CharacterString>REFERENTIEL DE COORDONNEES (WGS 84, LAMBERT 93, ETC)</gco:CharacterString>
+               </gmd:code>
+            </gmd:RS_Identifier>
+        "
+      </gmd:referenceSystemIdentifier>
+      "
+    </gmd:MD_ReferenceSystem>
+    "
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+        "
+        <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Suivi des niveaux de contamination et caractérisation de la distribution sur l’Ardières - 2017</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+            "
+            <gmd:CI_Date>
+              "
+              <gmd:date>
+                        <gco:Date>mai 2017</gco:Date>
+                     </gmd:date>
+              "
+              <gmd:dateType>
+                "
+                <gmd:CI_DateTypeCode codeListValue="creation"
+                                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"/>
+                "
+              </gmd:dateType>
+              "
+            </gmd:CI_Date>
+            "
+          </gmd:date>
+               <gmd:date>
+            "
+            <gmd:CI_Date>
+              "
+              <gmd:date>
+                        <gco:Date>septembre 2019</gco:Date>
+                     </gmd:date>
+              "
+              <gmd:dateType>
+                "
+                <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"/>
+                "
+              </gmd:dateType>
+              "
+            </gmd:CI_Date>
+            "
+          </gmd:date>
+               <gmd:editionDate>
+                  <gco:Date>juillet 2019</gco:Date>
+               </gmd:editionDate>
+            </gmd:CI_Citation>
+        "
+      </gmd:citation>
+         <gmd:abstract>
+            <gco:CharacterString>DECRIRE LA DONNEE AFIN D'ORIENTER LE  PUBLIC SUR SON CONTENU :
+- DESCRIPTION SUCCINTE MAIS PRECISE (TOUTES LES DONNEES DU JEU DOIVENT ETRE DECRITES)
+- CONTEXTE (DANS LE CADRE DE QUEL PROJET ? QUI EST LE PROPRIETAIRE ? L'AUTEUR ?)
+- BUT (A QUOI A-T-ELLE SERVI ? QUELLE EXPLOITATION ?)
+- LIEU
+- PERIODE
+-...</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:status>
+        "
+        <gmd:MD_ProgressCode codeListValue="completed"
+                                 codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"/>
+        "
+      </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Stéphane PESCE</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>IRSTEA - UR RiverLy</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:positionName>
+                  <gco:CharacterString>Directeur de recherche</gco:CharacterString>
+               </gmd:positionName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>04 72 20 87 95</gco:CharacterString>
+                           </gmd:voice>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>5 rue de la Doua, CS 20244</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>VILLEURBANNE Cedex</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>69625</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>France</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>stephane.pesce@irstea.fr</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>https://www.irstea.fr/fr/recherche/unites-de-recherche/riverly</gmd:URL>
+                           </gmd:linkage>
+                           <gmd:protocol>
+                              <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                           </gmd:protocol>
+                           <gmd:name>
+                              <gco:CharacterString>Site Internet de l'UR RiverLy</gco:CharacterString>
+                           </gmd:name>
+                           <gmd:description gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:description>
+                           <gmd:function>
+                              <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                         codeListValue="information"/>
+                           </gmd:function>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="pointOfContact"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+        "
+        <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+            "
+            <gmd:MD_MaintenanceFrequencyCode codeListValue="notPlanned"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"/>
+            "
+          </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+        "
+      </gmd:resourceMaintenance>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Habitats et biotopes</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Chimie de l'eau</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Ecotoxicologie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Cours d'eau</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Eaux de surface</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Matières en suspension</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Pollution diffuse</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Sédiments</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Pesticide</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>Vocabulaire MétaZABR</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2016-08-25</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://metazabr.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.vocab">geonetwork.thesaurus.external.theme.vocab</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Site Ardières-Morcille</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Au cas par cas, voir avec le propriétaire des données</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:otherConstraints>
+                  <gco:CharacterString>Convention à établir</gco:CharacterString>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialResolution>
+        "
+        <gmd:MD_Resolution>
+               <gmd:equivalentScale>
+            "
+            <gmd:MD_RepresentativeFraction>
+              "
+              <gmd:denominator>
+                "
+                <gco:Integer/>
+                "
+              </gmd:denominator>
+              "
+            </gmd:MD_RepresentativeFraction>
+            "
+          </gmd:equivalentScale>
+            </gmd:MD_Resolution>
+        "
+      </gmd:spatialResolution>
+         <gmd:language>
+            <gco:CharacterString>fre</gco:CharacterString>
+         </gmd:language>
+         <gmd:topicCategory>
+        "
+        <gmd:MD_TopicCategoryCode>inlandWaters</gmd:MD_TopicCategoryCode>
+        "
+      </gmd:topicCategory>
+         <gmd:extent>
+        "
+        <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                "
+                <gco:Decimal>4.08691</gco:Decimal>
+                "
+              </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                "
+                <gco:Decimal>5</gco:Decimal>
+                "
+              </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                "
+                <gco:Decimal>46</gco:Decimal>
+                "
+              </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                "
+                <gco:Decimal>47</gco:Decimal>
+                "
+              </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+        "
+      </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:gml="http://www.opengis.net/gml">
+    "
+    <gmd:MD_Distribution>
+         <gmd:distributionFormat/>
+         <gmd:transferOptions>
+        "
+        <gmd:MD_DigitalTransferOptions/>
+        "
+      </gmd:transferOptions>
+      </gmd:MD_Distribution>
+    "
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo xmlns:gml="http://www.opengis.net/gml">
+      <gmd:DQ_DataQuality>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement>
+                  <gco:CharacterString>QUELLES METHODES ET MATERIELS ONT ETE UTILISE POUR RECOLTER LA DONNEE?
+QUELS TRAITEMENTS ONT ETE EFFECTUES POUR PARVENIR A LA DONNEE OU GRACE A LA DONNEE?
+QUELLE EST LA PRECISION DE LA DONNEE ? SA QUALITE ?
+QUELS SONT LES CONTRIBUTEURS?</gco:CharacterString>
+               </gmd:statement>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

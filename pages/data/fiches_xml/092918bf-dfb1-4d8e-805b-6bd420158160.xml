@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>092918bf-dfb1-4d8e-805b-6bd420158160</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre">Français</gmd:LanguageCode>
+  </gmd:language>
+  <gmd:characterSet xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                               codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName>
+      <gco:CharacterString>Parent</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Bertin Stéphane</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Bertin Stéphane</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">Bertin Stéphane</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:individualName>
+         <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>UMR 6538 Geo-Ocean</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone/>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">European Institute for Marine Studies, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Plouzané</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:postalCode>
+                        <gco:CharacterString>29280</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>France</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">France</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:country>
+                     <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>stephane.bertin@univ-brest.fr</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">stephane.bertin@univ-brest.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">stephane.bertin@univ-brest.fr</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="pointOfContact"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gco:DateTime>2022-09-08T14:37:49</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gco:CharacterString>ISO 19115</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:locale xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gmd:PT_Locale id="EN">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:locale>
+      <gmd:PT_Locale id="FR">
+         <gmd:languageCode>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </gmd:languageCode>
+         <gmd:characterEncoding>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterEncoding>
+      </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+      <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xlink:title="RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)"
+                              xlink:href="http://www.opengis.net/def/crs/EPSG/0/5698">RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:code>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo xmlns:gfc="http://www.isotc211.org/2005/gfc">
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Suivi topo-morphologique par photogrammétrie drone des plages enclavées adjacentes de La Palue et de Lostmarc'h (Crozon, Finistère)</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Suivi topo-morphologique par photogrammétrie drone des plages enclavées adjacentes de La Palue et de Lostmarc'h (Crozon, Finistère)</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">UAV photogrammetry monitoring of La Palue and Lostmarc'h embayed beaches (Crozon, France)</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:Date>2021-11-20</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>https://portail.indigeo.fr/geonetwork/srv/metadata/092918bf-dfb1-4d8e-805b-6bd420158160</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Des survols aériens par drone et des mesures topographiques au GNSS-RTK sont effectués de façon trimestrielle lors de marées basses de vives eaux sur les plages enclavées adjacentes de La Palue et de Lostmarc’h en presqu’île de Crozon. Les blocs d’images sont traités à l’aide de la méthode de photogrammétrie SfM pour produire des orthophotographies et des modèles numériques de surface (MNS) géo-référencés avec une résolution spatiale de 0.1 m et 1 m.</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">Des survols aériens par drone et des mesures topographiques au GNSS-RTK sont effectués de façon trimestrielle lors de marées basses de vives eaux sur les plages enclavées adjacentes de La Palue et de Lostmarc’h en presqu’île de Crozon. Les blocs d’images sont traités à l’aide de la méthode de photogrammétrie SfM pour produire des orthophotographies et des modèles numériques de surface (MNS) géo-référencés avec une résolution spatiale de 0.1 m et 1 m.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">UAV flights (DJI Phantom 4 RTK) and GNSS surveys are performed quarterly during spring low tides over La Palue and Lostmarc’h embayed beaches in Crozon peninsula (Brittany, France). Image blocks are processed using Structure-from-Motion (SfM) photogrammetry to produce georeferenced orthophotographs and Digital Elevation Models (DEMs) at 0.1 m and 1 m spatial resolution.</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:abstract>
+         <gmd:credit xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>UMR 6538 Geo-Ocean</gco:CharacterString>
+            <gmd:PT_FreeText>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#FR">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+               <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="#EN">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+               </gmd:textGroup>
+            </gmd:PT_FreeText>
+         </gmd:credit>
+         <gmd:status>
+            <gmd:MD_ProgressCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+                                 codeListValue="onGoing"/>
+         </gmd:status>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Bertin Stéphane</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Bertin Stéphane</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Bertin Stéphane</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:individualName>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>UMR 6538 Geo-Ocean</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">European Institute for Marine Studies, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Plouzané</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:postalCode>
+                              <gco:CharacterString>29280</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>France</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">France</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:country>
+                           <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>stephane.bertin@univ-brest.fr</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">stephane.bertin@univ-brest.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">stephane.bertin@univ-brest.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="author"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:pointOfContact>
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Ammann Jérôme</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Ammann Jérôme</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Ammann Jérôme</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:individualName>
+               <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>UMR 6538 Geo-Ocean</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">UMR 6538 Geo-Ocean</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone/>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">Institut Universitaire Européen de la Mer, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">European Institute for Marine Studies, Technopôle Brest-Iroise, Rue Dumont d'Urville</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Plouzané</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:postalCode>
+                              <gco:CharacterString>29280</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>France</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">France</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">France</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:country>
+                           <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString>jerome.amman@univ-brest.fr</gco:CharacterString>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">jerome.amman@univ-brest.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">jerome.amman@univ-brest.fr</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="author"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>https://portail.indigeo.fr/geonetwork/srv/api/records/092918bf-dfb1-4d8e-805b-6bd420158160/attachments/LaPalue_Vignette.png</gco:CharacterString>
+               </gmd:fileName>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString/>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Profil de plage</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Profil de plage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Beach profile</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Modèle Numérique de Terrain</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Modèle Numérique de Terrain</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Digital Elevation Model</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Suivi côtier</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Suivi côtier</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Coastal monitoring</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Orthoimage</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Orthoimage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Orthoimage</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Bretagne</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Bretagne</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Brittany</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Finistère</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Finistère</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Finistere</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Crozon</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Crozon</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Crozon</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Ortho-imagerie</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Ortho-imagerie</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Orthoimagery</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Altitude</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Altitude</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Elevation</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">GEMET - INSPIRE themes, version 1.0</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">Pas de restriction d'accès public</gmx:Anchor>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Pas de restriction d'accès public</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">No limitations to public access</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Free use subject to mentioning the source (at least the name of the producer) and the date of its last update</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:useLimitation>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Le partenaire fournisseur n’est pas en mesure de garantir l’exactitude, la mise à jour, l’intégrité, l’exhaustivité des données et en particulier qu'elles sont exemptes d'erreurs ou d'imprécisions, notamment de localisation, d’identification ou de qualification. Aucune garantie quant à l'aptitude des données à un usage particulier n'est apportée par le partenaire fournisseur. Les utilisateurs utilisent les données sous leur responsabilité pleine et entière, sans recours possible contre le partenaire fournisseur dont la responsabilité ne saurait être engagée du fait d’un dommage résultant directement ou indirectement de l’utilisation de ces données. En particulier, il appartient aux utilisateurs d’apprécier, sous leur seule responsabilité : l'opportunité d'utiliser les données; la compatibilité des fichiers avec leurs systèmes informatiques; l’adéquation des données à leurs besoins; qu’ils disposent de la compétence suffisante pour utiliser les données. Le fournisseur partenaire n’est en aucune façon responsable des éléments extérieurs aux données et notamment des outils d’analyse, matériels, logiciels, réseaux..., utilisés pour consulter et/ou traiter les données. L’utilisateur veille à vérifier que l’actualité des informations mises à disposition est compatible avec l’usage qu’il en fait.</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Le partenaire fournisseur n’est pas en mesure de garantir l’exactitude, la mise à jour, l’intégrité, l’exhaustivité des données et en particulier qu'elles sont exemptes d'erreurs ou d'imprécisions, notamment de localisation, d’identification ou de qualification. Aucune garantie quant à l'aptitude des données à un usage particulier n'est apportée par le partenaire fournisseur. Les utilisateurs utilisent les données sous leur responsabilité pleine et entière, sans recours possible contre le partenaire fournisseur dont la responsabilité ne saurait être engagée du fait d’un dommage résultant directement ou indirectement de l’utilisation de ces données. En particulier, il appartient aux utilisateurs d’apprécier, sous leur seule responsabilité : l'opportunité d'utiliser les données; la compatibilité des fichiers avec leurs systèmes informatiques; l’adéquation des données à leurs besoins; qu’ils disposent de la compétence suffisante pour utiliser les données. Le fournisseur partenaire n’est en aucune façon responsable des éléments extérieurs aux données et notamment des outils d’analyse, matériels, logiciels, réseaux..., utilisés pour consulter et/ou traiter les données. L’utilisateur veille à vérifier que l’actualité des informations mises à disposition est compatible avec l’usage qu’il en fait.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Supplier partner is not able to guarantee the accuracy, update, integrity, completeness of data and in particular that they are free of errors or inaccuracies, including location, identification or qualification. No warranty as to the fitness of the data for a particular purpose is made by the supplier partner. Users use the data under their full responsibility, without recourse against the supplier partner whose liability can be incurred due to damage resulting directly or indirectly from the use of this data. In particular, it is up to users to decide, on their own responsibility: the opportunity to use the data; File compatibility of their computer systems; adequacy of the data to their needs; that they have sufficient competence to use the data. The partner supplier is in no way responsible for external elements including data analysis tools, hardware, software, networks ... used to view and / or process data. The user ensures verify the timeliness of the information provided is compatible with the use of it.</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+            <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                                                  codeListValue="grid"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialRepresentationType>
+            <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                                                  codeListValue="textTable"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+            <gmd:MD_Resolution>
+               <gmd:distance>
+                  <gco:Distance uom="m">1</gco:Distance>
+               </gmd:distance>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre">Français</gmd:LanguageCode>
+         </gmd:language>
+         <gmd:characterSet>
+            <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>geoscientificInformation</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+            <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-4.559</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-4.5485</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>48.19</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>48.215</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="d1703969e1928a1052958">
+                           <gml:beginPosition>2020-09-17</gml:beginPosition>
+                           <gml:endPosition>2022-06-14</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                                 xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Format>
+               <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>ASC</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">ASC</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">ASC</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:name>
+               <gmd:version gco:nilReason="unknown">
+                  <gco:CharacterString>1.0</gco:CharacterString>
+               </gmd:version>
+               <gmd:specification gco:nilReason="missing">
+                  <gco:CharacterString/>
+               </gmd:specification>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:distributionFormat xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                                 xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Format>
+               <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>GeoTIFF</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">GeoTIFF</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">GeoTIFF</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.0</gco:CharacterString>
+               </gmd:version>
+               <gmd:specification gco:nilReason="missing">
+                  <gco:CharacterString/>
+               </gmd:specification>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:distributor>
+            <gmd:MD_Distributor>
+               <gmd:distributorContact>
+                  <gmd:CI_ResponsibleParty>
+                     <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>INDIGEO</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">INDIGEO</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">INDIGEO</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:organisationName>
+                     <gmd:contactInfo>
+                        <gmd:CI_Contact>
+                           <gmd:address>
+                              <gmd:CI_Address>
+                                 <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>contact@indigeo.fr</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#FR">contact@indigeo.fr</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#EN">contact@indigeo.fr</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:electronicMailAddress>
+                              </gmd:CI_Address>
+                           </gmd:address>
+                        </gmd:CI_Contact>
+                     </gmd:contactInfo>
+                     <gmd:role>
+                        <gmd:CI_RoleCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="publisher"/>
+                     </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+               </gmd:distributorContact>
+            </gmd:MD_Distributor>
+         </gmd:distributor>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/c8cf03f5-ea2f-4f51-aa7d-fb6167d34b55/attachments/20200917_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20200917_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20200917_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20200917_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/c8cf03f5-ea2f-4f51-aa7d-fb6167d34b55/attachments/20200917_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20200917_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20200917_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20200917_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/7dc670a5-e151-49fa-a1b7-7e8cc9e7bf73/attachments/20201217_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20201217_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20201217_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20201217_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/7dc670a5-e151-49fa-a1b7-7e8cc9e7bf73/attachments/20201217_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20201217_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20201217_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20201217_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/981fbc0a-1e15-484e-99fe-5469ca5a7336/attachments/20210302_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20210302_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20210302_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20210302_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/981fbc0a-1e15-484e-99fe-5469ca5a7336/attachments/20210302_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20210302_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20210302_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20210302_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/981357e2-1105-4501-818b-867e9cd33836/attachments/20210429_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20210429_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20210429_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20210429_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/981357e2-1105-4501-818b-867e9cd33836/attachments/20210429_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20210429_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20210429_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20210429_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://doi.org/10.35110/092918bf-dfb1-4d8e-805b-6bd420158160</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>DOI</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Digital Object Identifier (DOI)</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Digital Object Identifier (DOI)</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN"/>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString/>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geocms/maps/portail-xgsnqbyg/share#project</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>visualisation des données</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">visualisation des données</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Data visualization</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>visualisation des données</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">visualisation des données</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Data visualization</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/c10477a6-c179-49d8-bc5b-3b68f2a54a20/attachments/20220303_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220303_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220303_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220303_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/c10477a6-c179-49d8-bc5b-3b68f2a54a20/attachments/20220303_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220303_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220303_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220303_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/5f669155-7e0c-4da9-b1e7-a282a1f8e85b/attachments/20220420_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220420_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220420_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220420_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/5f669155-7e0c-4da9-b1e7-a282a1f8e85b/attachments/20220420_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220420_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220420_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220420_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/fabdce56-1321-4015-b6a9-b57a6006026e/attachments/20220614_ORTHO_0.1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220614_ORTHO_0.1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220614_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220614_ORTHO_0.1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>0.1 m orthophotographie</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">0.1 m orthophotographie</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">0.1 m orthophoto</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://portail.indigeo.fr/geonetwork/srv/api/records/fabdce56-1321-4015-b6a9-b57a6006026e/attachments/20220614_DEM_L93_IGN69_1m.zip</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>20220614_DEM_L93_IGN69_1m.zip</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">20220614_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">20220614_DEM_L93_IGN69_1m.zip</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:name>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>MNS à 1 m</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">MNS à 1 m</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">1 m DEM</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions/>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality xmlns:gfc="http://www.isotc211.org/2005/gfc">
+         <gmd:scope>
+            <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeListValue="dataset"
+                                    codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:result>
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089/2014-12-31">RÈGLEMENT (UE) No 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gmx:Anchor>
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#FR">RÈGLEMENT (UE) No 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalités d'application de la directive 2007/2/CE du Parlement européen et du Conseil en ce qui concerne l'interopérabilité des séries et des services de données géographiques</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#EN">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gmd:LocalisedCharacterString>
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date>2010-12-08</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                                    <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>L’article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalités techniques de l’interopérabilité : il s’agit du règlement relatif à l’interopérabilité : règlement n°1253/2013 du 21 octobre 2013 modifiant et complétant le règlement n°1089/2010 du 23 novembre 2010</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">L’article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalités techniques de l’interopérabilité : il s’agit du règlement relatif à l’interopérabilité : règlement n°1253/2013 du 21 octobre 2013 modifiant et complétant le règlement n°1089/2010 du 23 novembre 2010</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Article 7, paragraph 1, of Directive 2007/2 / EC corresponds to the technical procedures for interoperability: this is the regulation on interoperability: regulation n ° 1253/2013 of 21 October 2013 amending and supplementing Regulation n ° 1089/2010 of 23 November 2010</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:explanation>
+                     <gmd:pass>
+                        <gco:Boolean>true</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:report/>
+         <gmd:lineage>
+            <gmd:LI_Lineage>
+               <gmd:statement xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Les données produites utilisent le système de coordonnées géographiques RGF93-Lambert93 horizontal et NGF-IGN69 vertical. Trois clous géodésiques ont été implantés dans de la roche sur la pointe de Kerdra. Deux clous servent de positions fixes pour la base GNSS (Topcon Hiper V) et la station mobile du drone (DJI RTK2). Le troisième clou sert de point de calage pour vérifier la qualité du géoréférencement GNSS-RTK, indiquant une erreur type inférieure au centimètre en mode rapide-statique (quatre acquisitions étalées sur sept mois ; mobile GNSS sur perche à 2 m moyenné sur 10 s).</gco:CharacterString>
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#FR">Les données produites utilisent le système de coordonnées géographiques RGF93-Lambert93 horizontal et NGF-IGN69 vertical. Trois clous géodésiques ont été implantés dans de la roche sur la pointe de Kerdra. Deux clous servent de positions fixes pour la base GNSS (Topcon Hiper V) et la station mobile du drone (DJI RTK2). Le troisième clou sert de point de calage pour vérifier la qualité du géoréférencement GNSS-RTK, indiquant une erreur type inférieure au centimètre en mode rapide-statique (quatre acquisitions étalées sur sept mois ; mobile GNSS sur perche à 2 m moyenné sur 10 s).</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#EN">Data are referenced according to the French coordinate system: RGF93-Lambert93 horizontal and NGF-IGN69 vertical. Three geodetic marks (cast iron nails) have been implanted into bedrock on Kerdra point. Two geodetic marks are used as fixed positions with known coordinates to install the GNSS base station (Topcon Hiper V) and the drone mobile station for image geolocation (DJI RTK2). The other mark is used for RTK-GNSS georeferencing evaluation, showing sub-centimetric standard error in rapid static mode (four acquisitions over a seven-month period; GNSS rover mounted onto a pole set at 2 m with 10 s averaging).</gmd:LocalisedCharacterString>
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:statement>
+               <gmd:processStep>
+                  <gmd:LI_ProcessStep>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Survol drone : Les images sont obtenues depuis une altitude de vol d’environ 100 m au-dessus de la plage. Les images sont géo-localisées en mode RTK avec la station mobile du drone. Plusieurs vols avec un léger recouvrement sont effectués pour couvrir la zone de mesure. Chaque vol consiste en un bloc photogrammétrique simple avec un recouvrement longitudinal/latéral de 80/70%. L’appareil photo (capteur 20 Mpixel CMOS 1’) est orienté vers l’avant avec un angle de 6° lors des prises de vue. La taille du pixel (GSD) sur la plage est d’environ 2.6 cm.</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Survol drone : Les images sont obtenues depuis une altitude de vol d’environ 100 m au-dessus de la plage. Les images sont géo-localisées en mode RTK avec la station mobile du drone. Plusieurs vols avec un léger recouvrement sont effectués pour couvrir la zone de mesure. Chaque vol consiste en un bloc photogrammétrique simple avec un recouvrement longitudinal/latéral de 80/70%. L’appareil photo (capteur 20 Mpixel CMOS 1’) est orienté vers l’avant avec un angle de 6° lors des prises de vue. La taille du pixel (GSD) sur la plage est d’environ 2.6 cm.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">UAV data acquisition: Images are collected from an altitude of ~100 m above the beach. Images are geolocated in RTK mode using the drone mobile station. Several flights with a small alongtrack overlap are necessary to cover the survey area. Each flight consists in a simple photogrammetric block with a forward/side overlap of 80/70 %, respectively. The camera (20Mpixel 1’ CMOS sensor) is tilted forward with a 6° angle during image acquisition. The ground sampling distance (GSD) on the beach is approximately 2.6 cm.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:rationale xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Survol drone</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Survol drone</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">UAV data acquisition</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:rationale>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+                  <gmd:LI_ProcessStep>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Mesures GNSS : Des cibles positionnées au sol, visibles sur les photographies aériennes sont localisées par GNSS-RTK en mode rapide-statique. Ces cibles sont utilisées à la fois comme points de calage (GCP) et de vérification (ChkPt) pour la photogrammétrie.</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Mesures GNSS : Des cibles positionnées au sol, visibles sur les photographies aériennes sont localisées par GNSS-RTK en mode rapide-statique. Ces cibles sont utilisées à la fois comme points de calage (GCP) et de vérification (ChkPt) pour la photogrammétrie.</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">GNSS surveys: Ground photogrammetric targets, visible on aerial images, are measured using RTK-GNSS in rapid-static mode. Targets are used either as ground control points (GCPs) during photogrammetric reconstruction or as verification points (ChkPts).</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:rationale xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Mesures GNSS</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Mesures GNSS</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">GNSS surveys</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:rationale>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+                  <gmd:LI_ProcessStep>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Traitement photogrammétrique : Les images aériennes sont traitées à l'aide de la méthode de photogrammétrie SfM mise en œuvre dans Agisoft Metashape (https://www.agisoft.com/). La calibration du capteur et le géoréférencement sont effectués à l’aide des informations contenues dans les exif des images (position et attitude) et de GCPs. Les MNS/orthophotographies interpolés sont fournis avec une résolution finale de 0.5/0.1 m, respectivement. L’emprise des rasters (2500 x 600 m) est constante d’une acquisition à l’autre (Est = 139350 - 139950 m, Nord = 6814700 – 6817200 m).</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Traitement photogrammétrique : Les images aériennes sont traitées à l'aide de la méthode de photogrammétrie SfM mise en œuvre dans Agisoft Metashape (https://www.agisoft.com/). La calibration du capteur et le géoréférencement sont effectués à l’aide des informations contenues dans les exif des images (position et attitude) et de GCPs. Les MNS/orthophotographies interpolés sont fournis avec une résolution finale de 0.5/0.1 m, respectivement. L’emprise des rasters (2500 x 600 m) est constante d’une acquisition à l’autre (Est = 139350 - 139950 m, Nord = 6814700 – 6817200 m).</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Photogrammetric processing: Aerial images are processed using SfM photogrammetry embodied in Agisoft Metashape (https://www.agisoft.com/). Camera self-calibration and model georeferencing are performed using both image exif information (position and attitude) and GCPs. Interpolated DEMs/orthophotographs are prepared with a final spatial resolution of 0.5/0.1 m, respectively. Raster coverage (2500 x 600 m) is kept constant throughout acquisitions (Easting = 139350 - 139950 m, Northing = 6814700 – 6817200 m).</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:rationale xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Traitement photogrammétrique</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Traitement photogrammétrique</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Photogrammetric processing</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:rationale>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+                  <gmd:LI_ProcessStep>
+                     <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Vérification de la qualité : La qualité des modèles photogrammétriques est évaluée à l’aide de points de vérification indépendants (ChkPts) mesurés au GNSS-RTK. Les résultats montrent l’absence de biais et une précision globale centimétrique (erreur quadratique moyenne en XYZ ~GSD).</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Vérification de la qualité : La qualité des modèles photogrammétriques est évaluée à l’aide de points de vérification indépendants (ChkPts) mesurés au GNSS-RTK. Les résultats montrent l’absence de biais et une précision globale centimétrique (erreur quadratique moyenne en XYZ ~GSD).</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Quality verification: Photogrammetric quality is evaluated using independent verification data (ChkPts) measured using RTK-GNSS. Results demonstrate the absence of bias in data and centimetric global precision (RMSE along XYZ ~GSD).</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:description>
+                     <gmd:rationale xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Vérification de la qualité</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#FR">Vérification de la qualité</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#EN">Quality verification</gmd:LocalisedCharacterString>
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:rationale>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>

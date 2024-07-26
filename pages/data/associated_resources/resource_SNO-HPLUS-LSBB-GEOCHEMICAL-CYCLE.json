@@ -138,107 +138,6 @@
                 ],
                 "op5": "1",
                 "resourceAbstractObject": {
-                    "default": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs.",
-                    "langeng": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs."
-                },
-                "resourceTitleObject": {
-                    "default": "SNO H+ : In borehole hydrogeophysical logging on the Lsbb site.",
-                    "langeng": "SNO H+ : In borehole hydrogeophysical logging on the Lsbb site."
-                },
-                "link": [
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "DOI",
-                        "applicationProfile": "",
-                        "description": "Digital Object Identifier",
-                        "mimeType": "",
-                        "url": "http://dx.doi.org/10.26169/hplus.all",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Information on H+ website",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Data on H+ data portal",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr/en/database/acces-database",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
-                        "function": "",
-                        "name": "Hydrogeophysical_dataset",
-                        "applicationProfile": "",
-                        "description": "",
-                        "mimeType": "",
-                        "url": "https://hplus.ore.fr/documents/requests/lsbb/HPLU_DAT_lsbb_hydrogeophysics.csv.tgz",
-                        "group": 0
-                    }
-                ],
-                "id": "3939",
-                "uuid": "SNO-HPLUS-LSBB-BOREHOLE-HYDROGEOPHYSICS",
-                "op0": "1",
-                "resourceType": [
-                    "dataset"
-                ],
-                "edit": false,
-                "canReview": false,
-                "owner": false,
-                "isPublishedToAll": true,
-                "view": true,
-                "notify": false,
-                "download": true,
-                "dynamic": true,
-                "featured": false
-            },
-            "_id": "SNO-HPLUS-LSBB-BOREHOLE-HYDROGEOPHYSICS"
-        },
-        {
-            "origin": "catalog",
-            "properties": null,
-            "_source": {
-                "op1": "1",
-                "overview": [
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "SNO H+",
-                            "langeng": "SNO H+"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "10.26169/hplus.all",
-                            "langeng": "10.26169/hplus.all",
-                            "link": "http://dx.doi.org/10.26169/hplus.all"
-                        },
-                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
-                    },
-                    {
-                        "data": "",
-                        "text": {
-                            "default": "Logo",
-                            "langeng": "Logo"
-                        },
-                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
-                    }
-                ],
-                "op5": "1",
-                "resourceAbstractObject": {
                     "default": "The dataset includes BLUM and long base tiltmeter data.",
                     "langeng": "The dataset includes BLUM and long base tiltmeter data."
                 },
@@ -305,6 +204,107 @@
                 "featured": false
             },
             "_id": "SNO-HPLUS-LSBB-GEODESY"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs.",
+                    "langeng": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : In borehole hydrogeophysical logging on the Lsbb site.",
+                    "langeng": "SNO H+ : In borehole hydrogeophysical logging on the Lsbb site."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Hydrogeophysical_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/documents/requests/lsbb/HPLU_DAT_lsbb_hydrogeophysics.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3939",
+                "uuid": "SNO-HPLUS-LSBB-BOREHOLE-HYDROGEOPHYSICS",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-LSBB-BOREHOLE-HYDROGEOPHYSICS"
         },
         {
             "origin": "catalog",

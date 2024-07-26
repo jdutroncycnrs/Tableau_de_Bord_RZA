@@ -1,0 +1,2677 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "092918bf-dfb1-4d8e-805b-6bd420158160"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "fre",
+            "#text": "Fran\u00e7ais"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:hierarchyLevelName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Parent"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Bertin St\u00e9phane"
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "Bertin St\u00e9phane"
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN",
+                                "#text": "Bertin St\u00e9phane"
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:organisationName": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR 6538 Geo-Ocean"
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": null
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "European Institute for Marine Studies, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Plouzan\u00e9"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "29280"
+                                }
+                            },
+                            "gmd:country": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "France"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "stephane.bertin@univ-brest.fr"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "stephane.bertin@univ-brest.fr"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "stephane.bertin@univ-brest.fr"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2022-09-08T14:37:49"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:locale": [
+        {
+            "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+            "gmd:PT_Locale": {
+                "@id": "EN",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "eng"
+                    }
+                },
+                "gmd:characterEncoding": {
+                    "gmd:MD_CharacterSetCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                        "@codeListValue": "utf8"
+                    }
+                }
+            }
+        },
+        {
+            "gmd:PT_Locale": {
+                "@id": "FR",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "fre"
+                    }
+                },
+                "gmd:characterEncoding": {
+                    "gmd:MD_CharacterSetCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                        "@codeListValue": "utf8"
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gmx:Anchor": {
+                            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "@xlink:title": "RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)",
+                            "@xlink:href": "http://www.opengis.net/def/crs/EPSG/0/5698",
+                            "#text": "RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "RGF93 / Lambert-93 + NGF-IGN69 height (EPSG:5698)"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Suivi topo-morphologique par photogramm\u00e9trie drone des plages enclav\u00e9es adjacentes de La Palue et de Lostmarc'h (Crozon, Finist\u00e8re)"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Suivi topo-morphologique par photogramm\u00e9trie drone des plages enclav\u00e9es adjacentes de La Palue et de Lostmarc'h (Crozon, Finist\u00e8re)"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "UAV photogrammetry monitoring of La Palue and Lostmarc'h embayed beaches (Crozon, France)"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2021-11-20"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "publication"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "https://portail.indigeo.fr/geonetwork/srv/metadata/092918bf-dfb1-4d8e-805b-6bd420158160"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Des survols a\u00e9riens par drone et des mesures topographiques au GNSS-RTK sont effectu\u00e9s de fa\u00e7on trimestrielle lors de mar\u00e9es basses de vives eaux sur les plages enclav\u00e9es adjacentes de La Palue et de Lostmarc\u2019h en presqu\u2019\u00eele de Crozon. Les blocs d\u2019images sont trait\u00e9s \u00e0 l\u2019aide de la m\u00e9thode de photogramm\u00e9trie SfM pour produire des orthophotographies et des mod\u00e8les num\u00e9riques de surface (MNS) g\u00e9o-r\u00e9f\u00e9renc\u00e9s avec une r\u00e9solution spatiale de 0.1 m et 1 m."
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "Des survols a\u00e9riens par drone et des mesures topographiques au GNSS-RTK sont effectu\u00e9s de fa\u00e7on trimestrielle lors de mar\u00e9es basses de vives eaux sur les plages enclav\u00e9es adjacentes de La Palue et de Lostmarc\u2019h en presqu\u2019\u00eele de Crozon. Les blocs d\u2019images sont trait\u00e9s \u00e0 l\u2019aide de la m\u00e9thode de photogramm\u00e9trie SfM pour produire des orthophotographies et des mod\u00e8les num\u00e9riques de surface (MNS) g\u00e9o-r\u00e9f\u00e9renc\u00e9s avec une r\u00e9solution spatiale de 0.1 m et 1 m."
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN",
+                                "#text": "UAV flights (DJI Phantom 4 RTK) and GNSS surveys are performed quarterly during spring low tides over La Palue and Lostmarc\u2019h embayed beaches in Crozon peninsula (Brittany, France). Image blocks are processed using Structure-from-Motion (SfM) photogrammetry to produce georeferenced orthophotographs and Digital Elevation Models (DEMs) at 0.1 m and 1 m spatial resolution."
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:credit": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR 6538 Geo-Ocean"
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": "onGoing"
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Bertin St\u00e9phane"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Bertin St\u00e9phane"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Bertin St\u00e9phane"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "UMR 6538 Geo-Ocean"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "UMR 6538 Geo-Ocean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "European Institute for Marine Studies, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Plouzan\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "29280"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "France"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "France"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "stephane.bertin@univ-brest.fr"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "stephane.bertin@univ-brest.fr"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "stephane.bertin@univ-brest.fr"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ammann J\u00e9r\u00f4me"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Ammann J\u00e9r\u00f4me"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Ammann J\u00e9r\u00f4me"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR 6538 Geo-Ocean"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "UMR 6538 Geo-Ocean"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "UMR 6538 Geo-Ocean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": null
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "Institut Universitaire Europ\u00e9en de la Mer, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "European Institute for Marine Studies, Technop\u00f4le Brest-Iroise, Rue Dumont d'Urville"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Plouzan\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "29280"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "France"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "France"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "jerome.amman@univ-brest.fr"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "jerome.amman@univ-brest.fr"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "jerome.amman@univ-brest.fr"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://portail.indigeo.fr/geonetwork/srv/api/records/092918bf-dfb1-4d8e-805b-6bd420158160/attachments/LaPalue_Vignette.png"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": null
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Profil de plage"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Profil de plage"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Beach profile"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Mod\u00e8le Num\u00e9rique de Terrain"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Mod\u00e8le Num\u00e9rique de Terrain"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Digital Elevation Model"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Suivi c\u00f4tier"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Suivi c\u00f4tier"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Coastal monitoring"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Orthoimage"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Orthoimage"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Orthoimage"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Bretagne"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Bretagne"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Brittany"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Finist\u00e8re"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Finist\u00e8re"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Finistere"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Crozon"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Crozon"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Crozon"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Ortho-imagerie"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Ortho-imagerie"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Orthoimagery"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Altitude"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Altitude"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Elevation"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "GEMET - INSPIRE themes, version 1.0"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.httpinspireeceuropaeutheme-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": [
+                {
+                    "gmd:MD_LegalConstraints": {
+                        "gmd:accessConstraints": {
+                            "gmd:MD_RestrictionCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                                "@codeListValue": "otherRestrictions"
+                            }
+                        },
+                        "gmd:otherConstraints": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations",
+                                "#text": "Pas de restriction d'acc\u00e8s public"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Pas de restriction d'acc\u00e8s public"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "No limitations to public access"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_LegalConstraints": {
+                        "gmd:useLimitation": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Utilisation libre sous r\u00e9serve de mentionner la source (a minima le nom du producteur) et la date de sa derni\u00e8re mise \u00e0 jour"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Utilisation libre sous r\u00e9serve de mentionner la source (a minima le nom du producteur) et la date de sa derni\u00e8re mise \u00e0 jour"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Free use subject to mentioning the source (at least the name of the producer) and the date of its last update"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:useConstraints": {
+                            "gmd:MD_RestrictionCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                                "@codeListValue": "otherRestrictions"
+                            }
+                        },
+                        "gmd:otherConstraints": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Le partenaire fournisseur n\u2019est pas en mesure de garantir l\u2019exactitude, la mise \u00e0 jour, l\u2019int\u00e9grit\u00e9, l\u2019exhaustivit\u00e9 des donn\u00e9es et en particulier qu'elles sont exemptes d'erreurs ou d'impr\u00e9cisions, notamment de localisation, d\u2019identification ou de qualification. Aucune garantie quant \u00e0 l'aptitude des donn\u00e9es \u00e0 un usage particulier n'est apport\u00e9e par le partenaire fournisseur. Les utilisateurs utilisent les donn\u00e9es sous leur responsabilit\u00e9 pleine et enti\u00e8re, sans recours possible contre le partenaire fournisseur dont la responsabilit\u00e9 ne saurait \u00eatre engag\u00e9e du fait d\u2019un dommage r\u00e9sultant directement ou indirectement de l\u2019utilisation de ces donn\u00e9es. En particulier, il appartient aux utilisateurs d\u2019appr\u00e9cier, sous leur seule responsabilit\u00e9 : l'opportunit\u00e9 d'utiliser les donn\u00e9es; la compatibilit\u00e9 des fichiers avec leurs syst\u00e8mes informatiques; l\u2019ad\u00e9quation des donn\u00e9es \u00e0 leurs besoins; qu\u2019ils disposent de la comp\u00e9tence suffisante pour utiliser les donn\u00e9es. Le fournisseur partenaire n\u2019est en aucune fa\u00e7on responsable des \u00e9l\u00e9ments ext\u00e9rieurs aux donn\u00e9es et notamment des outils d\u2019analyse, mat\u00e9riels, logiciels, r\u00e9seaux..., utilis\u00e9s pour consulter et/ou traiter les donn\u00e9es. L\u2019utilisateur veille \u00e0 v\u00e9rifier que l\u2019actualit\u00e9 des informations mises \u00e0 disposition est compatible avec l\u2019usage qu\u2019il en fait."
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Le partenaire fournisseur n\u2019est pas en mesure de garantir l\u2019exactitude, la mise \u00e0 jour, l\u2019int\u00e9grit\u00e9, l\u2019exhaustivit\u00e9 des donn\u00e9es et en particulier qu'elles sont exemptes d'erreurs ou d'impr\u00e9cisions, notamment de localisation, d\u2019identification ou de qualification. Aucune garantie quant \u00e0 l'aptitude des donn\u00e9es \u00e0 un usage particulier n'est apport\u00e9e par le partenaire fournisseur. Les utilisateurs utilisent les donn\u00e9es sous leur responsabilit\u00e9 pleine et enti\u00e8re, sans recours possible contre le partenaire fournisseur dont la responsabilit\u00e9 ne saurait \u00eatre engag\u00e9e du fait d\u2019un dommage r\u00e9sultant directement ou indirectement de l\u2019utilisation de ces donn\u00e9es. En particulier, il appartient aux utilisateurs d\u2019appr\u00e9cier, sous leur seule responsabilit\u00e9 : l'opportunit\u00e9 d'utiliser les donn\u00e9es; la compatibilit\u00e9 des fichiers avec leurs syst\u00e8mes informatiques; l\u2019ad\u00e9quation des donn\u00e9es \u00e0 leurs besoins; qu\u2019ils disposent de la comp\u00e9tence suffisante pour utiliser les donn\u00e9es. Le fournisseur partenaire n\u2019est en aucune fa\u00e7on responsable des \u00e9l\u00e9ments ext\u00e9rieurs aux donn\u00e9es et notamment des outils d\u2019analyse, mat\u00e9riels, logiciels, r\u00e9seaux..., utilis\u00e9s pour consulter et/ou traiter les donn\u00e9es. L\u2019utilisateur veille \u00e0 v\u00e9rifier que l\u2019actualit\u00e9 des informations mises \u00e0 disposition est compatible avec l\u2019usage qu\u2019il en fait."
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Supplier partner is not able to guarantee the accuracy, update, integrity, completeness of data and in particular that they are free of errors or inaccuracies, including location, identification or qualification. No warranty as to the fitness of the data for a particular purpose is made by the supplier partner. Users use the data under their full responsibility, without recourse against the supplier partner whose liability can be incurred due to damage resulting directly or indirectly from the use of this data. In particular, it is up to users to decide, on their own responsibility: the opportunity to use the data; File compatibility of their computer systems; adequacy of the data to their needs; that they have sufficient competence to use the data. The partner supplier is in no way responsible for external elements including data analysis tools, hardware, software, networks ... used to view and / or process data. The user ensures verify the timeliness of the information provided is compatible with the use of it."
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:spatialRepresentationType": [
+                {
+                    "gmd:MD_SpatialRepresentationTypeCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                        "@codeListValue": "grid"
+                    }
+                },
+                {
+                    "gmd:MD_SpatialRepresentationTypeCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                        "@codeListValue": "textTable"
+                    }
+                }
+            ],
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:distance": {
+                        "gco:Distance": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@uom": "m",
+                            "#text": "1"
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "fre",
+                    "#text": "Fran\u00e7ais"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "geoscientificInformation"
+            },
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-4.559"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-4.5485"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "48.19"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "48.215"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:temporalElement": {
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimePeriod": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                    "@gml:id": "d1703969e1928a1052958",
+                                    "gml:beginPosition": "2020-09-17",
+                                    "gml:endPosition": "2022-06-14"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": [
+                {
+                    "@xmlns:date": "http://exslt.org/dates-and-times",
+                    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+                    "gmd:MD_Format": {
+                        "gmd:name": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ASC"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "ASC"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "ASC"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:version": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "unknown",
+                            "gco:CharacterString": "1.0"
+                        },
+                        "gmd:specification": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        }
+                    }
+                },
+                {
+                    "@xmlns:date": "http://exslt.org/dates-and-times",
+                    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+                    "gmd:MD_Format": {
+                        "gmd:name": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "GeoTIFF"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "GeoTIFF"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "GeoTIFF"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:version": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "1.0"
+                            }
+                        },
+                        "gmd:specification": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        }
+                    }
+                }
+            ],
+            "gmd:distributor": {
+                "gmd:MD_Distributor": {
+                    "gmd:distributorContact": {
+                        "gmd:CI_ResponsibleParty": {
+                            "gmd:organisationName": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "INDIGEO"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "INDIGEO"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "INDIGEO"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "gmd:contactInfo": {
+                                "gmd:CI_Contact": {
+                                    "gmd:address": {
+                                        "gmd:CI_Address": {
+                                            "gmd:electronicMailAddress": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "contact@indigeo.fr"
+                                                },
+                                                "gmd:PT_FreeText": {
+                                                    "gmd:textGroup": [
+                                                        {
+                                                            "gmd:LocalisedCharacterString": {
+                                                                "@locale": "#FR",
+                                                                "#text": "contact@indigeo.fr"
+                                                            }
+                                                        },
+                                                        {
+                                                            "gmd:LocalisedCharacterString": {
+                                                                "@locale": "#EN",
+                                                                "#text": "contact@indigeo.fr"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:role": {
+                                "gmd:CI_RoleCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                    "@codeListValue": "publisher"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": [
+                {
+                    "gmd:MD_DigitalTransferOptions": {
+                        "gmd:onLine": [
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/c8cf03f5-ea2f-4f51-aa7d-fb6167d34b55/attachments/20200917_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20200917_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20200917_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20200917_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/c8cf03f5-ea2f-4f51-aa7d-fb6167d34b55/attachments/20200917_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20200917_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20200917_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20200917_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/7dc670a5-e151-49fa-a1b7-7e8cc9e7bf73/attachments/20201217_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20201217_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20201217_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20201217_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/7dc670a5-e151-49fa-a1b7-7e8cc9e7bf73/attachments/20201217_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20201217_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20201217_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20201217_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/981fbc0a-1e15-484e-99fe-5469ca5a7336/attachments/20210302_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20210302_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20210302_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20210302_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/981fbc0a-1e15-484e-99fe-5469ca5a7336/attachments/20210302_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20210302_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20210302_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20210302_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/981357e2-1105-4501-818b-867e9cd33836/attachments/20210429_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20210429_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20210429_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20210429_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/981357e2-1105-4501-818b-867e9cd33836/attachments/20210429_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20210429_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20210429_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20210429_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://doi.org/10.35110/092918bf-dfb1-4d8e-805b-6bd420158160"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "DOI"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Digital Object Identifier (DOI)"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "Digital Object Identifier (DOI)"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@gco:nilReason": "missing",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": null
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geocms/maps/portail-xgsnqbyg/share#project"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "visualisation des donn\u00e9es"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "visualisation des donn\u00e9es"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "Data visualization"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "visualisation des donn\u00e9es"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "visualisation des donn\u00e9es"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "Data visualization"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/c10477a6-c179-49d8-bc5b-3b68f2a54a20/attachments/20220303_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220303_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220303_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220303_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/c10477a6-c179-49d8-bc5b-3b68f2a54a20/attachments/20220303_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220303_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220303_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220303_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/5f669155-7e0c-4da9-b1e7-a282a1f8e85b/attachments/20220420_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220420_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220420_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220420_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/5f669155-7e0c-4da9-b1e7-a282a1f8e85b/attachments/20220420_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220420_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220420_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220420_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/fabdce56-1321-4015-b6a9-b57a6006026e/attachments/20220614_ORTHO_0.1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220614_ORTHO_0.1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220614_ORTHO_0.1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220614_ORTHO_0.1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "0.1 m orthophotographie"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "0.1 m orthophotographie"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "0.1 m orthophoto"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gmd:CI_OnlineResource": {
+                                    "gmd:linkage": {
+                                        "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/fabdce56-1321-4015-b6a9-b57a6006026e/attachments/20220614_DEM_L93_IGN69_1m.zip"
+                                    },
+                                    "gmd:protocol": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                        }
+                                    },
+                                    "gmd:name": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20220614_DEM_L93_IGN69_1m.zip"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "20220614_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "20220614_DEM_L93_IGN69_1m.zip"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "gmd:description": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "MNS \u00e0 1 m"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": [
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "MNS \u00e0 1 m"
+                                                    }
+                                                },
+                                                {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "1 m DEM"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gmd:MD_DigitalTransferOptions": null
+                }
+            ]
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "dataset",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:report": [
+                {
+                    "gmd:DQ_DomainConsistency": {
+                        "gmd:result": {
+                            "gmd:DQ_ConformanceResult": {
+                                "gmd:specification": {
+                                    "gmd:CI_Citation": {
+                                        "gmd:title": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "http://data.europa.eu/eli/reg/2010/1089/2014-12-31",
+                                                "#text": "R\u00c8GLEMENT (UE) No 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalit\u00e9s d'application de la directive 2007/2/CE du Parlement europ\u00e9en et du Conseil en ce qui concerne l'interop\u00e9rabilit\u00e9 des s\u00e9ries et des services de donn\u00e9es g\u00e9ographiques"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": [
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#FR",
+                                                            "#text": "R\u00c8GLEMENT (UE) No 1089/2010 DE LA COMMISSION du 23 novembre 2010 portant modalit\u00e9s d'application de la directive 2007/2/CE du Parlement europ\u00e9en et du Conseil en ce qui concerne l'interop\u00e9rabilit\u00e9 des s\u00e9ries et des services de donn\u00e9es g\u00e9ographiques"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gmd:LocalisedCharacterString": {
+                                                            "@locale": "#EN",
+                                                            "#text": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "gmd:date": {
+                                            "gmd:CI_Date": {
+                                                "gmd:date": {
+                                                    "gco:Date": {
+                                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                        "#text": "2010-12-08"
+                                                    }
+                                                },
+                                                "gmd:dateType": {
+                                                    "gmd:CI_DateTypeCode": {
+                                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                        "@codeListValue": "publication"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:explanation": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "L\u2019article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalit\u00e9s techniques de l\u2019interop\u00e9rabilit\u00e9 : il s\u2019agit du r\u00e8glement relatif \u00e0 l\u2019interop\u00e9rabilit\u00e9 : r\u00e8glement n\u00b01253/2013 du 21 octobre 2013 modifiant et compl\u00e9tant le r\u00e8glement n\u00b01089/2010 du 23 novembre 2010"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "L\u2019article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalit\u00e9s techniques de l\u2019interop\u00e9rabilit\u00e9 : il s\u2019agit du r\u00e8glement relatif \u00e0 l\u2019interop\u00e9rabilit\u00e9 : r\u00e8glement n\u00b01253/2013 du 21 octobre 2013 modifiant et compl\u00e9tant le r\u00e8glement n\u00b01089/2010 du 23 novembre 2010"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Article 7, paragraph 1, of Directive 2007/2 / EC corresponds to the technical procedures for interoperability: this is the regulation on interoperability: regulation n \u00b0 1253/2013 of 21 October 2013 amending and supplementing Regulation n \u00b0 1089/2010 of 23 November 2010"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:pass": {
+                                    "gco:Boolean": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "true"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                null
+            ],
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Les donn\u00e9es produites utilisent le syst\u00e8me de coordonn\u00e9es g\u00e9ographiques RGF93-Lambert93 horizontal et NGF-IGN69 vertical. Trois clous g\u00e9od\u00e9siques ont \u00e9t\u00e9 implant\u00e9s dans de la roche sur la pointe de Kerdra. Deux clous servent de positions fixes pour la base GNSS (Topcon Hiper V) et la station mobile du drone (DJI RTK2). Le troisi\u00e8me clou sert de point de calage pour v\u00e9rifier la qualit\u00e9 du g\u00e9or\u00e9f\u00e9rencement GNSS-RTK, indiquant une erreur type inf\u00e9rieure au centim\u00e8tre en mode rapide-statique (quatre acquisitions \u00e9tal\u00e9es sur sept mois ; mobile GNSS sur perche \u00e0 2 m moyenn\u00e9 sur 10 s)."
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Les donn\u00e9es produites utilisent le syst\u00e8me de coordonn\u00e9es g\u00e9ographiques RGF93-Lambert93 horizontal et NGF-IGN69 vertical. Trois clous g\u00e9od\u00e9siques ont \u00e9t\u00e9 implant\u00e9s dans de la roche sur la pointe de Kerdra. Deux clous servent de positions fixes pour la base GNSS (Topcon Hiper V) et la station mobile du drone (DJI RTK2). Le troisi\u00e8me clou sert de point de calage pour v\u00e9rifier la qualit\u00e9 du g\u00e9or\u00e9f\u00e9rencement GNSS-RTK, indiquant une erreur type inf\u00e9rieure au centim\u00e8tre en mode rapide-statique (quatre acquisitions \u00e9tal\u00e9es sur sept mois ; mobile GNSS sur perche \u00e0 2 m moyenn\u00e9 sur 10 s)."
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "Data are referenced according to the French coordinate system: RGF93-Lambert93 horizontal and NGF-IGN69 vertical. Three geodetic marks (cast iron nails) have been implanted into bedrock on Kerdra point. Two geodetic marks are used as fixed positions with known coordinates to install the GNSS base station (Topcon Hiper V) and the drone mobile station for image geolocation (DJI RTK2). The other mark is used for RTK-GNSS georeferencing evaluation, showing sub-centimetric standard error in rapid static mode (four acquisitions over a seven-month period; GNSS rover mounted onto a pole set at 2 m with 10 s averaging)."
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:processStep": [
+                        {
+                            "gmd:LI_ProcessStep": {
+                                "gmd:description": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Survol drone : Les images sont obtenues depuis une altitude de vol d\u2019environ 100 m au-dessus de la plage. Les images sont g\u00e9o-localis\u00e9es en mode RTK avec la station mobile du drone. Plusieurs vols avec un l\u00e9ger recouvrement sont effectu\u00e9s pour couvrir la zone de mesure. Chaque vol consiste en un bloc photogramm\u00e9trique simple avec un recouvrement longitudinal/lat\u00e9ral de 80/70%. L\u2019appareil photo (capteur 20 Mpixel CMOS 1\u2019) est orient\u00e9 vers l\u2019avant avec un angle de 6\u00b0 lors des prises de vue. La taille du pixel (GSD) sur la plage est d\u2019environ 2.6 cm."
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Survol drone : Les images sont obtenues depuis une altitude de vol d\u2019environ 100 m au-dessus de la plage. Les images sont g\u00e9o-localis\u00e9es en mode RTK avec la station mobile du drone. Plusieurs vols avec un l\u00e9ger recouvrement sont effectu\u00e9s pour couvrir la zone de mesure. Chaque vol consiste en un bloc photogramm\u00e9trique simple avec un recouvrement longitudinal/lat\u00e9ral de 80/70%. L\u2019appareil photo (capteur 20 Mpixel CMOS 1\u2019) est orient\u00e9 vers l\u2019avant avec un angle de 6\u00b0 lors des prises de vue. La taille du pixel (GSD) sur la plage est d\u2019environ 2.6 cm."
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "UAV data acquisition: Images are collected from an altitude of ~100 m above the beach. Images are geolocated in RTK mode using the drone mobile station. Several flights with a small alongtrack overlap are necessary to cover the survey area. Each flight consists in a simple photogrammetric block with a forward/side overlap of 80/70 %, respectively. The camera (20Mpixel 1\u2019 CMOS sensor) is tilted forward with a 6\u00b0 angle during image acquisition. The ground sampling distance (GSD) on the beach is approximately 2.6 cm."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:rationale": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Survol drone"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Survol drone"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "UAV data acquisition"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:LI_ProcessStep": {
+                                "gmd:description": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Mesures GNSS : Des cibles positionn\u00e9es au sol, visibles sur les photographies a\u00e9riennes sont localis\u00e9es par GNSS-RTK en mode rapide-statique. Ces cibles sont utilis\u00e9es \u00e0 la fois comme points de calage (GCP) et de v\u00e9rification (ChkPt) pour la photogramm\u00e9trie."
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Mesures GNSS : Des cibles positionn\u00e9es au sol, visibles sur les photographies a\u00e9riennes sont localis\u00e9es par GNSS-RTK en mode rapide-statique. Ces cibles sont utilis\u00e9es \u00e0 la fois comme points de calage (GCP) et de v\u00e9rification (ChkPt) pour la photogramm\u00e9trie."
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "GNSS surveys: Ground photogrammetric targets, visible on aerial images, are measured using RTK-GNSS in rapid-static mode. Targets are used either as ground control points (GCPs) during photogrammetric reconstruction or as verification points (ChkPts)."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:rationale": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Mesures GNSS"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Mesures GNSS"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "GNSS surveys"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:LI_ProcessStep": {
+                                "gmd:description": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Traitement photogramm\u00e9trique : Les images a\u00e9riennes sont trait\u00e9es \u00e0 l'aide de la m\u00e9thode de photogramm\u00e9trie SfM mise en \u0153uvre dans Agisoft Metashape (https://www.agisoft.com/). La calibration du capteur et le g\u00e9or\u00e9f\u00e9rencement sont effectu\u00e9s \u00e0 l\u2019aide des informations contenues dans les exif des images (position et attitude) et de GCPs. Les MNS/orthophotographies interpol\u00e9s sont fournis avec une r\u00e9solution finale de 0.5/0.1 m, respectivement. L\u2019emprise des rasters (2500 x 600 m) est constante d\u2019une acquisition \u00e0 l\u2019autre (Est = 139350 - 139950 m, Nord = 6814700 \u2013 6817200 m)."
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Traitement photogramm\u00e9trique : Les images a\u00e9riennes sont trait\u00e9es \u00e0 l'aide de la m\u00e9thode de photogramm\u00e9trie SfM mise en \u0153uvre dans Agisoft Metashape (https://www.agisoft.com/). La calibration du capteur et le g\u00e9or\u00e9f\u00e9rencement sont effectu\u00e9s \u00e0 l\u2019aide des informations contenues dans les exif des images (position et attitude) et de GCPs. Les MNS/orthophotographies interpol\u00e9s sont fournis avec une r\u00e9solution finale de 0.5/0.1 m, respectivement. L\u2019emprise des rasters (2500 x 600 m) est constante d\u2019une acquisition \u00e0 l\u2019autre (Est = 139350 - 139950 m, Nord = 6814700 \u2013 6817200 m)."
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Photogrammetric processing: Aerial images are processed using SfM photogrammetry embodied in Agisoft Metashape (https://www.agisoft.com/). Camera self-calibration and model georeferencing are performed using both image exif information (position and attitude) and GCPs. Interpolated DEMs/orthophotographs are prepared with a final spatial resolution of 0.5/0.1 m, respectively. Raster coverage (2500 x 600 m) is kept constant throughout acquisitions (Easting = 139350 - 139950 m, Northing = 6814700 \u2013 6817200 m)."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:rationale": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Traitement photogramm\u00e9trique"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Traitement photogramm\u00e9trique"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Photogrammetric processing"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:LI_ProcessStep": {
+                                "gmd:description": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "V\u00e9rification de la qualit\u00e9 : La qualit\u00e9 des mod\u00e8les photogramm\u00e9triques est \u00e9valu\u00e9e \u00e0 l\u2019aide de points de v\u00e9rification ind\u00e9pendants (ChkPts) mesur\u00e9s au GNSS-RTK. Les r\u00e9sultats montrent l\u2019absence de biais et une pr\u00e9cision globale centim\u00e9trique (erreur quadratique moyenne en XYZ ~GSD)."
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "V\u00e9rification de la qualit\u00e9 : La qualit\u00e9 des mod\u00e8les photogramm\u00e9triques est \u00e9valu\u00e9e \u00e0 l\u2019aide de points de v\u00e9rification ind\u00e9pendants (ChkPts) mesur\u00e9s au GNSS-RTK. Les r\u00e9sultats montrent l\u2019absence de biais et une pr\u00e9cision globale centim\u00e9trique (erreur quadratique moyenne en XYZ ~GSD)."
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Quality verification: Photogrammetric quality is evaluated using independent verification data (ChkPts) measured using RTK-GNSS. Results demonstrate the absence of bias in data and centimetric global precision (RMSE along XYZ ~GSD)."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:rationale": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "V\u00e9rification de la qualit\u00e9"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "V\u00e9rification de la qualit\u00e9"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Quality verification"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,414 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "40c3097b-1b38-4fd0-9496-b2ceb6c017d8",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Dictionnaire de donn\u00e9es pour 'V\u00e9g\u00e9tation terrestre des \u00eelots'"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": null
+    },
+    "gfc:fieldOfApplication": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gml": "http://www.opengis.net/gml",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2019-03-06T10:02:01"
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@id": "",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Table attributaire"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "D\u00e9finition de la table d'attributs"
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": {
+                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                "@xlink:href": "#"
+            },
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "SUBSTRAT"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code du type de substrat"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:featureType": null,
+                        "gfc:valueMeasurementUnit": {
+                            "gml:UnitDefinition": {
+                                "@xmlns:gml": "http://www.opengis.net/gml",
+                                "@gml:id": "unknown",
+                                "gml:identifier": {
+                                    "@codeSpace": "unknown"
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LIBSUB"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Libell\u00e9 du type de substrat"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "SERIE"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code de la s\u00e9rie de v\u00e9g\u00e9tation"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LIBSER"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Libell\u00e9 de la s\u00e9rie de v\u00e9g\u00e9tation"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "DEGRAD"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code du stade de d\u00e9gradation"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LIBDEG"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Libell\u00e9 du stade de d\u00e9gradation"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ESPECE"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code de l'esp\u00e8ce dominante"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LIBESP"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Nom de l'esp\u00e8ce dominante"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

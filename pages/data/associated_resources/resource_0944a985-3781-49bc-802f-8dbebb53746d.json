@@ -1,7 +1,103 @@
 {
     "parent": [],
     "associated": [],
-    "hassources": [],
+    "hassources": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": [
+                    "103",
+                    "104",
+                    "1",
+                    "124",
+                    "126"
+                ],
+                "overview": [
+                    {
+                        "text": {
+                            "default": "large_thumbnail",
+                            "langfre": "large_thumbnail"
+                        },
+                        "url": "https://elvis.ens-lyon.fr/geonetwork/srv/api/records/089d2743-1511-4b67-89f7-098cfb1ab263/attachments/DanielVasquez_Modelisation.jpg"
+                    }
+                ],
+                "op5": [
+                    "103",
+                    "104",
+                    "1",
+                    "124",
+                    "126"
+                ],
+                "resourceAbstractObject": {
+                    "default": "Estimation du transport solide par charriage pour les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais ; capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue.",
+                    "langfre": "Estimation du transport solide par charriage pour les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais ; capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue."
+                },
+                "groupOwner": "124",
+                "resourceTitleObject": {
+                    "default": "Mod\u00e9lisation du transport solide par charriage du Rh\u00f4ne fran\u00e7ais (2017)",
+                    "langfre": "Mod\u00e9lisation du transport solide par charriage du Rh\u00f4ne fran\u00e7ais (2017)"
+                },
+                "format": [
+                    "Base de donn\u00e9es"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "information",
+                        "name": "Site de l'OSR",
+                        "applicationProfile": "",
+                        "description": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne",
+                        "mimeType": "",
+                        "url": "https://observatoire-sediments-rhone.fr/",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "download",
+                        "name": "Tal et al., 2018",
+                        "applicationProfile": "",
+                        "description": "Rapport Action I.4 OSR4",
+                        "mimeType": "",
+                        "url": "https://hal.science/OSR/hal-03588697v1",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "download",
+                        "name": "Vazquez et al., 2019",
+                        "applicationProfile": "",
+                        "description": "Article dans STOTEN",
+                        "mimeType": "",
+                        "url": "https://hal.science/OSR/hal-02610010v1",
+                        "group": 0
+                    }
+                ],
+                "id": "10685",
+                "uuid": "089d2743-1511-4b67-89f7-098cfb1ab263",
+                "op0": [
+                    "103",
+                    "104",
+                    "124",
+                    "1",
+                    "126"
+                ],
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "089d2743-1511-4b67-89f7-098cfb1ab263"
+        }
+    ],
     "children": [],
     "hasfeaturecats": [],
     "services": [],
@@ -99,12 +195,11 @@
                 ],
                 "overview": [
                     {
-                        "data": "",
                         "text": {
                             "default": "large_thumbnail",
                             "langfre": "large_thumbnail"
                         },
-                        "url": "https://cat.indores.fr/geonetwork/srv/api/records/089d2743-1511-4b67-89f7-098cfb1ab263/attachments/DanielVasquez_Modelisation.jpg"
+                        "url": "https://elvis.ens-lyon.fr/geonetwork/srv/api/records/089d2743-1511-4b67-89f7-098cfb1ab263/attachments/DanielVasquez_Modelisation.jpg"
                     }
                 ],
                 "op5": [
@@ -115,8 +210,8 @@
                     "126"
                 ],
                 "resourceAbstractObject": {
-                    "default": "Estimation du transport solide par charriage dans les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais : capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue.",
-                    "langfre": "Estimation du transport solide par charriage dans les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais : capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue."
+                    "default": "Estimation du transport solide par charriage pour les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais ; capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue.",
+                    "langfre": "Estimation du transport solide par charriage pour les diff\u00e9rents secteurs du Rh\u00f4ne fran\u00e7ais ; capacit\u00e9s annuelles moyennes de transport solide, forces tractrices moyennes sur la section et tailles de particules potentiellement mobilisables pour plusieurs d\u00e9bits de crue."
                 },
                 "groupOwner": "124",
                 "resourceTitleObject": {
@@ -129,42 +224,32 @@
                 "link": [
                     {
                         "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
+                        "function": "information",
                         "name": "Site de l'OSR",
                         "applicationProfile": "",
                         "description": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne",
                         "mimeType": "",
-                        "url": "http://www.graie.org/osr/",
+                        "url": "https://observatoire-sediments-rhone.fr/",
                         "group": 0
                     },
                     {
                         "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Action I.4 OSR4",
+                        "function": "download",
+                        "name": "Tal et al., 2018",
                         "applicationProfile": "",
-                        "description": "Rapport de synth\u00e8se Action I.4 OSR4",
+                        "description": "Rapport Action I.4 OSR4",
                         "mimeType": "",
-                        "url": "http://www.graie.org/osr/IMG/pdf/2018.01_rapport_final_1.4_v9_drm.pdf",
+                        "url": "https://hal.science/OSR/hal-03588697v1",
                         "group": 0
                     },
                     {
                         "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "I.S. Rivers 2018",
+                        "function": "download",
+                        "name": "Vazquez et al., 2019",
                         "applicationProfile": "",
-                        "description": "V\u00e1zquez-Tarr\u00edo et al., 2018",
+                        "description": "Article dans STOTEN",
                         "mimeType": "",
-                        "url": "https://www.graie.org/ISRivers/docs/papers/2018/24B41-070VAZ.pdf",
-                        "group": 0
-                    },
-                    {
-                        "protocol": "WWW:LINK-1.0-http--link",
-                        "function": "",
-                        "name": "Article dans STOTEN",
-                        "applicationProfile": "",
-                        "description": "Vazquez et al., 2019",
-                        "mimeType": "",
-                        "url": "https://www.sciencedirect.com/science/article/pii/S0048969718349532",
+                        "url": "https://hal.science/OSR/hal-02610010v1",
                         "group": 0
                     }
                 ],

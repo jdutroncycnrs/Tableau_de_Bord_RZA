@@ -1,0 +1,407 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "85731bfe-0c7e-461f-87d4-e372a35a1355",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gmx:name": {
+        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Dictionnaire de donn\u00e9es pour 'Berambadi-geom-17' (LETG)"
+        }
+    },
+    "gmx:scope": {
+        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Catalogue d'attributs"
+        }
+    },
+    "gmx:versionNumber": {
+        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmx:versionDate": {
+        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gml": "http://www.opengis.net/gml",
+            "#text": "2018-06-07T11:54:21"
+        }
+    },
+    "gfc:producer": {
+        "gmd:CI_ResponsibleParty": {
+            "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Samuel Corgne"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR6554 LETG CNRS"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33(0)299142090"
+                                }
+                            },
+                            "gmd:facsimile": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33(0)253487650"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Universit\u00e9 Rennes 2, Place du Recteur Henri LeMoal"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Rennes"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Bretagne"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "35043 Rennes Cedex"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "samuel;corgne@univ-rennes2;fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "author",
+                    "@codeList": "CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gfc:functionalLanguage": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@uuid": "acdb78e4-b6f1-4353-98b1-35f7a4a89a5e",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Table attributaire"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": null
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": null,
+            "gfc:constrainedBy": {
+                "gfc:FC_Constraint": {
+                    "gfc:description": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Le partenaire fournisseur n\u2019est pas en mesure de garantir l\u2019exactitude, la mise \u00e0 jour, l\u2019int\u00e9grit\u00e9, l\u2019exhaustivit\u00e9 des donn\u00e9es et en particulier qu'elles sont exemptes d'erreurs ou d'impr\u00e9cisions, notamment de localisation, d\u2019identification ou de qualification. Aucune garantie quant \u00e0 l'aptitude des donn\u00e9es \u00e0 un usage particulier n'est apport\u00e9e par le partenaire fournisseur. Les utilisateurs utilisent les donn\u00e9es sous leur responsabilit\u00e9 pleine et enti\u00e8re, sans recours possible contre le partenaire fournisseur dont la responsabilit\u00e9 ne saurait \u00eatre engag\u00e9e du fait d\u2019un dommage r\u00e9sultant directement ou indirectement de l\u2019utilisation de ces donn\u00e9es. En particulier, il appartient aux utilisateurs d\u2019appr\u00e9cier, sous leur seule responsabilit\u00e9 : l'opportunit\u00e9 d'utiliser les donn\u00e9es; la compatibilit\u00e9 des fichiers avec leurs syst\u00e8mes informatiques; l\u2019ad\u00e9quation des donn\u00e9es \u00e0 leurs besoins; qu\u2019ils disposent de la comp\u00e9tence suffisante pour utiliser les donn\u00e9es. Le fournisseur partenaire n\u2019est en aucune fa\u00e7on responsable des \u00e9l\u00e9ments ext\u00e9rieurs aux donn\u00e9es et notamment des outils d\u2019analyse, mat\u00e9riels, logiciels, r\u00e9seaux..., utilis\u00e9s pour consulter et/ou traiter les donn\u00e9es. L\u2019utilisateur veille \u00e0 v\u00e9rifier que l\u2019actualit\u00e9 des informations mises \u00e0 disposition est compatible avec l\u2019usage qu\u2019il en fait."
+                        }
+                    }
+                }
+            },
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:constrainedBy": null,
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Area"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Surface"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DOUBLE"
+                                }
+                            }
+                        },
+                        "gfc:listedValue": null
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "OID_LU"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Identifiant"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "0"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DOUBLE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Shape_Leng"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": null
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "FLOAT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Category2"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": null
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "CHARACTER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Id_new"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Nouvel identifiant (mise \u00e0 jour en janvier 2018)"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": null
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": null
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": null
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

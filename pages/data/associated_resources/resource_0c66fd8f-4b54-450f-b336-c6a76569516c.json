@@ -1,0 +1,63 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "overview": [
+                    {
+                        "data": "",
+                        "url": "http://www.sols-de-bretagne.fr/images/logo-sols-de-bretagne.png"
+                    }
+                ],
+                "op1": "1",
+                "resourceAbstractObject": {
+                    "default": "Service de visualisation cartographique (WMS) de Sols de Bretagne [G\u00e9oSAS]",
+                    "langfre": "Service de visualisation cartographique (WMS) de Sols de Bretagne [G\u00e9oSAS]"
+                },
+                "op5": "1",
+                "resourceTitleObject": {
+                    "default": "Service de visualisation Sols de Bretagne [G\u00e9oSAS]",
+                    "langfre": "Service de visualisation Sols de Bretagne [G\u00e9oSAS]"
+                },
+                "format": [
+                    "OGC:WMS"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://geosas.fr/geoserver/sdb/ows?service=wms&version=1.3.0&request=getcapabilities",
+                        "group": 0
+                    }
+                ],
+                "id": "3972",
+                "uuid": "ad6f83bf-89a9-4177-8f4f-ca9e1c4a57dd",
+                "op0": "1",
+                "resourceType": [
+                    "service"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "ad6f83bf-89a9-4177-8f4f-ca9e1c4a57dd"
+        }
+    ],
+    "brothersAndSisters": []
+}

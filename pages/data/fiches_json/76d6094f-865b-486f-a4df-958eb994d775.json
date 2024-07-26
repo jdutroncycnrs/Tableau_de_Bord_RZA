@@ -1,0 +1,509 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "76d6094f-865b-486f-a4df-958eb994d775",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Dictionnaire de donn\u00e9es pour 'Estran - Nature s\u00e9dimentaire'"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": null
+    },
+    "gfc:fieldOfApplication": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2013-02-12T13:45:52"
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@id": "",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Table attributaire"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "D\u00e9finition de la table d'attributs"
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": {
+                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                "@xlink:href": "#"
+            },
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "BIOSEDESTR"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code de nature bios\u00e9dimentaire"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:featureType": null,
+                        "gfc:valueMeasurementUnit": {
+                            "gml:UnitDefinition": {
+                                "@xmlns:gml": "http://www.opengis.net/gml",
+                                "@gml:id": "unknown",
+                                "gml:identifier": {
+                                    "@codeSpace": "unknown"
+                                }
+                            }
+                        },
+                        "gfc:listedValue": [
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Graviers h\u00e9t\u00e9rog\u00e8nes (GH)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "1"
+                                        }
+                                    },
+                                    "gfc:definition": {
+                                        "gco:CharacterString": null
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables h\u00e9t\u00e9rog\u00e8nes (SHV)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "2"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Graviers propres (GP)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "3"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Graviers envas\u00e9s (GV)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "4"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables grossiers (SG)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "5"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables fins (SF)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "6"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Graviers biog\u00e8nes (GB)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "7"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables grossiers biog\u00e8nes (SGB)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "8"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables fins biog\u00e8nes (SFB)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "9"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sables fins envas\u00e9s (FV)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "10"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Vases sableuses (VS)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "11"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Vases (VV)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "12"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Vases graveleuses (VG)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "20"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Vases coquilli\u00e8res (VC)"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "21"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Roche \u00e9merg\u00e9e"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "51"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Roche estran"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "52"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Gr\u00e8ves"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "54"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Schorre"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "56"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Cordon de galets"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "57"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Champ de blocs"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "58"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Enrochement"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "70"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Domaine terrestre"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "99"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "BIOSEDtxt"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": null
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -7,9 +7,9 @@
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>ee88c31c-2bfc-44b3-95aa-8cdafb05c83f</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -33,14 +33,14 @@
             <gco:CharacterString>UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
          </gmd:organisationName>
          <gmd:positionName>
-            <gco:CharacterString>Ingénieur d'études</gco:CharacterString>
+            <gco:CharacterString>Ingénieure de recherche</gco:CharacterString>
          </gmd:positionName>
          <gmd:contactInfo>
             <gmd:CI_Contact>
                <gmd:phone>
                   <gmd:CI_Telephone>
                      <gmd:voice>
-                        <gco:CharacterString>04 37 37 64 94</gco:CharacterString>
+                        <gco:CharacterString>04 37 37 65 40</gco:CharacterString>
                      </gmd:voice>
                   </gmd:CI_Telephone>
                </gmd:phone>
@@ -109,13 +109,6 @@
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
-               <gmd:identifier>
-                  <gmd:MD_Identifier>
-                     <gmd:code>
-                        <gco:CharacterString>2014-TALASKA-ATLAS1891</gco:CharacterString>
-                     </gmd:code>
-                  </gmd:MD_Identifier>
-               </gmd:identifier>
                <gmd:presentationForm>
                   <gmd:CI_PresentationFormCode codeListValue="mapDigital"
                                                codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"/>
@@ -152,9 +145,6 @@
                            <gmd:country>
                               <gco:CharacterString>France</gco:CharacterString>
                            </gmd:country>
-                           <gmd:electronicMailAddress gco:nilReason="missing">
-                              <gco:CharacterString/>
-                           </gmd:electronicMailAddress>
                         </gmd:CI_Address>
                      </gmd:address>
                   </gmd:CI_Contact>
@@ -178,13 +168,6 @@
                </gmd:positionName>
                <gmd:contactInfo>
                   <gmd:CI_Contact>
-                     <gmd:phone>
-                        <gmd:CI_Telephone>
-                           <gmd:voice>
-                              <gco:CharacterString>04 37 37 63 51</gco:CharacterString>
-                           </gmd:voice>
-                        </gmd:CI_Telephone>
-                     </gmd:phone>
                      <gmd:address>
                         <gmd:CI_Address>
                            <gmd:deliveryPoint>
@@ -215,7 +198,7 @@
          <gmd:graphicOverview>
             <gmd:MD_BrowseGraphic>
                <gmd:fileName>
-                  <gco:CharacterString>https://cat.indores.fr/geonetwork/srv/api/records/ee88c31c-2bfc-44b3-95aa-8cdafb05c83f/attachments/atlasparachevement.jpg</gco:CharacterString>
+                  <gco:CharacterString>https://elvis.ens-lyon.fr/geonetwork/srv/api/records/ee88c31c-2bfc-44b3-95aa-8cdafb05c83f/attachments/atlasparachevement.jpg</gco:CharacterString>
                </gmd:fileName>
                <gmd:fileDescription>
                   <gco:CharacterString>large_thumbnail</gco:CharacterString>
@@ -234,7 +217,7 @@
                   <gco:CharacterString>OHM VR</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
-                  <gco:CharacterString>Archive cartographique</gco:CharacterString>
+                  <gco:CharacterString>OSR</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
@@ -254,12 +237,12 @@
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title>
-                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+                        <gco:CharacterString>Registre de thème INSPIRE</gco:CharacterString>
                      </gmd:title>
                      <gmd:date>
                         <gmd:CI_Date>
                            <gmd:date>
-                              <gco:Date>2008-06-01</gco:Date>
+                              <gco:Date>2023-01-01</gco:Date>
                            </gmd:date>
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
@@ -270,7 +253,7 @@
                      <gmd:identifier>
                         <gmd:MD_Identifier>
                            <gmd:code>
-                              <gmx:Anchor xlink:href="http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                              <gmx:Anchor xlink:href="https://elvis.ens-lyon.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
                            </gmd:code>
                         </gmd:MD_Identifier>
                      </gmd:identifier>
@@ -278,10 +261,21 @@
                </gmd:thesaurusName>
             </gmd:MD_Keywords>
          </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Archive cartographique</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
          <gmd:resourceConstraints>
             <gmd:MD_LegalConstraints>
                <gmd:useLimitation>
-                  <gco:CharacterString>Mention obligatoire sur tout support de diffusion : "Ces travaux ont bénéficié du soutien du LabEx DRIIHM et de l'OHM Vallée du Rhône".</gco:CharacterString>
+                  <gco:CharacterString>Mention obligatoire sur tout support de diffusion : "Ces travaux ont bénéficié du soutien du LabEx DRIIHM, de l'OHM Vallée du Rhône et de l’Observatoire des Sédiments du Rhône".</gco:CharacterString>
                </gmd:useLimitation>
                <gmd:useLimitation>
                   <gco:CharacterString>Utilisation commerciale directe ou indirecte interdite.</gco:CharacterString>
@@ -323,7 +317,7 @@
                                      codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
          </gmd:characterSet>
          <gmd:topicCategory>
-            <gmd:MD_TopicCategoryCode>imageryBaseMapsEarthCover</gmd:MD_TopicCategoryCode>
+            <gmd:MD_TopicCategoryCode>inlandWaters</gmd:MD_TopicCategoryCode>
          </gmd:topicCategory>
          <gmd:extent>
             <gmd:EX_Extent>
@@ -350,22 +344,26 @@
                   <gmd:EX_TemporalExtent>
                      <gmd:extent>
                         <gml:TimePeriod gml:id="d9646e374a1050910">
-                           <gml:beginPosition>1891-01-01T02:00:00</gml:beginPosition>
-                           <gml:endPosition>1891-12-31T12:00:00</gml:endPosition>
+                           <gml:beginPosition>1891-01-01</gml:beginPosition>
+                           <gml:endPosition>1891-12-31</gml:endPosition>
                         </gml:TimePeriod>
                      </gmd:extent>
                   </gmd:EX_TemporalExtent>
                </gmd:temporalElement>
             </gmd:EX_Extent>
          </gmd:extent>
+         <gmd:supplementalInformation>
+            <gco:CharacterString>Mission OHM VR de N. Talaska (2014) ; Action D3 OSR5 : "Intégration des données dans le web-SIG".</gco:CharacterString>
+         </gmd:supplementalInformation>
       </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
-  <gmd:distributionInfo xmlns:date="http://exslt.org/dates-and-times">
+  <gmd:distributionInfo>
       <gmd:MD_Distribution>
-         <gmd:distributionFormat>
+         <gmd:distributionFormat xmlns:date="http://exslt.org/dates-and-times"
+                                 xmlns:che="http://www.geocat.ch/2008/che">
             <gmd:MD_Format>
                <gmd:name>
-                  <gco:CharacterString>TIF</gco:CharacterString>
+                  <gco:CharacterString>TIF, GDB</gco:CharacterString>
                </gmd:name>
                <gmd:version>
                   <gco:CharacterString>2014</gco:CharacterString>
@@ -377,10 +375,70 @@
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vr.org/</gmd:URL>
+                        <gmd:URL>https://observatoire-sediments-rhone.fr/</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gmx:MimeFileType type="">WWW:LINK-1.0-http--link</gmx:MimeFileType>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Site de l'OSR</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Site web de l'Observatoire des Sédiments du Rhône</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://websig.ens-lyon.fr:3344/webappbuilder/apps/75/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Site de GéoRhône</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>GéoRhône : Cartographie historique</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="order"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://hal.science/OSR/hal-01462898v1</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Depret et al., 2017</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Article dans Geomorphology</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://ohm-vallee-du-rhone.fr/</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gmx:MimeFileType type="">WWW:LINK-1.0-http--link</gmx:MimeFileType>
                      </gmd:protocol>
                      <gmd:name>
                         <gco:CharacterString>Site de l'OHM VR</gco:CharacterString>
@@ -388,38 +446,10 @@
                      <gmd:description>
                         <gco:CharacterString>Site web de l'OHM Vallée du Rhône</gco:CharacterString>
                      </gmd:description>
-                  </gmd:CI_OnlineResource>
-               </gmd:onLine>
-               <gmd:onLine>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>https://websig.ens-lyon.fr:3344/webappbuilder/apps/27/</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                     </gmd:protocol>
-                     <gmd:name>
-                        <gco:CharacterString>Site web de GéoOSR</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description>
-                        <gco:CharacterString>GéoOSR : Cartographie historique</gco:CharacterString>
-                     </gmd:description>
-                  </gmd:CI_OnlineResource>
-               </gmd:onLine>
-               <gmd:onLine>
-                  <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>https://www.researchgate.net/publication/313315034_Evolution_of_abandoned_channels_Insights_on_controlling_factors_in_a_multi-pressure_river_system</gmd:URL>
-                     </gmd:linkage>
-                     <gmd:protocol>
-                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
-                     </gmd:protocol>
-                     <gmd:name>
-                        <gco:CharacterString>Article dans Geomorphology</gco:CharacterString>
-                     </gmd:name>
-                     <gmd:description>
-                        <gco:CharacterString>Depret et al., 2017</gco:CharacterString>
-                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
             </gmd:MD_DigitalTransferOptions>
@@ -468,9 +498,8 @@
          <gmd:lineage>
             <gmd:LI_Lineage>
                <gmd:statement>
-                  <gco:CharacterString>Les plans ont été collectés dans les archives départementales du Rhône par les chercheurs de l'UMR 5600 EVS (vacataires). Ils ont été géoréférencés en Lambert 93 à partir des orthophotographies de l'IGN. La RMS est comprise entre 3 et 9 m. 
-
-Le jeu de données se compose de 53 planches du pK0 au pK193:
+                  <gco:CharacterString>Les plans ont été collectés en 2013-2014 dans les archives départementales du Rhône par les chercheurs de l'UMR 5600 EVS dans le cadre de l'OHM VR. Ils ont été géoréférencés en Lambert 93 à partir des orthophotographies de l'IGN : entre 6 et 15 points de contrôle par feuille, RMS entre 3.0 et 9.5 m. 
+Le jeu de données se compose de 53 planches, du PK 0 au PK 193 :
 Secteur de Pierre-Bénite (PBN): 8 planches
 Secteur de Vaugris (VAU): 3 planches
 Secteur de Péage-de-Roussillon (PDR): 10 planches
@@ -480,8 +509,8 @@ Secteur de Beauchastel (BEA): 6 planches
 Secteur de Baix Logis-Neuf (BLN): 5 planches
 Secteur de Montélimar (MON): 8 planches
 Secteur de Donzère-Mondragon (DZM): 9 planches
-
-Une couche vectorielle de digitalisation des ouvrages de correction est jointe au jeu de données.</gco:CharacterString>
+Une couche vectorielle de digitalisation des ouvrages de correction est jointe au jeu de données.
+En 2019, les planches ont été assemblées dans une geodatabase et tuilées pour affichage dans le web SIG GéoRhône (CDD J. Grillot, OSR5).</gco:CharacterString>
                </gmd:statement>
             </gmd:LI_Lineage>
          </gmd:lineage>

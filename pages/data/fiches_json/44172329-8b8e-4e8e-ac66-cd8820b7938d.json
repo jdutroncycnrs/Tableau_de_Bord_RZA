@@ -1,0 +1,370 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "44172329-8b8e-4e8e-ac66-cd8820b7938d",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Catalogue d'attributs - Mesures d'humidit\u00e9 du sol (bas-marais du Couesnon, f\u00e9vrier 2010 - f\u00e9vrier 2011) - Zone Atelier Armorique ZAAr"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "-- Dictionnaire de donn\u00e9es de la couche --"
+        }
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gml": "http://www.opengis.net/gml",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2018-06-15T10:13:48"
+        }
+    },
+    "gfc:producer": {
+        "gmd:CI_ResponsibleParty": {
+            "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "LETG-RENNES UMR 6554 CNRS Universit\u00e9 de Rennes 2"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "jean.nabucet@univ-rennes2.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "pointOfContact",
+                    "@codeList": "CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@uuid": "44172329-8b8e-4e8e-ac66-cd8820b7938d",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "humidite_"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "-- Description de la table attributaire --"
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": null,
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ordre_mes"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ordre du point de mesure par station"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "0"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:featureType": null,
+                        "gfc:valueMeasurementUnit": {
+                            "gml:UnitDefinition": {
+                                "@xmlns:gml": "http://www.opengis.net/gml",
+                                "@gml:id": "unknown",
+                                "gml:description": null,
+                                "gml:identifier": {
+                                    "@codeSpace": "unknown"
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "FLOAT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Jour"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Jour de la mesure"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DATE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Humi_3cm"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Valeur d'humidit\u00e9 relev\u00e9e \u00e0 3 cm de profondeur"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "FLOAT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Humi_12cm"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Valeur d'humidit\u00e9 relev\u00e9e \u00e0 12 cm de profondeur"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "FLOAT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Dist_origi"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Distance \u00e0 l'origine du transect (en m.)"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "FLOAT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Remarques"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Remarques sur les conditions d'acquisition"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "CHARACTER"
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gfc:constrainedBy": {
+                "gfc:FC_Constraint": {
+                    "gfc:description": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "-- Description du catalogue attributaire --"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

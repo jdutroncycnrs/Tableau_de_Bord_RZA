@@ -7,9 +7,9 @@
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gsr="http://www.isotc211.org/2005/gsr"
                  xmlns:gmi="http://www.isotc211.org/2005/gmi"
-                 xmlns:gml="http://www.opengis.net/gml"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd">
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
   <gmd:fileIdentifier>
       <gco:CharacterString>5e385a99-6b25-417f-92dc-2ee8b01c80d9</gco:CharacterString>
   </gmd:fileIdentifier>
@@ -36,7 +36,7 @@
             <gco:CharacterString>UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
          </gmd:organisationName>
          <gmd:positionName>
-            <gco:CharacterString>Ingénieur d'études</gco:CharacterString>
+            <gco:CharacterString>Ingénieure de recherche</gco:CharacterString>
          </gmd:positionName>
          <gmd:contactInfo>
             <gmd:CI_Contact>
@@ -99,7 +99,7 @@
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title>
-                  <gco:CharacterString>Plateforme de webmapping sur le Rhône (2015)</gco:CharacterString>
+                  <gco:CharacterString>Plateforme de webmapping GéoRhône (2016-2023)</gco:CharacterString>
                </gmd:title>
                <gmd:date>
                   <gmd:CI_Date>
@@ -107,18 +107,11 @@
                         <gco:DateTime>2016-11-01T00:00:00</gco:DateTime>
                      </gmd:date>
                      <gmd:dateType>
-                        <gmd:CI_DateTypeCode codeListValue="revision"
+                        <gmd:CI_DateTypeCode codeListValue="creation"
                                              codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"/>
                      </gmd:dateType>
                   </gmd:CI_Date>
                </gmd:date>
-               <gmd:identifier>
-                  <gmd:MD_Identifier>
-                     <gmd:code>
-                        <gco:CharacterString>2016-ANTONIO-WEBSIG</gco:CharacterString>
-                     </gmd:code>
-                  </gmd:MD_Identifier>
-               </gmd:identifier>
                <gmd:presentationForm>
                   <gmd:CI_PresentationFormCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode"
                                                codeListValue="mapDigital"/>
@@ -126,14 +119,12 @@
             </gmd:CI_Citation>
          </gmd:citation>
          <gmd:abstract>
-            <gco:CharacterString>Plateforme cartographique en ligne permettant de consulter: 
-- pour l'OHM Vallée du Rhône : la délimitation spatiale des projets de recherche conduits par l'OHM VR et le réseau des OHM depuis 2011,
-- pour l'Observatoire des Sédiments du Rhône : les principales données spatiales produites par l'OSR depuis 2009, via quatre cartes thématiques : cartographie générale, cartographie des marges alluviales, cartographie des mesures de terrain, cartographie historique, ainsi que l'atlas des paléo-environnements élaboré en 2007 dans le cadre du volet Inondations du Plan Rhône.</gco:CharacterString>
+            <gco:CharacterString>GéoRhône est une plateforme cartographique en ligne permettant de consulter les principales données spatiales produites dans le programme OSR depuis 2009, via des cartes thématiques : cartographie générale, cartographie des marges alluviales, cartographie des mesures de terrain, cartographie historique ; ainsi que l'atlas des paléo-environnements élaboré en 2007 dans le cadre du volet Inondations du Plan Rhône.</gco:CharacterString>
          </gmd:abstract>
          <gmd:pointOfContact>
             <gmd:CI_ResponsibleParty>
                <gmd:individualName>
-                  <gco:CharacterString>Aurélie Antonio</gco:CharacterString>
+                  <gco:CharacterString>Samuel Dunesme</gco:CharacterString>
                </gmd:individualName>
                <gmd:organisationName>
                   <gco:CharacterString>UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
@@ -158,7 +149,7 @@
                               <gco:CharacterString>France</gco:CharacterString>
                            </gmd:country>
                            <gmd:electronicMailAddress>
-                              <gco:CharacterString>aurelie.antonio@ens-lyon.fr</gco:CharacterString>
+                              <gco:CharacterString>samuel.dunesme@ens-lyon.fr</gco:CharacterString>
                            </gmd:electronicMailAddress>
                         </gmd:CI_Address>
                      </gmd:address>
@@ -179,7 +170,7 @@
                   <gco:CharacterString>UMR 5600 EVS - ENS de Lyon</gco:CharacterString>
                </gmd:organisationName>
                <gmd:positionName>
-                  <gco:CharacterString>Ingénieur d'études</gco:CharacterString>
+                  <gco:CharacterString>Ingénieure de recherche</gco:CharacterString>
                </gmd:positionName>
                <gmd:contactInfo>
                   <gmd:CI_Contact>
@@ -228,29 +219,23 @@
          <gmd:graphicOverview>
             <gmd:MD_BrowseGraphic>
                <gmd:fileName>
-                  <gco:CharacterString>http://elvis.ens-lyon.fr:/geonetwork/srv/api/records/5e385a99-6b25-417f-92dc-2ee8b01c80d9/attachments/VignetteWebSIG.jpg</gco:CharacterString>
+                  <gco:CharacterString>https://elvis.ens-lyon.fr:/geonetwork/srv/api/records/5e385a99-6b25-417f-92dc-2ee8b01c80d9/attachments/VignetteWebSIG.jpg</gco:CharacterString>
                </gmd:fileName>
             </gmd:MD_BrowseGraphic>
          </gmd:graphicOverview>
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Web SIG</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>OHM VR</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>LabEx DRIIHM</gco:CharacterString>
-               </gmd:keyword>
-               <gmd:keyword>
-                  <gco:CharacterString>Géo-visualisation</gco:CharacterString>
+                  <gco:CharacterString>Rhône</gco:CharacterString>
                </gmd:keyword>
                <gmd:keyword>
                   <gco:CharacterString>OSR</gco:CharacterString>
                </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>OHM VR</gco:CharacterString>
+               </gmd:keyword>
                <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeListValue="theme"
+                  <gmd:MD_KeywordTypeCode codeListValue="place"
                                           codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"/>
                </gmd:type>
             </gmd:MD_Keywords>
@@ -258,11 +243,11 @@
          <gmd:descriptiveKeywords>
             <gmd:MD_Keywords>
                <gmd:keyword>
-                  <gco:CharacterString>Rhône</gco:CharacterString>
+                  <gco:CharacterString>Web SIG</gco:CharacterString>
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
-                                          codeListValue="place"/>
+                                          codeListValue="theme"/>
                </gmd:type>
             </gmd:MD_Keywords>
          </gmd:descriptiveKeywords>
@@ -271,6 +256,9 @@
                <gmd:keyword>
                   <gco:CharacterString>Ortho-imagerie</gco:CharacterString>
                </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>Occupation des terres</gco:CharacterString>
+               </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
                                           codeListValue="theme"/>
@@ -278,12 +266,12 @@
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title>
-                        <gco:CharacterString>GEMET - INSPIRE themes, version 1.0</gco:CharacterString>
+                        <gco:CharacterString>Registre de thème INSPIRE</gco:CharacterString>
                      </gmd:title>
                      <gmd:date>
                         <gmd:CI_Date>
                            <gmd:date>
-                              <gco:Date>2008-06-01</gco:Date>
+                              <gco:Date>2023-01-01</gco:Date>
                            </gmd:date>
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
@@ -294,7 +282,7 @@
                      <gmd:identifier>
                         <gmd:MD_Identifier>
                            <gmd:code>
-                              <gmx:Anchor xlink:href="http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme">geonetwork.thesaurus.external.theme.inspire-theme</gmx:Anchor>
+                              <gmx:Anchor xlink:href="https://elvis.ens-lyon.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gmx:Anchor>
                            </gmd:code>
                         </gmd:MD_Identifier>
                      </gmd:identifier>
@@ -305,10 +293,7 @@
          <gmd:resourceConstraints>
             <gmd:MD_LegalConstraints>
                <gmd:useLimitation>
-                  <gco:CharacterString>Mention obligatoire sur tout support de diffusion : "Ces travaux ont bénéficié du soutien du LabEx DRIIHM et de l'OHM Vallée du Rhône".</gco:CharacterString>
-               </gmd:useLimitation>
-               <gmd:useLimitation>
-                  <gco:CharacterString>Mention obligatoire sur tout support de diffusion : "Ces données ont été produites dans le cadre de l'Observatoire des Sédiments du Rhône".</gco:CharacterString>
+                  <gco:CharacterString>Mention obligatoire sur tout support de diffusion : "Ces données ont été produites dans le cadre de l'Observatoire des Sédiments du Rhône et de l'OHM Vallée du Rhône".</gco:CharacterString>
                </gmd:useLimitation>
                <gmd:useLimitation>
                   <gco:CharacterString>Utilisation commerciale directe ou indirecte interdite.</gco:CharacterString>
@@ -374,7 +359,7 @@
                      <gmd:extent>
                         <gml:TimePeriod gml:id="d23904e350a1050910">
                            <gml:beginPosition>1750-01-01</gml:beginPosition>
-                           <gml:endPosition>2018-12-31</gml:endPosition>
+                           <gml:endPosition>2023-12-31</gml:endPosition>
                         </gml:TimePeriod>
                      </gmd:extent>
                   </gmd:EX_TemporalExtent>
@@ -382,31 +367,31 @@
             </gmd:EX_Extent>
          </gmd:extent>
          <gmd:supplementalInformation>
-            <gco:CharacterString>Projet ROHM "La visualisation des données géoréférencées du ROHM" (2016),
-Action V.4 de l'OSR4 "Outils numériques et bancarisation des données" (2015-2017),
-Action D.3 de l'OSR5 "Intégration des données dans le web SIG" (2018-2020).</gco:CharacterString>
+            <gco:CharacterString>Action V.4 OSR4 : "Outils numériques et bancarisation des données" (2015-2017) ; Action D3 OSR5 : "Intégration des données dans le web SIG" (2018-2020) ; Action E4 OSR6 : "Valorisation des produits de recherche de l’OSR" (2021-2024) ; Projet OHM VR "Bancarisation et visualisation de ressources biophysiques historiques sur le Rhône" (2017)</gco:CharacterString>
          </gmd:supplementalInformation>
       </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
-  <gmd:distributionInfo xmlns:che="http://www.geocat.ch/2008/che"
-                         xmlns:gfc="http://www.isotc211.org/2005/gfc">
+  <gmd:distributionInfo>
       <gmd:MD_Distribution>
-         <gmd:distributionFormat xmlns:date="http://exslt.org/dates-and-times">
+         <gmd:distributionFormat xmlns:date="http://exslt.org/dates-and-times"
+                                 xmlns:che="http://www.geocat.ch/2008/che"
+                                 xmlns:gfc="http://www.isotc211.org/2005/gfc">
             <gmd:MD_Format>
                <gmd:name>
                   <gco:CharacterString>ESRI</gco:CharacterString>
                </gmd:name>
                <gmd:version>
-                  <gco:CharacterString>2015</gco:CharacterString>
+                  <gco:CharacterString>2016</gco:CharacterString>
                </gmd:version>
             </gmd:MD_Format>
          </gmd:distributionFormat>
          <gmd:transferOptions>
             <gmd:MD_DigitalTransferOptions>
-               <gmd:onLine>
+               <gmd:onLine xmlns:che="http://www.geocat.ch/2008/che"
+                           xmlns:gfc="http://www.isotc211.org/2005/gfc">
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://www.graie.org/osr/</gmd:URL>
+                        <gmd:URL>https://observatoire-sediments-rhone.fr/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
@@ -417,25 +402,34 @@ Action D.3 de l'OSR5 "Intégration des données dans le web SIG" (2018-2020).</gco
                      <gmd:description>
                         <gco:CharacterString>Site web de l'Observatoire des Sédiments du Rhône</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
-               <gmd:onLine xmlns:date="http://exslt.org/dates-and-times">
+               <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>http://ohm-vallee-du-rhone.in2p3.fr/</gmd:URL>
+                        <gmd:URL>https://ohm-vallee-du-rhone.fr/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
                      </gmd:protocol>
                      <gmd:name>
-                        <gco:CharacterString>Site web de l'OHM VR</gco:CharacterString>
+                        <gco:CharacterString>Site de l'OHM VR</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
                         <gco:CharacterString>Site web de l'OHM Vallée du Rhône</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
-               <gmd:onLine>
+               <gmd:onLine xmlns:che="http://www.geocat.ch/2008/che"
+                           xmlns:gfc="http://www.isotc211.org/2005/gfc">
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
                         <gmd:URL>https://websig.ens-lyon.fr:3344/webappbuilder/apps/39/</gmd:URL>
@@ -444,27 +438,55 @@ Action D.3 de l'OSR5 "Intégration des données dans le web SIG" (2018-2020).</gco
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
                      </gmd:protocol>
                      <gmd:name>
-                        <gco:CharacterString>Plateforme cartographique de l'OSR</gco:CharacterString>
+                        <gco:CharacterString>GéoRhône</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
-                        <gco:CharacterString>GéoOSR</gco:CharacterString>
+                        <gco:CharacterString>Web SIG GéoRhône</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
                <gmd:onLine>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>https://websig.ens-lyon.fr:3344/webappbuilder/apps/44/</gmd:URL>
+                        <gmd:URL>https://hal.inrae.fr/OSR/hal-01892723v1</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
                      </gmd:protocol>
                      <gmd:name>
-                        <gco:CharacterString>Plateforme cartographique de l'OHM VR</gco:CharacterString>
+                        <gco:CharacterString>Arnaud et al., 2018</gco:CharacterString>
                      </gmd:name>
                      <gmd:description>
-                        <gco:CharacterString>Carte des projets OHM</gco:CharacterString>
+                        <gco:CharacterString>Journée de restitution de l'OSR4 13/01/2018</gco:CharacterString>
                      </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://hal.inrae.fr/OSR/hal-03869998v1</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name>
+                        <gco:CharacterString>Piégay et al., 2022</gco:CharacterString>
+                     </gmd:name>
+                     <gmd:description>
+                        <gco:CharacterString>Synthèse des 12 ans de l'OSR</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
                   </gmd:CI_OnlineResource>
                </gmd:onLine>
             </gmd:MD_DigitalTransferOptions>
@@ -476,7 +498,7 @@ Action D.3 de l'OSR5 "Intégration des données dans le web SIG" (2018-2020).</gco
          <gmd:scope>
             <gmd:DQ_Scope>
                <gmd:level>
-                  <gmd:MD_ScopeCode codeListValue="dataset"
+                  <gmd:MD_ScopeCode codeListValue="interactiveMap"
                                     codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"/>
                </gmd:level>
             </gmd:DQ_Scope>
@@ -513,9 +535,9 @@ Action D.3 de l'OSR5 "Intégration des données dans le web SIG" (2018-2020).</gco
          <gmd:lineage>
             <gmd:LI_Lineage>
                <gmd:statement>
-                  <gco:CharacterString>La plate-forme est basée sur la suite logiciel ESRI : ArcGIS Server, ArcGIS Portal et WebAppBuilder. L'utilisateur dispose d'une série d'outils de recherche et de géo-traitements permettant une visualisation dynamique.
+                  <gco:CharacterString>GéoRhône est basé sur la suite logicielle ESRI : ArcGIS Server, ArcGIS Portal et WebAppBuilder. L'utilisateur dispose d'une série d'outils de recherche et de géo-traitements permettant une visualisation dynamique des données spatiales.
 
-Personnes impliquées dans le développement et l'alimentation de la plateforme : G. Fantino, K. Michel, H. Parmentier, A. Antonio, F. Arnaud (UMR 5600 EVS).</gco:CharacterString>
+CDD et personnel permanent de l'UMR 5600 EVS impliqués dans le développement et l'alimentation de l'application : G. Fantino, K. Michel, H. Parmentier, A. Antonio, S. Dunesme, F. Arnaud, L. Chirol, J. Grillot, R. Nédéléc, P. Rocher.</gco:CharacterString>
                </gmd:statement>
             </gmd:LI_Lineage>
          </gmd:lineage>

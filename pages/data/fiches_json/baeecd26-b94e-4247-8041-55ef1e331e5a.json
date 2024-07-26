@@ -1,0 +1,2244 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "baeecd26-b94e-4247-8041-55ef1e331e5a"
+        }
+    },
+    "gmd:language": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Serge SUANEZ"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR6554 LETG CNRS"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33(0)253487676"
+                                }
+                            },
+                            "gmd:facsimile": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33(0)253487650"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Universit\u00e9 de Nantes, Campus Tertre, BP 81227"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Nantes"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Pays de la Loire"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "44312 Cedex 3"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "contact@indigeo.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2022-07-08T12:40:34"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "RGF93 / Lambert-93 (EPSG:2154)"
+                        }
+                    },
+                    "gmd:codeSpace": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "EPSG"
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "7.4"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT)"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:DateTime": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2016-05-27T09:40:00"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "publication"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "https://portail.indigeo.fr/geonetwork/srv/metadata/baeecd26-b94e-4247-8041-55ef1e331e5a"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "\u00c9tude de la cin\u00e9matique du trait de c\u00f4te de la plage de Boutrouilles, situ\u00e9e sur la commune de Kerlouan (r\u00e9gion Bretagne, nord Finist\u00e8re).\nType d'entit\u00e9 spatiale : point\nFormat : coordonn\u00e9es num\u00e9riques en X et Y.\nObjectifs : \u00e9tudier la cin\u00e9matique du trait de c\u00f4te depuis 50 ans en r\u00e9ponse aux variations climatiques et/ou des conditions m\u00e9t\u00e9o-marines."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": "onGoing"
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Serge SUANEZ"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR6554 LETG CNRS"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33(0)298498610"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33(0)298498703"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Universit\u00e9 de Bretagne Occidentale, Institut Universitaire Europ\u00e9en de la Mer, rue Dumont d'Urville"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Plouzan\u00e9"
+                                            }
+                                        },
+                                        "gmd:administrativeArea": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "29280"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "serge.suanez@univ-brest.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Jean-Marie Cariolet"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Lab\u2019Urba EA3482"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Ecole des Ing\u00e9nieurs de la Ville de Paris (EIVP), 80 Rue Rebeval"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Paris"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "75019"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "jean-marie.cariolet@eivp-paris.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Laurence David"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "UMR6554 LETG CNRS"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33(0)298498859"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33(0)298498859"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Universit\u00e9 de Bretagne Occidentale, Institut Universitaire Europ\u00e9en de la Mer, rue Dumont d'Urville"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Plouzan\u00e9"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "29280"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "laurence.david@univ-brest.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode",
+                            "@codeListValue": "asNeeded"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/vignette_MNT_Boutrouilles.jpg"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "donn\u00e9es g\u00e9or\u00e9f\u00e9renc\u00e9es"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "unknown"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "c\u00f4te"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "littoral"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "environnement"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "g\u00e9omorphologie"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - Concepts, version 2.4"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2010-01-13"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.gemet",
+                                                "#text": "geonetwork.thesaurus.external.theme.gemet"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Altitude"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Installations de suivi environnemental"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "INSPIRE themes"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "France"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Region"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2006-09-22"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.place.regions",
+                                                "#text": "geonetwork.thesaurus.external.place.regions"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "BRETAGNE"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "R\u00e9gions de France"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2006-09-22"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://portail.indigeo.fr/geonetwork/srv/eng/thesaurus.download?ref=external.place.RegionFR",
+                                                "#text": "geonetwork.thesaurus.external.place.RegionFR"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "MADDOG"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Utilisation libre sous r\u00e9serve de mentionner la source (a minima le nom du producteur) et la date de sa derni\u00e8re mise \u00e0 jour"
+                        }
+                    },
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "otherRestrictions"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "intellectualPropertyRights"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Le partenaire fournisseur n\u2019est pas en mesure de garantir l\u2019exactitude, la mise \u00e0 jour, l\u2019int\u00e9grit\u00e9, l\u2019exhaustivit\u00e9 des donn\u00e9es et en particulier qu'elles sont exemptes d'erreurs ou d'impr\u00e9cisions, notamment de localisation, d\u2019identification ou de qualification. Aucune garantie quant \u00e0 l'aptitude des donn\u00e9es \u00e0 un usage particulier n'est apport\u00e9e par le partenaire fournisseur. Les utilisateurs utilisent les donn\u00e9es sous leur responsabilit\u00e9 pleine et enti\u00e8re, sans recours possible contre le partenaire fournisseur dont la responsabilit\u00e9 ne saurait \u00eatre engag\u00e9e du fait d\u2019un dommage r\u00e9sultant directement ou indirectement de l\u2019utilisation de ces donn\u00e9es. En particulier, il appartient aux utilisateurs d\u2019appr\u00e9cier, sous leur seule responsabilit\u00e9 : l'opportunit\u00e9 d'utiliser les donn\u00e9es; la compatibilit\u00e9 des fichiers avec leurs syst\u00e8mes informatiques; l\u2019ad\u00e9quation des donn\u00e9es \u00e0 leurs besoins; qu\u2019ils disposent de la comp\u00e9tence suffisante pour utiliser les donn\u00e9es. Le fournisseur partenaire n\u2019est en aucune fa\u00e7on responsable des \u00e9l\u00e9ments ext\u00e9rieurs aux donn\u00e9es et notamment des outils d\u2019analyse, mat\u00e9riels, logiciels, r\u00e9seaux..., utilis\u00e9s pour consulter et/ou traiter les donn\u00e9es. L\u2019utilisateur veille \u00e0 v\u00e9rifier que l\u2019actualit\u00e9 des informations mises \u00e0 disposition est compatible avec l\u2019usage qu\u2019il en fait"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                    "@codeListValue": "vector"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "1000"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8"
+                }
+            },
+            "gmd:topicCategory": [
+                {
+                    "gmd:MD_TopicCategoryCode": "elevation"
+                },
+                {
+                    "gmd:MD_TopicCategoryCode": "environment"
+                }
+            ],
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:description": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "France"
+                        }
+                    },
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-4.411223888746462"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-4.39380025898572"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "48.65459512874159"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "48.65655122282112"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:temporalElement": {
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimePeriod": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                    "@gml:id": "d51975e451a1052958",
+                                    "gml:beginPosition": "1952-06-11",
+                                    "gml:endPosition": "2020-12-04"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "@xmlns:date": "http://exslt.org/dates-and-times",
+                "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "ESRI Shapefile"
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "1.0"
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://www.univ-brest.fr/digitalAssets/40/40105_Rapport_Stabiplage_Kerlouan_2007.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Ressource bibliographique : Rapport d'expertise scientifique, LETG UMR 6554 CNRS, 9 p."
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Cariolet J.-M., Suanez S. (2007): Rapport d 'activit\u00e9 sur le suivi morpho-s\u00e9dimentaire de la plage de Boutrouilles et sur l'efficacit\u00e9 du proc\u00e9d\u00e9 STABIPLAGE (commune de Kerlouan) pour l'ann\u00e9e 2006-2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://www.univ-brest.fr/digitalAssets/40/40106_Rapport_Stabiplage_Kerlouan_2008.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Ressource bibliographique : Rapport d'expertise scientifique, LETG UMR 6554, 15 p. CNRS"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Cariolet J.-M., Suanez S. (2008) - Rapport d 'activit\u00e9 sur le suivi morpho-s\u00e9dimentaire de la plage de Boutrouilles et sur l'efficacit\u00e9 du proc\u00e9d\u00e9 STABIPLAGE (commune de Kerlouan) pour l'ann\u00e9e 2007-2008"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://www.paralia.fr/jngcgc/10_19_cariolet.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Actes du colloque des X\u00e8me Journ\u00e9es Nationales G\u00e9nie Civil \u2013 G\u00e9nie C\u00f4tier, Sophia-Antipolis (Nice), 14-16 octobre 2008, P. Gaufres, D. Levacher et le Centre Fran\u00e7ais du Littoral (Eds.), Tome 1, 201-210. doi: 10.5150/jngcgc.2008.019-C"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Cariolet J.-M., Suanez S., Carol F., Magne R. (2008) - Evaluation de la technique STABIPLAGE\u00ae mise en place sur deux plages du Finist\u00e8re : les Sables Blancs \u00e0 Plobannalec-Lesconil-Loctudy, et Boutrouilles \u00e0 Kerlouan"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://journals.openedition.org/geomorphologie/11104#quotation"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Article dans \"G\u00e9omorphologie : Relief, Processus, Environnement\", 2015, 21 (3), 267-292. doi: 10.4000/geomorphologie.11104"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Blaise E., et al. (2015) - Bilan des temp\u00eates de l\u2019hiver 2013-2014 sur la dynamique de recul du trait de c\u00f4te en Bretagne"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.4000/norois.3212"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Article dans \"Norois\", 215, 77-99. doi: 10.400/norois.3212"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suanez S., Cariolet J.-M. (2010) - L\u2019action des temp\u00eates sur l\u2019\u00e9rosion des dunes : les enseignements de la temp\u00eate du 10 mars 2008"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "@xmlns:date": "http://exslt.org/dates-and-times",
+                            "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/fre/resources.get?uuid=baeecd26-b94e-4247-8041-55ef1e331e5a&fname=KERLOUAN_I_2909101.pdf&access=public"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gmx:MimeFileType": {
+                                        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                        "@type": "application/pdf",
+                                        "#text": "KERLOUAN_I_2909101.pdf"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Fiche g\u00e9od\u00e9sique de l'IGN"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.1051/lhb/2009014"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--ical"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Article dans la \"La Houille Blanche\", 2, 52-58. doi: 10.1051/lhb/2009014"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Cariolet J.-M., Suanez S. (2009) - Approche m\u00e9thodologique pour une cartographie du risque de submersion des c\u00f4tes basses"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20061220.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 03/02/2021"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20061220.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061220.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 20/12/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20061208.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061208.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du  08/12/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070205.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070205.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 05/02/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070216.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070216.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 16/02/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070307.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070307.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 07/03/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070323.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070323.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 23/03/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070404.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070404.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 04/04/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070419.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070419.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 19/04/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20070618.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070618.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 18/06/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20061128.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20061128.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 28/11/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20061208.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20061208.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 08/12/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20061220.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20061220.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 20/12/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070205.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070205.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 05/02/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070216.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070216.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 16/02/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070307.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070307.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 07/03/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070323.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070323.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 23/03/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070404.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070404.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 04/04/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070419.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070419.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 19/04/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Donnees_Boutrouilles_20070618.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Donnees_Boutrouilles_20070618.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Semi de points et lignes de ruptures du 18/06/2007"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061128"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061128"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061208"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061208"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061220"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061220"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070205"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070205"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070216"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070216"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070307"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070307"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070323"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070323"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070404"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070404"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070419"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070419"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070618"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20070618"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/MNT_BOUT_20061128.zip"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061128.zip"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT plage de Boutrouilles du 28/11/2006"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wms"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061128"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geoserver/LETG-BREST/wcs"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WCS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "MNT_BOUT_20061128"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Suivi pluri-annuel de la plage/dune de Boutrouilles (Kerlouan, Finist\u00e8re) \u00e0 partir de mod\u00e8les num\u00e9riques de terrain (MNT) (OGC:WCS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://portail.indigeo.fr/geonetwork/srv/api/records/baeecd26-b94e-4247-8041-55ef1e331e5a/attachments/Fiche_pts_calage_Boutrouilles.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "points_calage_Boutrouilles"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Fiche des points de calage \u00e0 Boutrouilles"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode",
+                            "@codeListValue": "dataset"
+                        }
+                    }
+                }
+            },
+            "gmd:report": {
+                "gmd:DQ_DomainConsistency": {
+                    "gmd:result": {
+                        "gmd:DQ_ConformanceResult": {
+                            "gmd:specification": {
+                                "gmd:CI_Citation": {
+                                    "gmd:title": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "r\u00e8glement (ue) n o 1089/2010 de la commission du 23 novembre 2010 portant modalit\u00e9s d'application de la directive 2007/2/ce du parlement europ\u00e9en et du conseil en ce qui concerne l'interop\u00e9rabilit\u00e9 des s\u00e9ries et des services de donn\u00e9es g\u00e9ographiques"
+                                        }
+                                    },
+                                    "gmd:date": {
+                                        "gmd:CI_Date": {
+                                            "gmd:date": {
+                                                "gco:Date": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "2013-10-21"
+                                                }
+                                            },
+                                            "gmd:dateType": {
+                                                "gmd:CI_DateTypeCode": {
+                                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                    "@codeListValue": "publication"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:explanation": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "L\u2019article 7, paragraphe 1, de la directive 2007/2/CE correspond aux modalit\u00e9s techniques de\nl\u2019interop\u00e9rabilit\u00e9 : il s\u2019agit du r\u00e8glement relatif \u00e0 l\u2019interop\u00e9rabilit\u00e9 : r\u00e8glement n\u00b01253/2013 du\n21 octobre 2013 modifiant et compl\u00e9tant le r\u00e8glement n\u00b01089/2010 du 23 novembre 2010"
+                                }
+                            },
+                            "gmd:pass": {
+                                "gco:Boolean": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "true"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Lev\u00e9s surfaciques de plage/dune r\u00e9alis\u00e9s par des mesures de terrain au DGPS (Trimble 5700/5800 et Topcon HyperV). Ces lev\u00e9s ont \u00e9t\u00e9 raccord\u00e9s au syst\u00e8me g\u00e9od\u00e9sique fran\u00e7ais \u00e0 partir d\u2019une borne IGN situ\u00e9e sur la presqu\u2019\u00eele de Kerlouan (pointe de Neiz Vran) \u00e0 2 km au nord ouest du site d\u2019\u00e9tude (borne IGN : KERLOUAN I - N\u00b0 Site : 2909101 : borne en granit grav\u00e9e IGN. Coordonn\u00e9es Syst\u00e8me NTF - Projection Lambert 93 : Est :153186.53  m, Nord : 6865018.41 m ; altitude NGF (IGN69) : 16,38 m (https://geodesie.ign.fr/fiches/pdf/2909101.pdf).\nLes lev\u00e9s de plage couvrent approximativement toute la zone intertidale + la dune. La marge d'erreur calcul\u00e9e \u00e0 partir de point de calage est comprise entre +/- 4 cm en X et Y et +/- 1,5 cm en Z. Date des lev\u00e9s :\n-28/11/2006\n-08/12/2006\n-20/12/2006\n-05/02/2006\n-16/02/2007\n-07/03/2007\n-23/03/2007\n-04/04/2007\n-19/04/2007\n-18/06/2007\n(voir fiche \"points_calage_Boutrouilles.PDF\" ci-joint).\nLes donn\u00e9es brutes correspondent aux lots de donn\u00e9es \"MNT\" au format ASCII (.rtf).\nLes lots de donn\u00e9es \"LR\" correspondent aux lignes de rupture utilis\u00e9es pour l'interpolation au format ASCII (.rtf)."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

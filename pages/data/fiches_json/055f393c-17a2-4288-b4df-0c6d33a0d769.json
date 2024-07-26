@@ -1,0 +1,363 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "055f393c-17a2-4288-b4df-0c6d33a0d769",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc ../../../../web/geonetwork/xml/schemas/iso19110/schema.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Dictionnaire de donn\u00e9es pour 'Intersections spatio-temporelles quotidiennes entre les activit\u00e9s maritimes encadr\u00e9es en rade de Brest en 2009'"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Scope"
+        }
+    },
+    "gfc:fieldOfApplication": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gml": "http://www.opengis.net/gml",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2019-01-29T11:04:28"
+        }
+    },
+    "gfc:producer": {
+        "gmd:CI_ResponsibleParty": {
+            "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Damien Le Guyader"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR 6554 LETG - G\u00e9omer"
+                }
+            },
+            "gmd:positionName": {
+                "gco:CharacterString": null
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "02.98.49.86.00"
+                                }
+                            },
+                            "gmd:facsimile": {
+                                "gco:CharacterString": null
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Technopole Brest Iroise - Place Nicolas Copernic"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "PLOUZANE"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "29280"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "damien.leguyader@univ-brest.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "author",
+                    "@codeList": "CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Dictionnaire de donn\u00e9es pour 'Intersections spatio-temporelles entre activit\u00e9s maritimes encadr\u00e9es en rade de Brest en 2009'"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Caract\u00e9rise la distribution spatio-temporelle des intersections spatio-temporelles entre les activit\u00e9s maritimes encadr\u00e9es au cours de l'ann\u00e9e 2009 \u00e0 la r\u00e9solution quotidienne."
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:aliases": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Local name"
+                }
+            },
+            "gfc:featureCatalogue": null,
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "DATE_"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Date de l\u2019occurrence de l\u2019UST"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "0"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DATE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "DENSITE"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Densit\u00e9 de supports (navires/km\u00b2)"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "0"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DOUBLE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "NB_ACT"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Nombre d'activit\u00e9s en intersection spatiale et temporelle"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DOUBLE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "NB_IST"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Nombre d'intersections spatio-temporelles entre activit\u00e9s"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "1"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "DOUBLE"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ALL_ACT_ID"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Chaine contenant les identifiants d'activit\u00e9s (ACT_ID) concat\u00e9n\u00e9s (s\u00e9parateur':')."
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": "0"
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
