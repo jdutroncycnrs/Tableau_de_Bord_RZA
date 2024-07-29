@@ -62,7 +62,7 @@ liste_gr =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'ZAH', 'Zone Atelier Hwange', 'ZAHV - Hwange',
            'OHMi Nunavik', 'OHM Oyapock', 'OHM Pays de Bitche', 'OHM Bassin Minier de Provence', 
            'OHMi Téssékéré', 'OHM Vallée du Rhône','OHMi Estarreja','OHM Pyrénées - haut Vicdessos', 
-           'OHM Littoral méditerranéen', 'OHMi Pima County']
+           'OHM Littoral méditerranéen', 'OHMi Pima County', 'OHM Littoral Caraïbe']
 
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS #########################
 
@@ -85,7 +85,8 @@ liste_groupes_ZA = ['zaaj', 'zaa', 'ZA', 'zabri', 'zaeu', 'zapygar',  'zabr', 'z
 liste_groupes_OHM = ['OHMi Nunavik', 'OHM Oyapock', 'OHM Pays de Bitche', 'OHM Bassin Minier de Provence', 'OHMi Téssékéré', 
                      'OHM Vallée du Rhône','OHMi Estarreja', 'OHM Pyrénées - haut Vicdessos', 'OHM Littoral méditerranéen', 'OHMi Pima County']
 
-
+########### Choix OHM/RZA #############################################################
+## Le choix est exclusif ##############################################################
 if 'checkbox1' not in st.session_state:
     st.session_state.checkbox1 = False
 if 'checkbox2' not in st.session_state:
@@ -250,6 +251,40 @@ if admin_action == admin_pass:
                                     json.dump(resp_attach_json, f, indent=4)
                             except:
                                 pass
+                        try:
+                            with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
+                                data = json.load(f)
+
+                            with open(f'pages/data/fiches_txt/{identifieur}.txt', 'w') as file:
+                                transcript_json(data, file)
+
+                            with open(f'pages/data/fiches_txt/{identifieur}.txt', 'r') as f:
+                                d = f.read()
+
+                            listi = re.split('µ',d)
+
+                            df = pd.DataFrame(listi, columns=['Results'])
+                            for u in range(len(df)):
+                                p = re.split('§',df.loc[u,'Results'])
+                                try:
+                                    df.loc[u,'Valeurs']=p[1]
+                                except:
+                                    pass
+                                try:
+                                    df.loc[u,'Clés']=p[0].replace('.','£')
+                                except:
+                                    pass
+
+                            for j in range(len(df)):
+                                pp = re.split('£',df.loc[j,'Clés'])
+                                for k in range(15):
+                                    try:
+                                        df.loc[j,f'K{k}']=pp[k]
+                                    except:
+                                        pass
+                            df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
+                        except:
+                            pass
 
 ########## VISUALISATION DU GROUPE ############################################
 
@@ -1192,6 +1227,54 @@ liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date
 df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
 
 st.dataframe(df_variables_evaluation)
+
+########################### RECUPERATION DES MENTIONS ###################################################
+
+if admin_action == admin_pass:
+    Recup_mentions = st.sidebar.button('recup des mentions')
+    if Recup_mentions:
+        with st.spinner("La récup des groupes est en cours"):
+            group_2 = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
+            alluuids_ = group_2['Identifiant']
+            for i in range(len(alluuids_)): #len(alluuids)
+                print(i)
+                indd = group_2[group_2['Identifiant']==alluuids_[i]].index.values
+                try:
+                    df = pd.read_csv(f'pages/data/fiches_csv/{alluuids_[i]}.csv',index_col=[0])
+                    try: 
+                        Titre = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
+                    except:
+                        try:
+                            Titre = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
+                        except:
+                            Titre = ""
+
+                    Mots_cles = []
+                    try:
+                        for u in range(len(df)):
+                            if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                                Mots_cles.append([u,df.loc[u,'Valeurs']])
+                    except:
+                        pass
+
+                    Keywords = []
+                    for b in range(len(Mots_cles)):
+                        Keywords.append(Mots_cles[b][1])
+
+                    groupe2 = 'Aucune mention'
+                    Titre_Keywords = Titre.split()
+                    for k in Keywords:
+                        Titre_Keywords.append(k)
+
+                    for s in Titre_Keywords:
+                        if s in liste_gr:
+                            groupe2 = s
+                        else:
+                            pass        
+                except:
+                    groupe2 = "Pas de fichier"
+                group_2.loc[indd,'Mention']=groupe2
+            group_2.to_csv("pages/data/infos_MD/infos_groupes_mentions.csv")
 
 ####################### VISUALISATION FAIR ####################################################
 
