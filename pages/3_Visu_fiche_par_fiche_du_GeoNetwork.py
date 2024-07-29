@@ -355,16 +355,8 @@ except:
         try:
             with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
                 json.dump(resp_json, f, indent=4)
-            F1 = True
-            F1c = couleur_True
-            A2 = True
-            A2c = couleur_True
         except:
             st.markdown("Cette fiche n'est pas lisible")
-            F1 = False
-            F1c = couleur_False
-            A2 = False
-            A2c = couleur_False
      
     resp2 = requests.get(url_,headers=headers_xml)
     if resp2.status_code == 200:
@@ -805,7 +797,7 @@ except:
 
 ######### EVALUATION #######################################################
 
-if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0:
+if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0 and len(Email)!=0:
     F2 = True
     F2c = couleur_True
 else:
@@ -815,12 +807,18 @@ else:
 if len(Online_links)!=0:
     for i in range(len(Online_links)):
         if 'doi' in Online_links[i] or 'attachments' in Online_links[i]:
+            A1 = True
+            A1c = couleur_True
             F3 = True
             F3c = couleur_True
         else:
+            A1 = False
+            A1c = couleur_False
             F3 = False
             F3c = couleur_False
 else:
+    A1 = False
+    A1c = couleur_False
     F3 = False
     F3c = couleur_False
 
@@ -830,16 +828,10 @@ if groupe in (['Aucun groupe', 'Groupe exemple']):
 else:
     F4 = True
     F4c = couleur_True
-if len(Online_links)==0:
-    A1 = True
-    A1c = couleur_True
-else:
-    A1 = False
-    A1c = couleur_False
 
 if len(Format)!=0:
     for i in range(len(Format)):
-        if Format[i] in ['GeoTiff']:
+        if Format[i] in ['GeoTiff','GeoTIFF', 'GEOTIFF','shape','ESRI Shapefile','Word','ASC','CSV','png','PNG','pdf','PDF','svg','SVG', 'odt','ODT','rtf', 'RTF','txt','TXT','jpg','JPG','ods','ODS','mkv','MKV','zip','ZIP','tar','TAR']:
             I1 = True
             I1c = couleur_True
         else:
@@ -1310,10 +1302,6 @@ if admin_action == admin_pass:
                 except:
                     group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
             group_2.to_csv("pages/data/infos_MD/infos_groupes_mentions.csv")
-
-#Mentions = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
-#Mentions_ = set(Mentions['Mention'])
-#st.write(Mentions_)
 
 ####################### VISUALISATION FAIR ####################################################
 
