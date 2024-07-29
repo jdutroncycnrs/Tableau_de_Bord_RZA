@@ -1,0 +1,1697 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gml": "http://www.opengis.net/gml",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "84e7a32a-0ddd-47e8-a382-d65a7c90d5a4"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "eng"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+        "@xmlns:gss": "http://www.isotc211.org/2005/gss",
+        "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Ghislaine MONET"
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#EN",
+                            "#text": "Ghislaine MONET"
+                        }
+                    }
+                }
+            },
+            "gmd:organisationName": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "INRA"
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#EN",
+                            "#text": "INRA"
+                        }
+                    }
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33 4 50 26 78 37"
+                                }
+                            },
+                            "gmd:facsimile": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "+33 4 50 26 07 60"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "INRA UMR CARRTEL 75 avenue de Corzent"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "INRA UMR CARRTEL 75 avenue de Corzent"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Thonon-les-Bains"
+                                }
+                            },
+                            "gmd:administrativeArea": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "74200"
+                                }
+                            },
+                            "gmd:country": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "France"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "ghislaine.monet@thonon.inra.fr"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "ghislaine.monet@thonon.inra.fr"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2018-11-14T15:44:47"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:locale": [
+        {
+            "gmd:PT_Locale": {
+                "@id": "FR",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "fre"
+                    }
+                },
+                "gmd:characterEncoding": null
+            }
+        },
+        {
+            "gmd:PT_Locale": {
+                "@id": "EN",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "eng"
+                    }
+                },
+                "gmd:characterEncoding": {
+                    "gmd:MD_CharacterSetCode": {
+                        "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode",
+                        "@codeListValue": "utf8"
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "WGS 84 (EPSG:4326)"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#EN",
+                                    "#text": "WGS 84 (EPSG:4326)"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "SOERE OLA, Observatory on Alpine LAkes"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "SOERE OLA, Observatory on Alpine LAkes"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "SOERE OLA, Observatoire des LAcs alpins"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2010-01-01"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "creation"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": [
+                        {
+                            "gmd:MD_Identifier": {
+                                "gmd:code": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "http://localhost:8082/geonetwork_anaee/84e7a32a-0ddd-47e8-a382-d65a7c90d5a4"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "http://localhost:8082/geonetwork_anaee/84e7a32a-0ddd-47e8-a382-d65a7c90d5a4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:MD_Identifier": {
+                                "gmd:code": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "http://w3.avignon.inra.fr/geonetwork_anaee/84e7a32a-0ddd-47e8-a382-d65a7c90d5a4"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "http://w3.avignon.inra.fr/geonetwork_anaee/84e7a32a-0ddd-47e8-a382-d65a7c90d5a4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:abstract": {
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "This SOERE aims at understanding and modelling the dynamics and ecological functioning of lake ecosystems affected by local and global forcing factors.\nThree peri -alpine lakes (Lakes Geneva , Annecy, Bourget) and their watersheds are monitored. These systems represent important natural resources and meet key societal demands (drinking water, fishing, tourism, biodiversity ... ) .\n\nThe services provided by the Soere relates to both long-term in situ observation and experimentation.\n\nThe observatory task is based on logistic, technical and analytical supports for (i) collecting environmental data (physico- chemical and biological), (ii) creating and managing database (ii) organizing the storage of reference biological samples. The accession to the data is possible according to the 'Terms & Conditions of Use' of the Soere Database.\n\nThe SOERE OLA can provide logistic supports for sampling, in situ measurements and experimentation on Lake Geneva. This service is submitted to validation according to the \" Logistic Support Leman\" service charter.\nThe SOERE OLA has Allenvi label."
+                },
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN",
+                                "#text": "This SOERE aims at understanding and modelling the dynamics and ecological functioning of lake ecosystems affected by local and global forcing factors.\nThree peri -alpine lakes (Lakes Geneva , Annecy, Bourget) and their watersheds are monitored. These systems represent important natural resources and meet key societal demands (drinking water, fishing, tourism, biodiversity ... ) .\n\nThe services provided by the Soere relates to both long-term in situ observation and experimentation.\n\nThe observatory task is based on logistic, technical and analytical supports for (i) collecting environmental data (physico- chemical and biological), (ii) creating and managing database (ii) organizing the storage of reference biological samples. The accession to the data is possible according to the 'Terms & Conditions of Use' of the Soere Database.\n\nThe SOERE OLA can provide logistic supports for sampling, in situ measurements and experimentation on Lake Geneva. This service is submitted to validation according to the \" Logistic Support Leman\" service charter.\nThe SOERE OLA has Allenvi label."
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "L\u2019ambition de ce soere est d\u2019observer, de comprendre, et [[in fine]] de mod\u00e9liser l\u2019\u00e9volution de l\u2019\u00e9tat et des fonctionnements \u00e9cologiques d\u2019\u00e9cosyst\u00e8mes lacustres soumis \u00e0 un changement des pressions d\u2019anthropisation locales et aux changements globaux en cours.\n\nLes objets observ\u00e9s sont les syst\u00e8mes constitu\u00e9s par les 3 grands lacs p\u00e9ri-alpins (L\u00e9man, Annecy, Bourget) et leurs bassins versants. Ils repr\u00e9sentent des ressources naturelles consid\u00e9rables et sont au centre d\u2019une forte demande soci\u00e9tale r\u00e9gionale (eau potable, p\u00eache, tourisme, biodiversit\u00e9\u2026).\n\nLes types de services associ\u00e9s \u00e0  ces zones lacustres instrument\u00e9es concernent \u00e0 la fois l'observation in situ sur le long terme et l'exp\u00e9rimentation. \n \nLe volet observatoire s'appuie sur des moyens techniques et analytiques pour l'obtention de donn\u00e9es environnementales (physico-chimiques et biologiques), la constitution et la gestion de banques de donn\u00e9es, le stockage et l'archivage d'\u00e9chantillons de r\u00e9f\u00e9rence. L'acc\u00e8s \u00e0 la base de donn\u00e9es  est ouvert selon la charte d'acc\u00e8s \u00e9tablie (Conditions G\u00e9n\u00e9rales d'Utilisation).\nPar ailleurs, le soere OLA peut fournir des moyens d'acc\u00e8s (pr\u00e9l\u00e8vements, mesures in situ) et d'appui aux exp\u00e9rimentations sur le lac L\u00e9man. Ce service est r\u00e9glement\u00e9 selon la charte d' \"Appui Logistique L\u00e9man\".\nLe SOERE OLA a la labellisation Allenvi."
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+                    "@xmlns:gss": "http://www.isotc211.org/2005/gss",
+                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Isabelle DOMAIZON"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "Isabelle DOMAIZON"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRA"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "INRA"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33 4 50 26 78 72"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33 4 50 26 07 60"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "INRA 75 avenue de Corzent - BP 511"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "INRA 75 avenue de Corzent - BP 511"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Thonon-les-Bains Cedex"
+                                            }
+                                        },
+                                        "gmd:administrativeArea": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "74203"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "France"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "isabelle.domaizon@thonon.inra.fr"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "isabelle.domaizon@thonon.inra.fr"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact"
+                            }
+                        }
+                    }
+                },
+                {
+                    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+                    "@xmlns:gss": "http://www.isotc211.org/2005/gss",
+                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ghislaine MONET"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "Ghislaine MONET"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "INRA"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "INRA"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33 4 50 26 78 37"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "+33 4 50 26 07 60"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "INRA UMR CARRTEL 75 avenue de Corzent"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "INRA UMR CARRTEL 75 avenue de Corzent"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Thonon-les-Bains"
+                                            }
+                                        },
+                                        "gmd:administrativeArea": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "74200"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "France"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "ghislaine.monet@thonon.inra.fr"
+                                            },
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#EN",
+                                                        "#text": "ghislaine.monet@thonon.inra.fr"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "asNeeded",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "http://w3.avignon.inra.fr:80/geonetwork_anaee/srv/eng/resources.get?uuid=84e7a32a-0ddd-47e8-a382-d65a7c90d5a4&fname=officiel-ola-vagues_bleues-sur-fond-blanc-FR_large_s.png"
+                        }
+                    },
+                    "gmd:fileDescription": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "thumbnail"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#EN",
+                                    "#text": "thumbnail"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:fileType": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "png"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "lake"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "lake"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "environmental monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "environmental monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "biodiversity monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "biodiversity monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "monitoring data"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "monitoring data"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "ecosystem monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "ecosystem monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "chemical monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "chemical monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "long term monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "long term monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "planktonic crustacea"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "planktonic crustacea"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "freshwater"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "freshwater"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "freshwater monitoring"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "freshwater monitoring"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "phytoplankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "phytoplankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "picoplankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "picoplankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "microplankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "microplankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "macroplankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "macroplankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "plankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "plankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "zooplankton"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "zooplankton"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "physicochemical analysis"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "physicochemical analysis"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "planktonic community"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "planktonic community"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "freshwater"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "freshwater"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "AnaEE-France"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "AnaEE-France"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Annecy Lake"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Annecy Lake"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "L\u00e9man Lake"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "L\u00e9man Lake"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Bourget Lake"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Bourget Lake"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "ANAEE-France thesaurus"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "ANAEE-France thesaurus"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2013-09-25"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "http://w3.avignon.inra.fr/geonetwork_anaee/srv/en/thesaurus.download?ref=external.theme.anaee-france-thesaurus",
+                                                "#text": "geonetwork.thesaurus.external.theme.anaee-france-thesaurus"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Environmental monitoring facilities"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "Environmental monitoring facilities"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:type": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0 INSPIRE themes"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "GEMET - INSPIRE themes, version 1.0 INSPIRE themes"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "http://w3.avignon.inra.fr/geonetwork_anaee/srv/en/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lac_Annecy"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Lac_Annecy"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lac_Leman"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Lac_Leman"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lac_Bourget"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Lac_Bourget"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "AnaEE-France Locations"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "AnaEE-France Locations"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:DateTime": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2015-12-08T09:00:54"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "http://w3.avignon.inra.fr/geonetwork_anaee/srv/en/thesaurus.download?ref=local.place.anaee-france_locations",
+                                                "#text": "geonetwork.thesaurus.local.place.anaee-france_locations"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": null
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "See AnaEE-France charters.\nSee SOERE-OLA Charter\nSee SOERE-OLA-IS Terms of use"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "See AnaEE-France charters.\nSee SOERE-OLA Charter\nSee SOERE-OLA-IS Terms of use"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Voir les chartes AnaEE-France.\nVoir la charte du SOERE-OLA\nVoir les Conditions Generales d'Utilisation (CGU) des donn\u00e9es du SOERE OLA"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "intellectualPropertyRights",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "intellectualPropertyRights",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "50000"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "structure"
+            },
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "@xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+                        "gmd:description": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Great peri alpin lakes:\nLeman lake (Geneva lake)\nAnnecy lake\nBourget lake"
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Great peri alpin lakes:\nLeman lake (Geneva lake)\nAnnecy lake\nBourget lake"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Les grands lacs peri-alpins :\nLac L\u00e9man\nLac d'Annecy\nLac du Bourget"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "5.724771112576246"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "7.021157831326298"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "45.642341356272304"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "46.564027452197344"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml",
+                                        "@gml:id": "d1210e538a1052958",
+                                        "gml:beginPosition": "2010-01-01",
+                                        "gml:endPosition": "now"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gmd:distributionInfo": {
+        "@xmlns:che": "http://www.geocat.ch/2008/che",
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "inapplicable"
+                        },
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "inapplicable"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "non pertinent"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:version": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "missing"
+                        }
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://www6.inra.fr/soere-ola"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gmx:MimeFileType": {
+                                        "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                        "@type": "",
+                                        "#text": "SOERE OLA Website"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Link to the resource"
+                                    },
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "Link to the resource"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Lien vers la ressource"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://si-ola.inra.fr/si_lacs/login.jsf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": null
+                                    }
+                                },
+                                "gmd:name": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": null,
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:description": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": null,
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:report": {
+                "gmd:DQ_DomainConsistency": {
+                    "gmd:result": {
+                        "gmd:DQ_ConformanceResult": {
+                            "gmd:specification": {
+                                "gmd:CI_Citation": {
+                                    "gmd:title": {
+                                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services"
+                                        },
+                                        "gmd:PT_FreeText": {
+                                            "gmd:textGroup": {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN",
+                                                    "#text": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "gmd:date": {
+                                        "gmd:CI_Date": {
+                                            "gmd:date": {
+                                                "gco:Date": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "2010-11-23"
+                                                }
+                                            },
+                                            "gmd:dateType": {
+                                                "gmd:CI_DateTypeCode": {
+                                                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                    "@codeListValue": "publication"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:explanation": {
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Not evaluated"
+                                },
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "Not evaluated"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Non \u00e9valu\u00e9"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "gmd:pass": {
+                                "gco:Boolean": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "undefined"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:scope": {
+                "gmd:lineage": {
+                    "gmd:LI_Lineage": {
+                        "gmd:statement": {
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "The  data temporal extents are depending on parameters. Older data are physical chemistry from 1957 on Lake Geneva. They have been validated by scientists  when they are been acquired but  were transcribed from their paper version to a digital version thereafter.\nThe SOERE OLA is a service of AnaEE-France Infrastructure."
+                            },
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "The  data temporal extents are depending on parameters. Older data are physical chemistry from 1957 on Lake Geneva. They have been validated by scientists  when they are been acquired but  were transcribed from their paper version to a digital version thereafter.\nThe SOERE OLA is a service of AnaEE-France Infrastructure."
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Les donn\u00e9es sont sur des \u00e9tendues temporelles variables selon leur type. Les plus anciennes sont des donn\u00e9es de physico chimie \u00e0 partir de 1957 concernant le lac L\u00e9man Elles ont \u00e9t\u00e9 valid\u00e9es par des scientifiques au fur et \u00e0 mesure de leur acquisition puis retranscrites de leur version papier vers une version num\u00e9rique par la suite.\nLe SOERE OLA est un des services de l'infrastructure AnaEE-France."
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

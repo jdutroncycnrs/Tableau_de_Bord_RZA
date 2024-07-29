@@ -1,0 +1,57 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "http://localhost:8080/geosource/srv/en/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=4a8e2da5-ac63-40c4-a4cb-d2bbe2d322ad",
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "groupOwner": "123",
+                "op5": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceTitleObject": {
+                    "default": "Catalogue d'attributs - Relev\u00e9s micro-mammif\u00e8res (Rennes) - Zone Atelier Armorique ZAAr"
+                },
+                "resourceAbstract": "-- Dictionnaire de donn\u00e9es de la couche --",
+                "id": "2484",
+                "uuid": "4a8e2da5-ac63-40c4-a4cb-d2bbe2d322ad",
+                "op0": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceType": [
+                    "featureCatalog"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "4a8e2da5-ac63-40c4-a4cb-d2bbe2d322ad"
+        }
+    ],
+    "brothersAndSisters": []
+}

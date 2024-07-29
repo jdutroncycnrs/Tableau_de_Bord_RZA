@@ -1,0 +1,1988 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gml": "http://www.opengis.net/gml",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd ../schema.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "40033ae2-ff5c-4dbf-9336-7818fb2850f9"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "fre"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode",
+            "@codeListValue": "dataset"
+        }
+    },
+    "gmd:hierarchyLevelName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Param\u00e8tres \u00e9tudi\u00e9s : d\u00e9bits, concentrations en s\u00e9diments en suspension et taux de micropolluants"
+        }
+    },
+    "gmd:contact": {
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            },
+            "gmd:organisationName": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            },
+            "gmd:positionName": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:facsimile": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": null,
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:city": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:administrativeArea": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:country": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": null,
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR"
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "contact.admin.irsteadata@lists.irstea.fr",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "contact.admin.irsteadata@lists.irstea.fr"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "pointOfContact",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2018-06-26T11:50:15"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:locale": [
+        {
+            "gmd:PT_Locale": {
+                "@id": "EN",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "eng"
+                    }
+                },
+                "gmd:characterEncoding": null
+            }
+        },
+        {
+            "gmd:PT_Locale": {
+                "@id": "FR",
+                "gmd:languageCode": {
+                    "gmd:LanguageCode": {
+                        "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                        "@codeListValue": "fre"
+                    }
+                },
+                "gmd:characterEncoding": {
+                    "gmd:MD_CharacterSetCode": {
+                        "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode",
+                        "@codeListValue": "utf8"
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:spatialRepresentationInfo": {
+        "gmd:MD_VectorSpatialRepresentation": null
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": "WGS 1984",
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#FR",
+                                    "#text": "WGS 1984"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": "Observatoire des S\u00e9diments du Rh\u00f4ne",
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Observatoire des S\u00e9diments du Rh\u00f4ne"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "gmd:date": [
+                        {
+                            "gmd:CI_Date": {
+                                "gmd:date": {
+                                    "gco:Date": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "2009-01-01"
+                                    }
+                                },
+                                "gmd:dateType": {
+                                    "gmd:CI_DateTypeCode": {
+                                        "@codeListValue": "creation",
+                                        "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_Date": {
+                                "gmd:date": {
+                                    "gco:Date": null
+                                },
+                                "gmd:dateType": {
+                                    "gmd:CI_DateTypeCode": {
+                                        "@codeListValue": "publication",
+                                        "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "gmd:edition": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    },
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeListValue": "mapDigital",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_PresentationFormCode"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": "L\u2019Observatoire des S\u00e9diments du Rh\u00f4ne (OSR) a \u00e9t\u00e9 cr\u00e9\u00e9 en 2009 \u00e0 la suite de questions qui ont \u00e9merg\u00e9 dans le cadre du plan Rh\u00f4ne. Sur le Rh\u00f4ne, du L\u00e9man \u00e0 la M\u00e9diterran\u00e9e, soit un lin\u00e9aire de plus de 500 km, cet observatoire a pour mission de produire, rassembler et g\u00e9rer des donn\u00e9es visant \u00e0 caract\u00e9riser les stocks et les flux s\u00e9dimentaires, ainsi que les pollutions associ\u00e9es \u00e0 ces s\u00e9diments.\n\nL\u2019OSR est un programme de recherche financ\u00e9 au titre du Plan Rh\u00f4ne et b\u00e9n\u00e9ficie du soutien du Fond Europ\u00e9en pour le D\u00e9veloppement R\u00e9gional. L\u2019OSR est un programme de recherche regroupant scientifiques (CNRS, Irstea, ENTPE, IRSN, Ifremer) et les principaux gestionnaires du fleuve (DREAL, Agence de l\u2019Eau, la CNR, les r\u00e9gions Auvergne Rh\u00f4ne-Alpes, Provence-Alpes-C\u00f4te d\u2019Azur et Occitanie, et EDF). Il constitue l\u2019un des observatoires de la Zone Atelier du Bassin du Rh\u00f4ne (ZABR).\nSites exp\u00e9rimentaux :\n- Flux OSR \nCe site exp\u00e9rimental regroupe les suivis par les diff\u00e9rents partenaires de l'OSR des d\u00e9bits, des concentrations en s\u00e9diments en suspension et des taux de micropolluants sur le Rh\u00f4ne et ses affluents.\nDonn\u00e9es disponibles via la Base de Donn\u00e9es pour les Observatoires en Hydrologie BDOH, g\u00e9r\u00e9e par Irstea.",
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": [
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#FR",
+                                "#text": "L\u2019Observatoire des S\u00e9diments du Rh\u00f4ne (OSR) a \u00e9t\u00e9 cr\u00e9\u00e9 en 2009 \u00e0 la suite de questions qui ont \u00e9merg\u00e9 dans le cadre du plan Rh\u00f4ne. Sur le Rh\u00f4ne, du L\u00e9man \u00e0 la M\u00e9diterran\u00e9e, soit un lin\u00e9aire de plus de 500 km, cet observatoire a pour mission de produire, rassembler et g\u00e9rer des donn\u00e9es visant \u00e0 caract\u00e9riser les stocks et les flux s\u00e9dimentaires, ainsi que les pollutions associ\u00e9es \u00e0 ces s\u00e9diments.\n\nL\u2019OSR est un programme de recherche financ\u00e9 au titre du Plan Rh\u00f4ne et b\u00e9n\u00e9ficie du soutien du Fond Europ\u00e9en pour le D\u00e9veloppement R\u00e9gional. L\u2019OSR est un programme de recherche regroupant scientifiques (CNRS, Irstea, ENTPE, IRSN, Ifremer) et les principaux gestionnaires du fleuve (DREAL, Agence de l\u2019Eau, la CNR, les r\u00e9gions Auvergne Rh\u00f4ne-Alpes, Provence-Alpes-C\u00f4te d\u2019Azur et Occitanie, et EDF). Il constitue l\u2019un des observatoires de la Zone Atelier du Bassin du Rh\u00f4ne (ZABR).\nSites exp\u00e9rimentaux :\n- Flux OSR \nCe site exp\u00e9rimental regroupe les suivis par les diff\u00e9rents partenaires de l'OSR des d\u00e9bits, des concentrations en s\u00e9diments en suspension et des taux de micropolluants sur le Rh\u00f4ne et ses affluents.\nDonn\u00e9es disponibles via la Base de Donn\u00e9es pour les Observatoires en Hydrologie BDOH, g\u00e9r\u00e9e par Irstea."
+                            }
+                        },
+                        {
+                            "gmd:LocalisedCharacterString": {
+                                "@locale": "#EN"
+                            }
+                        }
+                    ]
+                }
+            },
+            "gmd:purpose": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            },
+            "gmd:credit": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeListValue": "onGoing",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ProgressCode"
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Thollet, Fabien",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Thollet, Fabien"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": "fabien.thollet@irstea.fr",
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "fabien.thollet@irstea.fr"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Le Bescond, Chlo\u00e9",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Le Bescond, Chlo\u00e9"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": "chloe.le-bescond@irstea.fr",
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "chloe.le-bescond@irstea.fr"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Le Coz, J\u00e9r\u00f4me",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Le Coz, J\u00e9r\u00f4me"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": "jerome.lecoz@irstea.fr",
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR",
+                                                        "#text": "jerome.lecoz@irstea.fr"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Coquery, Marina",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Coquery, Marina"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": null,
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Panay, Josselin",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Panay, Josselin"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": null,
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Lagouy, Micka\u00ebl",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Lagouy, Micka\u00ebl"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": null,
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Dramais,Guillaume",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Dramais,Guillaume"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Irstea",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Irstea"
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@gco:nilReason": "missing",
+                                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                            "gco:CharacterString": null,
+                                            "gmd:PT_FreeText": {
+                                                "gmd:textGroup": {
+                                                    "gmd:LocalisedCharacterString": {
+                                                        "@locale": "#FR"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "author"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "continual",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://data.irstea.fr/geonetwork/srv/api/records/40033ae2-ff5c-4dbf-9336-7818fb2850f9/attachments/osr.jpg"
+                        }
+                    },
+                    "gmd:fileDescription": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": "osr.jpg",
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": [
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "osr.jpg"
+                                    }
+                                },
+                                {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#EN",
+                                        "#text": "osr.jpg"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Eaux",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Eaux"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Eaux"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "discipline"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "irsteaDep",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "irsteaDep"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2016-12-06"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=local.discipline.irstea-departement",
+                                                "#text": "geonetwork.thesaurus.local.discipline.irstea-departement"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "RIVERLY",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "RIVERLY"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "RIVERLY"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "discipline"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "irsteaUr",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "irsteaUr"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2016-12-06"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=local.discipline.irstea-ur",
+                                                "#text": "geonetwork.thesaurus.local.discipline.irstea-ur"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "LAMA",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "LAMA"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "LAMA"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "HYR",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "HYR"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "HYR"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "HYBV",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "HYBV"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "HYBV"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "discipline"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "irsteaEr",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "irsteaEr"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2017-09-11"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=local.discipline.irstea-er",
+                                                "#text": "geonetwork.thesaurus.local.discipline.irstea-er"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "OBS - Observations de terrain (relev\u00e9s, photos, imagerie satellite, film ...)",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "OBS - Observations de terrain (relev\u00e9s, photos, imagerie satellite, film ...)"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "OBS"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "TMPS - S\u00e9ries temporelles (cohortes + s\u00e9ries chrono + mesures r\u00e9p\u00e9t\u00e9es)",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "TMPS - S\u00e9ries temporelles (cohortes + s\u00e9ries chrono + mesures r\u00e9p\u00e9t\u00e9es)"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "TMPS"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "Familles de ressource IRSTEA",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "Familles de ressource IRSTEA"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2015-12-17"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=local.theme.irstea-resources",
+                                                "#text": "geonetwork.thesaurus.local.theme.irstea-resources"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "micropolluant min\u00e9ral",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "micropolluant min\u00e9ral"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "micropolluant organique",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "micropolluant organique"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "organic micropollutant"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "pollution",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "pollution"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "pollution"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "s\u00e9diment",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "s\u00e9diment"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "sediment"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "mati\u00e8res en suspension",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "mati\u00e8res en suspension"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "suspended matter"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                "@gco:nilReason": "missing",
+                                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                "gco:CharacterString": "cours d'eau",
+                                "gmd:PT_FreeText": {
+                                    "gmd:textGroup": [
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "cours d'eau"
+                                            }
+                                        },
+                                        {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#EN",
+                                                "#text": "rivers"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "theme.Thesaurus_Irstea.rdf",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "theme.Thesaurus_Irstea.rdf"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2017-10-15"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.Thesaurus_Irstea",
+                                                "#text": "geonetwork.thesaurus.external.theme.Thesaurus_Irstea"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Hydrographie",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": [
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#FR",
+                                            "#text": "Hydrographie"
+                                        }
+                                    },
+                                    {
+                                        "gmd:LocalisedCharacterString": {
+                                            "@locale": "#EN",
+                                            "#text": "Hydrography"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "GEMET - INSPIRE themes, version 1.0",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": {
+                                            "gmd:LocalisedCharacterString": {
+                                                "@locale": "#FR",
+                                                "#text": "GEMET - INSPIRE themes, version 1.0"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://data.irstea.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "Rh\u00f4ne",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "Rh\u00f4ne"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": "affluent",
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR",
+                                        "#text": "affluent"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": null,
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": null,
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": null,
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": "Licence Irstea",
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#FR",
+                                    "#text": "Licence Irstea"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "public",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "reuseallowed",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": "Les donn\u00e9es sont accessibles \u00e0 tous gratuitement moyennant une inscription sur le site et le respect des conditions d'utilisation :  https://bdoh.irstea.fr/",
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#FR",
+                                    "#text": "Les donn\u00e9es sont accessibles \u00e0 tous gratuitement moyennant une inscription sur le site et le respect des conditions d'utilisation :  https://bdoh.irstea.fr/"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "vector",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": null
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "fre"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "environment"
+            },
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml",
+                                        "@gml:id": "d1e468a1049886",
+                                        "gml:beginPosition": "2009-01-01",
+                                        "gml:endPosition": "2018-05-28"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": null
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": null
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": null
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": null
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:supplementalInformation": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                "@gco:nilReason": "missing",
+                "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                "gco:CharacterString": null,
+                "gmd:PT_FreeText": {
+                    "gmd:textGroup": {
+                        "gmd:LocalisedCharacterString": {
+                            "@locale": "#FR"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": [
+                null,
+                {
+                    "gmd:MD_Format": {
+                        "gmd:name": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                            "@gco:nilReason": "missing",
+                            "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                            "gco:CharacterString": null,
+                            "gmd:PT_FreeText": {
+                                "gmd:textGroup": {
+                                    "gmd:LocalisedCharacterString": {
+                                        "@locale": "#FR"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://bdoh.irstea.fr/OBSERVATOIRE-DES-SEDIMENTS-DU-RHONE/"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "Donn\u00e9es de l'observatoire des S\u00e9diments du Rh\u00f4ne (OSR)",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Donn\u00e9es de l'observatoire des S\u00e9diments du Rh\u00f4ne (OSR)"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:description": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": null,
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.17180/obs.osr"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "Pour citer ces donn\u00e9es : Thollet, F., Le Bescond, Ch., Le Coz, J., Coquery, M., Panay, J., Lagouy, M., & Dramais, G. (2015). Observatoire des S\u00e9diments du Rh\u00f4ne [Data set]. Irstea. https://doi.org/10.17180/obs.osr",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Pour citer ces donn\u00e9es : Thollet, F., Le Bescond, Ch., Le Coz, J., Coquery, M., Panay, J., Lagouy, M., & Dramais, G. (2015). Observatoire des S\u00e9diments du Rh\u00f4ne [Data set]. Irstea. https://doi.org/10.17180/obs.osr"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:description": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": null,
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://www.graie.org/osr/"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": null
+                                    }
+                                },
+                                "gmd:name": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne, une plateforme de recherche fondamentale et appliqu\u00e9e pluri-partenariale",
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR",
+                                                    "#text": "Site web de l'Observatoire des S\u00e9diments du Rh\u00f4ne, une plateforme de recherche fondamentale et appliqu\u00e9e pluri-partenariale"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "gmd:description": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                    "@gco:nilReason": "missing",
+                                    "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                                    "gco:CharacterString": null,
+                                    "gmd:PT_FreeText": {
+                                        "gmd:textGroup": [
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#FR"
+                                                }
+                                            },
+                                            {
+                                                "gmd:LocalisedCharacterString": {
+                                                    "@locale": "#EN"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "gmd:offLine": {
+                        "gmd:MD_Medium": {
+                            "gmd:mediumFormat": {
+                                "gmd:MD_MediumFormatCode": {
+                                    "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_MediumFormatCode",
+                                    "@codeListValue": "sic"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "dataset",
+                            "@codeList": "http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                        "@gco:nilReason": "missing",
+                        "@xsi:type": "gmd:PT_FreeText_PropertyType",
+                        "gco:CharacterString": null,
+                        "gmd:PT_FreeText": {
+                            "gmd:textGroup": {
+                                "gmd:LocalisedCharacterString": {
+                                    "@locale": "#FR"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

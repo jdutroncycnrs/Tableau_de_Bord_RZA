@@ -1,0 +1,57 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "http://localhost:8080/geosource/srv/en/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=6efe853f-8c8e-4a0f-aa12-2fc4607b028e",
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "groupOwner": "123",
+                "op5": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceTitleObject": {
+                    "default": "Catalogue d'attributs - Evaluation des fonctions des zones humides (Zone Atelier Armorique, 2010) - ZAAr"
+                },
+                "resourceAbstract": "-- Dictionnaire de donn\u00e9es de la couche --",
+                "id": "2523",
+                "uuid": "6efe853f-8c8e-4a0f-aa12-2fc4607b028e",
+                "op0": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceType": [
+                    "featureCatalog"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "6efe853f-8c8e-4a0f-aa12-2fc4607b028e"
+        }
+    ],
+    "brothersAndSisters": []
+}

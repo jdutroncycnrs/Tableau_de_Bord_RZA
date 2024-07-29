@@ -1,0 +1,146 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "07f1cc2b-538e-442d-8510-6d6411a591bf",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Catalogue d'attributs - Occupation parcellaire (Pleine-Foug\u00e8res) - Zone Atelier Armorique ZAAr"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "-- Dictionnaire de donn\u00e9es de la couche --"
+        }
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gml": "http://www.opengis.net/gml",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2018-06-15T10:08:31"
+        }
+    },
+    "gfc:producer": {
+        "gmd:CI_ResponsibleParty": {
+            "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Nabucet Jean"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "LETG-RENNES UMR 6554 CNRS Universit\u00e9 de Rennes 2"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "jean.nabucet@uhb.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "author",
+                    "@codeList": "CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@uuid": "acdb78e4-b6f1-4353-98b1-35f7a4a89a5e",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Catalogue d'attributs - Fiche Type"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "noms des champs et leur signification: \n\nplfoug52 : parcellaire Foug\u00e8res 1952\nOcsol_1996 : occupation du sol de 1996\nID_1952 : identifiant de la parcelle en 1952\nOS_1952 : occupation du sol en 1952\nsurface_m : surface en m\u00b2 \np\u00e9rim\u00e8tre : p\u00e9rim\u00e8tre en m \n\nsens des codes (valeurs) contenus dans certains champs :\n\n\n\n0=absence de donn\u00e9e\n11=route goudronn\u00e9e\n12=chemin non goudronn\u00e9\n13=surface b\u00e2tie\n15=digue\n2=eau\t\n3=bois\n4=friche\n61=prairies\n9=cultures"
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": null,
+            "gfc:constrainedBy": {
+                "gfc:FC_Constraint": {
+                    "gfc:description": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "pas de contraintes"
+                        }
+                    }
+                }
+            },
+            "gfc:carrierOfCharacteristics": {
+                "gfc:FC_FeatureAttribute": {
+                    "gfc:memberName": {
+                        "gco:LocalName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@codeSpace": "",
+                            "#text": "attribut"
+                        }
+                    },
+                    "gfc:definition": {
+                        "gco:CharacterString": null
+                    },
+                    "gfc:cardinality": {
+                        "gco:Multiplicity": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "gco:range": {
+                                "gco:MultiplicityRange": {
+                                    "gco:lower": {
+                                        "gco:Integer": "0"
+                                    },
+                                    "gco:upper": {
+                                        "gco:UnlimitedInteger": {
+                                            "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                            "@isInfinite": "true",
+                                            "@xsi:nil": "true"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gfc:valueType": {
+                        "gco:TypeName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "gco:aName": {
+                                "gco:CharacterString": "FLOAT"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

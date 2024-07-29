@@ -251,40 +251,40 @@ if admin_action == admin_pass:
                                     json.dump(resp_attach_json, f, indent=4)
                             except:
                                 pass
-                        try:
-                            with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
-                                data = json.load(f)
+                    try:
+                        with open(f"pages/data/fiches_json/{alluuids[i]}.json", 'r') as f:
+                            data = json.load(f)
 
-                            with open(f'pages/data/fiches_txt/{identifieur}.txt', 'w') as file:
-                                transcript_json(data, file)
+                        with open(f'pages/data/fiches_txt/{alluuids[i]}.txt', 'w') as file:
+                            transcript_json(data, file)
 
-                            with open(f'pages/data/fiches_txt/{identifieur}.txt', 'r') as f:
-                                d = f.read()
+                        with open(f'pages/data/fiches_txt/{alluuids[i]}.txt', 'r') as f:
+                            d = f.read()
 
-                            listi = re.split('µ',d)
+                        listi = re.split('µ',d)
 
-                            df = pd.DataFrame(listi, columns=['Results'])
-                            for u in range(len(df)):
-                                p = re.split('§',df.loc[u,'Results'])
+                        df = pd.DataFrame(listi, columns=['Results'])
+                        for u in range(len(df)):
+                            p = re.split('§',df.loc[u,'Results'])
+                            try:
+                                df.loc[u,'Valeurs']=p[1]
+                            except:
+                                pass
+                            try:
+                                df.loc[u,'Clés']=p[0].replace('.','£')
+                            except:
+                                pass
+
+                        for j in range(len(df)):
+                            pp = re.split('£',df.loc[j,'Clés'])
+                            for k in range(15):
                                 try:
-                                    df.loc[u,'Valeurs']=p[1]
+                                    df.loc[j,f'K{k}']=pp[k]
                                 except:
                                     pass
-                                try:
-                                    df.loc[u,'Clés']=p[0].replace('.','£')
-                                except:
-                                    pass
-
-                            for j in range(len(df)):
-                                pp = re.split('£',df.loc[j,'Clés'])
-                                for k in range(15):
-                                    try:
-                                        df.loc[j,f'K{k}']=pp[k]
-                                    except:
-                                        pass
-                            df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
-                        except:
-                            pass
+                        df.to_csv(f'pages/data/fiches_csv/{alluuids[i]}.csv')
+                    except:
+                        pass
 
 ########## VISUALISATION DU GROUPE ############################################
 

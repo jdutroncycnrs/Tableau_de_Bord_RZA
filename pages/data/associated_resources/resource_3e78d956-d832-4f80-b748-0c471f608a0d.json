@@ -1,0 +1,79 @@
+{
+    "associated": [],
+    "hassources": [],
+    "hasfeaturecats": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "text": {
+                            "default": "large_thumbnail",
+                            "langfre": "large_thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr/geonetwork/srv/fre/resources.get?uuid=4fe105cb-0471-428c-823d-fa0685d7841f&fname=b182.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Inventaire des ouvrages c\u00f4tiers du Finist\u00e8re destin\u00e9 : - \u00e0 \u00e9valuer l'artificialisation du trait de c\u00f4te, globalement et par commune ou par portions de littoral - \u00e0 en analyser la coh\u00e9rence en regard de la nature du littoral et de son am\u00e9nagement - de la confronter au risque d'\u00e9rosion",
+                    "langfre": "Inventaire des ouvrages c\u00f4tiers du Finist\u00e8re destin\u00e9 : - \u00e0 \u00e9valuer l'artificialisation du trait de c\u00f4te, globalement et par commune ou par portions de littoral - \u00e0 en analyser la coh\u00e9rence en regard de la nature du littoral et de son am\u00e9nagement - de la confronter au risque d'\u00e9rosion"
+                },
+                "resourceTitleObject": {
+                    "default": "Artificialisation du trait de c\u00f4te du Finist\u00e8re en 2008",
+                    "langfre": "Artificialisation du trait de c\u00f4te du Finist\u00e8re en 2008"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-BREST:GEOMER_Artificialisation-trait-cote_29_2008_21_L93",
+                        "applicationProfile": "",
+                        "description": "Artificialisation du trait de c\u00f4te du Finist\u00e8re en 2008",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-BREST:GEOMER_Artificialisation-trait-cote_29_2008_21_L93",
+                        "applicationProfile": "",
+                        "description": "Artificialisation du trait de c\u00f4te du Finist\u00e8re en 2008",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4241",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "4fe105cb-0471-428c-823d-fa0685d7841f",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "4fe105cb-0471-428c-823d-fa0685d7841f"
+        }
+    ],
+    "services": []
+}

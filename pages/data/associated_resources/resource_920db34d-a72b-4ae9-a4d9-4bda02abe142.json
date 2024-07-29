@@ -1,0 +1,57 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "http://localhost:8080/geosource/srv/en/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=55bf4b41-2701-4e1c-ab72-f67cd87d9e9c",
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "groupOwner": "123",
+                "op5": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceTitleObject": {
+                    "default": "Catalogue d'attributs - Cartographie de la dur\u00e9e d'inondation (marais du bas-Couesnon humides) - Zone Atelier Armorique ZAAr"
+                },
+                "resourceAbstract": "-- Dictionnaire de donn\u00e9es de la couche --",
+                "id": "2498",
+                "uuid": "55bf4b41-2701-4e1c-ab72-f67cd87d9e9c",
+                "op0": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceType": [
+                    "featureCatalog"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "55bf4b41-2701-4e1c-ab72-f67cd87d9e9c"
+        }
+    ],
+    "brothersAndSisters": []
+}

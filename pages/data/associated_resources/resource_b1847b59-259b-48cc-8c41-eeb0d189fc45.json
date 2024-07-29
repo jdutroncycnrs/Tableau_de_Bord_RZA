@@ -1,0 +1,57 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "http://localhost:8080/geosource/srv/en/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=98a1c9a9-f13b-48f5-bd3c-326a37e6aac8",
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "groupOwner": "123",
+                "op5": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceTitleObject": {
+                    "default": "Catalogue d'attributs - Occupation du sol des zones humides (Zone Atelier Armorique, 2010) - ZAAr"
+                },
+                "resourceAbstract": "-- Dictionnaire de donn\u00e9es de la couche --",
+                "id": "2597",
+                "uuid": "98a1c9a9-f13b-48f5-bd3c-326a37e6aac8",
+                "op0": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceType": [
+                    "featureCatalog"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "98a1c9a9-f13b-48f5-bd3c-326a37e6aac8"
+        }
+    ],
+    "brothersAndSisters": []
+}
