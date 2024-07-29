@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>ad6f83bf-89a9-4177-8f4f-ca9e1c4a57dd</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>fre</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_CharacterSetCode codeListValue="utf8"
+                               codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="service"/>
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>other</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact xmlns:gml="http://www.opengis.net/gml">
+      <gmd:CI_ResponsibleParty>
+         <gmd:individualName>
+            <gco:CharacterString>Laboratoire de sciences du sol</gco:CharacterString>
+         </gmd:individualName>
+         <gmd:organisationName>
+            <gco:CharacterString>UMR 1069 SAS INRAE - L'Institut Agro Rennes-Angers</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                  <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>65 rue de Saint Brieuc</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Rennes</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>35042</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>France</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>solsdebretagne@agrocampus-ouest.fr</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.sols-de-bretagne.fr/</gmd:URL>
+                     </gmd:linkage>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact"
+                             codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:gml="http://www.opengis.net/gml">
+      <gco:DateTime>2023-11-29T14:50:20</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion xmlns:gml="http://www.opengis.net/gml">
+      <gco:CharacterString>1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:identificationInfo xmlns:gml="http://www.opengis.net/gml">
+      <srv:SV_ServiceIdentification>
+         <gmd:citation xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Service de visualisation Sols de Bretagne [GéoSAS]</gco:CharacterString>
+               </gmd:title>
+               <gmd:date>
+                  <gmd:CI_Date>
+                     <gmd:date>
+                        <gco:DateTime>2012-12-15T12:00:00</gco:DateTime>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="publication"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:MD_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>fr-130005127-umrsas-sdb-wms</gco:CharacterString>
+                     </gmd:code>
+                  </gmd:MD_Identifier>
+               </gmd:identifier>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract xmlns:date="http://exslt.org/dates-and-times">
+            <gco:CharacterString>Service de visualisation cartographique (WMS) de Sols de Bretagne [GéoSAS]</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:pointOfContact xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:CI_ResponsibleParty>
+               <gmd:individualName>
+                  <gco:CharacterString>Laboratoire de sciences du sol</gco:CharacterString>
+               </gmd:individualName>
+               <gmd:organisationName>
+                  <gco:CharacterString>UMR 1069 SAS INRAE - L'Institut Agro Rennes-Angers</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                        <gmd:CI_Telephone>
+                           <gmd:voice gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:voice>
+                           <gmd:facsimile gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                        <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>65 rue de Saint-Brieuc</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Rennes</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea gco:nilReason="missing">
+                              <gco:CharacterString/>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>35042</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>France</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>solsdebretagne@agrocampus-ouest.fr</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                        <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>http://www.sols-de-bretagne.fr/</gmd:URL>
+                           </gmd:linkage>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeListValue="pointOfContact"
+                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"/>
+               </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                                   codeListValue="notPlanned"/>
+               </gmd:maintenanceAndUpdateFrequency>
+               <gmd:updateScopeDescription/>
+               <gmd:maintenanceNote gco:nilReason="missing">
+                  <gco:CharacterString/>
+               </gmd:maintenanceNote>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>http://www.sols-de-bretagne.fr/images/logo-sols-de-bretagne.png</gco:CharacterString>
+               </gmd:fileName>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:resourceFormat xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>PNG</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.0</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:resourceFormat>
+         <gmd:descriptiveKeywords xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Sols</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>external.place.inspire-theme</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date gco:nilReason="unknown"/>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Pédologie</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>external.place.thematiques</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date gco:nilReason="unknown"/>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>infoMapAccessService</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+                  <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>INSPIRE Service taxonomy</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2010-04-22</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                     <gmd:identifier>
+                        <gmd:MD_Identifier>
+                           <gmd:code>
+                              <gmx:Anchor xlink:href="https://geosas.fr/geonetwork/srv/eng/thesaurus.download?ref=external.theme.inspire-service-taxonomy">geonetwork.thesaurus.external.theme.inspire-service-taxonomy</gmx:Anchor>
+                           </gmd:code>
+                        </gmd:MD_Identifier>
+                     </gmd:identifier>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_LegalConstraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Usage libre sous réserve des mentions obligatoires sur tout document de diffusion : "Source : UMR 1069 SAS INRAE - L'Institut Agro Rennes-Angers"</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Licence ouverte : https://www.etalab.gouv.fr/licence-ouverte-open-licence</gco:CharacterString>
+               </gmd:useLimitation>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="license"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints>
+                  <gco:CharacterString>Pas de restriction d’accès public</gco:CharacterString>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <srv:serviceType xmlns:date="http://exslt.org/dates-and-times">
+            <gco:LocalName codeSpace="www.w3c.org">view</gco:LocalName>
+         </srv:serviceType>
+         <srv:serviceTypeVersion xmlns:date="http://exslt.org/dates-and-times">
+            <gco:CharacterString>OGC:WMS 1.3.0</gco:CharacterString>
+         </srv:serviceTypeVersion>
+         <srv:accessProperties xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:MD_StandardOrderProcess/>
+         </srv:accessProperties>
+         <srv:extent xmlns:date="http://exslt.org/dates-and-times">
+            <gmd:EX_Extent>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-5.33935546875</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-1.219482421875</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>46.90514264986</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>49.245230540485</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+            </gmd:EX_Extent>
+         </srv:extent>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>0c66fd8f-4b54-450f-b336-c6a76569516c</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>Proprietes_pedologiques_22_v1</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>92fce03f-fbf7-44d3-8ee2-f57259689e5f</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>Proprietes_pedologiques_29_v1</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>87fdc26a-0cf5-48d7-abbf-fd83c41fea2f</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>Proprietes_pedologiques_35_v1</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>49ccbc8c-266d-4fc6-ae07-56f6f80c0a73</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>Proprietes_pedologiques_56_v1</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>8e432263-2c01-4238-9721-d7ab93868a26</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>ucs22</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>b80dfd3f-e2bc-4d99-9f81-a795bd521bb5</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>ucs35</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>0f1ff107-0e09-4bfd-accc-0e38616cfd55</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>ucs29</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:coupledResource xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CoupledResource>
+               <srv:operationName>
+                  <gco:CharacterString>GetMap</gco:CharacterString>
+               </srv:operationName>
+               <srv:identifier>
+                  <gco:CharacterString>abe5b67e-7922-4038-9fb9-7be0d2c15575</gco:CharacterString>
+               </srv:identifier>
+               <gco:ScopedName>ucs56</gco:ScopedName>
+            </srv:SV_CoupledResource>
+         </srv:coupledResource>
+         <srv:couplingType xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_CouplingType codeListValue="loose"
+                                 codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#SV_CouplingType"/>
+         </srv:couplingType>
+         <srv:containsOperations xmlns:date="http://exslt.org/dates-and-times">
+            <srv:SV_OperationMetadata>
+               <srv:operationName>
+                  <gco:CharacterString>GetCapabilities</gco:CharacterString>
+               </srv:operationName>
+               <srv:DCP>
+                  <srv:DCPList codeList="http://www.isotc211.org/2005/iso19119/resources/Codelist/gmxCodelists.xml#DCPList"
+                               codeListValue="WebServices"/>
+               </srv:DCP>
+               <srv:DCP/>
+               <srv:DCP/>
+               <srv:connectPoint>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://geosas.fr/geoserver/sdb/ows?SERVICE=WMS&amp;</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS-1.1.1-http-get-capabilities</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description>
+                        <gco:CharacterString>https://geosas.fr/geoserver/sdb/ows?SERVICE=WMS&amp;</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeListValue="order"
+                                                   codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </srv:connectPoint>
+            </srv:SV_OperationMetadata>
+         </srv:containsOperations>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="dc58203b-a4c4-427a-af34-37b40455f32c"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=dc58203b-a4c4-427a-af34-37b40455f32c"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="0c66fd8f-4b54-450f-b336-c6a76569516c"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=0c66fd8f-4b54-450f-b336-c6a76569516c"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="92fce03f-fbf7-44d3-8ee2-f57259689e5f"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=92fce03f-fbf7-44d3-8ee2-f57259689e5f"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="87fdc26a-0cf5-48d7-abbf-fd83c41fea2f"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=87fdc26a-0cf5-48d7-abbf-fd83c41fea2f"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="49ccbc8c-266d-4fc6-ae07-56f6f80c0a73"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=49ccbc8c-266d-4fc6-ae07-56f6f80c0a73"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="8e432263-2c01-4238-9721-d7ab93868a26"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=8e432263-2c01-4238-9721-d7ab93868a26"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="b80dfd3f-e2bc-4d99-9f81-a795bd521bb5"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=b80dfd3f-e2bc-4d99-9f81-a795bd521bb5"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="0f1ff107-0e09-4bfd-accc-0e38616cfd55"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=0f1ff107-0e09-4bfd-accc-0e38616cfd55"/>
+         <srv:operatesOn xmlns:date="http://exslt.org/dates-and-times"
+                         uuidref="abe5b67e-7922-4038-9fb9-7be0d2c15575"
+                         xlink:href="http://geowww.agrocampus-ouest.fr/geonetwork/srv/fre/csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=abe5b67e-7922-4038-9fb9-7be0d2c15575"/>
+      </srv:SV_ServiceIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo xmlns:gml="http://www.opengis.net/gml">
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+            <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>OGC:WMS</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>1.3.0</gco:CharacterString>
+               </gmd:version>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>https://geosas.fr/geoserver/sdb/ows?service=wms&amp;version=1.3.0&amp;request=getcapabilities</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:name gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:name>
+                     <gmd:description gco:nilReason="missing">
+                        <gco:CharacterString/>
+                     </gmd:description>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+</gmd:MD_Metadata>

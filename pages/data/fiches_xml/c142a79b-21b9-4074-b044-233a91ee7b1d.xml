@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+                 xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+                 xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1"
+                 xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+                 xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+                 xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+                 xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+                 xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1"
+                 xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+                 xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+                 xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+                 xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0"
+                 xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+                 xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0"
+                 xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+                 xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+                 xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0"
+                 xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0"
+                 xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0"
+                 xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+                 xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0"
+                 xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0"
+                 xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0"
+                 xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+                 xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0"
+                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier>
+      <mcc:MD_Identifier>
+         <mcc:code>
+            <gco:CharacterString>c142a79b-21b9-4074-b044-233a91ee7b1d</gco:CharacterString>
+         </mcc:code>
+         <mcc:codeSpace>
+            <gco:CharacterString>urn:uuid</gco:CharacterString>
+         </mcc:codeSpace>
+      </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale>
+      <lan:PT_Locale id="EN">
+         <lan:language>
+            <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
+         </lan:language>
+         <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </lan:characterEncoding>
+      </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope>
+      <mdb:MD_MetadataScope>
+         <mdb:resourceScope>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode"
+                              codeListValue="dataset"/>
+         </mdb:resourceScope>
+      </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact>
+      <cit:CI_Responsibility>
+         <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode"
+                             codeListValue="mediator"/>
+         </cit:role>
+         <cit:party>
+            <cit:CI_Organisation>
+               <cit:name xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Elhadj Bah</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Elhadj Bah</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </cit:name>
+               <cit:contactInfo>
+                  <cit:CI_Contact>
+                     <cit:address>
+                        <cit:CI_Address>
+                           <cit:electronicMailAddress>
+                              <gco:CharacterString>elhadj-mamadou-talib.bah@etu.univ-lyon1.fr</gco:CharacterString>
+                           </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                     </cit:address>
+                  </cit:CI_Contact>
+               </cit:contactInfo>
+            </cit:CI_Organisation>
+         </cit:party>
+      </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo>
+      <cit:CI_Date>
+         <cit:date>
+            <gco:DateTime>2023-04-25T14:16:03.749Z</gco:DateTime>
+         </cit:date>
+         <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                 codeListValue="revision"/>
+         </cit:dateType>
+      </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+      <cit:CI_Date>
+         <cit:date>
+            <gco:Date/>
+         </cit:date>
+         <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                 codeListValue="creation"/>
+         </cit:dateType>
+      </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+      <cit:CI_Date>
+         <cit:date>
+            <gco:Date/>
+         </cit:date>
+         <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                 codeListValue="publication"/>
+         </cit:dateType>
+      </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard>
+      <cit:CI_Citation>
+         <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>ISO 19115</gco:CharacterString>
+            <lan:PT_FreeText>
+               <lan:textGroup>
+                  <lan:LocalisedCharacterString locale="#EN">ISO 19115</lan:LocalisedCharacterString>
+               </lan:textGroup>
+            </lan:PT_FreeText>
+         </cit:title>
+         <cit:edition>
+            <gco:CharacterString>2003/Cor 1:2006</gco:CharacterString>
+         </cit:edition>
+      </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:otherLocale>
+      <lan:PT_Locale id="FR">
+         <lan:language>
+            <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+         </lan:language>
+         <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </lan:characterEncoding>
+      </lan:PT_Locale>
+  </mdb:otherLocale>
+  <mdb:metadataLinkage>
+      <cit:CI_OnlineResource>
+         <cit:linkage>
+            <gco:CharacterString>http://localhost:8080/geonetwork/srv/eng//metadata/6d50311c-3ffd-4c09-aa0b-fe9ab1bb93fa</gco:CharacterString>
+         </cit:linkage>
+         <cit:function>
+            <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode"
+                                       codeListValue="completeMetadata"/>
+         </cit:function>
+      </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:referenceSystemInfo>
+      <mrs:MD_ReferenceSystem>
+         <mrs:referenceSystemIdentifier>
+            <mcc:MD_Identifier>
+               <mcc:code>
+                  <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/2154</gco:CharacterString>
+               </mcc:code>
+            </mcc:MD_Identifier>
+         </mrs:referenceSystemIdentifier>
+      </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo>
+      <mri:MD_DataIdentification>
+         <mri:citation>
+            <cit:CI_Citation>
+               <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>Collection of rasters and social ecological indicators for Zone Atelier Environnementale Urbaine, Strasbourg</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Collection of rasters and social ecological indicators for Zone Atelier Environnementale Urbaine, Strasbourg</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Collection de rasters et d'indicateurs socio-écologiques pour la Zone Atelier Environnementale Urbaine, Strasbourg</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </cit:title>
+               <cit:date>
+                  <cit:CI_Date>
+                     <cit:date>
+                        <gco:DateTime>2023-04-24T13:00:00+02:00</gco:DateTime>
+                     </cit:date>
+                     <cit:dateType>
+                        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                             codeListValue="creation"/>
+                     </cit:dateType>
+                  </cit:CI_Date>
+               </cit:date>
+               <cit:identifier>
+                  <mcc:MD_Identifier>
+                     <mcc:code>
+                        <gco:CharacterString>https://doi.org/10.48579/PRO/VY7MH3</gco:CharacterString>
+                     </mcc:code>
+                  </mcc:MD_Identifier>
+               </cit:identifier>
+            </cit:CI_Citation>
+         </mri:citation>
+         <mri:abstract xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Open, world wide rasters (biogeoregions, land surface temperature, normalised difference vegetation index, population density and land cover) are cropped with respect to the polygon of the Zone Atelier Environmental Urban so as to compute indicators. This dataset contains the shapefile, rasters for variables BIOG (biogeoregion), LSTD (land surface temperature day), LSTN (land surface temperature night), NDVI (normalized difference vegetation index), GPW4 (population density), and LC (land cover) wropeed with respect to the shapefile, and social ecological indicators for these variables computed as averages or quantiles. (2023-01-18)</gco:CharacterString>
+            <lan:PT_FreeText>
+               <lan:textGroup>
+                  <lan:LocalisedCharacterString locale="#EN">Open, world wide rasters (biogeoregions, land surface temperature, normalised difference vegetation index, population density and land cover) are cropped with respect to the polygon of the Zone Atelier Environmental Urban so as to compute indicators. This dataset contains the shapefile, rasters for variables BIOG (biogeoregion), LSTD (land surface temperature day), LSTN (land surface temperature night), NDVI (normalized difference vegetation index), GPW4 (population density), and LC (land cover) wropeed with respect to the shapefile, and social ecological indicators for these variables computed as averages or quantiles. (2023-01-18)</lan:LocalisedCharacterString>
+               </lan:textGroup>
+               <lan:textGroup>
+                  <lan:LocalisedCharacterString locale="#FR">Des rasters ouverts et mondiaux (biogéorégions, température de surface, indice de différence normalisée de la végétation, densité de population et occupation du sol) sont recadrés par rapport au polygone de la Zone Atelier Environnemental Urbain afin de calculer des indicateurs. Ce jeu de données contient le shapefile, les rasters pour les variables BIOG (biogéorégion), LSTD (land surface temperature day), LSTN (land surface temperature night), NDVI (normalized difference vegetation index), GPW4 (population density), et LC (land cover) recadrés par rapport au shapefile, et les indicateurs socio-écologiques pour ces variables calculés sous forme de moyennes ou de quantiles. (2023-01-18)</lan:LocalisedCharacterString>
+               </lan:textGroup>
+            </lan:PT_FreeText>
+         </mri:abstract>
+         <mri:status>
+            <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode"
+                                 codeListValue="accepted"/>
+         </mri:status>
+         <mri:pointOfContact>
+            <cit:CI_Responsibility>
+               <cit:role>
+                  <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode"
+                                   codeListValue="author"/>
+               </cit:role>
+               <cit:party>
+                  <cit:CI_Organisation>
+                     <cit:name xsi:type="lan:PT_FreeText_PropertyType">
+                        <gco:CharacterString>ICUBE/ ZAEU</gco:CharacterString>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">ICUBE/ ZAEU</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#FR">(ICUBE/ ZAEU)</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:name>
+                     <cit:contactInfo>
+                        <cit:CI_Contact>
+                           <cit:address>
+                              <cit:CI_Address>
+                                 <cit:electronicMailAddress>
+                                    <gco:CharacterString>icharpentier@unistra.fr</gco:CharacterString>
+                                 </cit:electronicMailAddress>
+                              </cit:CI_Address>
+                           </cit:address>
+                        </cit:CI_Contact>
+                     </cit:contactInfo>
+                  </cit:CI_Organisation>
+               </cit:party>
+            </cit:CI_Responsibility>
+         </mri:pointOfContact>
+         <mri:spatialRepresentationType>
+            <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode"
+                                                  codeListValue="grid"/>
+         </mri:spatialRepresentationType>
+         <mri:spatialResolution>
+            <mri:MD_Resolution>
+               <mri:equivalentScale>
+                  <mri:MD_RepresentativeFraction>
+                     <mri:denominator>
+                        <gco:Integer>100000</gco:Integer>
+                     </mri:denominator>
+                  </mri:MD_RepresentativeFraction>
+               </mri:equivalentScale>
+            </mri:MD_Resolution>
+         </mri:spatialResolution>
+         <mri:spatialResolution>
+            <mri:MD_Resolution>
+               <mri:distance>
+                  <gco:Distance uom="metre">1</gco:Distance>
+               </mri:distance>
+            </mri:MD_Resolution>
+         </mri:spatialResolution>
+         <mri:topicCategory>
+            <mri:MD_TopicCategoryCode>environment</mri:MD_TopicCategoryCode>
+         </mri:topicCategory>
+         <mri:extent>
+            <gex:EX_Extent>
+               <gex:geographicElement>
+                  <gex:EX_GeographicBoundingBox>
+                     <gex:westBoundLongitude>
+                        <gco:Decimal>7.585718547903266</gco:Decimal>
+                     </gex:westBoundLongitude>
+                     <gex:eastBoundLongitude>
+                        <gco:Decimal>7.896251286901877</gco:Decimal>
+                     </gex:eastBoundLongitude>
+                     <gex:southBoundLatitude>
+                        <gco:Decimal>48.43406428572716</gco:Decimal>
+                     </gex:southBoundLatitude>
+                     <gex:northBoundLatitude>
+                        <gco:Decimal>48.70195068818226</gco:Decimal>
+                     </gex:northBoundLatitude>
+                  </gex:EX_GeographicBoundingBox>
+               </gex:geographicElement>
+               <gex:temporalElement>
+                  <gex:EX_TemporalExtent>
+                     <gex:extent>
+                        <gml:TimePeriod gml:id="d6739e253a1051934">
+                           <gml:beginPosition>2001-01-01</gml:beginPosition>
+                           <gml:endPosition>2020-12-31</gml:endPosition>
+                        </gml:TimePeriod>
+                     </gex:extent>
+                  </gex:EX_TemporalExtent>
+               </gex:temporalElement>
+            </gex:EX_Extent>
+         </mri:extent>
+         <mri:resourceMaintenance>
+            <mmi:MD_MaintenanceInformation>
+               <mmi:maintenanceAndUpdateFrequency>
+                  <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode"
+                                                   codeListValue="unknown"/>
+               </mmi:maintenanceAndUpdateFrequency>
+            </mmi:MD_MaintenanceInformation>
+         </mri:resourceMaintenance>
+         <mri:graphicOverview>
+            <mcc:MD_BrowseGraphic>
+               <mcc:fileName>
+                  <gco:CharacterString>https://hal.science/hal-03942291</gco:CharacterString>
+               </mcc:fileName>
+               <mcc:fileDescription xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>From rasters to gradients of a social ecological research network</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">From rasters to gradients of a social ecological research network</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR"/>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mcc:fileDescription>
+            </mcc:MD_BrowseGraphic>
+         </mri:graphicOverview>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>ZAEU - Environnementale Urbaine</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">ZAEU - Environnementale Urbaine</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">ZAEU - Environnementale Urbaine</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                        <gcx:Anchor xlink:href="https://meta.data-za.org/registry/rza-list">Zones ateliers</gcx:Anchor>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">Zones ateliers</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2016-03-21</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="http://meta.data-za.org/catalogue/srv/api/registries/vocabularies/external.place.rza">geonetwork.thesaurus.external.place.rza</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/lu">Land use</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Land use</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Usage des sols</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/lc">Land cover</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Land cover</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Occupation des terres</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/hb">Habitats and biotopes</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Habitats and biotopes</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Habitats et biotopes</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/mf">Meteorological geographical features</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Meteorological geographical features</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Caractéristiques géographiques météorologiques</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                        <gcx:Anchor xlink:href="http://inspire.ec.europa.eu/theme">GEMET - INSPIRE themes, version 1.0</gcx:Anchor>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">GEMET - INSPIRE themes, version 1.0</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="http://meta.data-za.org/catalogue/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme">geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>population density</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">population density</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">densité de population</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                        <gcx:Anchor xlink:href="http://data.loterre.fr/ark:/67375/BLH">Thésaurus Biodiversité</gcx:Anchor>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">Thésaurus Biodiversité</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2020-02-26</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="http://meta.data-za.org/catalogue/srv/api/registries/vocabularies/external.theme.loterre-BHL">geonetwork.thesaurus.external.theme.loterre-BHL</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString/>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                        <gcx:Anchor xlink:href="http://geonetwork-opensource.org/regions">GEMET</gcx:Anchor>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">GEMET</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2021-03-08</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="http://meta.data-za.org/catalogue/srv/api/registries/vocabularies/external.theme.gemet">geonetwork.thesaurus.external.theme.gemet</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:descriptiveKeywords>
+            <mri:MD_Keywords>
+               <mri:keyword gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString/>
+               </mri:keyword>
+               <mri:type>
+                  <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </mri:type>
+               <mri:thesaurusName>
+                  <cit:CI_Citation>
+                     <cit:title gco:nilReason="missing" xsi:type="lan:PT_FreeText_PropertyType">
+                        <gcx:Anchor xlink:href="http://vocabs.lter-europe.net/EnvThes/10000">EnvThes</gcx:Anchor>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">EnvThes</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </cit:title>
+                     <cit:date>
+                        <cit:CI_Date>
+                           <cit:date>
+                              <gco:Date>2021-03-08</gco:Date>
+                           </cit:date>
+                           <cit:dateType>
+                              <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </cit:dateType>
+                        </cit:CI_Date>
+                     </cit:date>
+                     <cit:identifier>
+                        <mcc:MD_Identifier>
+                           <mcc:code>
+                              <gcx:Anchor xlink:href="http://meta.data-za.org/catalogue/srv/api/registries/vocabularies/external.theme.EnvThes">geonetwork.thesaurus.external.theme.EnvThes</gcx:Anchor>
+                           </mcc:code>
+                        </mcc:MD_Identifier>
+                     </cit:identifier>
+                  </cit:CI_Citation>
+               </mri:thesaurusName>
+            </mri:MD_Keywords>
+         </mri:descriptiveKeywords>
+         <mri:resourceConstraints>
+            <mco:MD_LegalConstraints>
+               <mco:accessConstraints>
+                  <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"
+                                          codeListValue="unrestricted"/>
+               </mco:accessConstraints>
+               <mco:otherConstraints xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Open licence</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Open licence</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Licence Ouverte</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mco:otherConstraints>
+            </mco:MD_LegalConstraints>
+         </mri:resourceConstraints>
+         <mri:resourceConstraints>
+            <mco:MD_LegalConstraints>
+               <mco:useLimitation xsi:type="lan:PT_FreeText_PropertyType">
+                  <gco:CharacterString>CC BY</gco:CharacterString>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">CC BY</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mco:useLimitation>
+               <mco:useConstraints>
+                  <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode"
+                                          codeListValue="unrestricted"/>
+               </mco:useConstraints>
+               <mco:otherConstraints xsi:type="lan:PT_FreeText_PropertyType">
+                  <gcx:Anchor xlink:href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Open licence</gcx:Anchor>
+                  <lan:PT_FreeText>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#EN">Open licence</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                     <lan:textGroup>
+                        <lan:LocalisedCharacterString locale="#FR">Licence Ouverte</lan:LocalisedCharacterString>
+                     </lan:textGroup>
+                  </lan:PT_FreeText>
+               </mco:otherConstraints>
+            </mco:MD_LegalConstraints>
+         </mri:resourceConstraints>
+         <mri:defaultLocale>
+            <lan:PT_Locale>
+               <lan:language>
+                  <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="fre"/>
+               </lan:language>
+               <lan:characterEncoding>
+                  <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode"
+                                           codeListValue="utf8"/>
+               </lan:characterEncoding>
+            </lan:PT_Locale>
+         </mri:defaultLocale>
+      </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:distributionInfo>
+      <mrd:MD_Distribution>
+         <mrd:distributionFormat>
+            <mrd:MD_Format>
+               <mrd:formatSpecificationCitation>
+                  <cit:CI_Citation>
+                     <cit:title>
+                        <gco:CharacterString>ESRI Shapefile</gco:CharacterString>
+                     </cit:title>
+                     <cit:date gco:nilReason="unknown"/>
+                     <cit:edition>
+                        <gco:CharacterString>1.0</gco:CharacterString>
+                     </cit:edition>
+                  </cit:CI_Citation>
+               </mrd:formatSpecificationCitation>
+            </mrd:MD_Format>
+         </mrd:distributionFormat>
+      </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:dataQualityInfo>
+      <mdq:DQ_DataQuality>
+         <mdq:scope>
+            <mcc:MD_Scope>
+               <mcc:level>
+                  <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode"
+                                    codeListValue="dataset"/>
+               </mcc:level>
+            </mcc:MD_Scope>
+         </mdq:scope>
+         <mdq:report>
+            <mdq:DQ_DomainConsistency>
+               <mdq:result>
+                  <mdq:DQ_ConformanceResult>
+                     <mdq:specification>
+                        <cit:CI_Citation>
+                           <cit:title xsi:type="lan:PT_FreeText_PropertyType">
+                              <gcx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089/2014-12-31"
+                                          xlink:type="simple">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</gcx:Anchor>
+                              <lan:PT_FreeText>
+                                 <lan:textGroup>
+                                    <lan:LocalisedCharacterString locale="#EN">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</lan:LocalisedCharacterString>
+                                 </lan:textGroup>
+                                 <lan:textGroup>
+                                    <lan:LocalisedCharacterString locale="#FR">COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services</lan:LocalisedCharacterString>
+                                 </lan:textGroup>
+                              </lan:PT_FreeText>
+                           </cit:title>
+                           <cit:date>
+                              <cit:CI_Date>
+                                 <cit:date>
+                                    <gco:Date>2010-12-08</gco:Date>
+                                 </cit:date>
+                                 <cit:dateType>
+                                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </cit:dateType>
+                              </cit:CI_Date>
+                           </cit:date>
+                        </cit:CI_Citation>
+                     </mdq:specification>
+                     <mdq:explanation xsi:type="lan:PT_FreeText_PropertyType">
+                        <gco:CharacterString>See the referenced specification</gco:CharacterString>
+                        <lan:PT_FreeText>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#EN">See the referenced specification</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                           <lan:textGroup>
+                              <lan:LocalisedCharacterString locale="#FR">Voir la spécification référencée</lan:LocalisedCharacterString>
+                           </lan:textGroup>
+                        </lan:PT_FreeText>
+                     </mdq:explanation>
+                     <mdq:pass gco:nilReason="unknown">
+                        <gco:Boolean>false</gco:Boolean>
+                     </mdq:pass>
+                  </mdq:DQ_ConformanceResult>
+               </mdq:result>
+            </mdq:DQ_DomainConsistency>
+         </mdq:report>
+      </mdq:DQ_DataQuality>
+  </mdb:dataQualityInfo>
+  <mdb:resourceLineage>
+      <mrl:LI_Lineage>
+         <mrl:statement xsi:type="lan:PT_FreeText_PropertyType">
+            <gco:CharacterString>Généalogie du jeu de données</gco:CharacterString>
+            <lan:PT_FreeText>
+               <lan:textGroup>
+                  <lan:LocalisedCharacterString locale="#EN">Généalogie du jeu de données</lan:LocalisedCharacterString>
+               </lan:textGroup>
+            </lan:PT_FreeText>
+         </mrl:statement>
+         <mrl:scope>
+            <mcc:MD_Scope>
+               <mcc:level>
+                  <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode"
+                                    codeListValue="dataset"/>
+               </mcc:level>
+            </mcc:MD_Scope>
+         </mrl:scope>
+      </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+</mdb:MD_Metadata>
