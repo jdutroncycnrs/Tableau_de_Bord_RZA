@@ -77,7 +77,7 @@ if len(fi)!=0:
 else:
     st.write('Il est nécessaire de mettre à jour la récupération des uuids')
 
-group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
+group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
 #group_['Groupe'].fillna('Aucun groupe', inplace=True)
 #group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
 liste_groupes = set(group_['Groupe'])
@@ -111,7 +111,6 @@ with col2:
 
 
 if checkbox1:
-    st.sidebar.markdown('Par défaut: Groupe exemple')
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes_ZA)
     if len(selection_group)==0:
         selection_group = ['Groupe exemple']
@@ -119,7 +118,6 @@ if checkbox1:
     selected_uuids_ = selected_uuids.reset_index(drop=True)
     st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
 elif checkbox2:
-    st.sidebar.markdown('Par défaut: Groupe exemple')
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_groupes_OHM)
     if len(selection_group)==0:
         selection_group = ['Groupe exemple']
@@ -183,7 +181,7 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.session_state.count = 0
 
-    col01,col02,col03 = st.columns([0.8,0.1,0.1])
+    col01,col02,col03,col4 = st.columns([0.7,0.1,0.1,0.1])
     with col01:
         try:
             identifieur = st.selectbox(label='',options=selected_uuids_, index=st.session_state.count)
@@ -198,6 +196,8 @@ with st.container(border=True):
         st.markdown('')
         st.markdown('')
         button2 =st.button('R',on_click=reset_counter)
+    with col4:
+        st.metric(label="compteur",value=st.session_state.count)
 
     if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
@@ -291,30 +291,53 @@ if admin_action == admin_pass:
 wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 25
-valign = "right"
 try:
     groupe = group_['Groupe'][group_.Identifiant==identifieur].values[0]
 except:
     groupe = ""
-lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-#i = "Groupe associé à la fiche"
 
-htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
-                                                        {wch_colour_box[1]}, 
-                                                        {wch_colour_box[2]}, 0.75); 
-                                    color: rgb({wch_colour_font[0]}, 
-                                            {wch_colour_font[1]}, 
-                                            {wch_colour_font[2]}, 0.75); 
-                                    font-size: {fontsize}px; 
-                                    border-radius: 7px; 
-                                    padding-left: 12px; 
-                                    padding-top: 18px; 
-                                    padding-bottom: 18px; 
-                                    line-height:5px;
-                                    text-align:center'>
-                                    </style><BR><span style='font-size: 25px; 
-                                    margin-top: 0;'>{groupe}</style></span></p>"""
-st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
+try:
+    mention = group_['Mention'][group_.Identifiant==identifieur].values[0]
+except:
+    mention = ""
+
+lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+
+col1,col2 = st.sidebar.columns(2)
+with col1:
+    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 10px; 
+                                        padding-bottom: 10px; 
+                                        line-height:5px;
+                                        text-align:center'>
+                                        </style><BR><span style='font-size: 15px; 
+                                        margin-top: 0;'>{groupe}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col2:
+    htmlstr2 = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 10px; 
+                                        padding-bottom: 10px; 
+                                        line-height:5px;
+                                        text-align:center'>
+                                        </style><BR><span style='font-size: 15px; 
+                                        margin-top: 0;'>{mention}</style></span></p>"""
+    st.markdown(lnk + htmlstr2, unsafe_allow_html=True)
 
 ########## CONNEXION AU GEONETWORK ############################################
 
@@ -433,6 +456,10 @@ try:
     
 except:
     st.write("Le processus n'a pas fonctionné")
+    F1 = False
+    F1c = couleur_False
+    A2 = False
+    A2c = couleur_False
 #########  VARIABLES ########################################################
 try:
     Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
@@ -1233,11 +1260,10 @@ st.dataframe(df_variables_evaluation)
 if admin_action == admin_pass:
     Recup_mentions = st.sidebar.button('recup des mentions')
     if Recup_mentions:
-        with st.spinner("La récup des groupes est en cours"):
+        with st.spinner("La récup des mentions est en cours"):
             group_2 = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
             alluuids_ = group_2['Identifiant']
             for i in range(len(alluuids_)): #len(alluuids)
-                print(i)
                 indd = group_2[group_2['Identifiant']==alluuids_[i]].index.values
                 try:
                     df = pd.read_csv(f'pages/data/fiches_csv/{alluuids_[i]}.csv',index_col=[0])
@@ -1274,7 +1300,20 @@ if admin_action == admin_pass:
                 except:
                     groupe2 = "Pas de fichier"
                 group_2.loc[indd,'Mention']=groupe2
+                try:
+                    if group_2.loc[indd,'Groupe'].item()=="Aucun groupe" and group_2.loc[indd,'Mention'].item()!='Aucune mention':
+                        group_2.loc[indd,'Groupe_et_Mention']=group_2.loc[indd,'Mention']
+                    elif group_2.loc[indd,'Groupe'].item()!="Aucun groupe":
+                        group_2.loc[indd,'Groupe_et_Mention']= group_2.loc[indd,'Groupe']
+                    elif group_2.loc[indd,'Groupe'].item()=="Aucun groupe" and group_2.loc[indd,'Mention'].item()=='Aucune mention':
+                        group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
+                except:
+                    group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
             group_2.to_csv("pages/data/infos_MD/infos_groupes_mentions.csv")
+
+#Mentions = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
+#Mentions_ = set(Mentions['Mention'])
+#st.write(Mentions_)
 
 ####################### VISUALISATION FAIR ####################################################
 
