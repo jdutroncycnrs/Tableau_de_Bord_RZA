@@ -1,0 +1,1017 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "c0868e3e-8c1a-4082-95a0-027e895c7f23"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "eng"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:contact": [
+        {
+            "gmd:CI_ResponsibleParty": {
+                "gmd:individualName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "LENOIR Jonathan"
+                    }
+                },
+                "gmd:organisationName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "EDYSAN (Ecologie et Dynamique des Syst\u00e8mes Anthropis\u00e9s) - UMR 7058 - CNRS/UPJV"
+                    }
+                },
+                "gmd:positionName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "@gco:nilReason": "missing",
+                    "gco:CharacterString": null
+                },
+                "gmd:contactInfo": {
+                    "gmd:CI_Contact": {
+                        "gmd:phone": {
+                            "gmd:CI_Telephone": {
+                                "gmd:voice": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:facsimile": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                }
+                            }
+                        },
+                        "gmd:address": {
+                            "gmd:CI_Address": {
+                                "gmd:deliveryPoint": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:city": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:administrativeArea": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:postalCode": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:country": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:electronicMailAddress": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "jonathan.lenoir@u-picardie.fr"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "gmd:role": {
+                    "gmd:CI_RoleCode": {
+                        "@codeListValue": "pointOfContact",
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                    }
+                }
+            }
+        },
+        {
+            "gmd:CI_ResponsibleParty": {
+                "gmd:individualName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "GALLET-MORON Emilie"
+                    }
+                },
+                "gmd:organisationName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "EDYSAN (Ecologie et Dynamique des Syst\u00e8mes Anthropis\u00e9s) - UMR 7058 - CNRS/UPJV"
+                    }
+                },
+                "gmd:contactInfo": {
+                    "gmd:CI_Contact": {
+                        "gmd:address": {
+                            "gmd:CI_Address": {
+                                "gmd:electronicMailAddress": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "emilie.moron@u-picardie.fr"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "gmd:role": {
+                    "gmd:CI_RoleCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                        "@codeListValue": "pointOfContact"
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2024-05-13T09:09:05.132Z"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "RGF 1993 Lambert-93"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "A collection of datasets on forest biodiversity and microclimates in France (2019-2023)"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2024-03-31"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeListValue": "publication",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "All the data stored in this collection of datasets was collected during the period 2019-2023 within the framework of the project number ANR-19-CE32-0005 entitled \"Impacts of Microclimatic Processes on foRest bIodiversity redistributioN under macroclimaTe warming\" (IMPRINT) funded by the Agence nationale de la recherche (ANR). The project aims to model forest microclimates at fine spatiotemporal resolution and link it to understory biodiversity data. The different datasets available in that collection contain (i) biodiversity surveys (vascular plants, bryophytes and soil artropods), (ii) in-situ microclimate records (both air and soil temperature near the ground surface), (iii) ground-truth measurements of stand characteristics (maximum height, stem diameter, species identity and status) and (iv) high-resolution airborne LiDAR images, all collected across three deciduous state forests in France (Aigoual, Blois and Mormal). Mormal is a lowland forest dominated by beech (Fagus sylvatica) and/or pedunculate oak (Quercus robur) stands, Blois is a lowland forest dominated by pure sessile oak stands (Quercus petraea), and Aigoual is a mountain forest dominated by pure beech stands. All three are state forests managed by the ONF (Office National des For\u00eats, i.e. French forest office), mostly as even-aged \u201chigh forests\u201d, except for a few coppices in Aigoual as well as some stands not managed for accessibility or conservation reasons."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeListValue": "completed",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LENOIR Jonathan"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "EDYSAN (Ecologie et Dynamique des Syst\u00e8mes Anthropis\u00e9s) - UMR 7058 - CNRS/UPJV"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:city": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:administrativeArea": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:postalCode": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "jonathan.lenoir@u-picardie.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeListValue": "owner",
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "GALLET-MORON Emilie"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "EDYSAN (Ecologie et Dynamique des Syst\u00e8mes Anthropis\u00e9s) - UMR 7058 - CNRS/UPJV"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "emilie.moron@u-picardie.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "notPlanned",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://cat.indores.fr/geonetwork/srv/api/records/c0868e3e-8c1a-4082-95a0-027e895c7f23/attachments/Global_IMPRINT_plots.png"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "LiDAR"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "temperature"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "bryophytes"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "vascular plants"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "insects"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "spiders"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "forest management"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "forest ecology"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "forest"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "microclimate"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "remote sensing"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "arthropod"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "global warming"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "plant (biology)"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "vegetation"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2018-08-16"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.gemet-en-fr-de-nl-it-es",
+                                                "#text": "geonetwork.thesaurus.external.theme.gemet-en-fr-de-nl-it-es"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "forest ecology"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "forest"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "afforestation"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "remote sensing"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "microclimate"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "floristic survey"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "climate change"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "biodiversity"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Biodiversity Thesaurus"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2022-09-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.Biodiversite",
+                                                "#text": "geonetwork.thesaurus.external.theme.Biodiversite"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "R\u00e9gions administratives de France"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2016-12-12"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.place.RegionFR_2017",
+                                                "#text": "geonetwork.thesaurus.external.place.RegionFR_2017"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "France"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Continents, countries, sea regions of the world."
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2015-07-17"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.place.regions",
+                                                "#text": "geonetwork.thesaurus.external.place.regions"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Environmental monitoring facilities"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Meteorological geographical features"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Species distribution"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "intellectualPropertyRights",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "license",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "textTable",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": null
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "eng"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": [
+                {
+                    "gmd:MD_TopicCategoryCode": "biota"
+                },
+                {
+                    "gmd:MD_TopicCategoryCode": "climatologyMeteorologyAtmosphere"
+                },
+                {
+                    "gmd:MD_TopicCategoryCode": "geoscientificInformation"
+                }
+            ],
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                        "@gml:id": "d832097e396a1051934",
+                                        "gml:beginPosition": "2020-07-01",
+                                        "gml:endPosition": "2023-10-01"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "1.22"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "3.83"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "43.97"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "50.27"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:supplementalInformation": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "For\u00eats domaniales de Mormal (Nord, 59), de Blois (Loir-et-Cher, 41) et de l'Aigoual (Gard et Loz\u00e8re, 30 et 48)"
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.1016/j.rse.2023.113820"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "DOI"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Using airborne LiDAR to map forest microclimate temperature buffering or amplification"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Article publi\u00e9 dans Remote Sensing of Environment"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.1111/jvs.13241"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "DOI"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Ecological indicator values of understory plants perform poorly to infer forest microclimate temperature"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "article publi\u00e9 dans Journal of Vegetation Science"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://doi.org/10.6084/m9.figshare.25358488"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "DOI"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Responses of vascular plants and bryophytes to forest microclimate buffering"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "article en cours de r\u00e9vision, publi\u00e9 comme preprint"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "series",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "This collection of datasets on forest biodiversity and microclimates in France is divided into 5 different sets: (#1) one set for understory vegetation surveys; (#2) one set for soil arthropod surveys; (#3) one set for air and soil temperature records; (#4) one set for forest stand characteristics; and (#5) one set for remote sensing data acquired from airborne LiDAR. Each of these 5 different sets are then divided into 3 subsets: one per forest (Aigoual, Blois and Mormal). Within each forest, a total of 60 plots were initially installed at the onset of the project in 2020. Within a given forest, all 60 plots were placed according to a gradient of stand conditions, ranging from very open stand conditions in young forest stages to very dense and closed-canopy conditions in mature forest stands. Within each plot, we installed microclimate sensors (HOBO loggers) to record air and soil temperature in the understory (set #3). We performed a vegetation survey (vascular plants and bryophytes) (set #1), we installed pitfall traps to survey soil arthropods (set #2) and we described stand characteristics (set #4). In addition to this, in summer 2021, we subcontracted a company for airborne LiDAR data acquisition over each forest (set #5). Hence, the common unit that links all five sets of datasets in that collection is the plot ID."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

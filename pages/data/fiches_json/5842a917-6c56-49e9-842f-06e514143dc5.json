@@ -1,0 +1,835 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "5842a917-6c56-49e9-842f-06e514143dc5"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "eng"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:contact": [
+        {
+            "gmd:CI_ResponsibleParty": {
+                "gmd:individualName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "SEGUINEAU Pauline"
+                    }
+                },
+                "gmd:organisationName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "Institut de Syt\u00e9matique, Evolution, Biodiversit\u00e9 (ISYEB)"
+                    }
+                },
+                "gmd:positionName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "@gco:nilReason": "missing",
+                    "gco:CharacterString": null
+                },
+                "gmd:contactInfo": {
+                    "gmd:CI_Contact": {
+                        "gmd:phone": {
+                            "gmd:CI_Telephone": {
+                                "gmd:voice": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:facsimile": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                }
+                            }
+                        },
+                        "gmd:address": {
+                            "gmd:CI_Address": {
+                                "gmd:deliveryPoint": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:city": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:administrativeArea": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:postalCode": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:country": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "@gco:nilReason": "missing",
+                                    "gco:CharacterString": null
+                                },
+                                "gmd:electronicMailAddress": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "pauline.seguineau@mnhn.fr"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "gmd:role": {
+                    "gmd:CI_RoleCode": {
+                        "@codeListValue": "pointOfContact",
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                    }
+                }
+            }
+        },
+        {
+            "gmd:CI_ResponsibleParty": {
+                "gmd:individualName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "LE BRAS Yvan"
+                    }
+                },
+                "gmd:organisationName": {
+                    "gco:CharacterString": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "#text": "PatriNat, P\u00f4le National de Donn\u00e9es de Biodiversit\u00e9 (PNDB)"
+                    }
+                },
+                "gmd:contactInfo": {
+                    "gmd:CI_Contact": {
+                        "gmd:address": {
+                            "gmd:CI_Address": {
+                                "gmd:electronicMailAddress": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "yvan.le-bras@mnhn.fr"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "gmd:role": {
+                    "gmd:CI_RoleCode": {
+                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                        "@codeListValue": "pointOfContact"
+                    }
+                }
+            }
+        }
+    ],
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2024-06-18T07:44:42.287Z"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "WGS 1984"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Dumont D'Urville sea abiotic and physical parameters and Jupyter notebook"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2024-06-17"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeListValue": "publication",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "The Dumont D\u2019Urville sea located off George V and Ad\u00e9lie Land, is one of the better known East-Antarctic marine areas displaying a diversity of abiotic and physical parameters that have been shown to drive the distribution of marine organisms. The dataset presented here contributes to our understanding of these interactions, providing essential information for ongoing research and conservation efforts in this Antarctic ecosystem. This dataset presents a table containing abiotic and physical parameters specific to the Dumont D\u2019Urville Sea and a Jupyter notebook to execute a R script in the ecoregionalization Galaxy workflow. The abiotic and physical parameters were first presented in the research article 'Predicting habitat preferences for Anthometrina adriani (Echinodermata) on the East Antarctic continental shelf' by Hemery et al. (2011). The jupyter notebook is dedicated to the pivot_wider function from the tidyr R package. This notebook is the final part of the data preparation for the ecoregionalization Galaxy workflow."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeListValue": "completed",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ELEAUME Marc"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Institut de Syt\u00e9matique, Evolution, Biodiversit\u00e9 (ISYEB)"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:facsimile": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:city": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:administrativeArea": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:postalCode": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:country": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing",
+                                            "gco:CharacterString": null
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "marc.eleaume@mnhn.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeListValue": "pointOfContact",
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "HEMERY G. Lena\u00efg"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Pacific Northwest National Laboratory Marine Sciences Laboratory: Sequim, WA, US"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "lenaighemery@gmail.com"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "owner"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "SEGUINEAU Pauline"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Institut de Syt\u00e9matique, Evolution, Biodiversit\u00e9 (ISYEB)"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "pauline.seguineau@mnhn.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "resourceProvider"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "LE BRAS Yvan"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "PatriNat, P\u00f4le National de Donn\u00e9es de Biodiversit\u00e9 (PNDB)"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "yvan.le-bras@mnhn.fr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "notPlanned",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Ocean circulation model"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "CEAMARC"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Abiotic and physical parameters"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Jupyter notebook"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Pivot wider function"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ecoregion"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Biodiversity Thesaurus"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2022-09-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.Biodiversite",
+                                                "#text": "geonetwork.thesaurus.external.theme.Biodiversite"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Oceanographic geographical features"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Sea regions"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2008-06-01"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Antarctica"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Dumont D'Urville Sea"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Southern Ocean"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Continents, countries, sea regions of the world."
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2015-07-17"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.place.regions",
+                                                "#text": "geonetwork.thesaurus.external.place.regions"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "intellectualPropertyRights",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "license",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "textTable",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:spatialResolution": {
+                "gmd:MD_Resolution": {
+                    "gmd:equivalentScale": {
+                        "gmd:MD_RepresentativeFraction": {
+                            "gmd:denominator": {
+                                "gco:Integer": null
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "eng"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "oceans"
+            },
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                        "@gml:id": "d210523e396a1051934",
+                                        "gml:beginPosition": "2007-12-01",
+                                        "gml:endPosition": "2008-01-31"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "139.22"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "145.53"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-67.01"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-65.57"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:supplementalInformation": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Geographical reach: Dumont D'urville sea sampling border"
+                }
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://data.indores.fr/dataset.xhtml?persistentId=doi:10.48579/PRO/LQMHX9"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Lien vers le jeu de donn\u00e9es"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "https://www.int-res.com/articles/meps2011/441/m441p105.pdf"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:LINK-1.0-http--link"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Publication connexe"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "dataset",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Abiotic and physical parameters in this dataset were taken from oceanographic model and in situ measurements (Hemery et al., 2011). Here we quote the relevant section of the \u201cMaterials and methods\u201d part from the study: \u201cAbiotic or physical parameters. Two different categories of abiotic parameters were used (Fig. 2): parameters likely to be subject to daily or seasonal variability (temperature, salinity, current magnitude, general current direction and sea-ice concentration) and parameters with long-term stability (bathymetry, slope, rugosity and seabed sediments). Parameters with short-term variability are taken from an oceanographic model, whereas parameters with long-term stability are derived from in situ measurements. Physical oceanography. Physical oceanographic parameters near the seabed (temperature, salinity, mean current magnitude, standard deviations of these 3 parameters, maximum current magnitude and general current direction) are taken from a climatologically forced ocean circulation model. The model was run for a total of 23 yr. A spinup phase of 20 yr was required for the model to reach quasi-equilibrium. The mean and SD were calculated by using 6-hourly model data for the last 3 yr. Sea ice growth rate was calculated directly from special sensor microwave imager (SSM/I) observations (Tamura et al. 2008). The model is based on the Rutgers/University of California Los Angeles Regional Ocean Model System (ROMS; Shchepetkin & McWilliams 2005) and is identical to the one described by B. K. Galton-Fenzi et al. (unpubl.). The model used here, initially developed for regional modelling studies of the Amery Ice Shelf/Ocean system and has been used in circum-Antarctic modelling studies, is able to simulate ice/ocean interactions at a high level of realism (Galton-Fenzi 2009, 2010). For the region of this study, the model is able to reproduce the circulation patterns and water mass properties when compared with oceanographic measurements taken in the vicinity of the George V and Ad\u00e9lie basins (A. Meijers pers. comm.). The model domain extends from 135.77\u00b0 E to 158.08\u00b0 E and from 69.417\u00b0 S to 62.724\u00b0 S. The southern boundary of the model is a closed, solid, free slip wall and the eastern and western boundaries are partially open. The horizontal grid resolution is between 2.16 km near the southern boundary to 2.88 km near the northern boundary. There are 31 vertical levels that are concentrated towards the top and bottom of the model domain. The parameters used here were taken from the lowest vertical level in the model that lies immediately adjacent to the seabed. The choice of mixing and advection schemes follows the choices that were successfully used by Dinniman et al. (2003, 2007) for studies of the shelf seas near the Ross Ice Shelf. The melting and freezing formulation uses the full 3-equation formulation and dynamics frazil ice model used in the studies of Galton-Fenzi (2009, 2010). Lateral boundary fields (potential temperature, salinity and currents) on the open boundaries are relaxed to monthly climatologies from ECCO2 (Menemenlis et al. 2008, Wunsch et al. 2009). Ten primary tidal constituents were added as a free-surface forcing. The tidal amplitudes and phase are calculated with a nonstandard ROMS subroutine, based on tidal information from the Proudman Oceanographic Laboratory (Murray 1964) and modified to be included within ROMS, yielding a standard tidal prediction. The bathymetry and the ice-draft information come from a version of R-TOPO (Timmermann et al. 2010) that was modified to include the high-resolution bathymetric data (outlined below, Beaman et al. 2011) and knowledge of the glacial ice drafts in the region (B. Legresy pers.comm.). The open ocean surface fluxes are modified by an imposed climatological sea-ice cover that includes polynyas, derived from SSM/I observations (Tamura et al. 2008). During summer, the Tamura et al. (2008) data are supplemented with open-water heat and salt fluxes by using the monthly climatologies from the NCEP-2 (Kanamitsu et al. 2002). Bathymetry and seabed sediments. A bathymetry model based on multibeam swath sonar and single beam bathymetry data was produced at about 250 m resolution for the study area (Beaman et al. 2011). A raster map of the slope gradient was generated from this bathymetry model by using ESRI ArcGIS 9.2 Spatial Analysis Tools and a raster map of the rugosity was generated by using Benthic Terrain Modeler tools. Sediment grabs provided substratum composition data, such as the percentage of gravel, mud, sand, biogenic carbonate and biogenic silica at sample sites (Beaman & O\u2019Brien 2009). These data are used as a broad-scale representation of the seafloor substratum.\u201d (Hemery et al., 2011). The Jupyter notebook file in this dataset was created with the Interactive JupyTool and the notebook Galaxy tool (https://ecology.usegalaxy.eu/root?tool_id=interactive_tool_jupyter_notebook). This Jupyter notebook script uses the pivot_wider function from the tidyr library to prepare data for the Ecoregionalization workflow."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

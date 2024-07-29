@@ -1,0 +1,431 @@
+{
+    "parent": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": null,
+                "url": null,
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "text": {
+                            "default": "thumbnail",
+                            "langeng": "thumbnail"
+                        },
+                        "url": "https://www.osuris.fr/geonetwork/srv/api/records/037ddfbf-3d54-4322-9af9-06e8701a78da/attachments/ploemeur-01_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "The Ploemeur-Guidel observatory (Britanny, France) is focusing on surface-depth relationships in a fractured crystalline geological context and oceanic climate. It is built on 2 sub-sites, one highly anthropized, the other in natural state. In Ploemeur, groundwater has been pumped since 1991, supplying more than 1 million m3 of clean drinking water annual at a sustainable rate. Such high productivity is explained the specific fractured network in granite and micaschists, draining deep geological layers (~400 m). Extracted water quality is very good, with limited nitrate concentration, in a region that has been strongly affected by widespread pollution. Guidel site is in a similar, but natural context. Deep iron-rich groundwater is upflowing, creating surface and deep groundwater-dependent ecosystems, and feeding a classified coastal wetland. Both sites have a very dense equipment to study rapid to long-term surface-depth exchanges: a flux tower, unsaturated zone monitoring, a network of ~50 shallow (<10m) and deep boreholes (>80m), hydrochemical, temperature and deformation. An well-characterized fractured experimental site offers the possibility to conduct experiments to test innovative instruments and develop new methodologies",
+                    "langeng": "The Ploemeur-Guidel observatory (Britanny, France) is focusing on surface-depth relationships in a fractured crystalline geological context and oceanic climate. It is built on 2 sub-sites, one highly anthropized, the other in natural state. In Ploemeur, groundwater has been pumped since 1991, supplying more than 1 million m3 of clean drinking water annual at a sustainable rate. Such high productivity is explained the specific fractured network in granite and micaschists, draining deep geological layers (~400 m). Extracted water quality is very good, with limited nitrate concentration, in a region that has been strongly affected by widespread pollution. Guidel site is in a similar, but natural context. Deep iron-rich groundwater is upflowing, creating surface and deep groundwater-dependent ecosystems, and feeding a classified coastal wetland. Both sites have a very dense equipment to study rapid to long-term surface-depth exchanges: a flux tower, unsaturated zone monitoring, a network of ~50 shallow (<10m) and deep boreholes (>80m), hydrochemical, temperature and deformation. An well-characterized fractured experimental site offers the possibility to conduct experiments to test innovative instruments and develop new methodologies"
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Ploemeur-Guidel Site",
+                    "langeng": "SNO H+ : Ploemeur-Guidel Site"
+                },
+                "format": [
+                    "KML"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Site web du SOERE H+",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Acces \u00e0 la base de donn\u00e9es",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "download",
+                        "name": "Acc\u00e8s au fichier kmz du site de guidel",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/documents/guidel.kmz",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "download",
+                        "name": "More informations on DEIMS LTER",
+                        "applicationProfile": "",
+                        "description": "More informations on DEIMS LTER",
+                        "mimeType": "",
+                        "url": "https://deims.org/731f3ced-148d-4eb5-aa46-870fa22be713",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "hplus_ploemeur_guidel_points",
+                        "applicationProfile": "",
+                        "description": "hplus_ploemeur_guidel_points",
+                        "mimeType": "",
+                        "url": "https://www.osuris.fr/geoserver/hplus/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Acc\u00e8s au fichier kmz du site de ploemeur",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/documents/ploemeur.kmz",
+                        "group": 1
+                    }
+                ],
+                "id": "3991",
+                "cl_status": [
+                    {
+                        "key": "onGoing"
+                    }
+                ],
+                "uuid": "bf096755-22a8-4962-a228-f3ba20f9a4ab",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "bf096755-22a8-4962-a228-f3ba20f9a4ab"
+        }
+    ],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "brothersAndSisters": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed).",
+                    "langeng": "This dataset includes vadose zone data (temperature,water content and suction) and flux tower data (air pressure,air specific humidity,air temperature,co2 flux,evapotranspiration,h2o flux,latent heat flux,wind direction,wind speed)."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Dataset on soil-atmosphere interactions on the Guidel site.",
+                    "langeng": "SNO H+ : Dataset on soil-atmosphere interactions on the Guidel site."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Soil_atmosphere_interractions_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_soil_atmosphere_interface.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3932",
+                "uuid": "SNO-HPLUS-GUIDEL-SOIL-ATMOSPHERE-INTERFACE",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-GUIDEL-SOIL-ATMOSPHERE-INTERFACE"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs.",
+                    "langeng": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : In borehole hydrogeophysical logging on the Guidel site.",
+                    "langeng": "SNO H+ : In borehole hydrogeophysical logging on the Guidel site."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Hydrogeophysical_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_borehole_hydrogeophysics.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3930",
+                "uuid": "SNO-HPLUS-GUIDEL-BOREHOLE-HYDROGEOPHYSICS",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-GUIDEL-BOREHOLE-HYDROGEOPHYSICS"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "SNO H+",
+                            "langeng": "SNO H+"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Available dataset includes monitoring data anions,cations,dic,doc,dissolved gases and isotopes",
+                    "langeng": "Available dataset includes monitoring data anions,cations,dic,doc,dissolved gases and isotopes"
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Water chemistry dataset on the Guidel site starting from 1991",
+                    "langeng": "SNO H+ : Water chemistry dataset on the Guidel site starting from 1991"
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Geochemical_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/documents/requests/guidel/HPLU_DAT_guidel_geochemical_cycle.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3931",
+                "uuid": "SNO-HPLUS-GUIDEL-GEOCHEMICAL-CYCLE",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-GUIDEL-GEOCHEMICAL-CYCLE"
+        }
+    ]
+}

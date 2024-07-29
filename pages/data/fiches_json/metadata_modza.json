@@ -1,0 +1,868 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+    "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:swe": "http://www.opengis.net/swe/2.0",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "metadata_modza"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "fre",
+            "@codeSpace": "ISO 639-2",
+            "#text": "French"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8",
+            "#text": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MX_ScopeCode",
+            "@codeListValue": "dataset",
+            "@codeSpace": "ISOTC211/19115",
+            "#text": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "@gco:nilReason": "missing"
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2023-01-05T11:10:04"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003 Geographic information - Metadata"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003"
+        }
+    },
+    "gmd:dataSetURI": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "metadata_modza"
+        }
+    },
+    "gmd:spatialRepresentationInfo": {
+        "gmd:MD_VectorSpatialRepresentation": {
+            "gmd:topologyLevel": {
+                "gmd:MD_TopologyLevelCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_TopologyLevelCode",
+                    "@codeListValue": "geometryOnly",
+                    "@codeSpace": "ISOTC211/19115",
+                    "#text": "geometryOnly"
+                }
+            },
+            "gmd:geometricObjects": {
+                "gmd:MD_GeometricObjects": {
+                    "gmd:geometricObjectType": {
+                        "gmd:MD_GeometricObjectTypeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_GeometricObjectTypeCode",
+                            "@codeListValue": "surface",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "surface"
+                        }
+                    },
+                    "gmd:geometricObjectCount": {
+                        "gco:Integer": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "1208"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "4326"
+                        }
+                    },
+                    "gmd:codeSpace": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "EPSG"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Extraction de rasters et d'indicateurs pour les zones ateliers (2001-2020),variables (LSTD,LSTN,NDVI,biogeor\u00e9gions,d\u00e9nsit\u00e9 de population,land cover)"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2023-01-04"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "publication",
+                                    "@codeSpace": "ISOTC211/19115",
+                                    "#text": "publication"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "metadata_modza"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode",
+                            "@codeListValue": "mapDigital",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "mapDigital"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Collection de (1) rasters d\u00e9coup\u00e9s suivant les emprises des zones ateliers,(2) d indicateurs construits avec ces rasters pour visualiser les gradients. Les variables sont les temperatures de surface du sol (LSTD et LSTN),l indice de vegetation normalis\u00e9 (NDVI),densit\u00e9 de population (GPW4),biog\u00e9or\u00e9gions (BIOG),10 classes de land cover (LC)."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": ""
+                }
+            },
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode",
+                            "@codeListValue": "asNeeded",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "asNeeded"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": [
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WMS&version=1.1.0&request=GetMap&layers=epci_logement&bbox=-5.14127657354622,47.2778937649655,-1.01561289668994,48.900972251669&width=600&height=300&srs=EPSG:4326&format=image/png"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "epci_logement"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "https://www.za-inee.org/sites/all/themes/mnhn/logo.png"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Logo"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "application/x-qgis"
+                        }
+                    },
+                    "gmd:version": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "http://www.eionet.europa.eu/gemet/concept/4612",
+                                "#text": "landcover"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": " http://www.eionet.europa.eu/gemet/concept/835",
+                                "#text": "biogeoregions"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "http://www.eionet.europa.eu/gemet/concept/10918",
+                                "#text": "population density:"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "https://vocabs.lter-europe.net/envthes/en/page/22175",
+                                "#text": "NDVI"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "ENVTHES"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "https://vocabs.lter-europe.net/envthes/en/page/21528",
+                                "#text": "land surfaces temperature"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "ENVTHES"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "https://vocabs.lter-europe.net/envthes/en/page/21899",
+                                "#text": "land cover classes"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "ENVTHES"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Zimbabwe_"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "place",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "place"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "r\u00e9seau des zones ateliers"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2023-01-05"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "lastRevision",
+                                                "@codeSpace": "ISOTC211/19115",
+                                                "#text": "lastRevision"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "License CC-BY"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                    "@codeListValue": "vector",
+                    "#text": "vector"
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "fre",
+                    "@codeSpace": "ISO 639-2",
+                    "#text": "French"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8",
+                    "#text": "utf8"
+                }
+            },
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:geographicElement": {
+                        "gmd:EX_GeographicBoundingBox": {
+                            "gmd:westBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-5.14127657354622"
+                                }
+                            },
+                            "gmd:eastBoundLongitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "-1.01561289668994"
+                                }
+                            },
+                            "gmd:southBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "47.2778937649655"
+                                }
+                            },
+                            "gmd:northBoundLatitude": {
+                                "gco:Decimal": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "48.900972251669"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:temporalElement": {
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimePeriod": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                    "@gml:id": "P20Y",
+                                    "gml:beginPosition": "2001",
+                                    "gml:endPosition": "2020"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:supplementalInformation": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@gco:nilReason": "missing"
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "application/zip[ESRI Shapefile (zipped)]_"
+                        }
+                    },
+                    "gmd:version": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WMS"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Map access - OGC Web Map Service (WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WFS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Data (features) access - OGC Web Feature Service (WFS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=epci_logement"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Data download - OGC Web Feature Service (WFS) - GML format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=epci_logement&outputFormat=json"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Data download - OGC Web Feature Service (WFS) - GeoJSON format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=epci_logement&outputFormat=SHAPE-ZIP"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Data download - OGC Web Feature Service (WFS) - ESRI Shapefile format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=epci_logement&outputFormat=CSV"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "epci_logement - Data download - OGC Web Feature Service (WFS) - CSV format"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MX_ScopeCode",
+                            "@codeListValue": "dataset",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "dataset"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "les donn\u00e9es raster originales ont \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9es depuis les sites USGS (Modis LST et NDVI), ESA (LC), SEDAC (GPW4), le shapefile des biogeoregions a \u00e9t\u00e9 t\u00e9l\u00e9charg\u00e9 depuis EEA. Les fichier json de DEIMS-SDR (octobre 2022) ont \u00e9t\u00e9 utilis\u00e9s pour construire les polygones de ZAs. Ces raster h\u00e9t\u00e9rog\u00e8nes ont \u00e9t\u00e9  harmonis\u00e9s en r\u00e9solution : SRID 4326, r\u00e9solution de 0.05\u00b0, puis coup\u00e9s en fonction des polygones des ZAs."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

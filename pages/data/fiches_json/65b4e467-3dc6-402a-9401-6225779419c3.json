@@ -1,0 +1,535 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "65b4e467-3dc6-402a-9401-6225779419c3"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "eng"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeListValue": "utf8",
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+        }
+    },
+    "gmd:contact": {
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "LORD Clara"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "UMR BOREA 8067 (Biologie des ORganismes et des Ecosyst\u00e8mes Aquatiques)"
+                }
+            },
+            "gmd:positionName": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@gco:nilReason": "missing",
+                "gco:CharacterString": null
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:facsimile": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:city": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:administrativeArea": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:postalCode": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:country": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing",
+                                "gco:CharacterString": null
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "claralord@mnhn.fr"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeListValue": "pointOfContact",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2024-07-18T08:01:57.069Z"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003/19139"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "1.0"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "WGS 1984"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Twin Peaks: interrogating otolith pairs to see whether they keep their stories straight - Data Collection"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2024-07-05"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeListValue": "publication",
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "To tackle the question of the reliability of otoliths as recorders of individual life events, we compared the information enclosed in otolith pairs: sagittae pair and sagitta/lapillus. We used the synchrotron XRF methodology, which enabled comparison of this information at both global and hyper-fine scales. Using otoliths of diadromous pipefish, we compared element incorporation in each pair with a focus on: (i) environmental and transition between water bodies with strontium (Sr) and heavy metals, (ii) temporal information and age estimation based on sulfur (S) incorporation (iii) otolith growth and biomineralisation processes with zinc (Zn). Results show that the global information in terms of Sr and heavy metals given by both otoliths of a pair (left and right sagittae or sagitta/lapillus) is the same and that any otolith may be used to retrieve such global data. In terms of S-based growth increment counts, the numbers are the same between two otoliths of a same kind but the sagitta - lapillus of a pair show a significant difference, the later endowed with lower features, which can be consistent with the otoliths\u2019 developmental dyschronia. Finally, hyperfine scale analysis of element distribution reveals that the otolith has intrinsic growth mechanisms, which can lead to heterogeneous elemental incorporation. The present results lead us to address the study of the growth processes of the biomineralised otolith, a highly organised inorganic/organic structure, which has statoacoustic roles, under a fluid mosaic perspective."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeListValue": "underDevelopment",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode"
+                }
+            },
+            "gmd:pointOfContact": {
+                "gmd:CI_ResponsibleParty": {
+                    "gmd:individualName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "LORD Clara"
+                        }
+                    },
+                    "gmd:organisationName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "UMR BOREA 8067 (Biologie des ORganismes et des Ecosyst\u00e8mes Aquatiques)"
+                        }
+                    },
+                    "gmd:positionName": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    },
+                    "gmd:contactInfo": {
+                        "gmd:CI_Contact": {
+                            "gmd:phone": {
+                                "gmd:CI_Telephone": {
+                                    "gmd:voice": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:facsimile": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    }
+                                }
+                            },
+                            "gmd:address": {
+                                "gmd:CI_Address": {
+                                    "gmd:deliveryPoint": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:city": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:administrativeArea": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:postalCode": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:country": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "@gco:nilReason": "missing",
+                                        "gco:CharacterString": null
+                                    },
+                                    "gmd:electronicMailAddress": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "claralord@mnhn.fr"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "gmd:role": {
+                        "gmd:CI_RoleCode": {
+                            "@codeListValue": "pointOfContact",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode"
+                        }
+                    }
+                }
+            },
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeListValue": "asNeeded",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": {
+                "gmd:MD_BrowseGraphic": {
+                    "gmd:fileName": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "https://cat.indores.fr/geonetwork/srv/api/records/65b4e467-3dc6-402a-9401-6225779419c3/attachments/Lord_Twin_Peaks.png"
+                        }
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Synchrotron XRF 2D mapping"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Otolith pairs"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Heavy metals"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Sulfur based increment counts"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Biomineralisation processes"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "strontium"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "theme"
+                            }
+                        },
+                        "gmd:thesaurusName": {
+                            "gmd:CI_Citation": {
+                                "gmd:title": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "GEMET"
+                                    }
+                                },
+                                "gmd:date": {
+                                    "gmd:CI_Date": {
+                                        "gmd:date": {
+                                            "gco:Date": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "2018-08-16"
+                                            }
+                                        },
+                                        "gmd:dateType": {
+                                            "gmd:CI_DateTypeCode": {
+                                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                                "@codeListValue": "publication"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:identifier": {
+                                    "gmd:MD_Identifier": {
+                                        "gmd:code": {
+                                            "gmx:Anchor": {
+                                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                                "@xlink:href": "https://cat.indores.fr/geonetwork/srv/api/registries/vocabularies/external.theme.gemet-en-fr-de-nl-it-es",
+                                                "#text": "geonetwork.thesaurus.external.theme.gemet-en-fr-de-nl-it-es"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:accessConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "intellectualPropertyRights",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeListValue": "license",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                        }
+                    },
+                    "gmd:otherConstraints": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing",
+                        "gco:CharacterString": null
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeListValue": "textTable",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "eng"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeListValue": "utf8",
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode"
+                }
+            },
+            "gmd:topicCategory": {
+                "gmd:MD_TopicCategoryCode": "biota"
+            },
+            "gmd:extent": [
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:temporalElement": {
+                            "gmd:EX_TemporalExtent": {
+                                "gmd:extent": {
+                                    "gml:TimePeriod": {
+                                        "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                        "@gml:id": "d126e396a1051934",
+                                        "gml:beginPosition": null,
+                                        "gml:endPosition": null
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:EX_Extent": {
+                        "gmd:geographicElement": {
+                            "gmd:EX_GeographicBoundingBox": {
+                                "gmd:westBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-180.00"
+                                    }
+                                },
+                                "gmd:eastBoundLongitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "180.00"
+                                    }
+                                },
+                                "gmd:southBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "-90.00"
+                                    }
+                                },
+                                "gmd:northBoundLatitude": {
+                                    "gco:Decimal": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "90.00"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": {
+                        "gmd:CI_OnlineResource": {
+                            "gmd:linkage": {
+                                "gmd:URL": "https://data.indores.fr/dataset.xhtml?persistentId=doi:10.48579/PRO/DFWN6T"
+                            },
+                            "gmd:protocol": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "WWW:LINK-1.0-http--link"
+                                }
+                            },
+                            "gmd:name": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Lien vers le jeu de donn\u00e9es"
+                                }
+                            },
+                            "gmd:description": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Microphis Otolith Sr, Ca maps : XRF signal extracts .csv and R script"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeListValue": "series",
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Content of the data repository  : \n\n- emitted XRF signal collection data stored in Hierarchical Data Format (HDF) \n\nRTNC139 sample : \nSagitta 1 : flyscan_8083-0001_channel03_8-10-2021-15-0-25.h5\nSagitta 2 : flyscan_8095-0001_channel03_9-10-2021-18-18-46.h5\n\nPFV39 sample :\nLapillus : flyscan_3914-0001_channel03_20-9-2020-9-39-2.h5\nSagitta : flyscan_3915-0001_channel03_20-9-2020-9-47-28.h5\n\n18253 sample :\nLapillus :flyscan_3921-0001_channel03_20-9-2020-11-54-3.h5\nSagitta : flyscan_3920-0001_channel03_20-9-2020-11-40-55.h5\n\n- Twin_roi_csv folder contains csv files of the spatialization of the sample surface (_sple) and the  Z3 (_Z\u00a03) areas , binary encoded for each sample.\n\nIncluding :\n\nRTNC139SL_scan8095_sple.csv\nRTNC139SL_scan8095_Z3.csv\nRTNC139SR_scan8083_sple.csv\nRTNC139SR_scan8083_Z3.csv\n\n\n18253L_scan3921_sple.csv\n18253L_scan3921_Z3.csv\n18253S_scan3920_sple.csv\n18253S_scan3920_Z3.csv\n\nPFV39L_scan3914_sple.csv\nPFV39L_scan3914_Z3.csv\nPFV39S_scan3915_sple.csv\nPFV39S_scan3915_Z3.csv\n\n-Twin_roi_fiji folder contains .roi encoded limits of the spatialization of the sample surface (_SP) and the  Z3 (_Z3) areas \n\nIncluding :\nscan_8083_Z3.roi\nscan_8083SP.roi\nscan_8095_Z3.roi\nscan_8095SP.roi \n\nscan_3914_Z3.roi\nscan_3914SP.roi\nscan_3915_Z3.roi\nscan_3915SP.roi\n\nscan_3920_Z3.roi\nscan_3920SP.roi\nscan_3921_Z3.roi\nscan_3921SP.roi\n\n- Coef_quantifSrCa_Molar_Otolith pairs.csv :  calibration coefficient to apply to the Sr : Ca XRF emission signal intensity ratio in order to obtain the corrected mass fraction that was then translated to molar fraction (per mil)."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1363 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+    "@xmlns:gmlcov": "http://www.opengis.net/gmlcov/1.0",
+    "@xmlns:gmlrgrid": "http://www.opengis.net/gml/3.3/rgrid",
+    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+    "@xmlns:gts": "http://www.isotc211.org/2005/gts",
+    "@xmlns:srv": "http://www.isotc211.org/2005/srv",
+    "@xmlns:swe": "http://www.opengis.net/swe/2.0",
+    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
+    "gmd:fileIdentifier": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "metadata-cp4"
+        }
+    },
+    "gmd:language": {
+        "gmd:LanguageCode": {
+            "@codeList": "http://www.loc.gov/standards/iso639-2/",
+            "@codeListValue": "fre",
+            "@codeSpace": "ISO 639-2",
+            "#text": "French"
+        }
+    },
+    "gmd:characterSet": {
+        "gmd:MD_CharacterSetCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+            "@codeListValue": "utf8",
+            "#text": "utf8"
+        }
+    },
+    "gmd:hierarchyLevel": {
+        "gmd:MD_ScopeCode": {
+            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MX_ScopeCode",
+            "@codeListValue": "dataset",
+            "@codeSpace": "ISOTC211/19115",
+            "#text": "dataset"
+        }
+    },
+    "gmd:contact": {
+        "gmd:CI_ResponsibleParty": {
+            "gmd:individualName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Ing\u00e9nieur laboratoire EDYTEM"
+                }
+            },
+            "gmd:organisationName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Universit\u00e9 Savoie Mont-Blanc"
+                }
+            },
+            "gmd:positionName": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "ScEM"
+                }
+            },
+            "gmd:contactInfo": {
+                "gmd:CI_Contact": {
+                    "gmd:phone": {
+                        "gmd:CI_Telephone": {
+                            "gmd:voice": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Le Bourget du Lac"
+                                }
+                            },
+                            "gmd:facsimile": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "France"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:address": {
+                        "gmd:CI_Address": {
+                            "gmd:deliveryPoint": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Pignol (orcid:0000-0003-4411-8898)"
+                                }
+                            },
+                            "gmd:city": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Avenue de la Mer Caspienne"
+                                }
+                            },
+                            "gmd:postalCode": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "C\u00e9cile"
+                                }
+                            },
+                            "gmd:country": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "73370"
+                                }
+                            },
+                            "gmd:electronicMailAddress": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "cecile.pignol@univ-savoie.fr"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:onlineResource": {
+                        "gmd:CI_OnlineResource": {
+                            "gmd:linkage": {
+                                "gmd:URL": "33 (0)4 79 75 88 89"
+                            },
+                            "gmd:name": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "@gco:nilReason": "missing"
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:role": {
+                "gmd:CI_RoleCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                    "@codeListValue": "pointOfContact",
+                    "@codeSpace": "ISOTC211/19115",
+                    "#text": "pointOfContact"
+                }
+            }
+        }
+    },
+    "gmd:dateStamp": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "2023-01-05T10:49:52"
+        }
+    },
+    "gmd:metadataStandardName": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003 Geographic information - Metadata"
+        }
+    },
+    "gmd:metadataStandardVersion": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "ISO 19115:2003"
+        }
+    },
+    "gmd:dataSetURI": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "metadata-cp4"
+        }
+    },
+    "gmd:referenceSystemInfo": {
+        "gmd:MD_ReferenceSystem": {
+            "gmd:referenceSystemIdentifier": {
+                "gmd:RS_Identifier": {
+                    "gmd:code": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "4326"
+                        }
+                    },
+                    "gmd:codeSpace": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "EPSG"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "gmd:identificationInfo": {
+        "gmd:MD_DataIdentification": {
+            "gmd:citation": {
+                "gmd:CI_Citation": {
+                    "gmd:title": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "indiquer le titre de la fiche PCB cp4"
+                        }
+                    },
+                    "gmd:date": {
+                        "gmd:CI_Date": {
+                            "gmd:date": {
+                                "gco:Date": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "2022-12-09"
+                                }
+                            },
+                            "gmd:dateType": {
+                                "gmd:CI_DateTypeCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode",
+                                    "@codeListValue": "publication",
+                                    "@codeSpace": "ISOTC211/19115",
+                                    "#text": "publication"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:identifier": {
+                        "gmd:MD_Identifier": {
+                            "gmd:code": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "metadata-cp4"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:citedResponsibleParty": {
+                        "gmd:CI_ResponsibleParty": {
+                            "gmd:individualName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Ma\u00eetre de conf\u00e9rence laboratoire EDYTEM"
+                                }
+                            },
+                            "gmd:organisationName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "Universit\u00e9 Savoie Mont-Blanc"
+                                }
+                            },
+                            "gmd:positionName": {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "ScEM"
+                                }
+                            },
+                            "gmd:contactInfo": {
+                                "gmd:CI_Contact": {
+                                    "gmd:phone": {
+                                        "gmd:CI_Telephone": {
+                                            "gmd:voice": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Le Bourget du Lac"
+                                                }
+                                            },
+                                            "gmd:facsimile": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "France"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "gmd:address": {
+                                        "gmd:CI_Address": {
+                                            "gmd:deliveryPoint": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Piot (orcid:0000-0001-5791-2666)"
+                                                }
+                                            },
+                                            "gmd:city": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Avenue de la Mer Caspienne"
+                                                }
+                                            },
+                                            "gmd:postalCode": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Christine"
+                                                }
+                                            },
+                                            "gmd:country": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "73370"
+                                                }
+                                            },
+                                            "gmd:electronicMailAddress": {
+                                                "gco:CharacterString": {
+                                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                    "#text": "Christine.Piot@univ-savoie.fr"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "gmd:onlineResource": {
+                                        "gmd:CI_OnlineResource": {
+                                            "gmd:linkage": {
+                                                "gmd:URL": "33 (0)4 79 75 88 37"
+                                            },
+                                            "gmd:name": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "@gco:nilReason": "missing"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "gmd:role": {
+                                "gmd:CI_RoleCode": {
+                                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                    "@codeListValue": "owner",
+                                    "@codeSpace": "ISOTC211/19115",
+                                    "#text": "owner"
+                                }
+                            }
+                        }
+                    },
+                    "gmd:presentationForm": {
+                        "gmd:CI_PresentationFormCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode",
+                            "@codeListValue": "mapDigital",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "mapDigital"
+                        }
+                    }
+                }
+            },
+            "gmd:abstract": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "These data are focused on the POP exchanges at the air-water interface of a high altitude lake named Muzelle lake. This lake located in the French Alps is 2105meters high and is in a protected area of the National Parc of Ecrins,far away from all direct sources of pollution. Two POP families were targeted for their different physicochemical properties:PAH and PCB. The air-water transfer studies were realized on the high-altitude lake over two summer periods (2014 and 2015). As the lake is frozen over 6 months per year,the exchanges between the atmosphere and the water take place between June and November. These dataset deal with water,sediment and atmospheric PCB concentrations in aquatic and atmospheric compartments and fluxes of atmospheric deposits and sedimentation. In these mountain environments with limited access and energy,a passive sampling strategy was chosen in the both compartments. Concentrations in water from silicone passive samplers were calculated by using methodologies and equilibre values from the literature."
+                }
+            },
+            "gmd:status": {
+                "gmd:MD_ProgressCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode",
+                    "@codeListValue": ""
+                }
+            },
+            "gmd:pointOfContact": [
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ma\u00eetre de conf\u00e9rence laboratoire EDYTEM"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Universit\u00e9 Savoie Mont-Blanc"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ScEM"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Le Bourget du Lac"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Piot (orcid:0000-0001-5791-2666)"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Avenue de la Mer Caspienne"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Christine"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "73370"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Christine.Piot@univ-savoie.fr"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:onlineResource": {
+                                    "gmd:CI_OnlineResource": {
+                                        "gmd:linkage": {
+                                            "gmd:URL": "33 (0)4 79 75 88 37"
+                                        },
+                                        "gmd:name": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "owner",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "owner"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Curateur laboratoire EDYTEM"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Universit\u00e9 Savoie Mont-Blanc"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ScEM"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Le Bourget du Lac"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Edytem"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Avenue de la Mer Caspienne"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "OpenData"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "73370"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "curateur-edytem@univ-savoie.fr"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:onlineResource": {
+                                    "gmd:CI_OnlineResource": {
+                                        "gmd:linkage": {
+                                            "gmd:URL": "33 (0)4 79 75 88 89"
+                                        },
+                                        "gmd:name": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "pointOfContact"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:CI_ResponsibleParty": {
+                        "gmd:individualName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Ma\u00eetre de conf\u00e9rence laboratoire EDYTEM"
+                            }
+                        },
+                        "gmd:organisationName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Universit\u00e9 Savoie Mont-Blanc"
+                            }
+                        },
+                        "gmd:positionName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "ScEM"
+                            }
+                        },
+                        "gmd:contactInfo": {
+                            "gmd:CI_Contact": {
+                                "gmd:phone": {
+                                    "gmd:CI_Telephone": {
+                                        "gmd:voice": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Le Bourget du Lac"
+                                            }
+                                        },
+                                        "gmd:facsimile": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "France"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:address": {
+                                    "gmd:CI_Address": {
+                                        "gmd:deliveryPoint": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Piot (orcid:0000-0001-5791-2666)"
+                                            }
+                                        },
+                                        "gmd:city": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Avenue de la Mer Caspienne"
+                                            }
+                                        },
+                                        "gmd:postalCode": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Christine"
+                                            }
+                                        },
+                                        "gmd:country": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "73370"
+                                            }
+                                        },
+                                        "gmd:electronicMailAddress": {
+                                            "gco:CharacterString": {
+                                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                                "#text": "Christine.Piot@univ-savoie.fr"
+                                            }
+                                        }
+                                    }
+                                },
+                                "gmd:onlineResource": {
+                                    "gmd:CI_OnlineResource": {
+                                        "gmd:linkage": {
+                                            "gmd:URL": "33 (0)4 79 75 88 37"
+                                        },
+                                        "gmd:name": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "@gco:nilReason": "missing"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gmd:role": {
+                            "gmd:CI_RoleCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode",
+                                "@codeListValue": "pointOfContact",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "pointOfContact"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceMaintenance": {
+                "gmd:MD_MaintenanceInformation": {
+                    "gmd:maintenanceAndUpdateFrequency": {
+                        "gmd:MD_MaintenanceFrequencyCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode",
+                            "@codeListValue": "asNeeded",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "asNeeded"
+                        }
+                    }
+                }
+            },
+            "gmd:graphicOverview": [
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WMS&version=1.1.0&request=GetMap&layers=metadata-cp4&bbox=&width=600&height=300&srs=EPSG:4326&format=image/png"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "metadata-cp4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_BrowseGraphic": {
+                        "gmd:fileName": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "https://www.za-inee.org/sites/all/themes/mnhn/logo.png"
+                            }
+                        },
+                        "gmd:fileDescription": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Logo"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gmx:Anchor": {
+                            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "@xlink:href": "https://www.iana.org/assignments/media-types/application/octet-stream",
+                            "#text": "application/octet-stream"
+                        }
+                    },
+                    "gmd:version": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    }
+                }
+            },
+            "gmd:descriptiveKeywords": [
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://inspire.ec.europa.eu/theme/ac",
+                                    "#text": "Conditions atmosph\u00e9riques"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://inspire.ec.europa.eu/theme/ac",
+                                    "#text": "Atmospheric conditions"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://inspire.ec.europa.eu/theme/ef",
+                                    "#text": "Environmental monitoring facilities"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://inspire.ec.europa.eu/theme/el",
+                                    "#text": "Elevation"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "INSPIRE",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "INSPIRE"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.eionet.europa.eu/gemet/en/concept/6485",
+                                    "#text": "polychlorinated biphenyl"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.eionet.europa.eu/gemet/en/theme/6",
+                                    "#text": "chemistry"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.eionet.europa.eu/gemet/en/concept/1182",
+                                    "#text": "carcinogen"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "GEMET",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "GEMET"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20894",
+                                    "#text": "air pollutant"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20897",
+                                    "#text": "persistent organic pollutant"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20895",
+                                    "#text": "environmental contaminant"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20896",
+                                    "#text": "environmental pollutant"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20893",
+                                    "#text": "polluant"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/20746",
+                                    "#text": "substance"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/21964",
+                                    "#text": "chemical"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/10349",
+                                    "#text": "organic"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/21957",
+                                    "#text": "atmospheric"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/10322",
+                                    "#text": "dry"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/USLterCV_617",
+                                    "#text": "water"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://vocabs.lter-europe.net/EnvThes/USLterCV_619",
+                                    "#text": "water chemistry"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "ENVTHES",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "ENVTHES"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.loterre.fr/skosmos/37T/en/page/-DVJC9HMS-J",
+                                    "#text": "polychlorobiphenyls"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.loterre.fr/skosmos/37T/fr/page/-DVJC9HMS-J",
+                                    "#text": "polychlorobiph\u00e9nyles"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.loterre.fr/skosmos/37T/fr/page/-GDC7X0WP-V",
+                                    "#text": "chromatographie"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://www.loterre.fr/skosmos/37T/fr/page/-GDC7X0WP-V?clang=en",
+                                    "#text": "chromatography"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "LOTERRE",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "LOTERRE"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": {
+                            "gmx:Anchor": {
+                                "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                "@xlink:href": "https://www.geonames.org/2991081/lac-de-la-muzelle.html",
+                                "#text": "Lac de la Muzelle"
+                            }
+                        },
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "GEONAMES",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "GEONAMES"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://qudt.org/vocab/unit/NanoGM-PER-L.html",
+                                    "#text": "NanoGM-PER-L"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://qudt.org/vocab/unit/PicoMOL-PER-M3-SEC.html",
+                                    "#text": "PicoGM-PER"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://qudt.org/vocab/unit/NanoGM-PER-M3.html",
+                                    "#text": "NanoGM-PER-M3"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "http://qudt.org/vocab/unit/GM-PER-M2-DAY.html",
+                                    "#text": "GM-PER-M2-DAY"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "DCAT",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "DCAT"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=7012-37-5&search=7012-37-5",
+                                    "#text": "7012-37-5"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=35693-99-3&search=35693-99-3",
+                                    "#text": "35693-99-3"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=37680-73-2&search=37680-73-2",
+                                    "#text": "37680-73-2"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=31508-00-6&search=31508-00-6",
+                                    "#text": "31508-00-6"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=35065-27-1&search=35065-27-1",
+                                    "#text": "35065-27-1"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=35065-28-2&search=35065-28-2",
+                                    "#text": "35065-28-2"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=35065-29-3&search=35065-29-3",
+                                    "#text": "35065-29-3"
+                                }
+                            },
+                            {
+                                "gmx:Anchor": {
+                                    "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                                    "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                                    "@xlink:href": "https://commonchemistry.cas.org/detail?cas_rn=41464-39-5&search=41464-39-5",
+                                    "#text": "41464-39-5"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "CAS",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "CAS"
+                            }
+                        }
+                    }
+                },
+                {
+                    "gmd:MD_Keywords": {
+                        "gmd:keyword": [
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "ZAA"
+                                }
+                            },
+                            {
+                                "gco:CharacterString": {
+                                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                    "#text": "PNE"
+                                }
+                            }
+                        ],
+                        "gmd:type": {
+                            "gmd:MD_KeywordTypeCode": {
+                                "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode",
+                                "@codeListValue": "GENERAL",
+                                "@codeSpace": "ISOTC211/19115",
+                                "#text": "GENERAL"
+                            }
+                        }
+                    }
+                }
+            ],
+            "gmd:resourceConstraints": {
+                "gmd:MD_LegalConstraints": {
+                    "gmd:useLimitation": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "Licence CC-By"
+                        }
+                    },
+                    "gmd:useConstraints": {
+                        "gmd:MD_RestrictionCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode",
+                            "@codeListValue": "Licence CC-By",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "Licence CC-By"
+                        }
+                    }
+                }
+            },
+            "gmd:spatialRepresentationType": {
+                "gmd:MD_SpatialRepresentationTypeCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode",
+                    "@codeListValue": "vector",
+                    "#text": "vector"
+                }
+            },
+            "gmd:language": {
+                "gmd:LanguageCode": {
+                    "@codeList": "http://www.loc.gov/standards/iso639-2/",
+                    "@codeListValue": "fre",
+                    "@codeSpace": "ISO 639-2",
+                    "#text": "French"
+                }
+            },
+            "gmd:characterSet": {
+                "gmd:MD_CharacterSetCode": {
+                    "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode",
+                    "@codeListValue": "utf8",
+                    "#text": "utf8"
+                }
+            },
+            "gmd:extent": {
+                "gmd:EX_Extent": {
+                    "gmd:temporalElement": {
+                        "gmd:EX_TemporalExtent": {
+                            "gmd:extent": {
+                                "gml:TimeInstant": {
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
+                                    "@gml:id": "ID1",
+                                    "gml:timePosition": "2017-07-07T00:00:00"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "gmd:supplementalInformation": {
+                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                "@gco:nilReason": "missing"
+            }
+        }
+    },
+    "gmd:distributionInfo": {
+        "gmd:MD_Distribution": {
+            "gmd:distributionFormat": {
+                "gmd:MD_Format": {
+                    "gmd:name": {
+                        "gmx:Anchor": {
+                            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+                            "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                            "@xlink:href": "https://www.iana.org/assignments/media-types/application/octet-stream",
+                            "#text": "application/octet-stream"
+                        }
+                    },
+                    "gmd:version": {
+                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                        "@gco:nilReason": "missing"
+                    }
+                }
+            },
+            "gmd:transferOptions": {
+                "gmd:MD_DigitalTransferOptions": {
+                    "gmd:onLine": [
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WMS"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WMS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Map access - OGC Web Map Service (WMS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "OGC:WFS"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Data (features) access - OGC Web Feature Service (WFS)"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=metadata-cp4"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Data download - OGC Web Feature Service (WFS) - GML format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=metadata-cp4&outputFormat=json"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Data download - OGC Web Feature Service (WFS) - GeoJSON format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=metadata-cp4&outputFormat=SHAPE-ZIP"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Data download - OGC Web Feature Service (WFS) - ESRI Shapefile format"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "gmd:CI_OnlineResource": {
+                                "gmd:linkage": {
+                                    "gmd:URL": "http://geo.driihm.fr:8080/geoserver//testworkspace/ows?service=WFS&request=GetFeature&version=1.0.0&typeName=metadata-cp4&outputFormat=CSV"
+                                },
+                                "gmd:protocol": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "WWW:DOWNLOAD-1.0-http--download"
+                                    }
+                                },
+                                "gmd:name": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4"
+                                    }
+                                },
+                                "gmd:description": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "metadata-cp4 - Data download - OGC Web Feature Service (WFS) - CSV format"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "gmd:dataQualityInfo": {
+        "gmd:DQ_DataQuality": {
+            "gmd:scope": {
+                "gmd:DQ_Scope": {
+                    "gmd:level": {
+                        "gmd:MD_ScopeCode": {
+                            "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MX_ScopeCode",
+                            "@codeListValue": "dataset",
+                            "@codeSpace": "ISOTC211/19115",
+                            "#text": "dataset"
+                        }
+                    }
+                }
+            },
+            "gmd:lineage": {
+                "gmd:LI_Lineage": {
+                    "gmd:statement": {
+                        "gco:CharacterString": {
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "#text": "d\u00e9crire la g\u00e9n\u00e9alogie/provenance de la donn\u00e9e"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,416 @@
+{
+    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+    "@xmlns:gfc": "http://www.isotc211.org/2005/gfc",
+    "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@uuid": "810740c6-7a95-459a-9c43-73259d9fcd6a",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd",
+    "gfc:name": {
+        "gco:CharacterString": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "#text": "Dictionnaire de donn\u00e9es pour 'La v\u00e9g\u00e9tation de l'\u00eele d'Ouessant en 2003-2004'"
+        }
+    },
+    "gfc:scope": {
+        "gco:CharacterString": null
+    },
+    "gfc:fieldOfApplication": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionNumber": {
+        "gco:CharacterString": null
+    },
+    "gfc:versionDate": {
+        "gco:DateTime": {
+            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+            "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
+            "#text": "2013-02-06T12:55:23"
+        }
+    },
+    "gfc:featureType": {
+        "gfc:FC_FeatureType": {
+            "@id": "",
+            "gfc:typeName": {
+                "gco:LocalName": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "Table attributaire"
+                }
+            },
+            "gfc:definition": {
+                "gco:CharacterString": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "D\u00e9finition de la table d'attributs"
+                }
+            },
+            "gfc:isAbstract": {
+                "gco:Boolean": {
+                    "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                    "#text": "false"
+                }
+            },
+            "gfc:featureCatalogue": {
+                "@xmlns:xlink": "http://www.w3.org/1999/xlink",
+                "@xlink:href": "#"
+            },
+            "gfc:carrierOfCharacteristics": [
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "EUNIS"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "Code normalis\u00e9 eunis (ex. B3.3 = pelouse \u00e9corch\u00e9e, I1.1 = cultures...)"
+                            }
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:featureType": null,
+                        "gfc:valueMeasurementUnit": {
+                            "gml:UnitDefinition": {
+                                "@xmlns:gml": "http://www.opengis.net/gml",
+                                "@gml:id": "unknown",
+                                "gml:identifier": {
+                                    "@codeSpace": "unknown"
+                                }
+                            }
+                        },
+                        "gfc:listedValue": {
+                            "gfc:FC_ListedValue": {
+                                "gfc:label": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Falaises, corniches et rivages rocheux \u00e0 Angiospermes"
+                                    }
+                                },
+                                "gfc:code": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "B3.3"
+                                    }
+                                },
+                                "gfc:definition": {
+                                    "gco:CharacterString": {
+                                        "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                        "#text": "Falaises ou parties de falaises littorales et rivages rocheux colonis\u00e9s par des associations disjointes de plantes de fissures halo-tol\u00e9rantes (chasmophytes) ou par des prairies halo-tol\u00e9rantes plus ou moins ferm\u00e9es, avec leurs communaut\u00e9s faunistiques d\u2019invert\u00e9br\u00e9s et de vert\u00e9br\u00e9s terrestres."
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "TEXT"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "gfc:FC_FeatureAttribute": {
+                        "gfc:memberName": {
+                            "gco:LocalName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "#text": "HABITAT"
+                            }
+                        },
+                        "gfc:definition": {
+                            "gco:CharacterString": null
+                        },
+                        "gfc:cardinality": {
+                            "gco:Multiplicity": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:range": {
+                                    "gco:MultiplicityRange": {
+                                        "gco:lower": {
+                                            "gco:Integer": null
+                                        },
+                                        "gco:upper": {
+                                            "gco:UnlimitedInteger": {
+                                                "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+                                                "@isInfinite": "true",
+                                                "@xsi:nil": "true"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "gfc:listedValue": [
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Pelouse \u00e9corch\u00e9e"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "111"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Pelouse a\u00e9rohaline"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "112"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Landes"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "120"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Eau int\u00e9rieure"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "210"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Prairie humide"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "221"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Saulaie"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "222"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Roseli\u00e8re et molinaie"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "223"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Pteridaie"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "321"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Fourr\u00e9s et broussailles"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "322"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Cultures"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "411"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Prairie m\u00e9sophile patur\u00e9e ou fauch\u00e9e"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "413"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Prairie embroussaill\u00e9e"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "414"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Roche nue"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "510"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "Sable"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "520"
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "gfc:FC_ListedValue": {
+                                    "gfc:label": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "B\u00e2ti"
+                                        }
+                                    },
+                                    "gfc:code": {
+                                        "gco:CharacterString": {
+                                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                            "#text": "600"
+                                        }
+                                    }
+                                }
+                            }
+                        ],
+                        "gfc:valueType": {
+                            "gco:TypeName": {
+                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                                "gco:aName": {
+                                    "gco:CharacterString": "INTEGER"
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

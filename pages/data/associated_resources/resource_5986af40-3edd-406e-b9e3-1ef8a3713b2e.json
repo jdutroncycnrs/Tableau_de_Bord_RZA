@@ -1,0 +1,57 @@
+{
+    "parent": [],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "fcats": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": "",
+                "url": "http://localhost:8080/geosource/srv/en/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=e978b49b-4026-424e-9e6e-27c75f9a1063",
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "groupOwner": "123",
+                "op5": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceTitleObject": {
+                    "default": "Catalogue d'attributs - Mesures d'humidit\u00e9 du sol (bas-marais du Couesnon, f\u00e9vrier 2010 - f\u00e9vrier 2011) - Zone Atelier Armorique ZAAr"
+                },
+                "resourceAbstract": "-- Dictionnaire de donn\u00e9es de la couche --",
+                "id": "2812",
+                "uuid": "e978b49b-4026-424e-9e6e-27c75f9a1063",
+                "op0": [
+                    "123",
+                    "1",
+                    "0"
+                ],
+                "resourceType": [
+                    "featureCatalog"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "e978b49b-4026-424e-9e6e-27c75f9a1063"
+        }
+    ],
+    "brothersAndSisters": []
+}

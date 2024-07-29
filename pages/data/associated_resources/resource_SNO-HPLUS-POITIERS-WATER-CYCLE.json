@@ -1,0 +1,320 @@
+{
+    "parent": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": null,
+                "url": null,
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "data:image/png;base64, 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",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://www.osuris.fr/geonetwork/srv/api/records/8425dbe1-5e4a-409f-a504-e1c891938680/attachments/puits_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Le Site Exp\u00e9rimental Hydrog\u00e9ologique (SEH) de Poitiers a \u00e9t\u00e9 d\u00e9velopp\u00e9 par l\u2019\u00e9quipe Hydrasa (FRE 3114), dans le cadre du R\u00e9seau National de Sites Hydrog\u00e9ologiques (SNO H+) et du programme \"EAUX\" de la r\u00e9gion Poitou-Charentes (CPER 2002-2006). Situ\u00e9 2 km \u00e0 l\u2019Est du Campus Sciences de l\u2019Universit\u00e9 de Poitiers, le SEH couvre une superficie de 12 hectares sur des terrains appartenant \u00e0 l\u2019Universit\u00e9 (Site du Deffend : Observatoire R\u00e9gional du Patrimoine V\u00e9g\u00e9tal). D\u2019un point de vue g\u00e9ologique, le SEH est implant\u00e9 sur le versant nord du \u00ab Seuil du Poitou \u00bb, vaste plateau carbonat\u00e9 M\u00e9sozo\u00efque marquant la transition entre les bassins s\u00e9dimentaires Aquitain et Parisien.",
+                    "langfre": "Le Site Exp\u00e9rimental Hydrog\u00e9ologique (SEH) de Poitiers a \u00e9t\u00e9 d\u00e9velopp\u00e9 par l\u2019\u00e9quipe Hydrasa (FRE 3114), dans le cadre du R\u00e9seau National de Sites Hydrog\u00e9ologiques (SNO H+) et du programme \"EAUX\" de la r\u00e9gion Poitou-Charentes (CPER 2002-2006). Situ\u00e9 2 km \u00e0 l\u2019Est du Campus Sciences de l\u2019Universit\u00e9 de Poitiers, le SEH couvre une superficie de 12 hectares sur des terrains appartenant \u00e0 l\u2019Universit\u00e9 (Site du Deffend : Observatoire R\u00e9gional du Patrimoine V\u00e9g\u00e9tal). D\u2019un point de vue g\u00e9ologique, le SEH est implant\u00e9 sur le versant nord du \u00ab Seuil du Poitou \u00bb, vaste plateau carbonat\u00e9 M\u00e9sozo\u00efque marquant la transition entre les bassins s\u00e9dimentaires Aquitain et Parisien."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Site de Poitiers",
+                    "langfre": "SNO H+ : Site de Poitiers"
+                },
+                "format": [
+                    "KML"
+                ],
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Site web du SOERE H+",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Acces \u00e0 la base de donn\u00e9es",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Acc\u00e8s au fichier KMZ du site de Poitiers",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/documents/poitiers.kmz",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "More informations on DEIMS LTER",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://deims.org/76564697-0b15-49ca-9d61-ec82ad84ac54",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "hplus_poitiers_points",
+                        "applicationProfile": "",
+                        "description": "hplus_poitiers_points",
+                        "mimeType": "",
+                        "url": "https://www.osuris.fr/geoserver/hplus/wms",
+                        "group": 0
+                    }
+                ],
+                "id": "3898",
+                "cl_status": [
+                    {
+                        "key": "onGoing"
+                    }
+                ],
+                "uuid": "8425dbe1-5e4a-409f-a504-e1c891938680",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "8425dbe1-5e4a-409f-a504-e1c891938680"
+        }
+    ],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "brothersAndSisters": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "soereH+",
+                            "langeng": "soereH+"
+                        },
+                        "url": "http://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs.",
+                    "langeng": "This borehole hydrogeophysical logging data include optical imaging,acoustic logging,induction and electrical resistivity,natural and spectral gamma radioactivity,fiber optic measurements an\nd multiparameter probe logs."
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : In borehole hydrogeophysical logging on the Poitiers site.",
+                    "langeng": "SNO H+ : In borehole hydrogeophysical logging on the Poitiers site."
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "hydrogeophysics_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/documents/requests/poitiers/HPLU_DAT_poitiers_borehole_hydrogeophysics.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3949",
+                "uuid": "SNO-HPLUS-POITIERS-BOREHOLE-HYDROGEOPHYSICS",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-POITIERS-BOREHOLE-HYDROGEOPHYSICS"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "soereH+",
+                            "langeng": "soereH+"
+                        },
+                        "url": "http://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "10.26169/hplus.all",
+                            "langeng": "10.26169/hplus.all",
+                            "link": "http://dx.doi.org/10.26169/hplus.all"
+                        },
+                        "url": "https://img.shields.io/badge/DOI-10.26169/hplus.all-informational.svg"
+                    },
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "Logo",
+                            "langeng": "Logo"
+                        },
+                        "url": "https://hplus.ore.fr/templates/hplus_template_v1.3/images/logo.jpg"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Available dataset includes monitoring data anions,cations,dic,doc",
+                    "langeng": "Available dataset includes monitoring data anions,cations,dic,doc"
+                },
+                "resourceTitleObject": {
+                    "default": "SNO H+ : Water chemistry dataset on the Poitiers site starting from 1991",
+                    "langeng": "SNO H+ : Water chemistry dataset on the Poitiers site starting from 1991"
+                },
+                "link": [
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "DOI",
+                        "applicationProfile": "",
+                        "description": "Digital Object Identifier",
+                        "mimeType": "",
+                        "url": "http://dx.doi.org/10.26169/hplus.all",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Information on H+ website",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:LINK-1.0-http--link",
+                        "function": "",
+                        "name": "Data on H+ data portal",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://hplus.ore.fr/en/database/acces-database",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "Geochemical_dataset",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "http://hplus.ore.fr/documents/requests/poitiers/HPLU_DAT_poitiers_geochemical_cycle.csv.tgz",
+                        "group": 0
+                    }
+                ],
+                "id": "3950",
+                "uuid": "SNO-HPLUS-POITIERS-GEOCHEMICAL-CYCLE",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "SNO-HPLUS-POITIERS-GEOCHEMICAL-CYCLE"
+        }
+    ]
+}

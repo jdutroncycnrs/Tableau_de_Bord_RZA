@@ -1,0 +1,466 @@
+{
+    "parent": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": null,
+                "url": null,
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": "1",
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographies par vectorisation de cartes anciennes et photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon de 1705 \u00e0 2006",
+                    "langfre": "Cartographies par vectorisation de cartes anciennes et photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon de 1705 \u00e0 2006"
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "id": "4666",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "f76baf83-9d54-4c3c-a574-013ab6ed7b02",
+                "op0": "1",
+                "resourceType": [
+                    "series"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "f76baf83-9d54-4c3c-a574-013ab6ed7b02"
+        }
+    ],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "brothersAndSisters": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=40db4d35-6953-4a01-b04e-b05b2a050930&fname=image1705_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Vectorisation de l'emprise des schorres de l'Anse de l'Aiguillon en 1705, d'apr\u00e8s les cartographies de Claude Masse.",
+                    "langfre": "Vectorisation de l'emprise des schorres de l'Anse de l'Aiguillon en 1705, d'apr\u00e8s les cartographies de Claude Masse."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 1705",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1705"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres1705",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres1705",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 1
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres1705",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres1705",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 1
+                    }
+                ],
+                "id": "4199",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "40db4d35-6953-4a01-b04e-b05b2a050930",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "40db4d35-6953-4a01-b04e-b05b2a050930"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=213a76cf-2fed-45ff-a53d-62f57b051b2c&fname=images1950_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb).",
+                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1950, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 12 mai 1950 (mission \u00ab F1229-1629 \u00bb)."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 1950",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1950"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1950",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1950",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1950",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1950",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4119",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "213a76cf-2fed-45ff-a53d-62f57b051b2c",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "213a76cf-2fed-45ff-a53d-62f57b051b2c"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=2a4d17c2-04c7-44f3-bafc-3b41adc42dd3&fname=image1820_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Vectorisation de l'emprise des schorres de l'Anse de l'Aiguillon en 1820, d'apr\u00e8s les cartographies des minutes de l'Etat Major.",
+                    "langfre": "Vectorisation de l'emprise des schorres de l'Anse de l'Aiguillon en 1820, d'apr\u00e8s les cartographies des minutes de l'Etat Major."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 1820",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1820"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres1820",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres1820",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres1820",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres1820",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    }
+                ],
+                "id": "4143",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "2a4d17c2-04c7-44f3-bafc-3b41adc42dd3",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "2a4d17c2-04c7-44f3-bafc-3b41adc42dd3"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=d8f1b9b5-cfa9-457a-8adf-5d98c323a14c&fname=image2010_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 2010, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN de 2010.",
+                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 2010, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN de 2010."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 2010",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 2010"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "id": "4583",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "d8f1b9b5-cfa9-457a-8adf-5d98c323a14c",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "d8f1b9b5-cfa9-457a-8adf-5d98c323a14c"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=6e80ff90-541e-4556-8887-011fba5a7cb0&fname=image2006_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 2006, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN de juin 2006.",
+                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 2006, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN de juin 2006."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 2006",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 2006"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_2006",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_2006",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_2006",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_2006",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4320",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "6e80ff90-541e-4556-8887-011fba5a7cb0",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "6e80ff90-541e-4556-8887-011fba5a7cb0"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "thumbnail",
+                            "langfre": "thumbnail"
+                        },
+                        "url": "https://portail.indigeo.fr:80/geonetwork/srv/eng/resources.get?uuid=4bd4d25d-a6de-4b3d-ba04-30579cab0515&fname=image1972_s.png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1972, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 27 septembre 1972 (mission IGN\n\u00ab F1228-1328 \u00bb).",
+                    "langfre": "Cartographie par photo-interpr\u00e9tation de l'emprise des schorres de l'Anse de l'Aiguillon en 1972, d'apr\u00e8s les photographies a\u00e9riennes de l'IGN du 27 septembre 1972 (mission IGN\n\u00ab F1228-1328 \u00bb)."
+                },
+                "resourceTitleObject": {
+                    "default": "Schorres de l'Anse de l'Aiguillon en 1972",
+                    "langfre": "Schorres de l'Anse de l'Aiguillon en 1972"
+                },
+                "format": [
+                    "ESRI Shapefile"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1972",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1972",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WFS",
+                        "function": "",
+                        "name": "LETG-NANTES:schorres_1972",
+                        "applicationProfile": "",
+                        "description": "LETG-NANTES:schorres_1972",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/wfs",
+                        "group": 0
+                    }
+                ],
+                "id": "4231",
+                "cl_status": [
+                    {
+                        "key": "completed"
+                    }
+                ],
+                "uuid": "4bd4d25d-a6de-4b3d-ba04-30579cab0515",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "4bd4d25d-a6de-4b3d-ba04-30579cab0515"
+        }
+    ]
+}

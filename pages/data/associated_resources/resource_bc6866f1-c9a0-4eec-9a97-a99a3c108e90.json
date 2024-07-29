@@ -1,0 +1,217 @@
+{
+    "parent": [
+        {
+            "origin": "catalog",
+            "properties": {
+                "associationType": "",
+                "resourceTitle": null,
+                "url": null,
+                "initiativeType": ""
+            },
+            "_source": {
+                "op1": "1",
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Acquisition de donn\u00e9es multisources sur le marais Poitevin par drone et capteurs multisources (RGB,Multispectral). \nRecherche.",
+                    "langfre": "Acquisition de donn\u00e9es multisources sur le marais Poitevin par drone et capteurs multisources (RGB,Multispectral). \nRecherche."
+                },
+                "resourceTitleObject": {
+                    "default": "Jeu de donn\u00e9es Drone du marais poitevin",
+                    "langfre": "Jeu de donn\u00e9es Drone du marais poitevin"
+                },
+                "format": [
+                    "GeoTIFF"
+                ],
+                "link": [
+                    {
+                        "protocol": "DOI",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "",
+                        "mimeType": "",
+                        "url": "https://doi.org/10.35110/24c7721e-cd9e-4c73-929b-1d5008721381",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "",
+                        "applicationProfile": "",
+                        "description": "T\u00e9l\u00e9chargement et visualisation des donn\u00e9es",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geocms/maps/portail-hzvbqbnv/share#project",
+                        "group": 0
+                    }
+                ],
+                "id": "4127",
+                "uuid": "24c7721e-cd9e-4c73-929b-1d5008721381",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "24c7721e-cd9e-4c73-929b-1d5008721381"
+        }
+    ],
+    "associated": [],
+    "hassources": [],
+    "children": [],
+    "hasfeaturecats": [],
+    "services": [],
+    "brothersAndSisters": [
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "Image multispectrale drone \u00e0 tr\u00e8s haute r\u00e9solution spatiale (8.5 cm) acquise sur le marais poitevin. Acquisition le 2022-06-13 \u00e0 14h10. Capteur Micasense Rededge MX. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 2 cm. Conditions d'acquisition:Vent NE:5.5 \u00e0 7m/s - Ciel CAVOK\nCapteur Micasense multispectral MX.\nDrone eBee X.",
+                    "langfre": "Image multispectrale drone \u00e0 tr\u00e8s haute r\u00e9solution spatiale (8.5 cm) acquise sur le marais poitevin. Acquisition le 2022-06-13 \u00e0 14h10. Capteur Micasense Rededge MX. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 2 cm. Conditions d'acquisition:Vent NE:5.5 \u00e0 7m/s - Ciel CAVOK\nCapteur Micasense multispectral MX.\nDrone eBee X."
+                },
+                "resourceTitleObject": {
+                    "default": "Image multispectrale drone (Marais Poitevin,2022-06-13) - Recherche",
+                    "langfre": "Image multispectrale drone (Marais Poitevin,2022-06-13) - Recherche"
+                },
+                "format": [
+                    "GeoTIFF"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_MS",
+                        "applicationProfile": "",
+                        "description": "lien WMS",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wms",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WCS",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_MS",
+                        "applicationProfile": "",
+                        "description": "lien WCS",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_MS",
+                        "applicationProfile": "",
+                        "description": "Attention, le t\u00e9l\u00e9chargement peut prendre du temps \u00e0 se lancer !",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/wcs?service=WCS&version=2.0.1&request=GetCoverage&CoverageId=maraispoitevin_2022_06_13_MS&format=image/geotiff",
+                        "group": 0
+                    }
+                ],
+                "id": "4208",
+                "uuid": "44ccc8b6-3dbc-4d37-b2ae-43902b0d4ccf",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "44ccc8b6-3dbc-4d37-b2ae-43902b0d4ccf"
+        },
+        {
+            "origin": "catalog",
+            "properties": null,
+            "_source": {
+                "op1": "1",
+                "overview": [
+                    {
+                        "data": "",
+                        "text": {
+                            "default": "maraispoitevin_2022_06_13_DSM",
+                            "langfre": "maraispoitevin_2022_06_13_DSM"
+                        },
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/ows?service=WMS&version=1.1.0&request=GetMap&layers=maraispoitevin_2022_06_13_DSM&bbox=362194.42721,6593511.74336,362991.04721,6594858.68336&width=600&height=300&srs=EPSG:2154&format=image/png"
+                    }
+                ],
+                "op5": "1",
+                "resourceAbstractObject": {
+                    "default": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais poitevin extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 15h00. Capteur SODA 3D photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 1.1 cm. Conditions d'acquisition:Vent NE:6 \u00e0 7.5m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X.",
+                    "langfre": "mod\u00e8le num\u00e9rique de surface \u00e0 tr\u00e8s haute r\u00e9solution spatiale (3.5 cm) acquis sur le marais poitevin extrait de la donn\u00e9e RGB par photogramm\u00e9trie. Acquisition le 2022-06-13 \u00e0 15h00. Capteur SODA 3D photogramm\u00e9trique. Pr\u00e9cision g\u00e9om\u00e9trique (XYZ) - RMSE = 1.1 cm. Conditions d'acquisition:Vent NE:6 \u00e0 7.5m/s - Ciel CAVOK\nCapteur SODA 3D photogramm\u00e9trique.\nDrone eBee X."
+                },
+                "resourceTitleObject": {
+                    "default": "Image DSM drone (Marais Poitevin,2022-06-13) - Recherche",
+                    "langfre": "Image DSM drone (Marais Poitevin,2022-06-13) - Recherche"
+                },
+                "format": [
+                    "GeoTIFF"
+                ],
+                "link": [
+                    {
+                        "protocol": "OGC:WMS",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "maraispoitevin_2022_06_13_DSM - Map access - OGC Web Map Service (WMS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/ows?service=WMS",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "OGC:WCS",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "maraispoitevin_2022_06_13_DSM - Data (Coverage) access - OGC Web Coverage Service (WCS)",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/ows?service=WCS",
+                        "group": 0
+                    },
+                    {
+                        "protocol": "WWW:DOWNLOAD-1.0-http--download",
+                        "function": "",
+                        "name": "maraispoitevin_2022_06_13_DSM",
+                        "applicationProfile": "",
+                        "description": "maraispoitevin_2022_06_13_DSM - Data download - OGC Web Coverage Service (WCS) - GeoTIFF format",
+                        "mimeType": "",
+                        "url": "https://portail.indigeo.fr/geoserver/D2T/ows?service=WCS&request=GetCoverage&version=2.0.1&CoverageId=maraispoitevin_2022_06_13_DSM&format=image/geotiff",
+                        "group": 0
+                    }
+                ],
+                "id": "4595",
+                "uuid": "db9efde8-8a8c-40dd-8106-bffff48a856c",
+                "op0": "1",
+                "resourceType": [
+                    "dataset"
+                ],
+                "edit": false,
+                "canReview": false,
+                "owner": false,
+                "isPublishedToAll": true,
+                "view": true,
+                "notify": false,
+                "download": true,
+                "dynamic": true,
+                "featured": false
+            },
+            "_id": "db9efde8-8a8c-40dd-8106-bffff48a856c"
+        }
+    ]
+}
