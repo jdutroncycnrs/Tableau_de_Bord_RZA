@@ -1527,3 +1527,163 @@ with col3:
                                     </style><BR><span style='font-size: 25px; 
                                     margin-top: 0;'>{""}</style></span></p>"""
     st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+
+############### RECUPERATION GLOBALE ################################################
+
+if admin_action == admin_pass:
+    Recup_globale = st.sidebar.button('recup globale')
+    if Recup_globale:
+        with st.spinner("La récup globale est en cours"):
+            group_bis = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
+            alluuids__ = uuids['uuid_cat_InDoRes']
+            liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact','Position_contact', 
+                                 'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre']
+            df_global = pd.DataFrame(columns=liste_columns_df2)
+            for i in range(30):
+                print(i)
+                print(alluuids__[i])
+                try:
+                    dfi = pd.read_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv',index_col=[0])
+                except:
+                    url_i = url + alluuids__[i]
+                    resp1i = requests.get(url_i,headers=headers_json)
+                    if resp1i.status_code == 200:
+                        resp_jsoni=resp1i.json()
+                        try:
+                            with open(f"pages/data/fiches_json/{alluuids__[i]}.json", "w") as f:
+                                json.dump(resp_jsoni, f, indent=4)
+                        except:
+                            pass
+                        resp2i = requests.get(url_i,headers=headers_xml)
+                        if resp2i.status_code == 200:
+                            xml_contenti = resp2i.text
+                            try:
+                                with open(f"pages/data/fiches_xml/{alluuids__[i]}.xml", 'w') as file:
+                                    file.write(xml_contenti)
+                            except:
+                                pass
+                    try:
+                        with open(f"pages/data/fiches_json/{alluuids__[i]}.json", 'r') as f:
+                            datai = json.load(f)
+
+                        with open(f'pages/data/fiches_txt/{alluuids__[i]}.txt', 'w') as file:
+                            transcript_json(datai, file)
+
+                        with open(f'pages/data/fiches_txt/{alluuids__[i]}.txt', 'r') as f:
+                            di = f.read()
+
+                        listii = re.split('µ',di)
+
+                        dfi = pd.DataFrame(listii, columns=['Results'])
+                        for u in range(len(dfi)):
+                            p = re.split('§',dfi.loc[u,'Results'])
+                            try:
+                                dfi.loc[u,'Valeurs']=p[1]
+                            except:
+                                pass
+                            try:
+                                dfi.loc[u,'Clés']=p[0].replace('.','£')
+                            except:
+                                pass
+
+                        for j in range(len(dfi)):
+                            pp = re.split('£',dfi.loc[j,'Clés'])
+                            for k in range(15):
+                                try:
+                                    dfi.loc[j,f'K{k}']=pp[k]
+                                except:
+                                    pass
+                        dfi.to_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv')
+                    except:
+                        dfi = []
+                try:
+                    Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
+                except:
+                    try:
+                        Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
+                    except:
+                        Languei = ""
+                try:
+                    Datei = dfi['Valeurs'][dfi['Clés']=="gmd:dateStamp£gco:DateTime£#text:"].values[0]
+                except:
+                    try:
+                        Datei = dfi['Valeurs'][dfi['Clés']=="gfc:versionDate£gco:DateTime£#text:"].values[0]
+                    except:
+                        try:
+                            Datei = dfi['Valeurs'][dfi['Clés']=="gmx:versionDate£gco:DateTime£#text:"].values[0]
+                        except:
+                            Datei = ""
+                try:
+                    Standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
+                except:
+                    try:
+                        Standardi = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+                    except:
+                        Standardi = ""
+                try:
+                    Version_standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardVersion£gco:CharacterString£#text:"].values[0]
+                except:
+                    Version_standardi = ""                
+                try:
+                    Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                    if len(Nom_contacti)==0:
+                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                except:
+                    try:
+                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                    except:
+                        try:
+                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
+                        except: 
+                            Nom_contacti = ""
+                try:
+                    Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                    if len(Organisation_contacti)==0:
+                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                except:
+                    try:
+                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                    except:
+                        Organisation_contacti = ""
+                try:
+                    Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
+                    if len(Position_contacti)==0:
+                        Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
+                except:
+                    try:
+                        Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
+                    except:
+                        Position_contacti = ""
+                try:
+                    westBoundLongitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£gco:Decimal£#text:"].values[0]
+                except:
+                    westBoundLongitudei = ""
+                try:
+                    EastBoundLongitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£gco:Decimal£#text:"].values[0]
+                except:
+                    EastBoundLongitudei = ""
+                try:
+                    SouthBoundLatitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£gco:Decimal£#text:"].values[0]
+                except:
+                    SouthBoundLatitudei = ""
+                try:
+                    NorthBoundLatitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£gco:Decimal£#text:"].values[0]
+                except:
+                    NorthBoundLatitudei = ""
+
+                try: 
+                    Titrei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
+                except:
+                    try:
+                        Titrei = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
+                    except:
+                        Titrei = ""    
+                liste_variables2 = [alluuids__[i],Languei, Datei, Standardi, Version_standardi, Nom_contacti,Organisation_contacti, 
+                                            Position_contacti,westBoundLongitudei, EastBoundLongitudei,SouthBoundLatitudei,NorthBoundLatitudei, Titrei]
+                df_variables_evaluationi = pd.DataFrame(data=[liste_variables2],columns=liste_columns_df2)
+                df_global_ = pd.concat([df_global,df_variables_evaluationi], axis=0)
+                df_global_.reset_index(inplace=True)
+                df_global_.drop(columns='index',inplace=True)
+                df_global = df_global_
+                
+            df_global.to_csv("pages/data/infos_MD/Tableau_MD.csv")
