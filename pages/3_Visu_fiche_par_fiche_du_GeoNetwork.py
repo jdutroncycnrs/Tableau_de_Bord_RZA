@@ -1537,7 +1537,8 @@ if admin_action == admin_pass:
             group_bis = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
             alluuids__ = uuids['uuid_cat_InDoRes']
             liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact','Position_contact', 
-                                 'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre']
+                                 'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre', 'Thesaurus', 'Themes','Mots_clés',
+                                 'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i']
             df_global = pd.DataFrame(columns=liste_columns_df2)
             for i in range(30):
                 print(i)
@@ -1596,6 +1597,8 @@ if admin_action == admin_pass:
                         dfi.to_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv')
                     except:
                         dfi = []
+                
+                Identifi = alluuids__[i]
                 try:
                     Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
                 except:
@@ -1677,9 +1680,123 @@ if admin_action == admin_pass:
                     try:
                         Titrei = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
                     except:
-                        Titrei = ""    
-                liste_variables2 = [alluuids__[i],Languei, Datei, Standardi, Version_standardi, Nom_contacti,Organisation_contacti, 
-                                            Position_contacti,westBoundLongitudei, EastBoundLongitudei,SouthBoundLatitudei,NorthBoundLatitudei, Titrei]
+                        Titrei = ""  
+
+                Liste_Themei = []
+                Liste_Thesaurusi = []
+                Mots_clesi = []
+                try:
+                    for u in range(len(dfi)):
+                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+                            Liste_Themei.append([u,dfi.loc[u,'Valeurs']])
+                except:
+                    pass
+                try:
+                    for u in range(len(dfi)):
+                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+                            Liste_Thesaurusi.append([u,dfi.loc[u,'Valeurs']])
+                except:
+                    pass
+                try:
+                    for u in range(len(dfi)):
+                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                            Mots_clesi.append([u,dfi.loc[u,'Valeurs']])
+                except:
+                    pass
+
+                Thesaurusi = []
+                for o in range(len(Liste_Thesaurusi)):
+                    Thesaurusi.append(Liste_Thesaurusi[o][1])
+
+                Themesi = []
+                for oo in range(len(Liste_Themei)):
+                    Themesi.append(Liste_Themei[oo][1])
+
+                Keywordsi = []
+                for ooo in range(len(Mots_clesi)):
+                    Keywordsi.append(Mots_clesi[ooo][1])
+                try:
+                    UseLimitationi = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
+                except:
+                    UseLimitationi =""
+                try:
+                    UseContraintei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
+                except:
+                    UseContraintei =""
+                try:
+                    Formati = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
+                except:
+                    Formati = ""
+                try:
+                    Online_linksi = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
+                except:
+                    Online_linksi = ""
+                try:
+                    Genealogiei = dfi['Valeurs'][dfi['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:lineage£gmd:LI_Lineage£gmd:statement£gco:CharacterString£#text:"].values[0]
+                except:
+                    Genealogiei = ""
+
+                try:
+                    if len(Nom_contacti)!=0 and len(Organisation_contacti)!=0 and len(Titrei)!=0 and len(Keywordsi)!=0 and len(UseContraintei)!=0 and len(Formati)!=0 and len(Online_linksi)!=0:
+                        F2i = True
+                    else:
+                        F2i = False
+                except:
+                    F2i = False
+
+                try:
+                    if len(Online_linksi)!=0:
+                        URL = True
+                        for i in range(len(Online_linksi)):
+                            if 'doi' in Online_linksi[i] or 'attachments' in Online_linksi[i]:
+                                A1i = True
+                            else:
+                                A1i = False
+                    else:
+                        A1i = False
+                        URL = False
+                except:
+                    URL = False
+                    A1i = False
+                try:
+                    if len(Formati)!=0:
+                        for i in range(len(Formati)):
+                            if Formati[i] in ['GeoTiff','GeoTIFF', 'GEOTIFF','shape','ESRI Shapefile','Word','ASC','CSV','png','PNG','pdf','PDF','svg','SVG', 'odt','ODT','rtf', 'RTF','txt','TXT','jpg','JPG','ods','ODS','mkv','MKV','zip','ZIP','tar','TAR']:
+                                I1i = True
+                            else:
+                                I1i = False
+                    else:
+                        I1i = False
+                except:
+                    I1i = False
+                try:
+                    if len(Thesaurusi)==0:
+                        I2i = False
+                    else:
+                        I2i = True
+                except:
+                    I2i = False
+                try:
+                    if len(UseLimitationi)==0 and  len(UseContraintei)==0:
+                        R1i = False
+                    elif len(UseContrainte)!=0 or len(UseLimitation)!=0:
+                        R1i = True
+                    else:
+                        R1i = False
+                except:
+                    R1i = False
+                try:
+                    if len(Genealogiei)==0:
+                        R2i = False
+                    else:
+                        R2i = True
+                except:
+                    R2i = False
+
+                liste_variables2 = [Identifi,Languei, Datei, Standardi, Version_standardi, Nom_contacti,Organisation_contacti, 
+                                            Position_contacti,westBoundLongitudei, EastBoundLongitudei,SouthBoundLatitudei,NorthBoundLatitudei, 
+                                            Titrei, Thesaurusi,Themesi,Keywordsi,UseLimitationi,UseContraintei,Formati, 
+                                            F2i, URL, A1i, I1i,I2i,R1i, R2i]
                 df_variables_evaluationi = pd.DataFrame(data=[liste_variables2],columns=liste_columns_df2)
                 df_global_ = pd.concat([df_global,df_variables_evaluationi], axis=0)
                 df_global_.reset_index(inplace=True)
