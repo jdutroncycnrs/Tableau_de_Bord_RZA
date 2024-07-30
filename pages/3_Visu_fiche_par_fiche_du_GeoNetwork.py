@@ -1540,9 +1540,8 @@ if admin_action == admin_pass:
                                  'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre', 'Thesaurus', 'Themes','Mots_clés',
                                  'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i']
             df_global = pd.DataFrame(columns=liste_columns_df2)
-            for i in range(30):
+            for i in range(len(alluuids__)):
                 print(i)
-                print(alluuids__[i])
                 try:
                     dfi = pd.read_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv',index_col=[0])
                 except:
