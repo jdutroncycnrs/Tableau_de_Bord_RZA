@@ -16,16 +16,77 @@ st.set_page_config(
 
 ############ PARAMETRES ############################################
 
-group_ = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
+group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
+
+tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
+
+dico = {'ZABrI - Brest Iroise':'zabri', 
+        'Pas de fichier':'Aucun groupe et aucune mention', 
+        'OHM Pyrénées - haut Vicdessos':'OHM Pyrénées - haut Vicdessos', 
+        'OHMi Téssékéré':'OHMi Téssékéré', 
+        'InDoRES':'Catalogue InDoRes', 
+        'zapygar':'zapygar', 
+        'OHM Littoral Caraïbe':'OHM Littoral Caraïbe', 
+        'ZA':'Réseau ZA', 
+        'zaar':'zaar', 
+        'OHMi Nunavik':'OHMi Nunavik', 
+        'zas':'zas',
+        'Dynafor':'Dynafor', 
+        'Groupe exemple':'Groupe exemple', 
+        'OHM Pays de Bitche':'OHM Pays de Bitche', 
+        'OHM Vallée du Rhône':'OHM Vallée du Rhône', 
+        'OHMi Estarreja':'OHMi Estarreja', 
+        'zaaj':'zaaj', 
+        'Aucun groupe et aucune mention':'Aucun groupe et aucune mention', 
+        'ZAA':'zaa', 
+        'ZAAr':'zaar', 
+        'DRIIHM':'Réseau OHM', 
+        'zaeu':'zaeu', 
+        'OHM Oyapock':'OHM Oyapock', 
+        'OHM Bassin Minier de Provence':'OHM Bassin Minier de Provence', 
+        'OHMi Pima County':'OHMi Pima County', 
+        'zabri':'zabri', 
+        'zam':'zam', 
+        'ZABRI':'zabri', 
+        'zal':'zal', 
+        'OHM Littoral méditerranéen':'OHM Littoral méditerranéen', 
+        'zaa':'zaa', 
+        'zabr':'zabr'}
+
+group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
+tableau['Mention'] = tableau['Mention'].map(dico)
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 
 ###########  FILTRE DES CATALOGUES ####################################
-#liste_groupes = set(group_['Groupe'].values)
+liste_groupes = set(group_['Groupe_et_Mention'].values)
 
-liste_ZAs = ['zaa', 'zal','zaar','zabr','zaeu','ZA','zapygar', 'zaaj', 'zabri', 'zam', 'zas']
-liste_OHMs = ['OHM Littoral méditerranéen','OHM Oyapock','OHM Pyrénées - haut Vicdessos','DRIIHM','OHM Bassin Minier de Provence','OHMi Pima County','OHMi Nunavik','OHMi Téssékéré','OHMi Estarreja','OHM Vallée du Rhône','OHM Pays de Bitche']
+liste_ZAs = ['zaa', 
+             'zal',
+             'zaar',
+             'zabr',
+             'zaeu',
+             'RZA', #RZA
+             'zapygar', 
+             'zaaj', 
+             'zabri', 
+             'zam', 
+             'zas']
+liste_OHMs = ['OHM Littoral méditerranéen',
+              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
+              'DRIIHM',
+              'OHM Bassin Minier de Provence',
+              'OHMi Pima County',
+              'OHMi Nunavik',
+              'OHMi Téssékéré',
+              'OHMi Estarreja',
+              'OHM Vallée du Rhône',
+              'OHM Pays de Bitche',
+              'OHM Littoral Caraïbe']
 autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
+
+
+
 
 ########### Choix OHM/RZA #############################################################
 ## Le choix est exclusif ##############################################################
@@ -53,31 +114,48 @@ with col2:
 
 
 if checkbox2:
-    OHMs_df = group_[group_['Groupe'].isin(liste_OHMs)]
-    OHMs_counts = OHMs_df['Groupe'].value_counts()
-    fig = px.pie(values=OHMs_counts.values, 
-             names=OHMs_counts.index)
-    fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                        marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-    fig.update_layout(
-            title='Répartition des fiches dans les catalogues OHM',
-            width=700,
-            height=700)
-    st.plotly_chart(fig,use_container_width=True)
+    Selection_df = tableau[tableau['Mention'].isin(liste_OHMs)]
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
+    df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
+    if len(selection_group)==0:
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
+        OHMs_counts = Selection_df['Mention'].value_counts()
+        fig = px.pie(values=OHMs_counts.values, 
+                names=OHMs_counts.index)
+        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig.update_layout(
+                title='Répartition des fiches dans les catalogues OHM',
+                width=500,
+                height=800)
+        st.plotly_chart(fig,use_container_width=True)
+    else:
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
+
 elif checkbox1:
-    ZAs_df = group_[group_['Groupe'].isin(liste_ZAs)]
-    ZAs_counts = ZAs_df['Groupe'].value_counts()
-    fig = px.pie(values=ZAs_counts.values, 
-             names=ZAs_counts.index)
-    fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                        marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-    fig.update_layout(
-            title='Répartition des fiches dans les catalogues ZA',
-            width=700,
-            height=700)
-    st.plotly_chart(fig,use_container_width=True)
+    
+    Selection_df = tableau[tableau['Mention'].isin(liste_ZAs)]
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
+    df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
+    if len(selection_group)==0:
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
+        ZAs_counts = Selection_df['Mention'].value_counts()
+        fig = px.pie(values=ZAs_counts.values, 
+                names=ZAs_counts.index)
+        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig.update_layout(
+                title='Répartition des fiches dans les catalogues ZA',
+                width=500,
+                height=800)
+        st.plotly_chart(fig,use_container_width=True)
+    else:
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
+
 else:
-    Catalogues_counts = group_['Groupe'].value_counts()
+    Catalogues_counts = tableau['Mention'].value_counts()
+    Selection_df = tableau
+    st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
 
     fig = px.pie(values=Catalogues_counts.values, 
                 names=Catalogues_counts.index)
@@ -85,6 +163,9 @@ else:
                         marker=dict(colors=colors, line=dict(color='#000000', width=2)))
     fig.update_layout(
             title='Répartition des fiches dans les catalogues',
-            width=700,
-            height=700)
+            width=500,
+            height=1500)
     st.plotly_chart(fig,use_container_width=True)
+
+st.dataframe(Selection_df)
+st.dataframe(df_groupe)
