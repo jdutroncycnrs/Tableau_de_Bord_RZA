@@ -27,10 +27,32 @@ liste_ZAs = ['zaa', 'zal','zaar','zabr','zaeu','ZA','zapygar', 'zaaj', 'zabri', 
 liste_OHMs = ['OHM Littoral méditerranéen','OHM Oyapock','OHM Pyrénées - haut Vicdessos','DRIIHM','OHM Bassin Minier de Provence','OHMi Pima County','OHMi Nunavik','OHMi Téssékéré','OHMi Estarreja','OHM Vallée du Rhône','OHM Pays de Bitche']
 autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
 
-OHMs = st.sidebar.checkbox('OHM')
-ZAs = st.sidebar.checkbox('RZA')
+########### Choix OHM/RZA #############################################################
+## Le choix est exclusif ##############################################################
+if 'checkbox1' not in st.session_state:
+    st.session_state.checkbox1 = False
+if 'checkbox2' not in st.session_state:
+    st.session_state.checkbox2 = False
 
-if OHMs:
+# Function to handle checkbox1 change
+def handle_checkbox1_change():
+    if st.session_state.checkbox1:
+        st.session_state.checkbox2 = False
+
+# Function to handle checkbox2 change
+def handle_checkbox2_change():
+    if st.session_state.checkbox2:
+        st.session_state.checkbox1 = False
+
+col1,col2 =st.sidebar.columns(2)
+choix_groupe_OHM = False
+with col1:
+    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
+with col2:
+    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
+
+
+if checkbox2:
     OHMs_df = group_[group_['Groupe'].isin(liste_OHMs)]
     OHMs_counts = OHMs_df['Groupe'].value_counts()
     fig = px.pie(values=OHMs_counts.values, 
@@ -42,7 +64,7 @@ if OHMs:
             width=700,
             height=700)
     st.plotly_chart(fig,use_container_width=True)
-elif ZAs:
+elif checkbox1:
     ZAs_df = group_[group_['Groupe'].isin(liste_ZAs)]
     ZAs_counts = ZAs_df['Groupe'].value_counts()
     fig = px.pie(values=ZAs_counts.values, 

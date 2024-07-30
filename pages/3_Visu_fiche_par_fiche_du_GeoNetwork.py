@@ -1538,7 +1538,7 @@ if admin_action == admin_pass:
             alluuids__ = uuids['uuid_cat_InDoRes']
             liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact','Position_contact', 
                                  'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre', 'Thesaurus', 'Themes','Mots_clés',
-                                 'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i']
+                                 'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i','Mention']
             df_global = pd.DataFrame(columns=liste_columns_df2)
             for i in range(len(alluuids__)):
                 print(i)
@@ -1598,6 +1598,7 @@ if admin_action == admin_pass:
                         dfi = []
                 
                 Identifi = alluuids__[i]
+                Mentioni = group_bis['Groupe_et_Mention'][group_bis['Identifiant']==alluuids__[i]].item()
                 try:
                     Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
                 except:
@@ -1795,7 +1796,7 @@ if admin_action == admin_pass:
                 liste_variables2 = [Identifi,Languei, Datei, Standardi, Version_standardi, Nom_contacti,Organisation_contacti, 
                                             Position_contacti,westBoundLongitudei, EastBoundLongitudei,SouthBoundLatitudei,NorthBoundLatitudei, 
                                             Titrei, Thesaurusi,Themesi,Keywordsi,UseLimitationi,UseContraintei,Formati, 
-                                            F2i, URL, A1i, I1i,I2i,R1i, R2i]
+                                            F2i, URL, A1i, I1i,I2i,R1i, R2i, Mentioni]
                 df_variables_evaluationi = pd.DataFrame(data=[liste_variables2],columns=liste_columns_df2)
                 df_global_ = pd.concat([df_global,df_variables_evaluationi], axis=0)
                 df_global_.reset_index(inplace=True)
