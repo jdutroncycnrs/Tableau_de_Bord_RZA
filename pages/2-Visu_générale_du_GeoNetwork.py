@@ -210,17 +210,17 @@ def handle_button6_change():
 
 col1,col2,col3,col4,col5,col6 = st.columns(6)
 with col1:
-    Repartition_fiches = st.checkbox(label='Répartition des fiches', key='Repartition_fiche',on_change=handle_button1_change)
+    Repartition_fiches = st.checkbox(label='Répartition des fiches', key='Repartition_fiches',on_change=handle_button1_change)
 with col2:
-    Evolution_temporelle = st.checkbox(label='Attachments', key='Evolution_temporelle',on_change=handle_button2_change)
+    Evolution_temporelle = st.checkbox(label='Evolution temporelle', key='Evolution_temporelle',on_change=handle_button2_change)
 with col3:
     Repartition_spatiale = st.checkbox(label='Répartition spatiale', key='Repartition_spatiale',on_change=handle_button3_change)
 with col4:
-    Autres_champs = st.checkbox(label='Autres champs', key='Autres_champs',on_change=handle_button3_change)
+    Autres_champs = st.checkbox(label='Autres champs', key='Autres_champs',on_change=handle_button4_change)
 with col5:
-    Description = st.checkbox(label='Descriptions', key='Description',on_change=handle_button3_change)
+    Description = st.checkbox(label='Descriptions', key='Description',on_change=handle_button5_change)
 with col6:
-    Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button3_change)
+    Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button6_change)
 
 
 if Repartition_fiches:
