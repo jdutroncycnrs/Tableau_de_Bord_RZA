@@ -78,6 +78,7 @@ else:
     st.write('Il est nécessaire de mettre à jour la récupération des uuids')
 
 group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
+tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
 dico = {'ZABrI - Brest Iroise':'zabri', 
         'Pas de fichier':'Aucun groupe et aucune mention', 
         'OHM Pyrénées - haut Vicdessos':'OHM Pyrénées - haut Vicdessos', 
@@ -112,6 +113,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
         'zabr':'zabr'}
 
 group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
+tableau['Mention'] = tableau['Mention'].map(dico)
 
 #group_['Groupe'].fillna('Aucun groupe', inplace=True)
 #group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
@@ -972,7 +974,18 @@ with col3:
     Ressources_associees = st.checkbox(label='Ressources_associees', key='Ressources_associees',on_change=handle_button3_change)
 
 if Recherche:
-    st.write('en cours de fabrication')
+    #st.dataframe(tableau)
+    titres = set(tableau['Titre'])
+    col1,col2 = st.columns([0.3,0.7])
+    with col1:
+        titre_choisi = st.multiselect(label='Trouver un titre', options=titres)
+
+    with col2:
+        if len(titre_choisi)!=0:
+            st.metric(label='id',value=tableau['Identifiant'][tableau['Titre']==titre_choisi[0]].values[0])
+        else:
+            st.metric(label='id',value='')
+
 elif Visu_attachments:
     st.write('en cours de fabrication')
 elif Ressources_associees:
