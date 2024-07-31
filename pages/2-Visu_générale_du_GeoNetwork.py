@@ -145,94 +145,96 @@ else:
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
 
 ###########################################################################################################
-if 'Repartition_fiches' not in st.session_state:
-    st.session_state.Repartition_fiches = False
-if 'Evolution_temporelle' not in st.session_state:
-    st.session_state.Evolution_temporelle = False
-if 'Repartition_spatiale' not in st.session_state:
-    st.session_state.Repartition_spatiale = False
-if 'Autres_champs' not in st.session_state:
-    st.session_state.Repartition_spatiale = False
-if 'Description' not in st.session_state:
-    st.session_state.Repartition_spatiale = False
-if 'Analyse_FAIR' not in st.session_state:
-    st.session_state.Repartition_spatiale = False
+with st.container(border=True):
 
-# Function to handle checkbox1 change
-def handle_button1_change():
-    if st.session_state.Repartition_fiches:
-        st.session_state.Evolution_temporelle = False
-        st.session_state.Repartition_spatiale = False
-        st.session_state.Autres_champs = False
-        st.session_state.Description = False
-        st.session_state.Analyse_FAIR = False
-
-def handle_button2_change():
-    if st.session_state.Evolution_temporelle:
-        st.session_state.Repartition_spatiale = False
-        st.session_state.Autres_champs = False
-        st.session_state.Description = False
-        st.session_state.Analyse_FAIR = False
+    if 'Repartition_fiches' not in st.session_state:
         st.session_state.Repartition_fiches = False
-
-# Function to handle checkbox2 change
-def handle_button3_change():
-    if st.session_state.Repartition_spatiale:
+    if 'Evolution_temporelle' not in st.session_state:
         st.session_state.Evolution_temporelle = False
-        st.session_state.Autres_champs = False
-        st.session_state.Description = False
-        st.session_state.Analyse_FAIR = False
-        st.session_state.Repartition_fiches = False
-
-def handle_button4_change():
-    if st.session_state.Autres_champs:
-        st.session_state.Evolution_temporelle = False
+    if 'Repartition_spatiale' not in st.session_state:
         st.session_state.Repartition_spatiale = False
-        st.session_state.Description = False
-        st.session_state.Analyse_FAIR = False
-        st.session_state.Repartition_fiches = False
-
-def handle_button5_change():
-    if st.session_state.Description:
-        st.session_state.Evolution_temporelle = False
+    if 'Autres_champs' not in st.session_state:
         st.session_state.Repartition_spatiale = False
-        st.session_state.Autres_champs = False
-        st.session_state.Analyse_FAIR = False
-        st.session_state.Repartition_fiches = False
-
-def handle_button6_change():
-    if st.session_state.Analyse_FAIR:
-        st.session_state.Evolution_temporelle = False
+    if 'Description' not in st.session_state:
         st.session_state.Repartition_spatiale = False
-        st.session_state.Autres_champs = False
-        st.session_state.Description = False
-        st.session_state.Repartition_fiches = False
+    if 'Analyse_FAIR' not in st.session_state:
+        st.session_state.Repartition_spatiale = False
 
-col1,col2,col3,col4,col5,col6 = st.columns(6)
-with col1:
-    Repartition_fiches = st.checkbox(label='Répartition des fiches', key='Repartition_fiches',on_change=handle_button1_change)
-with col2:
-    Evolution_temporelle = st.checkbox(label='Evolution temporelle', key='Evolution_temporelle',on_change=handle_button2_change)
-with col3:
-    Repartition_spatiale = st.checkbox(label='Répartition spatiale', key='Repartition_spatiale',on_change=handle_button3_change)
-with col4:
-    Autres_champs = st.checkbox(label='Autres champs', key='Autres_champs',on_change=handle_button4_change)
-with col5:
-    Description = st.checkbox(label='Descriptions', key='Description',on_change=handle_button5_change)
-with col6:
-    Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button6_change)
+    # Function to handle checkbox1 change
+    def handle_button1_change():
+        if st.session_state.Repartition_fiches:
+            st.session_state.Evolution_temporelle = False
+            st.session_state.Repartition_spatiale = False
+            st.session_state.Autres_champs = False
+            st.session_state.Description = False
+            st.session_state.Analyse_FAIR = False
+
+    def handle_button2_change():
+        if st.session_state.Evolution_temporelle:
+            st.session_state.Repartition_spatiale = False
+            st.session_state.Autres_champs = False
+            st.session_state.Description = False
+            st.session_state.Analyse_FAIR = False
+            st.session_state.Repartition_fiches = False
+
+    # Function to handle checkbox2 change
+    def handle_button3_change():
+        if st.session_state.Repartition_spatiale:
+            st.session_state.Evolution_temporelle = False
+            st.session_state.Autres_champs = False
+            st.session_state.Description = False
+            st.session_state.Analyse_FAIR = False
+            st.session_state.Repartition_fiches = False
+
+    def handle_button4_change():
+        if st.session_state.Autres_champs:
+            st.session_state.Evolution_temporelle = False
+            st.session_state.Repartition_spatiale = False
+            st.session_state.Description = False
+            st.session_state.Analyse_FAIR = False
+            st.session_state.Repartition_fiches = False
+
+    def handle_button5_change():
+        if st.session_state.Description:
+            st.session_state.Evolution_temporelle = False
+            st.session_state.Repartition_spatiale = False
+            st.session_state.Autres_champs = False
+            st.session_state.Analyse_FAIR = False
+            st.session_state.Repartition_fiches = False
+
+    def handle_button6_change():
+        if st.session_state.Analyse_FAIR:
+            st.session_state.Evolution_temporelle = False
+            st.session_state.Repartition_spatiale = False
+            st.session_state.Autres_champs = False
+            st.session_state.Description = False
+            st.session_state.Repartition_fiches = False
+
+    col1,col2,col3,col4,col5,col6 = st.columns(6)
+    with col1:
+        Repartition_fiches = st.checkbox(label='Répartition des fiches', key='Repartition_fiches',on_change=handle_button1_change)
+    with col2:
+        Evolution_temporelle = st.checkbox(label='Evolution temporelle', key='Evolution_temporelle',on_change=handle_button2_change)
+    with col3:
+        Repartition_spatiale = st.checkbox(label='Répartition spatiale', key='Repartition_spatiale',on_change=handle_button3_change)
+    with col4:
+        Autres_champs = st.checkbox(label='Autres champs', key='Autres_champs',on_change=handle_button4_change)
+    with col5:
+        Description = st.checkbox(label='Descriptions', key='Description',on_change=handle_button5_change)
+    with col6:
+        Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button6_change)
 
 
 if Repartition_fiches:
     Counts = Selection_df['Mention'].value_counts()
     fig = px.pie(values=Counts.values, 
-                names=Counts.index)
+                    names=Counts.index)
     fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
     fig.update_layout(
-                title='Répartition des fiches dans les catalogues',
-                width=500,
-                height=800)
+                    title='Répartition des fiches dans les catalogues',
+                    width=500,
+                    height=800)
     st.plotly_chart(fig,use_container_width=True)
 
 elif Evolution_temporelle:
@@ -242,7 +244,96 @@ elif Repartition_spatiale:
     st.write('en cours de fabrication')
 
 elif Autres_champs:
-    st.write('en cours de fabrication')
+    with st.container(border=True):
+        if 'Langues' not in st.session_state:
+            st.session_state.Langues = False
+        if 'Standards' not in st.session_state:
+            st.session_state.Standards = False
+        if 'Formats' not in st.session_state:
+            st.session_state.Formats = False
+        if 'Orgas' not in st.session_state:
+            st.session_state.Orgas = False
+        if 'Contacts' not in st.session_state:
+            st.session_state.Contacts = False
+        if 'Droits' not in st.session_state:
+            st.session_state.Droits = False
+
+        # Function to handle checkbox1 change
+        def handle_button1_change():
+            if st.session_state.Langues:
+                st.session_state.Standards = False
+                st.session_state.Formats = False
+                st.session_state.Orgas = False
+                st.session_state.Contacts = False
+                st.session_state.Droits = False
+
+        def handle_button2_change():
+            if st.session_state.Standards:
+                st.session_state.Langues = False
+                st.session_state.Formats = False
+                st.session_state.Orgas = False
+                st.session_state.Contacts = False
+                st.session_state.Droits = False
+
+        # Function to handle checkbox2 change
+        def handle_button3_change():
+            if st.session_state.Formats:
+                st.session_state.Standards = False
+                st.session_state.Langues = False
+                st.session_state.Orgas = False
+                st.session_state.Contacts = False
+                st.session_state.Droits = False
+
+        def handle_button4_change():
+            if st.session_state.Orgas:
+                st.session_state.Standards = False
+                st.session_state.Formats = False
+                st.session_state.Langues = False
+                st.session_state.Contacts = False
+                st.session_state.Droits = False
+
+        def handle_button5_change():
+            if st.session_state.Contacts:
+                st.session_state.Standards = False
+                st.session_state.Formats = False
+                st.session_state.Orgas = False
+                st.session_state.Langues = False
+                st.session_state.Droits = False
+
+        def handle_button6_change():
+            if st.session_state.Droits:
+                st.session_state.Standards = False
+                st.session_state.Formats = False
+                st.session_state.Orgas = False
+                st.session_state.Contacts = False
+                st.session_state.Langues = False
+
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            Langues = st.checkbox(label='Langues utilisées', key='Langues',on_change=handle_button1_change)
+        with col2:
+            Standards = st.checkbox(label='Standards utilisés', key='Standards',on_change=handle_button2_change)
+        with col3:
+            Formats = st.checkbox(label='Formats utilisés', key='Formats',on_change=handle_button3_change)
+        with col4:
+            Orgas = st.checkbox(label='Organisations identifiées', key='Orgas',on_change=handle_button4_change)
+        with col5:
+            Contacts = st.checkbox(label='Contacts identifiés', key='Contacts',on_change=handle_button5_change)
+        with col6:
+            Droits = st.checkbox(label='Droits / Licences', key='Droits',on_change=handle_button6_change)
+
+    if Langues:
+        st.write('en cours de fabrication')
+    elif Standards:
+        st.write('en cours de fabrication')
+    elif Formats:
+        st.write('en cours de fabrication')
+    elif Orgas:
+        st.write('en cours de fabrication')
+    elif Contacts:
+        st.write('en cours de fabrication')
+    elif Droits:
+        st.write('en cours de fabrication')
 
 elif Description:
     st.write('en cours de fabrication')
