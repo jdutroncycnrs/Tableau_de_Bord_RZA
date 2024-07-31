@@ -965,6 +965,10 @@ def handle_button3_change():
         st.session_state.Recherche = False
         st.session_state.Visu_attachments = False
 
+def handle_button4_change():
+    if st.session_state.copie_id:
+        st.session_state.Recherche = False
+
 col1,col2,col3 = st.columns(3)
 with col1:
     Recherche = st.checkbox(label='Faire une recherche spécifique', key='Recherche',on_change=handle_button1_change)
@@ -973,18 +977,25 @@ with col2:
 with col3:
     Ressources_associees = st.checkbox(label='Ressources_associees', key='Ressources_associees',on_change=handle_button3_change)
 
+
 if Recherche:
     #st.dataframe(tableau)
     titres = set(tableau['Titre'])
-    col1,col2 = st.columns([0.3,0.7])
+    col1,col2,col3 = st.columns([0.3,0.4,0.3])
     with col1:
-        titre_choisi = st.multiselect(label='Trouver un titre', options=titres)
-
+        titre_choisi = st.multiselect(label='Trouver un titre',options=titres)
     with col2:
         if len(titre_choisi)!=0:
-            st.metric(label='id',value=tableau['Identifiant'][tableau['Titre']==titre_choisi[0]].values[0])
+            id_choisie = tableau['Identifiant'][tableau['Titre']==titre_choisi[0]].values[0]
+            st.markdown('')
+            st.code(id_choisie)
         else:
             st.metric(label='id',value='')
+    with col3:
+        if len(titre_choisi)!=0:
+            st.markdown('')
+            st.markdown('')
+            st.markdown('<-- copier / décocher Faire une recherche / coller dans la barre des identifieurs / taper sur Entrée')
 
 elif Visu_attachments:
     st.write('en cours de fabrication')
@@ -1334,7 +1345,6 @@ else:
             s_s8d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8d}</p>"
             st.markdown(s_s8d,unsafe_allow_html=True)
             st.markdown(Scope)
-
 
 
 liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
