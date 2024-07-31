@@ -144,8 +144,84 @@ else:
     Selection_df = tableau
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
 
+###########################################################################################################
+if 'Repartition_fiches' not in st.session_state:
+    st.session_state.Repartition_fiches = False
+if 'Evolution_temporelle' not in st.session_state:
+    st.session_state.Evolution_temporelle = False
+if 'Repartition_spatiale' not in st.session_state:
+    st.session_state.Repartition_spatiale = False
+if 'Autres_champs' not in st.session_state:
+    st.session_state.Repartition_spatiale = False
+if 'Description' not in st.session_state:
+    st.session_state.Repartition_spatiale = False
+if 'Analyse_FAIR' not in st.session_state:
+    st.session_state.Repartition_spatiale = False
 
-Repartition_fiches = st.button(label='Répartition des fiches')
+# Function to handle checkbox1 change
+def handle_button1_change():
+    if st.session_state.Repartition_fiches:
+        st.session_state.Evolution_temporelle = False
+        st.session_state.Repartition_spatiale = False
+        st.session_state.Autres_champs = False
+        st.session_state.Description = False
+        st.session_state.Analyse_FAIR = False
+
+def handle_button2_change():
+    if st.session_state.Evolution_temporelle:
+        st.session_state.Repartition_spatiale = False
+        st.session_state.Autres_champs = False
+        st.session_state.Description = False
+        st.session_state.Analyse_FAIR = False
+        st.session_state.Repartition_fiches = False
+
+# Function to handle checkbox2 change
+def handle_button3_change():
+    if st.session_state.Repartition_spatiale:
+        st.session_state.Evolution_temporelle = False
+        st.session_state.Autres_champs = False
+        st.session_state.Description = False
+        st.session_state.Analyse_FAIR = False
+        st.session_state.Repartition_fiches = False
+
+def handle_button4_change():
+    if st.session_state.Autres_champs:
+        st.session_state.Evolution_temporelle = False
+        st.session_state.Repartition_spatiale = False
+        st.session_state.Description = False
+        st.session_state.Analyse_FAIR = False
+        st.session_state.Repartition_fiches = False
+
+def handle_button5_change():
+    if st.session_state.Description:
+        st.session_state.Evolution_temporelle = False
+        st.session_state.Repartition_spatiale = False
+        st.session_state.Autres_champs = False
+        st.session_state.Analyse_FAIR = False
+        st.session_state.Repartition_fiches = False
+
+def handle_button6_change():
+    if st.session_state.Analyse_FAIR:
+        st.session_state.Evolution_temporelle = False
+        st.session_state.Repartition_spatiale = False
+        st.session_state.Autres_champs = False
+        st.session_state.Description = False
+        st.session_state.Repartition_fiches = False
+
+col1,col2,col3,col4,col5,col6 = st.columns(6)
+with col1:
+    Repartition_fiches = st.checkbox(label='Répartition des fiches', key='Repartition_fiche',on_change=handle_button1_change)
+with col2:
+    Evolution_temporelle = st.checkbox(label='Attachments', key='Evolution_temporelle',on_change=handle_button2_change)
+with col3:
+    Repartition_spatiale = st.checkbox(label='Répartition spatiale', key='Repartition_spatiale',on_change=handle_button3_change)
+with col4:
+    Autres_champs = st.checkbox(label='Autres champs', key='Autres_champs',on_change=handle_button3_change)
+with col5:
+    Description = st.checkbox(label='Descriptions', key='Description',on_change=handle_button3_change)
+with col6:
+    Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button3_change)
+
 
 if Repartition_fiches:
     Counts = Selection_df['Mention'].value_counts()
@@ -159,7 +235,19 @@ if Repartition_fiches:
                 height=800)
     st.plotly_chart(fig,use_container_width=True)
 
+elif Evolution_temporelle:
+    st.write('en cours de fabrication')
 
+elif Repartition_spatiale:
+    st.write('en cours de fabrication')
+
+elif Autres_champs:
+    st.write('en cours de fabrication')
+
+elif Description:
+    st.write('en cours de fabrication')
+
+elif Analyse_FAIR:
+    st.write('en cours de fabrication')
 
 st.dataframe(Selection_df)
-st.dataframe(df_groupe)
