@@ -245,6 +245,7 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.session_state.count = 0
 
+    id_choisie = selected_uuids_[0]
     col01,col02,col03,col4 = st.columns([0.7,0.1,0.1,0.1])
     with col01:
         try:
@@ -994,8 +995,8 @@ if Recherche:
     with col3:
         if len(titre_choisi)!=0:
             st.markdown('')
-            st.markdown('')
-            st.markdown('<-- copier / décocher Faire une recherche / coller dans la barre des identifieurs / taper sur Entrée')
+            st.markdown("")
+            st.markdown("<-- copier l'identifieur")
 
 elif Visu_attachments:
     st.write('en cours de fabrication')
