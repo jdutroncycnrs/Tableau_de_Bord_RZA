@@ -62,19 +62,25 @@ colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3'
 liste_groupes = set(group_['Groupe_et_Mention'].values)
 
 liste_ZAs = ['zaa', 
+             'zaaj', 
              'zal',
              'zaar',
              'zabr',
-             'zaeu',
-             'RZA', #RZA
-             'zapygar', 
-             'zaaj', 
              'zabri', 
+             'zaeu',
+             'zapygar', 
              'zam', 
-             'zas']
+             'zas',
+             'zah',
+             'zatu',
+             'zata',
+             'zarg',
+             'zacam',
+             'zapvs',
+             'RZA', #RZA
+             ]
 liste_OHMs = ['OHM Littoral méditerranéen',
               'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
-              'DRIIHM',
               'OHM Bassin Minier de Provence',
               'OHMi Pima County',
               'OHMi Nunavik',
@@ -82,7 +88,8 @@ liste_OHMs = ['OHM Littoral méditerranéen',
               'OHMi Estarreja',
               'OHM Vallée du Rhône',
               'OHM Pays de Bitche',
-              'OHM Littoral Caraïbe']
+              'OHM Littoral Caraïbe',
+              'DRIIHM']
 autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
 
 
@@ -119,16 +126,6 @@ if checkbox2:
     df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
     if len(selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
-        OHMs_counts = Selection_df['Mention'].value_counts()
-        fig = px.pie(values=OHMs_counts.values, 
-                names=OHMs_counts.index)
-        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-        fig.update_layout(
-                title='Répartition des fiches dans les catalogues OHM',
-                width=500,
-                height=800)
-        st.plotly_chart(fig,use_container_width=True)
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
 
@@ -139,16 +136,6 @@ elif checkbox1:
     df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
     if len(selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
-        ZAs_counts = Selection_df['Mention'].value_counts()
-        fig = px.pie(values=ZAs_counts.values, 
-                names=ZAs_counts.index)
-        fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-        fig.update_layout(
-                title='Répartition des fiches dans les catalogues ZA',
-                width=500,
-                height=800)
-        st.plotly_chart(fig,use_container_width=True)
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
 
@@ -157,15 +144,22 @@ else:
     Selection_df = tableau
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
 
-    fig = px.pie(values=Catalogues_counts.values, 
-                names=Catalogues_counts.index)
+
+Repartition_fiches = st.button(label='Répartition des fiches')
+
+if Repartition_fiches:
+    Counts = Selection_df['Mention'].value_counts()
+    fig = px.pie(values=Counts.values, 
+                names=Counts.index)
     fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                        marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
     fig.update_layout(
-            title='Répartition des fiches dans les catalogues',
-            width=500,
-            height=1500)
+                title='Répartition des fiches dans les catalogues',
+                width=500,
+                height=800)
     st.plotly_chart(fig,use_container_width=True)
+
+
 
 st.dataframe(Selection_df)
 st.dataframe(df_groupe)
