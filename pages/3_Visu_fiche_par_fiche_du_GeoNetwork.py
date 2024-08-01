@@ -90,7 +90,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
         'zaar':'zaar', 
         'OHMi Nunavik':'OHMi Nunavik', 
         'zas':'zas',
-        'Dynafor':'Dynafor', 
+        'Dynafor':'zapygar', 
         'Groupe exemple':'Groupe exemple', 
         'OHM Pays de Bitche':'OHM Pays de Bitche', 
         'OHM Vallée du Rhône':'OHM Vallée du Rhône', 
@@ -543,7 +543,10 @@ except:
 #########  VARIABLES ########################################################
 
 if "zaaj_" in identifieur:
-    Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
+    try:
+        Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
+    except:
+        Langue = ""
 else:
     try:
         Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
@@ -580,8 +583,11 @@ except:
             except:
                 Date = ""
 
-if 'zaaj_' in identifieur:                        
-    Standard = df['Valeurs'][df['Clés']=="@xsi:noNamespaceSchemaLocation:"].values[0]
+if 'zaaj_' in identifieur:  
+    try:                      
+        Standard = df['Valeurs'][df['Clés']=="@xsi:noNamespaceSchemaLocation:"].values[0]
+    except:
+        Standard = ""
 else:
     try:
         Standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
@@ -595,8 +601,11 @@ try:
 except:
     Version_standard = ""
 
-if 'zaaj_' in identifieur:                        
-    Nom_contact = df['Valeurs'][df['Clés']=="dc:creator£#text:"].values
+if 'zaaj_' in identifieur:    
+    try:                    
+        Nom_contact = df['Valeurs'][df['Clés']=="dc:creator£#text:"].values
+    except:
+        Nom_contact = ""
 else:
     try:
         Nom_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
@@ -611,8 +620,11 @@ else:
             except: 
                 Nom_contact = ""
 
-if 'zaaj_' in identifieur:                        
-    Organisation_contact = df['Valeurs'][df['Clés']=="dc:publisher£#text:"].values
+if 'zaaj_' in identifieur:  
+    try:                      
+        Organisation_contact = df['Valeurs'][df['Clés']=="dc:publisher£#text:"].values
+    except:
+        Organisation_contact = ""
 else:
     try:
         Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
@@ -723,7 +735,10 @@ except:
     FicheParent = ""
 
 if 'zaaj_' in identifieur:
-    Abstract =df['Valeurs'][df['Clés']=="dc:description£#text:"].values
+    try:
+        Abstract =df['Valeurs'][df['Clés']=="dc:description£#text:"].values
+    except:
+        Abstract = ""
 else:
     try:
         Abstract =df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£#text:"].values[0]
@@ -873,7 +888,10 @@ except:
     UseLimitation =""
 
 if 'zaaj_' in identifieur:
-    UseContrainte = df['Valeurs'][df['Clés']=="dc:rights£#text:"].values
+    try:
+        UseContrainte = df['Valeurs'][df['Clés']=="dc:rights£#text:"].values
+    except:
+        UseContrainte =""
 else:
     try:
         UseContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
@@ -888,8 +906,11 @@ try:
 except:
     AutreContrainte =""
 
-if 'zaaj_' in identifieur:                        
-    Format = df['Valeurs'][df['Clés']=="dc:format£#text:"].values
+if 'zaaj_' in identifieur:
+    try:                        
+        Format = df['Valeurs'][df['Clés']=="dc:format£#text:"].values
+    except:
+        Format = ""
 else:
     try:
         Format = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
@@ -897,7 +918,10 @@ else:
         Format = ""
 
 if 'zaaj_' in identifieur:
-    Online_links = df['Valeurs'][df['Clés']=="dc:relation£#text:"].values
+    try:
+        Online_links = df['Valeurs'][df['Clés']=="dc:relation£#text:"].values
+    except:
+        Online_links = ""
 else:
     try:
         Online_links = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
@@ -1763,7 +1787,7 @@ if admin_action == admin_pass:
     if Recup_globale:
         with st.spinner("La récup globale est en cours"):
             group_bis = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
-            alluuids__ = uuids['uuid_cat_InDoRes']
+            alluuids__ = group_bis['Identifiant']
             liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact','Position_contact', 
                                  'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre', 'Thesaurus', 'Themes','Mots_clés',
                                  'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i','Mention']
@@ -1771,14 +1795,23 @@ if admin_action == admin_pass:
             for i in range(len(alluuids__)):
                 print(i)
                 try:
-                    dfi = pd.read_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv',index_col=[0])
+                    if 'oai:search-data.ubfc.fr:' in alluuids__[i]:
+                        ident= alluuids__[i].replace('oai:search-data.ubfc.fr:','zaaj_')
+                        dfi = pd.read_csv(f'pages/data/fiches_csv/{ident}.csv',index_col=[0])
+                    else:
+                        dfi = pd.read_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv',index_col=[0])
+                        ident = alluuids__[i]
                 except:
-                    url_i = url + alluuids__[i]
+                    if 'zaaj_' in alluuids__[i]:
+                        ident = alluuids__[i].replace('zaaj_','oai:search-data.ubfc.fr:')
+                    else:
+                        ident = alluuids__[i]
+                    url_i = url + ident
                     resp1i = requests.get(url_i,headers=headers_json)
                     if resp1i.status_code == 200:
                         resp_jsoni=resp1i.json()
                         try:
-                            with open(f"pages/data/fiches_json/{alluuids__[i]}.json", "w") as f:
+                            with open(f"pages/data/fiches_json/{ident}.json", "w") as f:
                                 json.dump(resp_jsoni, f, indent=4)
                         except:
                             pass
@@ -1786,18 +1819,18 @@ if admin_action == admin_pass:
                         if resp2i.status_code == 200:
                             xml_contenti = resp2i.text
                             try:
-                                with open(f"pages/data/fiches_xml/{alluuids__[i]}.xml", 'w') as file:
+                                with open(f"pages/data/fiches_xml/{ident}.xml", 'w') as file:
                                     file.write(xml_contenti)
                             except:
                                 pass
                     try:
-                        with open(f"pages/data/fiches_json/{alluuids__[i]}.json", 'r') as f:
+                        with open(f"pages/data/fiches_json/{ident}.json", 'r') as f:
                             datai = json.load(f)
 
-                        with open(f'pages/data/fiches_txt/{alluuids__[i]}.txt', 'w') as file:
+                        with open(f'pages/data/fiches_txt/{ident}.txt', 'w') as file:
                             transcript_json(datai, file)
 
-                        with open(f'pages/data/fiches_txt/{alluuids__[i]}.txt', 'r') as f:
+                        with open(f'pages/data/fiches_txt/{ident}.txt', 'r') as f:
                             di = f.read()
 
                         listii = re.split('µ',di)
@@ -1821,19 +1854,25 @@ if admin_action == admin_pass:
                                     dfi.loc[j,f'K{k}']=pp[k]
                                 except:
                                     pass
-                        dfi.to_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv')
+                        dfi.to_csv(f'pages/data/fiches_csv/{ident}.csv')
                     except:
                         dfi = []
-                
+
                 Identifi = alluuids__[i]
                 Mentioni = group_bis['Groupe_et_Mention'][group_bis['Identifiant']==alluuids__[i]].item()
-                try:
-                    Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
-                except:
+                if "zaaj_" in ident:
                     try:
-                        Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
+                        Languei = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
                     except:
                         Languei = ""
+                else:
+                    try:
+                        Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
+                    except:
+                        try:
+                            Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
+                        except:
+                            Languei = ""
                 try:
                     Datei = dfi['Valeurs'][dfi['Clés']=="gmd:dateStamp£gco:DateTime£#text:"].values[0]
                 except:
@@ -1843,39 +1882,63 @@ if admin_action == admin_pass:
                         try:
                             Datei = dfi['Valeurs'][dfi['Clés']=="gmx:versionDate£gco:DateTime£#text:"].values[0]
                         except:
-                            Datei = ""
-                try:
-                    Standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
-                except:
-                    try:
-                        Standardi = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+                            try:
+                                Datei = df['Valeurs'][df['Clés']=="dc:date£#text:"].values[0]
+                            except:
+                                Datei = ""
+
+                if 'zaaj_' in ident:
+                    try:                        
+                        Standardi = df['Valeurs'][df['Clés']=="@xsi:noNamespaceSchemaLocation:"].values[0]
                     except:
                         Standardi = ""
+                else:
+                    try:
+                        Standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
+                    except:
+                        try:
+                            Standardi = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+                        except:
+                            Standardi = ""
                 try:
                     Version_standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardVersion£gco:CharacterString£#text:"].values[0]
                 except:
-                    Version_standardi = ""                
-                try:
-                    Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-                    if len(Nom_contacti)==0:
-                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-                except:
+                    Version_standardi = ""  
+
+                if 'zaaj_' in ident:
+                    try:                        
+                        Nom_contacti = df['Valeurs'][df['Clés']=="dc:creator£#text:"].values
+                    except:
+                        Nom_contacti = ""
+                else:                                  
                     try:
-                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                        if len(Nom_contacti)==0:
+                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
                     except:
                         try:
-                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
-                        except: 
-                            Nom_contacti = ""
-                try:
-                    Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-                    if len(Organisation_contacti)==0:
-                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-                except:
-                    try:
-                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+                        except:
+                            try:
+                                Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
+                            except: 
+                                Nom_contacti = ""
+
+                if 'zaaj_' in ident:
+                    try:                        
+                        Organisation_contacti = df['Valeurs'][df['Clés']=="dc:publisher£#text:"].values
                     except:
                         Organisation_contacti = ""
+                else:
+                    try:
+                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                        if len(Organisation_contacti)==0:
+                            Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                    except:
+                        try:
+                            Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+                        except:
+                            Organisation_contacti = ""
                 try:
                     Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
                     if len(Position_contacti)==0:
@@ -1908,29 +1971,38 @@ if admin_action == admin_pass:
                     try:
                         Titrei = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
                     except:
-                        Titrei = ""  
+                        try:
+                            Titrei = df['Valeurs'][df['Clés']=="dc:title£#text:"].values[0]
+                        except:
+                            Titrei = "" 
 
                 Liste_Themei = []
                 Liste_Thesaurusi = []
                 Mots_clesi = []
-                try:
-                    for u in range(len(dfi)):
-                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-                            Liste_Themei.append([u,dfi.loc[u,'Valeurs']])
-                except:
-                    pass
-                try:
-                    for u in range(len(dfi)):
-                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
-                            Liste_Thesaurusi.append([u,dfi.loc[u,'Valeurs']])
-                except:
-                    pass
-                try:
-                    for u in range(len(dfi)):
-                        if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
-                            Mots_clesi.append([u,dfi.loc[u,'Valeurs']])
-                except:
-                    pass
+                Mots_cles_zaaji = []
+                if 'zaaj_' in ident: 
+                    for u in range(len(df)):
+                        if df.loc[u,'Clés']=="dc:subject£#text:":
+                            Mots_cles_zaaji.append(df.loc[u,'Valeurs'])
+                else:
+                    try:
+                        for u in range(len(dfi)):
+                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+                                Liste_Themei.append([u,dfi.loc[u,'Valeurs']])
+                    except:
+                        pass
+                    try:
+                        for u in range(len(dfi)):
+                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+                                Liste_Thesaurusi.append([u,dfi.loc[u,'Valeurs']])
+                    except:
+                        pass
+                    try:
+                        for u in range(len(dfi)):
+                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                                Mots_clesi.append([u,dfi.loc[u,'Valeurs']])
+                    except:
+                        pass
 
                 Thesaurusi = []
                 for o in range(len(Liste_Thesaurusi)):
@@ -1941,24 +2013,47 @@ if admin_action == admin_pass:
                     Themesi.append(Liste_Themei[oo][1])
 
                 Keywordsi = []
-                for ooo in range(len(Mots_clesi)):
-                    Keywordsi.append(Mots_clesi[ooo][1])
+                if 'zaaj_' in ident: 
+                    Keywordsi = Mots_cles_zaaji
+                else:
+                    for ooo in range(len(Mots_clesi)):
+                        Keywordsi.append(Mots_clesi[ooo][1])
                 try:
                     UseLimitationi = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
                 except:
                     UseLimitationi =""
-                try:
-                    UseContraintei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
-                except:
-                    UseContraintei =""
-                try:
-                    Formati = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
-                except:
-                    Formati = ""
-                try:
-                    Online_linksi = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
-                except:
-                    Online_linksi = ""
+
+                if 'zaaj_' in ident:
+                    try:
+                        UseContraintei = df['Valeurs'][df['Clés']=="dc:rights£#text:"].values
+                    except:
+                        UseContraintei =""
+                else:
+                    try:
+                        UseContraintei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
+                    except:
+                        UseContraintei =""
+                if 'zaaj_' in ident:
+                    try:                        
+                        Formati = df['Valeurs'][df['Clés']=="dc:format£#text:"].values
+                    except:
+                        Formati = ""
+                else:                
+                    try:
+                        Formati = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
+                    except:
+                        Formati = ""
+                
+                if 'zaaj_' in ident:
+                    try:
+                        Online_linksi = df['Valeurs'][df['Clés']=="dc:relation£#text:"].values
+                    except:
+                        Online_linksi = ""
+                else:                
+                    try:
+                        Online_linksi = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
+                    except:
+                        Online_linksi = ""
                 try:
                     Genealogiei = dfi['Valeurs'][dfi['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:lineage£gmd:LI_Lineage£gmd:statement£gco:CharacterString£#text:"].values[0]
                 except:

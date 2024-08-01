@@ -2,14 +2,14 @@
     "@xmlns:gco": "http://www.isotc211.org/2005/gco",
     "@xmlns:gmd": "http://www.isotc211.org/2005/gmd",
     "@xmlns:gmi": "http://www.isotc211.org/2005/gmi",
-    "@xmlns:gml": "http://www.opengis.net/gml",
+    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
     "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
     "@xmlns:gsr": "http://www.isotc211.org/2005/gsr",
     "@xmlns:gts": "http://www.isotc211.org/2005/gts",
     "@xmlns:srv": "http://www.isotc211.org/2005/srv",
     "@xmlns:xlink": "http://www.w3.org/1999/xlink",
     "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd http://www.isotc211.org/2005/gmx http://www.isotc211.org/2005/gmx/gmx.xsd http://www.isotc211.org/2005/srv http://schemas.opengis.net/iso/19139/20060504/srv/srv.xsd",
+    "@xsi:schemaLocation": "http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd",
     "gmd:fileIdentifier": {
         "gco:CharacterString": {
             "@xmlns:gco": "http://www.isotc211.org/2005/gco",
@@ -329,7 +329,7 @@
                     "gmd:fileName": {
                         "gco:CharacterString": {
                             "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                            "#text": "https://cat.indores.fr/geonetwork/srv/api/records/b6fbc049-07c2-487e-a804-ebb454bf1c0c/attachments/Vignette_Singer2016.jpg"
+                            "#text": "https://elvis.ens-lyon.fr/geonetwork/srv/api/records/b6fbc049-07c2-487e-a804-ebb454bf1c0c/attachments/Vignette_Singer2016.jpg"
                         }
                     },
                     "gmd:fileDescription": {
@@ -411,10 +411,9 @@
                 {
                     "gmd:MD_Keywords": {
                         "gmd:keyword": {
-                            "gco:CharacterString": {
-                                "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                "#text": "Hydrography"
-                            }
+                            "@xmlns:gco": "http://www.isotc211.org/2005/gco",
+                            "@gco:nilReason": "missing",
+                            "gco:CharacterString": null
                         },
                         "gmd:type": {
                             "gmd:MD_KeywordTypeCode": {
@@ -427,7 +426,7 @@
                                 "gmd:title": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "GEMET - INSPIRE themes, version 1.0"
+                                        "#text": "Registre de th\u00e8me INSPIRE"
                                     }
                                 },
                                 "gmd:date": {
@@ -435,7 +434,7 @@
                                         "gmd:date": {
                                             "gco:Date": {
                                                 "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                                "#text": "2008-06-01"
+                                                "#text": "2023-01-01"
                                             }
                                         },
                                         "gmd:dateType": {
@@ -452,8 +451,8 @@
                                             "gmx:Anchor": {
                                                 "@xmlns:gmx": "http://www.isotc211.org/2005/gmx",
                                                 "@xmlns:xlink": "http://www.w3.org/1999/xlink",
-                                                "@xlink:href": "http://elvis.ens-lyon.fr:/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme",
-                                                "#text": "geonetwork.thesaurus.external.theme.inspire-theme"
+                                                "@xlink:href": "https://elvis.ens-lyon.fr/geonetwork/srv/api/registries/vocabularies/external.theme.httpinspireeceuropaeutheme-theme",
+                                                "#text": "geonetwork.thesaurus.external.theme.httpinspireeceuropaeutheme-theme"
                                             }
                                         }
                                     }
@@ -541,7 +540,7 @@
                                 "gmd:westBoundLongitude": {
                                     "gco:Decimal": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "4.6"
+                                        "#text": "4.60"
                                     }
                                 },
                                 "gmd:eastBoundLongitude": {
@@ -570,7 +569,7 @@
                         "gmd:EX_TemporalExtent": {
                             "gmd:extent": {
                                 "gml:TimePeriod": {
-                                    "@xmlns:gml": "http://www.opengis.net/gml",
+                                    "@xmlns:gml": "http://www.opengis.net/gml/3.2",
                                     "@gml:id": "d44024e357a1050910",
                                     "gml:beginPosition": "2000-01-01",
                                     "gml:endPosition": "2010-12-31"
@@ -589,9 +588,9 @@
         }
     },
     "gmd:distributionInfo": {
-        "@xmlns:date": "http://exslt.org/dates-and-times",
         "gmd:MD_Distribution": {
             "gmd:distributionFormat": {
+                "@xmlns:date": "http://exslt.org/dates-and-times",
                 "gmd:MD_Format": {
                     "gmd:name": {
                         "gco:CharacterString": {
@@ -614,7 +613,7 @@
                         {
                             "gmd:CI_OnlineResource": {
                                 "gmd:linkage": {
-                                    "gmd:URL": "http://ohm-vr.org"
+                                    "gmd:URL": "https://ohm-vallee-du-rhone.fr/"
                                 },
                                 "gmd:protocol": {
                                     "gco:CharacterString": {
@@ -633,13 +632,19 @@
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
                                         "#text": "Site web de l'OHM Vall\u00e9e du Rh\u00f4ne"
                                     }
+                                },
+                                "gmd:function": {
+                                    "gmd:CI_OnLineFunctionCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                        "@codeListValue": "information"
+                                    }
                                 }
                             }
                         },
                         {
                             "gmd:CI_OnlineResource": {
                                 "gmd:linkage": {
-                                    "gmd:URL": "http://onlinelibrary.wiley.com/doi/10.1002/2014WR015581/full"
+                                    "gmd:URL": "https://amu.hal.science/OHM-VALLEE_DU_RHONE/halshs-01218196v1"
                                 },
                                 "gmd:protocol": {
                                     "gco:CharacterString": {
@@ -650,13 +655,19 @@
                                 "gmd:name": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "Article dans Water Resources Research"
+                                        "#text": "Singer et al., 2014"
                                     }
                                 },
                                 "gmd:description": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "Singer et al., 2014"
+                                        "#text": "Article dans Water Resources Research"
+                                    }
+                                },
+                                "gmd:function": {
+                                    "gmd:CI_OnLineFunctionCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                        "@codeListValue": "download"
                                     }
                                 }
                             }
@@ -675,13 +686,19 @@
                                 "gmd:name": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "Article dans Ecohydrology"
+                                        "#text": "Sargeant et Singer, 2016"
                                     }
                                 },
                                 "gmd:description": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "Sargeant & Singer, 2016"
+                                        "#text": "Article dans Ecohydrology"
+                                    }
+                                },
+                                "gmd:function": {
+                                    "gmd:CI_OnLineFunctionCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                        "@codeListValue": "download"
                                     }
                                 }
                             }
@@ -689,7 +706,7 @@
                         {
                             "gmd:CI_OnlineResource": {
                                 "gmd:linkage": {
-                                    "gmd:URL": "http://ohm-vr.org/ftp/Fiche_de_synthese/APR_2016/25_WEB_fichetype_OHMVR_2017_Singer_DRM.pdf"
+                                    "gmd:URL": "https://amu.hal.science/OHM-VALLEE_DU_RHONE/hal-04550213v1"
                                 },
                                 "gmd:protocol": {
                                     "gco:CharacterString": {
@@ -706,7 +723,13 @@
                                 "gmd:description": {
                                     "gco:CharacterString": {
                                         "@xmlns:gco": "http://www.isotc211.org/2005/gco",
-                                        "#text": "Fiche de synth\u00e8se"
+                                        "#text": "Fiche de synth\u00e8se APR OHM VR"
+                                    }
+                                },
+                                "gmd:function": {
+                                    "gmd:CI_OnLineFunctionCode": {
+                                        "@codeList": "http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_OnLineFunctionCode",
+                                        "@codeListValue": "download"
                                     }
                                 }
                             }
