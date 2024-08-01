@@ -83,9 +83,7 @@ def uuids_cleaning(date):
     list_uuid_brutes= re.split(',', t2)
     new_list_uuid = []
     for i in range(1,len(list_uuid_brutes)):
-        if "oai:search-data.ubfc.fr:" in list_uuid_brutes[i]:
-            new_list_uuid.append(list_uuid_brutes[i].replace("oai:search-data.ubfc.fr:",''))
-        elif "urn:isogeo:metadata:uuid:" in list_uuid_brutes[i]:
+        if "urn:isogeo:metadata:uuid:" in list_uuid_brutes[i]:
             new_list_uuid.append(list_uuid_brutes[i].replace("urn:isogeo:metadata:uuid:",''))
         else:
             try:

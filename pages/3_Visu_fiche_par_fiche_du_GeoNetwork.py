@@ -45,7 +45,7 @@ couleur_True = (0,200,0)
 couleur_False = (200,0,0)
 
 liste_gr =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
-           'ZAAJ','Zone Atelier Arc Jurassien' , 'ZAAJ - Arc Jurassien',
+           'ZAAJ','Zone Atelier Arc Jurassien' , 'ZAAJ - Arc Jurassien', 'Jura',
            'ZAAR','zaar', 'Zone Atelier Armorique','ZAAr - Armorique','ZAAr',
            'ZAEU','zaeu','Zone atelier environnementale urbaine','ZAEU - Environnementale Urbaine',
            'ZABR','zabr','Zone atelier bassin du Rhône','ZABR - Bassin du Rhône',
@@ -407,19 +407,34 @@ with col2:
 ########## CONNEXION AU GEONETWORK ############################################
 
 try:
-    df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
-    F1 = True
-    F1c = couleur_True
-    A2 = True
-    A2c = couleur_True
+    if 'oai:search-data.ubfc.fr:' in identifieur:
+        identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
+        df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
+        F1 = True
+        F1c = couleur_True
+        A2 = True
+        A2c = couleur_True
+    else:
+        df = pd.read_csv(f'pages/data/fiches_csv/{identifieur}.csv',index_col=[0])
+        F1 = True
+        F1c = couleur_True
+        A2 = True
+        A2c = couleur_True
 except:
+    if 'zaaj_' in identifieur:
+        identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
     url_ = url + identifieur
     resp1 = requests.get(url_,headers=headers_json)
     if resp1.status_code == 200:
         resp_json=resp1.json()
         try:
-            with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
-                json.dump(resp_json, f, indent=4)
+            if 'oai:search-data.ubfc.fr:' in identifieur:
+                identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
+                with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
+                    json.dump(resp_json, f, indent=4)
+            else:
+                with open(f"pages/data/fiches_json/{identifieur}.json", "w") as f:
+                    json.dump(resp_json, f, indent=4)
         except:
             st.markdown("Cette fiche n'est pas lisible")
      
@@ -458,6 +473,9 @@ except:
     df_infos = pd.DataFrame(columns=['Identifiant','Groupe'])
     df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
 
+if 'zaaj_' in identifieur:
+    identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
+
 liste_id = list(df_infos.Identifiant)
 if identifieur in liste_id:
     pass
@@ -477,6 +495,8 @@ else:
 
 ################ TRAITEMENT DU JSON #############################################################
 try:
+    if 'oai:search-data.ubfc.fr:' in identifieur:
+        identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
     with open(f"pages/data/fiches_json/{identifieur}.json", 'r') as f:
         data = json.load(f)
 
@@ -510,7 +530,10 @@ try:
     df.to_csv(f'pages/data/fiches_csv/{identifieur}.csv')
     visu = df[['Clés','Valeurs']]
     #st.dataframe(visu, use_container_width=True)
-    
+    F1 = True
+    F1c = couleur_True
+    A2 = True
+    A2c = couleur_True
 except:
     st.write("Le processus n'a pas fonctionné")
     F1 = False
@@ -518,13 +541,17 @@ except:
     A2 = False
     A2c = couleur_False
 #########  VARIABLES ########################################################
+
 try:
     Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
 except:
     try:
         Langue = df['Valeurs'][df['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
     except:
-        Langue = ""
+        try:
+            Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values[0]
+        except:
+            Langue = ""
 try:
     JeuDeCaracteres = df['Valeurs'][df['Clés']=="gmd:characterSet£gmd:MD_CharacterSetCode£@codeListValue:"].values[0]
 except:
@@ -535,7 +562,10 @@ except:
     try:
         Type = df['Valeurs'][df['Clés']=="gfc:featureType£gfc:FC_FeatureType£gfc:typeName£gco:LocalName£#text:"].values[0]
     except:
-        Type =""
+        try:
+            Type = df['Valeurs'][df['Clés']=="dc:type£#text:"].values[0]
+        except:
+            Type =""
 try:
     Date = df['Valeurs'][df['Clés']=="gmd:dateStamp£gco:DateTime£#text:"].values[0]
 except:
@@ -545,39 +575,54 @@ except:
         try:
             Date = df['Valeurs'][df['Clés']=="gmx:versionDate£gco:DateTime£#text:"].values[0]
         except:
-            Date = ""
-try:
-    Standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
-except:
+            try:
+                Date = df['Valeurs'][df['Clés']=="dc:date£#text:"].values[0]
+            except:
+                Date = ""
+
+if 'zaaj_' in identifieur:                        
+    Standard = df['Valeurs'][df['Clés']=="@xsi:noNamespaceSchemaLocation:"].values[0]
+else:
     try:
-        Standard = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+        Standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
     except:
-        Standard = ""
+        try:
+            Standard = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
+        except:
+            Standard = ""
 try:
     Version_standard = df['Valeurs'][df['Clés']=="gmd:metadataStandardVersion£gco:CharacterString£#text:"].values[0]
 except:
     Version_standard = ""
-try:
-    Nom_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-    if len(Nom_contact)==0:
-        Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-except:
+
+if 'zaaj_' in identifieur:                        
+    Nom_contact = df['Valeurs'][df['Clés']=="dc:creator£#text:"].values
+else:
     try:
-        Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+        Nom_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+        if len(Nom_contact)==0:
+            Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
     except:
         try:
-            Nom_contact = df['Valeurs'][df['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
-        except: 
-            Nom_contact = ""
-try:
-    Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-    if len(Organisation_contact)==0:
-        Organisation_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-except:
+            Nom_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
+        except:
+            try:
+                Nom_contact = df['Valeurs'][df['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
+            except: 
+                Nom_contact = ""
+
+if 'zaaj_' in identifieur:                        
+    Organisation_contact = df['Valeurs'][df['Clés']=="dc:publisher£#text:"].values
+else:
     try:
-        Organisation_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+        Organisation_contact = df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+        if len(Organisation_contact)==0:
+            Organisation_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
     except:
-        Organisation_contact = ""
+        try:
+            Organisation_contact = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
+        except:
+            Organisation_contact = ""
 try:
     Position_contact =df['Valeurs'][df['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
     if len(Position_contact)==0:
@@ -668,15 +713,23 @@ except:
     try:
         Titre = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
     except:
-        Titre = ""
+        try:
+            Titre = df['Valeurs'][df['Clés']=="dc:title£#text:"].values[0]
+        except:
+            Titre = ""
 try: 
     FicheParent = df['Valeurs'][df['Clés']=="gmd:parentIdentifier£gco:CharacterString£#text:"].values[0]
 except:
     FicheParent = ""
-try:
-    Abstract =df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£#text:"].values[0]
-except:
-    Abstract = ""
+
+if 'zaaj_' in identifieur:
+    Abstract =df['Valeurs'][df['Clés']=="dc:description£#text:"].values
+else:
+    try:
+        Abstract =df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£#text:"].values[0]
+    except:
+        Abstract = ""
+
 try:
     Date_creation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:DateTime£#text:"].values[0]
 except:
@@ -723,24 +776,30 @@ except:
 Liste_Theme = []
 Liste_Thesaurus = []
 Mots_cles = []
-try:
+Mots_cles_zaaj = []
+if 'zaaj_' in identifieur: 
     for u in range(len(df)):
-        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-            Liste_Theme.append([u,df.loc[u,'Valeurs']])
-except:
-    pass
-try:
-    for u in range(len(df)):
-        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
-            Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
-except:
-    pass
-try:
-    for u in range(len(df)):
-        if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
-            Mots_cles.append([u,df.loc[u,'Valeurs']])
-except:
-    pass
+        if df.loc[u,'Clés']=="dc:subject£#text:":
+            Mots_cles_zaaj.append(df.loc[u,'Valeurs'])
+else:
+    try:
+        for u in range(len(df)):
+            if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+                Liste_Theme.append([u,df.loc[u,'Valeurs']])
+    except:
+        pass
+    try:
+        for u in range(len(df)):
+            if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+                Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
+    except:
+        pass
+    try:
+        for u in range(len(df)):
+            if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                Mots_cles.append([u,df.loc[u,'Valeurs']])
+    except:
+        pass
 
 theme_thesaurus_motsCles = []
 mm = 0    
@@ -790,9 +849,12 @@ Themes = []
 for i in range(len(Liste_Theme)):
     Themes.append(Liste_Theme[i][1])
 
-Keywords = []
-for i in range(len(Mots_cles)):
-    Keywords.append(Mots_cles[i][1])
+if 'zaaj_' in identifieur: 
+    Keywords = Mots_cles_zaaj
+else:
+    Keywords = []
+    for i in range(len(Mots_cles)):
+        Keywords.append(Mots_cles[i][1])
 
 groupe2 = 'Aucune mention'
 Titre_Keywords = Titre.split()
@@ -809,10 +871,14 @@ try:
     UseLimitation = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
 except:
     UseLimitation =""
-try:
-    UseContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
-except:
-    UseContrainte =""
+
+if 'zaaj_' in identifieur:
+    UseContrainte = df['Valeurs'][df['Clés']=="dc:rights£#text:"].values
+else:
+    try:
+        UseContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
+    except:
+        UseContrainte =""
 try:
     AccesContrainte = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
 except:
@@ -822,14 +888,21 @@ try:
 except:
     AutreContrainte =""
 
-try:
-    Format = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
-except:
-    Format = ""
-try:
-    Online_links = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
-except:
-    Online_links = ""
+if 'zaaj_' in identifieur:                        
+    Format = df['Valeurs'][df['Clés']=="dc:format£#text:"].values
+else:
+    try:
+        Format = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
+    except:
+        Format = ""
+
+if 'zaaj_' in identifieur:
+    Online_links = df['Valeurs'][df['Clés']=="dc:relation£#text:"].values
+else:
+    try:
+        Online_links = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
+    except:
+        Online_links = ""
 try:
     Online_protocols = df['Valeurs'][df['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:protocol£gco:CharacterString£#text:"].values
 except:
@@ -1160,7 +1233,11 @@ else:
         s4b = 'Résumé'
         s_s4b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4b}</p>"
         st.markdown(s_s4b,unsafe_allow_html=True)
-        st.markdown(Abstract)
+        if 'zaaj_' in identifieur:
+            for i in range(len(Abstract)):
+                st.markdown(Abstract[i])
+        else:
+            st.markdown(Abstract)
 
         col1,col2,col3 = st.columns(3)
         with col1:
@@ -1233,8 +1310,12 @@ else:
             with col2:
                 st.markdown(theme_thesaurus_motsCles[j][1])
             with col3:
-                for i in range(len(theme_thesaurus_motsCles[j][0])):
-                    st.markdown(theme_thesaurus_motsCles[j][0][i])
+                if 'zaaj_' in identifieur:
+                    for i in range(len(Mots_cles_zaaj)):
+                        st.markdown(Mots_cles_zaaj[i])
+                else:
+                    for i in range(len(theme_thesaurus_motsCles[j][0])):
+                        st.markdown(theme_thesaurus_motsCles[j][0][i])
 
     with st.container(border=True):
         s6 = "CONTRAINTES"
@@ -1251,7 +1332,11 @@ else:
             s6b = "Contrainte d'usage"
             s_s6b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6b}</p>"
             st.markdown(s_s6b,unsafe_allow_html=True)
-            st.markdown(UseContrainte)
+            if 'zaaj_' in identifieur:
+                for i in range(len(UseContrainte)):
+                    st.markdown(UseContrainte[i])
+            else:
+                st.markdown(UseContrainte)
         with col3:
             s6c = "Limite d'Usage"
             s_s6c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6c}</p>"
@@ -1273,11 +1358,15 @@ else:
             s7b = "URL"
             s_s7b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7b}</p>"
             st.markdown(s_s7b,unsafe_allow_html=True)
-            try:
+            if 'zaaj_' in identifieur:
                 for x in range(len(Online_links)):
                         st.markdown(Online_links[x])
-            except:
-                pass
+            else:
+                try:
+                    for x in range(len(Online_links)):
+                            st.markdown(Online_links[x])
+                except:
+                    pass
         with col2:
             s7c = "Protocole"
             s_s7c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7c}</p>"
