@@ -1481,19 +1481,31 @@ if admin_action == admin_pass:
                         try:
                             Titre = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
                         except:
-                            Titre = ""
+                            try:
+                                Titre = df['Valeurs'][df['Clés']=="dc:title£#text:"].values[0]
+                            except:
+                                Titre = ""
 
-                    Mots_cles = []
-                    try:
+                    Mots_cles_zaaj = []
+                    if 'zaaj_' in identifieur: 
                         for u in range(len(df)):
-                            if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
-                                Mots_cles.append([u,df.loc[u,'Valeurs']])
-                    except:
-                        pass
+                            if df.loc[u,'Clés']=="dc:subject£#text:":
+                                Mots_cles_zaaj.append(df.loc[u,'Valeurs'])
+                    else:
+                        Mots_cles = []
+                        try:
+                            for u in range(len(df)):
+                                if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                                    Mots_cles.append([u,df.loc[u,'Valeurs']])
+                        except:
+                            pass
 
-                    Keywords = []
-                    for b in range(len(Mots_cles)):
-                        Keywords.append(Mots_cles[b][1])
+                    if 'zaaj_' in identifieur: 
+                        Keywords = Mots_cles_zaaj
+                    else:
+                        Keywords = []
+                        for i in range(len(Mots_cles)):
+                            Keywords.append(Mots_cles[i][1])
 
                     groupe2 = 'Aucune mention'
                     Titre_Keywords = Titre.split()
