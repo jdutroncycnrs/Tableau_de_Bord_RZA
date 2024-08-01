@@ -1,0 +1,433 @@
+{
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:noNamespaceSchemaLocation": "https://cat.indores.fr/geonetwork/xml/schemas/dublin-core/schema.xsd",
+    "dc:title": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Distribution of waterbirds along the Drugeon river, France"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Distribution des oiseaux d'eau le long du Drugeon, France"
+        }
+    ],
+    "dc:subject": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "biodiversity conservation"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "biodiversit\u00e9, conservation"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "ecology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "\u00e9cologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "ornithology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "ornithologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "bird community"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "communaut\u00e9 d'oiseaux"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "landscape of fear"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "paysage de la peur"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "limicole"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "oiseau d'eau"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Ramsar site"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "site Ramsar"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "hunting"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "chasse"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "game management"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "gestion cyn\u00e9g\u00e9tique"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "wildlife management"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "gestion de la faune sauvage"
+        }
+    ],
+    "dc:description": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "This dataset describes bird observations performed along the Drugeon river, France, from 2014 to 2019, according to standard protocols."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Ce jeu de donn\u00e9es d\u00e9crit des observations d'oiseaux effectu\u00e9es de 2014 \u00e0 2019 le long de la rivi\u00e8re Drugeon, France, selon des protocoles standards"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Audience: Research"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Update periodicity: no update"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: ZAAJ (Zone Atelier Arc Jurassien)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Method: [Observational data] See Michelat, D., Giraudoux, P., 2022. Chasse aux oiseaux d\u2019eau et \u201cPaysage de la peur\u201d dans un site Ramsar et Natura 2000, le bassin du Drugeon (Doubs, France). Nos Oiseaux 69, 111\u2013136 and the Zenodo repository https://zenodo.org/record/4540002\n\t\t\t\t\n\t\t\t\tAuthor's pdf can be sent on request."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Method: [Donn\u00e9es d'observation] Voir Michelat, D., Giraudoux, P., 2022. Chasse aux oiseaux d\u2019eau et \u201cPaysage de la peur\u201d dans un site Ramsar et Natura 2000, le bassin du Drugeon (Doubs, France). Nos Oiseaux 69, 111\u2013136 et le d\u00e9p\u00f4t Zenodo https://zenodo.org/record/4540002\n\t\t\t\t\n\t\t\t\tUn pdf d'auteur peut \u00eatre envoy\u00e9 sur demande."
+        }
+    ],
+    "dc:source": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://zenodo.org/record/4540002"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://search-data.ubfc.fr/FR-13002091000019-2022-09-02"
+        }
+    ],
+    "dc:language": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "fra"
+    },
+    "dc:coverage": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=Drugeon;projection=WGS84;northlimit=46.945649;eastlimit=6.375886;southlimit=46.807468;westlimit=6.178646;units=\u00b0"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "start=2006-09;end=2019-12"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Alcedo atthis"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Anas acuta"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Anas crecca"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Anas platyrhynchos"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Anser anser"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Ardea alba"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Ardea cinerea"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Aythya ferina"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Aythya fuligula"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Calidris alpina"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Chroicocephalus ridibundus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Cinclus cinclus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Cygnus olor"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Fulica atra"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Gallinago gallinago"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Gallinula chloropus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Larus michahellis"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Lymnocryptes minimus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Mareca penelope"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Motacilla cinerea"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Netta rufina"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Phalacrocorax carbo"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Podiceps cristatus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Rallus aquaticus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Remiz pendulinus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Spatula clypeata"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Tachybaptus ruficollis"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Tringa ochropus"
+        }
+    ],
+    "dc:creator": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Michelat, Dominique"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Giraudoux, Patrick"
+        }
+    ],
+    "dc:publisher": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Zenodo"
+    },
+    "dc:rights": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "available"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Attribution"
+        }
+    ],
+    "dc:date": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "2022-08-15"
+    },
+    "dc:type": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Data set"
+    },
+    "dc:format": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/vnd.google-earth.kml+xml"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "image/jpeg"
+        }
+    ],
+    "dc:identifier": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "FR-13002091000019-2022-09-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "oai:search-data.ubfc.fr:FR-13002091000019-2022-09-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://search-data.ubfc.fr/FR-13002091000019-2022-09-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.25666/DATAUBFC-2022-09-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.5281/zenodo.4540002"
+        }
+    ]
+}

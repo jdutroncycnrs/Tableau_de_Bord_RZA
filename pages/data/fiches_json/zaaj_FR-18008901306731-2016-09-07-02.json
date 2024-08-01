@@ -1,0 +1,332 @@
+{
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:noNamespaceSchemaLocation": "https://cat.indores.fr/geonetwork/xml/schemas/dublin-core/schema.xsd",
+    "dc:title": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Puit-Novets-Ain River-Chemical data"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Rivi\u00e8re d'Ain-l\u00f4ne de Puit-Novets-Chimie"
+        }
+    ],
+    "dc:subject": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "ecology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "\u00e9cologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "chemistry, analytical"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "chimie analytique"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "water resources"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "ressources en eau"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "physical chemistry"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "physicochimie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "temperature"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "temp\u00e9rature"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "wetland"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "zone humide"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "rivers"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "cours d'eau"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "nitrates"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "nitrates"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "ammonium"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "ammonium"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "conductivity"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "conductivit\u00e9"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "pH"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "pH"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "dissolved oxygen"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "oxyg\u00e8ne dissous"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "water chemistry"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "chimie de l'eau"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "orthophosphate"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "orthophosphate"
+        }
+    ],
+    "dc:description": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Water physico-chemical data of the cut-off channel called Puit-Novets"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Qualit\u00e9 des eaux du bras mort appel\u00e9 Puit-Novets.\n\t\t\t\tChimie de l'eau de surface. Pr\u00e9l\u00e8vements sur un rythme mensuel. \n\t\t\t\t30 dates de 2003 \u00e0 2012\n\t\t\t\tParam\u00e8tres mesur\u00e9s : T\u00b0, O2 %, O2 mg/l, pH, Conductivit\u00e9, N-NO3(ppm), N-NH3(ppm), P-PO4(ppm)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Audience: University: master, Research, University: licence"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Update periodicity: as needed"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Project: Life Basse Vall\u00e9e de 'Ain, Agence de l'eau Rh\u00f4ne M\u00e9diterran\u00e9e Corse (Water agency), Europe (European project)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: ZAAJ (Zone Atelier Arc Jurassien)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: ZABR (Zone atelier Bassin du Rh\u00f4ne)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Method: [Observational data] analyse physico-chimique des eaux de surface"
+        }
+    ],
+    "dc:source": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "https://search-data.ubfc.fr/FR-18008901306731-2016-09-07-02"
+    },
+    "dc:language": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "fra"
+    },
+    "dc:coverage": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=Brotteaux-Ain ;projection=WGS84;northlimit=45.801944444444445;eastlimit=5.1725;southlimit=45.797777777777775;westlimit=5.168055555555556;units=\u00b0"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=Donn\u00e9es sur 10 ans - p\u00e9riodicit\u00e9 variable, pas de modification du site sur la p\u00e9riode;start=2003-04-28;end=2012-01-09"
+        }
+    ],
+    "dc:creator": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Bornette, Gudrun"
+    },
+    "dc:publisher": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Laboratoire Chrono-environnement (UMR 6249)"
+    },
+    "dc:rights": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "restricted"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "To access the data, please contact the scientific data manager."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Pour acc\u00e9der \u00e0 ces donn\u00e9es, merci de contacter le contact scientifique d\u00e9crit dans la fiche en d\u00e9crivant votre structure et activit\u00e9, le projet dans lequel s'inscrit votre demande."
+        }
+    ],
+    "dc:date": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "2016-09-07"
+    },
+    "dc:type": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Dataset"
+    },
+    "dc:format": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "application/vnd.ms-excel"
+    },
+    "dc:relation": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.1016/S0006-3207(97)00166-3"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Collection: Chimie des eaux-basse vall\u00e9e de l'Ain"
+        }
+    ],
+    "dc:identifier": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "FR-18008901306731-2016-09-07-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "oai:search-data.ubfc.fr:FR-18008901306731-2016-09-07-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://search-data.ubfc.fr/FR-18008901306731-2016-09-07-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.25666/DATAUBFC-2016-09-07-02"
+        }
+    ]
+}

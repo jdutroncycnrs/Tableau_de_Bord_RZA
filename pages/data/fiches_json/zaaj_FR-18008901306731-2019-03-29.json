@@ -1,0 +1,279 @@
+{
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:noNamespaceSchemaLocation": "https://cat.indores.fr/geonetwork/xml/schemas/dublin-core/schema.xsd",
+    "dc:title": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "JURAQUAKE"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "JURAQUAKE"
+        }
+    ],
+    "dc:subject": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "geochemistry & geophysics"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "g\u00e9ophysique-g\u00e9ochimie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "geosciences, multidisciplinary"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "g\u00e9osciences"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "seismic waveform"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "forme d'onde sismique"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "seismology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "sismologie"
+        }
+    ],
+    "dc:description": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Data from the JURAQUAKE seismological network. This temporary network is currently composed of 6 seismic stations located north of Besan\u00e7on and aims to record microseismicity in the area for research purpose."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Donn\u00e9es issues du r\u00e9seau sismologique temporaire JURAQUAKE, actuellement compos\u00e9 de 6 stations install\u00e9es au nord de Besan\u00e7on. Ce r\u00e9seau a \u00e9t\u00e9 mis en place dans le cadre d'un projet de recherche visant \u00e0 caract\u00e9riser l'activit\u00e9 micro-sismique de la zone."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Audience: Research"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Update periodicity: continually"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Additional info: Code FDSN  5C"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Project: JURAQUAKE, Projet Recherche, financement 2016 (Region Franche-Comt\u00e9), SRO OSU THETA 2019 (OSU)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: ZAAJ (Zone Atelier Arc Jurassien)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Method: [Observational data] Acquises en continu par 6 stations sismologiques compos\u00e9es d'un capteur Guralp CMG40T (60s-100Hz) et d'un num\u00e9riseur StaneO D3BB-MOB. Les stations sont aliment\u00e9es par des panneaux solaires."
+        }
+    ],
+    "dc:source": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "https://search-data.ubfc.fr/FR-18008901306731-2019-03-29"
+    },
+    "dc:language": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "eng"
+    },
+    "dc:coverage": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=AVEN;projection=WGS84;northlimit=47.373753;eastlimit=6.322395;southlimit=47.373753;westlimit=6.322395;uplimit=423;downlimit=423;units=\u00b0;zunits=m"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=BELVR;projection=WGS84;northlimit=47.325949;eastlimit=6.602263;southlimit=47.325949;westlimit=6.602263;uplimit=670;downlimit=670;units=\u00b0;zunits=m"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=Cirey;projection=WGS84;northlimit=47.325949;eastlimit=6.120847;southlimit=47.325949;westlimit=6.120847;uplimit=308;downlimit=308;units=\u00b0;zunits=m"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=GZIER;projection=WGS84;northlimit=47.362065;eastlimit=5.901346;southlimit=47.362065;westlimit=5.901346;uplimit=293;downlimit=293;units=\u00b0;zunits=m"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=LANAN;projection=WGS84;northlimit=47.297523;eastlimit=6.437023;southlimit=47.297523;westlimit=6.437023;uplimit=495;downlimit=495;units=\u00b0;zunits=m"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=OISEL;projection=WGS84;northlimit=47.437346;eastlimit=5.91717;southlimit=47.437346;westlimit=5.91717;units=\u00b0"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=AVEN;start=2018-09-25"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=BELVR;start=2018-11-09"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=CIREY;start=2018-10-07"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=GZIER;start=2018-09-07"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=LANAN;start=2018-06-21"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=OISEL;start=2018-05-06"
+        }
+    ],
+    "dc:creator": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Albaric, Julie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Sue, Christian"
+        }
+    ],
+    "dc:publisher": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Laboratoire Chrono-environnement (UMR 6249)"
+    },
+    "dc:contributor": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Fores, Benjamin"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Stefani, Vanessa"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Melior, Rapha\u00ebl"
+        }
+    ],
+    "dc:rights": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "restricted"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "To access the data, please contact the scientific data manager."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Pour acc\u00e9der \u00e0 ces donn\u00e9es, merci de contacter le contact scientifique d\u00e9crit dans la fiche en d\u00e9crivant votre structure et activit\u00e9, le projet dans lequel s'inscrit votre demande."
+        }
+    ],
+    "dc:date": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "2019-03-29"
+    },
+    "dc:type": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Data set"
+    },
+    "dc:format": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "application/vnd.fdsn.mseed"
+    },
+    "dc:identifier": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "FR-18008901306731-2019-03-29"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "oai:search-data.ubfc.fr:FR-18008901306731-2019-03-29"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://search-data.ubfc.fr/FR-18008901306731-2019-03-29"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.25666/DATAUBFC-2019-03-29"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "http://www.fdsn.org/networks/detail/5C_2018/"
+        }
+    ]
+}

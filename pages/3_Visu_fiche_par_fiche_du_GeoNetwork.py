@@ -542,14 +542,14 @@ except:
     A2c = couleur_False
 #########  VARIABLES ########################################################
 
-try:
-    Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
-except:
+if "zaaj_" in identifieur:
+    Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
+else:
     try:
-        Langue = df['Valeurs'][df['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
+        Langue = df['Valeurs'][df['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
     except:
         try:
-            Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values[0]
+            Langue = df['Valeurs'][df['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
         except:
             Langue = ""
 try:
@@ -1091,7 +1091,11 @@ else:
             s2b = 'Langue'
             s_s2b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2b}</p>"
             st.markdown(s_s2b,unsafe_allow_html=True)
-            st.markdown(Langue)
+            if 'zaaj_' in identifieur:
+                for i in range(len(Langue)):
+                    st.markdown(Langue[i])
+            else:
+                st.markdown(Langue)
         with col3:
             s2c = 'Jeu de caractères'
             s_s2c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2c}</p>"

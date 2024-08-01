@@ -1,0 +1,544 @@
+{
+    "@xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "@xsi:noNamespaceSchemaLocation": "https://cat.indores.fr/geonetwork/xml/schemas/dublin-core/schema.xsd",
+    "dc:title": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Phytomanagement - Vieux-Charmont (F-25)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Phytomanagement - Vieux-Charmont (F-25)"
+        }
+    ],
+    "dc:subject": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "cell biology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "biologie moleculaire et cellulaire"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "microbiology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "microbiologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "toxicology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "toxicologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "mycology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "mycologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "forestry"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "sylviculture"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "environmental sciences"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "sciences de l'environnement"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "engineering, environmental"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "technologies de l'environnement"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "urban studies"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "sociologie de la ville et urbanisme"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "abandoned industrial site"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "site abandonn\u00e9"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "chemical pollution"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "pollution chimique"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "vegetation"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "v\u00e9g\u00e9tation"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "microbial community"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "communaut\u00e9 microbienne"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "phytomanagement"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "phytomanagement"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "bacteriology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "bact\u00e9riologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "woody plants"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "plantes ligneuses"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "mycology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "mycologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "dry calcareous grassland"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "pelouse s\u00e8che calcaire"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "entomology"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "entomologie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "sensor"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "capteur"
+        }
+    ],
+    "dc:description": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "The study site is an industrial wasteland, located in the city of Vieux-Charmont in the Doubs (France). The site presents an urbanized environment with the presence of dwellings, the Belfort-Montb\u00e9liard greenway. Several wetlands are also present, in particular the gravels pond and the river \"la Savoureuse\".\n\t\t\t\tIndustrial activities near the site began at the end of the 19th century in sectors such as watchmaking, the manufacture of mechanical parts or pistons for the automotive industry and the heat treatment of metals.\n\t\t\t\tThe experiments carried out on the site aim to:\n\t\t\t\t1) Spatially and quantitatively measure organic and inorganic soil contamination and related health and ecological risks\n\t\t\t\t2) Monitor the evolution of contamination and contaminant mobility through the use of bio-indicators\n\t\t\t\t3) Set up a process for managing soil contamination through a phytomanagement approach."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Le site d'\u00e9tude est une friche industrielle, localis\u00e9e sur la commune de Vieux-Charmont dans le Doubs (France). Le site pr\u00e9sente un environnement urbanis\u00e9 avec la pr\u00e9sence d'habitations, de la voie verte Belfort-Montb\u00e9liard. Plusieurs zones humides sont \u00e9galement pr\u00e9sentes, notamment l'\u00e9tang des graviers et la rivi\u00e8re \"la Savoureuse\".\n\t\t\t\tLes activit\u00e9s industrielles \u00e0 proximit\u00e9 du site ont commenc\u00e9 d\u00e8s la fin du XIX\u00e8me si\u00e8cle dans des secteurs tels que l'horlogerie, la fabrication de pi\u00e8ces m\u00e9caniques ou de pistons pour l'industrie autombile et le traitement thermique des m\u00e9taux.\n\t\t\t\tLes exp\u00e9riences men\u00e9es sur le site visent \u00e0 : \n\t\t\t\t1) Mesurer spatialement et quantitativement la contamination organique et inorganique du sol et les risques sanitaires et \u00e9cologiques qui y sont li\u00e9s\n\t\t\t\t2) R\u00e9aliser un suivi de l'\u00e9volution de la contamination et de la mobilit\u00e9 des contaminants via l'utilisation de bio-indicateurs \n\t\t\t\t3) Mettre en place un processus de gestion de la contamination du sol par une approche de phytomanagement."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Audience: University: master, Research, Informal Education, Stakeholder"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Update periodicity: as needed"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Additional info: Data collected during the thesis of : \n\t\t\t\t- Collot Jordan, Ph-D student, co-supervised by Michel CHALOT (PR), Ph-D director, and Philippe BINET (MCF), Ph-D co-director."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Additional info: Donn\u00e9es collect\u00e9es dans le cadre de la th\u00e8se de : \n\t\t\t\t- Collot Jordan, doctorant, co-encadr\u00e9 par Michel CHALOT (PR), directeur de th\u00e8se et Philippe BINET (MCF), co-directeur de th\u00e8se."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Project: Th\u00e8se de doctorat en biologie des populations et \u00e9cologie - Jordan Collot, Pays de Montb\u00e9liard Agglom\u00e9ration (Local community)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Project: ECOPOLIS, Agence Nationale de la Recherche 2020 (French National Agency for Research), PIA3 (Ministry)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: PIA3 (Programme des investissements d'avenir 3)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Label: ZAAJ (Zone Atelier Arc Jurassien)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Method: [Observational data] Plant diversity using the Braun-Blanquet scale (doi:10.1016/j.ecoleng.2019.03.013)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Method: [Donn\u00e9es d'observation] Diversit\u00e9 v\u00e9g\u00e9tale bas\u00e9e sur l'\u00e9chelle de Braun-Blanquet (doi:10.1016/j.ecoleng.2019.03.013)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "Method: [Experimental data] Soil analysis using ICP-AES (doi:10.1016/j.ecoleng.2019.03.013)\n\t\t\t\tMicrobial diversity using traditional approach (doi:10.3389/fmicb.2018.01772)"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Method: [Donn\u00e9es exp\u00e9rimentales]  Analyses de sol \u00e0 l'aide de l'ICP-AES (doi:10.1016/j.ecoleng.2019.03.013)\n\t\t\t\tDiversit\u00e9 microbienne utilisant l'approche traditionnelle (doi:10.3389/fmicb.2018.01772)"
+        }
+    ],
+    "dc:source": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "https://search-data.ubfc.fr/FR-18008901306731-2021-04-22-02"
+    },
+    "dc:language": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "fra"
+    },
+    "dc:coverage": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=Vieux-Charmont;projection=WGS84;northlimit=47.52213095369376;eastlimit=6.841684341561631;southlimit=47.52029932451984;westlimit=6.8387317664019065;units=\u00b0"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "name=De 2018 \u00e0 nos jours;start=2018"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Bacteria"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Fungus"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Insecta"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Plantae"
+        }
+    ],
+    "dc:creator": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Chalot, Michel"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Collot, Jordan"
+        }
+    ],
+    "dc:publisher": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Laboratoire Chrono-environnement (UMR 6249)"
+    },
+    "dc:contributor": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Kuhn, Cathy"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Kieffer, Nicolas"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Pauget, Benjamin"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Guyeux, Christophe"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Bertheau-Rossel, Coralie"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Bertrand, Guillaume"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Binet, Philippe"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Credeville, Laurence"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Ciadamidaro, Lisa"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Domas, St\u00e9phane"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Valot, Benoit"
+        }
+    ],
+    "dc:rights": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "restricted"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "en",
+            "#text": "To access the data, please contact the scientific data manager."
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "@xml:lang": "fr",
+            "#text": "Pour acc\u00e9der \u00e0 ces donn\u00e9es, merci de contacter le contact scientifique d\u00e9crit dans la fiche en d\u00e9crivant votre structure et activit\u00e9, le projet dans lequel s'inscrit votre demande."
+        }
+    ],
+    "dc:date": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "2021-04-22"
+    },
+    "dc:type": {
+        "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+        "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+        "#text": "Data set"
+    },
+    "dc:format": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/gpx+xml"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/pdf"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/vnd.ms-excel"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "image/jpeg"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "text/csv"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "text/plain"
+        }
+    ],
+    "dc:identifier": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "FR-18008901306731-2021-04-22-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "oai:search-data.ubfc.fr:FR-18008901306731-2021-04-22-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "https://search-data.ubfc.fr/FR-18008901306731-2021-04-22-02"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "doi:10.25666/DATAOSU-2021-04-22-02"
+        }
+    ],
+    "dc:relation": [
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Collection: Donn\u00e9es de th\u00e8se"
+        },
+        {
+            "@xmlns:dc": "http://purl.org/dc/elements/1.1/",
+            "@xmlns:oai_dc": "http://www.openarchives.org/OAI/2.0/oai_dc/",
+            "#text": "Collection: Phytomanagement-Chrono"
+        }
+    ]
+}
