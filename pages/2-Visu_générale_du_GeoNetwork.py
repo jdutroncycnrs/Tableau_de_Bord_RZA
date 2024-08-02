@@ -159,11 +159,14 @@ else:
 
 ##################### PREPARATION DATES ###################################################################
 df_selected_year = year(df_selected)
-
-df_selected_year_bis = df_selected_year.dropna(subset='Year')
-liste_years = set(df_selected_year_bis['Year'])
-start_year = int(min(liste_years))-1
-end_year = int(max(liste_years)) +1
+try:
+    df_selected_year_bis = df_selected_year.dropna(subset='Year')
+    liste_years = set(df_selected_year_bis['Year'])
+    start_year = int(min(liste_years))-1
+    end_year = int(max(liste_years)) +1
+except:
+    start_year = 2024
+    end_year = 2024 +1
 
 rule = '6ME'
 df_date = prepa_date(df_selected_year, rule=rule)
@@ -271,11 +274,14 @@ if Repartition_fiches:
 elif Evolution_temporelle:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     fig_tempo = go.Figure()
-    fig_tempo.add_trace(go.Bar(
-            x=df_date_year['Date'][df_date_year.Year >= selection_dates_input],
-            y=df_date_year['Compte_resampled'][df_date_year.Year >= selection_dates_input],
-            name='Dates',
-            marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))))
+    try:
+        fig_tempo.add_trace(go.Bar(
+                x=df_date_year['Date'][df_date_year.Year >= selection_dates_input],
+                y=df_date_year['Compte_resampled'][df_date_year.Year >= selection_dates_input],
+                name='Dates',
+                marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))))
+    except:
+        pass
     fig_tempo.update_layout(title='Dates des fiches',
                 xaxis_title='Dates',
                 yaxis_title='Compte semestriel',
@@ -289,8 +295,10 @@ elif Repartition_spatiale:
     df_selected_year_coord_dropna1 = df_selected_year_coord.dropna(subset='lat')
     df_selected_year_coord_dropna2 = df_selected_year_coord_dropna1.dropna(subset='long')
     df_selected_map = df_selected_year_coord_dropna2[df_selected_year_coord_dropna2['lat']>40]
-    st.map(df_selected_map[df_selected_map.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
-    st.write('en cours de fabrication')
+    try:
+        st.map(df_selected_map[df_selected_map.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
+    except:
+        st.markdown("Désolé il n'y a pas de coordonnées à visualiser")
 
 elif Autres_champs:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
@@ -373,11 +381,30 @@ elif Autres_champs:
             Droits = st.checkbox(label='Droits / Licences', key='Droits',on_change=handle_button6_change)
 
     if Langues:
+        st.dataframe(df_selected_year)
         st.write('en cours de fabrication')
+
     elif Standards:
         st.write('en cours de fabrication')
+
     elif Formats:
+        df_selected_year_format = df_selected_year['Format'][df_selected_year.Year >= selection_dates_input]
+        cnt_format = df_selected_year_format.value_counts()[0:15]
+        somme_formats_vis = cnt_format.values.sum()
+        
+        fig_format = go.Figure()
+        fig_format.add_trace(go.Pie(labels=cnt_format.index.values, values=cnt_format.values))
+        fig_format.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig_format.update_layout(
+                title='Formats publiés',
+                xaxis_title='Compte',
+                yaxis_title='Formats',
+                width=1000,
+                height=1000)
+        st.plotly_chart(fig_format)
         st.write('en cours de fabrication')
+
     elif Orgas:
         st.write('en cours de fabrication')
     elif Contacts:
