@@ -16,6 +16,8 @@ def year(tableau):
     tableau_year = tableau.copy()
     tableau_year['Date'] = pd.to_datetime(tableau_year['Date'], format='mixed', utc=True)
     tableau_year.sort_values(by="Date", inplace=True)
+    tableau_year.reset_index(inplace=True)
+    tableau_year.drop(columns='index',inplace=True)
     for i in range(len(tableau_year)):
         try:
             y = datetime.date(tableau_year.loc[i,'Date']).year
@@ -25,3 +27,9 @@ def year(tableau):
             y = np.NAN
         tableau_year.loc[i,'Year']= y
     return tableau_year
+
+def coordonnees(tableau):
+    tableau_coord = tableau.copy()
+    tableau_coord['lat']=(tableau_coord['Latitude_Sud']+tableau_coord['Latitude_Nord'])/2
+    tableau_coord['long']=(tableau_coord['Longitude_Ouest']+tableau_coord['Longitude_Est'])/2
+    return tableau_coord

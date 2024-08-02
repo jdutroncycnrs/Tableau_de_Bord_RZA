@@ -5,7 +5,8 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year
+from preparation_tableau import prepa_date, year, coordonnees
+pd.options.mode.chained_assignment = None
 
 
 ########### TITRE DE L'ONGLET ######################################
@@ -20,6 +21,7 @@ st.set_page_config(
 )
 
 ############ PARAMETRES ############################################
+zoom = 4
 
 group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
 
@@ -127,12 +129,12 @@ with col2:
 
 if checkbox2:
     Selection_df = tableau[tableau['Mention'].isin(liste_OHMs)]
-    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
-    if len(selection_group)==0:
+    Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
+    if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention'].isin(selection_group)]
-    if len(selection_group)==0:
+        df_selected = Selection_df[Selection_df['Mention'].isin(Selection_group)]
+    if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
@@ -140,12 +142,12 @@ if checkbox2:
 elif checkbox1:
     
     Selection_df = tableau[tableau['Mention'].isin(liste_ZAs)]
-    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
-    if len(selection_group)==0:
+    Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
+    if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention'].isin(selection_group)]
-    if len(selection_group)==0:
+        df_selected = Selection_df[Selection_df['Mention'].isin(Selection_group)]
+    if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
@@ -159,19 +161,17 @@ else:
 df_selected_year = year(df_selected)
 
 df_selected_year_bis = df_selected_year.dropna(subset='Year')
-#start_year = int(min(df_selected_year_bis['Year'].values))
-#end_year = int(max(df_selected_year_bis['Year'].values))
-
 liste_years = set(df_selected_year_bis['Year'])
-start_year = int(min(liste_years))
-end_year = int(max(liste_years))
+start_year = int(min(liste_years))-1
+end_year = int(max(liste_years)) +1
 
 rule = '6ME'
 df_date = prepa_date(df_selected_year, rule=rule)
 df_date_year = year(df_date)
 
-##################### Choix d'une période #################################################################
+##################### PREPARATION COORDONNEES SPATIALES ####################################################
 
+df_selected_year_coord = coordonnees(df_selected_year)
 
 ###########################################################################################################
 with st.container(border=True):
@@ -286,6 +286,10 @@ elif Evolution_temporelle:
 
 elif Repartition_spatiale:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
+    df_selected_year_coord_dropna1 = df_selected_year_coord.dropna(subset='lat')
+    df_selected_year_coord_dropna2 = df_selected_year_coord_dropna1.dropna(subset='long')
+    df_selected_map = df_selected_year_coord_dropna2[df_selected_year_coord_dropna2['lat']>40]
+    st.map(df_selected_map[df_selected_map.Year >= selection_dates_input],latitude='lat',longitude='long',zoom=zoom,color='#FEBB5F')
     st.write('en cours de fabrication')
 
 elif Autres_champs:
@@ -389,4 +393,3 @@ elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     st.write('en cours de fabrication')
 
-st.dataframe(df_selected)
