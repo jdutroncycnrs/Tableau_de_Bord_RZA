@@ -172,10 +172,10 @@ df_date_year = year(df_date)
 
 ##################### Choix d'une période #################################################################
 
-selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year)
 
 ###########################################################################################################
 with st.container(border=True):
+    
 
     if 'Repartition_fiches' not in st.session_state:
         st.session_state.Repartition_fiches = False
@@ -256,6 +256,7 @@ with st.container(border=True):
 
 
 if Repartition_fiches:
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=True)
     Counts = df_selected_year['Mention'].value_counts()
     fig_counts = px.pie(values=Counts.values, 
                     names=Counts.index)
@@ -268,7 +269,7 @@ if Repartition_fiches:
     st.plotly_chart(fig_counts,use_container_width=True)
 
 elif Evolution_temporelle:
-    
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     fig_tempo = go.Figure()
     fig_tempo.add_trace(go.Bar(
             x=df_date_year['Date'][df_date_year.Year >= selection_dates_input],
@@ -284,9 +285,11 @@ elif Evolution_temporelle:
 
 
 elif Repartition_spatiale:
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     st.write('en cours de fabrication')
 
 elif Autres_champs:
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     with st.container(border=True):
         if 'Langues' not in st.session_state:
             st.session_state.Langues = False
@@ -379,9 +382,11 @@ elif Autres_champs:
         st.write('en cours de fabrication')
 
 elif Description:
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     st.write('en cours de fabrication')
 
 elif Analyse_FAIR:
+    selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     st.write('en cours de fabrication')
 
 st.dataframe(df_selected)
