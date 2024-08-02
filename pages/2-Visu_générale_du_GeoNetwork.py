@@ -1,7 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from datetime import datetime
 import plotly.express as px
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from preparation_tableau import prepa_date
+
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -123,26 +128,32 @@ with col2:
 if checkbox2:
     Selection_df = tableau[tableau['Mention'].isin(liste_OHMs)]
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
-    df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
+    if len(selection_group)==0:
+        df_selected = Selection_df
+    else:
+        df_selected = Selection_df[Selection_df['Mention'].isin(selection_group)]
     if len(selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
 elif checkbox1:
     
     Selection_df = tableau[tableau['Mention'].isin(liste_ZAs)]
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
-    df_groupe = Selection_df[Selection_df['Mention'].isin(selection_group)]
+    if len(selection_group)==0:
+        df_selected = Selection_df
+    else:
+        df_selected = Selection_df[Selection_df['Mention'].isin(selection_group)]
     if len(selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_groupe))
+        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
 else:
     Catalogues_counts = tableau['Mention'].value_counts()
-    Selection_df = tableau
-    st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
+    df_selected = tableau
+    st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
 ###########################################################################################################
 with st.container(border=True):
@@ -226,19 +237,27 @@ with st.container(border=True):
 
 
 if Repartition_fiches:
-    Counts = Selection_df['Mention'].value_counts()
-    fig = px.pie(values=Counts.values, 
+    Counts = df_selected['Mention'].value_counts()
+    fig_counts = px.pie(values=Counts.values, 
                     names=Counts.index)
-    fig.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+    fig_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                                 marker=dict(colors=colors, line=dict(color='#000000', width=2)))
-    fig.update_layout(
+    fig_counts.update_layout(
                     title='Répartition des fiches dans les catalogues',
                     width=500,
                     height=800)
-    st.plotly_chart(fig,use_container_width=True)
+    st.plotly_chart(fig_counts,use_container_width=True)
 
 elif Evolution_temporelle:
-    st.write('en cours de fabrication')
+    df_date = prepa_date(df_selected)
+    fig_tempo = go.Figure()
+    fig_tempo.add_trace(go.Bar(
+            x=df_date['Date'],
+            y=df_date['Compte_resampled'],
+            name='Dates',
+            marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))))
+    st.plotly_chart(fig_tempo, use_container_width=True)
+
 
 elif Repartition_spatiale:
     st.write('en cours de fabrication')
@@ -341,4 +360,4 @@ elif Description:
 elif Analyse_FAIR:
     st.write('en cours de fabrication')
 
-st.dataframe(Selection_df)
+st.dataframe(df_selected)

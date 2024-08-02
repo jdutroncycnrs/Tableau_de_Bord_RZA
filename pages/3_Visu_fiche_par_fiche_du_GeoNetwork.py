@@ -22,6 +22,7 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+####################################################################
 ############ PARAMETRES ############################################
 
 d = datetime.date.today()
@@ -43,8 +44,42 @@ couleur_subsubtitles = (150,0,150)
 taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)
+wch_colour_box = (250,250,220)
+wch_colour_font = (90,90,90)
+fontsize = 25
 
-liste_gr =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
+liste_ZAs = ['zaa', 
+             'zaaj', 
+             'zal',
+             'zaar',
+             'zabr',
+             'zabri', 
+             'zaeu',
+             'zapygar', 
+             'zam', 
+             'zas',
+             'zah',
+             'zatu',
+             'zata',
+             'zarg',
+             'zacam',
+             'zapvs',
+             'RZA', #RZA
+             ]
+
+liste_OHMs = ['OHM Littoral méditerranéen',
+              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
+              'OHM Bassin Minier de Provence',
+              'OHMi Pima County',
+              'OHMi Nunavik',
+              'OHMi Téssékéré',
+              'OHMi Estarreja',
+              'OHM Vallée du Rhône',
+              'OHM Pays de Bitche',
+              'OHM Littoral Caraïbe',
+              'DRIIHM']
+
+filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'ZAAJ','Zone Atelier Arc Jurassien' , 'ZAAJ - Arc Jurassien', 'Jura',
            'ZAAR','zaar', 'Zone Atelier Armorique','ZAAr - Armorique','ZAAr',
            'ZAEU','zaeu','Zone atelier environnementale urbaine','ZAEU - Environnementale Urbaine',
@@ -73,9 +108,12 @@ if len(fi)!=0:
     derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[40:-4]}"
     s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(0,150,0)'>{derniere_date_recup}</p>"
     st.markdown(s_derniere_date_recup ,unsafe_allow_html=True)
+    ############################## UUIDS ########################################
     uuids = pd.read_csv(fichier_uuids, index_col=[0])
 else:
     st.write('Il est nécessaire de mettre à jour la récupération des uuids')
+
+############## GROUPES ET TABLEAU GLOBAL #########################################
 
 group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
 tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
@@ -114,40 +152,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
 
 group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
 tableau['Mention'] = tableau['Mention'].map(dico)
-
-#group_['Groupe'].fillna('Aucun groupe', inplace=True)
-#group_.to_csv("pages/data/infos_MD/infos_groupes.csv")
-liste_ZAs = ['zaa', 
-             'zaaj', 
-             'zal',
-             'zaar',
-             'zabr',
-             'zabri', 
-             'zaeu',
-             'zapygar', 
-             'zam', 
-             'zas',
-             'zah',
-             'zatu',
-             'zata',
-             'zarg',
-             'zacam',
-             'zapvs',
-             'RZA', #RZA
-             ]
-
-liste_OHMs = ['OHM Littoral méditerranéen',
-              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
-              'OHM Bassin Minier de Provence',
-              'OHMi Pima County',
-              'OHMi Nunavik',
-              'OHMi Téssékéré',
-              'OHMi Estarreja',
-              'OHM Vallée du Rhône',
-              'OHM Pays de Bitche',
-              'OHM Littoral Caraïbe',
-              'DRIIHM']
-
+a=0
 
 ########### Choix OHM/RZA #############################################################
 ## Le choix est exclusif ##############################################################
@@ -189,11 +194,11 @@ elif checkbox2:
     selected_uuids_ = selected_uuids.reset_index(drop=True)
     st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
 else:
-    selected_uuids_ = uuids['uuid_cat_InDoRes']
+    selected_uuids_ = group_['Identifiant']
     st.sidebar.metric('NOMBRE FICHES VISUALISEES',len(selected_uuids_))
 
-
-########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ############################
+###############################################################################################
+########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ##########################################
 
 admin_pass = 'admin'
 admin_action = st.sidebar.text_input(label="Pour l'administrateur")
@@ -225,7 +230,8 @@ if admin_action == admin_pass:
                 uuids_cleaning(d)
                 st.experimental_rerun()
 
-########## TITRE DE LA PAGE ############################################
+##################################################################################################
+########## TITRE DE LA PAGE ######################################################################
 title = "Visualisation des fiches GN"
 s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
 st.markdown(s_title,unsafe_allow_html=True)
@@ -267,6 +273,7 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
 
+##################################################################################################
 ########## RECUP EVENTUELLE DE L'ENSEMBLE DES FICHES ############################################
 
 if admin_action == admin_pass:
@@ -351,11 +358,9 @@ if admin_action == admin_pass:
                     except:
                         pass
 
-########## VISUALISATION DU GROUPE ############################################
-
-wch_colour_box = (250,250,220)
-wch_colour_font = (90,90,90)
-fontsize = 25
+##################################################################################################
+########## VISUALISATION DU GROUPE ###############################################################
+a= 1
 try:
     groupe = group_['Groupe'][group_.Identifiant==identifieur].values[0]
 except:
@@ -404,7 +409,8 @@ with col2:
                                         margin-top: 0;'>{mention}</style></span></p>"""
     st.markdown(lnk + htmlstr2, unsafe_allow_html=True)
 
-########## CONNEXION AU GEONETWORK ############################################
+##################################################################################################
+########## CONNEXION AU GEONETWORK ###############################################################
 
 try:
     if 'oai:search-data.ubfc.fr:' in identifieur:
@@ -491,8 +497,7 @@ else:
     df_infos.drop(columns='index',inplace=True)
     df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
 
-      
-
+##################################################################################################
 ################ TRAITEMENT DU JSON #############################################################
 try:
     if 'oai:search-data.ubfc.fr:' in identifieur:
@@ -540,7 +545,9 @@ except:
     F1c = couleur_False
     A2 = False
     A2c = couleur_False
-#########  VARIABLES ########################################################
+
+##################################################################################################
+#########  VARIABLES RECUPEREES POUR AFFICHAGE ###################################################
 
 if "zaaj_" in identifieur:
     try:
@@ -877,7 +884,7 @@ for k in Keywords:
     Titre_Keywords.append(k)
 
 for s in Titre_Keywords:
-    if s in liste_gr:
+    if s in filtre_mention:
         groupe2 = s
     else:
         pass
@@ -957,7 +964,8 @@ try:
 except:
     Scope = ""
 
-######### EVALUATION #######################################################
+##################################################################################################
+######### VARIABLES EVALUATION FAIR ##############################################################
 
 if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0 and len(Email)!=0:
     F2 = True
@@ -1037,7 +1045,8 @@ else:
 R3 = False
 R3c = couleur_False
 
-######### VISUALISATION #######################################################
+##################################################################################################
+######### VISUALISATION DE LA FICHE ###############################################################
 if 'Recherche' not in st.session_state:
     st.session_state.Recherche = False
 if 'Visu_attachments' not in st.session_state:
@@ -1071,9 +1080,9 @@ col1,col2,col3 = st.columns(3)
 with col1:
     Recherche = st.checkbox(label='Faire une recherche spécifique', key='Recherche',on_change=handle_button1_change)
 with col2:
-    Visu_attachments = st.checkbox(label='Attachments', key='Visu_attachments',on_change=handle_button2_change)
+    Visu_attachments = st.checkbox(label='Fichiers attachés', key='Visu_attachments',on_change=handle_button2_change)
 with col3:
-    Ressources_associees = st.checkbox(label='Ressources_associees', key='Ressources_associees',on_change=handle_button3_change)
+    Ressources_associees = st.checkbox(label='Ressources associées', key='Ressources_associees',on_change=handle_button3_change)
 
 
 if Recherche:
@@ -1487,7 +1496,8 @@ liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date
 
 df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
 
-########################### RECUPERATION DES MENTIONS ###################################################
+##################################################################################################
+########################### RECUPERATION DES MENTIONS ############################################
 
 if admin_action == admin_pass:
     Recup_mentions = st.sidebar.button('recup des mentions')
@@ -1537,7 +1547,7 @@ if admin_action == admin_pass:
                         Titre_Keywords.append(k)
 
                     for s in Titre_Keywords:
-                        if s in liste_gr:
+                        if s in filtre_mention:
                             groupe2 = s
                         else:
                             pass        
@@ -1555,11 +1565,9 @@ if admin_action == admin_pass:
                     group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
             group_2.to_csv("pages/data/infos_MD/infos_groupes_mentions.csv")
 
+##################################################################################################
 ####################### VISUALISATION FAIR ####################################################
-
-
-lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-
+a=0
 col0,col1,col2,col3, col4 = st.sidebar.columns([0.1,0.22,0.22,0.22,0.22])
 with col0:
     st.markdown("F")
@@ -1780,6 +1788,7 @@ with col3:
                                     margin-top: 0;'>{""}</style></span></p>"""
     st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
+##################################################################################################
 ############### RECUPERATION GLOBALE ################################################
 
 if admin_action == admin_pass:
