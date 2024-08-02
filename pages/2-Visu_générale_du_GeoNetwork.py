@@ -5,7 +5,7 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date
+from preparation_tableau import prepa_date, year
 
 
 ########### TITRE DE L'ONGLET ######################################
@@ -155,6 +155,25 @@ else:
     df_selected = tableau
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
+##################### PREPARATION DATES ###################################################################
+df_selected_year = year(df_selected)
+
+df_selected_year_bis = df_selected_year.dropna(subset='Year')
+#start_year = int(min(df_selected_year_bis['Year'].values))
+#end_year = int(max(df_selected_year_bis['Year'].values))
+
+liste_years = set(df_selected_year_bis['Year'])
+start_year = int(min(liste_years))
+end_year = int(max(liste_years))
+
+rule = '6ME'
+df_date = prepa_date(df_selected_year, rule=rule)
+df_date_year = year(df_date)
+
+##################### Choix d'une période #################################################################
+
+selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year)
+
 ###########################################################################################################
 with st.container(border=True):
 
@@ -237,7 +256,7 @@ with st.container(border=True):
 
 
 if Repartition_fiches:
-    Counts = df_selected['Mention'].value_counts()
+    Counts = df_selected_year['Mention'].value_counts()
     fig_counts = px.pie(values=Counts.values, 
                     names=Counts.index)
     fig_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
@@ -249,13 +268,18 @@ if Repartition_fiches:
     st.plotly_chart(fig_counts,use_container_width=True)
 
 elif Evolution_temporelle:
-    df_date = prepa_date(df_selected)
+    
     fig_tempo = go.Figure()
     fig_tempo.add_trace(go.Bar(
-            x=df_date['Date'],
-            y=df_date['Compte_resampled'],
+            x=df_date_year['Date'][df_date_year.Year >= selection_dates_input],
+            y=df_date_year['Compte_resampled'][df_date_year.Year >= selection_dates_input],
             name='Dates',
             marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))))
+    fig_tempo.update_layout(title='Dates des fiches',
+                xaxis_title='Dates',
+                yaxis_title='Compte semestriel',
+                width=500,
+                height=500)
     st.plotly_chart(fig_tempo, use_container_width=True)
 
 
