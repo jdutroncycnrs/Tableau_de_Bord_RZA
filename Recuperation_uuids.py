@@ -38,14 +38,12 @@ def scraping_GN(date):
         with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt","w") as file:
             file.write(current_url)
 
-        m = True
 
     except Exception as e:
         print(f"Exception occurred: {e}")
-        m = False
 
     driver.quit()
-    return m
+
 
 def recup_group(uuid):
     chrome_options = Options()

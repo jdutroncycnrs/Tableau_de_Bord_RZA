@@ -128,12 +128,12 @@ with col2:
 
 
 if checkbox2:
-    Selection_df = tableau[tableau['Mention'].isin(liste_OHMs)]
+    Selection_df = tableau[tableau['Mention du groupe'].isin(liste_OHMs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['Mention du groupe'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
@@ -141,19 +141,19 @@ if checkbox2:
 
 elif checkbox1:
     
-    Selection_df = tableau[tableau['Mention'].isin(liste_ZAs)]
+    Selection_df = tableau[tableau['Mention du groupe'].isin(liste_ZAs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['Mention du groupe'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
 else:
-    Catalogues_counts = tableau['Mention'].value_counts()
+    Catalogues_counts = tableau['Mention du groupe'].value_counts()
     df_selected = tableau
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
