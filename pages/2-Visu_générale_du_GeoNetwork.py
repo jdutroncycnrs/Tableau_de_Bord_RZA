@@ -381,11 +381,34 @@ elif Autres_champs:
             Droits = st.checkbox(label='Droits / Licences', key='Droits',on_change=handle_button6_change)
 
     if Langues:
-        st.dataframe(df_selected_year)
-        st.write('en cours de fabrication')
+        df_selected_year_Langue = df_selected_year['Langue'][df_selected_year.Year >= selection_dates_input]
+        cnt_langue = df_selected_year_Langue.value_counts()
+        fig_langue = go.Figure()
+        fig_langue.add_trace(go.Pie(labels=cnt_langue.index.values, values=cnt_langue.values))
+        fig_langue.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig_langue.update_layout(
+                title='Langues utilisées',
+                xaxis_title='Compte',
+                yaxis_title='langues',
+                width=1000,
+                height=1000)
+        st.plotly_chart(fig_langue)
 
     elif Standards:
-        st.write('en cours de fabrication')
+        df_selected_year_Standard = df_selected_year['Standard'][df_selected_year.Year >= selection_dates_input]
+        cnt_standard = df_selected_year_Standard.value_counts()
+        fig_standard = go.Figure()
+        fig_standard.add_trace(go.Pie(labels=cnt_standard.index.values, values=cnt_standard.values))
+        fig_standard.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig_standard.update_layout(
+                title='Standards utilisés',
+                xaxis_title='Compte',
+                yaxis_title='Standards',
+                width=1000,
+                height=1000)
+        st.plotly_chart(fig_standard)
 
     elif Formats:
         df_selected_year_format = df_selected_year['Format'][df_selected_year.Year >= selection_dates_input]
@@ -406,11 +429,49 @@ elif Autres_champs:
         st.write('en cours de fabrication')
 
     elif Orgas:
-        st.write('en cours de fabrication')
+        df_selected_year_orga = df_selected_year['Orga_contact'][df_selected_year.Year >= selection_dates_input]
+        cnt_orga = df_selected_year_orga.value_counts()[0:10]
+        somme_orga_vis = cnt_orga.values.sum()
+            
+        fig_orga = go.Figure()
+        for i in range(10):
+            cnt_orga_ = df_selected_year_orga.value_counts()[i:i+1]
+            fig_orga.add_trace(go.Bar(
+                        y=cnt_orga_.index.values,
+                        x=cnt_orga_.values,
+                        orientation='h',
+                        showlegend=False,
+                        marker=dict(color=colors[i])
+                        ))
+        fig_orga.update_layout(
+                title='Organisations publiantes',
+                xaxis_title='Compte',
+                width=500,
+                height=500)
+        st.plotly_chart(fig_orga)
+
+
     elif Contacts:
+        st.dataframe(df_selected_year)
         st.write('en cours de fabrication')
+
     elif Droits:
-        st.write('en cours de fabrication')
+        df_selected_year_droits = df_selected_year['Contrainte_usage'][df_selected_year.Year >= selection_dates_input]
+        cnt_droits = df_selected_year_droits.value_counts()[0:15]
+        somme_droits_vis = cnt_droits.values.sum()
+        
+        fig_droits = go.Figure()
+        fig_droits.add_trace(go.Pie(labels=cnt_droits.index.values, values=cnt_droits.values))
+        fig_droits.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        fig_droits.update_layout(
+                title='Droits à usage',
+                xaxis_title='Compte',
+                yaxis_title='Droits',
+                width=1000,
+                height=1000)
+        st.plotly_chart(fig_droits)
+
 
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
