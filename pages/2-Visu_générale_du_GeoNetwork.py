@@ -414,19 +414,23 @@ elif Autres_champs:
         df_selected_year_format = df_selected_year['Format'][df_selected_year.Year >= selection_dates_input]
         cnt_format = df_selected_year_format.value_counts()[0:15]
         somme_formats_vis = cnt_format.values.sum()
-        
+
         fig_format = go.Figure()
-        fig_format.add_trace(go.Pie(labels=cnt_format.index.values, values=cnt_format.values))
-        fig_format.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
-                    marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+        for i in range(10):
+            cnt_orga_ = df_selected_year_format.value_counts()[i:i+1]
+            fig_format.add_trace(go.Bar(
+                        y=cnt_orga_.index.values,
+                        x=cnt_orga_.values,
+                        orientation='h',
+                        showlegend=False,
+                        marker=dict(color=colors[i])
+                        ))
         fig_format.update_layout(
-                title='Formats publiés',
+                title='Formats publiantes',
                 xaxis_title='Compte',
-                yaxis_title='Formats',
-                width=1000,
-                height=1000)
+                width=500,
+                height=500)
         st.plotly_chart(fig_format)
-        st.write('en cours de fabrication')
 
     elif Orgas:
         df_selected_year_orga = df_selected_year['Orga_contact'][df_selected_year.Year >= selection_dates_input]
@@ -452,7 +456,8 @@ elif Autres_champs:
 
 
     elif Contacts:
-        st.dataframe(df_selected_year)
+        
+        
         st.write('en cours de fabrication')
 
     elif Droits:
@@ -475,9 +480,30 @@ elif Autres_champs:
 
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
+    themes = df_selected_year.Themes
+    for i in range(len(themes)):
+        themes.loc[i]=themes.loc[i][1:-1].split(',')
+    st.dataframe(themes.value_counts())
     st.write('en cours de fabrication')
 
 elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
-    st.write('en cours de fabrication')
+    liste_columns = ['F2','A1','I1','I2','R1','R2']
+    data_numbers = df_selected_year[liste_columns][df_selected_year.Year >= selection_dates_input]
+    data_numbers.replace({True:1,False:0},inplace=True)
+    fig7 = go.Figure()
+    fig7.add_trace(go.Heatmap(
+            x=liste_columns,
+            z=data_numbers,
+            colorscale = 'Temps', #'rdylgn'
+            showscale=False
+            #text=data_numbers,
+            #texttemplate="%{text}",
+            #textfont={"size":20}
+            ))
+    fig7.update_layout(
+            title='Matrice FAIR',
+            width=1000,
+            height=1000)
+    st.plotly_chart(fig7,use_container_width=True)
 

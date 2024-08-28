@@ -1680,7 +1680,7 @@ if admin_action == admin_pass:
         with st.spinner("La récup globale est en cours"):
             liste_columns_df = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact',
                                 'Position_contact','Longitude_Ouest','Longitude_Est','Latitude_Sud','Latitude_Nord','Titre',
-                                'Thesaurus','Themes','Mots_clés','Limite_usage','Contrainte_usage','Format','URL','F2','A1','I1','I2','R1','R2','Groupe','Mention']
+                                'Thesaurus','Themes','Mots_clés','Limite_usage','Contrainte_usage','Format','URL','F2','A1','I1','I2','R1','R2','Groupe_et_Mention']
             df_global = pd.DataFrame(columns=liste_columns_df)
             for i in range(len(df_infos)):
                 print(i)
