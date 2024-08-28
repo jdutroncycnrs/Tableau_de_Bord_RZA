@@ -61,7 +61,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
         'zabr':'zabr'}
 
 group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
-tableau['Mention'] = tableau['Mention'].map(dico)
+tableau['Groupe_et_Mention'] = tableau['Groupe_et_Mention'].map(dico)
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 
@@ -128,12 +128,12 @@ with col2:
 
 
 if checkbox2:
-    Selection_df = tableau[tableau['Mention du groupe'].isin(liste_OHMs)]
+    Selection_df = tableau[tableau['Groupe_et_Mention'].isin(liste_OHMs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention du groupe'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
@@ -141,19 +141,19 @@ if checkbox2:
 
 elif checkbox1:
     
-    Selection_df = tableau[tableau['Mention du groupe'].isin(liste_ZAs)]
+    Selection_df = tableau[tableau['Groupe_et_Mention'].isin(liste_ZAs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Mention du groupe'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
     else:
         st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
 else:
-    Catalogues_counts = tableau['Mention du groupe'].value_counts()
+    Catalogues_counts = tableau['Groupe_et_Mention'].value_counts()
     df_selected = tableau
     st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
 
@@ -260,7 +260,7 @@ with st.container(border=True):
 
 if Repartition_fiches:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=True)
-    Counts = df_selected_year['Mention'].value_counts()
+    Counts = df_selected_year['Groupe_et_Mention'].value_counts()
     fig_counts = px.pie(values=Counts.values, 
                     names=Counts.index)
     fig_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,

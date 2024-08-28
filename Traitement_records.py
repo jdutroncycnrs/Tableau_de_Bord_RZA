@@ -18,7 +18,7 @@ def transcript_json(json_data, file, prefix=""):
         #print(f"{prefix}: {json_data}" if prefix else f"{json_data}")
         file.write(f"{prefix}:§{json_data}µ" if prefix else f"{json_data}µ")
 
-def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, couleur_False, group_mentions, filtre_mention):
+def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, couleur_False, df_infos, filtre_mention):
     try:
         if 'oai:search-data.ubfc.fr:' in identifieur:
             identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
@@ -456,14 +456,14 @@ def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, coule
         for i in range(len(Mots_cles)):
             Keywords.append(Mots_cles[i][1])
 
-    groupe2 = 'Aucune mention'
+    mention = 'Aucune mention'
     Titre_Keywords = Titre.split()
     for k in Keywords:
         Titre_Keywords.append(k)
 
     for s in Titre_Keywords:
         if s in filtre_mention:
-            groupe2 = s
+            mention = s
         else:
             pass
 
@@ -545,25 +545,26 @@ def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, coule
     if 'zaaj_' in identifieur:
         identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
         try:
-            groupe = group_mentions['Groupe'][group_mentions.Identifiant==identifieur].values[0]
+            groupe = df_infos['Groupe'][df_infos.Identifiant==identifieur].values[0]
         except:
             groupe = ""
-
-        try:
-            mention = group_mentions['Mention'][group_mentions.Identifiant==identifieur].values[0]
-        except:
-            mention = ""
         identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
     else:
         try:
-            groupe = group_mentions['Groupe'][group_mentions.Identifiant==identifieur].values[0]
+            groupe = df_infos['Groupe'][df_infos.Identifiant==identifieur].values[0]
         except:
             groupe = ""
 
-        try:
-            mention = group_mentions['Mention'][group_mentions.Identifiant==identifieur].values[0]
-        except:
-            mention = ""
+    groupe_et_mention = ''
+    try:
+        if groupe == "Aucun groupe" and mention != "Aucune mention":
+            groupe_et_mention = mention
+        elif groupe != "Aucun groupe":
+            groupe_et_mention = groupe
+        elif groupe == "Aucun groupe" and mention == "Aucune mention":
+            groupe_et_mention = "pas d'infos"
+    except:
+        pass
 
     if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0 and len(Email)!=0:
         F2 = True
@@ -649,12 +650,12 @@ def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, coule
                    FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
                    UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
                    Format, Online_links, Online_protocols, Online_description, Online_nom,
-                   Niveau, Conformite, Genealogie, Scope, groupe, groupe2, Thesaurus, Themes, Keywords, 
+                   Niveau, Conformite, Genealogie, Scope, groupe, mention, Thesaurus, Themes, Keywords, 
                    F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
 
     liste_variables2 = [identifieur, Langue, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
                         Position_contact,westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude,Titre,
-                        Thesaurus,Themes, Keywords, UseLimitation, UseContrainte, Format,Online_links, F2, A1,I1,I2,R1,R2,groupe2]  
+                        Thesaurus,Themes, Keywords, UseLimitation, UseContrainte, Format,Online_links, F2, A1,I1,I2,R1,R2,groupe_et_mention]  
 
     liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
                     'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
@@ -667,9 +668,9 @@ def recup_fiche(url, identifieur, headers_json, headers_xml, couleur_True, coule
     
     liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact',
                          'Position_contact','Longitude_Ouest','Longitude_Est','Latitude_Sud','Latitude_Nord','Titre',
-                         'Thesaurus','Themes','Mots_clés','Limite_usage','Contrainte_usage','Format','URL','F2','A1','I1','I2','R1','R2','Mention']
+                         'Thesaurus','Themes','Mots_clés','Limite_usage','Contrainte_usage','Format','URL','F2','A1','I1','I2','R1','R2','Groupe_et_Mention']
 
 
     df_variables_evaluation = pd.DataFrame(data=[liste_variables2],columns=liste_columns_df2)
 
-    return df_variables_evaluation
+    return df_variables_evaluation, mention, groupe_et_mention

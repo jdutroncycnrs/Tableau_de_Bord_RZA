@@ -9,9 +9,11 @@ import numpy as np
 import plotly.express as px
 import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group
-from Traitement_records import transcript_json
+from Traitement_records import transcript_json, recup_fiche
 
-########### TITRE DE L'ONGLET ######################################
+###############################################################################
+########### TITRE ET CONFIG  DE L'ONGLET ######################################
+###############################################################################
 st.set_page_config(
     page_title="Analyse des fiches de métadonnées du GeoNetwork",
     page_icon="👋",
@@ -22,22 +24,24 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
-####################################################################
-############ PARAMETRES ############################################
+###############################################################################
+############ PARAMETRES INSTANCIES #######################################################
+###############################################################################
 
+# Date du jour
 d = datetime.date.today()
-
+# url du geonetwork
 url = "https://cat.indores.fr/geonetwork/srv/api/records/"
 
+# Accès au geonetwork
 headers_json = {"accept":"application/json",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
-
 headers_xml = {"accept":"application/xml",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
-
 headers_text = {"accept":"text/plain",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
 
+# Paramètres visuels
 couleur_subtitles = (250,100,0)
 taille_subtitles = "25px"
 couleur_subsubtitles = (150,0,150)
@@ -48,6 +52,7 @@ wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 25
 
+# Listes
 liste_ZAs = ['zaa', 
              'zaaj', 
              'zal',
@@ -64,7 +69,7 @@ liste_ZAs = ['zaa',
              'zarg',
              'zacam',
              'zapvs',
-             'RZA', #RZA
+             'RZA',
              ]
 
 liste_OHMs = ['OHM Littoral méditerranéen',
@@ -99,24 +104,6 @@ filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'OHMi Téssékéré', 'OHM Vallée du Rhône','OHMi Estarreja','OHM Pyrénées - haut Vicdessos', 
            'OHM Littoral méditerranéen', 'OHMi Pima County', 'OHM Littoral Caraïbe']
 
-############## RECUPERATION DES IDENTIFIANTS EXISTANTS #########################
-
-fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
-
-if len(fi)!=0:
-    fichier_uuids = fi[-1]
-    derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[40:-4]}"
-    s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(0,150,0)'>{derniere_date_recup}</p>"
-    st.markdown(s_derniere_date_recup ,unsafe_allow_html=True)
-    ############################## UUIDS ########################################
-    uuids = pd.read_csv(fichier_uuids, index_col=[0])
-else:
-    st.write('Il est nécessaire de mettre à jour la récupération des uuids')
-
-############## GROUPES ET TABLEAU GLOBAL #########################################
-
-group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
-tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
 dico = {'ZABrI - Brest Iroise':'zabri', 
         'Pas de fichier':'Aucun groupe et aucune mention', 
         'OHM Pyrénées - haut Vicdessos':'OHM Pyrénées - haut Vicdessos', 
@@ -150,12 +137,44 @@ dico = {'ZABrI - Brest Iroise':'zabri',
         'zaa':'zaa', 
         'zabr':'zabr'}
 
-group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
-tableau['Mention'] = tableau['Mention'].map(dico)
-a=0
+###############################################################################################
+############## RECUPERATION DES IDENTIFIANTS EXISTANTS ########################################
 
-########### Choix OHM/RZA #############################################################
-## Le choix est exclusif ##############################################################
+# Besoin de récupérer l'ensemble des identifiants
+
+# On scanne pour savoir si un fichier existe
+fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
+
+# Si oui, on récupère le dernier enregistré ; si non, on récupère les identifiants à la date donnée
+if len(fi)!=0:
+    fichier_uuids = fi[-1]
+    derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[40:-4]}"
+    s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(0,150,0)'>{derniere_date_recup}</p>"
+    st.markdown(s_derniere_date_recup ,unsafe_allow_html=True)
+    ############################## UUIDS ########################################
+    uuids = pd.read_csv(fichier_uuids, index_col=[0])
+else:
+    with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
+        try:
+            scraping_GN(d)
+            uuids_cleaning(d)
+            st.experimental_rerun()
+        except:
+            st.write('Il est impossible de récupérer les identifiants') 
+        
+
+#######################################################################################################
+############## MAPPING GROUPES ET TABLEAU GLOBAL ######################################################
+
+group_mentions = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
+tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
+
+group_mentions['Groupe_et_Mention'] = group_mentions['Groupe_et_Mention'].map(dico)
+tableau['Groupe_et_Mention'] = tableau['Groupe_et_Mention'].map(dico)
+
+##################### SELECTION ########################################################################
+########### Choix OHM/RZA ##############################################################################
+## Le choix est exclusif ###############################################################################
 if 'checkbox1' not in st.session_state:
     st.session_state.checkbox1 = False
 if 'checkbox2' not in st.session_state:
@@ -182,53 +201,20 @@ with col2:
 if checkbox1:
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
     if len(selection_group)==0:
-        selection_group = ['Groupe exemple']
-    selected_uuids = group_['Identifiant'][group_['Groupe_et_Mention'].isin(selection_group)]
+        selection_group = liste_ZAs 
+    selected_uuids = group_mentions['Identifiant'][group_mentions['Groupe_et_Mention'].isin(selection_group)]
     selected_uuids_ = selected_uuids.reset_index(drop=True)
     st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
 elif checkbox2:
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
     if len(selection_group)==0:
-        selection_group = ['Groupe exemple']
-    selected_uuids = group_['Identifiant'][group_['Groupe_et_Mention'].isin(selection_group)]
+        selection_group = liste_OHMs
+    selected_uuids = group_mentions['Identifiant'][group_mentions['Groupe_et_Mention'].isin(selection_group)]
     selected_uuids_ = selected_uuids.reset_index(drop=True)
     st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
 else:
-    selected_uuids_ = group_['Identifiant']
+    selected_uuids_ = group_mentions['Identifiant']
     st.sidebar.metric('NOMBRE FICHES VISUALISEES',len(selected_uuids_))
-
-###############################################################################################
-########### RECUPERATION DES IDENTIFIANTS VIA BOUTON ##########################################
-
-admin_pass = 'admin'
-admin_action = st.sidebar.text_input(label="Pour l'administrateur")
-
-if admin_action == admin_pass:
-        Recup_groupes = st.sidebar.button('recup des groupes')
-        if Recup_groupes:
-            with st.spinner("La récup des groupes est en cours"):
-                groupes = []
-                liste_u = []
-                for i in range(len(uuids)):
-                    u = uuids.loc[i,'uuid_cat_InDoRes']
-                    try:
-                        g = recup_group(uuid=u)
-                        groupes.append(g)
-                        liste_u.append(u)
-                    except:
-                        g = ""
-                        groupes.append(g)
-                        liste_u.append(u)
-
-                df_group = pd.DataFrame({'Identifiant':liste_u, 'Groupe':groupes})
-                df_group.to_csv("pages/data/infos_MD/infos_groupes.csv")
-
-        RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
-        if RecupIdentifiants:
-            with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
-                m = scraping_GN(d)   
-                uuids_cleaning(d)
-                st.experimental_rerun()
 
 ##################################################################################################
 ########## TITRE DE LA PAGE ######################################################################
@@ -273,141 +259,6 @@ with st.container(border=True):
     if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
 
-##################################################################################################
-########## RECUP EVENTUELLE DE L'ENSEMBLE DES FICHES ############################################
-
-if admin_action == admin_pass:
-        RecupAllFiches = st.sidebar.button("Récupération de toutes les fiches")
-        if RecupAllFiches:
-            with st.spinner("Récup de l'ensemble des fiches en cours"):
-                alluuids = uuids['uuid_cat_InDoRes']
-                for i in range(len(alluuids)):
-                    print(i)
-                    try:
-                        df = pd.read_csv(f'pages/data/fiches_csv/{alluuids[i]}.csv',index_col=[0])
-                    except:
-                        url_ = url + alluuids[i]
-                        resp1 = requests.get(url_,headers=headers_json)
-                        if resp1.status_code == 200:
-                            resp_json=resp1.json()
-                            try:
-                                with open(f"pages/data/fiches_json/{alluuids[i]}.json", "w") as f:
-                                    json.dump(resp_json, f, indent=4)
-                            except:
-                                pass
-                        resp2 = requests.get(url_,headers=headers_xml)
-                        if resp2.status_code == 200:
-                            xml_content = resp2.text
-                            try:
-                                with open(f"pages/data/fiches_xml/{alluuids[i]}.xml", 'w') as file:
-                                    file.write(xml_content)
-                            except:
-                                pass
-
-                        url_asso = url + alluuids[i] +"/associated?rows=100"
-                        resp_asso = requests.get(url_asso,headers=headers_json)
-                        if resp_asso.status_code == 200:
-                            resp_asso_json=resp_asso.json()
-                            try:
-                                with open(f"pages/data/associated_resources/resource_{alluuids[i]}.json", "w") as f:
-                                    json.dump(resp_asso_json, f, indent=4)
-                            except:
-                                pass
-
-                        url_attach = url + alluuids[i] +"/attachments"
-                        resp_attach = requests.get(url_attach,headers=headers_json)
-                        if resp_attach.status_code == 200:
-                            resp_attach_json=resp_attach.json()
-                            try:
-                                with open(f"pages/data/attachments/attachments_{alluuids[i]}.json", "w") as f:
-                                    json.dump(resp_attach_json, f, indent=4)
-                            except:
-                                pass
-                    try:
-                        with open(f"pages/data/fiches_json/{alluuids[i]}.json", 'r') as f:
-                            data = json.load(f)
-
-                        with open(f'pages/data/fiches_txt/{alluuids[i]}.txt', 'w') as file:
-                            transcript_json(data, file)
-
-                        with open(f'pages/data/fiches_txt/{alluuids[i]}.txt', 'r') as f:
-                            d = f.read()
-
-                        listi = re.split('µ',d)
-
-                        df = pd.DataFrame(listi, columns=['Results'])
-                        for u in range(len(df)):
-                            p = re.split('§',df.loc[u,'Results'])
-                            try:
-                                df.loc[u,'Valeurs']=p[1]
-                            except:
-                                pass
-                            try:
-                                df.loc[u,'Clés']=p[0].replace('.','£')
-                            except:
-                                pass
-
-                        for j in range(len(df)):
-                            pp = re.split('£',df.loc[j,'Clés'])
-                            for k in range(15):
-                                try:
-                                    df.loc[j,f'K{k}']=pp[k]
-                                except:
-                                    pass
-                        df.to_csv(f'pages/data/fiches_csv/{alluuids[i]}.csv')
-                    except:
-                        pass
-
-##################################################################################################
-########## VISUALISATION DU GROUPE ###############################################################
-a= 1
-try:
-    groupe = group_['Groupe'][group_.Identifiant==identifieur].values[0]
-except:
-    groupe = ""
-
-try:
-    mention = group_['Mention'][group_.Identifiant==identifieur].values[0]
-except:
-    mention = ""
-
-lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
-
-col1,col2 = st.sidebar.columns(2)
-with col1:
-    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
-                                                            {wch_colour_box[1]}, 
-                                                            {wch_colour_box[2]}, 0.75); 
-                                        color: rgb({wch_colour_font[0]}, 
-                                                {wch_colour_font[1]}, 
-                                                {wch_colour_font[2]}, 0.75); 
-                                        font-size: {fontsize}px; 
-                                        border-radius: 7px; 
-                                        padding-left: 12px; 
-                                        padding-top: 10px; 
-                                        padding-bottom: 10px; 
-                                        line-height:5px;
-                                        text-align:center'>
-                                        </style><BR><span style='font-size: 15px; 
-                                        margin-top: 0;'>{groupe}</style></span></p>"""
-    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
-with col2:
-    htmlstr2 = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
-                                                            {wch_colour_box[1]}, 
-                                                            {wch_colour_box[2]}, 0.75); 
-                                        color: rgb({wch_colour_font[0]}, 
-                                                {wch_colour_font[1]}, 
-                                                {wch_colour_font[2]}, 0.75); 
-                                        font-size: {fontsize}px; 
-                                        border-radius: 7px; 
-                                        padding-left: 12px; 
-                                        padding-top: 10px; 
-                                        padding-bottom: 10px; 
-                                        line-height:5px;
-                                        text-align:center'>
-                                        </style><BR><span style='font-size: 15px; 
-                                        margin-top: 0;'>{mention}</style></span></p>"""
-    st.markdown(lnk + htmlstr2, unsafe_allow_html=True)
 
 ##################################################################################################
 ########## CONNEXION AU GEONETWORK ###############################################################
@@ -453,7 +304,7 @@ except:
         except:
             pass
 
-    url_asso = url + identifieur +"/associated?rows=100"
+    url_asso = url_ +"/associated?rows=100"
     resp_asso = requests.get(url_asso,headers=headers_json)
     if resp_asso.status_code == 200:
         resp_asso_json=resp_asso.json()
@@ -463,7 +314,7 @@ except:
         except:
             pass
 
-    url_attach = url + identifieur +"/attachments"
+    url_attach = url_ +"/attachments"
     resp_attach = requests.get(url_attach,headers=headers_json)
     if resp_attach.status_code == 200:
         resp_attach_json=resp_attach.json()
@@ -472,7 +323,10 @@ except:
                 json.dump(resp_attach_json, f, indent=4)
         except:
             pass
-    
+
+#######################################################################################################
+############## VERIFICATION GROUPES ###################################################################
+
 try:
     df_infos = pd.read_csv("pages/data/infos_MD/infos_groupes.csv",index_col=[0])
 except:
@@ -496,6 +350,7 @@ else:
     df_infos.reset_index(inplace=True)
     df_infos.drop(columns='index',inplace=True)
     df_infos.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
 
 ##################################################################################################
 ################ TRAITEMENT DU JSON #############################################################
@@ -878,14 +733,14 @@ else:
     for i in range(len(Mots_cles)):
         Keywords.append(Mots_cles[i][1])
 
-groupe2 = 'Aucune mention'
+mention = 'Aucune mention'
 Titre_Keywords = Titre.split()
 for k in Keywords:
     Titre_Keywords.append(k)
 
 for s in Titre_Keywords:
     if s in filtre_mention:
-        groupe2 = s
+        mention = s
     else:
         pass
 
@@ -963,6 +818,20 @@ try:
     Scope = df['Valeurs'][df['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:scope£gmd:DQ_Scope£gmd:levelDescription£gmd:MD_ScopeDescription£gmd:attributes£#text:"].values[0]
 except:
     Scope = ""
+
+if 'zaaj_' in identifieur:
+    identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
+    try:
+        groupe = group_mentions['Groupe'][group_mentions.Identifiant==identifieur].values[0]
+    except:
+        groupe = ""
+
+    identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
+else:
+    try:
+        groupe = group_mentions['Groupe'][group_mentions.Identifiant==identifieur].values[0]
+    except:
+        groupe = ""
 
 ##################################################################################################
 ######### VARIABLES EVALUATION FAIR ##############################################################
@@ -1044,6 +913,30 @@ else:
 
 R3 = False
 R3c = couleur_False
+
+# INFORMATIONS DE LA FICHE INDIVIDUELLE ################################################################
+
+liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
+                   Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
+                   westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude, Titre,
+                   FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
+                   UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
+                   Format, Online_links, Online_protocols, Online_description, Online_nom,
+                   Niveau, Conformite, Genealogie, Scope, groupe, mention, Thesaurus, Themes, Keywords, 
+                   F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
+
+
+liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
+                    'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
+                    'Longitude ouest', 'Longitude est', 'Latitude sud', 'Latitude nord', 'Titre',
+                    'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
+                    'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
+                    'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
+                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé','Mention', 'Thesaurus', 'Thèmes', 'Mots Clés',
+                    'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
+
+
+df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
 
 ##################################################################################################
 ######### VISUALISATION DE LA FICHE ###############################################################
@@ -1474,100 +1367,49 @@ else:
             st.markdown(Scope)
 
 
-liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
-                   Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
-                   westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude, Titre,
-                   FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
-                   UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
-                   Format, Online_links, Online_protocols, Online_description, Online_nom,
-                   Niveau, Conformite, Genealogie, Scope, groupe, groupe2, Thesaurus, Themes, Keywords, 
-                   F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
-
-
-liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
-                    'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
-                    'Longitude ouest', 'Longitude est', 'Latitude sud', 'Latitude nord', 'Titre',
-                    'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
-                    'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
-                    'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                    'Niveau', 'Conformité', 'Généalogie', 'Portée', 'Groupe associé','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés',
-                    'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
-
-
-df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
-
 ##################################################################################################
-########################### RECUPERATION DES MENTIONS ############################################
+########## VISUALISATION DU GROUPE ###############################################################
 
-if admin_action == admin_pass:
-    Recup_mentions = st.sidebar.button('recup des mentions')
-    if Recup_mentions:
-        with st.spinner("La récup des mentions est en cours"):
-            group_2 = pd.read_csv("pages/data/infos_MD/infos_groupes.csv", index_col=[0])
-            alluuids_ = group_2['Identifiant']
-            for i in range(len(alluuids_)): #len(alluuids)
-                indd = group_2[group_2['Identifiant']==alluuids_[i]].index.values
-                try:
-                    df = pd.read_csv(f'pages/data/fiches_csv/{alluuids_[i]}.csv',index_col=[0])
-                    try: 
-                        Titre = df['Valeurs'][df['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
-                    except:
-                        try:
-                            Titre = df['Valeurs'][df['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
-                        except:
-                            try:
-                                Titre = df['Valeurs'][df['Clés']=="dc:title£#text:"].values[0]
-                            except:
-                                Titre = ""
+lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 
-                    Mots_cles_zaaj = []
-                    if 'zaaj_' in identifieur: 
-                        for u in range(len(df)):
-                            if df.loc[u,'Clés']=="dc:subject£#text:":
-                                Mots_cles_zaaj.append(df.loc[u,'Valeurs'])
-                    else:
-                        Mots_cles = []
-                        try:
-                            for u in range(len(df)):
-                                if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
-                                    Mots_cles.append([u,df.loc[u,'Valeurs']])
-                        except:
-                            pass
-
-                    if 'zaaj_' in identifieur: 
-                        Keywords = Mots_cles_zaaj
-                    else:
-                        Keywords = []
-                        for i in range(len(Mots_cles)):
-                            Keywords.append(Mots_cles[i][1])
-
-                    groupe2 = 'Aucune mention'
-                    Titre_Keywords = Titre.split()
-                    for k in Keywords:
-                        Titre_Keywords.append(k)
-
-                    for s in Titre_Keywords:
-                        if s in filtre_mention:
-                            groupe2 = s
-                        else:
-                            pass        
-                except:
-                    groupe2 = "Pas de fichier"
-                group_2.loc[indd,'Mention']=groupe2
-                try:
-                    if group_2.loc[indd,'Groupe'].item()=="Aucun groupe" and group_2.loc[indd,'Mention'].item()!='Aucune mention':
-                        group_2.loc[indd,'Groupe_et_Mention']=group_2.loc[indd,'Mention']
-                    elif group_2.loc[indd,'Groupe'].item()!="Aucun groupe":
-                        group_2.loc[indd,'Groupe_et_Mention']= group_2.loc[indd,'Groupe']
-                    elif group_2.loc[indd,'Groupe'].item()=="Aucun groupe" and group_2.loc[indd,'Mention'].item()=='Aucune mention':
-                        group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
-                except:
-                    group_2.loc[indd,'Groupe_et_Mention']= 'Aucun groupe et aucune mention'
-            group_2.to_csv("pages/data/infos_MD/infos_groupes_mentions.csv")
+col1,col2 = st.sidebar.columns(2)
+with col1:
+    htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 10px; 
+                                        padding-bottom: 10px; 
+                                        line-height:5px;
+                                        text-align:center'>
+                                        </style><BR><span style='font-size: 15px; 
+                                        margin-top: 0;'>{groupe}</style></span></p>"""
+    st.markdown(lnk + htmlstr, unsafe_allow_html=True)
+with col2:
+    htmlstr2 = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 10px; 
+                                        padding-bottom: 10px; 
+                                        line-height:5px;
+                                        text-align:center'>
+                                        </style><BR><span style='font-size: 15px; 
+                                        margin-top: 0;'>{mention}</style></span></p>"""
+    st.markdown(lnk + htmlstr2, unsafe_allow_html=True)
 
 ##################################################################################################
 ####################### VISUALISATION FAIR ####################################################
-a=0
 col0,col1,col2,col3, col4 = st.sidebar.columns([0.1,0.22,0.22,0.22,0.22])
 with col0:
     st.markdown("F")
@@ -1788,351 +1630,67 @@ with col3:
                                     margin-top: 0;'>{""}</style></span></p>"""
     st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 
-##################################################################################################
-############### RECUPERATION GLOBALE ################################################
+###############################################################################################
+########### POUR L'ADMINISTRATEUR ############################################################
+###############################################################################################
+
+# Mot de passe pour faire des récupérations automatisées
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+
+# RECUPERATION DES IDENTIFIANTS VIA BOUTON ##########################################
+
+if admin_action == admin_pass:
+
+        RecupIdentifiants = st.sidebar.button("Récupération des identifiants")
+        if RecupIdentifiants:
+            with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
+                scraping_GN(d)   
+                uuids_cleaning(d)
+                st.experimental_rerun()
+
+# RECUPERATION DES GROUPES VIA BOUTON ###############################################
+
+if admin_action == admin_pass:
+    Recup_groupes = st.sidebar.button('recup des groupes')
+    if Recup_groupes:
+        with st.spinner("La récup des groupes est en cours"):
+            groupes = []
+            liste_u = []
+            for i in range(len(uuids)):
+                u = uuids.loc[i,'uuid_cat_InDoRes']
+                try:
+                    g = recup_group(uuid=u)
+                    groupes.append(g)
+                    liste_u.append(u)
+                except:
+                    g = ""
+                    groupes.append(g)
+                    liste_u.append(u)
+
+            df_group = pd.DataFrame({'Identifiant':liste_u, 'Groupe':groupes})
+            df_group.to_csv("pages/data/infos_MD/infos_groupes.csv")
+
+# RECUPERATION GLOBALE ################################################
 
 if admin_action == admin_pass:
     Recup_globale = st.sidebar.button('recup globale')
     if Recup_globale:
         with st.spinner("La récup globale est en cours"):
-            group_bis = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
-            alluuids__ = group_bis['Identifiant']
-            liste_columns_df2 = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact','Position_contact', 
-                                 'Longitude_Ouest', 'Longitude_Est', 'Latitude_Sud', 'Latitude_Nord', 'Titre', 'Thesaurus', 'Themes','Mots_clés',
-                                 'Limite_usage', 'Contrainte_usage','Format','F2i', 'URL', 'A1i', 'I1i','I2i','R1i', 'R2i','Mention']
-            df_global = pd.DataFrame(columns=liste_columns_df2)
-            for i in range(len(alluuids__)):
+            liste_columns_df = ['Identifiant','Langue','Date','Standard','Version_standard','Nom_contact','Orga_contact',
+                                'Position_contact','Longitude_Ouest','Longitude_Est','Latitude_Sud','Latitude_Nord','Titre',
+                                'Thesaurus','Themes','Mots_clés','Limite_usage','Contrainte_usage','Format','URL','F2','A1','I1','I2','R1','R2','Groupe','Mention']
+            df_global = pd.DataFrame(columns=liste_columns_df)
+            for i in range(len(df_infos)):
                 print(i)
-                try:
-                    if 'oai:search-data.ubfc.fr:' in alluuids__[i]:
-                        ident= alluuids__[i].replace('oai:search-data.ubfc.fr:','zaaj_')
-                        dfi = pd.read_csv(f'pages/data/fiches_csv/{ident}.csv',index_col=[0])
-                    else:
-                        dfi = pd.read_csv(f'pages/data/fiches_csv/{alluuids__[i]}.csv',index_col=[0])
-                        ident = alluuids__[i]
-                except:
-                    if 'zaaj_' in alluuids__[i]:
-                        ident = alluuids__[i].replace('zaaj_','oai:search-data.ubfc.fr:')
-                    else:
-                        ident = alluuids__[i]
-                    url_i = url + ident
-                    resp1i = requests.get(url_i,headers=headers_json)
-                    if resp1i.status_code == 200:
-                        resp_jsoni=resp1i.json()
-                        try:
-                            with open(f"pages/data/fiches_json/{ident}.json", "w") as f:
-                                json.dump(resp_jsoni, f, indent=4)
-                        except:
-                            pass
-                        resp2i = requests.get(url_i,headers=headers_xml)
-                        if resp2i.status_code == 200:
-                            xml_contenti = resp2i.text
-                            try:
-                                with open(f"pages/data/fiches_xml/{ident}.xml", 'w') as file:
-                                    file.write(xml_contenti)
-                            except:
-                                pass
-                    try:
-                        with open(f"pages/data/fiches_json/{ident}.json", 'r') as f:
-                            datai = json.load(f)
-
-                        with open(f'pages/data/fiches_txt/{ident}.txt', 'w') as file:
-                            transcript_json(datai, file)
-
-                        with open(f'pages/data/fiches_txt/{ident}.txt', 'r') as f:
-                            di = f.read()
-
-                        listii = re.split('µ',di)
-
-                        dfi = pd.DataFrame(listii, columns=['Results'])
-                        for u in range(len(dfi)):
-                            p = re.split('§',dfi.loc[u,'Results'])
-                            try:
-                                dfi.loc[u,'Valeurs']=p[1]
-                            except:
-                                pass
-                            try:
-                                dfi.loc[u,'Clés']=p[0].replace('.','£')
-                            except:
-                                pass
-
-                        for j in range(len(dfi)):
-                            pp = re.split('£',dfi.loc[j,'Clés'])
-                            for k in range(15):
-                                try:
-                                    dfi.loc[j,f'K{k}']=pp[k]
-                                except:
-                                    pass
-                        dfi.to_csv(f'pages/data/fiches_csv/{ident}.csv')
-                    except:
-                        dfi = []
-
-                Identifi = alluuids__[i]
-                Mentioni = group_bis['Groupe_et_Mention'][group_bis['Identifiant']==alluuids__[i]].item()
-                if "zaaj_" in ident:
-                    try:
-                        Languei = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
-                    except:
-                        Languei = ""
-                else:
-                    try:
-                        Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gco:CharacterString£#text:"].values[0]
-                    except:
-                        try:
-                            Languei = dfi['Valeurs'][dfi['Clés']=="gmd:language£gmd:LanguageCode£@codeListValue:"].values[0]
-                        except:
-                            Languei = ""
-                try:
-                    Datei = dfi['Valeurs'][dfi['Clés']=="gmd:dateStamp£gco:DateTime£#text:"].values[0]
-                except:
-                    try:
-                        Datei = dfi['Valeurs'][dfi['Clés']=="gfc:versionDate£gco:DateTime£#text:"].values[0]
-                    except:
-                        try:
-                            Datei = dfi['Valeurs'][dfi['Clés']=="gmx:versionDate£gco:DateTime£#text:"].values[0]
-                        except:
-                            try:
-                                Datei = df['Valeurs'][df['Clés']=="dc:date£#text:"].values[0]
-                            except:
-                                Datei = ""
-
-                if 'zaaj_' in ident:
-                    try:                        
-                        Standardi = df['Valeurs'][df['Clés']=="@xsi:noNamespaceSchemaLocation:"].values[0]
-                    except:
-                        Standardi = ""
-                else:
-                    try:
-                        Standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardName£gco:CharacterString£#text:"].values[0]
-                    except:
-                        try:
-                            Standardi = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£@xmlns:gco:"].values[0]
-                        except:
-                            Standardi = ""
-                try:
-                    Version_standardi = dfi['Valeurs'][dfi['Clés']=="gmd:metadataStandardVersion£gco:CharacterString£#text:"].values[0]
-                except:
-                    Version_standardi = ""  
-
-                if 'zaaj_' in ident:
-                    try:                        
-                        Nom_contacti = df['Valeurs'][df['Clés']=="dc:creator£#text:"].values
-                    except:
-                        Nom_contacti = ""
-                else:                                  
-                    try:
-                        Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-                        if len(Nom_contacti)==0:
-                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-                    except:
-                        try:
-                            Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values
-                        except:
-                            try:
-                                Nom_contacti = dfi['Valeurs'][dfi['Clés']=="gfc:producer£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:"].values[0]
-                            except: 
-                                Nom_contacti = ""
-
-                if 'zaaj_' in ident:
-                    try:                        
-                        Organisation_contacti = df['Valeurs'][df['Clés']=="dc:publisher£#text:"].values
-                    except:
-                        Organisation_contacti = ""
-                else:
-                    try:
-                        Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-                        if len(Organisation_contacti)==0:
-                            Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-                    except:
-                        try:
-                            Organisation_contacti = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:"].values
-                        except:
-                            Organisation_contacti = ""
-                try:
-                    Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
-                    if len(Position_contacti)==0:
-                        Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
-                except:
-                    try:
-                        Position_contacti =dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:"].values
-                    except:
-                        Position_contacti = ""
-                try:
-                    westBoundLongitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£gco:Decimal£#text:"].values[0]
-                except:
-                    westBoundLongitudei = ""
-                try:
-                    EastBoundLongitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£gco:Decimal£#text:"].values[0]
-                except:
-                    EastBoundLongitudei = ""
-                try:
-                    SouthBoundLatitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£gco:Decimal£#text:"].values[0]
-                except:
-                    SouthBoundLatitudei = ""
-                try:
-                    NorthBoundLatitudei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£gco:Decimal£#text:"].values[0]
-                except:
-                    NorthBoundLatitudei = ""
-
-                try: 
-                    Titrei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:"].values[0]
-                except:
-                    try:
-                        Titrei = dfi['Valeurs'][dfi['Clés']=="gfc:name£gco:CharacterString£#text:"].values[0]
-                    except:
-                        try:
-                            Titrei = df['Valeurs'][df['Clés']=="dc:title£#text:"].values[0]
-                        except:
-                            Titrei = "" 
-
-                Liste_Themei = []
-                Liste_Thesaurusi = []
-                Mots_clesi = []
-                Mots_cles_zaaji = []
-                if 'zaaj_' in ident: 
-                    for u in range(len(df)):
-                        if df.loc[u,'Clés']=="dc:subject£#text:":
-                            Mots_cles_zaaji.append(df.loc[u,'Valeurs'])
-                else:
-                    try:
-                        for u in range(len(dfi)):
-                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
-                                Liste_Themei.append([u,dfi.loc[u,'Valeurs']])
-                    except:
-                        pass
-                    try:
-                        for u in range(len(dfi)):
-                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
-                                Liste_Thesaurusi.append([u,dfi.loc[u,'Valeurs']])
-                    except:
-                        pass
-                    try:
-                        for u in range(len(dfi)):
-                            if dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  dfi.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
-                                Mots_clesi.append([u,dfi.loc[u,'Valeurs']])
-                    except:
-                        pass
-
-                Thesaurusi = []
-                for o in range(len(Liste_Thesaurusi)):
-                    Thesaurusi.append(Liste_Thesaurusi[o][1])
-
-                Themesi = []
-                for oo in range(len(Liste_Themei)):
-                    Themesi.append(Liste_Themei[oo][1])
-
-                Keywordsi = []
-                if 'zaaj_' in ident: 
-                    Keywordsi = Mots_cles_zaaji
-                else:
-                    for ooo in range(len(Mots_clesi)):
-                        Keywordsi.append(Mots_clesi[ooo][1])
-                try:
-                    UseLimitationi = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:"].values[0]
-                except:
-                    UseLimitationi =""
-
-                if 'zaaj_' in ident:
-                    try:
-                        UseContraintei = df['Valeurs'][df['Clés']=="dc:rights£#text:"].values
-                    except:
-                        UseContraintei =""
-                else:
-                    try:
-                        UseContraintei = dfi['Valeurs'][dfi['Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:"].values[0]
-                    except:
-                        UseContraintei =""
-                if 'zaaj_' in ident:
-                    try:                        
-                        Formati = df['Valeurs'][df['Clés']=="dc:format£#text:"].values
-                    except:
-                        Formati = ""
-                else:                
-                    try:
-                        Formati = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat£gmd:MD_Format£gmd:name£gco:CharacterString£#text:"].values
-                    except:
-                        Formati = ""
-                
-                if 'zaaj_' in ident:
-                    try:
-                        Online_linksi = df['Valeurs'][df['Clés']=="dc:relation£#text:"].values
-                    except:
-                        Online_linksi = ""
-                else:                
-                    try:
-                        Online_linksi = dfi['Valeurs'][dfi['Clés']=="gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions£gmd:onLine£gmd:CI_OnlineResource£gmd:linkage£gmd:URL:"].values
-                    except:
-                        Online_linksi = ""
-                try:
-                    Genealogiei = dfi['Valeurs'][dfi['Clés']=="gmd:dataQualityInfo£gmd:DQ_DataQuality£gmd:lineage£gmd:LI_Lineage£gmd:statement£gco:CharacterString£#text:"].values[0]
-                except:
-                    Genealogiei = ""
-
-                try:
-                    if len(Nom_contacti)!=0 and len(Organisation_contacti)!=0 and len(Titrei)!=0 and len(Keywordsi)!=0 and len(UseContraintei)!=0 and len(Formati)!=0 and len(Online_linksi)!=0:
-                        F2i = True
-                    else:
-                        F2i = False
-                except:
-                    F2i = False
-
-                try:
-                    if len(Online_linksi)!=0:
-                        URL = True
-                        for i in range(len(Online_linksi)):
-                            if 'doi' in Online_linksi[i] or 'attachments' in Online_linksi[i]:
-                                A1i = True
-                            else:
-                                A1i = False
-                    else:
-                        A1i = False
-                        URL = False
-                except:
-                    URL = False
-                    A1i = False
-                try:
-                    if len(Formati)!=0:
-                        for i in range(len(Formati)):
-                            if Formati[i] in ['GeoTiff','GeoTIFF', 'GEOTIFF','shape','ESRI Shapefile','Word','ASC','CSV','png','PNG','pdf','PDF','svg','SVG', 'odt','ODT','rtf', 'RTF','txt','TXT','jpg','JPG','ods','ODS','mkv','MKV','zip','ZIP','tar','TAR']:
-                                I1i = True
-                            else:
-                                I1i = False
-                    else:
-                        I1i = False
-                except:
-                    I1i = False
-                try:
-                    if len(Thesaurusi)==0:
-                        I2i = False
-                    else:
-                        I2i = True
-                except:
-                    I2i = False
-                try:
-                    if len(UseLimitationi)==0 and  len(UseContraintei)==0:
-                        R1i = False
-                    elif len(UseContrainte)!=0 or len(UseLimitation)!=0:
-                        R1i = True
-                    else:
-                        R1i = False
-                except:
-                    R1i = False
-                try:
-                    if len(Genealogiei)==0:
-                        R2i = False
-                    else:
-                        R2i = True
-                except:
-                    R2i = False
-
-                liste_variables2 = [Identifi,Languei, Datei, Standardi, Version_standardi, Nom_contacti,Organisation_contacti, 
-                                            Position_contacti,westBoundLongitudei, EastBoundLongitudei,SouthBoundLatitudei,NorthBoundLatitudei, 
-                                            Titrei, Thesaurusi,Themesi,Keywordsi,UseLimitationi,UseContraintei,Formati, 
-                                            F2i, URL, A1i, I1i,I2i,R1i, R2i, Mentioni]
-                df_variables_evaluationi = pd.DataFrame(data=[liste_variables2],columns=liste_columns_df2)
-                df_global_ = pd.concat([df_global,df_variables_evaluationi], axis=0)
-                df_global_.reset_index(inplace=True)
-                df_global_.drop(columns='index',inplace=True)
-                df_global = df_global_
-                
+                identif = df_infos.loc[i,'Identifiant']
+                datafri, mention, groupe_et_mention = recup_fiche(url, identif, headers_json, headers_xml, couleur_True, couleur_False, df_infos, filtre_mention)
+                df_infos.loc[i,'Mention'] = mention
+                df_infos.loc[i,'Groupe_et_Mention'] = groupe_et_mention
+                new_df_global = pd.concat([df_global,datafri], axis=0)
+                df_global = new_df_global
+                df_global.reset_index(inplace=True)
+                df_global.drop(columns='index',inplace=True)
             df_global.to_csv("pages/data/infos_MD/Tableau_MD.csv")
+            df_infos.to_csv(("pages/data/infos_MD/infos_groupes_mentions.csv"))
