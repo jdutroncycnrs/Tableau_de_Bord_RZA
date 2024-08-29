@@ -482,11 +482,16 @@ elif Autres_champs:
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     liste_desc = ['Themes','Thesaurus','Mots_clés']
-    Treated_thesaurus, thesaurus_set = traitement_thesaurus(df_selected_year)
-    #Desc = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
-    st.dataframe(Treated_thesaurus['Thesaurus'].value_counts())
-    st.write(thesaurus_set)
-    st.write(len(thesaurus_set))
+    df_description = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
+    df_description_ = df_description.assign(Thesaurus_usage=0)
+    df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage']]
+    st.dataframe(df_thesaurus)
+    df_thesaurus_oui = traitement_thesaurus(df_thesaurus)
+
+    st.write(df_thesaurus_oui.loc[417,'Thesaurus'])
+    st.write(len(df_thesaurus_oui.loc[417,'Thesaurus']))
+
+    st.dataframe(df_thesaurus_oui)
 
     with st.container(border=True):
         col1,col2,col3 = st.columns([0.2,0.6,0.2])

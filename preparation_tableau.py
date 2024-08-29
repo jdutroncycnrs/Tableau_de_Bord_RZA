@@ -47,6 +47,23 @@ def remove_duplicate_patterns(text,pattern):
         return text
 
 def traitement_thesaurus(tableau):
+    tableau_ = tableau.copy()
+    for i in range(len(tableau_)):
+        tableau_.loc[i,'Thesaurus']=tableau_.loc[i,'Thesaurus'][1:-1]
+        if len(tableau_.loc[i,'Thesaurus'])==0:
+            tableau_.loc[i,'Thesaurus_usage']="NON"
+        else:
+            tableau_.loc[i,'Thesaurus_usage']="OUI"
+
+    tableau_oui = tableau_[tableau_['Thesaurus_usage']=='OUI']
+
+    def transfo(x):
+        return [item.strip().strip("'") for item in x.split(',')]
+
+    tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus'].apply(transfo)
+    return tableau_oui
+
+def traitement_thesaurus__(tableau):
     pattern = "'GEMET_INSPIRE_themes_V1'"
     pattern2 = "'GEMET_INSPIRE_concepts_V2.4'"
     pattern3 = "'GEMET_INSPIRE_concepts_V4.1.4'"
