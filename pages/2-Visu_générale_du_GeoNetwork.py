@@ -4,8 +4,9 @@ import numpy as np
 from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
+import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus
 pd.options.mode.chained_assignment = None
 
 
@@ -480,11 +481,42 @@ elif Autres_champs:
 
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
-    themes = df_selected_year.Themes
-    for i in range(len(themes)):
-        themes.loc[i]=themes.loc[i][1:-1].split(',')
-    st.dataframe(themes.value_counts())
-    st.write('en cours de fabrication')
+    liste_desc = ['Themes','Thesaurus','Mots_clés']
+    Treated_thesaurus, thesaurus_set = traitement_thesaurus(df_selected_year)
+    #Desc = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
+    st.dataframe(Treated_thesaurus['Thesaurus'].value_counts())
+    st.write(thesaurus_set)
+    st.write(len(thesaurus_set))
+
+    with st.container(border=True):
+        col1,col2,col3 = st.columns([0.2,0.6,0.2])
+        with col2:
+            """df_selected_year_usage_thesaurus = Desc['Thesaurus_usage']
+            cnt_usage_thesaurus = df_selected_year_usage_thesaurus.value_counts()[0:15]
+            somme_usage_thesaurus_vis = cnt_usage_thesaurus.values.sum()
+                
+            fig_usage_thesaurus = go.Figure()
+            fig_usage_thesaurus.add_trace(go.Pie(labels=cnt_usage_thesaurus.index.values, values=cnt_usage_thesaurus.values))
+            fig_usage_thesaurus.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                            marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_usage_thesaurus.update_layout(
+                        title='Usage de Thesaurus',
+                        xaxis_title='Compte',
+                        yaxis_title='Usage',
+                        width=500,
+                        height=500)
+            st.plotly_chart(fig_usage_thesaurus)"""
+    
+    with st.container(border=True):
+        col1,col2 = st.columns(2)
+        with col1:
+            #df_selected_year_usage_thesaurus_oui = Desc[Desc['Thesaurus_usage']=='OUI']
+            #st.write(df_selected_year_usage_thesaurus_oui['Thesaurus'].value_counts())
+            st.write('à venir')
+        with col2:
+            #df_selected_year_usage_thesaurus_non = Desc[Desc['Thesaurus_usage']=='NON']
+            st.write('à venir')
+
 
 elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
