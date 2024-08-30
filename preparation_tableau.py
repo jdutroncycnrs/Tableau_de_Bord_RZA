@@ -150,6 +150,10 @@ def traitement_formats(tableau):
             tableau_.loc[i,'Format']="XLS"
         elif tableau_.loc[i,'Format']=="application/vnd.ms-excel' 'text/csv":
             tableau_.loc[i,'Format']="XLS"
+        elif 'excel' in str(tableau_.loc[i,'Format']):
+            tableau_.loc[i,'Format']="XLS"
+        elif 'CSV' in str(tableau_.loc[i,'Format']):
+            tableau_.loc[i,'Format']="CSV"
         elif tableau_.loc[i,'Format']=="application/pdf' 'application/vnd.ms-excel":
             tableau_.loc[i,'Format']="PDF"
         elif tableau_.loc[i,'Format']=="Jpeg2000":
