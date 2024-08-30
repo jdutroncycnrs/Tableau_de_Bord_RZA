@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas
 pd.options.mode.chained_assignment = None
 
 
@@ -416,7 +416,6 @@ elif Autres_champs:
 
     elif Formats:
         df_selected_year_formats_ = traitement_formats(df_selected_year)
-        st.dataframe(df_selected_year_formats_)
         df_selected_year_format = df_selected_year_formats_['Format'][df_selected_year_formats_.Year >= selection_dates_input]
 
         cnt_format = df_selected_year_format.value_counts()
@@ -441,12 +440,14 @@ elif Autres_champs:
         st.plotly_chart(fig_format)
 
     elif Orgas:
-        df_selected_year_orga = df_selected_year['Orga_contact'][df_selected_year.Year >= selection_dates_input]
-        cnt_orga = df_selected_year_orga.value_counts()[0:10]
+        df_selected_year_orgas_ = traitement_orgas(df_selected_year)
+        df_selected_year_orga = df_selected_year_orgas_['Orga_contact'][df_selected_year_orgas_.Year >= selection_dates_input]
+
+        cnt_orga = df_selected_year_orga.value_counts()[0:15]
         somme_orga_vis = cnt_orga.values.sum()
             
         fig_orga = go.Figure()
-        for i in range(10):
+        for i in range(15):
             cnt_orga_ = df_selected_year_orga.value_counts()[i:i+1]
             fig_orga.add_trace(go.Bar(
                         y=cnt_orga_.index.values,

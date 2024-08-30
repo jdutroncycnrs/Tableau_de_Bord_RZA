@@ -149,6 +149,226 @@ def traitement_formats(tableau):
             tableau_.loc[i,'Format']="TXT"
         elif tableau_.loc[i,'Format']=="GDB":
             tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="vecteur' 'table postgis":
+            tableau_.loc[i,'Format']="Vecteur"
+        elif tableau_.loc[i,'Format']=="ESRI shapefile":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="ESRI Shapefile (shp)":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="Shapefile (.shp)":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="TIF, GDB":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="TIF, JPG, GDB":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="JPG":
+            tableau_.loc[i,'Format']="JPEG"
+        elif tableau_.loc[i,'Format']=="xlsx":
+            tableau_.loc[i,'Format']="XLS"
+        elif tableau_.loc[i,'Format']=="Texte":
+            tableau_.loc[i,'Format']="TXT"
+
+    return tableau_
+
+def traitement_orgas(tableau):
+    tableau_ = tableau.copy()
+    for i in range(len(tableau_)):
+        try:
+            tableau_.loc[i,'Orga_contact']=tableau_.loc[i,'Orga_contact'][2:-2].lower()
+        except:
+            pass
+        if tableau_.loc[i,'Orga_contact']=='':
+            tableau_.loc[i,'Orga_contact']='Non renseigné'
+        elif tableau_.loc[i,'Orga_contact']=='letg umr 6554 cnrs':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='umr6554 letg cnrs':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='letg-rennes costelletg-rennes umr 6554 cnrs université de rennes 2':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='letg rennes umr 6554 cnrs université de rennes 2':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='sorbonne université - metis':
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif tableau_.loc[i,'Orga_contact']=='sorbonne université - umr 7619 metis':
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif tableau_.loc[i,'Orga_contact']=='upmc - umr 7619 metis':
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif tableau_.loc[i,'Orga_contact']=='sorbonne université - métis':
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif tableau_.loc[i,'Orga_contact']=='upsorbonne université - umr 7619 metis':
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif tableau_.loc[i,'Orga_contact']=='cnrs - eccorev (fr3098)':
+            tableau_.loc[i,'Orga_contact']='UMR 3098 CNRS ECCOREV'
+        elif tableau_.loc[i,'Orga_contact']=='cnrs - eccorev (fr3098) - ohm bassin minier de provence':
+            tableau_.loc[i,'Orga_contact']='UMR 3098 CNRS ECCOREV'
+        elif tableau_.loc[i,'Orga_contact']=='letg-rennes costel':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='ietr umr cnrs 6164 / letg-rennes umr 6554 cnrs université de rennes 2':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='letg':
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif tableau_.loc[i,'Orga_contact']=='letg-rennes umr 6554 cnrs université de rennes 2' :
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'            
+        elif tableau_.loc[i,'Orga_contact']=="umr 1069 sas inrae - l'institut agro rennes-angers":
+            tableau_.loc[i,'Orga_contact']='UMR 1069 INRA - agrocampus ouest'
+        elif tableau_.loc[i,'Orga_contact']=='ens de lyon - umr 5600 evs' :
+            tableau_.loc[i,'Orga_contact']='UMR5600 EVS - ENS de lyon'
+        elif tableau_.loc[i,'Orga_contact']=='evs umr 5600 cnrs université de lyon' :
+            tableau_.loc[i,'Orga_contact']='UMR 5600 EVS - ENS de lyon'
+        elif tableau_.loc[i,'Orga_contact']=='ecole des mines de saint-etienne- umr 5600 evs' :
+            tableau_.loc[i,'Orga_contact']='UMR 5600 EVS - ENS de lyon'
+        elif tableau_.loc[i,'Orga_contact']=='umr 5600' :
+            tableau_.loc[i,'Orga_contact']='UMR 5600 EVS - ENS de lyon'
+        elif tableau_.loc[i,'Orga_contact']=='umr 5600 evs - ens de lyon' :
+            tableau_.loc[i,'Orga_contact']='UMR 5600 EVS - ENS de lyon'    
+        elif tableau_.loc[i,'Orga_contact']=='cnrs leca' :
+            tableau_.loc[i,'Orga_contact']='leca' 
+        elif 'umr 6553' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif '3189' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='IRL 3189 ESS'
+        elif 'pag' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Non renseigné'
+        elif 'cerege' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='CEREGE Geoscience Environnement'
+        elif 'letg' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif '5126' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 5126 Etudes spatiales biosphère'
+        elif '5245' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 5245 CNRS ECOLAB'
+        elif 'lorraine' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Université de Lorraine'
+        elif '7300' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 7300 espace cnrs'
+        elif 'pnra' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Parc Naturel Regional Armorique'
+        elif 'iuem' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMS 3113 IUEM'
+        elif 'umr6554' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif '5602' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 5602 GEODE'
+        elif '7619' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 7619 metis sorbonne université'
+        elif '5288' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 5288 Laboratoire AMIS'
+        elif 'inrae' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='INRAE'
+        elif 'letg 6554' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif 'ums3113' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMS 3113 IUEM'
+        elif 'umr6539' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6539 CNRS LEMAR'
+        elif 'umr6538' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6538 CNRS LGO'
+        elif 'indigeo' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='INDIGEO'
+        elif 'umr 1069' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 1069 INRA - agrocampus ouest'
+        elif 'umr 6118' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6118 CNRS Geosciences Rennes'
+        elif 'umr 6554' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6554 LETG CNRS'
+        elif 'umr 5023' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 5023 - LEHNA'
+        elif 'chrono-environnement' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6249 laboratoire chrono-environnement'
+        elif 'mines saint-etienne' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='MINES Saint-Etienne - centre spin'
+        elif tableau_.loc[i,'Orga_contact']=='ecobio umr 6553 cnrs université de rennes 1' :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif tableau_.loc[i,'Orga_contact']=='ecobio umr 6553 cnrs université de rennes' :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif tableau_.loc[i,'Orga_contact']=='umr 6553 cnrs ecobio' :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif tableau_.loc[i,'Orga_contact']=='umr 6553 ecobio' :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif tableau_.loc[i,'Orga_contact']=='umr ecobio 6553 cnrs université de rennes 1' :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif tableau_.loc[i,'Orga_contact']=="ecobio umr 6553 cnrs université de rennes 1'  'ecobio umr 6553 cnrs université de rennes 1" :
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif 'umr 7362' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 7362 CNRS UNISTRA'
+        elif tableau_.loc[i,'Orga_contact']=='bagap umr 0980' :
+            tableau_.loc[i,'Orga_contact']='UMR 0980 bagap INRAE agrocampus'
+        elif tableau_.loc[i,'Orga_contact']=='inrae bagap' :
+            tableau_.loc[i,'Orga_contact']='UMR 0980 bagap INRAE agrocampus'
+        elif tableau_.loc[i,'Orga_contact']=='bagap umr 0980 inrae agrocampus ouest esa' :
+            tableau_.loc[i,'Orga_contact']='UMR 0980 bagap INRAE agrocampus'
+        elif tableau_.loc[i,'Orga_contact']=='mines saint-etienne - centre spin - peg' :
+            tableau_.loc[i,'Orga_contact']='MINES Saint-Etienne - centre spin'
+        elif tableau_.loc[i,'Orga_contact']=='mines saint-etienne' :
+            tableau_.loc[i,'Orga_contact']='MINES Saint-Etienne - centre spin'
+        elif tableau_.loc[i,'Orga_contact']=='mines saint-etienne - centre spin - gse' :
+            tableau_.loc[i,'Orga_contact']='MINES Saint-Etienne - centre spin'
+        elif tableau_.loc[i,'Orga_contact']=='irstea grenoble - ur dtm' :
+            tableau_.loc[i,'Orga_contact']='IRSTEA'
+        elif tableau_.loc[i,'Orga_contact']=='irstea lyon-villeurbanne' :
+            tableau_.loc[i,'Orga_contact']='IRSTEA'
+        elif 'irstea' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']="IRSTEA"
+        elif '{unité de recherche}' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']="Non renseigné"
+        elif 'ofb dras santéagri' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']="Non renseigné"
+        elif 'ecobio 6553' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6553 ECOBIO'
+        elif 'umr 6566' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6566 CNRS CREAAH'
+        elif 'bagap' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 0980 bagap INRAE agrocampus'
+        elif 'sad-paysage' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 0980 bagap INRAE agrocampus'
+        elif 'ums3343' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMS 3343 OSUR'
+        elif 'leca' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']="Laboratoire LECA"
+        elif 'edytem' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']="UMR 5204 Edytem"
+        elif 'asters' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='ASTERS CEN 74'
+        elif 'pacte' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Laboratoire PACTE'
+        elif 'grenoble-alpes' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Université Grenoble Alpes'
+        elif 'chasseurs du doubs' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='FDC du Doubs'
+        elif 'umr 6049' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6049 Laboratoire THEMA'
+        elif 'umr 6282' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='UMR 6282 Biogéosciences'
+        elif 'dryad' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Non renseigné'
+        elif 'zenodo' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='Non renseigné'
+        elif 'fredon' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='FREDON Bourgogne FC'
+        elif 'centre hospitalier régional universitaire de besançon' in str(tableau_.loc[i,'Orga_contact']):
+            tableau_.loc[i,'Orga_contact']='CHRU de Besançon'
+        elif tableau_.loc[i,'Orga_contact']=='leca':
+            tableau_.loc[i,'Orga_contact']="Laboratoire LECA"
+        elif tableau_.loc[i,'Orga_contact']=='espace umr 7300 cnrs uma' :
+            tableau_.loc[i,'Orga_contact']='UMR 7300 espace cnrs'
+        elif tableau_.loc[i,'Orga_contact']=='espace umr 7300 cnrs au' :
+            tableau_.loc[i,'Orga_contact']='UMR 7300 espace cnrs'
+        elif tableau_.loc[i,'Orga_contact']=='umr espace 7300' :
+            tableau_.loc[i,'Orga_contact']='UMR 7300 espace cnrs'
+        elif tableau_.loc[i,'Orga_contact']=='inra' :
+            tableau_.loc[i,'Orga_contact']='UMR1069 INRA - agrocampus ouest'
+        elif tableau_.loc[i,'Orga_contact']=='zaa-ltser' :
+            tableau_.loc[i,'Orga_contact']='zaa'
+        elif tableau_.loc[i,'Orga_contact']=="direction régionale de l’environnement de l’aménagement et du logement d'auvergne-rhône-alpes (dreal auvergne-rhône-alpes)" :
+            tableau_.loc[i,'Orga_contact']='DREAL'
+        elif tableau_.loc[i,'Orga_contact']=="asters - cen 74" :
+            tableau_.loc[i,'Orga_contact']='ASTERS CEN 74'
+        elif tableau_.loc[i,'Orga_contact']=="laboratoire chrono-environnement (umr 6249)" :
+            tableau_.loc[i,'Orga_contact']='UMR 6249 laboratoire chrono-environnement'
+        elif tableau_.loc[i,'Orga_contact']=="umr 5023 - lehna" :
+            tableau_.loc[i,'Orga_contact']='UMR 5023 - LEHNA'
+        elif tableau_.loc[i,'Orga_contact']=="agence de l'eau" :
+            tableau_.loc[i,'Orga_contact']="Agence de l'Eau"
 
     return tableau_
 
