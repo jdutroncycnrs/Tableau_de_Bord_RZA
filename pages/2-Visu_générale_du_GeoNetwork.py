@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues
 pd.options.mode.chained_assignment = None
 
 
@@ -382,17 +382,8 @@ elif Autres_champs:
             Droits = st.checkbox(label='Droits / Licences', key='Droits',on_change=handle_button6_change)
 
     if Langues:
-        df_selected_year_Langue = df_selected_year['Langue'][df_selected_year.Year >= selection_dates_input]
-
-        for i in range(len(df_selected_year_Langue)):
-            if df_selected_year_Langue.loc[i]=="['en' 'fr']":
-                df_selected_year_Langue.loc[i]="eng & fre"
-            elif df_selected_year_Langue.loc[i]=="en":
-                df_selected_year_Langue.loc[i]="eng"
-            elif df_selected_year_Langue.loc[i]=="ang":
-                df_selected_year_Langue.loc[i]="eng"
-            elif df_selected_year_Langue.loc[i]=="['fr']":
-                df_selected_year_Langue.loc[i]="fre"
+        df_selected_year_Langue_ = traitement_langues(df_selected_year)
+        df_selected_year_Langue = df_selected_year_Langue_['Langue'][df_selected_year_Langue_.Year >= selection_dates_input]
 
         cnt_langue = df_selected_year_Langue.value_counts()
         fig_langue = go.Figure()

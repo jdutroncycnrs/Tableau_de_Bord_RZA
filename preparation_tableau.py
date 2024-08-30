@@ -46,6 +46,21 @@ def remove_duplicate_patterns(text,pattern):
         
         return text
 
+def traitement_langues(tableau):
+    tableau_ = tableau.copy()
+
+    for i in range(len(tableau_)):
+            if tableau_.loc[i,'Langue']=="['en' 'fr']":
+                tableau_.loc[i,'Langue']="eng & fre"
+            elif tableau_.loc[i,'Langue']=="en":
+                tableau_.loc[i,'Langue']="eng"
+            elif tableau_.loc[i,'Langue']=="ang":
+                tableau_.loc[i,'Langue']="eng"
+            elif tableau_.loc[i,'Langue']=="['fr']":
+                tableau_.loc[i,'Langue']="fre"
+    
+    return tableau_
+
 def traitement_thesaurus(tableau):
     tableau_ = tableau.copy()
     tableau_.reset_index(inplace=True)
