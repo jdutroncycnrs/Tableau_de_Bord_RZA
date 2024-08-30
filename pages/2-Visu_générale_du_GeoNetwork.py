@@ -383,6 +383,17 @@ elif Autres_champs:
 
     if Langues:
         df_selected_year_Langue = df_selected_year['Langue'][df_selected_year.Year >= selection_dates_input]
+
+        for i in range(len(df_selected_year_Langue)):
+            if df_selected_year_Langue.loc[i]=="['en' 'fr']":
+                df_selected_year_Langue.loc[i]="eng & fre"
+            elif df_selected_year_Langue.loc[i]=="en":
+                df_selected_year_Langue.loc[i]="eng"
+            elif df_selected_year_Langue.loc[i]=="ang":
+                df_selected_year_Langue.loc[i]="eng"
+            elif df_selected_year_Langue.loc[i]=="['fr']":
+                df_selected_year_Langue.loc[i]="fre"
+
         cnt_langue = df_selected_year_Langue.value_counts()
         fig_langue = go.Figure()
         fig_langue.add_trace(go.Pie(labels=cnt_langue.index.values, values=cnt_langue.values))
@@ -563,6 +574,11 @@ elif Description:
                             name='test',
                             marker_color=colors[0]
                 ))
+            fig_histo.update_layout(
+                title='Nombre de mots clés utilisés avec usage de thésaurus',
+                yaxis_title='Nombre',
+                width=1000,
+                height=500)
             st.plotly_chart(fig_histo)
         with col2:
             df_thesaurus_non_mots_cles = traitement_mots_cles(df_thesaurus_non)
@@ -573,6 +589,11 @@ elif Description:
                             name='test',
                             marker_color=colors[1]
                 ))
+            fig_histo2.update_layout(
+                title='Nombre de mots clés utilisés sans usage de thésaurus',
+                yaxis_title='Nombre',
+                width=1000,
+                height=500)
             st.plotly_chart(fig_histo2)
 
 
@@ -586,8 +607,12 @@ elif Analyse_FAIR:
     fig7.add_trace(go.Heatmap(
             x=liste_columns,
             z=data_numbers,
-            colorscale = 'Temps', #'rdylgn'
-            showscale=False
+            #colorscale = 'Temps', #'rdylgn'
+            colorscale=[  
+                [0, colors[1]],  
+                [1, colors[0]]   
+             ],
+            showscale=False,
             #text=data_numbers,
             #texttemplate="%{text}",
             #textfont={"size":20}
