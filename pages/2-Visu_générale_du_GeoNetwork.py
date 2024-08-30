@@ -488,13 +488,9 @@ elif Description:
 
     df_thesaurus_ , df_thesaurus_oui , df_thesaurus_non = traitement_thesaurus(df_thesaurus)
 
-    
-
-    
-
     with st.container(border=True):
-        col1,col2,col3 = st.columns([0.2,0.6,0.2])
-        with col2:
+        col1,col2 = st.columns([0.4,0.6])
+        with col1:
             cnt_usage_thesaurus = df_thesaurus_['Thesaurus_usage'].value_counts()
             somme_usage_thesaurus_vis = cnt_usage_thesaurus.values.sum()
                 
@@ -509,10 +505,8 @@ elif Description:
                         width=500,
                         height=500)
             st.plotly_chart(fig_usage_thesaurus)
-    
-    with st.container(border=True):
-        col1,col2 = st.columns(2)
-        with col1:
+
+        with col2:
             cnt_thesaurus = df_thesaurus_oui['Thesaurus_listed'].value_counts()[0:25]
             df = pd.DataFrame(cnt_thesaurus.index)
             df['count']=cnt_thesaurus.values
@@ -550,12 +544,14 @@ elif Description:
                 title='Thésaurus utilisés',
                 xaxis=dict(title='Thesaurus'),
                 yaxis=dict(title='Counts'),
-                height=700,
+                height=600,
                 showlegend=False
             )
 
             st.plotly_chart(fig)
-            st.write('à venir')
+    
+    with st.container(border=True):
+        col1,col2 = st.columns(2)
         with col2:
             #df_selected_year_usage_thesaurus_non = Desc[Desc['Thesaurus_usage']=='NON']
             st.write('à venir')
