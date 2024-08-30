@@ -64,7 +64,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
 group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
 tableau['Groupe_et_Mention'] = tableau['Groupe_et_Mention'].map(dico)
 
-colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 
 ###########  FILTRE DES CATALOGUES ####################################
 liste_groupes = set(group_['Groupe_et_Mention'].values)
@@ -485,19 +485,17 @@ elif Description:
     df_description = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
     df_description_ = df_description.assign(Thesaurus_usage=0)
     df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage']]
-    st.dataframe(df_thesaurus)
-    df_thesaurus_oui = traitement_thesaurus(df_thesaurus)
 
-    st.write(df_thesaurus_oui.loc[417,'Thesaurus'])
-    st.write(len(df_thesaurus_oui.loc[417,'Thesaurus']))
+    df_thesaurus_ , df_thesaurus_oui , df_thesaurus_non = traitement_thesaurus(df_thesaurus)
 
-    st.dataframe(df_thesaurus_oui)
+    
+
+    
 
     with st.container(border=True):
         col1,col2,col3 = st.columns([0.2,0.6,0.2])
         with col2:
-            """df_selected_year_usage_thesaurus = Desc['Thesaurus_usage']
-            cnt_usage_thesaurus = df_selected_year_usage_thesaurus.value_counts()[0:15]
+            cnt_usage_thesaurus = df_thesaurus_['Thesaurus_usage'].value_counts()
             somme_usage_thesaurus_vis = cnt_usage_thesaurus.values.sum()
                 
             fig_usage_thesaurus = go.Figure()
@@ -505,18 +503,58 @@ elif Description:
             fig_usage_thesaurus.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                             marker=dict(colors=colors, line=dict(color='#000000', width=2)))
             fig_usage_thesaurus.update_layout(
-                        title='Usage de Thesaurus',
+                        title='Usage des thésaurus',
                         xaxis_title='Compte',
                         yaxis_title='Usage',
                         width=500,
                         height=500)
-            st.plotly_chart(fig_usage_thesaurus)"""
+            st.plotly_chart(fig_usage_thesaurus)
     
     with st.container(border=True):
         col1,col2 = st.columns(2)
         with col1:
-            #df_selected_year_usage_thesaurus_oui = Desc[Desc['Thesaurus_usage']=='OUI']
-            #st.write(df_selected_year_usage_thesaurus_oui['Thesaurus'].value_counts())
+            cnt_thesaurus = df_thesaurus_oui['Thesaurus_listed'].value_counts()[0:25]
+            df = pd.DataFrame(cnt_thesaurus.index)
+            df['count']=cnt_thesaurus.values
+
+            liste_thesaurus = ['GEMET - INSPIRE themes', 'GEMET - Concepts', 'Régions administratives de France', 
+                            'Continents countries sea regions of the world','theme.EnvironnementFR.rdf','theme.thesaurus_costel.rdf', 'Vocabulaire MétaZABR','ENVTHES','réseau des zones ateliers',
+                            'Nouvelles Régions de France','external.place.inspire-theme','external.place.localisation','external.place.ore','external.place.thematiques',
+                            'external.place.departements','AGROVOC','Biodiversity Thesaurus','GéoBretagne v 2.0']
+            
+            liste_df_count = ['A_count', 'B_count', 'C_count','D_count','E_count','F_count','G_count','H_count','I_count','J_count','K_count','L_count','M_count','N_count','O_count','P_count','Q_count','R_count']
+            # Expand combinations into separate columns
+            for elem in liste_thesaurus:
+                df[elem] = df['Thesaurus_listed'].apply(lambda x: elem in x)
+
+            # Multiply each by the counts
+            for i in range(len(liste_thesaurus)):
+                df[liste_df_count[i]] = df[liste_thesaurus[i]] * df['count']
+            
+            # Sum counts by element
+            summed_df = df[liste_df_count].sum()
+
+            # Create a bar plot
+            fig = go.Figure()
+            for i in range(len(liste_thesaurus)):
+                fig.add_trace(go.Bar(
+                    x=[liste_thesaurus[i]],
+                    y=[summed_df[liste_df_count[i]]],
+                    name=liste_thesaurus[i],
+                    marker_color=colors[i]
+                ))
+
+            # Update layout for stacked bar chart
+            fig.update_layout(
+                barmode='stack',
+                title='Thésaurus utilisés',
+                xaxis=dict(title='Thesaurus'),
+                yaxis=dict(title='Counts'),
+                height=700,
+                showlegend=False
+            )
+
+            st.plotly_chart(fig)
             st.write('à venir')
         with col2:
             #df_selected_year_usage_thesaurus_non = Desc[Desc['Thesaurus_usage']=='NON']

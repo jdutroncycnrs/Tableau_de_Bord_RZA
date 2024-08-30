@@ -8,26 +8,20 @@
 
 import pandas as pd
 
-data = pd.read_csv('pages/data/infos_MD/infos_groupes.csv', index_col=[0])
-data_sorted = data.sort_values(by='Identifiant').reset_index(drop=True)
+data = {
+    'GEMET - INSPIRE themes': 444,
+    'theme.EnvironnementFR.rdf,GEMET - INSPIRE themes,theme.thesaurus_costel.rdf': 81,
+    'GEMET - INSPIRE themes,Vocabulaire MétaZABR': 48,
+    'theme.EnvironnementFR.rdf,GEMET - INSPIRE themes': 35,
+    'Régions administratives de France': 26,
+    'theme.EnvironnementFR.rdf,theme.thesaurus_costel.rdf': 23,
+    'GEMET - INSPIRE themes,GEMET - Concepts,sea regions of the world.,Régions administratives de France,countries,Continents': 23,
+    'GEMET - INSPIRE themes,Continents,sea regions of the world.,countries,Régions administratives de France': 16,
+    'GEMET - Concepts,GEMET - INSPIRE themes,Régions de France,Region': 15,
+    'GEMET - Concepts,GEMET - INSPIRE themes': 14
+}
 
-uuids = pd.read_csv('pages/data/uuids/uuid_cat_InDoRes_clean_2024-08-01.csv', index_col=[0])
-uuids.drop_duplicates(keep='first', inplace=True)
-uuids_sorted = uuids.sort_values(by='uuid_cat_InDoRes').reset_index(drop=True)
+# Convert it into a DataFrame
+df = pd.DataFrame(list(data.items()), columns=['Themes', 'Counts'])
 
-liste_uuids = uuids_sorted['uuid_cat_InDoRes'].values
-print(len(liste_uuids))
-
-for i in range(len(data_sorted)):
-    if data_sorted.loc[i, 'Identifiant'] in liste_uuids:
-        data_sorted.loc[i, 'IN']=True
-    else:
-        data_sorted.loc[i, 'IN']=False
-
-data_bis = data_sorted[data_sorted['IN']==True]
-
-
-data_bis.drop_duplicates(keep='first', inplace=True)
-data_bis.reset_index(inplace=True, drop=True)
-
-data_bis.to_csv('pages/data/infos_MD/infos_groupes2.csv')
+print(df)

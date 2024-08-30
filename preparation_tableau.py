@@ -48,6 +48,8 @@ def remove_duplicate_patterns(text,pattern):
 
 def traitement_thesaurus(tableau):
     tableau_ = tableau.copy()
+    tableau_.reset_index(inplace=True)
+    tableau_.drop(columns='index',inplace=True)
     for i in range(len(tableau_)):
         tableau_.loc[i,'Thesaurus']=tableau_.loc[i,'Thesaurus'][1:-1]
         if len(tableau_.loc[i,'Thesaurus'])==0:
@@ -56,19 +58,47 @@ def traitement_thesaurus(tableau):
             tableau_.loc[i,'Thesaurus_usage']="OUI"
 
     tableau_oui = tableau_[tableau_['Thesaurus_usage']=='OUI']
+    tableau_oui.reset_index(inplace=True)
+    tableau_oui.drop(columns='index',inplace=True)
+    tableau_non = tableau_[tableau_['Thesaurus_usage']=='NON']
+    tableau_non.reset_index(inplace=True)
+    tableau_non.drop(columns='index',inplace=True)
 
     def transfo(x):
         return [item.strip().strip("'") for item in x.split(',')]
 
     tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus'].apply(transfo)
-    return tableau_oui
+    tableau_oui['Thesaurus_listed_len'] = tableau_oui['Thesaurus_listed'].apply(lambda x:len(x))
+
+    elements_to_remove = {'version 1.0', 'version 2.4'}
+    tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus_listed'].apply(lambda lst: [x for x in lst if x not in elements_to_remove])
+    pattern = 'GEMET - INSPIRE themes'
+    pattern2 = 'Continents countries sea regions of the world'
+    pattern3 = 'Régions administratives de France'
+    replace_dict = {'INSPIRE themes': pattern,
+                    'GEMET':pattern,
+                    'Registre de thème INSPIRE':pattern,
+                    'GEMET inspire themes - version 1.0':pattern,
+                    'GEMET Thesaurus version 1.0':pattern,
+                    'INSPIRE':pattern,
+                    'inspire':pattern,
+                    'Gemet':pattern,
+                    'Continents':pattern2,
+                    'countries':pattern2,
+                    'sea regions of the world':pattern2,
+                    'sea regions of the world.':pattern2,
+                    'Region':pattern3}
+    tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus_listed'].apply(lambda lst: [replace_dict.get(x, x) for x in lst])
+    tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus_listed'].apply(set)
+    tableau_oui['Thesaurus_listed'] = tableau_oui['Thesaurus_listed'].apply(list)
+
+    return tableau_ ,tableau_oui, tableau_non
 
 def traitement_thesaurus__(tableau):
     pattern = "'GEMET_INSPIRE_themes_V1'"
     pattern2 = "'GEMET_INSPIRE_concepts_V2.4'"
     pattern3 = "'GEMET_INSPIRE_concepts_V4.1.4'"
     pattern4 = "'Continents_Countries_Seas'"
-    'GEMET_INSPIRE_themes_V1', 
     for i in range(len(tableau)):
         tableau.loc[i,'Thesaurus']=tableau.loc[i,'Thesaurus'][1:-1]
         try:
