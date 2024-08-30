@@ -94,6 +94,19 @@ def traitement_standards(tableau):
     
     return tableau_
 
+def traitement_droits(tableau):
+    tableau_ = tableau.copy()
+
+    for i in range(len(tableau_)):
+        if 'available' in str(tableau_.loc[i,'Contrainte_usage']):
+                tableau_.loc[i,'Contrainte_usage']="available"
+        elif 'restricted' in str(tableau_.loc[i,'Contrainte_usage']):
+                tableau_.loc[i,'Contrainte_usage']="restricted"
+        elif 'other' in str(tableau_.loc[i,'Contrainte_usage']):
+                tableau_.loc[i,'Contrainte_usage']="other restrictions"
+    
+    return tableau_
+
 def traitement_formats(tableau):
     tableau_ = tableau.copy()
     for i in range(len(tableau_)):

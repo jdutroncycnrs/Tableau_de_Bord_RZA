@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits
 pd.options.mode.chained_assignment = None
 
 
@@ -396,7 +396,7 @@ elif Autres_champs:
                 yaxis_title='langues',
                 width=1000,
                 height=1000)
-        st.plotly_chart(fig_langue)
+        st.plotly_chart(fig_langue,use_container_width=True)
 
     elif Standards:
         df_selected_year_standard_ = traitement_standards(df_selected_year)
@@ -412,7 +412,7 @@ elif Autres_champs:
                 yaxis_title='Standards',
                 width=1000,
                 height=1000)
-        st.plotly_chart(fig_standard)
+        st.plotly_chart(fig_standard,use_container_width=True)
 
     elif Formats:
         df_selected_year_formats_ = traitement_formats(df_selected_year)
@@ -437,7 +437,7 @@ elif Autres_champs:
                 xaxis_title='Compte',
                 width=500,
                 height=500)
-        st.plotly_chart(fig_format)
+        st.plotly_chart(fig_format,use_container_width=True)
 
     elif Orgas:
         df_selected_year_orgas_ = traitement_orgas(df_selected_year)
@@ -461,7 +461,7 @@ elif Autres_champs:
                 xaxis_title='Compte',
                 width=500,
                 height=500)
-        st.plotly_chart(fig_orga)
+        st.plotly_chart(fig_orga,use_container_width=True)
 
 
     elif Contacts:
@@ -470,7 +470,8 @@ elif Autres_champs:
         st.write('en cours de fabrication')
 
     elif Droits:
-        df_selected_year_droits = df_selected_year['Contrainte_usage'][df_selected_year.Year >= selection_dates_input]
+        df_selected_year_droits_ = traitement_droits(df_selected_year)
+        df_selected_year_droits = df_selected_year_droits_['Contrainte_usage'][df_selected_year_droits_.Year >= selection_dates_input]
         cnt_droits = df_selected_year_droits.value_counts()[0:15]
         somme_droits_vis = cnt_droits.values.sum()
         
@@ -484,7 +485,7 @@ elif Autres_champs:
                 yaxis_title='Droits',
                 width=1000,
                 height=1000)
-        st.plotly_chart(fig_droits)
+        st.plotly_chart(fig_droits,use_container_width=True)
 
 
 elif Description:
