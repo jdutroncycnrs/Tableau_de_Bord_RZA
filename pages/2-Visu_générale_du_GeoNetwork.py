@@ -586,13 +586,13 @@ elif Description:
                 for j in range(len(l)):
                     liste_mots_clés_oui.append(l[j])
             liste_mots_clés_oui_set = set(liste_mots_clés_oui)
-            st.write(len(liste_mots_clés_oui_set))
+            st.metric(label='Nombre de Mots utilisés',value=len(liste_mots_clés_oui_set))
 
             compte_oui = Counter(liste_mots_clés_oui)
             year_pattern = re.compile(r'\b\d{4}\b')
             filtered_dict = {key: value for key, value in compte_oui.items() if not year_pattern.search(key)}
             sorted_value_counts_oui = dict(sorted(filtered_dict.items(), key=lambda item: item[1], reverse=True))
-            df_sorted_value_counts_oui = pd.DataFrame(list(sorted_value_counts_oui.items()), columns=['Mot_clé', "Nb d'utilisation"])
+            df_sorted_value_counts_oui = pd.DataFrame(list(sorted_value_counts_oui.items()), columns=['Mot_clé', "Occurences"])
             df_sorted_value_counts_oui.set_index('Mot_clé',inplace=True)
             st.table(df_sorted_value_counts_oui)
 
@@ -619,10 +619,10 @@ elif Description:
                 for j in range(len(l)):
                     liste_mots_clés_non.append(l[j])
             liste_mots_clés_non_set = set(liste_mots_clés_non)
-            st.write(len(liste_mots_clés_non_set))
+            st.metric(label='Nombre de Mots utilisés',value=len(liste_mots_clés_non_set))
             compte_non = Counter(liste_mots_clés_non)
             sorted_value_counts_non = dict(sorted(compte_non.items(), key=lambda item: item[1], reverse=True))
-            df_sorted_value_counts_non = pd.DataFrame(list(sorted_value_counts_non.items()), columns=['Mot_clé', "Nb d'utilisation"])
+            df_sorted_value_counts_non = pd.DataFrame(list(sorted_value_counts_non.items()), columns=['Mot_clé', "Occurences"])
             df_sorted_value_counts_non.set_index('Mot_clé',inplace=True)
             st.table(df_sorted_value_counts_non)
         
