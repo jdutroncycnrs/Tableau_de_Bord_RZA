@@ -94,6 +94,64 @@ def traitement_standards(tableau):
     
     return tableau_
 
+def traitement_formats(tableau):
+    tableau_ = tableau.copy()
+    for i in range(len(tableau_)):
+        try:
+            tableau_.loc[i,'Format']=tableau_.loc[i,'Format'][2:-2]
+        except:
+            pass
+        if tableau_.loc[i,'Format']=='':
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="Pas de logiciel associé à la donnée":
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="modèle de simulation du Grand Lyon":
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="Vigilance":
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="inapplicable":
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="application/pdf":
+            tableau_.loc[i,'Format']="PDF"
+        elif tableau_.loc[i,'Format']=="application/x-shapefile":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="esri Shapefile":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="Esri Shapefile":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="SHP":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="GeoTiff":
+            tableau_.loc[i,'Format']="GeoTIFF"
+        elif tableau_.loc[i,'Format']=="GEOTIFF":
+            tableau_.loc[i,'Format']="GeoTIFF"
+        elif tableau_.loc[i,'Format']=="TIFF":
+            tableau_.loc[i,'Format']="GeoTIFF"
+        elif tableau_.loc[i,'Format']=="TIF":
+            tableau_.loc[i,'Format']="GeoTIFF"
+        elif tableau_.loc[i,'Format']=="shape":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+        elif tableau_.loc[i,'Format']=="EXCEL":
+            tableau_.loc[i,'Format']="XLS"
+        elif tableau_.loc[i,'Format']=="application/vnd.ms-excel":
+            tableau_.loc[i,'Format']="XLS"
+        elif tableau_.loc[i,'Format']=="application/vnd.ms-excel' 'text/csv":
+            tableau_.loc[i,'Format']="XLS"
+        elif tableau_.loc[i,'Format']=="application/pdf' 'application/vnd.ms-excel":
+            tableau_.loc[i,'Format']="PDF"
+        elif tableau_.loc[i,'Format']=="Jpeg2000":
+            tableau_.loc[i,'Format']="JPEG"
+        elif tableau_.loc[i,'Format']=="IRB, TIF, JPEG, BMP":
+            tableau_.loc[i,'Format']="JPEG"
+        elif tableau_.loc[i,'Format']=="Mammouth":
+            tableau_.loc[i,'Format']="non renseigné"
+        elif tableau_.loc[i,'Format']=="text/csv":
+            tableau_.loc[i,'Format']="TXT"
+        elif tableau_.loc[i,'Format']=="GDB":
+            tableau_.loc[i,'Format']="ESRI Shapefile"
+
+    return tableau_
+
 def traitement_thesaurus(tableau):
     tableau_ = tableau.copy()
     tableau_.reset_index(inplace=True)

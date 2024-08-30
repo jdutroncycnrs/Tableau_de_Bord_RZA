@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats
 pd.options.mode.chained_assignment = None
 
 
@@ -415,9 +415,13 @@ elif Autres_champs:
         st.plotly_chart(fig_standard)
 
     elif Formats:
-        df_selected_year_format = df_selected_year['Format'][df_selected_year.Year >= selection_dates_input]
-        cnt_format = df_selected_year_format.value_counts()[0:15]
+        df_selected_year_formats_ = traitement_formats(df_selected_year)
+        st.dataframe(df_selected_year_formats_)
+        df_selected_year_format = df_selected_year_formats_['Format'][df_selected_year_formats_.Year >= selection_dates_input]
+
+        cnt_format = df_selected_year_format.value_counts()
         somme_formats_vis = cnt_format.values.sum()
+
 
         fig_format = go.Figure()
         for i in range(10):
@@ -430,7 +434,7 @@ elif Autres_champs:
                         marker=dict(color=colors[i])
                         ))
         fig_format.update_layout(
-                title='Formats publiantes',
+                title='Formats utilisés',
                 xaxis_title='Compte',
                 width=500,
                 height=500)
