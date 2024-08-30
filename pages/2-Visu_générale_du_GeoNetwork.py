@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles
 pd.options.mode.chained_assignment = None
 
 
@@ -483,11 +483,13 @@ elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     liste_desc = ['Themes','Thesaurus','Mots_clés']
     df_description = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
+
     df_description_ = df_description.assign(Thesaurus_usage=0)
-    df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage']]
+    df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage','Mots_clés']]
 
     df_thesaurus_ , df_thesaurus_oui , df_thesaurus_non = traitement_thesaurus(df_thesaurus)
 
+    
     with st.container(border=True):
         col1,col2 = st.columns([0.4,0.6])
         with col1:
@@ -552,9 +554,27 @@ elif Description:
     
     with st.container(border=True):
         col1,col2 = st.columns(2)
+        with col1:
+            df_thesaurus_oui_mots_cles = traitement_mots_cles(df_thesaurus_oui)
+
+            fig_histo = go.Figure()
+            fig_histo.add_trace(go.Histogram(
+                            x=df_thesaurus_oui_mots_cles['Mots_clés_listed_len'],
+                            name='test',
+                            marker_color=colors[0]
+                ))
+            st.plotly_chart(fig_histo)
         with col2:
-            #df_selected_year_usage_thesaurus_non = Desc[Desc['Thesaurus_usage']=='NON']
-            st.write('à venir')
+            df_thesaurus_non_mots_cles = traitement_mots_cles(df_thesaurus_non)
+
+            fig_histo2 = go.Figure()
+            fig_histo2.add_trace(go.Histogram(
+                            x=df_thesaurus_non_mots_cles['Mots_clés_listed_len'],
+                            name='test',
+                            marker_color=colors[1]
+                ))
+            st.plotly_chart(fig_histo2)
+
 
 
 elif Analyse_FAIR:
