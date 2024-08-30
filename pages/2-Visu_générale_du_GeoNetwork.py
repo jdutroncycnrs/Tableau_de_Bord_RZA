@@ -5,6 +5,7 @@ from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import re
+from collections import Counter
 from plotly.subplots import make_subplots
 from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits
 pd.options.mode.chained_assignment = None
@@ -578,6 +579,24 @@ elif Description:
                 width=1000,
                 height=500)
             st.plotly_chart(fig_histo)
+
+            liste_mots_clés_oui = []
+            for i in range(len(df_thesaurus_oui_mots_cles)):
+                l = df_thesaurus_oui_mots_cles.loc[i,'Mots_clés_listed']
+                for j in range(len(l)):
+                    liste_mots_clés_oui.append(l[j])
+            liste_mots_clés_oui_set = set(liste_mots_clés_oui)
+            st.write(len(liste_mots_clés_oui_set))
+
+            compte_oui = Counter(liste_mots_clés_oui)
+            year_pattern = re.compile(r'\b\d{4}\b')
+            filtered_dict = {key: value for key, value in compte_oui.items() if not year_pattern.search(key)}
+            sorted_value_counts_oui = dict(sorted(filtered_dict.items(), key=lambda item: item[1], reverse=True))
+            df_sorted_value_counts_oui = pd.DataFrame(list(sorted_value_counts_oui.items()), columns=['Mot_clé', "Nb d'utilisation"])
+            df_sorted_value_counts_oui.set_index('Mot_clé',inplace=True)
+            st.table(df_sorted_value_counts_oui)
+
+
         with col2:
             df_thesaurus_non_mots_cles = traitement_mots_cles(df_thesaurus_non)
 
@@ -593,8 +612,20 @@ elif Description:
                 width=1000,
                 height=500)
             st.plotly_chart(fig_histo2)
-
-
+        
+            liste_mots_clés_non = []
+            for i in range(len(df_thesaurus_non_mots_cles)):
+                l = df_thesaurus_non_mots_cles.loc[i,'Mots_clés_listed']
+                for j in range(len(l)):
+                    liste_mots_clés_non.append(l[j])
+            liste_mots_clés_non_set = set(liste_mots_clés_non)
+            st.write(len(liste_mots_clés_non_set))
+            compte_non = Counter(liste_mots_clés_non)
+            sorted_value_counts_non = dict(sorted(compte_non.items(), key=lambda item: item[1], reverse=True))
+            df_sorted_value_counts_non = pd.DataFrame(list(sorted_value_counts_non.items()), columns=['Mot_clé', "Nb d'utilisation"])
+            df_sorted_value_counts_non.set_index('Mot_clé',inplace=True)
+            st.table(df_sorted_value_counts_non)
+        
 
 elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
