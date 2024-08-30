@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import re
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards
 pd.options.mode.chained_assignment = None
 
 
@@ -399,7 +399,8 @@ elif Autres_champs:
         st.plotly_chart(fig_langue)
 
     elif Standards:
-        df_selected_year_Standard = df_selected_year['Standard'][df_selected_year.Year >= selection_dates_input]
+        df_selected_year_standard_ = traitement_standards(df_selected_year)
+        df_selected_year_Standard = df_selected_year_standard_['Standard'][df_selected_year_standard_.Year >= selection_dates_input]
         cnt_standard = df_selected_year_Standard.value_counts()
         fig_standard = go.Figure()
         fig_standard.add_trace(go.Pie(labels=cnt_standard.index.values, values=cnt_standard.values))

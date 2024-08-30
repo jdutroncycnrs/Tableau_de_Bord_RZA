@@ -61,6 +61,39 @@ def traitement_langues(tableau):
     
     return tableau_
 
+def traitement_standards(tableau):
+    tableau_ = tableau.copy()
+
+    for i in range(len(tableau_)):
+            if tableau_.loc[i,'Standard']=="ISO 19115:2003 Geographic information - Metadata":
+                tableau_.loc[i,'Standard']="ISO 19115:2003/19139"
+            elif tableau_.loc[i,'Standard']=="ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data":
+                tableau_.loc[i,'Standard']="ISO 19115-2 Extensions for imagery and gridded data"
+            elif tableau_.loc[i,'Standard']=="ISO 19115/19139":
+                tableau_.loc[i,'Standard']="ISO 19115:2003/19139"
+            elif tableau_.loc[i,'Standard']=="http://www.isotc211.org/2005/gco":
+                tableau_.loc[i,'Standard']="ISO 19136:2005"
+            elif tableau_.loc[i,'Standard']=="https://cat.indores.fr/geonetwork/xml/schemas/dublin-core/schema.xsd":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="Cendrine":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="patricia cicille":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="07170":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="23, rue Jean Baldassini":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="UK GEMINI":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="Chenouf Sarra":
+                tableau_.loc[i,'Standard']="ISO 15836 (Dublin Core)"
+            elif tableau_.loc[i,'Standard']=="ISO 19115-3 ISO 19115-3":
+                tableau_.loc[i,'Standard']="ISO 19115-3"
+            elif tableau_.loc[i,'Standard']=="ISO19139":
+                tableau_.loc[i,'Standard']="ISO 19115:2003/19139"
+    
+    return tableau_
+
 def traitement_thesaurus(tableau):
     tableau_ = tableau.copy()
     tableau_.reset_index(inplace=True)
