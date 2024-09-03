@@ -168,15 +168,26 @@ if len(Selection_ZA)!=0:
             selec = df.index.values[i:i+1]
             selec_len = df['Nombre_dépôts'].values[i:i+1]
             fig0.add_trace(go.Bar(
-                        x=selec,
-                        y=selec_len,
+                        y=selec,
+                        x=selec_len,
                         name=za,
+                        orientation = 'h',
                         marker=dict(color=colors[i])
                     ))
         fig0.update_layout(
-                                title=f'Nombre de dépôts répertoriées au {d}',
+                                title=dict(
+                                    text=f'Nombre de dépôts répertoriées au {d}',
+                                    font=dict(size=24, family='Arial', color='darkblue')
+                                ),
+                                yaxis=dict(
+                                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                                ),
+                                xaxis=dict(
+                                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                                ),
                                 width=1000,
-                                height=600)
+                                height=600,
+                                showlegend=False)
         st.plotly_chart(fig0,use_container_width=True)
         my_bar.empty()
 

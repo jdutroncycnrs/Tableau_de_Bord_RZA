@@ -96,6 +96,7 @@ def traitement_standards(tableau):
 
 def traitement_droits(tableau):
     tableau_ = tableau.copy()
+    tableau_['Contrainte_usage'] = tableau_['Contrainte_usage'].fillna('Non renseigné')
 
     for i in range(len(tableau_)):
         if 'available' in str(tableau_.loc[i,'Contrainte_usage']):

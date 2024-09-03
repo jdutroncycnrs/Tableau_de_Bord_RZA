@@ -281,12 +281,27 @@ elif Evolution_temporelle:
                 x=df_date_year['Date'][df_date_year.Year >= selection_dates_input],
                 y=df_date_year['Compte_resampled'][df_date_year.Year >= selection_dates_input],
                 name='Dates',
-                marker=dict(color='#90B7CF',line=dict(color='#90B7CF',width=3))))
+                marker=dict(color=colors[0],line=dict(color='#90B7CF',width=3))))
     except:
         pass
-    fig_tempo.update_layout(title='Dates des fiches',
-                xaxis_title='Dates',
-                yaxis_title='Compte semestriel',
+    fig_tempo.update_layout(
+                # Customize x-axis
+                xaxis=dict(
+                    title='Dates',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    title='Compte semestriel',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),   # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Répartition temporelle',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 width=500,
                 height=500)
     st.plotly_chart(fig_tempo, use_container_width=True)
@@ -434,8 +449,20 @@ elif Autres_champs:
                         marker=dict(color=colors[i])
                         ))
         fig_format.update_layout(
-                title='Formats utilisés',
-                xaxis_title='Compte',
+                xaxis=dict(
+                    title='Compte',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Formats utilisés',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 width=500,
                 height=500)
         st.plotly_chart(fig_format,use_container_width=True)
@@ -458,8 +485,20 @@ elif Autres_champs:
                         marker=dict(color=colors[i])
                         ))
         fig_orga.update_layout(
-                title='Organisations publiantes',
-                xaxis_title='Compte',
+                xaxis=dict(
+                    title='Compte',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Organisations publiantes',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 width=500,
                 height=500)
         st.plotly_chart(fig_orga,use_container_width=True)
@@ -481,11 +520,32 @@ elif Autres_champs:
         fig_droits.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                     marker=dict(colors=colors, line=dict(color='#000000', width=2)))
         fig_droits.update_layout(
-                title='Droits à usage',
-                xaxis_title='Compte',
-                yaxis_title='Droits',
-                width=1000,
-                height=1000)
+                xaxis=dict(
+                    title='Compte',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                #Optionally, customize the plot title
+                title=dict(
+                    text='Droits à usage',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
+                legend=dict(
+                    font=dict(
+                        size=20,          # Font size
+                        family='Arial',   # Font family (optional)
+                        color='black'     # Font color (optional)
+                    ),
+                    title=dict(
+                        font=dict(size=18, family='Arial', color='darkblue')  # Legend title font (optional)
+                    )
+                ),
+                width=500,
+                height=500)
         st.plotly_chart(fig_droits,use_container_width=True)
 
 
@@ -511,9 +571,30 @@ elif Description:
             fig_usage_thesaurus.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
                             marker=dict(colors=colors, line=dict(color='#000000', width=2)))
             fig_usage_thesaurus.update_layout(
-                        title='Usage des thésaurus',
-                        xaxis_title='Compte',
-                        yaxis_title='Usage',
+                        xaxis=dict(
+                            title='Compte',  # Axis title
+                            title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                            tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                            ),
+                        # Customize y-axis
+                        yaxis=dict(
+                            tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                        ),
+                        #Optionally, customize the plot title
+                        title=dict(
+                            text='Usage des thésaurus',
+                            font=dict(size=24, family='Arial', color='darkblue')
+                        ),
+                        legend=dict(
+                            font=dict(
+                                size=20,          # Font size
+                                family='Arial',   # Font family (optional)
+                                color='black'     # Font color (optional)
+                            ),
+                            title=dict(
+                                font=dict(size=18, family='Arial', color='darkblue')  # Legend title font (optional)
+                            )
+                        ),
                         width=500,
                         height=500)
             st.plotly_chart(fig_usage_thesaurus)
@@ -544,8 +625,9 @@ elif Description:
             fig = go.Figure()
             for i in range(len(liste_thesaurus)):
                 fig.add_trace(go.Bar(
-                    x=[liste_thesaurus[i]],
-                    y=[summed_df[liste_df_count[i]]],
+                    y=[liste_thesaurus[i]],
+                    x=[summed_df[liste_df_count[i]]],
+                    orientation='h',
                     name=liste_thesaurus[i],
                     marker_color=colors[i]
                 ))
@@ -553,9 +635,20 @@ elif Description:
             # Update layout for stacked bar chart
             fig.update_layout(
                 barmode='stack',
-                title='Thésaurus utilisés',
-                xaxis=dict(title='Thesaurus'),
-                yaxis=dict(title='Counts'),
+                xaxis=dict(
+                    title='Thesaurus',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Thésaurus utilisés',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 height=600,
                 showlegend=False
             )
@@ -574,8 +667,22 @@ elif Description:
                             marker_color=colors[0]
                 ))
             fig_histo.update_layout(
-                title='Nombre de mots clés utilisés avec usage de thésaurus',
-                yaxis_title='Nombre',
+                xaxis=dict(
+                    title='Nombre de mots clés',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    title='Nombre',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Nbr de mots clés avec usage de thésaurus',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 width=1000,
                 height=500)
             st.plotly_chart(fig_histo)
@@ -607,8 +714,22 @@ elif Description:
                             marker_color=colors[1]
                 ))
             fig_histo2.update_layout(
-                title='Nombre de mots clés utilisés sans usage de thésaurus',
-                yaxis_title='Nombre',
+                xaxis=dict(
+                    title='Nombre de mots clés',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')    # Tick font
+                ),
+                # Customize y-axis
+                yaxis=dict(
+                    title='Nombre',  # Axis title
+                    title_font=dict(size=20, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+                title=dict(
+                    text='Nbr de mots clés sans usage de thésaurus',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
                 width=1000,
                 height=500)
             st.plotly_chart(fig_histo2)
@@ -638,8 +759,8 @@ elif Analyse_FAIR:
             z=data_numbers,
             #colorscale = 'Temps', #'rdylgn'
             colorscale=[  
-                [0, colors[1]],  
-                [1, colors[0]]   
+                [0, 'white'],  
+                [1, 'black']   
              ],
             showscale=False,
             #text=data_numbers,
@@ -647,8 +768,23 @@ elif Analyse_FAIR:
             #textfont={"size":20}
             ))
     fig7.update_layout(
-            title='Matrice FAIR',
-            width=1000,
-            height=1000)
+            xaxis=dict(
+                    title='Indicateurs FAIR',  # Axis title
+                    title_font=dict(size=36, family='Arial', color='green'),  # Title font
+                    tickfont=dict(size=30, family='Arial', color='green')    # Tick font
+                ),
+                # Customize y-axis
+            yaxis=dict(
+                    title='Index des enregistrements dans le catalogue',  # Axis title
+                    title_font=dict(size=26, family='Arial', color='black'),  # Title font
+                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                ),
+                # Optionally, customize the plot title
+            title=dict(
+                    text='Matrice FAIR',
+                    font=dict(size=24, family='Arial', color='darkblue')
+                ),
+            width=700,
+            height=700)
     st.plotly_chart(fig7,use_container_width=True)
 
