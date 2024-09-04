@@ -288,7 +288,7 @@ if Repartition_fiches:
                             color=graph_ticks_color    
                         ),
                         title=dict(
-                            text = 'Répartition des fiches dans les catalogues',
+                            text = 'Zones ateliers',
                             font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                         )
                     ),
