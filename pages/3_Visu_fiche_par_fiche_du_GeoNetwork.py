@@ -50,7 +50,7 @@ couleur_True = (0,200,0)
 couleur_False = (200,0,0)
 wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
-fontsize = 25
+fontsize = 70
 
 # Listes
 liste_ZAs = ['zaa', 
@@ -204,21 +204,21 @@ if checkbox1:
         selection_group = liste_ZAs 
     selected_uuids = group_mentions['Identifiant'][group_mentions['Groupe_et_Mention'].isin(selection_group)]
     selected_uuids_ = selected_uuids.reset_index(drop=True)
-    st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
 elif checkbox2:
     selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
     if len(selection_group)==0:
         selection_group = liste_OHMs
     selected_uuids = group_mentions['Identifiant'][group_mentions['Groupe_et_Mention'].isin(selection_group)]
     selected_uuids_ = selected_uuids.reset_index(drop=True)
-    st.sidebar.metric('NOMBRE FICHES VISUALISEES:',len(selected_uuids_))
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
 else:
     selected_uuids_ = group_mentions['Identifiant']
-    st.sidebar.metric('NOMBRE FICHES VISUALISEES',len(selected_uuids_))
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
 
 ##################################################################################################
 ########## TITRE DE LA PAGE ######################################################################
-title = "Visualisation des fiches GN"
+title = "Visualisation des fiches"
 s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
 st.markdown(s_title,unsafe_allow_html=True)
 
@@ -1372,6 +1372,7 @@ else:
 
 lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
 
+st.sidebar.markdown('Groupe et Mention')
 col1,col2 = st.sidebar.columns(2)
 with col1:
     htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
@@ -1387,7 +1388,7 @@ with col1:
                                         padding-bottom: 10px; 
                                         line-height:5px;
                                         text-align:center'>
-                                        </style><BR><span style='font-size: 15px; 
+                                        </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{groupe}</style></span></p>"""
     st.markdown(lnk + htmlstr, unsafe_allow_html=True)
 with col2:
@@ -1404,7 +1405,7 @@ with col2:
                                         padding-bottom: 10px; 
                                         line-height:5px;
                                         text-align:center'>
-                                        </style><BR><span style='font-size: 15px; 
+                                        </style><BR><span style='font-size: 25px; 
                                         margin-top: 0;'>{mention}</style></span></p>"""
     st.markdown(lnk + htmlstr2, unsafe_allow_html=True)
 
