@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 import re
 from collections import Counter
 from plotly.subplots import make_subplots
-from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits
+from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits,traitement_contacts
 pd.options.mode.chained_assignment = None
 
 
@@ -281,6 +281,17 @@ if Repartition_fiches:
                         text='Répartition des fiches dans les catalogues',
                         font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                     ),
+                    legend=dict(
+                        font=dict(
+                            size=legend_font,          
+                            family='Arial',   
+                            color=graph_ticks_color    
+                        ),
+                        title=dict(
+                            text = 'Répartition des fiches dans les catalogues',
+                            font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
+                        )
+                    ),
                     width=500,
                     height=500)
     st.plotly_chart(fig_counts,use_container_width=True)
@@ -534,9 +545,43 @@ elif Autres_champs:
 
 
     elif Contacts:
-        
-        
-        st.write('en cours de fabrication')
+        df_selected_year_contacts_ = traitement_contacts(df_selected_year)
+        df_selected_year_contacts = df_selected_year_contacts_[['Nom_contact','Orga_contact']][df_selected_year_contacts_.Year >= selection_dates_input]
+        all_names = [name for sublist in df_selected_year_contacts['Nom_contact'] for name in sublist]
+        name_counts = Counter(all_names)
+        name_counts_df = pd.DataFrame(name_counts.items(), columns=['Nom_contact', 'Count'])
+        sorted_name_counts_df = name_counts_df.sort_values(by='Count', ascending=False)
+        sorted_name_counts_df.reset_index(inplace=True)
+        sorted_name_counts_df.drop(columns='index',inplace=True)
+        fig_contacts = go.Figure()
+        for i in range(15):
+            try:
+                fig_contacts.add_trace(go.Bar(
+                        y=[sorted_name_counts_df.loc[i,'Nom_contact']],
+                        x=[sorted_name_counts_df.loc[i,'Count']],
+                        orientation='h',
+                        showlegend=False,
+                        marker=dict(color=colors[i])
+                        ))
+            except:
+                pass
+        fig_contacts.update_layout(
+                xaxis=dict(
+                    title='Compte',  
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
+                ),
+                yaxis=dict(
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)    
+                ),
+                title=dict(
+                    text='Contacts identifiés',
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
+                ),
+                width=500,
+                height=500)
+        st.plotly_chart(fig_contacts,use_container_width=True)
+
 
     elif Droits:
         df_selected_year_droits_ = traitement_droits(df_selected_year)

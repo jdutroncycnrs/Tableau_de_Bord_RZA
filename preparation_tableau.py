@@ -390,6 +390,42 @@ def traitement_orgas(tableau):
 
     return tableau_
 
+def traitement_contacts(tableau):
+    tableau_ = tableau.copy()
+
+    def transfo_contact(x):
+        return [item.strip() for item in x.split(';')]
+
+    for i in range(len(tableau_)):
+        try:
+            tableau_.loc[i,'Nom_contact']=tableau_.loc[i,'Nom_contact'][2:-2].lower().replace("' '",";")
+        except:
+            pass
+        if tableau_.loc[i,'Nom_contact']=='':
+            tableau_.loc[i,'Nom_contact']='Non renseigné'
+        elif tableau_.loc[i,'Nom_contact']=='pierre stéphan':
+            tableau_.loc[i,'Nom_contact']='pierre, stéphan'
+        elif tableau_.loc[i,'Nom_contact']=='pierre stephan':
+            tableau_.loc[i,'Nom_contact']='pierre, stéphan'
+        elif 'bray' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='bray frédéric'
+        elif 'renaud' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='renaud julien'
+        elif 'nabucet' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='nabucet jean'
+        elif 'moal' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='le moal françoise'
+        elif 'mony' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='mony cendrine'
+        elif 'aviron' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='aviron stephanie'
+        elif 'eschbach' in str(tableau_.loc[i,'Nom_contact']):
+            tableau_.loc[i,'Nom_contact']='eschbach david'
+
+    tableau_['Nom_contact'] = tableau_['Nom_contact'].apply(str)
+    tableau_['Nom_contact'] = tableau_['Nom_contact'].apply(transfo_contact)
+    return tableau_
+
 def traitement_thesaurus(tableau):
     tableau_ = tableau.copy()
     tableau_.reset_index(inplace=True)
