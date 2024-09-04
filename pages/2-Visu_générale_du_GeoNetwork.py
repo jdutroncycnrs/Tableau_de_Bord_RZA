@@ -73,6 +73,8 @@ graph_yaxis_ticks_font = 15
 graph_yaxis_title_font = 20
 legend_title_font = 15
 legend_font =15
+graph_title_color = "gray"
+graph_ticks_color = 'gray'
 
 ###########  FILTRE DES CATALOGUES ####################################
 liste_groupes = set(group_['Groupe_et_Mention'].values)
@@ -144,9 +146,9 @@ if checkbox2:
     else:
         df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
     if len(Selection_group)==0:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
+        st.sidebar.metric('Nombre de fiches:',len(Selection_df))
     else:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
+        st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 elif checkbox1:
     
@@ -157,14 +159,14 @@ elif checkbox1:
     else:
         df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
     if len(Selection_group)==0:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(Selection_df))
+        st.sidebar.metric('Nombre de fiches:',len(Selection_df))
     else:
-        st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
+        st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 else:
     Catalogues_counts = tableau['Groupe_et_Mention'].value_counts()
     df_selected = tableau
-    st.sidebar.metric('NOMBRE FICHES COMPTABILISEES:',len(df_selected))
+    st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 ##################### PREPARATION DATES ###################################################################
 df_selected_year = year(df_selected)
@@ -277,7 +279,7 @@ if Repartition_fiches:
     fig_counts.update_layout(
                     title=dict(
                         text='Répartition des fiches dans les catalogues',
-                        font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                     ),
                     width=500,
                     height=500)
@@ -297,17 +299,17 @@ elif Evolution_temporelle:
     fig_tempo.update_layout(
                 xaxis=dict(
                     title='Dates',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
                     title='Compte semestriel', 
-                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color='black'),   
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color=graph_ticks_color),   
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 title=dict(
                     text='Répartition temporelle',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 width=500,
                 height=500)
@@ -416,17 +418,17 @@ elif Autres_champs:
         fig_langue.update_layout(
                 title=dict(
                         text='Langues utilisées',
-                        font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                     ),
                 legend=dict(
                     font=dict(
                         size=legend_font,          
                         family='Arial',   
-                        color='black'     
+                        color=graph_ticks_color    
                     ),
                     title=dict(
                         text = 'Langues',
-                        font=dict(size=legend_title_font, family='Arial', color='darkblue')  
+                        font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                     )
                 ),
                 width=500,
@@ -444,17 +446,17 @@ elif Autres_champs:
         fig_standard.update_layout(
                 title=dict(
                         text='Standards utilisés',
-                        font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                     ),
                 legend=dict(
                     font=dict(
                         size=legend_font,          
                         family='Arial',   
-                        color='black'     
+                        color=graph_ticks_color    
                     ),
                     title=dict(
                         text = 'Standards',
-                        font=dict(size=legend_title_font, family='Arial', color='darkblue')  
+                        font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                     )
                 ),
                 width=500,
@@ -482,15 +484,15 @@ elif Autres_champs:
         fig_format.update_layout(
                 xaxis=dict(
                     title='Compte',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')    
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 title=dict(
                     text='Formats utilisés',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 width=500,
                 height=500)
@@ -516,15 +518,15 @@ elif Autres_champs:
         fig_orga.update_layout(
                 xaxis=dict(
                     title='Compte',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')     
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)     
                 ),
                 title=dict(
                     text='Organisations publiantes',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 width=500,
                 height=500)
@@ -549,25 +551,25 @@ elif Autres_champs:
         fig_droits.update_layout(
                 xaxis=dict(
                     title='Compte',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')   
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
                 ),
                 title=dict(
                     text='Droits à usage',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 legend=dict(
                     font=dict(
                         size=legend_font,          
                         family='Arial',   
-                        color='black'     
+                        color=graph_ticks_color     
                     ),
                     title=dict(
                         text = 'Droits',
-                        font=dict(size=legend_title_font, family='Arial', color='darkblue')  
+                        font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                     )
                 ),
                 width=500,
@@ -599,24 +601,24 @@ elif Description:
             fig_usage_thesaurus.update_layout(
                         xaxis=dict(
                             title='Compte',  
-                            title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                            tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                            title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                            tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                             ),
                         yaxis=dict(
-                            tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')    
+                            tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                         ),
                         title=dict(
                             text='Usage des thésaurus',
-                            font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                            font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                         ),
                         legend=dict(
                             font=dict(
                                 size=legend_font,          
                                 family='Arial',  
-                                color='black'     
+                                color=graph_ticks_color     
                             ),
                             title=dict(
-                                font=dict(size=legend_title_font, family='Arial', color='darkblue')  
+                                font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                             )
                         ),
                         width=500,
@@ -661,15 +663,15 @@ elif Description:
                 barmode='stack',
                 xaxis=dict(
                     title='Thesaurus',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')     
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)     
                 ),
                 title=dict(
                     text='Thésaurus utilisés',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 height=600,
                 showlegend=False
@@ -691,17 +693,17 @@ elif Description:
             fig_histo.update_layout(
                 xaxis=dict(
                     title='Nombre de mots clés',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
                     title='Nombre',  
-                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')     
+                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)     
                 ),
                 title=dict(
                     text='Nbr de mots clés avec usage de thésaurus',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 width=1000,
                 height=500)
@@ -736,17 +738,17 @@ elif Description:
             fig_histo2.update_layout(
                 xaxis=dict(
                     title='Nombre de mots clés',  
-                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color='black')    
+                    title_font=dict(size=graph_xaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)    
                 ),
                 yaxis=dict(
                     title='Nombre',  
-                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color='black'),  
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')     
+                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color=graph_ticks_color),  
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)     
                 ),
                 title=dict(
                     text='Nbr de mots clés sans usage de thésaurus',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
                 width=1000,
                 height=500)
@@ -793,11 +795,11 @@ elif Analyse_FAIR:
                 ),
             yaxis=dict(
                     title='Index des enregistrements dans le catalogue',  
-                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color='black'), 
-                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color='black')),  
+                    title_font=dict(size=graph_yaxis_title_font, family='Arial', color=graph_ticks_color), 
+                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)),  
             title=dict(
                     text='Matrice FAIR',
-                    font=dict(size=graph_title_font, family='Arial', color='darkblue')
+                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                 ),
             width=700,
             height=700)

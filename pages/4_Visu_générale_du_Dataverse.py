@@ -88,6 +88,15 @@ liste_ZAs_bis = [['Zone atelier territoires uranifères','36'],
               [' Zone Atelier Argonne','10297']]
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
+graph_title_font = 24
+graph_xaxis_ticks_font = 15
+graph_xaxis_title_font = 20
+graph_yaxis_ticks_font = 15
+graph_yaxis_title_font = 20
+legend_title_font = 15
+legend_font =15
+graph_title_color = "gray"
+graph_ticks_color = 'gray'
 
 ############################################################################
 
@@ -177,13 +186,13 @@ if len(Selection_ZA)!=0:
         fig0.update_layout(
                                 title=dict(
                                     text=f'Nombre de dépôts répertoriées au {d}',
-                                    font=dict(size=24, family='Arial', color='darkblue')
+                                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                                 ),
                                 yaxis=dict(
-                                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
                                 ),
                                 xaxis=dict(
-                                    tickfont=dict(size=20, family='Arial', color='black')     # Tick font
+                                    tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
                                 ),
                                 width=1000,
                                 height=600,
