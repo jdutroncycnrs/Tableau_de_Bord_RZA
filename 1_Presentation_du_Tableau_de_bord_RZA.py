@@ -48,7 +48,7 @@ tit = 'Bienvenue sur le Tableau de Bord'
 s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
 st.markdown(s_tit,unsafe_allow_html=True)
 
-st.title(':green[Science Ouverte du RZA]')
+st.title('Science Ouverte du RZA')
 
 soustext = """Tableau de bord du réseau des zones ateliers:\n
 - Visualisation générale du Geonetwork\n
