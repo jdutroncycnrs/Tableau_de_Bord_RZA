@@ -24,6 +24,14 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 ###############################################################################
 ############ PARAMETRES INSTANCIES #######################################################
 ###############################################################################
@@ -44,7 +52,7 @@ headers_text = {"accept":"text/plain",
 # Paramètres visuels
 couleur_subtitles = (250,100,0)
 taille_subtitles = "25px"
-couleur_subsubtitles = (150,0,150)
+couleur_subsubtitles = (150,150,250)
 taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)
@@ -145,11 +153,13 @@ dico = {'ZABrI - Brest Iroise':'zabri',
 # On scanne pour savoir si un fichier existe
 fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
 
+st.title(':grey[Visualisation des fiches]')
+
 # Si oui, on récupère le dernier enregistré ; si non, on récupère les identifiants à la date donnée
 if len(fi)!=0:
     fichier_uuids = fi[-1]
     derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[40:-4]}"
-    s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(0,150,0)'>{derniere_date_recup}</p>"
+    s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{derniere_date_recup}</p>"
     st.markdown(s_derniere_date_recup ,unsafe_allow_html=True)
     ############################## UUIDS ########################################
     uuids = pd.read_csv(fichier_uuids, index_col=[0])
@@ -218,9 +228,9 @@ else:
 
 ##################################################################################################
 ########## TITRE DE LA PAGE ######################################################################
-title = "Visualisation des fiches"
-s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
-st.markdown(s_title,unsafe_allow_html=True)
+#title = "Visualisation des fiches"
+#s_title = f"<p style='font-size:50px;color:rgb(140,140,140)'>{title}</p>"
+#st.markdown(s_title,unsafe_allow_html=True)
 
 if 'count' not in st.session_state:
     st.session_state.count = 0
@@ -1411,6 +1421,7 @@ with col2:
 
 ##################################################################################################
 ####################### VISUALISATION FAIR ####################################################
+st.sidebar.markdown('Matrice FAIR')
 col0,col1,col2,col3, col4 = st.sidebar.columns([0.1,0.22,0.22,0.22,0.22])
 with col0:
     st.markdown("F")

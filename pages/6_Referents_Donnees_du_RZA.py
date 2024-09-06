@@ -11,6 +11,14 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 tit = 'Référents "Données" du RZA'
 s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"

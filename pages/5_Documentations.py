@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -10,3 +11,19 @@ st.set_page_config(
         'Report a bug': "https://www.extremelycoolapp.com/bug",
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
+
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+tit = 'Documentations'
+s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
+st.markdown(s_tit,unsafe_allow_html=True)
+
+FAIR_principes = Image.open("Principes_FAIR.png")
+st.image(FAIR_principes, width=1000)
+

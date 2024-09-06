@@ -29,10 +29,24 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 ##########################  VARIABLES DE CONNEXION #######################
 BASE_URL="https://data.indores.fr"
 API_TOKEN="19f0769d-564f-44ac-809b-22853f186960"
 ##########################################################################
+st.title(":green[Analyse des sous-entrepôts dans Data.InDoRes]")
+
+adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
+s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(0,150,0)'>{adresse_dataInDoRes}</p>"
+st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
+
 
 ###################### CREATION CONNEXION ##############################
 with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
@@ -118,8 +132,6 @@ else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
 ############################################################################
-
-st.title("Analyse des sous-entrepôts dans Data.InDoRes")
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :

@@ -12,6 +12,14 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 ########### LOGOS ##################################################
 col1, col2 = st.columns(2)
 logo1 = Image.open("logo_CNRS.png")
@@ -31,17 +39,24 @@ st.markdown(s_tit,unsafe_allow_html=True)
 st.title(':green[Science Ouverte du RZA]')
 
 soustext = """Tableau de bord du réseau des zones ateliers:\n
-- Visualisation des indicateurs du Geonetwork\n
-- Visualisation des indicateurs du Dataverse
+- Visualisation générale du Geonetwork\n
+Cette page propose un regard sur l'évolution générale du contenu des métadonnées récoltées (correspondantes à tous les dépôts (connus) / tout entrepôt confondu )\n
+- Visualisation fiche par fiche du Geonetwork\n
+Pour aller plus spécifiquement focaliser sur une fiche ou un groupe de fiches, cette page permet de visualiser les métadonnées directement\n
+- Visualisation générale du Dataverse\n
+Cette page propose un regard sur l'état général du contenu de l'entrepôt institutionnel Data.InDoRes\n
+- Documentations\n
+Pour comprendre en détails ce qui est proposé dans les différentes visualisations\n
+- Référents "Données" du RZA\n
+Noms et adresses email des personnes ressources pour la publication des données dans le RZA
 """
 s_soustext= f"<p style='font-size:25px;color:rgb(140,140,140)'>{soustext}</p>"
 st.markdown(s_soustext,unsafe_allow_html=True)
+
+st.sidebar.success("Selectionner une page ci-dessus")
 
 ########## NUAGE DE MOTS ###########################################
 Nuage_mots = Image.open("nuage-de-mots.png")
 left_co,center_co,last_co = st.columns(3)
 with center_co:
-    st.image(Nuage_mots, width=450)
-
-
-st.sidebar.success("Selectionner une page ci-dessus")
+    st.sidebar.image(Nuage_mots, width=300)

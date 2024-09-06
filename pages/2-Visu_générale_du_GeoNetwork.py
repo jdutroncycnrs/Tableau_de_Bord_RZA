@@ -22,6 +22,14 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+st.markdown("""
+ <style>
+    [data-testid=stSidebar] {
+        background-color: rgb(6,51,87);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 ############ PARAMETRES ############################################
 zoom = 4
 
@@ -110,9 +118,6 @@ liste_OHMs = ['OHM Littoral méditerranéen',
               'DRIIHM']
 autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
 
-
-
-
 ########### Choix OHM/RZA #############################################################
 ## Le choix est exclusif ##############################################################
 if 'checkbox1' not in st.session_state:
@@ -167,6 +172,13 @@ else:
     Catalogues_counts = tableau['Groupe_et_Mention'].value_counts()
     df_selected = tableau
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
+
+##################### RAPPEL CAT.INDORES ##################################################################
+st.title(':grey[Visuels issue des métadonnées du GN Cat.InDoRes]')
+
+adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
+s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
+st.markdown(s_adresse_catInDoRes ,unsafe_allow_html=True)
 
 ##################### PREPARATION DATES ###################################################################
 df_selected_year = year(df_selected)
