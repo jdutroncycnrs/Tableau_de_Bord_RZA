@@ -29,6 +29,27 @@ st.markdown("""
     [data-testid=stSidebar] {
         background-color: rgb(6,51,87);
     }
+    .st-emotion-cache-1dj0hjr {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1rtdyuf {
+            color: #cbd117;
+    }
+    .st-emotion-cache-6tkfeg {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1q2d4ya {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1r4qj8v{
+            color: #cbd117;
+    }
+    .st-emotion-cache-17c4u {
+            color: #cbd117;
+    }
+    .st-emotion-cache-17c4ue {
+            color: #cbd117;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -50,9 +71,9 @@ headers_text = {"accept":"text/plain",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
 
 # Paramètres visuels
-couleur_subtitles = (250,100,0)
+couleur_subtitles = (150,150,150)
 taille_subtitles = "25px"
-couleur_subsubtitles = (150,150,250)
+couleur_subsubtitles = (194,201,25)
 taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)

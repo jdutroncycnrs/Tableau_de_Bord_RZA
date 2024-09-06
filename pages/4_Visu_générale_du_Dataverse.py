@@ -34,6 +34,18 @@ st.markdown("""
     [data-testid=stSidebar] {
         background-color: rgb(6,51,87);
     }
+    .st-emotion-cache-1dj0hjr {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1rtdyuf {
+            color: #cbd117;
+    }
+    .st-emotion-cache-6tkfeg {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1q2d4ya {
+            color: #cbd117;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -41,10 +53,10 @@ st.markdown("""
 BASE_URL="https://data.indores.fr"
 API_TOKEN="19f0769d-564f-44ac-809b-22853f186960"
 ##########################################################################
-st.title(":green[Analyse des sous-entrepôts dans Data.InDoRes]")
+st.title(":grey[Analyse des sous-entrepôts dans Data.InDoRes]")
 
 adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
-s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(0,150,0)'>{adresse_dataInDoRes}</p>"
+s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
 st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
 
 

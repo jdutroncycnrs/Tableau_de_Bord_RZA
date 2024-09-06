@@ -27,6 +27,18 @@ st.markdown("""
     [data-testid=stSidebar] {
         background-color: rgb(6,51,87);
     }
+    .st-emotion-cache-1dj0hjr {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1rtdyuf {
+            color: #cbd117;
+    }
+    .st-emotion-cache-6tkfeg {
+            color: #cbd117;
+    }
+    .st-emotion-cache-1q2d4ya {
+            color: #cbd117;
+    }
     </style>
 """, unsafe_allow_html=True)
 
