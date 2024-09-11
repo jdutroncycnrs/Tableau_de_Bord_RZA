@@ -53,7 +53,7 @@ st.markdown("""
 BASE_URL="https://data.indores.fr"
 API_TOKEN="19f0769d-564f-44ac-809b-22853f186960"
 ##########################################################################
-st.title(":grey[Analyse des sous-entrepôts dans Data.InDoRes]")
+st.title(":grey[Analyse des dépôts dans Data.InDoRes]")
 
 adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
 s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"

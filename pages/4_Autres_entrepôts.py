@@ -1,5 +1,8 @@
 import streamlit as st
 from PIL import Image
+from pyDataverse.models import Dataset
+from pyDataverse.utils import read_file
+from pyDataverse.api import NativeApi
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -31,3 +34,26 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
+
+
+##########################  VARIABLES DE CONNEXION #######################
+BASE_URL="https://entrepot.recherche.data.gouv.fr/"
+API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
+##########################################################################
+st.title(":grey[Analyse des dépôts dans Recherche Data Gouv]")
+
+adresse_RDG = 'https://entrepot.recherche.data.gouv.fr/dataverse/root?q='
+s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
+st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
+
+
+###################### CREATION CONNEXION ##############################
+with st.spinner("Connexion au Dataverse Recherche Data Gouv en cours"):
+    api = NativeApi(BASE_URL, API_TOKEN)
+    resp = api.get_info_version()
+    response = resp.json()
+
+if response['status']=='OK':
+    st.write(f"La connexion est établie avec Recherche Data Gouv")
+else: 
+    st.write(f"La connexion a échoué, vous n'êtes pas connecté à Recherche Data Gouv")
