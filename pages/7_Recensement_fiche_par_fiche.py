@@ -62,9 +62,9 @@ headers_text = {"accept":"text/plain",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
 
 # Paramètres visuels
-couleur_subtitles = (150,150,150)
+couleur_subtitles = (250,150,150)
 taille_subtitles = "25px"
-couleur_subsubtitles = (150,150,150)
+couleur_subsubtitles = (60,150,160)
 taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)
