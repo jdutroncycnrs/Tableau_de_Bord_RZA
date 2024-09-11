@@ -1,8 +1,15 @@
 import streamlit as st
 from PIL import Image
+import pandas as pd
 from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
+import glob
+import datetime
+import plotly.express as px
+
+
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -57,3 +64,37 @@ if response['status']=='OK':
     st.write(f"La connexion est établie avec Recherche Data Gouv")
 else: 
     st.write(f"La connexion a échoué, vous n'êtes pas connecté à Recherche Data Gouv")
+
+
+d = datetime.date.today()
+
+fichier = f'tableau_dataverses-{d}.csv'
+
+##########POUR L'ADMINISTRATEUR ########################################
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+if admin_action == admin_pass:
+    b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans RDG ")
+
+    if b1==True:
+        with st.spinner("Récupération des entrepôts existants"):
+            Recup_dataverses_rdg(api,fichier)
+############################################################################
+
+fi = glob.glob(f"pages/data/rechercheDataGouv/tableau_dataverses*.csv")
+
+visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
+
+if len(fi)!=0:
+    fich = fi[-1]
+    dataverses = pd.read_csv(fich)
+    if visu_sunburst:
+        fig = px.sunburst(dataverses, path=['niv0','niv1'], values='val')
+        fig.update_layout(
+            title=f'Visuel des différents Dataverses dans RDG via {fich}',
+            width=1000,
+            height=1000)
+        st.plotly_chart(fig,use_container_width=True)
+else:
+     st.write('Il est nécessaire de mettre à jour vos entrepôts')
