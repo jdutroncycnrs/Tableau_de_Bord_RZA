@@ -27,28 +27,19 @@ st.set_page_config(
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
-        background-color: rgb(6,51,87);
+        background-color: rgb(6,51,87,0.2);
     }
     .st-emotion-cache-1dj0hjr {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-1rtdyuf {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-6tkfeg {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-1q2d4ya {
-            color: #cbd117;
-    }
-    .st-emotion-cache-1r4qj8v{
-            color: #cbd117;
-    }
-    .st-emotion-cache-17c4u {
-            color: #cbd117;
-    }
-    .st-emotion-cache-17c4ue {
-            color: #cbd117;
+            color: #3b979f;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -73,7 +64,7 @@ headers_text = {"accept":"text/plain",
 # Paramètres visuels
 couleur_subtitles = (150,150,150)
 taille_subtitles = "25px"
-couleur_subsubtitles = (194,201,25)
+couleur_subsubtitles = (150,150,150)
 taille_subsubtitles = "25px"
 couleur_True = (0,200,0)
 couleur_False = (200,0,0)

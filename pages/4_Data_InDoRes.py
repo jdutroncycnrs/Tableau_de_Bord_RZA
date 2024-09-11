@@ -32,19 +32,19 @@ st.set_page_config(
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
-        background-color: rgb(6,51,87);
+        background-color: rgb(6,51,87,0.2);
     }
     .st-emotion-cache-1dj0hjr {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-1rtdyuf {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-6tkfeg {
-            color: #cbd117;
+            color: #3b979f;
     }
     .st-emotion-cache-1q2d4ya {
-            color: #cbd117;
+            color: #3b979f;
     }
     </style>
 """, unsafe_allow_html=True)
