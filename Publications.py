@@ -1,6 +1,7 @@
 import requests
 import json.decoder
 from bs4 import BeautifulSoup as soup
+import pandas as pd
 
 
 def afficher_texte_reponse_api_hal(requete_api_hal: str):
@@ -21,11 +22,24 @@ def afficher_publications_hal(requete_api_hal: str):
     Paramètre = requête API HAL avec wt=json (str)"""
     try:
         reponse = requests.get(requete_api_hal, timeout=5)
-        i = 0
+        ids = []
+        labels = []
+        uris = []
+        types = []
+        docTypes = []
         for doc in reponse.json()['response']['docs']:
-            print(i)
-            print(f"***\nId = {doc['docid']}\n{soup(doc['label_s'], 'html.parser').text}\n{doc['uri_s']}\n{doc['submitType_s']}\n{doc['docType_s']}\n***\n")
-            i += 1
+            ids.append(doc['docid'])
+            labels.append(soup(doc['label_s'], 'html.parser').text)
+            uris.append(doc['uri_s'])
+            types.append(doc['submitType_s'])
+            docTypes.append(doc['docType_s'])
+
+        reponse_df = pd.DataFrame({'Ids':ids,
+                                   'Titre et auteurs':labels,
+                                   'Uri':uris,
+                                   'Type':types,
+                                   'Type de document':docTypes})
+
     except requests.exceptions.HTTPError as errh:
         afficher_erreur_api(errh)
     except requests.exceptions.ConnectionError as errc:
@@ -37,7 +51,4 @@ def afficher_publications_hal(requete_api_hal: str):
     except json.decoder.JSONDecodeError as errj:
         afficher_erreur_api(errj)
 
-
-url = 'http://api.archives-ouvertes.fr/search/?q=text:"zone atelier alpes"&wt=json&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s'
-
-afficher_publications_hal(url)
+    return reponse_df
