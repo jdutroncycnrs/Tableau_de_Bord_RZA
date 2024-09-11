@@ -21,8 +21,11 @@ def afficher_publications_hal(requete_api_hal: str):
     Paramètre = requête API HAL avec wt=json (str)"""
     try:
         reponse = requests.get(requete_api_hal, timeout=5)
+        i = 0
         for doc in reponse.json()['response']['docs']:
-            print(f"***\nId = {doc['docid']}\n{soup(doc['label_s'], 'html.parser').text}\n{doc['uri_s']}\n***\n")
+            print(i)
+            print(f"***\nId = {doc['docid']}\n{soup(doc['label_s'], 'html.parser').text}\n{doc['uri_s']}\n{doc['submitType_s']}\n{doc['docType_s']}\n***\n")
+            i += 1
     except requests.exceptions.HTTPError as errh:
         afficher_erreur_api(errh)
     except requests.exceptions.ConnectionError as errc:
@@ -35,21 +38,6 @@ def afficher_publications_hal(requete_api_hal: str):
         afficher_erreur_api(errj)
 
 
-ma_requete = "http://api.archives-ouvertes.fr/search/CRLAO/?q=title_t:python&rows=100&sort=submittedDate_tdate desc"
+url = 'http://api.archives-ouvertes.fr/search/?q=text:"zone atelier alpes"&wt=json&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s'
 
-ma_requete_csv = "http://api.archives-ouvertes.fr/search/CRLAO/?q=title_t:python&rows=100" \
-                 "&sort=submittedDate_tdate desc&wt=csv"
-
-ma_requete_xml = "http://api.archives-ouvertes.fr/search/CRLAO/?q=title_t:python&rows=100" \
-                 "&sort=submittedDate_tdate desc&wt=xml"
-
-ma_requete_xml_indente = "http://api.archives-ouvertes.fr/search/CRLAO/?q=title_t:python&rows=100" \
-                         "&sort=submittedDate_tdate desc&wt=xml&indent=true"
-
-
-#afficher_texte_reponse_api_hal(ma_requete)
-afficher_publications_hal(ma_requete)
-
-# afficher_texte_reponse_api_hal(ma_requete_csv)
-# afficher_texte_reponse_api_hal(ma_requete_xml)
-# afficher_texte_reponse_api_hal(ma_requete_xml_indente)
+afficher_publications_hal(url)

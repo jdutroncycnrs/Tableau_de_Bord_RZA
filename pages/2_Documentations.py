@@ -1,8 +1,9 @@
 import streamlit as st
+from PIL import Image
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
-    page_title="Referents Donnees du RZA",
+    page_title="Documentations",
     page_icon="👋",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -31,6 +32,12 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+tit = 'Documentations'
+s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
+st.markdown(s_tit,unsafe_allow_html=True)
+
+FAIR_principes = Image.open("Principes_FAIR.png")
+st.image(FAIR_principes, width=1000)
 
 tit = 'Référents "Données" du RZA'
 s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
