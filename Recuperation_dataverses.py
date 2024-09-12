@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
 import re
-from pyDataverse.models import Dataset
+from pyDataverse.models import Dataset, Dataverse
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
+import json
+import requests
 
 def Recup_contenu_dataverse(api,s):
     datav = api.get_dataverse_contents(s)
@@ -61,8 +63,12 @@ def Recup_dataverses_rdg(api, fichier):
         for k in range(int(data.loc[j,'val'])):
             new_data.loc[i,'niv1']=data.loc[j,'Dataverses_niv1']
             new_data.loc[i,'ids_niv1']=data.loc[j,'Ids']
-            new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
-            new_data.loc[i,'ids_niv2']=re.split(',',data.loc[j,'Ids_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
+            new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').strip())[k]
+            new_data.loc[i,'niv2']=new_data.loc[i,'niv2'].replace("'","")
+            try:
+                new_data.loc[i,'ids_niv2']=re.split(',',data.loc[j,'Ids_niv2'].replace('[','').replace(']','').replace('"','').strip())[k]
+            except:
+                pass
             i+=1
             print(i)
     new_data['val']=1
@@ -126,7 +132,8 @@ def Recup_dataverses(api, fichier):
             for k in range(int(data.loc[j,'val'])):
                 new_data.loc[i,'niv1']=data.loc[j,'Dataverses_niv1']
                 new_data.loc[i,'ids_niv1']=data.loc[j,'Ids']
-                new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
+                new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').strip())[k]
+                new_data.loc[i,'niv2']=new_data.loc[i,'niv2'].replace("'","")
                 new_data.loc[i,'ids_niv2']=re.split(',',data.loc[j,'Ids_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
                 i+=1
         new_data['val']=1
@@ -178,3 +185,25 @@ def Recup_dataverses(api, fichier):
                 dat.loc[i,'ids_niv3']=None
         dat.drop(columns=['Dataverses_niv3','Ids_niv3'], inplace=True)
         dat.to_csv(f"pages/data/{fichier}")
+
+
+
+BASE_URL="https://entrepot.recherche.data.gouv.fr/"
+API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
+api = NativeApi(BASE_URL, API_TOKEN)
+
+datav = api.get_dataverse_contents(142915)
+datav_contenu = datav.json()
+
+for i in range(len(datav_contenu)):
+    if datav_contenu['data'][i]['type']=='dataverse':
+        print(datav_contenu['data'][i])
+    elif datav_contenu['data'][i]['type']=='dataset':
+        print(datav_contenu['data'][i])
+
+        """metadata = api.get_dataset(datav_contenu['data'][i]['persistentUrl'])
+        metadata_json = metadata.json()
+        data = metadata_json['data']['latestVersion']['metadataBlocks']
+        print(json.dumps(data, indent=4))"""
+
+

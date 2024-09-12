@@ -29,6 +29,7 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+########### COULEURS SIDEBAR ######################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
