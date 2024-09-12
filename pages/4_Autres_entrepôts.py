@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_entrepots import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
