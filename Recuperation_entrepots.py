@@ -186,9 +186,28 @@ def Recup_dataverses(api, fichier):
         dat.drop(columns=['Dataverses_niv3','Ids_niv3'], inplace=True)
         dat.to_csv(f"pages/data/{fichier}")
 
+def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo, ZA):
+    
+    liste_vide = []
+    r = requests.get(url_zenodo,
+                    params=params_zenodo,
+                    headers=headers_zenodo)
+    
+    if r.status_code==200:
+        resp_zenodo = r.json()['hits']['hits']
+        ids = []
+        titles = []
+        for i in range(len(resp_zenodo)):
+            ids.append(resp_zenodo[i]['id'])
+            titles.append(resp_zenodo[i]['metadata']['title'])
+        reponse_df = pd.DataFrame({'ZA':ZA,
+                                   'Ids':ids,
+                                   'Titre':titles})
+        return reponse_df
+    else:
+         return liste_vide
 
-
-BASE_URL="https://entrepot.recherche.data.gouv.fr/"
+"""BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 api = NativeApi(BASE_URL, API_TOKEN)
 
@@ -200,10 +219,7 @@ for i in range(len(datav_contenu)):
         print(datav_contenu['data'][i])
     elif datav_contenu['data'][i]['type']=='dataset':
         print(datav_contenu['data'][i])
-
-        """metadata = api.get_dataset(datav_contenu['data'][i]['persistentUrl'])
-        metadata_json = metadata.json()
-        data = metadata_json['data']['latestVersion']['metadataBlocks']
-        print(json.dumps(data, indent=4))"""
-
-
+metadata = api.get_dataset(datav_contenu['data'][i]['persistentUrl'])
+metadata_json = metadata.json()
+data = metadata_json['data']['latestVersion']['metadataBlocks']
+print(json.dumps(data, indent=4))"""

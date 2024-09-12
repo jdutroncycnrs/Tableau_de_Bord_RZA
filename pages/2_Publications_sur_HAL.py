@@ -77,7 +77,7 @@ df_global.sort_values(by='Ids', inplace=True, ascending=False)
 df_global.reset_index(inplace=True)
 df_global.drop(columns='index', inplace=True)
 
-if len(Selection_ZA)==0:
+if len(df_global)==0:
      pass
 else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global))

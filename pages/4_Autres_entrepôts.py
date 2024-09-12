@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg
+from Recuperation_entrepots import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -49,18 +49,49 @@ st.markdown("""
 BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 
+######################## Nakala ############################################
 url_nakala = "https://api.nakala.fr/collections"
 headers_nakala = {
   'X-API-KEY': '01234567-89ab-cdef-0123-456789abcdef'
 }
 
+######################## Zenodo ############################################
+url_zenodo = 'https://zenodo.org/api/records/'
+zenodo_token = "OMMGEVUcApEKSt4JEkSK7OzpqZQPMvGKAlB2yP2MXG6APstRn2hWpiHfpjaA"
+headers_zenodo = {"Content-Type": "application/json"}
+
 ##########################################################################
 
+########### CHOIX ZA ######################################
+liste_ZAs_ = ["Zone atelier territoires uranifères",
+              " Zone Atelier Seine",
+              " Zone atelier Loire",
+              " Zone atelier bassin du Rhône",
+              " Zone atelier bassin de la Moselle",
+              " Zone atelier Alpes",
+              " Zone atelier arc jurassien",
+              " Zone atelier Armorique",
+              " Zone atelier Plaine et Val de Sèvre",
+              " Zone atelier environnementale urbaine",
+              " Zone atelier Hwange",
+              " Zone atelier Pyrénées Garonne",
+              " Zone atelier Brest Iroise",
+              " Zone Atelier Antarctique et Terres Australes",
+              " Zone Atelier Santé Environnement Camargue",
+              " Zone Atelier Argonne"]
+
+
+all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
+if all_ZAs==True :
+    Selection_ZA = liste_ZAs_
+else:
+    Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
+
+
 ###################### CREATION CONNEXION ##############################
+Choix_entrepot = st.sidebar.subheader('Entrepôts')
+
 rdg = st.sidebar.checkbox("RDG")
-nakala = st.sidebar.checkbox("Nakala")
-zenodo = st.sidebar.checkbox("Zenodo")
-dryad = st.sidebar.checkbox("Dryad")
 if rdg:
 
     st.title(":grey[Analyse des dépôts dans Recherche Data Gouv]")
@@ -113,7 +144,36 @@ if rdg:
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
+nakala = st.sidebar.checkbox("Nakala")
 if nakala:
-
     response = requests.request('GET', url_nakala, headers=headers_nakala)
     st.write(response)
+
+zenodo = st.sidebar.checkbox("Zenodo")
+if zenodo:
+
+    st.title(":grey[Analyse des dépôts dans Zenodo]")
+
+    adresse_zenodo = url_zenodo
+    s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
+    st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
+
+    liste_columns = ['ZA','Ids','Titre']
+    df_global = pd.DataFrame(columns=liste_columns)
+    for i, s in enumerate(Selection_ZA):
+        params_zenodo = {'q': f'{s}',
+                 'access_token': zenodo_token}
+        df = recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
+        dfi = pd.concat([df_global,df], axis=0)
+        dfi.reset_index(inplace=True)
+        dfi.drop(columns='index', inplace=True)
+        df_global = dfi
+    df_global.sort_values(by='Ids', inplace=True, ascending=False)
+    df_global.reset_index(inplace=True)
+    df_global.drop(columns='index', inplace=True)
+
+    if len(df_global)==0:
+        pass
+    else:
+        st.metric(label="Nombre de publications trouvées", value=len(df_global))
+        st.table(df_global)
