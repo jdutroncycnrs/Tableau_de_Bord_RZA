@@ -22,6 +22,7 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+########### COULEURS SIDEBAR ######################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
@@ -68,7 +69,7 @@ else:
 
 d = datetime.date.today()
 
-fichier = f'tableau_dataverses-{d}.csv'
+fichier = f'tableau_dataverses_rdg-{d}.csv'
 
 ##########POUR L'ADMINISTRATEUR ########################################
 admin_pass = 'admin'
@@ -90,7 +91,7 @@ if len(fi)!=0:
     fich = fi[-1]
     dataverses = pd.read_csv(fich)
     if visu_sunburst:
-        fig = px.sunburst(dataverses, path=['niv0','niv1'], values='val')
+        fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
         fig.update_layout(
             title=f'Visuel des différents Dataverses dans RDG via {fich}',
             width=1000,

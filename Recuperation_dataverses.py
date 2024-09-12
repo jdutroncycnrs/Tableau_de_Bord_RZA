@@ -61,59 +61,13 @@ def Recup_dataverses_rdg(api, fichier):
         for k in range(int(data.loc[j,'val'])):
             new_data.loc[i,'niv1']=data.loc[j,'Dataverses_niv1']
             new_data.loc[i,'ids_niv1']=data.loc[j,'Ids']
-            new_data.loc[i,'niv2']=data.loc[j,'Dataverses_niv2']
-            new_data.loc[i,'ids_niv2']=data.loc[j,'Ids_niv2']
+            new_data.loc[i,'niv2']=re.split(',',data.loc[j,'Dataverses_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
+            new_data.loc[i,'ids_niv2']=re.split(',',data.loc[j,'Ids_niv2'].replace('[','').replace(']','').replace("'",'').strip())[k]
             i+=1
             print(i)
     new_data['val']=1
     new_data['niv0']="Recherche Data Gouv"
     new_data.to_csv(f"pages/data/rechercheDataGouv/{fichier}")
-
-    """dat = pd.read_csv(f"pages/data/rechercheDataGouv/{fichier}")
-    dat_ = dat.copy()
-    dat_.drop(columns=['Unnamed: 0'], inplace=True)
-    dat_.dropna(axis=0,inplace=True)
-    dat_['ids_niv2'] = dat_['ids_niv2'].astype(int)
-    liste_bis = []
-    ids_bis = []
-    for i in range(len(dat)):
-        liste_dataverses_3 = []
-        ids_niv3 = []
-        try:
-            datav_ = api.get_dataverse_contents(dat_.loc[i,'ids_niv2'])
-            datav_dv_ = datav_.json()       
-            try:
-                h = len(datav_dv_['data'])
-                for d in range(h):
-                    if datav_dv_['data'][d]['type']=="dataverse":
-                        liste_dataverses_3.append(datav_dv_['data'][d]['title'])
-                        ids_niv3.append(datav_dv_['data'][d]['id'])
-                    else:
-                        liste_dataverses_3.append('')
-                        ids_niv3.append('')
-            except:
-                liste_dataverses_3.append('')
-                ids_niv3.append('')
-        except:
-            liste_dataverses_3.append('')
-            ids_niv3.append('')
-        liste_bis.append(liste_dataverses_3)
-        ids_bis.append(ids_niv3)
-
-    dat['Dataverses_niv3']=liste_bis
-    dat['Ids_niv3']=ids_bis
-
-    for i in range(len(dat)):
-        try:
-            o = dat.loc[i,'Dataverses_niv3'][0]
-            p = dat.loc[i,'Ids_niv3'][0]
-            dat.loc[i,'niv3']=o
-            dat.loc[i,'ids_niv3']=p
-        except:
-            dat.loc[i,'niv3']=None
-            dat.loc[i,'ids_niv3']=None
-    dat.drop(columns=['Dataverses_niv3','Ids_niv3'], inplace=True)
-    dat.to_csv(f"pages/data/rechercheDataGouv/{fichier}")"""
 
 
 def Recup_dataverses(api, fichier):
