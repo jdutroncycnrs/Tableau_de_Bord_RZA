@@ -17,7 +17,7 @@ def afficher_erreur_api(erreur):
     print(f"Les résultats HAL n'ont pas pu être récupérés ({erreur}).")
 
 
-def afficher_publications_hal(requete_api_hal: str):
+def afficher_publications_hal(requete_api_hal: str, ZA):
     """Interroge l'API HAL et affiche les infos des documents de la réponse
     Paramètre = requête API HAL avec wt=json (str)"""
     try:
@@ -28,13 +28,14 @@ def afficher_publications_hal(requete_api_hal: str):
         types = []
         docTypes = []
         for doc in reponse.json()['response']['docs']:
-            ids.append(doc['docid'])
+            ids.append(int(doc['docid']))
             labels.append(soup(doc['label_s'], 'html.parser').text)
             uris.append(doc['uri_s'])
             types.append(doc['submitType_s'])
             docTypes.append(doc['docType_s'])
 
-        reponse_df = pd.DataFrame({'Ids':ids,
+        reponse_df = pd.DataFrame({'ZA':ZA,
+                                   'Ids':ids,
                                    'Titre et auteurs':labels,
                                    'Uri':uris,
                                    'Type':types,

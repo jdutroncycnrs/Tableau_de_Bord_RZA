@@ -64,18 +64,21 @@ else:
 st.title(":grey[Analyse des publications sur HAL]")
 
 
-liste_columns = ['Ids','Titre et auteurs','Uri','Type','Type de document']
+liste_columns = ['ZA','Ids','Titre et auteurs','Uri','Type','Type de document']
 df_global = pd.DataFrame(columns=liste_columns)
 for i, s in enumerate(Selection_ZA):
         url_type = f'http://api.archives-ouvertes.fr/search/?q=text:{s.lower().strip()}&wt=json&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s'
-        df = afficher_publications_hal(url_type)
+        df = afficher_publications_hal(url_type, s)
         dfi = pd.concat([df_global,df], axis=0)
         dfi.reset_index(inplace=True)
         dfi.drop(columns='index', inplace=True)
         df_global = dfi
+df_global.sort_values(by='Ids', inplace=True, ascending=False)
+df_global.reset_index(inplace=True)
+df_global.drop(columns='index', inplace=True)
 
 if len(Selection_ZA)==0:
      pass
 else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global))
-        st.dataframe(df_global)
+        st.table(df_global)
