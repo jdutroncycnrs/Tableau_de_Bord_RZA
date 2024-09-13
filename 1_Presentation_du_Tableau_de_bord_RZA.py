@@ -50,20 +50,22 @@ st.markdown(s_tit,unsafe_allow_html=True)
 
 st.title(':grey[Science Ouverte du RZA]')
 
-soustext = """Tableau de bord du réseau des zones ateliers:\n
-- Visualisation générale du Geonetwork\n
-Cette page propose un regard sur l'évolution générale du contenu des métadonnées récoltées (correspondantes à tous les dépôts (connus) / tout entrepôt confondu )\n
-- Visualisation fiche par fiche du Geonetwork\n
-Pour aller plus spécifiquement focaliser sur une fiche ou un groupe de fiches, cette page permet de visualiser les métadonnées directement\n
-- Visualisation générale du Dataverse\n
-Cette page propose un regard sur l'état général du contenu de l'entrepôt institutionnel Data.InDoRes\n
-- Documentations\n
-Pour comprendre en détails ce qui est proposé dans les différentes visualisations\n
-- Référents "Données" du RZA\n
-Noms et adresses email des personnes ressources pour la publication des données dans le RZA
-"""
-s_soustext= f"<p style='font-size:25px;color:rgb(140,140,140)'>{soustext}</p>"
-st.markdown(s_soustext,unsafe_allow_html=True)
+st.write("""
+**Différentes pages pour visualiser des informations:**
+        
+    - Page de présentation avec des éléments de documentations (ci-dessous)
+
+    - Recherche automatique des publications d'articles sur HAL (sélection d'une ZA ou plusieurs)
+         
+    - Visualisation du contenu de Data.InDoRES
+         
+    - Recherche des dépôts de données dans d'autres entrepôts
+         
+    - Visualisation du contenu général de Cat.InDoRES 
+         
+    - Possibilité de visualisation "fiche par fiche"
+
+""")
 
 st.sidebar.success("Selectionner une page ci-dessus")
 
@@ -74,16 +76,80 @@ with center_co:
     st.sidebar.image(Nuage_mots, width=300)
 
 
-tit = 'Documentations'
-s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
-st.markdown(s_tit,unsafe_allow_html=True)
+st.title(':grey[Documentations]')
+
+st.write("""
+**Sur l'ensemble des pages des entrepôts:**
+        
+    - Choix de visualiser pour l'ensemble du RZA ou pour des ZA sélectionnées (Noms complets des ZA)
+         
+    - Possibilité de visualiser l'ensemble des sous entrepôts ou collections existantes sur ces entrepôts 
+         (un choix apparait quand la case de l'entrepôt choisi est cochée)
+    
+    - Suite à la selection de la ZA choisie, il est proposé un tableau avec les enregistrements retrouvés
+         (Attention, la recherche est faite sur le mot-clé "Nom de la ZA", il y a potentiellement des erreurs)
+""")
+
+st.write("""
+**Sur les pages dédiées au géocatalogue:**
+        
+    - Choix de visualiser pour l'ensemble du RZA ou pour des ZA sélectionnées (les noms des groupes associés)
+        (ce choix a été rendu possible aussi pour les OHM ayant leur sous-portail)
+         
+    - Choix de filtrer avec une date de début de l'analyse
+         (pour ne regarder que la dernière année, ou les dernières années par exemple)
+
+""")
+
+st.write("""
+**Visualisation du contenu général de Cat.InDoRES:**
+        
+    - Répartition des fiches: Nombres de fiches comptabilisées dans chaque sous-portail par l'application
+         (attention ZAM: incapacité temporaire à récupérer les fiches sur cette application)
+         (attention ZAPygar: nombre de fiches inférieur à celui que l'on trouve sur le géocatalogue)
+
+         (le choix de filtrage des dates est indisponible pour cette visualisation)
+
+    - Evolution temporelle: il est proposé un compte semestriel des fiches publiées
+         
+    - Répartition spatiale: une visualisation des localisations
+         (attention, toutes les fiches ne sont pas complétées sur ce champ)
+         (attention, pour les ohms, il faut dézoomer pour voir les points ;)
+
+    - Autres champs: 
+         - Langues: un graphique "camembert" sur la répartition respective entre français et anglais
+         - Standards: un graphique "camembert" sur la répartition respective entre standards 
+         (Voir les fiches qui ont un schéma différent du schéma ISO)
+         - Formats utilisés: visualisation en barres horizontales des formats les plus utilisés
+         (attention: les noms de formats renseignés ont dû être nettoyés pour que des catégories claires apparaissent)
+         (choix de ne montrer que les 10 plus importants)
+         - Organisations: visualisation en barres horizontales des organisations les plus mentionnées
+         (attention: les noms renseignés d'organisations ont dû être nettoyés)
+         (choix de ne montrer que les 15 plus importants)
+         - Organisations: visualisation en barres horizontales des contacts les plus mentionnées
+         (attention: les noms renseignés d'auteurs ont dû être nettoyés)
+         (choix de ne montrer que les 15 plus importants)
+         - Droits: un graphique "camembert" sur la répartition respective entre contraintes renseignées
+
+    - Descriptions:
+         - Il s'agit d'une analyse des thésaurus et mots-clés.
+         - la répartition entre usage ou non de thésaurus et présentée à gauche
+         - Dès lors qu'un thésaurus est utilisé, le décompte des thésaurus employés est présenté à droite
+         (choix de montrer les 18 thésaurus les plus employés ohm et RZA confondus)
+         - Deux histogrammes présentent l'occurence du nombre de mots-clés renseignés
+         - Enfin, les occurences mot-clé par mot-clé sont proposées
+
+    - Matrice FAIR:
+         - Une matrice FAIR propose une vision générale de l'état de remplissage des fiches de métadonnées.
+         - En noir: c'est OK
+         - En blanc: ce n'est pas OK
+
+""")
 
 FAIR_principes = Image.open("Principes_FAIR.png")
 st.image(FAIR_principes, width=1000)
 
-tit = 'Référents "Données" du RZA'
-s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
-st.markdown(s_tit,unsafe_allow_html=True)
+st.title(':grey[Rappel des référents "Données" du RZA]')
 
 st.markdown('Jérôme Dutroncy, LTSER-FR Réseau des Zones Ateliers jerome.dutroncy@univ-smb.fr')
 
