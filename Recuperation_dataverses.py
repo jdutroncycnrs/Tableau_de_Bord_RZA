@@ -206,6 +206,15 @@ def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo, ZA):
         return reponse_df
     else:
          return liste_vide
+    
+def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
+    
+    liste_vide = []
+    r = requests.get(url_nakala,
+                    params=params_nakala,
+                    headers=headers_nakala)
+    
+    return r.json()['datas']
 
 """BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"

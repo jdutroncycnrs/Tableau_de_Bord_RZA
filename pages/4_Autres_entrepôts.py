@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -50,9 +50,10 @@ BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 
 ######################## Nakala ############################################
-url_nakala = "https://api.nakala.fr/collections"
+url_nakala = "https://api.nakala.fr/search"
 headers_nakala = {
-  'X-API-KEY': '01234567-89ab-cdef-0123-456789abcdef'
+  'X-API-KEY': 'c3cac1e9-cecc-a05c-bf8e-2459669a1f31',
+  'accept': 'application/json'
 }
 
 ######################## Zenodo ############################################
@@ -146,8 +147,10 @@ if rdg:
 
 nakala = st.sidebar.checkbox("Nakala")
 if nakala:
-    response = requests.request('GET', url_nakala, headers=headers_nakala)
-    st.write(response)
+    s = " ZA alpes"
+    params_nakala = {'q': f'{s}'}
+    r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, s)
+    st.write(r)
 
 zenodo = st.sidebar.checkbox("Zenodo")
 if zenodo:
