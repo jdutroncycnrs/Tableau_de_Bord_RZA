@@ -216,6 +216,41 @@ def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
     
     return r.json()['datas']
 
+
+## SEANOE 
+"""from sickle import Sickle
+
+# SEANOE's OAI-PMH endpoint URL
+oai_url = "https://www.seanoe.org/oai/OAIHandler"
+
+# Initialize Sickle with the SEANOE OAI-PMH endpoint
+sickle = Sickle(oai_url)
+
+# Example request: List metadata formats
+def list_metadata_formats():
+    formats = sickle.ListMetadataFormats()
+    for metadata_format in formats:
+        print(metadata_format)
+
+# Example request: List records
+def list_records(metadata_prefix='oai_dc', from_date=None, until_date=None):
+    records = sickle.ListRecords(metadataPrefix=metadata_prefix, from_=from_date, until=until_date)
+    for record in records:
+        print(record.metadata)
+
+# Example request: Get record by ID
+def get_record(identifier, metadata_prefix='oai_dc'):
+    record = sickle.GetRecord(identifier=identifier, metadataPrefix=metadata_prefix)
+    print(record.metadata)
+
+# Run an example function
+list_metadata_formats()
+
+# Optionally, list records between dates or get a specific record
+# list_records(from_date="2022-01-01", until_date="2022-12-31")
+get_record(90452)  # Replace with actual identifier   """
+
+## RDG
 """BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 api = NativeApi(BASE_URL, API_TOKEN)
@@ -232,3 +267,37 @@ metadata = api.get_dataset(datav_contenu['data'][i]['persistentUrl'])
 metadata_json = metadata.json()
 data = metadata_json['data']['latestVersion']['metadataBlocks']
 print(json.dumps(data, indent=4))"""
+
+
+## DRYAD
+def recuperation_dryad(url_dryad,params_dryad):
+    
+    liste_vide = []
+    r = requests.get(url_dryad,
+                    params=params_dryad)
+    
+    return r.json()
+
+
+url_dryad = "https://datadryad.org/api/v2/search?"
+params_dryad = {'q':'zone atelier alpes'}
+
+r = recuperation_dryad(url_dryad,params_dryad)
+print(r)
+
+## GBIF
+url_gbif = "https://api.gbif.org/v1/dataset?q=alpes"
+headers_gbif = {'accept': 'application/json'}
+params_gbif = {'q':'alpes'}
+
+def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
+    
+    liste_vide = []
+    r = requests.get(url_gbif,
+                    params=params_gbif,
+                    headers=headers_gbif)
+    
+    return r.json()
+
+r = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
+print(r)
