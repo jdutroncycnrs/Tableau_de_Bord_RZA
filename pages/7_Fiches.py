@@ -142,7 +142,7 @@ if admin_action == admin_pass:
     if Recup_groupes:
         with st.spinner("La récup des groupes est en cours"):
             df_group = pd.read_csv("pages/data/infos_MD2/infos_groupes.csv",index_col=[0])
-            for i in range(1000):
+            for i in range(1500):
                 u = uuids.loc[i,'uuid_cat_InDoRes']
                 if u in df_group['Identifiant'].values:
                     pass
