@@ -97,6 +97,18 @@ def uuids_cleaning(date):
     df_uuid = pd.DataFrame(data= new_list_uuid2,columns=["uuid_cat_InDoRes"])
     df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
 
+def uuids_cleaning2(date):
+    with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt") as file:
+        t = file.read()
+        # suppression de l'intro de l'url
+        t2 =t[70:]
+        # création d'une liste avec les identifiants
+        list_uuid_brutes= re.split(',', t2)
+        cleaned_list_uuid_brutes = [string.replace("%22", "") for string in list_uuid_brutes]
+        cleaned_list_uuid_brutes_ = [string.replace("%5B", "") for string in cleaned_list_uuid_brutes]
+        df_uuid = pd.DataFrame(data= cleaned_list_uuid_brutes_,columns=["uuid_cat_InDoRes"])
+        df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
+
 def transcript_json(json_data, file, prefix=""):
     if isinstance(json_data, dict):
         for key, value in json_data.items():
