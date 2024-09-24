@@ -206,15 +206,20 @@ if admin_action == admin_pass:
 ########## CONNEXION AU GEONETWORK ###############################################################
 ##################################################################################################
 
-identifieur = uuids.loc[10,'uuid_cat_InDoRes']
+#identifieur = uuids.loc[10,'uuid_cat_InDoRes']
 # recup du tableau des métadonnées pour une fiche
-df = recup_fiche2(url, identifieur, headers_json, filtre_mention)
+#df = recup_fiche2(url, identifieur, headers_json, filtre_mention)
 #st.dataframe(df)
 
 #############################################################################
 
 df_complet = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
 df_complet.fillna("", inplace=True)
+
+#def transfo(column):
+#    return column.apply(ast.literal_eval)
+
+#df_complet = transfo('Autres dates')
 st.dataframe(df_complet)
 
 selected_uuids = df_complet['Identifiant'].values
@@ -331,17 +336,13 @@ else:
             st.markdown(s_s4c,unsafe_allow_html=True)
             st.markdown(df_complet['Date de création'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
-            try:
-                def transfo(column):
-                    return column.apply(ast.literal_eval)
-
-                df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0] = df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0].apply(transfo)
-                st.write(df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0])
+            #try:
+                
                 #s4g = f'Date ({df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0]})'
                 #s_s4g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4g}</p>"
                 #st.markdown(s_s4g,unsafe_allow_html=True)
                 #st.markdown(df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[1])
-            except:
+            #except:
                 pass
         with col3:
             #try:
@@ -355,7 +356,7 @@ else:
         s4i = f'Info Supplémentaire'
         s_s4i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4i}</p>"
         st.markdown(s_s4i,unsafe_allow_html=True)
-        #st.markdown(SupplementInfo)
+        st.markdown(df_complet['Info supplémentaire'][df_complet['Identifiant']==identifieur].values[0])
 
 
     with st.container(border=True):
@@ -368,26 +369,22 @@ else:
             s2a = 'Date'
             s_s2a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2a}</p>"
             st.markdown(s_s2a,unsafe_allow_html=True)
-            #st.markdown(Date)
+            st.markdown(df_complet['Date'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
             s2b = 'Langue'
             s_s2b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2b}</p>"
             st.markdown(s_s2b,unsafe_allow_html=True)
-            #if 'zaaj_' in identifieur:
-                #for i in range(len(Langue)):
-                    #st.markdown(Langue[i])
-            #else:
-                #st.markdown(Langue)
+            st.markdown(df_complet['Langue'][df_complet['Identifiant']==identifieur].values[0])
         with col3:
             s2c = 'Jeu de caractères'
             s_s2c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2c}</p>"
-            #st.markdown(s_s2c,unsafe_allow_html=True)
-            #st.markdown(JeuDeCaracteres)
+            st.markdown(s_s2c,unsafe_allow_html=True)
+            st.markdown(df_complet['Jeu de caractères'][df_complet['Identifiant']==identifieur].values[0])
         with col4:
             s2d = 'Type'
             s_s2d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2d}</p>"
             st.markdown(s_s2d,unsafe_allow_html=True)
-            #st.markdown(Type)
+            st.markdown(df_complet['Type'][df_complet['Identifiant']==identifieur].values[0])
 
         col1,col2,col3,col4 = st.columns(4)
         with col1:
@@ -446,17 +443,17 @@ else:
             s2m = 'Nom du standard'
             s_s2m = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2m}</p>"
             st.markdown(s_s2m,unsafe_allow_html=True)
-            #st.markdown(Standard)
+            st.markdown(df_complet['Nom du standard'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
             s2n = 'Version du standard'
             s_s2n = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2n}</p>"
             st.markdown(s_s2n,unsafe_allow_html=True)
-            #st.markdown(Version_standard)
+            st.markdown(df_complet['Version du standard'][df_complet['Identifiant']==identifieur].values[0])
         with col3:
             s2o = 'Adresse email du contact'
             s_s2o = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2o}</p>"
             st.markdown(s_s2o,unsafe_allow_html=True)
-            #st.markdown(Email)
+            st.markdown(df_complet['Email du contact'][df_complet['Identifiant']==identifieur].values[0])
 
     with st.container(border=True):
         s3 = "SYSTEME DE REFERENCE & LIMITES GEOGRAPHIQUES"
@@ -482,22 +479,22 @@ else:
             s3c = 'Longitude Ouest'
             s_s3c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3c}</p>"
             st.markdown(s_s3c,unsafe_allow_html=True)
-            #st.markdown(westBoundLongitude)
+            st.markdown(df_complet['Longitude ouest'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
             s3d = 'Longitude Est'
             s_s3d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3d}</p>"
             st.markdown(s_s3d,unsafe_allow_html=True)
-            #st.markdown(EastBoundLongitude)
+            st.markdown(df_complet['Longitude est'][df_complet['Identifiant']==identifieur].values[0])
         with col3:
             s3e = 'Latitude Sud'
             s_s3e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3e}</p>"
             st.markdown(s_s3e,unsafe_allow_html=True)
-            #st.markdown(SouthBoundLatitude)
+            st.markdown(df_complet['Latitude sud'][df_complet['Identifiant']==identifieur].values[0])
         with col4:
             s3f = 'Latitude Nord'
             s_s3f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3f}</p>"
             st.markdown(s_s3f,unsafe_allow_html=True)
-            #st.markdown(NorthBoundLatitude)
+            st.markdown(df_complet['Latitude nord'][df_complet['Identifiant']==identifieur].values[0])
 
     with st.container(border=True):
         s5 = "MOTS CLES"
@@ -542,7 +539,7 @@ else:
             s6a = "Limite d'Accès"
             s_s6a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6a}</p>"
             st.markdown(s_s6a,unsafe_allow_html=True)
-            #st.markdown(AccesContrainte)
+            st.markdown(df_complet['Contrainte accès'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
             s6b = "Contrainte d'usage"
             s_s6b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6b}</p>"
@@ -556,12 +553,12 @@ else:
             s6c = "Limite d'Usage"
             s_s6c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6c}</p>"
             st.markdown(s_s6c,unsafe_allow_html=True)
-            #st.markdown(UseLimitation)
+            st.markdown(df_complet['Limite usage'][df_complet['Identifiant']==identifieur].values[0])
         with col4:
             s6d = "Autre contrainte"
             s_s6d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6d}</p>"
             st.markdown(s_s6d,unsafe_allow_html=True)
-            #st.markdown(AutreContrainte)
+            st.markdown(df_complet['Autre contrainte'][df_complet['Identifiant']==identifieur].values[0])
 
     with st.container(border=True):
         s7 = "DISTRIBUTION"
@@ -631,22 +628,22 @@ else:
             s8a = "Niveau"
             s_s8a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8a}</p>"
             st.markdown(s_s8a,unsafe_allow_html=True)
-            #st.markdown(Niveau)
+            st.markdown(df_complet['Niveau'][df_complet['Identifiant']==identifieur].values[0])
 
         with col2:
             s8b = "Conformité"
             s_s8b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8b}</p>"
             st.markdown(s_s8b,unsafe_allow_html=True)
-            #st.markdown(Conformite)
+            st.markdown(df_complet['Conformité'][df_complet['Identifiant']==identifieur].values[0])
 
         col1,col2 = st.columns(2)
         with col1:
             s8c = "Généalogie"
             s_s8c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8c}</p>"
             st.markdown(s_s8c,unsafe_allow_html=True)
-            #st.markdown(Genealogie)
+            st.markdown(df_complet['Généalogie'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
             s8d = "Portée"
             s_s8d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8d}</p>"
             st.markdown(s_s8d,unsafe_allow_html=True)
-            #st.markdown(Scope)
+            st.markdown(df_complet['Portée'][df_complet['Identifiant']==identifieur].values[0])
