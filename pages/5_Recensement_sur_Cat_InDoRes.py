@@ -835,7 +835,6 @@ elif Description:
             df_sorted_value_counts_non = pd.DataFrame(list(sorted_value_counts_non.items()), columns=['Mot_clé', "Occurences"])
             df_sorted_value_counts_non.set_index('Mot_clé',inplace=True)
             st.table(df_sorted_value_counts_non)
-        
 
 elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
@@ -873,4 +872,3 @@ elif Analyse_FAIR:
             width=700,
             height=700)
     st.plotly_chart(fig7,use_container_width=True)
-
