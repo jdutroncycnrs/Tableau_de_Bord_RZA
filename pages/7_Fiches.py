@@ -405,8 +405,67 @@ with st.container(border=True):
 
 
 if Visu_attachments:
+    st.write(identifieur)
+    url_ = url + identifieur
+    url_attach = url_ +"/attachments"
+    resp_attach = requests.get(url_attach,headers=headers_json)
+    if resp_attach.status_code == 200:
+        resp_attach_json=resp_attach.json()
+
+    st.write(resp_attach_json)
+        #try:
+        #    with open(f"pages/data/attachments2/attachments_{identifieur}.json", "w") as f:
+        #        json.dump(resp_attach_json, f, indent=4)
+        #except:
+        #    pass
+
+
     st.write('en cours de fabrication')
 elif Ressources_associees:
+    url_ = url + identifieur
+    url_asso = url_ +"/associated?rows=100"
+    resp_asso = requests.get(url_asso,headers=headers_json)
+    if resp_asso.status_code == 200:
+        resp_asso_json=resp_asso.json()
+
+    st.write(resp_asso_json['parent'])
+    try:
+        st.write("children:",len(resp_asso_json['children']))
+    except:
+        pass
+    try:
+        st.write("parent:",len(resp_asso_json['parent']))
+    except:
+        pass
+    try:
+        st.write("hassources:",len(resp_asso_json['hassources']))
+    except:
+        pass
+    try:
+        st.write("associated:",len(resp_asso_json['associated']))
+    except:
+        pass
+    try:
+        st.write("hasfeaturescats:",len(resp_asso_json['hasfeaturecats']))
+    except:
+        pass
+    try:
+        st.write("fcats:",len(resp_asso_json['fcats']))
+    except:
+        pass
+    try:
+        st.write("services:",len(resp_asso_json['services']))
+    except:
+        pass
+    try:
+        st.write("brothers and sisters:",len(resp_asso_json['brothersAndSisters']))
+    except:
+        pass
+        #try:
+        #    with open(f"pages/data/associated_resources2/resource_{identifieur}.json", "w") as f:
+        #        json.dump(resp_asso_json, f, indent=4)
+        #except:
+        #    pass
     st.write('en cours de fabrication')
 else:
     with st.container(border=True):
