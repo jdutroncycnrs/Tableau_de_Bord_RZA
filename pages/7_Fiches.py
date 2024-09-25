@@ -9,7 +9,7 @@ import numpy as np
 import plotly.express as px
 import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group, uuids_cleaning2
-from Traitement_records import transcript_json, recup_fiche, recup_fiche2
+from Traitement_records import transcript_json, recup_fiche, recup_fiche2, recup_themes_thesaurus_motsCles
 import ast
 
 ###############################################################################
@@ -179,7 +179,7 @@ if admin_action == admin_pass:
                             'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                             'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                             'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés']
+                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles']
             df_global = pd.DataFrame(columns=liste_columns_df)
             for i in range(len(df_infos)):
                 print(i)
@@ -216,10 +216,53 @@ if admin_action == admin_pass:
 df_complet = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
 df_complet.fillna("", inplace=True)
 
-#def transfo(column):
-#    return column.apply(ast.literal_eval)
+def transfo(input_string):
+    # Use ast.literal_eval to safely evaluate the string as a Python expression
+    return ast.literal_eval(input_string)
 
-#df_complet = transfo('Autres dates')
+def transfo0(input_string):
+    # Use ast.literal_eval to safely evaluate the string as a Python expression
+    return input_string.replace("' '","','")
+
+def transfo00(input_string):
+    # Use ast.literal_eval to safely evaluate the string as a Python expression
+    return input_string.replace(":"," ")
+
+# Apply the transformation to the entire column
+df_complet['Autres dates'] = df_complet['Autres dates'].apply(transfo)
+df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo0)
+df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo)
+df_complet['orga du contact'] = df_complet['orga du contact'].apply(transfo0)
+df_complet['orga du contact'] = df_complet['orga du contact'].apply(transfo)
+df_complet['Position du contact'] = df_complet['Position du contact'].apply(transfo0)
+df_complet['Position du contact'] = df_complet['Position du contact'].apply(transfo)
+df_complet['Tel du contact'] = df_complet['Tel du contact'].apply(transfo0)
+df_complet['Tel du contact'] = df_complet['Tel du contact'].apply(transfo)
+df_complet['Adresse'] = df_complet['Adresse'].apply(transfo0)
+df_complet['Adresse'] = df_complet['Adresse'].apply(transfo)
+df_complet['Code Postal'] = df_complet['Code Postal'].apply(transfo0)
+df_complet['Code Postal'] = df_complet['Code Postal'].apply(transfo)
+df_complet['Ville'] = df_complet['Ville'].apply(transfo0)
+df_complet['Ville'] = df_complet['Ville'].apply(transfo)
+df_complet['Pays'] = df_complet['Pays'].apply(transfo0)
+df_complet['Pays'] = df_complet['Pays'].apply(transfo)
+for i in range(len(df_complet)):
+    if 'AUTO' in df_complet.loc[i,'Systeme de référence']:
+        df_complet.loc[i,'Systeme de référence']="['Aucun']"
+df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo00)
+df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo0)
+df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo)
+df_complet['Url'] = df_complet['Url'].apply(transfo0)
+df_complet['Url'] = df_complet['Url'].apply(transfo)
+df_complet['Protocole'] = df_complet['Protocole'].apply(transfo0)
+df_complet['Protocole'] = df_complet['Protocole'].apply(transfo)
+df_complet['Online description'] = df_complet['Online description'].apply(transfo0)
+df_complet['Online description'] = df_complet['Online description'].apply(transfo)
+df_complet['Online nom'] = df_complet['Online nom'].apply(transfo0)
+df_complet['Online nom'] = df_complet['Online nom'].apply(transfo)
+df_complet['Format'] = df_complet['Format'].apply(transfo0)
+df_complet['Format'] = df_complet['Format'].apply(transfo)
+
 st.dataframe(df_complet)
 
 selected_uuids = df_complet['Identifiant'].values
@@ -306,11 +349,7 @@ else:
         s4b = 'Résumé'
         s_s4b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4b}</p>"
         st.markdown(s_s4b,unsafe_allow_html=True)
-        #if 'zaaj_' in identifieur:
-            #for i in range(len(Abstract)):
-                #st.markdown(Abstract[i])
-        #else:
-            #st.markdown(Abstract)
+        st.markdown(df_complet['Résumé'][df_complet['Identifiant']==identifieur].values[0])
 
         col1,col2,col3 = st.columns(3)
         with col1:
@@ -336,21 +375,20 @@ else:
             st.markdown(s_s4c,unsafe_allow_html=True)
             st.markdown(df_complet['Date de création'][df_complet['Identifiant']==identifieur].values[0])
         with col2:
-            #try:
-                
-                #s4g = f'Date ({df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0]})'
-                #s_s4g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4g}</p>"
-                #st.markdown(s_s4g,unsafe_allow_html=True)
-                #st.markdown(df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[1])
-            #except:
+            try:
+                s4g = f"Date ({df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0][0][0]})"
+                s_s4g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4g}</p>"
+                st.markdown(s_s4g,unsafe_allow_html=True)
+                st.markdown(df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0][0][1])
+            except:
                 pass
         with col3:
-            #try:
-                #s4h = f'Date ({liste_dates[1][0]})'
-                #s_s4h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4h}</p>"
-                #st.markdown(s_s4h,unsafe_allow_html=True)
-                #st.markdown(liste_dates[1][1])
-            #except:
+            try:
+                s4h = f"Date ({df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0][1][0]})"
+                s_s4h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s4h}</p>"
+                st.markdown(s_s4h,unsafe_allow_html=True)
+                st.markdown(df_complet['Autres dates'][df_complet['Identifiant']==identifieur].values[0][1][1])
+            except:
                 pass
         
         s4i = f'Info Supplémentaire'
@@ -391,52 +429,52 @@ else:
             s2e = 'Nom du contact'
             s_s2e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2e}</p>"
             st.markdown(s_s2e,unsafe_allow_html=True)
-            #for x in range(len(Nom_contact)):
-                #st.markdown(Nom_contact[x])
+            for x in range(len(df_complet['Nom du contact'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Nom du contact'][df_complet['Identifiant']==identifieur].values[0][x])
         with col2:
             s2f = 'Position du contact'
             s_s2f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2f}</p>"
             st.markdown(s_s2f,unsafe_allow_html=True)
-            #for x in range(len(Position_contact)):
-                #st.markdown(Position_contact[x])
+            for x in range(len(df_complet['Position du contact'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Position du contact'][df_complet['Identifiant']==identifieur].values[0][x])
         with col3:
             s2g = 'Orga du contact'
             s_s2g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2g}</p>"
             st.markdown(s_s2g,unsafe_allow_html=True)
-            #for x in range(len(Organisation_contact)):
-                #st.markdown(Organisation_contact[x])
+            for x in range(len(df_complet['orga du contact'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['orga du contact'][df_complet['Identifiant']==identifieur].values[0][x])
         with col4:
             s2h = 'Tel du contact'
             s_s2h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2h}</p>"
             st.markdown(s_s2h,unsafe_allow_html=True)
-            #for x in range(len(Tel_contact)):
-            #    st.markdown(Tel_contact[x])
+            for x in range(len(df_complet['Tel du contact'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Tel du contact'][df_complet['Identifiant']==identifieur].values[0][x])
 
         col1,col2,col3,col4 = st.columns(4)
         with col1:
             s2i = 'Adresse'
             s_s2i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2i}</p>"
             st.markdown(s_s2i,unsafe_allow_html=True)
-            #for x in range(len(DeliveryPoint)):
-                #st.markdown(DeliveryPoint[x])
+            for x in range(len(df_complet['Adresse'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Adresse'][df_complet['Identifiant']==identifieur].values[0][x])
         with col2:
             s2j = 'Code Postal'
             s_s2j = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2j}</p>"
             st.markdown(s_s2j,unsafe_allow_html=True)
-            #for x in range(len(CodePostal)):
-                #st.markdown(CodePostal[x])
+            for x in range(len(df_complet['Code Postal'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Code Postal'][df_complet['Identifiant']==identifieur].values[0][x])
         with col3:
             s2k = 'Ville'
             s_s2k = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2k}</p>"
             st.markdown(s_s2k,unsafe_allow_html=True)
-            #for x in range(len(Ville)):
-                #st.markdown(Ville[x])
+            for x in range(len(df_complet['Ville'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Ville'][df_complet['Identifiant']==identifieur].values[0][x])
         with col4:
             s2l = 'Pays'
             s_s2l = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s2l}</p>"
             st.markdown(s_s2l,unsafe_allow_html=True)
-            #for x in range(len(Pays)):
-                #st.markdown(Pays[x])
+            for x in range(len(df_complet['Pays'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Pays'][df_complet['Identifiant']==identifieur].values[0][x])
 
         col1,col2,col3 = st.columns([0.25,0.25,0.5])
         with col1:
@@ -465,8 +503,8 @@ else:
             s3a = 'Systèmes renseignés'
             s_s3a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s3a}</p>"
             st.markdown(s_s3a,unsafe_allow_html=True)
-            #for x in range(len(SystemReference)):
-                #st.markdown(SystemReference[x])
+            for x in range(len(df_complet['Systeme de référence'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Systeme de référence'][df_complet['Identifiant']==identifieur].values[0][x])
         with col2:
             pass
         with col3:
@@ -497,6 +535,7 @@ else:
             st.markdown(df_complet['Latitude nord'][df_complet['Identifiant']==identifieur].values[0])
 
     with st.container(border=True):
+        theme_thesaurus_motsCles = recup_themes_thesaurus_motsCles(url, identifieur, headers_json)
         s5 = "MOTS CLES"
         s_s5 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s5}</p>"
         st.markdown(s_s5,unsafe_allow_html=True)
@@ -515,19 +554,15 @@ else:
             s_s5c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s5c}</p>"
             st.markdown(s_s5c,unsafe_allow_html=True)
 
-        #for j in range(len(theme_thesaurus_motsCles)):
-            #col1,col2,col3 = st.columns(3)
-            #with col1:
-            #    st.markdown(theme_thesaurus_motsCles[j][2])
-            #with col2:
-            #    st.markdown(theme_thesaurus_motsCles[j][1])
-            #with col3:
-            #    if 'zaaj_' in identifieur:
-            #        for i in range(len(Mots_cles_zaaj)):
-            #            st.markdown(Mots_cles_zaaj[i])
-            #    else:
-            #        for i in range(len(theme_thesaurus_motsCles[j][0])):
-            #            st.markdown(theme_thesaurus_motsCles[j][0][i])
+        for j in range(len(theme_thesaurus_motsCles)):
+            col1,col2,col3 = st.columns(3)
+            with col1:
+                st.markdown(theme_thesaurus_motsCles[j][2])
+            with col2:
+                st.markdown(theme_thesaurus_motsCles[j][1])
+            with col3:
+                for i in range(len(theme_thesaurus_motsCles[j][0])):
+                    st.markdown(theme_thesaurus_motsCles[j][0][i])
 
     with st.container(border=True):
         s6 = "CONTRAINTES"
@@ -544,11 +579,7 @@ else:
             s6b = "Contrainte d'usage"
             s_s6b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6b}</p>"
             st.markdown(s_s6b,unsafe_allow_html=True)
-            #if 'zaaj_' in identifieur:
-            #    for i in range(len(UseContrainte)):
-            #        st.markdown(UseContrainte[i])
-            #else:
-            #    st.markdown(UseContrainte)
+            st.markdown(df_complet['Contrainte usage'][df_complet['Identifiant']==identifieur].values[0])
         with col3:
             s6c = "Limite d'Usage"
             s_s6c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s6c}</p>"
@@ -570,53 +601,34 @@ else:
             s7b = "URL"
             s_s7b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7b}</p>"
             st.markdown(s_s7b,unsafe_allow_html=True)
-            #if 'zaaj_' in identifieur:
-                #for x in range(len(Online_links)):
-                        #st.markdown(Online_links[x])
-            #else:
-                #try:
-                    #for x in range(len(Online_links)):
-                    #        st.markdown(Online_links[x])
-                #except:
-                #    pass
+            for x in range(len(df_complet['Url'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Url'][df_complet['Identifiant']==identifieur].values[0][x])
         with col2:
             s7c = "Protocole"
             s_s7c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7c}</p>"
             st.markdown(s_s7c,unsafe_allow_html=True)
-            #try:
-            #    for x in range(len(Online_protocols)):
-            #            st.markdown(Online_protocols[x])
-            #except:
-            #    pass
+            for x in range(len(df_complet['Protocole'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Protocole'][df_complet['Identifiant']==identifieur].values[0][x])
         
         col1,col2,col3 = st.columns([0.3,0.4,0.3])
         with col1:
             s7d = "Nom de la ressource"
             s_s7d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7d}</p>"
             st.markdown(s_s7d,unsafe_allow_html=True)
-            #try:
-            #    for x in range(len(Online_nom)):
-            #            st.markdown(Online_nom[x])
-            #except:
-            #    pass
+            for x in range(len(df_complet['Online nom'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Online nom'][df_complet['Identifiant']==identifieur].values[0][x])
         with col2:
             s7e = "Description de la ressource"
             s_s7e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7e}</p>"
             st.markdown(s_s7e,unsafe_allow_html=True)
-            #try:
-            #    for x in range(len(Online_description)):
-            #            st.markdown(Online_description[x])
-            #except:
-            #    pass
+            for x in range(len(df_complet['Online description'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Online description'][df_complet['Identifiant']==identifieur].values[0][x])
         with col3:
             s7a = "Format"
             s_s7a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s7a}</p>"
             st.markdown(s_s7a,unsafe_allow_html=True)
-            #try:
-            #    for x in range(len(Format)):
-            #            st.markdown(Format[x])
-            #except:
-            #    pass
+            for x in range(len(df_complet['Format'][df_complet['Identifiant']==identifieur].values[0])):
+                st.markdown(df_complet['Format'][df_complet['Identifiant']==identifieur].values[0][x])
 
     with st.container(border=True):
         s8 = "QUALITE"

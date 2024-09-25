@@ -19,6 +19,125 @@ def transcript_json(json_data, file, prefix=""):
         #print(f"{prefix}: {json_data}" if prefix else f"{json_data}")
         file.write(f"{prefix}:§{json_data}µ" if prefix else f"{json_data}µ")
 
+
+def recup_themes_thesaurus_motsCles(url, identifieur, headers_json):
+    url_ = url + identifieur
+    resp1 = requests.get(url_,headers=headers_json)
+    if resp1.status_code == 200:
+        resp_json=resp1.json()
+        if "oai:search-data.ubfc.fr" in identifieur:
+            identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
+            with open(f"pages/data/fiches_json2/{identifieur}.json", "w") as f:
+                json.dump(resp_json, f)
+        else:
+            with open(f"pages/data/fiches_json2/{identifieur}.json", "w") as f:
+                json.dump(resp_json, f)
+
+        with open(f"pages/data/fiches_json2/{identifieur}.json", 'r') as f2:
+            data = json.load(f2)
+
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'w') as file:
+            transcript_json(data, file)
+
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'r') as f:
+            d = f.read()
+
+        listi = re.split('µ',d)
+
+        df = pd.DataFrame(listi, columns=['Results'])
+        for u in range(len(df)):
+            p = re.split('§',df.loc[u,'Results'])
+            try:
+                df.loc[u,'Valeurs']=p[1]
+            except:
+                pass
+            try:
+                df.loc[u,'Clés']=p[0].replace('.','£')
+            except:
+                pass
+
+        for j in range(len(df)):
+            pp = re.split('£',df.loc[j,'Clés'])
+            for k in range(15):
+                try:
+                    df.loc[j,f'K{k}']=pp[k]
+                except:
+                    pass
+
+        Liste_Theme = []
+        Liste_Thesaurus = []
+        Mots_cles = []
+        Mots_cles_zaaj = []
+        if 'zaaj_' in identifieur: 
+            try:
+                for u in range(len(df)):
+                    if df.loc[u,'Clés']=="dc:subject£#text:":
+                        Mots_cles_zaaj.append(df.loc[u,'Valeurs'])
+            except:
+                pass
+        else:
+            try:
+                for u in range(len(df)):
+                    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:":
+                        Liste_Theme.append([u,df.loc[u,'Valeurs']])
+            except:
+                pass
+            try:
+                for u in range(len(df)):
+                    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:":
+                        Liste_Thesaurus.append([u,df.loc[u,'Valeurs']])
+            except:
+                pass
+            try:
+                for u in range(len(df)):
+                    if df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:" or  df.loc[u,'Clés']=="gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gmx:Anchor£#text:":
+                        Mots_cles.append([u,df.loc[u,'Valeurs']])
+            except:
+                pass
+
+        theme_thesaurus_motsCles = []
+        mm = 0    
+        for th in range(1):
+            liste_mots_cles = []
+            try:
+                if Liste_Theme[th][0]< Liste_Thesaurus[th][0]:
+                    for m in range(mm,len(Mots_cles)):
+                        if Mots_cles[m][0]<Liste_Theme[th][0]:
+                            liste_mots_cles.append(Mots_cles[m][1])
+                            mm = m
+                    theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],Liste_Thesaurus[th][1]])
+            except:
+                try:
+                    for m in range(mm,len(Mots_cles)):
+                        if Mots_cles[m][0]<Liste_Theme[th][0]:
+                            liste_mots_cles.append(Mots_cles[m][1])
+                            mm = m
+                    theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],"Aucun thésaurus"])
+                except:
+                    theme_thesaurus_motsCles.append([liste_mots_cles,"Aucun thème","Aucun thésaurus"])
+
+        for th in range(1,len(Liste_Theme)):
+            liste_mots_cles = []
+            try:
+                if Liste_Theme[th][0]< Liste_Thesaurus[th][0]:
+                    for m in range(mm+1,len(Mots_cles)):
+                        if Mots_cles[m][0]<Liste_Theme[th][0]:
+                            liste_mots_cles.append(Mots_cles[m][1])
+                            mm = m
+                    theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],Liste_Thesaurus[th][1]])
+            except:
+                try:
+                    for m in range(mm+1,len(Mots_cles)):
+                        if Mots_cles[m][0]<Liste_Theme[th][0]:
+                            liste_mots_cles.append(Mots_cles[m][1])
+                            mm = m
+                    theme_thesaurus_motsCles.append([liste_mots_cles,Liste_Theme[th][1],"Aucun thésaurus"])
+                except:
+                    theme_thesaurus_motsCles.append([liste_mots_cles,"Aucun thème","Aucun thésaurus"])
+
+    return theme_thesaurus_motsCles
+
+
 def recup_fiche2(url, identifieur, headers_json, filtre_mention):
     url_ = url + identifieur
     resp1 = requests.get(url_,headers=headers_json)
@@ -512,7 +631,7 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                         FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
                         UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
                         Format, Online_links, Online_protocols, Online_description, Online_nom,
-                        Niveau, Conformite, Genealogie, Scope, mention, Thesaurus, Themes, Keywords]
+                        Niveau, Conformite, Genealogie, Scope, mention, Thesaurus, Themes, Keywords, theme_thesaurus_motsCles]
 
         liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
                             'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
@@ -520,7 +639,7 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                             'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                             'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                             'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés']
+                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles']
             
         df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)  
 
