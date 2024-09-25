@@ -223,8 +223,6 @@ if admin_action == admin_pass:
                 identif = df_infos.loc[i,'Identifiant']
                 try:
                     datafri = recup_fiche2(url, identif, headers_json, filtre_mention)
-                    #df_infos.loc[i,'Mention'] = mention
-                    #df_infos.loc[i,'Groupe_et_Mention'] = groupe_et_mention
                     new_df_global = pd.concat([df_global,datafri], axis=0)
                     df_global = new_df_global
                     df_global.reset_index(inplace=True)
@@ -232,11 +230,41 @@ if admin_action == admin_pass:
                 except:
                     pass
             df_global.to_csv("pages/data/infos_MD2/Tableau_MD2.csv")
-            #df_infos.to_csv(("pages/data/infos_MD/infos_groupes_mentions.csv"))
 
-            ############## FUSION DES 2 DF: groupes et variables ##########################""
+            ############## FUSION DES 2 DF: groupes et variables ############################
             df_all = pd.merge(df_global, df_infos, on='Identifiant', how='inner')
             df_all.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
+
+#################################################################################################
+############## RECUP GLOBALE FICHIERS ATTACHES ###############################################
+    Recup_attachements = st.sidebar.button('recup des fichiers attachés')
+    if Recup_attachements:
+        with st.spinner("La récup des fichiers attachés est en cours"):
+            liste_columns_df_ressources = ['Identifiant']
+            df_global_ressources = pd.DataFrame(columns=liste_columns_df_ressources)
+            for i in range(len(df_infos)):
+                print(i)
+                identif = df_infos.loc[i,'Identifiant']
+                try:
+                    pass
+                except:
+                    pass
+
+#################################################################################################
+############## RECUP GLOBALE RESSOURCES ASSOCIEES ###############################################
+    Recup_ressources = st.sidebar.button('recup des ressources associées')
+    if Recup_ressources:
+        with st.spinner("La récup des ressources associées est en cours"):
+            liste_columns_df_ressources = ['Identifiant']
+            df_global_ressources = pd.DataFrame(columns=liste_columns_df_ressources)
+            for i in range(len(df_infos)):
+                print(i)
+                identif = df_infos.loc[i,'Identifiant']
+                try:
+                    pass
+                except:
+                    pass
+
 
 
 #############################################################################
