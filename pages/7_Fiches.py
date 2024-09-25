@@ -63,6 +63,38 @@ headers_xml = {"accept":"application/xml",
 headers_text = {"accept":"text/plain",
            "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
 
+# Listes
+liste_ZAs = ['zaa', 
+             'zaaj', 
+             'zal',
+             'zaar',
+             'zabr',
+             'zabri', 
+             'zaeu',
+             'zapygar', 
+             'zam', 
+             'zas',
+             'zah',
+             'zatu',
+             'zata',
+             'zarg',
+             'zacam',
+             'zapvs',
+             'RZA',
+             ]
+
+liste_OHMs = ['OHM Littoral méditerranéen',
+              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
+              'OHM Bassin Minier de Provence',
+              'OHMi Pima County',
+              'OHMi Nunavik',
+              'OHMi Téssékéré',
+              'OHMi Estarreja',
+              'OHM Vallée du Rhône',
+              'OHM Pays de Bitche',
+              'OHM Littoral Caraïbe',
+              'DRIIHM']
+
 filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'ZAAJ','Zone Atelier Arc Jurassien' , 'ZAAJ - Arc Jurassien', 'Jura',
            'ZAAR','zaar', 'Zone Atelier Armorique','ZAAr - Armorique','ZAAr',
@@ -88,6 +120,11 @@ couleur_subtitles = (250,150,150)
 taille_subtitles = "25px"
 couleur_subsubtitles = (60,150,160)
 taille_subsubtitles = "25px"
+couleur_True = (0,200,0)
+couleur_False = (200,0,0)
+wch_colour_box = (250,250,220)
+wch_colour_font = (90,90,90)
+fontsize = 70
 
 ###############################################################################################
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS ########################################
@@ -202,15 +239,6 @@ if admin_action == admin_pass:
             df_all.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
 
 
-##################################################################################################
-########## CONNEXION AU GEONETWORK ###############################################################
-##################################################################################################
-
-#identifieur = uuids.loc[10,'uuid_cat_InDoRes']
-# recup du tableau des métadonnées pour une fiche
-#df = recup_fiche2(url, identifieur, headers_json, filtre_mention)
-#st.dataframe(df)
-
 #############################################################################
 
 df_complet = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
@@ -263,9 +291,61 @@ df_complet['Online nom'] = df_complet['Online nom'].apply(transfo)
 df_complet['Format'] = df_complet['Format'].apply(transfo0)
 df_complet['Format'] = df_complet['Format'].apply(transfo)
 
-st.dataframe(df_complet)
+for i in range(len(df_complet)):
+    if df_complet.loc[i,'Groupe'] != '':
+        df_complet.loc[i,'GroupeEtMention']=df_complet.loc[i,'Groupe']
+    elif df_complet.loc[i,'Groupe'] == '':
+        if df_complet.loc[i,'Mention du groupe'] == 'Aucune mention':
+            df_complet.loc[i,'GroupeEtMention']='Aucun groupe, ni mention'
+        else:
+            df_complet.loc[i,'GroupeEtMention']=df_complet.loc[i,'Mention du groupe']
 
-selected_uuids = df_complet['Identifiant'].values
+#st.dataframe(df_complet)
+
+##################### SELECTION ########################################################################
+########### Choix OHM/RZA ##############################################################################
+## Le choix est exclusif ###############################################################################
+if 'checkbox1' not in st.session_state:
+    st.session_state.checkbox1 = False
+if 'checkbox2' not in st.session_state:
+    st.session_state.checkbox2 = False
+
+# Function to handle checkbox1 change
+def handle_checkbox1_change():
+    if st.session_state.checkbox1:
+        st.session_state.checkbox2 = False
+
+# Function to handle checkbox2 change
+def handle_checkbox2_change():
+    if st.session_state.checkbox2:
+        st.session_state.checkbox1 = False
+
+col1,col2 =st.sidebar.columns(2)
+choix_groupe_OHM = False
+with col1:
+    checkbox1 = st.checkbox("RZA", key='checkbox1', on_change=handle_checkbox1_change)
+with col2:
+    checkbox2 = st.checkbox("OHM", key='checkbox2', on_change=handle_checkbox2_change)
+
+
+if checkbox1:
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
+    if len(selection_group)==0:
+        selection_group = liste_ZAs 
+    selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
+    selected_uuids_ = selected_uuids.reset_index(drop=True)
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+elif checkbox2:
+    selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
+    if len(selection_group)==0:
+        selection_group = liste_OHMs
+    selected_uuids = df_complet['Identifiant'][df_complet['GroupeEtMention'].isin(selection_group)]
+    selected_uuids_ = selected_uuids.reset_index(drop=True)
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+else:
+    selected_uuids_ = df_complet['Identifiant'].values
+    st.sidebar.metric('Nombre de fiches:',len(selected_uuids_))
+
 
 ##################################################################################################
 ######################## VISUALISATIONS ############################################################
@@ -295,14 +375,14 @@ with st.container(border=True):
     s_s1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{s1}</p>"
     st.markdown(s_s1,unsafe_allow_html=True)
 
-    if st.session_state.count > len(selected_uuids):
+    if st.session_state.count > len(selected_uuids_):
         st.session_state.count = 0
 
-    id_choisie = selected_uuids[0]
+    id_choisie = selected_uuids_[0]
     col01,col02,col03,col4,col5 = st.columns([0.5,0.1,0.1,0.1,0.2])
     with col01:
         try:
-            identifieur = st.selectbox(label='',options=selected_uuids, index=st.session_state.count)
+            identifieur = st.selectbox(label='',options=selected_uuids_, index=st.session_state.count)
         except: 
             identifieur = ""
             reset_counter()
@@ -320,7 +400,7 @@ with st.container(border=True):
         Visu_attachments = st.checkbox(label='Fichiers attachés', key='Visu_attachments',on_change=handle_button1_change)
         Ressources_associees = st.checkbox(label='Ressources associées', key='Ressources_associees',on_change=handle_button2_change)
 
-    if st.session_state.count > len(selected_uuids):
+    if st.session_state.count > len(selected_uuids_):
         st.write('Vous êtes au bout!')
 
 
@@ -659,3 +739,27 @@ else:
             s_s8d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{s8d}</p>"
             st.markdown(s_s8d,unsafe_allow_html=True)
             st.markdown(df_complet['Portée'][df_complet['Identifiant']==identifieur].values[0])
+
+##################################################################################################
+########## VISUALISATION DU GROUPE ###############################################################
+
+lnk = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">'
+
+st.sidebar.markdown('Groupe ou Mention')
+
+htmlstr = f"""<p style='background-color: rgb({wch_colour_box[0]}, 
+                                                            {wch_colour_box[1]}, 
+                                                            {wch_colour_box[2]}, 0.75); 
+                                        color: rgb({wch_colour_font[0]}, 
+                                                {wch_colour_font[1]}, 
+                                                {wch_colour_font[2]}, 0.75); 
+                                        font-size: {fontsize}px; 
+                                        border-radius: 7px; 
+                                        padding-left: 12px; 
+                                        padding-top: 10px; 
+                                        padding-bottom: 10px; 
+                                        line-height:5px;
+                                        text-align:center'>
+                                        </style><BR><span style='font-size: 25px; 
+                                        margin-top: 0;'>{df_complet['GroupeEtMention'][df_complet['Identifiant']==identifieur].values[0]}</style></span></p>"""
+st.sidebar.markdown(lnk + htmlstr, unsafe_allow_html=True)
