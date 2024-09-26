@@ -36,11 +36,11 @@ def recup_themes_thesaurus_motsCles(url, identifieur, headers_json):
         with open(f"pages/data/fiches_json2/{identifieur}.json", 'r') as f2:
             data = json.load(f2)
 
-        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'w') as file:
-            transcript_json(data, file)
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'w') as f3:
+            transcript_json(data, f3)
 
-        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'r') as f:
-            d = f.read()
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'r') as f4:
+            d = f4.read()
 
         listi = re.split('µ',d)
 
@@ -68,7 +68,7 @@ def recup_themes_thesaurus_motsCles(url, identifieur, headers_json):
         Liste_Thesaurus = []
         Mots_cles = []
         Mots_cles_zaaj = []
-        if 'zaaj_' in identifieur: 
+        if "oai:search-data.ubfc.fr" in identifieur: 
             try:
                 for u in range(len(df)):
                     if df.loc[u,'Clés']=="dc:subject£#text:":
@@ -423,11 +423,11 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
         with open(f"pages/data/fiches_json2/{identifieur}.json", 'r') as f2:
             data = json.load(f2)
 
-        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'w') as file:
-            transcript_json(data, file)
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'w') as f3:
+            transcript_json(data, f3)
 
-        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'r') as f:
-            d = f.read()
+        with open(f'pages/data/fiches_txt2/{identifieur}.txt', 'r') as f4:
+            d = f4.read()
 
         listi = re.split('µ',d)
 
@@ -452,7 +452,7 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                     pass
         df.to_csv(f'pages/data/fiches_csv2/{identifieur}.csv')
 
-        if "zaaj_" in identifieur:
+        if 'zaaj_' in identifieur:
                 try:
                     Langue = df['Valeurs'][df['Clés']=="dc:title£@xml:lang:"].values
                 except:
@@ -870,29 +870,66 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
         except:
             Scope = ""
 
-        """if 'oai:search-data.ubfc.fr' in identifieur:
-            identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
-            try:
-                groupe = df_infos['Groupe'][df_infos.Identifiant==identifieur].values[0]
-            except:
-                groupe = ""
-            identifieur = identifieur.replace('oai:search-data.ubfc.fr:','zaaj_')
-        else:
-            try:
-                groupe = df_infos['Groupe'][df_infos.Identifiant==identifieur].values[0]
-            except:
-                groupe = ""
+        #########################################################################################################################################
+        ################################# FAIR ##################################################################################################
 
-        groupe_et_mention = ''
-        try:
-            if groupe == "Aucun groupe" and mention != "Aucune mention":
-                groupe_et_mention = mention
-            elif groupe != "Aucun groupe":
-                groupe_et_mention = groupe
-            elif groupe == "Aucun groupe" and mention == "Aucune mention":
-                groupe_et_mention = "pas d'infos"
-        except:
-            pass"""
+        F1 = True
+        A2 = True
+
+        if len(Titre)!=0 and len(Abstract)!=0 and len(Organisation_contact)!=0 and len(Nom_contact)!=0 and len(Email)!=0:
+            F2 = True
+        else:
+            F2 = False
+
+        if len(Online_links)!=0:
+            for i in range(len(Online_links)):
+                if 'doi' in Online_links[i] or 'attachments' in Online_links[i]:
+                    A1 = True
+                    F3 = True
+                else:
+                    A1 = False
+                    F3 = False
+        else:
+            A1 = False
+            F3 = False
+
+        F4 = True
+
+        if len(Format)!=0:
+            for i in range(len(Format)):
+                if Format[i] in ['GeoTiff','GeoTIFF', 'GEOTIFF','shape','ESRI Shapefile','Word','ASC','CSV','png','PNG','pdf','PDF','svg','SVG', 'odt','ODT','rtf', 'RTF','txt','TXT','jpg','JPG','ods','ODS','mkv','MKV','zip','ZIP','tar','TAR']:
+                    I1 = True
+                else:
+                    I1 = False
+        else:
+            I1 = False
+
+        if len(Thesaurus)==0:
+            I2 = False
+        else:
+            I2 = True
+
+        if len(Keywords)==0:
+            I3 = False
+        else:
+            I3 = True
+
+        if len(UseLimitation)==0 and  len(UseContrainte)==0 and len(AccesContrainte)==0 and len(AutreContrainte)==0:
+            R1 = False
+        elif len(UseContrainte)!=0 or len(UseLimitation)!=0:
+            R1 = True
+        else:
+            R1 = False
+
+        if len(Genealogie)==0:
+            R2 = False
+        else:
+            R2 = True
+
+        R3 = False
+
+        if "zaaj_" in identifieur:
+            identifieur = identifieur.replace('zaaj_','oai:search-data.ubfc.fr:')
 
         liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
                         Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
@@ -900,7 +937,8 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                         FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
                         UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
                         Format, Online_links, Online_protocols, Online_description, Online_nom,
-                        Niveau, Conformite, Genealogie, Scope, mention, Thesaurus, Themes, Keywords, theme_thesaurus_motsCles]
+                        Niveau, Conformite, Genealogie, Scope, mention, Thesaurus, Themes, Keywords, theme_thesaurus_motsCles,
+                        F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
 
         liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
                             'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
@@ -908,7 +946,8 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                             'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                             'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                             'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles']
+                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles',
+                            'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
             
         df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)  
 

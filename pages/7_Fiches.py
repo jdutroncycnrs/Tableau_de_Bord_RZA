@@ -216,7 +216,8 @@ if admin_action == admin_pass:
                             'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
                             'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
                             'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
-                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles']
+                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles',
+                            'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
             df_global = pd.DataFrame(columns=liste_columns_df)
             for i in range(len(df_infos)):
                 print(i)
@@ -450,11 +451,16 @@ with st.container(border=True):
 
 if Visu_attachments:
     df_attachements = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_attachements.csv", index_col=[0])
-    st.dataframe(df_attachements)
+
+    df_attachements_visu = df_attachements[df_attachements['Identifiant'].isin(selected_uuids_)]
+    df_attachements_visu.reset_index(drop=True, inplace=True)
+    st.dataframe(df_attachements_visu)
 
 elif Ressources_associees:
     df_ressources = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
-    st.dataframe(df_ressources)
+    df_ressources_visu = df_ressources[df_ressources['Identifiant'].isin(selected_uuids_)]
+    df_ressources_visu.reset_index(drop=True, inplace=True)
+    st.dataframe(df_ressources_visu)
 
 else:
     with st.container(border=True):
