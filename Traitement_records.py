@@ -138,6 +138,275 @@ def recup_themes_thesaurus_motsCles(url, identifieur, headers_json):
     return theme_thesaurus_motsCles
 
 
+def recup_attachements(url, identifieur, headers_json):
+    url_ = url + identifieur
+    url_attach = url_ +"/attachments"
+    resp_attach = requests.get(url_attach,headers=headers_json)
+    if resp_attach.status_code == 200:
+        resp_attach_json=resp_attach.json()
+        noms_fichiers_attachements = []
+        tailles_fichiers_attachements = []
+        for i in range(len(resp_attach_json)):
+            noms_fichiers_attachements.append(resp_attach_json[i]['filename'])
+            tailles_fichiers_attachements.append(resp_attach_json[i]['size'])
+    liste_variables_attachements = [identifieur, noms_fichiers_attachements, tailles_fichiers_attachements]
+    liste_columns_df_attachements = ['Identifiant', 'Noms des fichiers', 'Tailles des fichiers']
+    df_fichiers_attachements = pd.DataFrame(data=[liste_variables_attachements],columns=liste_columns_df_attachements)
+    return df_fichiers_attachements
+
+def recup_ressources(url, identifieur, headers_json):
+    url_ = url + identifieur
+    url_ressources = url_ +"/associated?rows=100"
+    resp_ressources = requests.get(url_ressources,headers=headers_json)
+    if resp_ressources.status_code == 200:
+        resp_ressources_json=resp_ressources.json()
+
+        ####################### CHILDREN
+        try:
+            children = len(resp_ressources_json['children'])
+        except:
+            children = 0
+        if children == 0:
+            children_bool = False
+        else:
+            children_bool = True
+
+        children_url_properties = []
+        children_ressource_title = []
+        children_ressource_abstract = []
+        children_ressources_formats = []
+        children_ressources_links = []
+        if children != 0:
+            for i in range(len(resp_ressources_json['children'])):
+                try:
+                    children_url_properties.append(resp_ressources_json['children'][i]['properties']['url'])
+                except:
+                    pass
+                try:
+                    children_ressource_title.append(resp_ressources_json['children'][i]['_source']['resourceTitleObject']['default'])
+                except:
+                    pass
+                try:
+                    children_ressource_abstract.append(resp_ressources_json['children'][i]['_source']['resourceAbstractObject']['default'])
+                except:
+                    pass
+                children_ressources_formats_i = []
+                for j in range(len(resp_ressources_json['children'][i]['_source']['format'])):
+                    try:
+                        children_ressources_formats_i.append(resp_ressources_json['children'][i]['_source']['format'][j]['protocol'])
+                    except:
+                        pass
+                children_ressources_formats.append(children_ressources_formats_i)
+                children_ressources_links_i = []
+                for k in range(len(resp_ressources_json['children'][i]['_source']['link'])):
+                    try:
+                        children_ressources_links_i.append(resp_ressources_json['children'][i]['_source']['link'][k]['url'])
+                    except:
+                        pass
+                children_ressources_links.append(children_ressources_links_i)
+
+        ####################### PARENT
+        try:
+            parent = len(resp_ressources_json['parent'])
+        except:
+            parent = 0
+        if parent == 0:
+            parent_bool = False
+        else:
+            parent_bool = True
+        parent_url_properties = []
+        parent_ressource_title = []
+        parent_ressource_abstract = []
+        parent_ressources_formats = []
+        parent_ressources_links = []
+        if parent != 0:
+            for i in range(len(resp_ressources_json['parent'])):
+                try:
+                    parent_url_properties.append(resp_ressources_json['parent'][i]['properties']['url'])
+                except:
+                    pass
+                try:
+                    parent_ressource_title.append(resp_ressources_json['parent'][i]['_source']['resourceTitleObject']['default'])
+                except:
+                    pass
+                try:
+                    parent_ressource_abstract.append(resp_ressources_json['parent'][i]['_source']['resourceAbstractObject']['default'])
+                except:
+                    pass
+                parent_ressources_formats_i = []
+                for j in range(len(resp_ressources_json['parent'][i]['_source']['format'])):
+                    try:
+                        parent_ressources_formats_i.append(resp_ressources_json['parent'][i]['_source']['format'][j]['protocol'])
+                    except:
+                        pass
+                parent_ressources_formats.append(parent_ressources_formats_i)
+                parent_ressources_links_i = []
+                for k in range(len(resp_ressources_json['parent'][i]['_source']['link'])):
+                    try:
+                        parent_ressources_links_i.append(resp_ressources_json['parent'][i]['_source']['link'][k]['url'])
+                    except:
+                        pass
+                parent_ressources_links.append(parent_ressources_links_i)
+
+        ########################
+        try:
+            hassources = len(resp_ressources_json['hassources'])
+        except:
+            hassources = 0
+        if hassources == 0:
+            hassources_bool = False
+        else:
+            hassources_bool = True
+
+        #########################
+        try:
+            associated = len(resp_ressources_json['associated'])
+        except:
+            associated = 0
+        if associated == 0:
+            associated_bool = False
+        else:
+            associated_bool = True
+
+        ##########################
+        try:
+            hasfeaturecats = len(resp_ressources_json['hasfeaturecats'])
+        except:
+            hasfeaturecats = 0 
+        if hasfeaturecats == 0:
+            hasfeaturecats_bool = False
+        else:
+            hasfeaturecats_bool = True
+
+        hasfeaturecats_url_properties = []
+        hasfeaturecats_ressource_title = []
+        hasfeaturecats_ressource_abstract = []
+        hasfeaturecats_ressources_formats = []
+        hasfeaturecats_ressources_links = []
+        if hasfeaturecats != 0:
+            for i in range(len(resp_ressources_json['hasfeaturecats'])):
+                try:
+                    hasfeaturecats_url_properties.append(resp_ressources_json['hasfeaturecats'][i]['properties']['url'])
+                except:
+                    pass
+                try:
+                    hasfeaturecats_ressource_title.append(resp_ressources_json['hasfeaturecats'][i]['_source']['resourceTitleObject']['default'])
+                except:
+                    pass
+                try:
+                    hasfeaturecats_ressource_abstract.append(resp_ressources_json['hasfeaturecats'][i]['_source']['resourceAbstractObject']['default'])
+                except:
+                    pass
+                hasfeaturecats_ressources_formats_i = []
+                for j in range(len(resp_ressources_json['hasfeaturecats'][i]['_source']['format'])):
+                    try:
+                        hasfeaturecats_ressources_formats_i.append(resp_ressources_json['hasfeaturecats'][i]['_source']['format'][j]['protocol'])
+                    except:
+                        pass
+                hasfeaturecats_ressources_formats.append(hasfeaturecats_ressources_formats_i)
+                hasfeaturecats_ressources_links_i = []
+                for k in range(len(resp_ressources_json['hasfeaturecats'][i]['_source']['link'])):
+                    try:
+                        hasfeaturecats_ressources_links_i.append(resp_ressources_json['hasfeaturecats'][i]['_source']['link'][k]['url'])
+                    except:
+                        pass
+                hasfeaturecats_ressources_links.append(hasfeaturecats_ressources_links_i)
+
+        ##########################
+        try:
+            fcats = len(resp_ressources_json['fcats'])
+        except:
+            fcats = 0
+        if fcats == 0:
+            fcats_bool = False
+        else:
+            fcats_bool = True
+
+        fcats_url_properties = []
+        fcats_ressource_title = []
+        if fcats != 0:
+            for i in range(len(resp_ressources_json['fcats'])):
+                try:
+                    fcats_url_properties.append(resp_ressources_json['fcats'][i]['properties']['url'])
+                except:
+                    pass
+                try:
+                    fcats_ressource_title.append(resp_ressources_json['fcats'][i]['_source']['resourceTitleObject']['default'])
+                except:
+                    pass
+
+        ##############################
+        try:
+            services = len(resp_ressources_json['services'])
+        except:
+            services = 0
+        if services == 0:
+            services_bool = False
+        else:
+            services_bool = True
+
+        #################################
+        try:
+            brothersAndSisters = len(resp_ressources_json['brothersAndSisters'])
+        except:
+            brothersAndSisters = 0
+        if brothersAndSisters == 0:
+            brothersAndSisters_bool = False
+        else:
+            brothersAndSisters_bool = True
+
+        brothersAndSisters_url_properties = []
+        brothersAndSisters_ressource_title = []
+        brothersAndSisters_ressource_abstract = []
+        brothersAndSisters_ressources_formats = []
+        brothersAndSisters_ressources_links = []
+        if brothersAndSisters != 0:
+            for i in range(len(resp_ressources_json['brothersAndSisters'])):
+                try:
+                    brothersAndSisters_url_properties.append(resp_ressources_json['brothersAndSisters'][i]['properties']['url'])
+                except:
+                    pass
+                try:
+                    brothersAndSisters_ressource_title.append(resp_ressources_json['brothersAndSisters'][i]['_source']['resourceTitleObject']['default'])
+                except:
+                    pass
+                try:
+                    brothersAndSisters_ressource_abstract.append(resp_ressources_json['brothersAndSisters'][i]['_source']['resourceAbstractObject']['default'])
+                except:
+                    pass
+                brothersAndSisters_ressources_formats_i = []
+                for j in range(len(resp_ressources_json['brothersAndSisters'][i]['_source']['format'])):
+                    try:
+                        brothersAndSisters_ressources_formats_i.append(resp_ressources_json['brothersAndSisters'][i]['_source']['format'][j]['protocol'])
+                    except:
+                        pass
+                brothersAndSisters_ressources_formats.append(brothersAndSisters_ressources_formats_i)
+                brothersAndSisters_ressources_links_i = []
+                for k in range(len(resp_ressources_json['brothersAndSisters'][i]['_source']['link'])):
+                    try:
+                        brothersAndSisters_ressources_links_i.append(resp_ressources_json['brothersAndSisters'][i]['_source']['link'][k]['url'])
+                    except:
+                        pass
+                brothersAndSisters_ressources_links.append(brothersAndSisters_ressources_links_i)
+
+    liste_variables_ressources = [identifieur, children_bool,parent_bool,hassources_bool,associated_bool,hasfeaturecats_bool, fcats_bool, services_bool,brothersAndSisters_bool,
+                                  children,parent,hassources,associated,hasfeaturecats,fcats,services,brothersAndSisters,
+                                  children_url_properties,children_ressource_title,children_ressource_abstract,children_ressources_formats,children_ressources_links,
+                                  parent_url_properties,parent_ressource_title,parent_ressource_abstract,parent_ressources_formats,parent_ressources_links,
+                                  hasfeaturecats_url_properties,hasfeaturecats_ressource_title,hasfeaturecats_ressource_abstract,hasfeaturecats_ressources_formats,hasfeaturecats_ressources_links,
+                                  fcats_url_properties,fcats_ressource_title,
+                                  brothersAndSisters_url_properties,brothersAndSisters_ressource_title,brothersAndSisters_ressource_abstract,brothersAndSisters_ressources_formats,brothersAndSisters_ressources_links]
+    liste_columns_df_ressources = ['Identifiant', 'Check_children', 'Check_parent','Check_hassources', 'Check_associated', 'Check_hasfeaturescats', 'Check_fcats', 'Check_services', 'Check_BroAndSisters',
+                                   'Nombre_children', 'Nombre_parent', 'Nombre_hassources', 'Nombre_associated', 'Nombre_hasfeaturescats', 'Nombre_fcats', 'Nombre_services', 'Nombre_BroAndSisters',
+                                   "Children url (properties)", "Titre children","Résumé children", "Formats children", 'Urls children',
+                                   "Parent url (properties)", "Titre parents","Résumé parents", "Formats parents", 'Urls parents',
+                                   "hasfeaturecats url (properties)", "Titre hasfeaturecats","Résumé hasfeaturecats", "Formats hasfeaturecats", 'Urls hasfeaturecats',
+                                   "facts url (properties)", "Titre facts", 
+                                   "brothersAndSisters url (properties)","Titre brothersAndSisters","Résumé brothersAndSisters", "Formats brothersAndSisters", 'Urls brothersAndSisters']
+    df_fichiers_ressources = pd.DataFrame(data=[liste_variables_ressources],columns=liste_columns_df_ressources)
+    return df_fichiers_ressources
+
+
 def recup_fiche2(url, identifieur, headers_json, filtre_mention):
     url_ = url + identifieur
     resp1 = requests.get(url_,headers=headers_json)

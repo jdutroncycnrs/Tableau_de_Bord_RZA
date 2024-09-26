@@ -9,7 +9,7 @@ import numpy as np
 import plotly.express as px
 import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group, uuids_cleaning2
-from Traitement_records import transcript_json, recup_fiche, recup_fiche2, recup_themes_thesaurus_motsCles
+from Traitement_records import transcript_json, recup_fiche, recup_fiche2, recup_themes_thesaurus_motsCles, recup_attachements, recup_ressources
 import ast
 
 ###############################################################################
@@ -240,30 +240,46 @@ if admin_action == admin_pass:
     Recup_attachements = st.sidebar.button('recup des fichiers attachés')
     if Recup_attachements:
         with st.spinner("La récup des fichiers attachés est en cours"):
-            liste_columns_df_ressources = ['Identifiant']
-            df_global_ressources = pd.DataFrame(columns=liste_columns_df_ressources)
+            liste_columns_df_attachements = ['Identifiant', 'Noms des fichiers', 'Tailles des fichiers']
+            df_global_attachements = pd.DataFrame(columns=liste_columns_df_attachements)
             for i in range(len(df_infos)):
                 print(i)
                 identif = df_infos.loc[i,'Identifiant']
                 try:
-                    pass
+                    df_attachementsi = recup_attachements(url, identif, headers_json)
+                    new_df_global_attachements = pd.concat([df_global_attachements,df_attachementsi], axis=0)
+                    df_global_attachements = new_df_global_attachements
+                    df_global_attachements.reset_index(inplace=True)
+                    df_global_attachements.drop(columns='index',inplace=True)
                 except:
                     pass
+            df_global_attachements.to_csv("pages/data/infos_MD2/Tableau_fichiers_attachements.csv")
 
 #################################################################################################
 ############## RECUP GLOBALE RESSOURCES ASSOCIEES ###############################################
     Recup_ressources = st.sidebar.button('recup des ressources associées')
     if Recup_ressources:
         with st.spinner("La récup des ressources associées est en cours"):
-            liste_columns_df_ressources = ['Identifiant']
+            liste_columns_df_ressources = ['Identifiant', 'Check_children', 'Check_parent','Check_hassources', 'Check_associated', 'Check_hasfeaturescats', 'Check_fcats', 'Check_services', 'Check_BroAndSisters',
+                                   'Nombre_children', 'Nombre_parent', 'Nombre_hassources', 'Nombre_associated', 'Nombre_hasfeaturescats', 'Nombre_fcats', 'Nombre_services', 'Nombre_BroAndSisters',
+                                   "Children url (properties)", "Titre children","Résumé children", "Formats children", 'Urls children',
+                                   "Parent url (properties)", "Titre parents","Résumé parents", "Formats parents", 'Urls parents',
+                                   "hasfeaturecats url (properties)", "Titre hasfeaturecats","Résumé hasfeaturecats", "Formats hasfeaturecats", 'Urls hasfeaturecats',
+                                   "facts url (properties)", "Titre facts", 
+                                   "brothersAndSisters url (properties)","Titre brothersAndSisters","Résumé brothersAndSisters", "Formats brothersAndSisters", 'Urls brothersAndSisters']
             df_global_ressources = pd.DataFrame(columns=liste_columns_df_ressources)
             for i in range(len(df_infos)):
                 print(i)
                 identif = df_infos.loc[i,'Identifiant']
                 try:
-                    pass
+                    df_ressourcesi = recup_ressources(url, identif, headers_json)
+                    new_df_global_ressources = pd.concat([df_global_ressources,df_ressourcesi], axis=0)
+                    df_global_ressources = new_df_global_ressources
+                    df_global_ressources.reset_index(inplace=True)
+                    df_global_ressources.drop(columns='index',inplace=True)
                 except:
                     pass
+            df_global_ressources.to_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv")
 
 
 
@@ -433,68 +449,13 @@ with st.container(border=True):
 
 
 if Visu_attachments:
-    st.write(identifieur)
-    url_ = url + identifieur
-    url_attach = url_ +"/attachments"
-    resp_attach = requests.get(url_attach,headers=headers_json)
-    if resp_attach.status_code == 200:
-        resp_attach_json=resp_attach.json()
+    df_attachements = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_attachements.csv", index_col=[0])
+    st.dataframe(df_attachements)
 
-    st.write(resp_attach_json)
-        #try:
-        #    with open(f"pages/data/attachments2/attachments_{identifieur}.json", "w") as f:
-        #        json.dump(resp_attach_json, f, indent=4)
-        #except:
-        #    pass
-
-
-    st.write('en cours de fabrication')
 elif Ressources_associees:
-    url_ = url + identifieur
-    url_asso = url_ +"/associated?rows=100"
-    resp_asso = requests.get(url_asso,headers=headers_json)
-    if resp_asso.status_code == 200:
-        resp_asso_json=resp_asso.json()
+    df_ressources = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
+    st.dataframe(df_ressources)
 
-    st.write(resp_asso_json['parent'])
-    try:
-        st.write("children:",len(resp_asso_json['children']))
-    except:
-        pass
-    try:
-        st.write("parent:",len(resp_asso_json['parent']))
-    except:
-        pass
-    try:
-        st.write("hassources:",len(resp_asso_json['hassources']))
-    except:
-        pass
-    try:
-        st.write("associated:",len(resp_asso_json['associated']))
-    except:
-        pass
-    try:
-        st.write("hasfeaturescats:",len(resp_asso_json['hasfeaturecats']))
-    except:
-        pass
-    try:
-        st.write("fcats:",len(resp_asso_json['fcats']))
-    except:
-        pass
-    try:
-        st.write("services:",len(resp_asso_json['services']))
-    except:
-        pass
-    try:
-        st.write("brothers and sisters:",len(resp_asso_json['brothersAndSisters']))
-    except:
-        pass
-        #try:
-        #    with open(f"pages/data/associated_resources2/resource_{identifieur}.json", "w") as f:
-        #        json.dump(resp_asso_json, f, indent=4)
-        #except:
-        #    pass
-    st.write('en cours de fabrication')
 else:
     with st.container(border=True):
         s4 = "IDENTIFICATION"
