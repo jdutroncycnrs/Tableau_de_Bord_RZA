@@ -45,45 +45,7 @@ st.markdown("""
 ############ PARAMETRES ############################################
 zoom = 4
 
-group_ = pd.read_csv("pages/data/infos_MD/infos_groupes_mentions.csv", index_col=[0])
-
-tableau = pd.read_csv("pages/data/infos_MD/Tableau_MD.csv", index_col=[0])
-
-dico = {'ZABrI - Brest Iroise':'zabri', 
-        'Pas de fichier':'Aucun groupe et aucune mention', 
-        'OHM Pyrénées - haut Vicdessos':'OHM Pyrénées - haut Vicdessos', 
-        'OHMi Téssékéré':'OHMi Téssékéré', 
-        'InDoRES':'Catalogue InDoRes', 
-        'zapygar':'zapygar', 
-        'OHM Littoral Caraïbe':'OHM Littoral Caraïbe', 
-        'ZA':'Réseau ZA', 
-        'zaar':'zaar', 
-        'OHMi Nunavik':'OHMi Nunavik', 
-        'zas':'zas',
-        'Dynafor':'zapygar', 
-        'Groupe exemple':'Groupe exemple', 
-        'OHM Pays de Bitche':'OHM Pays de Bitche', 
-        'OHM Vallée du Rhône':'OHM Vallée du Rhône', 
-        'OHMi Estarreja':'OHMi Estarreja', 
-        'zaaj':'zaaj', 
-        'Aucun groupe et aucune mention':'Aucun groupe et aucune mention', 
-        'ZAA':'zaa', 
-        'ZAAr':'zaar', 
-        'DRIIHM':'Réseau OHM', 
-        'zaeu':'zaeu', 
-        'OHM Oyapock':'OHM Oyapock', 
-        'OHM Bassin Minier de Provence':'OHM Bassin Minier de Provence', 
-        'OHMi Pima County':'OHMi Pima County', 
-        'zabri':'zabri', 
-        'zam':'zam', 
-        'ZABRI':'zabri', 
-        'zal':'zal', 
-        'OHM Littoral méditerranéen':'OHM Littoral méditerranéen', 
-        'zaa':'zaa', 
-        'zabr':'zabr'}
-
-group_['Groupe_et_Mention'] = group_['Groupe_et_Mention'].map(dico)
-tableau['Groupe_et_Mention'] = tableau['Groupe_et_Mention'].map(dico)
+tableau = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 graph_title_font = 24
@@ -97,7 +59,6 @@ graph_title_color = "gray"
 graph_ticks_color = 'gray'
 
 ###########  FILTRE DES CATALOGUES ####################################
-liste_groupes = set(group_['Groupe_et_Mention'].values)
 
 liste_ZAs = ['zaa', 
              'zaaj', 
@@ -156,12 +117,12 @@ with col2:
 
 
 if checkbox2:
-    Selection_df = tableau[tableau['Groupe_et_Mention'].isin(liste_OHMs)]
+    Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_OHMs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_OHMs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('Nombre de fiches:',len(Selection_df))
     else:
@@ -169,19 +130,19 @@ if checkbox2:
 
 elif checkbox1:
     
-    Selection_df = tableau[tableau['Groupe_et_Mention'].isin(liste_ZAs)]
+    Selection_df = tableau[tableau['GroupeEtMention'].isin(liste_ZAs)]
     Selection_group = st.sidebar.multiselect('choix du groupe',options=liste_ZAs)
     if len(Selection_group)==0:
         df_selected = Selection_df
     else:
-        df_selected = Selection_df[Selection_df['Groupe_et_Mention'].isin(Selection_group)]
+        df_selected = Selection_df[Selection_df['GroupeEtMention'].isin(Selection_group)]
     if len(Selection_group)==0:
         st.sidebar.metric('Nombre de fiches:',len(Selection_df))
     else:
         st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 else:
-    Catalogues_counts = tableau['Groupe_et_Mention'].value_counts()
+    Catalogues_counts = tableau['GroupeEtMention'].value_counts()
     df_selected = tableau
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
@@ -295,7 +256,7 @@ with st.container(border=True):
 
 if Repartition_fiches:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=True)
-    Counts = df_selected_year['Groupe_et_Mention'].value_counts()
+    Counts = df_selected_year['GroupeEtMention'].value_counts()
     fig_counts = px.pie(values=Counts.values, 
                     names=Counts.index)
     fig_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
@@ -472,7 +433,7 @@ elif Autres_champs:
 
     elif Standards:
         df_selected_year_standard_ = traitement_standards(df_selected_year)
-        df_selected_year_Standard = df_selected_year_standard_['Standard'][df_selected_year_standard_.Year >= selection_dates_input]
+        df_selected_year_Standard = df_selected_year_standard_['Nom du standard'][df_selected_year_standard_.Year >= selection_dates_input]
         cnt_standard = df_selected_year_Standard.value_counts()
         fig_standard = go.Figure()
         fig_standard.add_trace(go.Pie(labels=cnt_standard.index.values, values=cnt_standard.values))
@@ -535,7 +496,7 @@ elif Autres_champs:
 
     elif Orgas:
         df_selected_year_orgas_ = traitement_orgas(df_selected_year)
-        df_selected_year_orga = df_selected_year_orgas_['Orga_contact'][df_selected_year_orgas_.Year >= selection_dates_input]
+        df_selected_year_orga = df_selected_year_orgas_['orga du contact'][df_selected_year_orgas_.Year >= selection_dates_input]
 
         cnt_orga = df_selected_year_orga.value_counts()[0:15]
         somme_orga_vis = cnt_orga.values.sum()
@@ -570,8 +531,8 @@ elif Autres_champs:
 
     elif Contacts:
         df_selected_year_contacts_ = traitement_contacts(df_selected_year)
-        df_selected_year_contacts = df_selected_year_contacts_[['Nom_contact','Orga_contact']][df_selected_year_contacts_.Year >= selection_dates_input]
-        all_names = [name for sublist in df_selected_year_contacts['Nom_contact'] for name in sublist]
+        df_selected_year_contacts = df_selected_year_contacts_[['Nom du contact','orga du contact']][df_selected_year_contacts_.Year >= selection_dates_input]
+        all_names = [name for sublist in df_selected_year_contacts['Nom du contact'] for name in sublist]
         name_counts = Counter(all_names)
         name_counts_df = pd.DataFrame(name_counts.items(), columns=['Nom_contact', 'Count'])
         sorted_name_counts_df = name_counts_df.sort_values(by='Count', ascending=False)
@@ -609,7 +570,7 @@ elif Autres_champs:
 
     elif Droits:
         df_selected_year_droits_ = traitement_droits(df_selected_year)
-        df_selected_year_droits = df_selected_year_droits_['Contrainte_usage'][df_selected_year_droits_.Year >= selection_dates_input]
+        df_selected_year_droits = df_selected_year_droits_['Contrainte usage'][df_selected_year_droits_.Year >= selection_dates_input]
         cnt_droits = df_selected_year_droits.value_counts()[0:15]
         somme_droits_vis = cnt_droits.values.sum()
         
@@ -648,11 +609,11 @@ elif Autres_champs:
 
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
-    liste_desc = ['Themes','Thesaurus','Mots_clés']
+    liste_desc = ['Thèmes','Thesaurus','Mots Clés']
     df_description = df_selected_year[liste_desc][df_selected_year.Year >= selection_dates_input]
 
     df_description_ = df_description.assign(Thesaurus_usage=0)
-    df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage','Mots_clés']]
+    df_thesaurus = df_description_[['Thesaurus','Thesaurus_usage','Mots Clés']]
 
     df_thesaurus_ , df_thesaurus_oui , df_thesaurus_non = traitement_thesaurus(df_thesaurus)
 

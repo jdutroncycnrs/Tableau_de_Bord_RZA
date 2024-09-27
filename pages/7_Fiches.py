@@ -115,6 +115,39 @@ filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'OHMi Téssékéré', 'OHM Vallée du Rhône','OHMi Estarreja','OHM Pyrénées - haut Vicdessos', 
            'OHM Littoral méditerranéen', 'OHMi Pima County', 'OHM Littoral Caraïbe']
 
+dico = {'ZABrI - Brest Iroise':'zabri', 
+        'Pas de fichier':'Aucun groupe et aucune mention', 
+        'OHM Pyrénées - haut Vicdessos':'OHM Pyrénées - haut Vicdessos', 
+        'OHMi Téssékéré':'OHMi Téssékéré', 
+        'InDoRES':'Catalogue InDoRes', 
+        'zapygar':'zapygar', 
+        'OHM Littoral Caraïbe':'OHM Littoral Caraïbe', 
+        'ZA':'Réseau ZA', 
+        'zaar':'zaar', 
+        'OHMi Nunavik':'OHMi Nunavik', 
+        'zas':'zas',
+        'Dynafor':'zapygar', 
+        'Groupe exemple':'Groupe exemple', 
+        'OHM Pays de Bitche':'OHM Pays de Bitche', 
+        'OHM Vallée du Rhône':'OHM Vallée du Rhône', 
+        'OHMi Estarreja':'OHMi Estarreja', 
+        'zaaj':'zaaj', 
+        'Aucun groupe et aucune mention':'Aucun groupe et aucune mention', 
+        'ZAA':'zaa', 
+        'ZAAr':'zaar', 
+        'DRIIHM':'Réseau OHM', 
+        'zaeu':'zaeu', 
+        'OHM Oyapock':'OHM Oyapock', 
+        'OHM Bassin Minier de Provence':'OHM Bassin Minier de Provence', 
+        'OHMi Pima County':'OHMi Pima County', 
+        'zabri':'zabri', 
+        'zam':'zam', 
+        'ZABRI':'zabri', 
+        'zal':'zal', 
+        'OHM Littoral méditerranéen':'OHM Littoral méditerranéen', 
+        'zaa':'zaa', 
+        'zabr':'zabr'}
+
 # Paramètres visuels
 couleur_subtitles = (250,150,150)
 taille_subtitles = "25px"
@@ -345,7 +378,10 @@ for i in range(len(df_complet)):
         else:
             df_complet.loc[i,'GroupeEtMention']=df_complet.loc[i,'Mention du groupe']
 
-#st.dataframe(df_complet)
+df_complet['GroupeEtMention']=df_complet['GroupeEtMention'].map(dico)
+df_complet.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
+
+st.dataframe(df_complet)
 
 ##################### SELECTION ########################################################################
 ########### Choix OHM/RZA ##############################################################################
