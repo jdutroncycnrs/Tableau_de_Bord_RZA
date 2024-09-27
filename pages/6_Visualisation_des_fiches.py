@@ -255,14 +255,12 @@ if admin_action == admin_pass:
             for i in range(len(df_infos)):
                 print(i)
                 identif = df_infos.loc[i,'Identifiant']
-                try:
-                    datafri = recup_fiche2(url, identif, headers_json, filtre_mention)
-                    new_df_global = pd.concat([df_global,datafri], axis=0)
-                    df_global = new_df_global
-                    df_global.reset_index(inplace=True)
-                    df_global.drop(columns='index',inplace=True)
-                except:
-                    pass
+                datafri = recup_fiche2(url, identif, headers_json, filtre_mention)
+                new_df_global = pd.concat([df_global,datafri], axis=0)
+                df_global = new_df_global
+                df_global.reset_index(inplace=True)
+                df_global.drop(columns='index',inplace=True)
+
             df_global.to_csv("pages/data/infos_MD2/Tableau_MD2.csv")
 
             ############## FUSION DES 2 DF: groupes et variables ############################
