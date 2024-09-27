@@ -365,39 +365,23 @@ for i in range(len(df_complet)):
         df_complet.loc[i,'Online nom']="[]"
     if df_complet.loc[i,'Format']=="":
         df_complet.loc[i,'Format']="[]"
+
+liste_col_transfo = ['Nom du contact','Position du contact','orga du contact','Tel du contact','Adresse','Code Postal',
+                     'Ville','Pays','Url','Protocole','Online description','Online nom','Format']
+for x, col in enumerate(liste_col_transfo):
+    df_complet[col] = df_complet[col].apply(transfo0)
+    df_complet[col] = df_complet[col].apply(transfo)
+
 df_complet['Autres dates'] = df_complet['Autres dates'].apply(transfo)
-df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo0)
-df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo)
-df_complet['orga du contact'] = df_complet['orga du contact'].apply(transfo0)
-df_complet['orga du contact'] = df_complet['orga du contact'].apply(transfo)
-df_complet['Position du contact'] = df_complet['Position du contact'].apply(transfo0)
-df_complet['Position du contact'] = df_complet['Position du contact'].apply(transfo)
-df_complet['Tel du contact'] = df_complet['Tel du contact'].apply(transfo0)
-df_complet['Tel du contact'] = df_complet['Tel du contact'].apply(transfo)
-df_complet['Adresse'] = df_complet['Adresse'].apply(transfo0)
-df_complet['Adresse'] = df_complet['Adresse'].apply(transfo)
-df_complet['Code Postal'] = df_complet['Code Postal'].apply(transfo0)
-df_complet['Code Postal'] = df_complet['Code Postal'].apply(transfo)
-df_complet['Ville'] = df_complet['Ville'].apply(transfo0)
-df_complet['Ville'] = df_complet['Ville'].apply(transfo)
-df_complet['Pays'] = df_complet['Pays'].apply(transfo0)
-df_complet['Pays'] = df_complet['Pays'].apply(transfo)
+
+
 for i in range(len(df_complet)):
     if 'AUTO' in df_complet.loc[i,'Systeme de référence']:
         df_complet.loc[i,'Systeme de référence']="['Aucun']"
 df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo00)
 df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo0)
 df_complet['Systeme de référence'] = df_complet['Systeme de référence'].apply(transfo)
-df_complet['Url'] = df_complet['Url'].apply(transfo0)
-df_complet['Url'] = df_complet['Url'].apply(transfo)
-df_complet['Protocole'] = df_complet['Protocole'].apply(transfo0)
-df_complet['Protocole'] = df_complet['Protocole'].apply(transfo)
-df_complet['Online description'] = df_complet['Online description'].apply(transfo0)
-df_complet['Online description'] = df_complet['Online description'].apply(transfo)
-df_complet['Online nom'] = df_complet['Online nom'].apply(transfo0)
-df_complet['Online nom'] = df_complet['Online nom'].apply(transfo)
-df_complet['Format'] = df_complet['Format'].apply(transfo0)
-df_complet['Format'] = df_complet['Format'].apply(transfo)
+
 
 for i in range(len(df_complet)):
     if df_complet.loc[i,'Groupe'] != '':
@@ -520,13 +504,28 @@ if Visu_attachments:
 
     df_attachements_visu = df_attachements[df_attachements['Identifiant'].isin(selected_uuids_)]
     df_attachements_visu.reset_index(drop=True, inplace=True)
-    st.dataframe(df_attachements_visu)
+    
+
+    df_attachements_visu_i = df_attachements[df_attachements['Identifiant']==identifieur]
+    st.dataframe(df_attachements_visu_i)
 
 elif Ressources_associees:
     df_ressources = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
     df_ressources_visu = df_ressources[df_ressources['Identifiant'].isin(selected_uuids_)]
     df_ressources_visu.reset_index(drop=True, inplace=True)
-    st.dataframe(df_ressources_visu)
+
+    df_ressources_visu_i = df_ressources[df_ressources['Identifiant']==identifieur]
+
+    liste_col_transfo_ressources = ['facts url (properties)','Titre facts']
+    for x, col in enumerate(liste_col_transfo_ressources):
+        df_ressources_visu_i[col] = df_ressources_visu_i[col].apply(transfo)
+    
+    st.dataframe(df_ressources_visu_i)
+    if df_ressources_visu_i['Check_fcats'].values:
+        for i in range(len(df_ressources_visu_i['facts url (properties)'].values[0])):
+            st.write(df_ressources_visu_i['facts url (properties)'].values[0][i])
+        for i in range(len(df_ressources_visu_i['Titre facts'].values[0])):
+            st.write(df_ressources_visu_i['Titre facts'].values[0][i])
 
 else:
     with st.container(border=True):
