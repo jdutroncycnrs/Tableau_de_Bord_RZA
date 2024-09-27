@@ -320,6 +320,7 @@ if admin_action == admin_pass:
 df_complet = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
 df_complet.fillna("", inplace=True)
 
+
 def transfo(input_string):
     # Use ast.literal_eval to safely evaluate the string as a Python expression
     return ast.literal_eval(input_string)
@@ -333,6 +334,37 @@ def transfo00(input_string):
     return input_string.replace(":"," ")
 
 # Apply the transformation to the entire column
+for i in range(len(df_complet)):
+    if df_complet.loc[i,'Autres dates']=="":
+        df_complet.loc[i,'Autres dates']="[]"
+    if df_complet.loc[i,'Nom du contact']=="":
+        df_complet.loc[i,'Nom du contact']="[]"
+    if df_complet.loc[i,'orga du contact']=="":
+        df_complet.loc[i,'orga du contact']="[]"
+    if df_complet.loc[i,'Position du contact']=="":
+        df_complet.loc[i,'Position du contact']="[]"
+    if df_complet.loc[i,'Tel du contact']=="":
+        df_complet.loc[i,'Tel du contact']="[]"
+    if df_complet.loc[i,'Adresse']=="":
+        df_complet.loc[i,'Adresse']="[]"
+    if df_complet.loc[i,'Code Postal']=="":
+        df_complet.loc[i,'Code Postal']="[]"
+    if df_complet.loc[i,'Ville']=="":
+        df_complet.loc[i,'Ville']="[]"
+    if df_complet.loc[i,'Pays']=="":
+        df_complet.loc[i,'Pays']="[]"
+    if df_complet.loc[i,'Systeme de référence']=="":
+        df_complet.loc[i,'Systeme de référence']="[]"
+    if df_complet.loc[i,'Url']=="":
+        df_complet.loc[i,'Url']="[]"
+    if df_complet.loc[i,'Protocole']=="":
+        df_complet.loc[i,'Protocole']="[]"
+    if df_complet.loc[i,'Online description']=="":
+        df_complet.loc[i,'Online description']="[]"
+    if df_complet.loc[i,'Online nom']=="":
+        df_complet.loc[i,'Online nom']="[]"
+    if df_complet.loc[i,'Format']=="":
+        df_complet.loc[i,'Format']="[]"
 df_complet['Autres dates'] = df_complet['Autres dates'].apply(transfo)
 df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo0)
 df_complet['Nom du contact'] = df_complet['Nom du contact'].apply(transfo)
@@ -379,7 +411,7 @@ for i in range(len(df_complet)):
 df_complet['GroupeEtMention']=df_complet['GroupeEtMention'].map(dico)
 df_complet.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
 
-st.dataframe(df_complet)
+#st.dataframe(df_complet)
 
 ##################### SELECTION ########################################################################
 ########### Choix OHM/RZA ##############################################################################
