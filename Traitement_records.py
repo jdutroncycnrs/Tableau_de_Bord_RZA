@@ -949,7 +949,86 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                             'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles',
                             'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
             
-        df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)  
+        df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
+    
+    else:
+        Langue = "" 
+        JeuDeCaracteres = "" 
+        Type = "" 
+        Date = ""
+        Standard = ""
+        Version_standard = ""
+        Nom_contact = "" 
+        Organisation_contact = ""
+        Position_contact = "" 
+        Tel_contact = ""
+        DeliveryPoint = ""
+        CodePostal = ""
+        Ville = ""
+        Pays = ""
+        Email = ""
+        SystemReference = ""
+        westBoundLongitude = ""
+        EastBoundLongitude = ""
+        SouthBoundLatitude = ""
+        NorthBoundLatitude = ""
+        Titre = ""
+        FicheParent = ""
+        Abstract = ""
+        Date_creation = ""
+        Purpose, Status = ""
+        Freq_maj = ""
+        liste_dates = ""
+        SupplementInfo = ""
+        UseLimitation = ""
+        UseContrainte = ""
+        AccesContrainte = ""
+        AutreContrainte = ""
+        Format = ""
+        Online_links = ""
+        Online_protocols = ""
+        Online_description = ""
+        Online_nom = ""
+        Niveau = ""
+        Conformite = ""
+        Genealogie = ""
+        Scope = ""
+        mention = ""
+        Thesaurus = ""
+        Themes = ""
+        Keywords = ""
+        theme_thesaurus_motsCles = ""
+        F1 = False
+        F2 = False
+        F3 = False
+        F4 = False
+        A1 = False
+        A2 = False
+        I1 = False
+        I2 = False
+        I3 = False
+        R1 = False
+        R2 = False
+        R3 = False
+
+        liste_variables = [identifieur, Langue, JeuDeCaracteres, Type, Date, Standard, Version_standard, Nom_contact, Organisation_contact,
+                        Position_contact, Tel_contact, DeliveryPoint, CodePostal, Ville, Pays, Email, SystemReference,
+                        westBoundLongitude, EastBoundLongitude, SouthBoundLatitude, NorthBoundLatitude, Titre,
+                        FicheParent, Abstract, Date_creation, Purpose, Status, Freq_maj, liste_dates, SupplementInfo,
+                        UseLimitation, UseContrainte, AccesContrainte, AutreContrainte,
+                        Format, Online_links, Online_protocols, Online_description, Online_nom,
+                        Niveau, Conformite, Genealogie, Scope, mention, Thesaurus, Themes, Keywords, theme_thesaurus_motsCles,
+                        F1, F2, F3, F4, A1, A2, I1, I2, I3, R1, R2, R3]
+
+        liste_columns_df = ['Identifiant', 'Langue', 'Jeu de caractères', 'Type', 'Date', 'Nom du standard', 'Version du standard', 'Nom du contact', 'orga du contact',
+                            'Position du contact', 'Tel du contact', 'Adresse', 'Code Postal', 'Ville', 'Pays', 'Email du contact', "Systeme de référence",
+                            'Longitude ouest', 'Longitude est', 'Latitude sud', 'Latitude nord', 'Titre',
+                            'Fiche parent id', 'Résumé', "Date de création", 'Objectif', 'Status', 'Fréquence de maj', 'Autres dates', 'Info supplémentaire',
+                            'Limite usage', 'Contrainte usage', 'Contrainte accès', 'Autre contrainte',
+                            'Format', 'Url', 'Protocole', 'Online description', 'Online nom',
+                            'Niveau', 'Conformité', 'Généalogie', 'Portée','Mention du groupe', 'Thesaurus', 'Thèmes', 'Mots Clés', 'theme_thesaurus_motsCles',
+                            'F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'I1', 'I2', 'I3', 'R1', 'R2', 'R3']
+        df_variables_evaluation = pd.DataFrame(data=[liste_variables],columns=liste_columns_df)
 
     return df_variables_evaluation
 
