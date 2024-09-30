@@ -16,7 +16,7 @@ from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_contenu_dataset
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -62,15 +62,17 @@ st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
 
 
 ###################### CREATION CONNEXION ##############################
-with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
-    api = NativeApi(BASE_URL, API_TOKEN)
-    resp = api.get_info_version()
-    response = resp.json()
+Connexion_dataInDoRES = st.sidebar.checkbox('Se connecter à Data.InDoRES')
+if Connexion_dataInDoRES:
+    with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
+        api = NativeApi(BASE_URL, API_TOKEN)
+        resp = api.get_info_version()
+        response = resp.json()
 
-if response['status']=='OK':
-    st.write(f"La connexion est établie avec Data.InDoRes")
-else: 
-    st.write(f"La connexion a échoué, vous n'êtes pas connecté à Data.InDoRes")
+    if response['status']=='OK':
+        st.write(f"La connexion est établie avec Data.InDoRes")
+    else: 
+        st.write(f"La connexion a échoué, vous n'êtes pas connecté à Data.InDoRes")
 
 ######################  PARAMETRES  #######################################
 
@@ -129,21 +131,6 @@ graph_ticks_color = 'gray'
 
 fi = glob.glob(f"pages/data/tableau_dataverses*.csv")
 
-visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
-
-if len(fi)!=0:
-    fich = fi[-1]
-    dataverses = pd.read_csv(fich)
-    if visu_sunburst:
-        fig = px.sunburst(dataverses, path=['niv0','niv1', 'niv2','niv3'], values='val')
-        fig.update_layout(
-            title=f'Visuel des différents Dataverses dans Data.InDoRes via {fich}',
-            width=1000,
-            height=1000)
-        st.plotly_chart(fig,use_container_width=True)
-else:
-     st.write('Il est nécessaire de mettre à jour vos entrepôts')
-
 ############################################################################
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
@@ -152,10 +139,6 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
-#Selected_dataverses = dataverses[['niv2','ids_niv2']][dataverses['niv2'].isin(Selection_ZA)]
-#Selected_dataverses.reset_index(inplace=True)
-#Selected_dataverses.drop(columns='index', inplace=True)
-#Selected_dataverses['ids_niv2'] = Selected_dataverses['ids_niv2'].astype(str)
 
 def find_indices(lst, elements):
     indices = []
@@ -173,6 +156,10 @@ ids = find_indices(liste_ZAs_, Selection_ZA)
 
 if len(Selection_ZA)!=0:
     Nombre_depots = []
+    identifieurs = []
+    persistentUrls = []
+    datesPublication = []
+    ss = []
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
@@ -183,18 +170,72 @@ if len(Selection_ZA)!=0:
                 cpt = 0
                 try:
                     datav_contenu = Recup_contenu_dataverse(api,s)
-                    for j in range(len(datav_contenu['data'])):
-                        try:
-                            identifieur = datav_contenu["data"][j]['identifier']
-                            cpt +=1
-                        except:
-                            pass
+                    if len(datav_contenu['data'])==0:
+                        identifieurs.append("")
+                        persistentUrls.append("")
+                        datesPublication.append("")
+                        ss.append(s)
+                    else:
+                        for j in range(len(datav_contenu['data'])):
+                            test_type = datav_contenu["data"][j]['type']
+                            if test_type =="dataverse":
+                                s2 = datav_contenu["data"][j]['id']
+                                sousdatav_contenu = Recup_contenu_dataverse(api,s2)
+                                for k in range(len(sousdatav_contenu['data'])):
+                                    try:
+                                        identifieur = sousdatav_contenu["data"][k]['identifier']
+                                        identifieurs.append(identifieur)
+                                        cpt +=1
+                                    except:
+                                        identifieurs.append("")
+                                    try: 
+                                        publicationDate = sousdatav_contenu["data"][k]['publicationDate']
+                                        datesPublication.append(publicationDate)
+                                    except:
+                                        datesPublication.append("")
+                                    try: 
+                                        persistentUrl = sousdatav_contenu["data"][k]['id']
+                                        persistentUrls.append(persistentUrl)
+                                    except:
+                                        persistentUrls.append("")
+                                    ss.append(s)
+                            elif test_type == "dataset":
+                                st.write(datav_contenu)
+                                try:
+                                    identifieur = datav_contenu["data"][j]['identifier']
+                                    identifieurs.append(identifieur)
+                                    cpt +=1
+                                except:
+                                    identifieurs.append("")
+                                try: 
+                                    publicationDate = datav_contenu["data"][j]['publicationDate']
+                                    datesPublication.append(publicationDate)
+                                except:
+                                    datesPublication.append("")
+                                try: 
+                                    persistentUrl = datav_contenu["data"][k]['id']
+                                    persistentUrls.append(persistentUrl)
+                                except:
+                                    persistentUrls.append("")
+                                ss.append(s)
+                            
                 except:
-                    pass
+                    identifieurs.append("")
+                    datesPublication.append("")
+                    persistentUrls.append("")
+                    ss.append(s)
             except:
-                pass
+                identifieurs.append("")
+                datesPublication.append("")
+                persistentUrls.append("")
+                ss.append(s)
             Nombre_depots.append(cpt)
             my_bar.progress(i + 1, text=progress_text)
+        df_dataInDoRES = pd.DataFrame({'selection':ss,
+                                       'ID':identifieurs,
+                                       'Url':persistentUrls,
+                                       'Date de publication':datesPublication})
+        st.dataframe(df_dataInDoRES)
 
         df = pd.DataFrame(Nombre_depots,index=Selection_ZA,columns=['Nombre_dépôts'])
         fig0= go.Figure()
@@ -223,8 +264,29 @@ if len(Selection_ZA)!=0:
                                 height=600,
                                 showlegend=False)
         st.plotly_chart(fig0,use_container_width=True)
+
         my_bar.empty()
 
+test = api.get_dataset_versions("doi:10.48579/PRO/ERNBOC")
+test_json = test.json()
+st.write(test_json)
+
+#############  VISU SUNBURST ###############################################
+
+visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
+
+if len(fi)!=0:
+    fich = fi[-1]
+    dataverses = pd.read_csv(fich)
+    if visu_sunburst:
+        fig = px.sunburst(dataverses, path=['niv0','niv1', 'niv2','niv3'], values='val')
+        fig.update_layout(
+            title=f'Visuel des différents Dataverses dans Data.InDoRes via {fich}',
+            width=1000,
+            height=1000)
+        st.plotly_chart(fig,use_container_width=True)
+else:
+     st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
 ##########POUR L'ADMINISTRATEUR ########################################
 
@@ -237,6 +299,5 @@ if admin_action == admin_pass:
     if b1==True:
         with st.spinner("Récupération des entrepôts existants"):
             Recup_dataverses(api,fichier)
-
 
 ############################################################################

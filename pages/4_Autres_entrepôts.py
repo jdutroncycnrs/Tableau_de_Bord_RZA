@@ -178,19 +178,9 @@ if rdg:
 
     fichier = f'tableau_dataverses_rdg-{d}.csv'
 
-    ##########POUR L'ADMINISTRATEUR ########################################
-    admin_pass = 'admin'
-    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
-
-    if admin_action == admin_pass:
-        b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans RDG ")
-
-        if b1==True:
-            with st.spinner("Récupération des entrepôts existants"):
-                Recup_dataverses_rdg(api,fichier)
-    ############################################################################
-
     fi = glob.glob(f"pages/data/rechercheDataGouv/tableau_dataverses*.csv")
+
+    Choix_rdg = st.sidebar.subheader('RDG sélectionné')
 
     visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
 
@@ -206,6 +196,19 @@ if rdg:
             st.plotly_chart(fig,use_container_width=True)
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
+
+
+    ##########POUR L'ADMINISTRATEUR ########################################
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+    if admin_action == admin_pass:
+        b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans RDG ")
+
+        if b1==True:
+            with st.spinner("Récupération des entrepôts existants"):
+                Recup_dataverses_rdg(api,fichier)
+    ############################################################################
 
 if nakala:
     s = " ZA alpes"

@@ -12,6 +12,11 @@ def Recup_contenu_dataverse(api,s):
     datav_contenu = datav.json()
     return datav_contenu
 
+def Recup_contenu_dataset(api,persistenteUrl):
+    dataset = api.get_dataset(persistenteUrl)
+    dataset_contenu = dataset.json()
+    return dataset_contenu
+
 def Recup_dataverses_rdg(api, fichier):
     RDG = api.get_dataverse_contents("root")
     RDG_json = RDG.json()
