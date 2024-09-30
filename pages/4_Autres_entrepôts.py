@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -61,7 +61,14 @@ url_zenodo = 'https://zenodo.org/api/records/'
 zenodo_token = "OMMGEVUcApEKSt4JEkSK7OzpqZQPMvGKAlB2yP2MXG6APstRn2hWpiHfpjaA"
 headers_zenodo = {"Content-Type": "application/json"}
 
-##########################################################################
+########################## DRYAD #########################################
+url_dryad = "https://datadryad.org/api/v2/search?"
+
+
+########################## GBIF #########################################
+url_gbif = "https://api.gbif.org/v1/dataset?q=alpes"
+headers_gbif = {'accept': 'application/json'}
+
 
 ########### CHOIX ZA ######################################
 liste_ZAs_ = ["Zone atelier territoires uranifères",
@@ -98,28 +105,55 @@ with st.sidebar:
         st.session_state.nakala = False
     if 'zenodo' not in st.session_state:
         st.session_state.zenodo = False
+    if 'dryad' not in st.session_state:
+        st.session_state.dryad = False
+    if 'gbif' not in st.session_state:
+        st.session_state.gbif = False
 
     # Function to handle checkbox1 change
     def handle_checkbox1_change():
         if st.session_state.rdg:
             st.session_state.nakala = False
             st.session_state.zenodo = False
+            st.session_state.nakala = False
+            st.session_state.zenodo = False
+            
 
     # Function to handle checkbox2 change
     def handle_checkbox2_change():
         if st.session_state.nakala:
             st.session_state.rdg = False
             st.session_state.zenodo = False
+            st.session_state.dryad = False
+            st.session_state.gbif = False
 
     def handle_checkbox3_change():
         if st.session_state.zenodo:
             st.session_state.rdg = False
             st.session_state.nakala = False
+            st.session_state.dryad = False
+            st.session_state.gbif = False
+    
+    def handle_checkbox4_change():
+        if st.session_state.dryad:
+            st.session_state.rdg = False
+            st.session_state.nakala = False
+            st.session_state.gbif = False
+            st.session_state.zenodo = False
+    
+    def handle_checkbox5_change():
+        if st.session_state.gbif:
+            st.session_state.rdg = False
+            st.session_state.nakala = False
+            st.session_state.dryad = False
+            st.session_state.zenodo = False
 
     choix_groupe_OHM = False
     rdg = st.checkbox("RGD", key='rdg', on_change=handle_checkbox1_change)
     nakala = st.checkbox("NAKALA", key='nakala', on_change=handle_checkbox2_change)
     zenodo = st.checkbox("ZENODO", key='zenodo', on_change=handle_checkbox3_change)
+    dryad = st.checkbox("DRYAD", key='dryad', on_change=handle_checkbox4_change)
+    gbif = st.checkbox("GBIF", key='gbif', on_change=handle_checkbox5_change)
 
 
 if rdg:
@@ -205,3 +239,14 @@ if zenodo:
     else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global))
         st.table(df_global)
+
+if dryad:
+    params_dryad = {'q':'zone atelier alpes'}
+    r = recuperation_dryad(url_dryad,params_dryad)
+    st.write(r)
+
+
+if gbif:
+    params_gbif = {'q':'alpes'}
+    r = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
+    st.write(r)

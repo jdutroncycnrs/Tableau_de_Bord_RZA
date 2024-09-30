@@ -183,11 +183,11 @@ with st.container(border=True):
     if 'Repartition_spatiale' not in st.session_state:
         st.session_state.Repartition_spatiale = False
     if 'Autres_champs' not in st.session_state:
-        st.session_state.Repartition_spatiale = False
+        st.session_state.Autres_champs = False
     if 'Description' not in st.session_state:
-        st.session_state.Repartition_spatiale = False
+        st.session_state.Description = False
     if 'Analyse_FAIR' not in st.session_state:
-        st.session_state.Repartition_spatiale = False
+        st.session_state.Analyse_FAIR = False
 
     # Function to handle checkbox1 change
     def handle_button1_change():

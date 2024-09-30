@@ -278,18 +278,7 @@ def recuperation_dryad(url_dryad,params_dryad):
     
     return r.json()
 
-
-url_dryad = "https://datadryad.org/api/v2/search?"
-params_dryad = {'q':'zone atelier alpes'}
-
-r = recuperation_dryad(url_dryad,params_dryad)
-print(r)
-
 ## GBIF
-url_gbif = "https://api.gbif.org/v1/dataset?q=alpes"
-headers_gbif = {'accept': 'application/json'}
-params_gbif = {'q':'alpes'}
-
 def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
     
     liste_vide = []
@@ -298,6 +287,3 @@ def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
                     headers=headers_gbif)
     
     return r.json()
-
-r = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
-print(r)
