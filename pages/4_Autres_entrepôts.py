@@ -91,10 +91,38 @@ else:
 
 ###################### CREATION CONNEXION ##############################
 Choix_entrepot = st.sidebar.subheader('Entrepôts')
+with st.sidebar:
+    if 'rdg' not in st.session_state:
+        st.session_state.rdg = False
+    if 'nakala' not in st.session_state:
+        st.session_state.nakala = False
+    if 'zenodo' not in st.session_state:
+        st.session_state.zenodo = False
 
-rdg = st.sidebar.checkbox("RDG")
+    # Function to handle checkbox1 change
+    def handle_checkbox1_change():
+        if st.session_state.rdg:
+            st.session_state.nakala = False
+            st.session_state.zenodo = False
+
+    # Function to handle checkbox2 change
+    def handle_checkbox2_change():
+        if st.session_state.nakala:
+            st.session_state.rdg = False
+            st.session_state.zenodo = False
+
+    def handle_checkbox3_change():
+        if st.session_state.zenodo:
+            st.session_state.rdg = False
+            st.session_state.nakala = False
+
+    choix_groupe_OHM = False
+    rdg = st.checkbox("RGD", key='rdg', on_change=handle_checkbox1_change)
+    nakala = st.checkbox("NAKALA", key='nakala', on_change=handle_checkbox2_change)
+    zenodo = st.checkbox("ZENODO", key='zenodo', on_change=handle_checkbox3_change)
+
+
 if rdg:
-
     st.title(":grey[Analyse des dépôts dans Recherche Data Gouv]")
 
     adresse_RDG = 'https://entrepot.recherche.data.gouv.fr/dataverse/root?q='
@@ -145,16 +173,13 @@ if rdg:
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
-nakala = st.sidebar.checkbox("Nakala")
 if nakala:
     s = " ZA alpes"
     params_nakala = {'q': f'{s}'}
     r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, s)
     st.write(r)
 
-zenodo = st.sidebar.checkbox("Zenodo")
 if zenodo:
-
     st.title(":grey[Analyse des dépôts dans Zenodo]")
 
     adresse_zenodo = url_zenodo

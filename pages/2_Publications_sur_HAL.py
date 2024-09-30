@@ -97,6 +97,14 @@ if len(df_global)==0:
 else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global))
         #st.dataframe(df_global)
+        csv = df.to_csv(index=False)
+
+        # Download button
+        st.download_button(
+                label="Téléchargement des Données en CSV",
+                data=csv,
+                file_name='dataframe.csv',
+                mime='text/csv')
 
         for i in range(len(df_global)):
                 with st.container(border=True):
@@ -105,29 +113,35 @@ else:
                         st.markdown(s_t0,unsafe_allow_html=True)
                         col1,col2 = st.columns([0.7, 0.3])
                         with col1:
-                                t1a = 'Auteurs et Titre'
-                                s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                                st.markdown(s_t1a,unsafe_allow_html=True)
+                                t0a = 'Auteurs et Titre'
+                                s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                                st.markdown(s_t0a,unsafe_allow_html=True)
                                 st.markdown(df_global.loc[i,'Titre et auteurs'])
                         with col2:
-                                t1a = 'Uri'
-                                s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                                st.markdown(s_t1a,unsafe_allow_html=True)
+                                t0b = 'Uri'
+                                s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                                st.markdown(s_t0b,unsafe_allow_html=True)
                                 st.markdown(df_global.loc[i,'Uri'])
 
-                        col1,col2,col3 = st.columns(3)
+                        col1,col2,col3,col4 = st.columns(4)
                         with col1:
-                                t1a = 'Type'
-                                s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                                st.markdown(s_t1a,unsafe_allow_html=True)
+                                t0c = 'Type'
+                                s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                                st.markdown(s_t0c,unsafe_allow_html=True)
                                 st.markdown(df_global.loc[i,'Type'])
                         with col2:
-                                t1a = 'Doc'
-                                s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                                st.markdown(s_t1a,unsafe_allow_html=True)
+                                t0d = 'Doc'
+                                s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                                st.markdown(s_t0d,unsafe_allow_html=True)
                                 st.markdown(df_global.loc[i,'Type de document'])
                         with col3:
-                                t1a = 'Id'
-                                s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                                st.markdown(s_t1a,unsafe_allow_html=True)
+                                t0e = 'Id'
+                                s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                                st.markdown(s_t0e,unsafe_allow_html=True)
                                 st.markdown(df_global.loc[i,'Ids'])
+                        with col4:
+                                t0f = 'Date de production'
+                                s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                                st.markdown(s_t0f,unsafe_allow_html=True)
+                                st.markdown(df_global.loc[i,'Date de production'])
+
