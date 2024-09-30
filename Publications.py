@@ -27,19 +27,22 @@ def afficher_publications_hal(requete_api_hal: str, ZA):
         uris = []
         types = []
         docTypes = []
+        date = []
         for doc in reponse.json()['response']['docs']:
             ids.append(int(doc['docid']))
             labels.append(soup(doc['label_s'], 'html.parser').text)
             uris.append(doc['uri_s'])
             types.append(doc['submitType_s'])
             docTypes.append(doc['docType_s'])
+            date.append(doc['producedDateY_i'])
 
         reponse_df = pd.DataFrame({'ZA':ZA,
                                    'Ids':ids,
                                    'Titre et auteurs':labels,
                                    'Uri':uris,
                                    'Type':types,
-                                   'Type de document':docTypes})
+                                   'Type de document':docTypes,
+                                   'Date de production':date})
 
     except requests.exceptions.HTTPError as errh:
         afficher_erreur_api(errh)

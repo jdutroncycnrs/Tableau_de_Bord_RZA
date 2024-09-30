@@ -78,13 +78,11 @@ with col2:
 
 st.title(":grey[Analyse des publications sur HAL]")
 
-st.write(Selection_ZA[0].lower().strip())
 
-
-liste_columns = ['ZA','Ids','Titre et auteurs','Uri','Type','Type de document']
+liste_columns = ['ZA','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
 df_global = pd.DataFrame(columns=liste_columns)
 for i, s in enumerate(Selection_ZA):
-        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:{s.lower().strip()}&rows=1500&wt=json&fq=submittedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s'
+        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:{s.lower().strip()}&rows=1500&wt=json&fq=producedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
         df = afficher_publications_hal(url_type, s)
         dfi = pd.concat([df_global,df], axis=0)
         dfi.reset_index(inplace=True)
