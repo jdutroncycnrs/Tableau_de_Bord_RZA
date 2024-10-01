@@ -195,10 +195,9 @@ if admin_action == admin_pass:
     Recup_globale = st.sidebar.button('recupération des contenus')
     if Recup_globale:
         with st.spinner("La récup globale est en cours"):
-            liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+            liste_columns_df_entrepot=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
             df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
             for i, za in enumerate(Selection_ZA):
-                time.sleep(0.1)
                 s = liste_ZAs_bis[ids[i]][1]
                 df = Recup_contenu(api, s, za)
                 dfi = pd.concat([df_entrepot,df], axis=0)
@@ -209,19 +208,17 @@ if admin_action == admin_pass:
 
 ############################################################################
 
-df = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
+df_complet = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
 
 if len(Selection_ZA)!=0:
     
     with st.container(border=True):
-        st.dataframe(df[df['ZA'].isin(Selection_ZA)])
-
-        Nombre_depots = df['ZA'].value_counts()
-        for i in range(len(Selection_ZA)):
-            if Selection_ZA[i] in Nombre_depots.index.values:
+        Nombre_depots = df_complet['Entrepot'].value_counts()
+        for i in range(len(liste_ZAs_)):
+            if liste_ZAs_[i] in Nombre_depots.index.values:
                 pass
             else:
-                Nombre_depots[Selection_ZA[i]]=0
+                Nombre_depots[liste_ZAs_[i]]=0
         df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
         fig0= go.Figure()
         for i, za in enumerate(df.index.values):
@@ -249,6 +246,9 @@ if len(Selection_ZA)!=0:
                                 height=600,
                                 showlegend=False)
         st.plotly_chart(fig0,use_container_width=True)
+
+    with st.container(border=True):
+        st.dataframe(df_complet[df_complet['ZA'].isin(Selection_ZA)])
 
 #############  VISU SUNBURST ###############################################
 

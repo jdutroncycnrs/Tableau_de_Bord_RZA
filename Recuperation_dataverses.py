@@ -18,7 +18,7 @@ def Recup_contenu_dataset(api,persistenteUrl):
     dataset_contenu = dataset.json()
     return dataset_contenu
 
-def Recup_contenu(api,s, za):
+def Recup_contenu(api,s, entrepot):
     identifieurs = []
     persistentUrls = []
     datesPublication = []
@@ -137,7 +137,7 @@ def Recup_contenu(api,s, za):
                             subject.append('')
                             publication_url.append('')
                         selections.append(s)
-                        entrepot_selected.append(za)
+                        entrepot_selected.append(entrepot)
                         
                 elif test_type == "dataset":
                     try:
@@ -236,11 +236,11 @@ def Recup_contenu(api,s, za):
                         subject.append('')
                         publication_url.append('')
                     selections.append(s)
-                    entrepot_selected.append(za)
+                    entrepot_selected.append(entrepot)
     except:
         pass
     df_entrepot = pd.DataFrame({'selection':selections, 
-                                'ZA':entrepot_selected,
+                                'Entrepot':entrepot_selected,
                                 'ID':identifieurs,
                                 'Url':persistentUrls,
                                 'Date de publication':datesPublication,

@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -163,17 +163,6 @@ if rdg:
     s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
     st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
 
-    with st.spinner("Connexion au Dataverse Recherche Data Gouv en cours"):
-        api = NativeApi(BASE_URL, API_TOKEN)
-        resp = api.get_info_version()
-        response = resp.json()
-
-    if response['status']=='OK':
-        st.write(f"La connexion est établie avec Recherche Data Gouv")
-    else: 
-        st.write(f"La connexion a échoué, vous n'êtes pas connecté à Recherche Data Gouv")
-
-
     d = datetime.date.today()
 
     fichier = f'tableau_dataverses_rdg-{d}.csv'
@@ -186,7 +175,7 @@ if rdg:
 
     if len(fi)!=0:
         fich = fi[-1]
-        dataverses = pd.read_csv(fich)
+        dataverses = pd.read_csv(fich,index_col=[0])
         if visu_sunburst:
             fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
             fig.update_layout(
@@ -197,17 +186,65 @@ if rdg:
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
+    ###################### CREATION CONNEXION ##############################
+
+    def connect_to_dataverse(BASE_URL, API_TOKEN):
+        try:
+            # Create a new API connection
+            api = NativeApi(BASE_URL, API_TOKEN)
+            resp = api.get_info_version()
+            response = resp.json()
+                
+            # Check connection success
+            if response['status']=='OK':
+                st.session_state['rdg_api'] = api
+                st.success("Connexion établie avec Recherche Data Gouv")
+            else:
+                st.error("Connexion échouée!")
+        except Exception as e:
+            st.error(f"Connection error: {e}")
+        return api
+
+
+    # Initialize session state if not already done
+    if 'rdg_api' not in st.session_state:
+        st.session_state['rdg_api'] = None
+
+    Connexion_rdg = st.sidebar.button('Se connecter à RDG')
+    # Button to trigger connection
+    if Connexion_rdg:
+        with st.spinner("Connexion au Dataverse RDG en cours et récupération contenu"):
+            api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+            liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+            df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
+            st.dataframe(dataverses)
+            for i in range(1,2):
+                s = int(dataverses.loc[i,'ids_niv2'])
+                entrepot = dataverses.loc[i,'niv2']
+                df = Recup_contenu(api_rdg, s, entrepot)
+                dfi = pd.concat([df_entrepot_rdg,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_entrepot_rdg = dfi
+            df_entrepot_rdg.to_csv("pages/data/Contenu_RDG.csv")
+            
+    # Display connection status
+    if st.session_state['rdg_api'] is not None:
+        st.write("Vous êtes connectés à RDG")
+
 
     ##########POUR L'ADMINISTRATEUR ########################################
     admin_pass = 'admin'
     admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
     if admin_action == admin_pass:
+
         b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans RDG ")
 
         if b1==True:
             with st.spinner("Récupération des entrepôts existants"):
-                Recup_dataverses_rdg(api,fichier)
+                Recup_dataverses_rdg(api_rdg,fichier)
+
     ############################################################################
 
 if nakala:
