@@ -160,7 +160,7 @@ if len(Selection_ZA)!=0:
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
-        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email"]
+        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
         df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
         for i, za in enumerate(Selection_ZA):
             time.sleep(0.1)
@@ -209,10 +209,6 @@ if len(Selection_ZA)!=0:
         st.plotly_chart(fig0,use_container_width=True)
 
         my_bar.empty()
-
-test = api.get_dataset_versions("doi:10.48579/PRO/ERNBOC")
-test_json = test.json()
-#st.write(test_json)
 
 #############  VISU SUNBURST ###############################################
 

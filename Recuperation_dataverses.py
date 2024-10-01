@@ -28,6 +28,9 @@ def Recup_contenu(api,s, za):
     auteur = []
     auteur_affiliation = []
     auteur_email = []
+    resume = []
+    subject = []
+    publication_url = []
     try:
         datav_contenu = Recup_contenu_dataverse(api,s)
         if len(datav_contenu['data'])==0:
@@ -83,17 +86,44 @@ def Recup_contenu(api,s, za):
                                         auteur_email.append('')
                                 except:
                                     auteur_email.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='dsDescription':
+                                        resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['dsDescriptionValue']['value'])
+                                    else:
+                                        resume.append('')
+                                except:
+                                    resume.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='subject':
+                                        subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0])
+                                    else:
+                                        subject.append('')
+                                except:
+                                    subject.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['typeName']=='publication':
+                                        publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['value'][0]['publicationURL']['value'])
+                                    else:
+                                        publication_url.append('')
+                                except:
+                                    publication_url.append('')
                             except:
                                 titre.append("")
                                 auteur.append('')
                                 auteur_affiliation.append('')
                                 auteur_email.append('')
+                                resume.append('')
+                                subject.append('')
+                                publication_url.append('')
                         except:
                             persistentUrls.append("")
                             titre.append("")
                             auteur.append('')
                             auteur_affiliation.append('')
                             auteur_email.append('')
+                            resume.append('')
+                            subject.append('')
+                            publication_url.append('')
                         selections.append(s)
                         entrepot_selected.append(za)
                         
@@ -143,17 +173,44 @@ def Recup_contenu(api,s, za):
                                     auteur_email.append('')
                             except:
                                 auteur_email.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='dsDescription':
+                                    resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['dsDescriptionValue']['value'])
+                                else:
+                                    resume.append('')
+                            except:
+                                resume.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='subject':
+                                    subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0])
+                                else:
+                                    subject.append('')
+                            except:
+                                subject.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['typeName']=='publication':
+                                    publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['value'][0]['publicationURL']['value'])
+                                else:
+                                    publication_url.append('')
+                            except:
+                                publication_url.append('')
                         except:
                             titre.append("")
                             auteur.append('')
                             auteur_affiliation.append('')
                             auteur_email.append('')
+                            resume.append('')
+                            subject.append('')
+                            publication_url.append('')
                     except:
                         persistentUrls.append("")
                         titre.append("")
                         auteur.append('')
                         auteur_affiliation.append('')
                         auteur_email.append('')
+                        resume.append('')
+                        subject.append('')
+                        publication_url.append('')
                     selections.append(s)
                     entrepot_selected.append(za)
     except:
@@ -166,7 +223,10 @@ def Recup_contenu(api,s, za):
                                 'Titre':titre,
                                 'Auteur':auteur,
                                 'Organisation':auteur_affiliation,
-                                "Email":auteur_email
+                                "Email":auteur_email,
+                                'Résumé':resume,
+                                'Thème':subject,
+                                'Publication URL':publication_url
                                 })
     return df_entrepot
 
