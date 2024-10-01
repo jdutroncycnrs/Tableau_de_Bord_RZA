@@ -68,6 +68,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                         auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactName']['value'])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                        auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactName']['value'])
                                     else:
                                         auteur.append('')
                                 except:
@@ -75,6 +77,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                         auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactAffiliation']['value'])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                        auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactAffiliation']['value'])
                                     else:
                                         auteur_affiliation.append('')
                                 except:
@@ -82,6 +86,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                         auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactEmail']['value'])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                        auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactEmail']['value'])
                                     else:
                                         auteur_email.append('')
                                 except:
@@ -89,6 +95,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='dsDescription':
                                         resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['dsDescriptionValue']['value'])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='dsDescription':
+                                        resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0]['dsDescriptionValue']['value'])
                                     else:
                                         resume.append('')
                                 except:
@@ -96,6 +104,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='subject':
                                         subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][5]['typeName']=='subject':
+                                        subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][5]['value'][0])
                                     else:
                                         subject.append('')
                                 except:
@@ -103,6 +113,8 @@ def Recup_contenu(api,s, za):
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['typeName']=='publication':
                                         publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['value'][0]['publicationURL']['value'])
+                                    elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][7]['typeName']=='publication':
+                                        publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][7]['value'][0]['publicationURL']['value'])
                                     else:
                                         publication_url.append('')
                                 except:
@@ -155,6 +167,8 @@ def Recup_contenu(api,s, za):
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                     auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactName']['value'])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                    auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactName']['value'])
                                 else:
                                     auteur.append('')
                             except:
@@ -162,20 +176,26 @@ def Recup_contenu(api,s, za):
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                     auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactAffiliation']['value'])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                    auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactAffiliation']['value'])
                                 else:
                                     auteur_affiliation.append('')
                             except:
-                                auteur_affiliation.append('')
+                                    auteur_affiliation.append('')
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
                                     auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactEmail']['value'])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='datasetContact':
+                                    auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['datasetContactEmail']['value'])
                                 else:
                                     auteur_email.append('')
                             except:
                                 auteur_email.append('')
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['typeName']=='dsDescription':
-                                    resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['dsDescriptionValue']['value'])
+                                   resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][3]['value'][0]['dsDescriptionValue']['value'])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='dsDescription':
+                                    resume.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0]['dsDescriptionValue']['value'])
                                 else:
                                     resume.append('')
                             except:
@@ -183,6 +203,8 @@ def Recup_contenu(api,s, za):
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['typeName']=='subject':
                                     subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][4]['value'][0])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][5]['typeName']=='subject':
+                                    subject.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][5]['value'][0])
                                 else:
                                     subject.append('')
                             except:
@@ -190,6 +212,8 @@ def Recup_contenu(api,s, za):
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['typeName']=='publication':
                                     publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][6]['value'][0]['publicationURL']['value'])
+                                elif contenu_json['data'][0]['metadataBlocks']['citation']['fields'][7]['typeName']=='publication':
+                                    publication_url.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][7]['value'][0]['publicationURL']['value'])
                                 else:
                                     publication_url.append('')
                             except:

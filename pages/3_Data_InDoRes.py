@@ -60,19 +60,40 @@ adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
 s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
 st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
 
-
 ###################### CREATION CONNEXION ##############################
-Connexion_dataInDoRES = st.sidebar.checkbox('Se connecter à Data.InDoRES')
-if Connexion_dataInDoRES:
-    with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
+
+def connect_to_dataverse(BASE_URL, API_TOKEN):
+    try:
+        # Create a new API connection
         api = NativeApi(BASE_URL, API_TOKEN)
         resp = api.get_info_version()
         response = resp.json()
+        
+        # Check connection success
+        if response['status']=='OK':
+            st.session_state['dataverse_api'] = api
+            st.success("Connexion établie avec Data. InDoRES")
+        else:
+            st.error("Connexion échouée!")
+    except Exception as e:
+        st.error(f"Connection error: {e}")
+    return api
 
-    if response['status']=='OK':
-        st.write(f"La connexion est établie avec Data.InDoRes")
-    else: 
-        st.write(f"La connexion a échoué, vous n'êtes pas connecté à Data.InDoRes")
+
+# Initialize session state if not already done
+if 'dataverse_api' not in st.session_state:
+    st.session_state['dataverse_api'] = None
+
+Connexion_dataInDoRES = st.sidebar.button('Se connecter à Data.InDoRES')
+# Button to trigger connection
+if Connexion_dataInDoRES:
+    with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
+        api = connect_to_dataverse(BASE_URL,  API_TOKEN)
+    
+# Display connection status
+if st.session_state['dataverse_api'] is not None:
+    st.write("Vous êtes connectés à Data.InDoRES")
+
 
 ######################  PARAMETRES  #######################################
 
@@ -151,30 +172,51 @@ def find_indices(lst, elements):
 
 ids = find_indices(liste_ZAs_, Selection_ZA)
 
+###############################################################################################
+########### POUR L'ADMINISTRATEUR ############################################################
+###############################################################################################
+
+# Mot de passe pour faire des récupérations automatisées
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+
+if admin_action == admin_pass:
+
+    # MAJ DES ENTREPOTS EXISTANTS ##########################################
+    b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
+
+    if b1==True:
+        with st.spinner("Récupération des entrepôts existants"):
+            Recup_dataverses(api,fichier)
+
+
+    # RECUPERATION DES CONTENUS VIA BOUTON ##########################################       
+    Recup_globale = st.sidebar.button('recupération des contenus')
+    if Recup_globale:
+        with st.spinner("La récup globale est en cours"):
+            liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+            df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
+            for i, za in enumerate(Selection_ZA):
+                time.sleep(0.1)
+                s = liste_ZAs_bis[ids[i]][1]
+                df = Recup_contenu(api, s, za)
+                dfi = pd.concat([df_entrepot,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_entrepot = dfi
+            df_entrepot.to_csv("pages/data/Contenu_DataInDoRES2.csv")
 
 ############################################################################
 
+df = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
+
 if len(Selection_ZA)!=0:
     
-    
     with st.container(border=True):
-        progress_text = "Operation en cours. Attendez svp."
-        my_bar = st.progress(0, text=progress_text)
-        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
-        df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
-        for i, za in enumerate(Selection_ZA):
-            time.sleep(0.1)
-            s = liste_ZAs_bis[ids[i]][1]
-            df = Recup_contenu(api, s, za)
-            dfi = pd.concat([df_entrepot,df], axis=0)
-            dfi.reset_index(inplace=True)
-            dfi.drop(columns='index', inplace=True)
-            df_entrepot = dfi         
-            my_bar.progress(i + 1, text=progress_text)
-        
-        st.dataframe(df_entrepot)
+        st.dataframe(df[df['ZA'].isin(Selection_ZA)])
 
-        Nombre_depots = df_entrepot['ZA'].value_counts()
+        Nombre_depots = df['ZA'].value_counts()
         for i in range(len(Selection_ZA)):
             if Selection_ZA[i] in Nombre_depots.index.values:
                 pass
@@ -208,8 +250,6 @@ if len(Selection_ZA)!=0:
                                 showlegend=False)
         st.plotly_chart(fig0,use_container_width=True)
 
-        my_bar.empty()
-
 #############  VISU SUNBURST ###############################################
 
 visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
@@ -229,14 +269,6 @@ else:
 
 ##########POUR L'ADMINISTRATEUR ########################################
 
-admin_pass = 'admin'
-admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
-if admin_action == admin_pass:
-    b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
-
-    if b1==True:
-        with st.spinner("Récupération des entrepôts existants"):
-            Recup_dataverses(api,fichier)
 
 ############################################################################
