@@ -16,7 +16,7 @@ from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_contenu_dataset
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse, Recup_contenu_dataset,Recup_contenu
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -155,89 +155,32 @@ ids = find_indices(liste_ZAs_, Selection_ZA)
 ############################################################################
 
 if len(Selection_ZA)!=0:
-    Nombre_depots = []
-    identifieurs = []
-    persistentUrls = []
-    datesPublication = []
-    ss = []
+    
+    
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
-        for i in range(len(Selection_ZA)):
+        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication']
+        df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
+        for i, za in enumerate(Selection_ZA):
             time.sleep(0.1)
-            try:
-                s = liste_ZAs_bis[ids[i]][1]
-                cpt = 0
-                try:
-                    datav_contenu = Recup_contenu_dataverse(api,s)
-                    if len(datav_contenu['data'])==0:
-                        identifieurs.append("")
-                        persistentUrls.append("")
-                        datesPublication.append("")
-                        ss.append(s)
-                    else:
-                        for j in range(len(datav_contenu['data'])):
-                            test_type = datav_contenu["data"][j]['type']
-                            if test_type =="dataverse":
-                                s2 = datav_contenu["data"][j]['id']
-                                sousdatav_contenu = Recup_contenu_dataverse(api,s2)
-                                for k in range(len(sousdatav_contenu['data'])):
-                                    try:
-                                        identifieur = sousdatav_contenu["data"][k]['identifier']
-                                        identifieurs.append(identifieur)
-                                        cpt +=1
-                                    except:
-                                        identifieurs.append("")
-                                    try: 
-                                        publicationDate = sousdatav_contenu["data"][k]['publicationDate']
-                                        datesPublication.append(publicationDate)
-                                    except:
-                                        datesPublication.append("")
-                                    try: 
-                                        persistentUrl = sousdatav_contenu["data"][k]['id']
-                                        persistentUrls.append(persistentUrl)
-                                    except:
-                                        persistentUrls.append("")
-                                    ss.append(s)
-                            elif test_type == "dataset":
-                                st.write(datav_contenu)
-                                try:
-                                    identifieur = datav_contenu["data"][j]['identifier']
-                                    identifieurs.append(identifieur)
-                                    cpt +=1
-                                except:
-                                    identifieurs.append("")
-                                try: 
-                                    publicationDate = datav_contenu["data"][j]['publicationDate']
-                                    datesPublication.append(publicationDate)
-                                except:
-                                    datesPublication.append("")
-                                try: 
-                                    persistentUrl = datav_contenu["data"][k]['id']
-                                    persistentUrls.append(persistentUrl)
-                                except:
-                                    persistentUrls.append("")
-                                ss.append(s)
-                            
-                except:
-                    identifieurs.append("")
-                    datesPublication.append("")
-                    persistentUrls.append("")
-                    ss.append(s)
-            except:
-                identifieurs.append("")
-                datesPublication.append("")
-                persistentUrls.append("")
-                ss.append(s)
-            Nombre_depots.append(cpt)
+            s = liste_ZAs_bis[ids[i]][1]
+            df = Recup_contenu(api, s, za)
+            dfi = pd.concat([df_entrepot,df], axis=0)
+            dfi.reset_index(inplace=True)
+            dfi.drop(columns='index', inplace=True)
+            df_entrepot = dfi         
             my_bar.progress(i + 1, text=progress_text)
-        df_dataInDoRES = pd.DataFrame({'selection':ss,
-                                       'ID':identifieurs,
-                                       'Url':persistentUrls,
-                                       'Date de publication':datesPublication})
-        st.dataframe(df_dataInDoRES)
+        
+        st.dataframe(df_entrepot)
 
-        df = pd.DataFrame(Nombre_depots,index=Selection_ZA,columns=['Nombre_dépôts'])
+        Nombre_depots = df_entrepot['ZA'].value_counts()
+        for i in range(len(Selection_ZA)):
+            if Selection_ZA[i] in Nombre_depots.index.values:
+                pass
+            else:
+                Nombre_depots[Selection_ZA[i]]=0
+        df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
         fig0= go.Figure()
         for i, za in enumerate(df.index.values):
             selec = df.index.values[i:i+1]
@@ -269,7 +212,7 @@ if len(Selection_ZA)!=0:
 
 test = api.get_dataset_versions("doi:10.48579/PRO/ERNBOC")
 test_json = test.json()
-st.write(test_json)
+#st.write(test_json)
 
 #############  VISU SUNBURST ###############################################
 

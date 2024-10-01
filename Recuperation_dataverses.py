@@ -6,6 +6,7 @@ from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 import json
 import requests
+import streamlit as st
 
 def Recup_contenu_dataverse(api,s):
     datav = api.get_dataverse_contents(s)
@@ -16,6 +17,69 @@ def Recup_contenu_dataset(api,persistenteUrl):
     dataset = api.get_dataset(persistenteUrl)
     dataset_contenu = dataset.json()
     return dataset_contenu
+
+def Recup_contenu(api,s, za):
+    identifieurs = []
+    persistentUrls = []
+    datesPublication = []
+    selections = []
+    entrepot_selected = []
+    try:
+        datav_contenu = Recup_contenu_dataverse(api,s)
+        if len(datav_contenu['data'])==0:
+            pass
+        else:
+            for j in range(len(datav_contenu['data'])):
+                test_type = datav_contenu["data"][j]['type']
+                if test_type =="dataverse":
+                    s2 = datav_contenu["data"][j]['id']
+                    sousdatav_contenu = Recup_contenu_dataverse(api,s2)
+                    for k in range(len(sousdatav_contenu['data'])):
+                        try:
+                            identifieur = sousdatav_contenu["data"][k]['identifier']
+                            identifieurs.append(identifieur)
+                        except:
+                            identifieurs.append("")
+                        try: 
+                            publicationDate = sousdatav_contenu["data"][k]['publicationDate']
+                            datesPublication.append(publicationDate)
+                        except:
+                            datesPublication.append("")
+                        try: 
+                            persistentUrl = sousdatav_contenu["data"][k]['persistentUrl']
+                            persistentUrls.append(persistentUrl)
+                        except:
+                            persistentUrls.append("")
+                        selections.append(s)
+                        entrepot_selected.append(za)
+                elif test_type == "dataset":
+                    try:
+                        identifieur = datav_contenu["data"][j]['identifier']
+                        identifieurs.append(identifieur)
+                    except:
+                        identifieurs.append("")
+                    try: 
+                        publicationDate = datav_contenu["data"][j]['publicationDate']
+                        datesPublication.append(publicationDate)
+                    except:
+                        datesPublication.append("")
+                    try: 
+                        persistentUrl = datav_contenu["data"][j]['persistentUrl']
+                        persistentUrls.append(persistentUrl)
+                    except:
+                        persistentUrls.append("")
+                    selections.append(s)
+                    entrepot_selected.append(za)
+    except:
+        pass
+    df_entrepot = pd.DataFrame({'selection':selections, 
+                                'ZA':entrepot_selected,
+                                'ID':identifieurs,
+                                'Url':persistentUrls,
+                                'Date de publication':datesPublication})
+    df_entrepot['Url'] = df_entrepot['Url'].apply(lambda x: x.replace('https://doi.org/','doi:'))
+    return df_entrepot
+
 
 def Recup_dataverses_rdg(api, fichier):
     RDG = api.get_dataverse_contents("root")
