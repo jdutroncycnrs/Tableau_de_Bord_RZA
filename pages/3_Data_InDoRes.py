@@ -160,7 +160,7 @@ if len(Selection_ZA)!=0:
     with st.container(border=True):
         progress_text = "Operation en cours. Attendez svp."
         my_bar = st.progress(0, text=progress_text)
-        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur']
+        liste_columns_df_entrepot=['selection','ZA','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email"]
         df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
         for i, za in enumerate(Selection_ZA):
             time.sleep(0.1)

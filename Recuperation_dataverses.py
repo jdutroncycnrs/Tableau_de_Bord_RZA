@@ -26,6 +26,8 @@ def Recup_contenu(api,s, za):
     entrepot_selected = []
     titre = []
     auteur = []
+    auteur_affiliation = []
+    auteur_email = []
     try:
         datav_contenu = Recup_contenu_dataverse(api,s)
         if len(datav_contenu['data'])==0:
@@ -61,19 +63,37 @@ def Recup_contenu(api,s, za):
                                 except:
                                     titre.append('')
                                 try:
-                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['typeName']=='author':
-                                        auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['value'][0]['authorName']['value'])
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                        auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactName']['value'])
                                     else:
                                         auteur.append('')
                                 except:
                                     auteur.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                        auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactAffiliation']['value'])
+                                    else:
+                                        auteur_affiliation.append('')
+                                except:
+                                    auteur_affiliation.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                        auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactEmail']['value'])
+                                    else:
+                                        auteur_email.append('')
+                                except:
+                                    auteur_email.append('')
                             except:
                                 titre.append("")
                                 auteur.append('')
+                                auteur_affiliation.append('')
+                                auteur_email.append('')
                         except:
                             persistentUrls.append("")
                             titre.append("")
                             auteur.append('')
+                            auteur_affiliation.append('')
+                            auteur_email.append('')
                         selections.append(s)
                         entrepot_selected.append(za)
                         
@@ -94,6 +114,7 @@ def Recup_contenu(api,s, za):
                         try:
                             contenu = api.get_dataset_versions(persistentUrl)
                             contenu_json = contenu.json()
+                            #st.write(contenu_json)
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['typeName']=='title':
                                     titre.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['value'])
@@ -102,19 +123,37 @@ def Recup_contenu(api,s, za):
                             except:
                                 titre.append('')
                             try:
-                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['typeName']=='author':
-                                    auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['value'][0]['authorName']['value'])
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                    auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactName']['value'])
                                 else:
                                     auteur.append('')
                             except:
                                 auteur.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                    auteur_affiliation.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactAffiliation']['value'])
+                                else:
+                                    auteur_affiliation.append('')
+                            except:
+                                auteur_affiliation.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['typeName']=='datasetContact':
+                                    auteur_email.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][2]['value'][0]['datasetContactEmail']['value'])
+                                else:
+                                    auteur_email.append('')
+                            except:
+                                auteur_email.append('')
                         except:
                             titre.append("")
                             auteur.append('')
+                            auteur_affiliation.append('')
+                            auteur_email.append('')
                     except:
                         persistentUrls.append("")
                         titre.append("")
                         auteur.append('')
+                        auteur_affiliation.append('')
+                        auteur_email.append('')
                     selections.append(s)
                     entrepot_selected.append(za)
     except:
@@ -125,7 +164,9 @@ def Recup_contenu(api,s, za):
                                 'Url':persistentUrls,
                                 'Date de publication':datesPublication,
                                 'Titre':titre,
-                                'Auteur':auteur
+                                'Auteur':auteur,
+                                'Organisation':auteur_affiliation,
+                                "Email":auteur_email
                                 })
     return df_entrepot
 
