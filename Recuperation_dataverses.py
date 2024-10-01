@@ -24,6 +24,8 @@ def Recup_contenu(api,s, za):
     datesPublication = []
     selections = []
     entrepot_selected = []
+    titre = []
+    auteur = []
     try:
         datav_contenu = Recup_contenu_dataverse(api,s)
         if len(datav_contenu['data'])==0:
@@ -46,12 +48,35 @@ def Recup_contenu(api,s, za):
                         except:
                             datesPublication.append("")
                         try: 
-                            persistentUrl = sousdatav_contenu["data"][k]['persistentUrl']
+                            persistentUrl = sousdatav_contenu["data"][k]['persistentUrl'].replace('https://doi.org/','doi:')
                             persistentUrls.append(persistentUrl)
+                            try:
+                                contenu = api.get_dataset_versions(persistentUrl)
+                                contenu_json = contenu.json()
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['typeName']=='title':
+                                        titre.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['value'])
+                                    else:
+                                        titre.append('')
+                                except:
+                                    titre.append('')
+                                try:
+                                    if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['typeName']=='author':
+                                        auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['value'][0]['authorName']['value'])
+                                    else:
+                                        auteur.append('')
+                                except:
+                                    auteur.append('')
+                            except:
+                                titre.append("")
+                                auteur.append('')
                         except:
                             persistentUrls.append("")
+                            titre.append("")
+                            auteur.append('')
                         selections.append(s)
                         entrepot_selected.append(za)
+                        
                 elif test_type == "dataset":
                     try:
                         identifieur = datav_contenu["data"][j]['identifier']
@@ -64,10 +89,32 @@ def Recup_contenu(api,s, za):
                     except:
                         datesPublication.append("")
                     try: 
-                        persistentUrl = datav_contenu["data"][j]['persistentUrl']
+                        persistentUrl = datav_contenu["data"][j]['persistentUrl'].replace('https://doi.org/','doi:')
                         persistentUrls.append(persistentUrl)
+                        try:
+                            contenu = api.get_dataset_versions(persistentUrl)
+                            contenu_json = contenu.json()
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['typeName']=='title':
+                                    titre.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['value'])
+                                else:
+                                    titre.append('')
+                            except:
+                                titre.append('')
+                            try:
+                                if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['typeName']=='author':
+                                    auteur.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][1]['value'][0]['authorName']['value'])
+                                else:
+                                    auteur.append('')
+                            except:
+                                auteur.append('')
+                        except:
+                            titre.append("")
+                            auteur.append('')
                     except:
                         persistentUrls.append("")
+                        titre.append("")
+                        auteur.append('')
                     selections.append(s)
                     entrepot_selected.append(za)
     except:
@@ -76,8 +123,10 @@ def Recup_contenu(api,s, za):
                                 'ZA':entrepot_selected,
                                 'ID':identifieurs,
                                 'Url':persistentUrls,
-                                'Date de publication':datesPublication})
-    df_entrepot['Url'] = df_entrepot['Url'].apply(lambda x: x.replace('https://doi.org/','doi:'))
+                                'Date de publication':datesPublication,
+                                'Titre':titre,
+                                'Auteur':auteur
+                                })
     return df_entrepot
 
 
