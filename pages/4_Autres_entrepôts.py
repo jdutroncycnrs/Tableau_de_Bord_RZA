@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -178,7 +178,8 @@ if rdg:
         dataverses = pd.read_csv(fich,index_col=[0])
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
-    
+
+
     ###################### CREATION CONNEXION ##############################
     def connect_to_dataverse(BASE_URL, API_TOKEN):
         try:
@@ -196,6 +197,55 @@ if rdg:
         except Exception as e:
             st.error(f"Connection error: {e}")
         return api
+
+     #############  VISU TABLEAU  OU SUNBURST ###############################################
+
+    if 'tab' not in st.session_state:
+        st.session_state.tab = False
+    if 'sun' not in st.session_state:
+        st.session_state.sun = False
+
+    def handle_tab_change():
+        if st.session_state.tab:
+            st.session_state.sun = False
+            
+
+    # Function to handle checkbox2 change
+    def handle_sunburst_change():
+        if st.session_state.sun:
+            st.session_state.tab = False
+
+
+    col1,col2 = st.columns(2)
+    with col1:
+        tab = st.checkbox("Filtrer le contenu d'un entrepôt", key='tab', on_change=handle_tab_change)
+    with col2:
+        sun = st.checkbox("Voir le sunburst des entrepôts", key='sun', on_change=handle_sunburst_change)
+
+    if tab:
+        dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
+        Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
+        api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+        with st.spinner("Analyse en cours"):
+            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+            df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
+            s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
+            df = Recup_contenu(api_rdg, s, Selected_entrepot)
+            dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
+            dfi.reset_index(inplace=True)
+            dfi.drop(columns='index', inplace=True)
+            df_entrepot_rdg_selected = dfi
+            df_entrepot_rdg_selected.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG__{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
+        st.dataframe(df_entrepot_rdg_selected)
+
+    if sun:
+        fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
+        fig.update_layout(
+                    title=f'Visuel des différents Dataverses dans RDG via {fich}',
+                    width=1000,
+                    height=1000)
+        st.plotly_chart(fig,use_container_width=True)
+
 
     ########## POUR L'ADMINISTRATEUR ########################################
     admin_pass = 'admin'
@@ -217,8 +267,7 @@ if rdg:
                 api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
                 liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
                 df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
-                st.dataframe(dataverses)
-                for i in range(153,154):
+                for i in range(len(dataverses)):
                     s = int(dataverses.loc[i,'ids_niv2'])
                     entrepot = dataverses.loc[i,'niv2']
                     df = Recup_contenu(api_rdg, s, entrepot)
@@ -226,23 +275,17 @@ if rdg:
                     dfi.reset_index(inplace=True)
                     dfi.drop(columns='index', inplace=True)
                     df_entrepot_rdg = dfi
-                df_entrepot_rdg.to_csv("pages/data/Contenu_RDG.csv")
+                df_entrepot_rdg.to_csv("pages/data/rechercheDataGouv/Contenu_RDG_complet.csv")
 
     ############################################################################
 
-    #############  VISU SUNBURST ###############################################
-
-    visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
-
-    if visu_sunburst:
-        fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
-        fig.update_layout(
-                    title=f'Visuel des différents Dataverses dans RDG via {fich}',
-                    width=1000,
-                    height=1000)
-        st.plotly_chart(fig,use_container_width=True)
-
 if nakala:
+    st.title(":grey[Analyse des dépôts dans Nakala]")
+
+    adresse_nakala = url_nakala
+    s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
+    st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
+
     s = " ZA alpes"
     params_nakala = {'q': f'{s}'}
     r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, s)
@@ -276,12 +319,39 @@ if zenodo:
         st.table(df_global)
 
 if dryad:
-    params_dryad = {'q':'zone atelier alpes'}
-    r = recuperation_dryad(url_dryad,params_dryad)
-    st.write(r)
+    st.title(":grey[Analyse des dépôts dans Dryad]")
+
+    adresse_dryad = url_dryad
+    s_adresse_dryad = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dryad}</p>"
+    st.markdown(s_adresse_dryad ,unsafe_allow_html=True)
+
+    if len(Selection_ZA)!=0:
+        liste_columns_dryad = ['Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                         'Organisation 1',"Email 1",'Auteur prénom 2','Auteur Nom 2','Organisation 2',"Email 2",
+                         'Auteur prénom 3','Auteur Nom 3','Organisation 3',"Email 3",'Résumé','Thème','Publication URL']
+        df_dryad_global = pd.DataFrame(columns=liste_columns_dryad)
+        for i in range(len(Selection_ZA)):
+            params_dryad = {'q':Selection_ZA[i]}
+            Nombre_dryad, df_dryad = Recup_contenu_dryad(url_dryad,params_dryad, Selection_ZA[i])
+            dfi = pd.concat([df_dryad_global,df_dryad], axis=0)
+            dfi.reset_index(inplace=True)
+            dfi.drop(columns='index', inplace=True)
+            df_dryad_global = dfi
+
+        df_dryad_global.sort_values(by='Date de publication', inplace=True, ascending=False)
+        df_dryad_global.reset_index(inplace=True)
+        df_dryad_global.drop(columns='index', inplace=True)
+        st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
+        st.dataframe(df_dryad_global)
 
 
 if gbif:
+    st.title(":grey[Analyse des dépôts dans GBIF]")
+
+    adresse_gbif = url_gbif
+    s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
+    st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
+
     params_gbif = {'q':'alpes'}
     r = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
     st.write(r)

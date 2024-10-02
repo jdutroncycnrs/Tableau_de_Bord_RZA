@@ -7,6 +7,7 @@ from pyDataverse.api import NativeApi
 import json
 import requests
 import streamlit as st
+from markdownify import markdownify as md
 
 def Recup_contenu_dataverse(api,s):
     datav = api.get_dataverse_contents(s)
@@ -17,6 +18,134 @@ def Recup_contenu_dataset(api,persistenteUrl):
     dataset = api.get_dataset(persistenteUrl)
     dataset_contenu = dataset.json()
     return dataset_contenu
+
+
+def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
+    entrepot_selected = []
+    identifieurs = []
+    titre = []
+    auteur_prenom1 = []
+    auteur_nom1 = []
+    auteur_affiliation1 = []
+    auteur_email1 = []
+    auteur_prenom2 = []
+    auteur_nom2 = []
+    auteur_affiliation2 = []
+    auteur_email2 = []
+    auteur_prenom3 = []
+    auteur_nom3 = []
+    auteur_affiliation3 = []
+    auteur_email3 = []
+    resume = []
+    datesPublication = []
+    auteur_affiliation1 = []
+    auteur_email1 = []
+    subject = []
+    publication_url = []
+    try:
+        contenu_dryad = recuperation_dryad(url_dryad,params_dryad)
+        #st.write(contenu_dryad)
+        Nombre_dryad = contenu_dryad['count']
+        if Nombre_dryad !=0:
+            for i in range(Nombre_dryad):
+                try:
+                    identifieurs.append(contenu_dryad['_embedded']['stash:datasets'][i]['identifier'])
+                except:
+                    identifieurs.append("")
+                try:
+                    titre.append(contenu_dryad['_embedded']['stash:datasets'][i]['title'])
+                except:
+                    titre.append("")
+                try:
+                    resume.append(md(contenu_dryad['_embedded']['stash:datasets'][i]['abstract']))
+                except:
+                    resume.append("")
+                try:
+                    datesPublication.append(contenu_dryad['_embedded']['stash:datasets'][i]['publicationDate'])
+                except:
+                    datesPublication.append("")
+                try:
+                    publication_url.append(contenu_dryad['_embedded']['stash:datasets'][i]['sharingLink'])
+                except:
+                    publication_url.append("")
+                try:
+                    subject.append(contenu_dryad['_embedded']['stash:datasets'][i]['fieldOfScience'])
+                except:
+                    subject.append("")
+                try:
+                    auteur_prenom1.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][0]['firstName'])
+                except:
+                    auteur_prenom1.append("")
+                try: 
+                    auteur_nom1.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][0]['lastName'])
+                except:
+                    auteur_nom1.append("")
+                try:
+                    auteur_affiliation1.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][0]['affiliation'])
+                except:
+                    auteur_affiliation1.append("")
+                try:
+                    auteur_email1.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][0]['email'])
+                except:
+                    auteur_email1.append("")   
+                try:
+                    auteur_prenom2.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][1]['firstName'])
+                except:
+                    auteur_prenom2.append("")
+                try:    
+                    auteur_nom2.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][1]['lastName'])
+                except:
+                    auteur_nom2.append("")
+                try:
+                    auteur_affiliation2.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][1]['affiliation'])
+                except:
+                    auteur_affiliation2.append("")
+                try:
+                    auteur_email2.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][1]['email'])
+                except:
+                    auteur_email2.append("")
+                try:
+                    auteur_prenom3.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][2]['firstName'])
+                except:
+                    auteur_prenom3.append("")
+                try:
+                    auteur_nom3.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][2]['lastName'])
+                except:
+                    auteur_nom3.append("")
+                try:
+                    auteur_affiliation3.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][2]['affiliation'])
+                except:
+                    auteur_affiliation3.append("")
+                try:
+                    auteur_email3.append(contenu_dryad['_embedded']['stash:datasets'][i]['authors'][2]['email'])
+                except:
+                    auteur_email3.append("")
+                entrepot_selected.append(entrepot)
+    except:
+        pass
+
+    df_dryad = pd.DataFrame({'Entrepot':entrepot_selected,
+                             'ID':identifieurs,
+                            'Date de publication':datesPublication,
+                            'Titre':titre,
+                            'Auteur prénom 1':auteur_prenom1,
+                            'Auteur Nom 1':auteur_nom1,
+                            'Organisation 1':auteur_affiliation1,
+                            "Email 1":auteur_email1,
+                            'Auteur prénom 2':auteur_prenom2,
+                            'Auteur Nom 2':auteur_nom2,
+                            'Organisation 2':auteur_affiliation2,
+                            "Email 2":auteur_email2,
+                            'Auteur prénom 3':auteur_prenom3,
+                            'Auteur Nom 3':auteur_nom3,
+                            'Organisation 3':auteur_affiliation3,
+                            "Email 3":auteur_email3,
+                            'Résumé':resume,
+                            'Thème':subject,
+                            'Publication URL':publication_url
+                                })
+    return Nombre_dryad, df_dryad
+
 
 def Recup_contenu(api,s, entrepot):
     identifieurs = []
@@ -515,7 +644,6 @@ print(json.dumps(data, indent=4))"""
 ## DRYAD
 def recuperation_dryad(url_dryad,params_dryad):
     
-    liste_vide = []
     r = requests.get(url_dryad,
                     params=params_dryad)
     
@@ -524,7 +652,6 @@ def recuperation_dryad(url_dryad,params_dryad):
 ## GBIF
 def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
     
-    liste_vide = []
     r = requests.get(url_gbif,
                     params=params_gbif,
                     headers=headers_gbif)
