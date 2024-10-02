@@ -80,21 +80,6 @@ def connect_to_dataverse(BASE_URL, API_TOKEN):
     return api
 
 
-# Initialize session state if not already done
-if 'dataverse_api' not in st.session_state:
-    st.session_state['dataverse_api'] = None
-
-Connexion_dataInDoRES = st.sidebar.button('Se connecter à Data.InDoRES')
-# Button to trigger connection
-if Connexion_dataInDoRES:
-    with st.spinner("Connexion au Dataverse Data.InDoRes en cours"):
-        api = connect_to_dataverse(BASE_URL,  API_TOKEN)
-    
-# Display connection status
-if st.session_state['dataverse_api'] is not None:
-    st.write("Vous êtes connectés à Data.InDoRES")
-
-
 ######################  PARAMETRES  #######################################
 
 d = datetime.date.today()
@@ -188,6 +173,7 @@ if admin_action == admin_pass:
 
     if b1==True:
         with st.spinner("Récupération des entrepôts existants"):
+            api = connect_to_dataverse(BASE_URL,  API_TOKEN)
             Recup_dataverses(api,fichier)
 
 
@@ -195,6 +181,7 @@ if admin_action == admin_pass:
     Recup_globale = st.sidebar.button('recupération des contenus')
     if Recup_globale:
         with st.spinner("La récup globale est en cours"):
+            api = connect_to_dataverse(BASE_URL,  API_TOKEN)
             liste_columns_df_entrepot=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
             df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
             for i, za in enumerate(Selection_ZA):
@@ -248,7 +235,7 @@ if len(Selection_ZA)!=0:
         st.plotly_chart(fig0,use_container_width=True)
 
     with st.container(border=True):
-        st.dataframe(df_complet[df_complet['ZA'].isin(Selection_ZA)])
+        st.dataframe(df_complet[df_complet['Entrepot'].isin(Selection_ZA)])
 
 #############  VISU SUNBURST ###############################################
 
@@ -266,9 +253,3 @@ if len(fi)!=0:
         st.plotly_chart(fig,use_container_width=True)
 else:
      st.write('Il est nécessaire de mettre à jour vos entrepôts')
-
-##########POUR L'ADMINISTRATEUR ########################################
-
-
-
-############################################################################

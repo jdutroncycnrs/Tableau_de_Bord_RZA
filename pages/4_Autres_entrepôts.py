@@ -157,11 +157,15 @@ with st.sidebar:
 
 
 if rdg:
+
+    ######################  TITRES  #######################################
     st.title(":grey[Analyse des dépôts dans Recherche Data Gouv]")
 
     adresse_RDG = 'https://entrepot.recherche.data.gouv.fr/dataverse/root?q='
     s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
     st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
+
+    ######################  PARAMETRES  #######################################
 
     d = datetime.date.today()
 
@@ -169,25 +173,13 @@ if rdg:
 
     fi = glob.glob(f"pages/data/rechercheDataGouv/tableau_dataverses*.csv")
 
-    Choix_rdg = st.sidebar.subheader('RDG sélectionné')
-
-    visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
-
     if len(fi)!=0:
         fich = fi[-1]
         dataverses = pd.read_csv(fich,index_col=[0])
-        if visu_sunburst:
-            fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
-            fig.update_layout(
-                title=f'Visuel des différents Dataverses dans RDG via {fich}',
-                width=1000,
-                height=1000)
-            st.plotly_chart(fig,use_container_width=True)
     else:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
-
+    
     ###################### CREATION CONNEXION ##############################
-
     def connect_to_dataverse(BASE_URL, API_TOKEN):
         try:
             # Create a new API connection
@@ -205,35 +197,7 @@ if rdg:
             st.error(f"Connection error: {e}")
         return api
 
-
-    # Initialize session state if not already done
-    if 'rdg_api' not in st.session_state:
-        st.session_state['rdg_api'] = None
-
-    Connexion_rdg = st.sidebar.button('Se connecter à RDG')
-    # Button to trigger connection
-    if Connexion_rdg:
-        with st.spinner("Connexion au Dataverse RDG en cours et récupération contenu"):
-            api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
-            liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
-            df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
-            st.dataframe(dataverses)
-            for i in range(1,2):
-                s = int(dataverses.loc[i,'ids_niv2'])
-                entrepot = dataverses.loc[i,'niv2']
-                df = Recup_contenu(api_rdg, s, entrepot)
-                dfi = pd.concat([df_entrepot_rdg,df], axis=0)
-                dfi.reset_index(inplace=True)
-                dfi.drop(columns='index', inplace=True)
-                df_entrepot_rdg = dfi
-            df_entrepot_rdg.to_csv("pages/data/Contenu_RDG.csv")
-            
-    # Display connection status
-    if st.session_state['rdg_api'] is not None:
-        st.write("Vous êtes connectés à RDG")
-
-
-    ##########POUR L'ADMINISTRATEUR ########################################
+    ########## POUR L'ADMINISTRATEUR ########################################
     admin_pass = 'admin'
     admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
@@ -243,9 +207,40 @@ if rdg:
 
         if b1==True:
             with st.spinner("Récupération des entrepôts existants"):
+                api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
                 Recup_dataverses_rdg(api_rdg,fichier)
 
+    # RECUPERATION DES CONTENUS VIA BOUTON ##########################################       
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+                liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+                df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
+                st.dataframe(dataverses)
+                for i in range(153,154):
+                    s = int(dataverses.loc[i,'ids_niv2'])
+                    entrepot = dataverses.loc[i,'niv2']
+                    df = Recup_contenu(api_rdg, s, entrepot)
+                    dfi = pd.concat([df_entrepot_rdg,df], axis=0)
+                    dfi.reset_index(inplace=True)
+                    dfi.drop(columns='index', inplace=True)
+                    df_entrepot_rdg = dfi
+                df_entrepot_rdg.to_csv("pages/data/Contenu_RDG.csv")
+
     ############################################################################
+
+    #############  VISU SUNBURST ###############################################
+
+    visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
+
+    if visu_sunburst:
+        fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
+        fig.update_layout(
+                    title=f'Visuel des différents Dataverses dans RDG via {fich}',
+                    width=1000,
+                    height=1000)
+        st.plotly_chart(fig,use_container_width=True)
 
 if nakala:
     s = " ZA alpes"
