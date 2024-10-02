@@ -28,6 +28,7 @@ def afficher_publications_hal(requete_api_hal: str, ZA):
         types = []
         docTypes = []
         date = []
+        source = []
         for doc in reponse.json()['response']['docs']:
             ids.append(int(doc['docid']))
             labels.append(soup(doc['label_s'], 'html.parser').text)
@@ -35,8 +36,10 @@ def afficher_publications_hal(requete_api_hal: str, ZA):
             types.append(doc['submitType_s'])
             docTypes.append(doc['docType_s'])
             date.append(doc['producedDateY_i'])
+            source.append('HAL')
 
-        reponse_df = pd.DataFrame({'ZA':ZA,
+        reponse_df = pd.DataFrame({'Source':source,
+                                   'Entrepot':ZA,
                                    'Ids':ids,
                                    'Titre et auteurs':labels,
                                    'Uri':uris,

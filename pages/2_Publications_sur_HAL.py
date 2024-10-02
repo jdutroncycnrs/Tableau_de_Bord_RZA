@@ -79,24 +79,26 @@ with col2:
 st.title(":grey[Analyse des publications sur HAL]")
 
 
-liste_columns = ['ZA','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
-df_global = pd.DataFrame(columns=liste_columns)
+liste_columns_hal = ['Source','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
+df_global_hal = pd.DataFrame(columns=liste_columns_hal)
 for i, s in enumerate(Selection_ZA):
         url_type = f'http://api.archives-ouvertes.fr/search/?q=text:{s.lower().strip()}&rows=1500&wt=json&fq=producedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
         df = afficher_publications_hal(url_type, s)
-        dfi = pd.concat([df_global,df], axis=0)
+        dfi = pd.concat([df_global_hal,df], axis=0)
         dfi.reset_index(inplace=True)
         dfi.drop(columns='index', inplace=True)
-        df_global = dfi
-df_global.sort_values(by='Ids', inplace=True, ascending=False)
-df_global.reset_index(inplace=True)
-df_global.drop(columns='index', inplace=True)
+        df_global_hal = dfi
+df_global_hal.sort_values(by='Ids', inplace=True, ascending=False)
+df_global_hal.reset_index(inplace=True)
+df_global_hal.drop(columns='index', inplace=True)
 
-if len(df_global)==0:
+if len(df_global_hal)==0:
      pass
 else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_global))
+        st.metric(label="Nombre de publications trouvées", value=len(df_global_hal))
         #st.dataframe(df_global)
+
+        #df_global_hal.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
         csv = df.to_csv(index=False)
 
         # Download button
@@ -106,7 +108,7 @@ else:
                 file_name='dataframe.csv',
                 mime='text/csv')
 
-        for i in range(len(df_global)):
+        for i in range(len(df_global_hal)):
                 with st.container(border=True):
                         t0 = f"#{i+1}"
                         s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
@@ -116,32 +118,32 @@ else:
                                 t0a = 'Auteurs et Titre'
                                 s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
                                 st.markdown(s_t0a,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Titre et auteurs'])
+                                st.markdown(df_global_hal.loc[i,'Titre et auteurs'])
                         with col2:
                                 t0b = 'Uri'
                                 s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
                                 st.markdown(s_t0b,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Uri'])
+                                st.markdown(df_global_hal.loc[i,'Uri'])
 
                         col1,col2,col3,col4 = st.columns(4)
                         with col1:
                                 t0c = 'Type'
                                 s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
                                 st.markdown(s_t0c,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Type'])
+                                st.markdown(df_global_hal.loc[i,'Type'])
                         with col2:
                                 t0d = 'Doc'
                                 s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
                                 st.markdown(s_t0d,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Type de document'])
+                                st.markdown(df_global_hal.loc[i,'Type de document'])
                         with col3:
                                 t0e = 'Id'
                                 s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
                                 st.markdown(s_t0e,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Ids'])
+                                st.markdown(df_global_hal.loc[i,'Ids'])
                         with col4:
                                 t0f = 'Date de production'
                                 s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
                                 st.markdown(s_t0f,unsafe_allow_html=True)
-                                st.markdown(df_global.loc[i,'Date de production'])
+                                st.markdown(df_global_hal.loc[i,'Date de production'])
 
