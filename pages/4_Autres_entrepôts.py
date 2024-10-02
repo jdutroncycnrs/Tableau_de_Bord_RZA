@@ -10,7 +10,7 @@ import plotly.express as px
 import requests
 
 
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ########### TITRE DE L'ONGLET ######################################
 st.set_page_config(
@@ -66,7 +66,7 @@ url_dryad = "https://datadryad.org/api/v2/search?"
 
 
 ########################## GBIF #########################################
-url_gbif = "https://api.gbif.org/v1/dataset?q=alpes"
+url_gbif = "https://api.gbif.org/v1/dataset?"
 headers_gbif = {'accept': 'application/json'}
 
 
@@ -236,7 +236,7 @@ if rdg:
             dfi.drop(columns='index', inplace=True)
             df_entrepot_rdg_selected = dfi
             df_entrepot_rdg_selected.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG__{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
-        st.dataframe(df_entrepot_rdg_selected)
+        st.dataframe(df_entrepot_rdg_selected,use_container_width=True)
 
     if sun:
         fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
@@ -298,25 +298,26 @@ if zenodo:
     s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
     st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
 
-    liste_columns = ['ZA','Ids','Titre']
-    df_global = pd.DataFrame(columns=liste_columns)
+    liste_columns = ['Entrepot','ID','Titre']
+    df_global_zenodo = pd.DataFrame(columns=liste_columns)
     for i, s in enumerate(Selection_ZA):
-        params_zenodo = {'q': f'{s}',
+        params_zenodo = {'q': s,
                  'access_token': zenodo_token}
-        df = recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
-        dfi = pd.concat([df_global,df], axis=0)
+        df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
+        dfi = pd.concat([df_global_zenodo,df], axis=0)
         dfi.reset_index(inplace=True)
         dfi.drop(columns='index', inplace=True)
-        df_global = dfi
-    df_global.sort_values(by='Ids', inplace=True, ascending=False)
-    df_global.reset_index(inplace=True)
-    df_global.drop(columns='index', inplace=True)
+        df_global_zenodo = dfi
+    df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
+    df_global_zenodo.reset_index(inplace=True)
+    df_global_zenodo.drop(columns='index', inplace=True)
 
-    if len(df_global)==0:
+    if len(df_global_zenodo)==0:
         pass
     else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_global))
-        st.table(df_global)
+        st.metric(label="Nombre de publications trouvées", value=len(df_global_zenodo))
+        st.table(df_global_zenodo)
+        #df_global_zenodo.to_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv")
 
 if dryad:
     st.title(":grey[Analyse des dépôts dans Dryad]")
@@ -341,8 +342,13 @@ if dryad:
         df_dryad_global.sort_values(by='Date de publication', inplace=True, ascending=False)
         df_dryad_global.reset_index(inplace=True)
         df_dryad_global.drop(columns='index', inplace=True)
+    
+    if len(df_dryad_global)==0:
+        pass
+    else:
         st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
-        st.dataframe(df_dryad_global)
+        st.dataframe(df_dryad_global,use_container_width=True)
+        #df_dryad_global.to_csv("pages/data/Dryad/Contenu_DRYAD_complet.csv")
 
 
 if gbif:
@@ -352,6 +358,27 @@ if gbif:
     s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
     st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
 
-    params_gbif = {'q':'alpes'}
-    r = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
-    st.write(r)
+    if len(Selection_ZA)!=0:
+        liste_columns_gbif = ['Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                              'Organisation 1',"Email 1",'Résumé','Publication URL']
+        df_gbif_global = pd.DataFrame(columns=liste_columns_gbif)
+        for i in range(len(Selection_ZA)):
+            params_gbif = {'q':Selection_ZA[i],
+                           'limit':1000}
+            df_gbif = Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,Selection_ZA[i])
+            dfi = pd.concat([df_gbif_global,df_gbif], axis=0)
+            dfi.reset_index(inplace=True)
+            dfi.drop(columns='index', inplace=True)
+            df_gbif_global = dfi
+
+        df_gbif_global.sort_values(by='Date de publication', inplace=True, ascending=False)
+        df_gbif_global.reset_index(inplace=True)
+        df_gbif_global.drop(columns='index', inplace=True)
+
+        #df_gbif_global.to_csv("pages/data/Gbif/Contenu_GBIF_complet.csv")
+
+    if len(df_gbif_global)==0:
+        pass
+    else:
+        st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
+        st.dataframe(df_gbif_global)

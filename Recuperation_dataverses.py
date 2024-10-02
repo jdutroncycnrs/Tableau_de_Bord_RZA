@@ -19,6 +19,114 @@ def Recup_contenu_dataset(api,persistenteUrl):
     dataset_contenu = dataset.json()
     return dataset_contenu
 
+def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
+    entrepot_selected = []
+    identifieurs = []
+    titre = []
+    auteur_prenom1 = []
+    auteur_nom1 = []
+    auteur_affiliation1 = []
+    auteur_email1 = []
+    resume = []
+    datesPublication = []
+    publication_url = []
+    try:
+        contenu_zenodo = recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo)
+        #st.write(contenu_zenodo)
+        for i in range(len(contenu_zenodo)):
+                try:
+                    identifieurs.append(contenu_zenodo[i]['id'])
+                except:
+                    identifieurs.append("")
+                try:
+                    titre.append(contenu_zenodo[i]['metadata']['title'])
+                except:
+                    titre.append("")
+                entrepot_selected.append(entrepot)
+        
+    except:
+        pass
+    reponse_df = pd.DataFrame({'Entrepot':entrepot_selected,
+                                    'ID':identifieurs,
+                                    'Titre':titre})
+    return reponse_df
+
+def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
+    entrepot_selected = []
+    identifieurs = []
+    titre = []
+    auteur_prenom1 = []
+    auteur_nom1 = []
+    auteur_affiliation1 = []
+    auteur_email1 = []
+    resume = []
+    datesPublication = []
+    publication_url = []
+    try:
+        contenu_gbif = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
+        Nombre_gbif = contenu_gbif['count']
+        if Nombre_gbif !=0:
+            for i in range(Nombre_gbif):
+                try:
+                    identifieurs.append(contenu_gbif['results'][i]['doi'])
+                except:
+                    identifieurs.append("")
+                try:
+                    titre.append(contenu_gbif['results'][i]['title'])
+                except:
+                    titre.append("")
+                try:
+                    resume.append(contenu_gbif['results'][i]['description'])
+                except:
+                    resume.append("")
+                try:
+                    auteur_prenom1.append(contenu_gbif['results'][i]['contacts'][0]['firstName'])
+                except:
+                    auteur_prenom1.append("")
+                try:
+                    auteur_nom1.append(contenu_gbif['results'][i]['contacts'][0]['lastName'])
+                except:
+                    auteur_nom1.append("")
+                try:
+                    auteur_affiliation1.append(contenu_gbif['results'][i]['contacts'][0]['organization'])
+                except:
+                    auteur_affiliation1.append("")
+                try:
+                    auteur_email1.append(contenu_gbif['results'][i]['contacts'][0]['email'][0])
+                except:
+                    auteur_email1.append("")
+                try:
+                    if contenu_gbif['results'][i]['identifiers'][1]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][1]['identifier'])
+                    elif contenu_gbif['results'][i]['identifiers'][0]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][0]['identifier'])
+                    elif contenu_gbif['results'][i]['identifiers'][2]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][2]['identifier'])
+                    else:
+                        publication_url.append("")
+                except:
+                    publication_url.append("")
+                try:
+                    datesPublication.append(contenu_gbif['results'][i]['pubDate'])
+                except:
+                    datesPublication.append("")
+                entrepot_selected.append(entrepot)
+    except:
+        pass
+    df_gbif = pd.DataFrame({'Entrepot':entrepot_selected,
+                             'ID':identifieurs,
+                            'Date de publication':datesPublication,
+                            'Titre':titre,
+                            'Auteur prénom 1':auteur_prenom1,
+                            'Auteur Nom 1':auteur_nom1,
+                            'Organisation 1':auteur_affiliation1,
+                            "Email 1":auteur_email1,
+                            'Résumé':resume,
+                            'Publication URL':publication_url
+                                })
+    return df_gbif
+
+
 
 def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
     entrepot_selected = []
@@ -558,30 +666,19 @@ def Recup_dataverses(api, fichier):
         dat.drop(columns=['Dataverses_niv3','Ids_niv3'], inplace=True)
         dat.to_csv(f"pages/data/{fichier}")
 
-def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo, ZA):
+def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo):
     
-    liste_vide = []
     r = requests.get(url_zenodo,
                     params=params_zenodo,
                     headers=headers_zenodo)
     
     if r.status_code==200:
         resp_zenodo = r.json()['hits']['hits']
-        ids = []
-        titles = []
-        for i in range(len(resp_zenodo)):
-            ids.append(resp_zenodo[i]['id'])
-            titles.append(resp_zenodo[i]['metadata']['title'])
-        reponse_df = pd.DataFrame({'ZA':ZA,
-                                   'Ids':ids,
-                                   'Titre':titles})
-        return reponse_df
-    else:
-         return liste_vide
+        
+    return resp_zenodo
     
 def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
     
-    liste_vide = []
     r = requests.get(url_nakala,
                     params=params_nakala,
                     headers=headers_nakala)
@@ -643,7 +740,6 @@ print(json.dumps(data, indent=4))"""
 
 ## DRYAD
 def recuperation_dryad(url_dryad,params_dryad):
-    
     r = requests.get(url_dryad,
                     params=params_dryad)
     
