@@ -39,6 +39,7 @@ def Recup_contenu_dataset(api,persistenteUrl):
 
 def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
     entrepot_selected = []
+    store_z = []
     identifieurs = []
     titre = []
     auteur_prenom1 = []
@@ -61,17 +62,20 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
                 except:
                     titre.append("")
                 entrepot_selected.append(entrepot)
+                store_z.append('Zenodo')
         
     except:
         pass
-    reponse_df = pd.DataFrame({'Entrepot':entrepot_selected,
-                                    'ID':identifieurs,
-                                    'Titre':titre})
+    reponse_df = pd.DataFrame({'Store':store_z,
+                               'Entrepot':entrepot_selected,
+                               'ID':identifieurs,
+                                'Titre':titre})
     return reponse_df
 
 def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
     entrepot_selected = []
     identifieurs = []
+    store_gbif = []
     titre = []
     auteur_prenom1 = []
     auteur_nom1 = []
@@ -129,9 +133,11 @@ def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
                 except:
                     datesPublication.append("")
                 entrepot_selected.append(entrepot)
+                store_gbif.append('GBIF')
     except:
         pass
-    df_gbif = pd.DataFrame({'Entrepot':entrepot_selected,
+    df_gbif = pd.DataFrame({'Store':store_gbif,
+                            'Entrepot':entrepot_selected,
                              'ID':identifieurs,
                             'Date de publication':datesPublication,
                             'Titre':titre,
@@ -149,6 +155,7 @@ def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
 def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
     entrepot_selected = []
     identifieurs = []
+    store_dryad = []
     titre = []
     auteur_prenom1 = []
     auteur_nom1 = []
@@ -247,10 +254,12 @@ def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
                 except:
                     auteur_email3.append("")
                 entrepot_selected.append(entrepot)
+                store_dryad.append('Dryad')
     except:
         pass
 
-    df_dryad = pd.DataFrame({'Entrepot':entrepot_selected,
+    df_dryad = pd.DataFrame({'Store':store_dryad,
+                             'Entrepot':entrepot_selected,
                              'ID':identifieurs,
                             'Date de publication':datesPublication,
                             'Titre':titre,
@@ -515,7 +524,7 @@ def Recup_contenu(api,s, entrepot_data, entrepot):
         pass
     df_entrepot = pd.DataFrame({'selection':selections, 
                                 'Entrepot':entrepot_selected,
-                                'Dataverse':entrepot_dataverses,
+                                'Store':entrepot_dataverses,
                                 'ID':identifieurs,
                                 'Url':persistentUrls,
                                 'Date de publication':datesPublication,

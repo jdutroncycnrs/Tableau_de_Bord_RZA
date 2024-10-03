@@ -44,6 +44,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Paramètres visuels
+couleur_subtitles = (250,150,150)
+taille_subtitles = "25px"
+couleur_subsubtitles = (60,150,160)
+taille_subsubtitles = "25px"
+couleur_True = (0,200,0)
+couleur_False = (200,0,0)
+wch_colour_box = (250,250,220)
+wch_colour_font = (90,90,90)
+fontsize = 70
+
 
 ##########################  VARIABLES DE CONNEXION #######################
 BASE_URL="https://entrepot.recherche.data.gouv.fr/"
@@ -267,7 +278,7 @@ if rdg:
         if Recup_globale:
             with st.spinner("La récup globale est en cours"):
                 api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
-                liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+                liste_columns_df_entrepot_rdg=['selection','Entrepot','Store','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
                 df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
                 for i in range(len(dataverses)):
                     print(i)
@@ -307,26 +318,48 @@ if zenodo:
     s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
     st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
 
-    liste_columns = ['Entrepot','ID','Titre']
-    df_global_zenodo = pd.DataFrame(columns=liste_columns)
-    for i, s in enumerate(Selection_ZA):
-        params_zenodo = {'q': s,
-                 'access_token': zenodo_token}
-        df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
-        dfi = pd.concat([df_global_zenodo,df], axis=0)
-        dfi.reset_index(inplace=True)
-        dfi.drop(columns='index', inplace=True)
-        df_global_zenodo = dfi
-    df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
-    df_global_zenodo.reset_index(inplace=True)
-    df_global_zenodo.drop(columns='index', inplace=True)
+    with st.spinner("Recherche en cours"):
+        liste_columns = ['Store','Entrepot','ID','Titre']
+        df_global_zenodo = pd.DataFrame(columns=liste_columns)
+        for i, s in enumerate(Selection_ZA):
+            params_zenodo = {'q': s,
+                    'access_token': zenodo_token}
+            df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
+            dfi = pd.concat([df_global_zenodo,df], axis=0)
+            dfi.reset_index(inplace=True)
+            dfi.drop(columns='index', inplace=True)
+            df_global_zenodo = dfi
+        df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
+        df_global_zenodo.reset_index(inplace=True)
+        df_global_zenodo.drop(columns='index', inplace=True)
 
     if len(df_global_zenodo)==0:
-        pass
+        st.metric(label="Nombre de publications trouvées", value=len(df_global_zenodo))
     else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global_zenodo))
-        st.table(df_global_zenodo)
+        #st.table(df_global_zenodo)
         #df_global_zenodo.to_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv")
+
+        df_visu_zenodo = df_global_zenodo[df_global_zenodo['Entrepot'].isin(Selection_ZA)]
+        df_visu_zenodo.reset_index(inplace=True)
+        df_visu_zenodo.drop(columns='index', inplace=True)
+
+        for i in range(len(df_visu_zenodo)):
+            with st.container(border=True):
+                t0 = f"FICHIER #{i+1}"
+                s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                st.markdown(s_t0,unsafe_allow_html=True)
+                col1,col2 = st.columns([0.8,0.2])
+                with col1:
+                    t0a = 'Titre'
+                    s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                    st.markdown(s_t0a,unsafe_allow_html=True)
+                    st.markdown(df_visu_zenodo.loc[i,'Titre'])
+                with col2:
+                    t0b = 'ID'
+                    s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                    st.markdown(s_t0b,unsafe_allow_html=True)
+                    st.markdown(df_visu_zenodo.loc[i,'ID'])
 
 if dryad:
     st.title(":grey[Analyse des dépôts dans Dryad]")
@@ -335,10 +368,10 @@ if dryad:
     s_adresse_dryad = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dryad}</p>"
     st.markdown(s_adresse_dryad ,unsafe_allow_html=True)
 
-    if len(Selection_ZA)!=0:
-        liste_columns_dryad = ['Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
-                         'Organisation 1',"Email 1",'Auteur prénom 2','Auteur Nom 2','Organisation 2',"Email 2",
-                         'Auteur prénom 3','Auteur Nom 3','Organisation 3',"Email 3",'Résumé','Thème','Publication URL']
+    with st.spinner("Recherche en cours"):
+        liste_columns_dryad = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                            'Organisation 1',"Email 1",'Auteur prénom 2','Auteur Nom 2','Organisation 2',"Email 2",
+                            'Auteur prénom 3','Auteur Nom 3','Organisation 3',"Email 3",'Résumé','Thème','Publication URL']
         df_dryad_global = pd.DataFrame(columns=liste_columns_dryad)
         for i in range(len(Selection_ZA)):
             params_dryad = {'q':Selection_ZA[i]}
@@ -353,11 +386,68 @@ if dryad:
         df_dryad_global.drop(columns='index', inplace=True)
     
     if len(df_dryad_global)==0:
-        pass
+        st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
     else:
         st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
-        st.dataframe(df_dryad_global,use_container_width=True)
+        #st.dataframe(df_dryad_global,use_container_width=True)
         #df_dryad_global.to_csv("pages/data/Dryad/Contenu_DRYAD_complet.csv")
+
+        df_visu_dryad = df_dryad_global[df_dryad_global['Entrepot'].isin(Selection_ZA)]
+        df_visu_dryad.reset_index(inplace=True)
+        df_visu_dryad.drop(columns='index', inplace=True)
+
+        for i in range(len(df_visu_dryad)):
+            with st.container(border=True):
+                t0 = f"FICHIER #{i+1}"
+                s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                st.markdown(s_t0,unsafe_allow_html=True)
+                col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                with col1:
+                    t0a = 'Titre'
+                    s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                    st.markdown(s_t0a,unsafe_allow_html=True)
+                    st.markdown(df_visu_dryad.loc[i,'Titre'])
+                with col2:
+                    t0b = 'Thème'
+                    s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                    st.markdown(s_t0b,unsafe_allow_html=True)
+                    st.markdown(df_visu_dryad.loc[i,'Thème'])
+                with col3:
+                    t0c = 'Date'
+                    s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                    st.markdown(s_t0c,unsafe_allow_html=True)
+                    st.markdown(df_visu_dryad.loc[i,'Date de publication'])
+                col1,col2 = st.columns([0.6,0.4])
+                with col1:
+                    t0d = 'Résumé'
+                    s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                    st.markdown(s_t0d,unsafe_allow_html=True)
+                    st.markdown(df_visu_dryad.loc[i,'Résumé'])
+                with col2:
+                    t0e = 'Publication URL'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    st.markdown(df_visu_dryad.loc[i,'Publication URL'])
+                col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                with col1:
+                    t0g = 'Auteur'
+                    s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                    st.markdown(s_t0g,unsafe_allow_html=True)
+                with col2:
+                    t0h = 'Organisation'
+                    s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                    st.markdown(s_t0h,unsafe_allow_html=True)
+                with col3:
+                    t0i = 'Email'
+                    s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                    st.markdown(s_t0i,unsafe_allow_html=True)
+                for b in range(3):
+                    with col1:
+                        st.markdown(f"{df_visu_dryad.loc[i,f'Auteur Nom {b+1}']} , {df_visu_dryad.loc[i,f'Auteur prénom {b+1}']}")
+                    with col2:
+                        st.markdown(df_visu_dryad.loc[i,f'Organisation {b+1}'])
+                    with col3:
+                        st.markdown(df_visu_dryad.loc[i,f'Email {b+1}'])
 
 
 if gbif:
@@ -367,13 +457,13 @@ if gbif:
     s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
     st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
 
-    if len(Selection_ZA)!=0:
-        liste_columns_gbif = ['Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
-                              'Organisation 1',"Email 1",'Résumé','Publication URL']
+    with st.spinner("Recherche en cours"):
+        liste_columns_gbif = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                                'Organisation 1',"Email 1",'Résumé','Publication URL']
         df_gbif_global = pd.DataFrame(columns=liste_columns_gbif)
         for i in range(len(Selection_ZA)):
             params_gbif = {'q':Selection_ZA[i],
-                           'limit':1000}
+                            'limit':1000}
             df_gbif = Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,Selection_ZA[i])
             dfi = pd.concat([df_gbif_global,df_gbif], axis=0)
             dfi.reset_index(inplace=True)
@@ -383,11 +473,64 @@ if gbif:
         df_gbif_global.sort_values(by='Date de publication', inplace=True, ascending=False)
         df_gbif_global.reset_index(inplace=True)
         df_gbif_global.drop(columns='index', inplace=True)
+        df_gbif_global['Date de publication 2'] = pd.to_datetime(df_gbif_global['Date de publication']).dt.strftime('%Y-%m-%d')
 
-        #df_gbif_global.to_csv("pages/data/Gbif/Contenu_GBIF_complet.csv")
+    df_gbif_global.to_csv("pages/data/Gbif/Contenu_GBIF_complet.csv")
 
     if len(df_gbif_global)==0:
-        pass
+        st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
     else:
         st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
-        st.dataframe(df_gbif_global)
+        #st.dataframe(df_gbif_global)
+
+        df_visu_gbif = df_gbif_global[df_gbif_global['Entrepot'].isin(Selection_ZA)]
+        df_visu_gbif.reset_index(inplace=True)
+        df_visu_gbif.drop(columns='index', inplace=True)
+
+        for i in range(len(df_visu_gbif)):
+            with st.container(border=True):
+                t0 = f"FICHIER #{i+1}"
+                s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                st.markdown(s_t0,unsafe_allow_html=True)
+                col1,col2 = st.columns([0.8,0.2])
+                with col1:
+                    t0a = 'Titre'
+                    s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                    st.markdown(s_t0a,unsafe_allow_html=True)
+                    st.markdown(df_visu_gbif.loc[i,'Titre'])
+                with col2:
+                    t0c = 'Date'
+                    s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                    st.markdown(s_t0c,unsafe_allow_html=True)
+                    st.markdown(df_visu_gbif.loc[i,'Date de publication 2'])
+                col1,col2 = st.columns([0.6,0.4])
+                with col1:
+                    t0d = 'Résumé'
+                    s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                    st.markdown(s_t0d,unsafe_allow_html=True)
+                    st.markdown(df_visu_gbif.loc[i,'Résumé'])
+                with col2:
+                    t0e = 'Publication URL'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    st.markdown(df_visu_gbif.loc[i,'Publication URL'])
+                col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                with col1:
+                    t0g = 'Auteur'
+                    s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                    st.markdown(s_t0g,unsafe_allow_html=True)
+                with col2:
+                    t0h = 'Organisation'
+                    s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                    st.markdown(s_t0h,unsafe_allow_html=True)
+                with col3:
+                    t0i = 'Email'
+                    s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                    st.markdown(s_t0i,unsafe_allow_html=True)
+                for b in range(1):
+                    with col1:
+                        st.markdown(f"{df_visu_gbif.loc[i,f'Auteur Nom {b+1}']} , {df_visu_gbif.loc[i,f'Auteur prénom {b+1}']}")
+                    with col2:
+                        st.markdown(df_visu_gbif.loc[i,f'Organisation {b+1}'])
+                    with col3:
+                        st.markdown(df_visu_gbif.loc[i,f'Email {b+1}'])
