@@ -9,6 +9,24 @@ import requests
 import streamlit as st
 from markdownify import markdownify as md
 
+
+def search_in_json(data, search_string):
+    if isinstance(data, dict):
+        # If data is a dictionary, search in values recursively
+        for key, value in data.items():
+            if search_string in key.lower() or search_in_json(value, search_string):
+                return True
+    elif isinstance(data, list):
+        # If data is a list, search in each item recursively
+        for item in data:
+            if search_in_json(item, search_string):
+                return True
+    elif isinstance(data, str):
+        # If data is a string, check if search_string is in it
+        if search_string in data.lower():
+            return True
+    return False
+
 def Recup_contenu_dataverse(api,s):
     datav = api.get_dataverse_contents(s)
     datav_contenu = datav.json()
@@ -255,12 +273,13 @@ def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
     return Nombre_dryad, df_dryad
 
 
-def Recup_contenu(api,s, entrepot):
+def Recup_contenu(api,s, entrepot_data, entrepot):
     identifieurs = []
     persistentUrls = []
     datesPublication = []
     selections = []
     entrepot_selected = []
+    entrepot_dataverses = []
     titre = []
     auteur = []
     auteur_affiliation = []
@@ -268,6 +287,7 @@ def Recup_contenu(api,s, entrepot):
     resume = []
     subject = []
     publication_url = []
+    checks = []
     try:
         datav_contenu = Recup_contenu_dataverse(api,s)
         if len(datav_contenu['data'])==0:
@@ -295,6 +315,11 @@ def Recup_contenu(api,s, entrepot):
                             try:
                                 contenu = api.get_dataset_versions(persistentUrl)
                                 contenu_json = contenu.json()
+                                try:
+                                    check = search_in_json(contenu_json, entrepot.lower())
+                                    checks.append(check)
+                                except:
+                                    checks.append(False)
                                 try:
                                     if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['typeName']=='title':
                                         titre.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['value'])
@@ -364,6 +389,7 @@ def Recup_contenu(api,s, entrepot):
                                 resume.append('')
                                 subject.append('')
                                 publication_url.append('')
+                                checks.append(False)
                         except:
                             persistentUrls.append("")
                             titre.append("")
@@ -373,10 +399,13 @@ def Recup_contenu(api,s, entrepot):
                             resume.append('')
                             subject.append('')
                             publication_url.append('')
+                            checks.append(False)
                         selections.append(s)
                         entrepot_selected.append(entrepot)
+                        entrepot_dataverses.append(entrepot_data)
                         
                 elif test_type == "dataset":
+                    
                     try:
                         identifieur = datav_contenu["data"][j]['identifier']
                         identifieurs.append(identifieur)
@@ -394,6 +423,11 @@ def Recup_contenu(api,s, entrepot):
                             contenu = api.get_dataset_versions(persistentUrl)
                             contenu_json = contenu.json()
                             #st.write(contenu_json)
+                            try:
+                                check = search_in_json(contenu_json, entrepot.lower())
+                                checks.append(check)
+                            except:
+                                checks.append(False)
                             try:
                                 if contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['typeName']=='title':
                                     titre.append(contenu_json['data'][0]['metadataBlocks']['citation']['fields'][0]['value'])
@@ -463,6 +497,7 @@ def Recup_contenu(api,s, entrepot):
                             resume.append('')
                             subject.append('')
                             publication_url.append('')
+                            checks.append(False)
                     except:
                         persistentUrls.append("")
                         titre.append("")
@@ -472,12 +507,15 @@ def Recup_contenu(api,s, entrepot):
                         resume.append('')
                         subject.append('')
                         publication_url.append('')
+                        checks.append(False)
                     selections.append(s)
                     entrepot_selected.append(entrepot)
+                    entrepot_dataverses.append(entrepot_data)
     except:
         pass
     df_entrepot = pd.DataFrame({'selection':selections, 
                                 'Entrepot':entrepot_selected,
+                                'Dataverse':entrepot_dataverses,
                                 'ID':identifieurs,
                                 'Url':persistentUrls,
                                 'Date de publication':datesPublication,
@@ -487,7 +525,8 @@ def Recup_contenu(api,s, entrepot):
                                 "Email":auteur_email,
                                 'Résumé':resume,
                                 'Thème':subject,
-                                'Publication URL':publication_url
+                                'Publication URL':publication_url,
+                                'Check':checks
                                 })
     return df_entrepot
 

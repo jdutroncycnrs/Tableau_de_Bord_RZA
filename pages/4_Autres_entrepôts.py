@@ -222,21 +222,23 @@ if rdg:
     with col2:
         sun = st.checkbox("Voir le sunburst des entrepôts", key='sun', on_change=handle_sunburst_change)
 
+
     if tab:
         dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
         Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
         api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
         with st.spinner("Analyse en cours"):
-            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL', 'Check']
             df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
             s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
-            df = Recup_contenu(api_rdg, s, Selected_entrepot)
+            df = Recup_contenu(api_rdg, s, Selected_entrepot, Selection_ZA[0])
             dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
             dfi.reset_index(inplace=True)
             dfi.drop(columns='index', inplace=True)
             df_entrepot_rdg_selected = dfi
-            df_entrepot_rdg_selected.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG__{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
-        st.dataframe(df_entrepot_rdg_selected,use_container_width=True)
+            df_entrepot_rdg_selected_ = df_entrepot_rdg_selected[df_entrepot_rdg_selected['Check']==True]
+            df_entrepot_rdg_selected_.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG_{Selection_ZA[0]}_{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
+        st.dataframe(df_entrepot_rdg_selected_,use_container_width=True)
 
     if sun:
         fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
@@ -268,13 +270,20 @@ if rdg:
                 liste_columns_df_entrepot_rdg=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
                 df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
                 for i in range(len(dataverses)):
-                    s = int(dataverses.loc[i,'ids_niv2'])
-                    entrepot = dataverses.loc[i,'niv2']
-                    df = Recup_contenu(api_rdg, s, entrepot)
-                    dfi = pd.concat([df_entrepot_rdg,df], axis=0)
-                    dfi.reset_index(inplace=True)
-                    dfi.drop(columns='index', inplace=True)
-                    df_entrepot_rdg = dfi
+                    print(i)
+                    for j in range(len(Selection_ZA)):
+                        try:
+                            s = int(dataverses.loc[i,'ids_niv2'])
+                            entrepot = dataverses.loc[i,'niv2']
+                            df = Recup_contenu(api_rdg, s, entrepot, Selection_ZA[j])
+                            dfi = pd.concat([df_entrepot_rdg,df], axis=0)
+                            dfi.reset_index(inplace=True)
+                            dfi.drop(columns='index', inplace=True)
+                            dfi_ = dfi[dfi['Check']==True]
+                            df_entrepot_rdg = dfi_
+                        except:
+                            pass
+                        
                 df_entrepot_rdg.to_csv("pages/data/rechercheDataGouv/Contenu_RDG_complet.csv")
 
     ############################################################################
