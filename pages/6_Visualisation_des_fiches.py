@@ -524,32 +524,34 @@ if Visu_attachments:
     with col2:
         st.metric(label="Taille cumulée de fichiers attachés (Octets)", value=count_tailles_fichiers_selected_df)
 
-    with st.container(border=True):
-        Visu_attachements = f"Fiche en cours"
-        s_Visu_attachements  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_attachements}</p>"
-        st.markdown(s_Visu_attachements ,unsafe_allow_html=True)
+    
+    Visu_attachements = f"Fiche en cours"
+    s_Visu_attachements  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_attachements}</p>"
+    st.markdown(s_Visu_attachements ,unsafe_allow_html=True)
 
-        df_attachements_visu_i = df_attachements_visu[df_attachements_visu['Identifiant']==identifieur]
+    df_attachements_visu_i = df_attachements_visu[df_attachements_visu['Identifiant']==identifieur]
+    #st.dataframe(df_attachements_visu_i)
+        
+    for i in range(len(df_attachements_visu_i['Noms des fichiers'].values[0])):
+        with st.container(border=True):
+            t0 = f"FICHIER #{i+1}"
+            s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+            st.markdown(s_t0,unsafe_allow_html=True)
+            col1,col2 = st.columns(2)
+            with col1:
+                t0a = 'Noms'
+                s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                st.markdown(s_t0a,unsafe_allow_html=True)
+                st.markdown(df_attachements_visu_i['Noms des fichiers'].values[0][i])
+            with col2:
+                t0b = 'Tailles'
+                s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                st.markdown(s_t0b,unsafe_allow_html=True)
+                st.markdown(df_attachements_visu_i['Tailles des fichiers'].values[0][i])
 
-        
-        
-        if len(df_attachements_visu_i)!=0:
-            for i in range(len(df_attachements_visu_i['Noms des fichiers'].values[0])):
-                with st.container(border=True):
-                    t0 = f"FICHIER #{i+1}"
-                    s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
-                    st.markdown(s_t0,unsafe_allow_html=True)
-                    col1,col2 = st.columns(2)
-                    with col1:
-                        t0a = 'Noms'
-                        s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
-                        st.markdown(s_t0a,unsafe_allow_html=True)
-                        st.markdown(df_attachements_visu_i['Noms des fichiers'].values[0][i])
-                    with col2:
-                        t0b = 'Tailles'
-                        s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
-                        st.markdown(s_t0b,unsafe_allow_html=True)
-                        st.markdown(df_attachements_visu_i['Tailles des fichiers'].values[0][i])
+    if len(df_attachements_visu_i['Noms des fichiers'].values[0])==0 and len(df_attachements_visu_i['Tailles des fichiers'].values[0])==0:
+        st.markdown("Il n'y a pas de fichiers attachés")
+
 
     #st.dataframe(df_attachements_visu_i)
 
@@ -562,6 +564,11 @@ elif Ressources_associees:
 
     df_ressources_visu = df_ressources[df_ressources['Identifiant'].isin(selected_uuids_)]
     df_ressources_visu.reset_index(drop=True, inplace=True)
+
+    #st.dataframe(df_ressources_visu)
+
+    df_ressources_visu_checked = df_ressources_visu[(df_ressources_visu['Check_children'] == True) | (df_ressources_visu['Check_parent'] == True)]
+    st.dataframe(df_ressources_visu_checked)
 
     sum_children = df_ressources_visu['Nombre_children'].sum()
     sum_parent = df_ressources_visu['Nombre_parent'].sum()
@@ -588,15 +595,28 @@ elif Ressources_associees:
 
 
     df_ressources_visu_i = df_ressources[df_ressources['Identifiant']==identifieur]
+    #st.dataframe(df_ressources_visu_i)
     col1,col2,col3,col4 = st.columns(4)
     with col1:
-        st.metric(label='Brothers And Sisters', value=df_ressources_visu_i['Nombre_BroAndSisters'])
+        if len(df_ressources_visu_i)==0:
+            st.metric(label='Brothers And Sisters', value=0)
+        else:
+            st.metric(label='Brothers And Sisters', value=df_ressources_visu_i['Nombre_BroAndSisters'])
     with col2:
-        st.metric(label='Childrens', value=df_ressources_visu_i['Nombre_children'])
+        if len(df_ressources_visu_i['Nombre_children'])==0:
+            st.metric(label='Childrens', value=0)
+        else:
+            st.metric(label='Childrens', value=df_ressources_visu_i['Nombre_children'])
     with col3:
-        st.metric(label='Parents', value=df_ressources_visu_i['Nombre_parent'])
+        if len(df_ressources_visu_i['Nombre_parent'])==0:
+            st.metric(label='Parents', value=0)
+        else:
+            st.metric(label='Parents', value=df_ressources_visu_i['Nombre_parent'])
     with col4:
-        st.metric(label="Catalogue d'attributs", value=df_ressources_visu_i['Nombre_fcats'])
+        if len(df_ressources_visu_i['Nombre_fcats'])==0:
+            st.metric(label="Catalogue d'attributs", value=0)
+        else:
+            st.metric(label="Catalogue d'attributs", value=df_ressources_visu_i['Nombre_fcats'])
 
     
     liste_col_transfo_ressources = ['facts url (properties)','Titre facts',
