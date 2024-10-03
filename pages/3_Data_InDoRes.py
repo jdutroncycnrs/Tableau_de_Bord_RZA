@@ -208,34 +208,32 @@ if admin_action == admin_pass:
 
 df_complet = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
 
-if len(Selection_ZA)!=0:
-    
-    with st.container(border=True):
-        Nombre_depots = df_complet['Entrepot'].value_counts()
-        for i in range(len(liste_ZAs_)):
-            if liste_ZAs_[i] in Nombre_depots.index.values:
-                pass
-            else:
-                Nombre_depots[liste_ZAs_[i]]=0
-        df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
-        fig0= go.Figure()
-        for i, za in enumerate(df.index.values):
-            selec = df.index.values[i:i+1]
-            selec_len = df['Nombre_dépôts'].values[i:i+1]
-            fig0.add_trace(go.Bar(
+with st.container(border=True):
+    Nombre_depots = df_complet['Entrepot'].value_counts()
+    for i in range(len(liste_ZAs_)):
+        if liste_ZAs_[i] in Nombre_depots.index.values:
+            pass
+        else:
+            Nombre_depots[liste_ZAs_[i]]=0
+    df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
+    fig0= go.Figure()
+    for i, za in enumerate(df.index.values):
+        selec = df.index.values[i:i+1]
+        selec_len = df['Nombre_dépôts'].values[i:i+1]
+        fig0.add_trace(go.Bar(
                         y=selec,
                         x=selec_len,
                         name=za,
                         orientation = 'h',
                         marker=dict(color=colors[i])
                     ))
-        fig0.update_layout(
-                                title=dict(
-                                    text=f'Nombre de dépôts répertoriées',
-                                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
+    fig0.update_layout(
+                        title=dict(
+                                text=f'Nombre de dépôts répertoriées',
+                                font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                                 ),
-                                yaxis=dict(
-                                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                        yaxis=dict(
+                                tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
                                 ),
                                 xaxis=dict(
                                     tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
@@ -243,13 +241,39 @@ if len(Selection_ZA)!=0:
                                 width=1000,
                                 height=600,
                                 showlegend=False)
-        st.plotly_chart(fig0,use_container_width=True)
+    st.plotly_chart(fig0,use_container_width=True)
 
+if len(Selection_ZA)!=0:
     df_visu = df_complet[df_complet['Entrepot'].isin(Selection_ZA)]
     df_visu.reset_index(inplace=True)
     df_visu.drop(columns='index', inplace=True)
     #st.dataframe(df_visu)
 
+    if len(Selection_ZA)==1:
+        col1,col2 = st.columns([0.7,0.3])
+        with col1:
+            Visu_depots = f"Données publiées dans la {Selection_ZA[0]}"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+        with col2:
+            st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+    elif 1<len(Selection_ZA)<16:
+        col1,col2 = st.columns([0.7,0.3])
+        with col1:
+            Visu_depots = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+        with col2:
+            st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+    elif len(Selection_ZA)==16:
+        col1,col2 = st.columns([0.7,0.3])
+        with col1:
+            Visu_depots = f"Données publiées dans l'ensemble du réseau des Zones Ateliers"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+        with col2:
+            st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+    
     if len(df_visu)!=0:
             for i in range(len(df_visu)):
                 with st.container(border=True):
