@@ -544,12 +544,12 @@ if Visu_attachments:
                         t0a = 'Noms'
                         s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
                         st.markdown(s_t0a,unsafe_allow_html=True)
-                        st.write(df_attachements_visu_i['Noms des fichiers'].values[0][i])
+                        st.markdown(df_attachements_visu_i['Noms des fichiers'].values[0][i])
                     with col2:
                         t0b = 'Tailles'
                         s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
                         st.markdown(s_t0b,unsafe_allow_html=True)
-                        st.write(df_attachements_visu_i['Tailles des fichiers'].values[0][i])
+                        st.markdown(df_attachements_visu_i['Tailles des fichiers'].values[0][i])
 
     #st.dataframe(df_attachements_visu_i)
 

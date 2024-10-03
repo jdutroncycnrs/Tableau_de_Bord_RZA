@@ -133,6 +133,17 @@ legend_font =15
 graph_title_color = "gray"
 graph_ticks_color = 'gray'
 
+# Paramètres visuels
+couleur_subtitles = (250,150,150)
+taille_subtitles = "25px"
+couleur_subsubtitles = (60,150,160)
+taille_subsubtitles = "25px"
+couleur_True = (0,200,0)
+couleur_False = (200,0,0)
+wch_colour_box = (250,250,220)
+wch_colour_font = (90,90,90)
+fontsize = 70
+
 ############################################################################
 
 fi = glob.glob(f"pages/data/tableau_dataverses*.csv")
@@ -220,7 +231,7 @@ if len(Selection_ZA)!=0:
                     ))
         fig0.update_layout(
                                 title=dict(
-                                    text=f'Nombre de dépôts répertoriées au {d}',
+                                    text=f'Nombre de dépôts répertoriées',
                                     font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                                 ),
                                 yaxis=dict(
@@ -234,8 +245,65 @@ if len(Selection_ZA)!=0:
                                 showlegend=False)
         st.plotly_chart(fig0,use_container_width=True)
 
-    with st.container(border=True):
-        st.dataframe(df_complet[df_complet['Entrepot'].isin(Selection_ZA)])
+    df_visu = df_complet[df_complet['Entrepot'].isin(Selection_ZA)]
+    df_visu.reset_index(inplace=True)
+    df_visu.drop(columns='index', inplace=True)
+    #st.dataframe(df_visu)
+
+    if len(df_visu)!=0:
+            for i in range(len(df_visu)):
+                with st.container(border=True):
+                    t0 = f"FICHIER #{i+1}"
+                    s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                    st.markdown(s_t0,unsafe_allow_html=True)
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0a = 'Titre'
+                        s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                        st.markdown(s_t0a,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Titre'])
+                    with col2:
+                        t0b = 'Thème'
+                        s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                        st.markdown(s_t0b,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Thème'])
+                    with col3:
+                        t0c = 'Date'
+                        s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                        st.markdown(s_t0c,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Date de publication'])
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0d = 'Résumé'
+                        s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                        st.markdown(s_t0d,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Résumé'])
+                    with col2:
+                        t0e = 'Publication URL'
+                        s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                        st.markdown(s_t0e,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Publication URL'])
+                    with col3:
+                        t0f = 'DOI'
+                        s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                        st.markdown(s_t0f,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Url'])
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0g = 'Auteur'
+                        s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                        st.markdown(s_t0g,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Auteur'])
+                    with col2:
+                        t0h = 'Organisation'
+                        s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                        st.markdown(s_t0h,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Organisation'])
+                    with col3:
+                        t0i = 'Email'
+                        s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                        st.markdown(s_t0i,unsafe_allow_html=True)
+                        st.markdown(df_visu.loc[i,'Email'])
 
 #############  VISU SUNBURST ###############################################
 
