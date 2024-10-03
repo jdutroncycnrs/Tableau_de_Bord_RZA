@@ -283,6 +283,7 @@ if rdg:
                 for i in range(len(dataverses)):
                     print(i)
                     for j in range(len(Selection_ZA)):
+                        print(j)
                         try:
                             s = int(dataverses.loc[i,'ids_niv2'])
                             entrepot = dataverses.loc[i,'niv2']
