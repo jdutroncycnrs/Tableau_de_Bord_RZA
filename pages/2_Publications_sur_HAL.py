@@ -79,7 +79,7 @@ with col2:
 st.title(":grey[Analyse des publications sur HAL]")
 
 
-liste_columns_hal = ['Source','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
+liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
 df_global_hal = pd.DataFrame(columns=liste_columns_hal)
 for i, s in enumerate(Selection_ZA):
         url_type = f'http://api.archives-ouvertes.fr/search/?q=text:{s.lower().strip()}&rows=1500&wt=json&fq=producedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
@@ -98,7 +98,7 @@ else:
         st.metric(label="Nombre de publications trouvées", value=len(df_global_hal))
         #st.dataframe(df_global)
 
-        #df_global_hal.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
+        df_global_hal.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
         csv = df.to_csv(index=False)
 
         # Download button

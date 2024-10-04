@@ -567,7 +567,7 @@ elif Ressources_associees:
 
     #st.dataframe(df_ressources_visu)
 
-    df_ressources_visu_checked = df_ressources_visu[(df_ressources_visu['Check_children'] == True) | (df_ressources_visu['Check_parent'] == True)]
+    df_ressources_visu_checked = df_ressources_visu[(df_ressources_visu['Check_BroAndSisters'] == True) | (df_ressources_visu['Check_children'] == True) | (df_ressources_visu['Check_parent'] == True) | (df_ressources_visu['Check_fcats'] == True)]
     st.dataframe(df_ressources_visu_checked)
 
     sum_children = df_ressources_visu['Nombre_children'].sum()

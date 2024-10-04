@@ -38,7 +38,7 @@ def afficher_publications_hal(requete_api_hal: str, ZA):
             date.append(doc['producedDateY_i'])
             source.append('HAL')
 
-        reponse_df = pd.DataFrame({'Source':source,
+        reponse_df = pd.DataFrame({'Store':source,
                                    'Entrepot':ZA,
                                    'Ids':ids,
                                    'Titre et auteurs':labels,
