@@ -558,17 +558,22 @@ if Visu_attachments:
 elif Ressources_associees:
     df_ressources = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
 
-    Sommes_check_selected_df = f"Décomptes sur la sélection en cours"
-    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
-    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
-
     df_ressources_visu = df_ressources[df_ressources['Identifiant'].isin(selected_uuids_)]
     df_ressources_visu.reset_index(drop=True, inplace=True)
 
     #st.dataframe(df_ressources_visu)
 
     df_ressources_visu_checked = df_ressources_visu[(df_ressources_visu['Check_BroAndSisters'] == True) | (df_ressources_visu['Check_children'] == True) | (df_ressources_visu['Check_parent'] == True) | (df_ressources_visu['Check_fcats'] == True)]
+    df_ressources_visu_checked.reset_index(drop=True, inplace=True)
     st.dataframe(df_ressources_visu_checked)
+
+    col1, col2 = st.columns([0.6,0.4])
+    with col1:
+        Sommes_check_selected_df = f"Décomptes sur la sélection en cours / sur {len(df_ressources_visu_checked)} fiches"
+        s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+        st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+    with col2:
+        visu_ressources_selected = st.checkbox(label= "Voir les ressources des fiches sélectionnées")
 
     sum_children = df_ressources_visu['Nombre_children'].sum()
     sum_parent = df_ressources_visu['Nombre_parent'].sum()
@@ -589,220 +594,224 @@ elif Ressources_associees:
     with col4:
         st.metric(label="Catalogue d'attributs", value=sum_fcats)
 
-    Visu_ressources = f"Fiche en cours"
-    s_Visu_ressources  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_ressources}</p>"
-    st.markdown(s_Visu_ressources ,unsafe_allow_html=True)
+    if visu_ressources_selected:
+        pass
+    else:
+
+        Visu_ressources = f"Fiche en cours"
+        s_Visu_ressources  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_ressources}</p>"
+        st.markdown(s_Visu_ressources ,unsafe_allow_html=True)
 
 
-    df_ressources_visu_i = df_ressources[df_ressources['Identifiant']==identifieur]
-    #st.dataframe(df_ressources_visu_i)
-    col1,col2,col3,col4 = st.columns(4)
-    with col1:
-        if len(df_ressources_visu_i)==0:
-            st.metric(label='Brothers And Sisters', value=0)
-        else:
-            st.metric(label='Brothers And Sisters', value=df_ressources_visu_i['Nombre_BroAndSisters'])
-    with col2:
-        if len(df_ressources_visu_i['Nombre_children'])==0:
-            st.metric(label='Childrens', value=0)
-        else:
-            st.metric(label='Childrens', value=df_ressources_visu_i['Nombre_children'])
-    with col3:
-        if len(df_ressources_visu_i['Nombre_parent'])==0:
-            st.metric(label='Parents', value=0)
-        else:
-            st.metric(label='Parents', value=df_ressources_visu_i['Nombre_parent'])
-    with col4:
-        if len(df_ressources_visu_i['Nombre_fcats'])==0:
-            st.metric(label="Catalogue d'attributs", value=0)
-        else:
-            st.metric(label="Catalogue d'attributs", value=df_ressources_visu_i['Nombre_fcats'])
+        df_ressources_visu_i = df_ressources[df_ressources['Identifiant']==identifieur]
+        #st.dataframe(df_ressources_visu_i)
+        col1,col2,col3,col4 = st.columns(4)
+        with col1:
+            if len(df_ressources_visu_i)==0:
+                st.metric(label='Brothers And Sisters', value=0)
+            else:
+                st.metric(label='Brothers And Sisters', value=df_ressources_visu_i['Nombre_BroAndSisters'])
+        with col2:
+            if len(df_ressources_visu_i['Nombre_children'])==0:
+                st.metric(label='Childrens', value=0)
+            else:
+                st.metric(label='Childrens', value=df_ressources_visu_i['Nombre_children'])
+        with col3:
+            if len(df_ressources_visu_i['Nombre_parent'])==0:
+                st.metric(label='Parents', value=0)
+            else:
+                st.metric(label='Parents', value=df_ressources_visu_i['Nombre_parent'])
+        with col4:
+            if len(df_ressources_visu_i['Nombre_fcats'])==0:
+                st.metric(label="Catalogue d'attributs", value=0)
+            else:
+                st.metric(label="Catalogue d'attributs", value=df_ressources_visu_i['Nombre_fcats'])
 
-    
-    liste_col_transfo_ressources = ['facts url (properties)','Titre facts',
-                                        'Children url (properties)','Titre children','Résumé children','Formats children','Urls children',
-                                        'Parent url (properties)','Titre parents','Résumé parents','Formats parents','Urls parents',
-                                        'brothersAndSisters url (properties)','Titre brothersAndSisters','Résumé brothersAndSisters','Formats brothersAndSisters','Urls brothersAndSisters']
-    for x, col in enumerate(liste_col_transfo_ressources):
-        df_ressources_visu_i[col] = df_ressources_visu_i[col].apply(transfo)
         
-    #st.dataframe(df_ressources_visu_i)
-    if len(df_ressources_visu_i)!=0:
+        liste_col_transfo_ressources = ['facts url (properties)','Titre facts',
+                                            'Children url (properties)','Titre children','Résumé children','Formats children','Urls children',
+                                            'Parent url (properties)','Titre parents','Résumé parents','Formats parents','Urls parents',
+                                            'brothersAndSisters url (properties)','Titre brothersAndSisters','Résumé brothersAndSisters','Formats brothersAndSisters','Urls brothersAndSisters']
+        for x, col in enumerate(liste_col_transfo_ressources):
+            df_ressources_visu_i[col] = df_ressources_visu_i[col].apply(transfo)
             
-        if df_ressources_visu_i['Check_BroAndSisters'].values:
-            for i in range(len(df_ressources_visu_i['Titre brothersAndSisters'].values[0])):
-                with st.container(border=True):
-                    t1 = f"BROTHERS & SISTERS - #{i+1}"
-                    s_t1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t1}</p>"
-                    st.markdown(s_t1,unsafe_allow_html=True)
-                    col1,col2,col3 =st.columns([0.5,0.3,0.2])
-                    with col1:
-                        t1a = 'Titre'
-                        s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
-                        st.markdown(s_t1a,unsafe_allow_html=True)
-                        try:
-                            st.write(df_ressources_visu_i['Titre brothersAndSisters'].values[0][i])
-                        except:
-                            pass
-                    with col2:
-                        t1b = 'Urls'
-                        s_t1b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1b}</p>"
-                        st.markdown(s_t1b,unsafe_allow_html=True)
-                        try:
-                            for j in range(len(df_ressources_visu_i['Urls brothersAndSisters'].values[0][i])):
-                                st.write(df_ressources_visu_i['Urls brothersAndSisters'].values[0][i][j])
-                        except:
-                            pass
-                    with col3:
-                        t1c = 'Format'
-                        s_t1c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1c}</p>"
-                        st.markdown(s_t1c,unsafe_allow_html=True)
-                        try:
-                            st.write(df_ressources_visu_i['Formats brothersAndSisters'].values[0][i])
-                        except:
-                            pass
+        #st.dataframe(df_ressources_visu_i)
+        if len(df_ressources_visu_i)!=0:
                 
-                    col1,col2 =st.columns(2)
-                    with col1:
-                        t1d = 'Résumé'
-                        s_t1d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1d}</p>"
-                        st.markdown(s_t1d,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Résumé brothersAndSisters'].values[0][i])
-                        except:
-                            pass
-                    with col2:
-                        t1e = 'Autres Urls'
-                        s_t1e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1e}</p>"
-                        st.markdown(s_t1e,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['brothersAndSisters url (properties)'].values[0][i])
-                        except:
-                            pass
-
-            
-        if df_ressources_visu_i['Check_children'].values:
-            for i in range(len(df_ressources_visu_i['Titre children'].values[0])):
-                with st.container(border=True):
-                    t2 = f"CHILDREN - #{i+1}"
-                    s_t2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t2}</p>"
-                    st.markdown(s_t2,unsafe_allow_html=True)
-                    col1,col2,col3 =st.columns([0.5,0.3,0.2])
-                    with col1:
-                        t2a = 'Titre'
-                        s_t2a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2a}</p>"
-                        st.markdown(s_t2a,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Titre children'].values[0][i])
-                        except:
-                            pass
-                    with col2:
-                        t2d = 'Urls'
-                        s_t2d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2d}</p>"
-                        st.markdown(s_t2d,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Urls children'].values[0][i])
-                        except:
-                            pass
-                    with col3:
-                        t2c = 'Format'
-                        s_t2c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2c}</p>"
-                        st.markdown(s_t2c,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Formats children'].values[0][i])
-                        except:
-                            pass
-
-                    col1,col2 =st.columns(2)
-                    with col1:
-                        t2d = 'Résumé'
-                        s_t2d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2d}</p>"
-                        st.markdown(s_t2d,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Résumé children'].values[0][i])
-                        except:
-                            pass
-                    with col2:
-                        t2e = 'Autres Urls'
-                        s_t2e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2e}</p>"
-                        st.markdown(s_t2e,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Children url (properties)'].values[0][i])
-                        except:
-                            pass
-
-        if df_ressources_visu_i['Check_parent'].values:
-            for i in range(len(df_ressources_visu_i['Titre parents'].values[0])):
-                with st.container(border=True):
-                    t3 = f"PARENT - #{i+1}"
-                    s_t3 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t3}</p>"
-                    st.markdown(s_t3,unsafe_allow_html=True)
-                    col1,col2,col3 =st.columns([0.5,0.3,0.2])
-                    with col1:
-                        t3a = 'Titre'
-                        s_t3a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3a}</p>"
-                        st.markdown(s_t3a,unsafe_allow_html=True)
-                        st.markdown(df_ressources_visu_i['Titre parents'].values[0][i])
-                    with col2:
-                        t3b = 'Urls'
-                        s_t3b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3b}</p>"
-                        st.markdown(s_t3b,unsafe_allow_html=True)
-                        try:
-                            for j in range(len(df_ressources_visu_i['Urls parents'].values[0][i])):
-                                st.markdown(df_ressources_visu_i['Urls parents'].values[0][i][j])
-                        except:
-                            pass
-                    with col3:
-                        t3c = 'Format'
-                        s_t3c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3c}</p>"
-                        st.markdown(s_t3c,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Formats parents'].values[0][i])
-                        except:
-                            pass
-                        
-                    col1,col2 =st.columns(2)
-                    with col1:
-                        t3d = 'Résumé'
-                        s_t3d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3d}</p>"
-                        st.markdown(s_t3d,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Résumé parents'].values[0][i])
-                        except:
-                            pass
-                    with col2:
-                        t3e = 'Autres Urls'
-                        s_t3e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3e}</p>"
-                        st.markdown(s_t3e,unsafe_allow_html=True)
-                        try:
-                            st.markdown(df_ressources_visu_i['Parent url (properties)'].values[0][i])
-                        except:
-                            pass
-
-
-            if df_ressources_visu_i['Check_fcats'].values:
-                for i in range(len(df_ressources_visu_i['Titre facts'].values[0])):
+            if df_ressources_visu_i['Check_BroAndSisters'].values:
+                for i in range(len(df_ressources_visu_i['Titre brothersAndSisters'].values[0])):
                     with st.container(border=True):
-                        t4 = f"CATALOGUE D'ATTRIBUTS - #{i+1}"
-                        s_t4 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t4}</p>"
-                        st.markdown(s_t4,unsafe_allow_html=True)
-                        col1, col2 = st.columns(2)
+                        t1 = f"BROTHERS & SISTERS - #{i+1}"
+                        s_t1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t1}</p>"
+                        st.markdown(s_t1,unsafe_allow_html=True)
+                        col1,col2,col3 =st.columns([0.5,0.3,0.2])
                         with col1:
-                            t4a = 'Titre'
-                            s_t4a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t4a}</p>"
-                            st.markdown(s_t4a,unsafe_allow_html=True)
+                            t1a = 'Titre'
+                            s_t1a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1a}</p>"
+                            st.markdown(s_t1a,unsafe_allow_html=True)
                             try:
-                                st.markdown(df_ressources_visu_i['Titre facts'].values[0][i])
+                                st.write(df_ressources_visu_i['Titre brothersAndSisters'].values[0][i])
                             except:
                                 pass
                         with col2:
-                            t4b = 'Urls'
-                            s_t4b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t4b}</p>"
-                            st.markdown(s_t4b,unsafe_allow_html=True)
-                            for i in range(len(df_ressources_visu_i['facts url (properties)'].values[0])):
-                                st.markdown(df_ressources_visu_i['facts url (properties)'].values[0][i])
-        else:
-            st.write("les ressources de cette fiche ne sont pas visibles")
+                            t1b = 'Urls'
+                            s_t1b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1b}</p>"
+                            st.markdown(s_t1b,unsafe_allow_html=True)
+                            try:
+                                for j in range(len(df_ressources_visu_i['Urls brothersAndSisters'].values[0][i])):
+                                    st.write(df_ressources_visu_i['Urls brothersAndSisters'].values[0][i][j])
+                            except:
+                                pass
+                        with col3:
+                            t1c = 'Format'
+                            s_t1c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1c}</p>"
+                            st.markdown(s_t1c,unsafe_allow_html=True)
+                            try:
+                                st.write(df_ressources_visu_i['Formats brothersAndSisters'].values[0][i])
+                            except:
+                                pass
+                    
+                        col1,col2 =st.columns(2)
+                        with col1:
+                            t1d = 'Résumé'
+                            s_t1d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1d}</p>"
+                            st.markdown(s_t1d,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Résumé brothersAndSisters'].values[0][i])
+                            except:
+                                pass
+                        with col2:
+                            t1e = 'Autres Urls'
+                            s_t1e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t1e}</p>"
+                            st.markdown(s_t1e,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['brothersAndSisters url (properties)'].values[0][i])
+                            except:
+                                pass
+
+                
+            if df_ressources_visu_i['Check_children'].values:
+                for i in range(len(df_ressources_visu_i['Titre children'].values[0])):
+                    with st.container(border=True):
+                        t2 = f"CHILDREN - #{i+1}"
+                        s_t2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t2}</p>"
+                        st.markdown(s_t2,unsafe_allow_html=True)
+                        col1,col2,col3 =st.columns([0.5,0.3,0.2])
+                        with col1:
+                            t2a = 'Titre'
+                            s_t2a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2a}</p>"
+                            st.markdown(s_t2a,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Titre children'].values[0][i])
+                            except:
+                                pass
+                        with col2:
+                            t2d = 'Urls'
+                            s_t2d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2d}</p>"
+                            st.markdown(s_t2d,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Urls children'].values[0][i])
+                            except:
+                                pass
+                        with col3:
+                            t2c = 'Format'
+                            s_t2c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2c}</p>"
+                            st.markdown(s_t2c,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Formats children'].values[0][i])
+                            except:
+                                pass
+
+                        col1,col2 =st.columns(2)
+                        with col1:
+                            t2d = 'Résumé'
+                            s_t2d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2d}</p>"
+                            st.markdown(s_t2d,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Résumé children'].values[0][i])
+                            except:
+                                pass
+                        with col2:
+                            t2e = 'Autres Urls'
+                            s_t2e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t2e}</p>"
+                            st.markdown(s_t2e,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Children url (properties)'].values[0][i])
+                            except:
+                                pass
+
+            if df_ressources_visu_i['Check_parent'].values:
+                for i in range(len(df_ressources_visu_i['Titre parents'].values[0])):
+                    with st.container(border=True):
+                        t3 = f"PARENT - #{i+1}"
+                        s_t3 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t3}</p>"
+                        st.markdown(s_t3,unsafe_allow_html=True)
+                        col1,col2,col3 =st.columns([0.5,0.3,0.2])
+                        with col1:
+                            t3a = 'Titre'
+                            s_t3a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3a}</p>"
+                            st.markdown(s_t3a,unsafe_allow_html=True)
+                            st.markdown(df_ressources_visu_i['Titre parents'].values[0][i])
+                        with col2:
+                            t3b = 'Urls'
+                            s_t3b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3b}</p>"
+                            st.markdown(s_t3b,unsafe_allow_html=True)
+                            try:
+                                for j in range(len(df_ressources_visu_i['Urls parents'].values[0][i])):
+                                    st.markdown(df_ressources_visu_i['Urls parents'].values[0][i][j])
+                            except:
+                                pass
+                        with col3:
+                            t3c = 'Format'
+                            s_t3c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3c}</p>"
+                            st.markdown(s_t3c,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Formats parents'].values[0][i])
+                            except:
+                                pass
+                            
+                        col1,col2 =st.columns(2)
+                        with col1:
+                            t3d = 'Résumé'
+                            s_t3d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3d}</p>"
+                            st.markdown(s_t3d,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Résumé parents'].values[0][i])
+                            except:
+                                pass
+                        with col2:
+                            t3e = 'Autres Urls'
+                            s_t3e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t3e}</p>"
+                            st.markdown(s_t3e,unsafe_allow_html=True)
+                            try:
+                                st.markdown(df_ressources_visu_i['Parent url (properties)'].values[0][i])
+                            except:
+                                pass
+
+
+                if df_ressources_visu_i['Check_fcats'].values:
+                    for i in range(len(df_ressources_visu_i['Titre facts'].values[0])):
+                        with st.container(border=True):
+                            t4 = f"CATALOGUE D'ATTRIBUTS - #{i+1}"
+                            s_t4 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t4}</p>"
+                            st.markdown(s_t4,unsafe_allow_html=True)
+                            col1, col2 = st.columns(2)
+                            with col1:
+                                t4a = 'Titre'
+                                s_t4a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t4a}</p>"
+                                st.markdown(s_t4a,unsafe_allow_html=True)
+                                try:
+                                    st.markdown(df_ressources_visu_i['Titre facts'].values[0][i])
+                                except:
+                                    pass
+                            with col2:
+                                t4b = 'Urls'
+                                s_t4b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t4b}</p>"
+                                st.markdown(s_t4b,unsafe_allow_html=True)
+                                for i in range(len(df_ressources_visu_i['facts url (properties)'].values[0])):
+                                    st.markdown(df_ressources_visu_i['facts url (properties)'].values[0][i])
+            else:
+                st.write("Aucune ressource à visualiser pour cet identifiant")
 
 else:
     with st.container(border=True):
