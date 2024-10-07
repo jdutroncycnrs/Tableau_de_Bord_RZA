@@ -4,13 +4,13 @@ import ast
 
 
 Selection_ZA = " Zone atelier Alpes"
-liste_col_to_keep = ['Store','Entrepot','Titre et auteurs','Uri']
+liste_col_to_keep = ['Store','Entrepot','Titre et auteurs','Uri','Type de document','Date de production']
 liste_col_to_keep2 = ['Store','Entrepot','Titre']
 
 data_hal = pd.read_csv("pages/data/Hal/Contenu_HAL_complet.csv", index_col=[0])
 data_hal_ = data_hal[data_hal['Entrepot']==Selection_ZA]
-data_hal__ = data_hal_[data_hal_['Type de document']=='ART']
-data_hal_k = data_hal__[liste_col_to_keep]
+#data_hal__ = data_hal_[data_hal_['Type de document']=='ART']
+data_hal_k = data_hal_[liste_col_to_keep]
 data_hal_k.reset_index(inplace=True)
 data_hal_k.drop(columns='index', inplace=True)
 data_hal_k.to_csv("pages/data/temp/HAL_ZAA.csv")
