@@ -69,12 +69,19 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
-col1, col2 = st.sidebar.columns(2)
+col1,col2 = st.sidebar.columns(2)
 with col1:
-        start_year = st.number_input(label='Année de début',min_value=2000,step=1)
+        start_year = st.text_input(label='Année de début')
+        if start_year=='':
+               start_year=d
 with col2:
-        end_year = st.number_input(label='Année de fin',min_value=2000, step=1)
+       st.write('')
+       annee_unique = st.checkbox(label='année unique')
 
+if annee_unique:
+        end_year = start_year
+else:
+        end_year = d
 
 st.title(":grey[Analyse des publications sur HAL]")
 
