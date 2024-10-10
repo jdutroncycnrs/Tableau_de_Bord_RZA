@@ -11,3 +11,25 @@ for i in range(len(df_groups)):
 df_groups.to_csv("pages/data/infos_MD2/infos_groupes.csv")
 
 print(len(df_groups[df_groups['Groupe']=="zam"]))"""
+
+import requests
+
+headers_xml = {"accept":"application/xml",
+           "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
+headers_json = {"accept":"application/json",
+           "X-XSRF-TOKEN": "59734158-1618-4e14-b05e-919d931a384b"}
+identifieur = 'ead8e65d-d41c-4507-8102-dc6619ac06b6'
+url = "https://cat.indores.fr/geonetwork/srv/api/records/"
+url_ = url + identifieur
+
+resp2 = requests.get(url_,headers=headers_xml)
+print(resp2)
+if resp2.status_code == 200:
+    xml_content = resp2.text
+    print(xml_content)
+    try:
+        print('ok')
+        with open(f"{identifieur}.json", 'w') as file:
+            file.write(xml_content)
+    except:
+        pass
