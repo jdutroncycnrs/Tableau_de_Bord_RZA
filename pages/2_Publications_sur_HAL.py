@@ -83,7 +83,7 @@ if annee_unique:
 else:
         end_year = d
 
-st.title(":grey[Analyse des publications sur HAL]")
+st.title(":grey[Extraction des publications sur HAL]")
 
 
 liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
