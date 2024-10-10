@@ -250,8 +250,19 @@ if indores:
         except Exception as e:
             st.error(f"Connection error: {e}")
         return api
+    
+    ###################### Indices des dataverses ##############################
 
+    def find_indices(lst, elements):
+        indices = []
+        for element in elements:
+            try:
+                indices.append(lst.index(element))
+            except ValueError:
+                pass  # Element not found in the list
+        return indices
 
+    
     ###############################################################################################
     ########### POUR L'ADMINISTRATEUR ############################################################
     ###############################################################################################
@@ -275,6 +286,7 @@ if indores:
         # RECUPERATION DES CONTENUS VIA BOUTON ##########################################       
         Recup_globale = st.sidebar.button('recupération des contenus')
         if Recup_globale:
+            ids = find_indices(liste_ZAs_, Selection_ZA)
             with st.spinner("La récup globale est en cours"):
                 api = connect_to_dataverse(BASE_URL,  API_TOKEN)
                 liste_columns_df_entrepot=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']

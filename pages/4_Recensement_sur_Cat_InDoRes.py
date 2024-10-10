@@ -147,7 +147,7 @@ else:
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 ##################### RAPPEL CAT.INDORES ##################################################################
-st.title(':grey[Visuels issue des métadonnées du GN Cat.InDoRes]')
+st.title(':grey[Visuels issus des métadonnées du GN Cat.InDoRes]')
 
 adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
 s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
