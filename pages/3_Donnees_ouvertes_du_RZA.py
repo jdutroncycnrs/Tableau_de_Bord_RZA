@@ -43,7 +43,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Paramètres visuels
+######################################################################################################################
+########### CHOIX VISUELS ############################################################################################
+######################################################################################################################
 couleur_subtitles = (250,150,150)
 taille_subtitles = "25px"
 couleur_subsubtitles = (60,150,160)
@@ -66,7 +68,9 @@ graph_title_color = "gray"
 graph_ticks_color = 'gray'
 
 
-##########################  VARIABLES DE CONNEXION #######################
+######################################################################################################################
+########### PARAMETRES DE CONNEXION ##################################################################################
+######################################################################################################################
 
 ######################## Data Indores ############################################
 BASE_URL="https://data.indores.fr"
@@ -97,7 +101,9 @@ url_gbif = "https://api.gbif.org/v1/dataset?"
 headers_gbif = {'accept': 'application/json'}
 
 
-########### CHOIX ZA ######################################
+######################################################################################################################
+########### SELECTION ZA #############################################################################################
+######################################################################################################################
 liste_ZAs_ = ["Zone atelier territoires uranifères",
               " Zone Atelier Seine",
               " Zone atelier Loire",
@@ -141,9 +147,13 @@ else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
 
-###################### CREATION CONNEXION ##############################
+######################################################################################################################
+########### SELECTION ENTREPOT #######################################################################################
+######################################################################################################################
 Choix_entrepot = st.sidebar.subheader('Entrepôts')
 with st.sidebar:
+    if 'catalogues' not in st.session_state:
+        st.session_state.catalogues = False
     if 'indores' not in st.session_state:
         st.session_state.indores = False
     if 'rdg' not in st.session_state:
@@ -157,10 +167,20 @@ with st.sidebar:
     if 'gbif' not in st.session_state:
         st.session_state.gbif = False
 
+# Function to handle checkbox1 change
+    def handle_checkbox0_change():
+        if st.session_state.catalogues:
+            st.session_state.indores = False
+            st.session_state.rdg = False
+            st.session_state.nakala = False
+            st.session_state.zenodo = False
+            st.session_state.nakala = False
+            st.session_state.zenodo = False
 
 # Function to handle checkbox1 change
     def handle_checkbox1_change():
         if st.session_state.indores:
+            st.session_state.catalogues = False
             st.session_state.rdg = False
             st.session_state.nakala = False
             st.session_state.zenodo = False
@@ -170,6 +190,7 @@ with st.sidebar:
     # Function to handle checkbox1 change
     def handle_checkbox2_change():
         if st.session_state.rdg:
+            st.session_state.catalogues = False
             st.session_state.indores = False
             st.session_state.nakala = False
             st.session_state.zenodo = False
@@ -180,6 +201,7 @@ with st.sidebar:
     # Function to handle checkbox2 change
     def handle_checkbox3_change():
         if st.session_state.nakala:
+            st.session_state.catalogues = False
             st.session_state.indores = False
             st.session_state.rdg = False
             st.session_state.zenodo = False
@@ -188,6 +210,7 @@ with st.sidebar:
 
     def handle_checkbox4_change():
         if st.session_state.zenodo:
+            st.session_state.catalogues = False
             st.session_state.indores = False
             st.session_state.rdg = False
             st.session_state.nakala = False
@@ -196,6 +219,7 @@ with st.sidebar:
     
     def handle_checkbox5_change():
         if st.session_state.dryad:
+            st.session_state.catalogues = False
             st.session_state.indores = False
             st.session_state.rdg = False
             st.session_state.nakala = False
@@ -204,6 +228,7 @@ with st.sidebar:
     
     def handle_checkbox6_change():
         if st.session_state.gbif:
+            st.session_state.catalogues = False
             st.session_state.indores = False
             st.session_state.rdg = False
             st.session_state.nakala = False
@@ -211,6 +236,7 @@ with st.sidebar:
             st.session_state.zenodo = False
 
     choix_groupe_OHM = False
+    catalogues = st.checkbox("OUTILS ZA (GEONETWORKS)", key='catalogues', on_change=handle_checkbox0_change)
     indores = st.checkbox("INDORES", key='indores', on_change=handle_checkbox1_change)
     rdg = st.checkbox("RGD", key='rdg', on_change=handle_checkbox2_change)
     nakala = st.checkbox("NAKALA", key='nakala', on_change=handle_checkbox3_change)
@@ -223,6 +249,8 @@ st.title(":grey[Donnees ouvertes du RZA]")
 st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER")
 st.success("Selectionner l'entrepôt dans lequel faire votre recherche / CASE A COCHER")
 
+if catalogues:
+    st.title(":grey[Analyse des dépôts dans les geonetworks]")
 
 if indores:
     ######################  TITRES  #######################################

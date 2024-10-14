@@ -145,11 +145,11 @@ else:
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
 ##################### RAPPEL CAT.INDORES ##################################################################
-st.title(':grey[Visuels issus des métadonnées du GN Cat.InDoRes]')
+st.title(':grey[Visuels issus des métadonnées de Cat.InDoRes]')
 
-adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
-s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
-st.markdown(s_adresse_catInDoRes ,unsafe_allow_html=True)
+#adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
+#s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
+#st.markdown(s_adresse_catInDoRes ,unsafe_allow_html=True)
 
 ##################### PREPARATION DATES ###################################################################
 df_selected_year = year(df_selected)

@@ -86,7 +86,7 @@ else:
 
     proposals =  f"""<span style="font-size: 35 px;">
     <ol>
-    <li style="font-size:20px";>Page de Présentation et mode d'emploi => appuyer sur le bouton à gauche </li>
+    <li style="font-size:20px";>Page de présentation et mode d'emploi => appuyer sur le bouton à gauche </li>
     <li style="font-size:20px";>Page de recherche des publications sur HAL</li>
     <li style="font-size:20px";>Page de recherche des données déposées / différents entrepôts accessibles</li>
     <li style="font-size:20px";>Visualisation des fiches de métadonnées sur le catalogue InDoRES</li>
