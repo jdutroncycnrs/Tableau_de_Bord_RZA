@@ -165,7 +165,7 @@ dico = {'ZABrI - Brest Iroise':'zabri',
 # Besoin de récupérer l'ensemble des identifiants
 
 # On scanne pour savoir si un fichier existe
-fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
+fi = glob.glob(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean*.csv")
 
 st.title(':grey[Visualisation des fiches]')
 
@@ -192,10 +192,10 @@ else:
 ################### CREATION / LECTURE DF INFOS GROUPES ##########################################
 
 try:
-    df_infos = pd.read_csv("pages/data/infos_MD2/infos_groupes.csv",index_col=[0])
+    df_infos = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv",index_col=[0])
 except:
     df_infos = pd.DataFrame(columns=['Identifiant','Groupe'])
-    df_infos.to_csv("pages/data/infos_MD2/infos_groupes.csv")
+    df_infos.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
 
 ###############################################################################################
 ########### POUR L'ADMINISTRATEUR ############################################################
@@ -223,7 +223,7 @@ if admin_action == admin_pass:
     Recup_groupes = st.sidebar.button('recup des groupes')
     if Recup_groupes:
         with st.spinner("La récup des groupes est en cours"):
-            df_group = pd.read_csv("pages/data/infos_MD2/infos_groupes.csv",index_col=[0])
+            df_group = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv",index_col=[0])
             for i in range(len(uuids)):
                 u = uuids.loc[i,'uuid_cat_InDoRes']
                 if u in df_group['Identifiant'].values:
@@ -239,7 +239,7 @@ if admin_action == admin_pass:
                     df_group_.reset_index(inplace=True)
                     df_group_.drop(columns='index',inplace=True)
                     df_group = df_group_
-            df_group.to_csv("pages/data/infos_MD2/infos_groupes.csv")
+            df_group.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
 
 ###############################################################################################
 # RECUP GLOBALE ###############################################################################
@@ -265,11 +265,11 @@ if admin_action == admin_pass:
                 df_global.reset_index(inplace=True)
                 df_global.drop(columns='index',inplace=True)
 
-            df_global.to_csv("pages/data/infos_MD2/Tableau_MD2.csv")
+            df_global.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_MD2.csv")
 
             ############## FUSION DES 2 DF: groupes et variables ############################
             df_all = pd.merge(df_global, df_infos, on='Identifiant', how='inner')
-            df_all.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
+            df_all.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv")
 
 #################################################################################################
 ############## RECUP GLOBALE FICHIERS ATTACHES ###############################################
@@ -289,7 +289,7 @@ if admin_action == admin_pass:
                     df_global_attachements.drop(columns='index',inplace=True)
                 except:
                     pass
-            df_global_attachements.to_csv("pages/data/infos_MD2/Tableau_fichiers_attachements.csv")
+            df_global_attachements.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_fichiers_attachements.csv")
 
 #################################################################################################
 ############## RECUP GLOBALE RESSOURCES ASSOCIEES ###############################################
@@ -315,7 +315,7 @@ if admin_action == admin_pass:
                     df_global_ressources.drop(columns='index',inplace=True)
                 except:
                     pass
-            df_global_ressources.to_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv")
+            df_global_ressources.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_fichiers_ressources.csv")
 
 
 
@@ -323,7 +323,7 @@ if admin_action == admin_pass:
 ########### LECTURE ET TRANSFORMATION DU TABLEAU COMPLET #############################################################
 ######################################################################################################################
 
-df_complet = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
+df_complet = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
 df_complet.fillna("", inplace=True)
 
 
@@ -399,7 +399,7 @@ for i in range(len(df_complet)):
             df_complet.loc[i,'GroupeEtMention']=df_complet.loc[i,'Mention du groupe']
 
 df_complet['GroupeEtMention']=df_complet['GroupeEtMention'].map(dico)
-df_complet.to_csv("pages/data/infos_MD2/Tableau_complet.csv")
+df_complet.to_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv")
 
 #st.dataframe(df_complet)
 
@@ -510,7 +510,7 @@ with st.container(border=True):
 ######################## VISUALISATIONS ATTACHEMENTS ##########################################################
 ###############################################################################################################
 if Visu_attachments:
-    df_attachements = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_attachements.csv", index_col=[0])
+    df_attachements = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_fichiers_attachements.csv", index_col=[0])
 
     Sommes_check_selected_df = f"Décomptes sur la sélection en cours"
     s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
@@ -569,7 +569,7 @@ if Visu_attachments:
 ######################## VISUALISATIONS RESSOURCES ############################################################
 ###############################################################################################################
 elif Ressources_associees:
-    df_ressources = pd.read_csv("pages/data/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
+    df_ressources = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
 
     df_ressources_visu = df_ressources[df_ressources['Identifiant'].isin(selected_uuids_)]
     df_ressources_visu.reset_index(drop=True, inplace=True)

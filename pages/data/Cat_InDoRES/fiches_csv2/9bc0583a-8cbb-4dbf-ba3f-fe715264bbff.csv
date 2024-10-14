@@ -1,0 +1,693 @@
+,Results,Valeurs,Clés,K0,K1,K2,K3,K4,K5,K6,K7,K8,K9,K10
+0,@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,@xmlns:gco:,@xmlns:gco:,,,,,,,,,,
+1,@xmlns:gmd:§http://www.isotc211.org/2005/gmd,http://www.isotc211.org/2005/gmd,@xmlns:gmd:,@xmlns:gmd:,,,,,,,,,,
+2,@xmlns:gmi:§http://www.isotc211.org/2005/gmi,http://www.isotc211.org/2005/gmi,@xmlns:gmi:,@xmlns:gmi:,,,,,,,,,,
+3,@xmlns:gml:§http://www.opengis.net/gml,http://www.opengis.net/gml,@xmlns:gml:,@xmlns:gml:,,,,,,,,,,
+4,@xmlns:gmx:§http://www.isotc211.org/2005/gmx,http://www.isotc211.org/2005/gmx,@xmlns:gmx:,@xmlns:gmx:,,,,,,,,,,
+5,@xmlns:gsr:§http://www.isotc211.org/2005/gsr,http://www.isotc211.org/2005/gsr,@xmlns:gsr:,@xmlns:gsr:,,,,,,,,,,
+6,@xmlns:gts:§http://www.isotc211.org/2005/gts,http://www.isotc211.org/2005/gts,@xmlns:gts:,@xmlns:gts:,,,,,,,,,,
+7,@xmlns:srv:§http://www.isotc211.org/2005/srv,http://www.isotc211.org/2005/srv,@xmlns:srv:,@xmlns:srv:,,,,,,,,,,
+8,@xmlns:xlink:§http://www.w3.org/1999/xlink,http://www.w3.org/1999/xlink,@xmlns:xlink:,@xmlns:xlink:,,,,,,,,,,
+9,@xmlns:xsi:§http://www.w3.org/2001/XMLSchema-instance,http://www.w3.org/2001/XMLSchema-instance,@xmlns:xsi:,@xmlns:xsi:,,,,,,,,,,
+10,@xsi:schemaLocation:§http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd,http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd,@xsi:schemaLocation:,@xsi:schemaLocation:,,,,,,,,,,
+11,gmd:fileIdentifier.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:fileIdentifier£gco:CharacterString£@xmlns:gco:,gmd:fileIdentifier,gco:CharacterString,@xmlns:gco:,,,,,,,,
+12,gmd:fileIdentifier.gco:CharacterString.#text:§9bc0583a-8cbb-4dbf-ba3f-fe715264bbff,9bc0583a-8cbb-4dbf-ba3f-fe715264bbff,gmd:fileIdentifier£gco:CharacterString£#text:,gmd:fileIdentifier,gco:CharacterString,#text:,,,,,,,,
+13,gmd:language.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:language£gco:CharacterString£@xmlns:gco:,gmd:language,gco:CharacterString,@xmlns:gco:,,,,,,,,
+14,gmd:language.gco:CharacterString.#text:§fre,fre,gmd:language£gco:CharacterString£#text:,gmd:language,gco:CharacterString,#text:,,,,,,,,
+15,"gmd:characterSet.#text:§
+    ""
+    ","
+    ""
+    ",gmd:characterSet£#text:,gmd:characterSet,#text:,,,,,,,,,
+16,"gmd:characterSet.#text:§
+    ""
+  ","
+    ""
+  ",gmd:characterSet£#text:,gmd:characterSet,#text:,,,,,,,,,
+17,gmd:characterSet.gmd:MD_CharacterSetCode.@codeListValue:§utf8,utf8,gmd:characterSet£gmd:MD_CharacterSetCode£@codeListValue:,gmd:characterSet,gmd:MD_CharacterSetCode,@codeListValue:,,,,,,,,
+18,gmd:characterSet.gmd:MD_CharacterSetCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode,gmd:characterSet£gmd:MD_CharacterSetCode£@codeList:,gmd:characterSet,gmd:MD_CharacterSetCode,@codeList:,,,,,,,,
+19,gmd:hierarchyLevel.gmd:MD_ScopeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ScopeCode,gmd:hierarchyLevel£gmd:MD_ScopeCode£@codeList:,gmd:hierarchyLevel,gmd:MD_ScopeCode,@codeList:,,,,,,,,
+20,gmd:hierarchyLevel.gmd:MD_ScopeCode.@codeListValue:§dataset,dataset,gmd:hierarchyLevel£gmd:MD_ScopeCode£@codeListValue:,gmd:hierarchyLevel,gmd:MD_ScopeCode,@codeListValue:,,,,,,,,
+21,"gmd:contact.#text:§
+    ""
+    ","
+    ""
+    ",gmd:contact£#text:,gmd:contact,#text:,,,,,,,,,
+22,"gmd:contact.#text:§
+    ""
+  ","
+    ""
+  ",gmd:contact£#text:,gmd:contact,#text:,,,,,,,,,
+23,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+      ","
+      ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+24,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+      ","
+      ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+25,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+      ","
+      ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+26,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+      ","
+      ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+27,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+      ","
+      ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+28,"gmd:contact.gmd:CI_ResponsibleParty.#text:§
+      ""
+    ","
+      ""
+    ",gmd:contact£gmd:CI_ResponsibleParty£#text:,gmd:contact,gmd:CI_ResponsibleParty,#text:,,,,,,,,
+29,gmd:contact.gmd:CI_ResponsibleParty.gmd:individualName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:individualName,gco:CharacterString,@xmlns:gco:,,,,,,
+30,gmd:contact.gmd:CI_ResponsibleParty.gmd:individualName.gco:CharacterString.#text:§Frédéric Paran,Frédéric Paran,gmd:contact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:individualName,gco:CharacterString,#text:,,,,,,
+31,gmd:contact.gmd:CI_ResponsibleParty.gmd:organisationName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:organisationName,gco:CharacterString,@xmlns:gco:,,,,,,
+32,gmd:contact.gmd:CI_ResponsibleParty.gmd:organisationName.gco:CharacterString.#text:§Mines Saint-Etienne - Centre SPN - GSE,Mines Saint-Etienne - Centre SPN - GSE,gmd:contact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:organisationName,gco:CharacterString,#text:,,,,,,
+33,gmd:contact.gmd:CI_ResponsibleParty.gmd:positionName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:positionName,gco:CharacterString,@xmlns:gco:,,,,,,
+34,gmd:contact.gmd:CI_ResponsibleParty.gmd:positionName.gco:CharacterString.#text:§Ingénieur de recherche,Ingénieur de recherche,gmd:contact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:positionName,gco:CharacterString,#text:,,,,,,
+35,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.#text:§
+        ""
+        ","
+        ""
+        ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,#text:,,,,,,,
+36,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.#text:§
+        ""
+      ","
+        ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,#text:,,,,,,,
+37,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.#text:§
+            ""
+            ","
+            ""
+            ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,#text:,,,,,
+38,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.#text:§
+            ""
+          ","
+            ""
+          ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,#text:,,,,,
+39,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:voice.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:voice,gco:CharacterString,@xmlns:gco:,,
+40,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:voice.gco:CharacterString.#text:§04 77 42 66 65,04 77 42 66 65,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:voice,gco:CharacterString,#text:,,
+41,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,@xmlns:gco:,,,
+42,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.@gco:nilReason:§missing,missing,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£@gco:nilReason:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,@gco:nilReason:,,,
+43,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.gco:CharacterString:§None,None,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£gco:CharacterString:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,gco:CharacterString:,,,
+44,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.#text:§
+            ""
+            ","
+            ""
+            ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,#text:,,,,,
+45,"gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.#text:§
+            ""
+          ","
+            ""
+          ",gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,#text:,,,,,
+46,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:deliveryPoint.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:deliveryPoint,gco:CharacterString,@xmlns:gco:,,
+47,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:deliveryPoint.gco:CharacterString.#text:§158 cours Fauriel CS 62362,158 cours Fauriel CS 62362,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:deliveryPoint,gco:CharacterString,#text:,,
+48,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:city.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:city,gco:CharacterString,@xmlns:gco:,,
+49,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:city.gco:CharacterString.#text:§Saint-Etienne,Saint-Etienne,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:city,gco:CharacterString,#text:,,
+50,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,@xmlns:gco:,,,
+51,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.@gco:nilReason:§missing,missing,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£@gco:nilReason:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,@gco:nilReason:,,,
+52,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.gco:CharacterString:§None,None,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£gco:CharacterString:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,gco:CharacterString:,,,
+53,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:postalCode.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:postalCode,gco:CharacterString,@xmlns:gco:,,
+54,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:postalCode.gco:CharacterString.#text:§42023,42023,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:postalCode,gco:CharacterString,#text:,,
+55,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:country.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:country,gco:CharacterString,@xmlns:gco:,,
+56,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:country.gco:CharacterString.#text:§France,France,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:country,gco:CharacterString,#text:,,
+57,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:electronicMailAddress.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:electronicMailAddress£gco:CharacterString£@xmlns:gco:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:electronicMailAddress,gco:CharacterString,@xmlns:gco:,,
+58,gmd:contact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:electronicMailAddress.gco:CharacterString.#text:§frederic.paran@mines-stetienne.fr,frederic.paran@mines-stetienne.fr,gmd:contact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:electronicMailAddress£gco:CharacterString£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:electronicMailAddress,gco:CharacterString,#text:,,
+59,"gmd:contact.gmd:CI_ResponsibleParty.gmd:role.#text:§
+        ""
+        ","
+        ""
+        ",gmd:contact£gmd:CI_ResponsibleParty£gmd:role£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:role,#text:,,,,,,,
+60,"gmd:contact.gmd:CI_ResponsibleParty.gmd:role.#text:§
+        ""
+      ","
+        ""
+      ",gmd:contact£gmd:CI_ResponsibleParty£gmd:role£#text:,gmd:contact,gmd:CI_ResponsibleParty,gmd:role,#text:,,,,,,,
+61,gmd:contact.gmd:CI_ResponsibleParty.gmd:role.gmd:CI_RoleCode.@codeListValue:§pointOfContact,pointOfContact,gmd:contact£gmd:CI_ResponsibleParty£gmd:role£gmd:CI_RoleCode£@codeListValue:,gmd:contact,gmd:CI_ResponsibleParty,gmd:role,gmd:CI_RoleCode,@codeListValue:,,,,,,
+62,gmd:contact.gmd:CI_ResponsibleParty.gmd:role.gmd:CI_RoleCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode,gmd:contact£gmd:CI_ResponsibleParty£gmd:role£gmd:CI_RoleCode£@codeList:,gmd:contact,gmd:CI_ResponsibleParty,gmd:role,gmd:CI_RoleCode,@codeList:,,,,,,
+63,gmd:dateStamp.gco:DateTime.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:dateStamp£gco:DateTime£@xmlns:gco:,gmd:dateStamp,gco:DateTime,@xmlns:gco:,,,,,,,,
+64,gmd:dateStamp.gco:DateTime.#text:§2016-05-18T13:49:17,2016-05-18T13:49:17,gmd:dateStamp£gco:DateTime£#text:,gmd:dateStamp,gco:DateTime,#text:,,,,,,,,
+65,gmd:metadataStandardName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:metadataStandardName£gco:CharacterString£@xmlns:gco:,gmd:metadataStandardName,gco:CharacterString,@xmlns:gco:,,,,,,,,
+66,gmd:metadataStandardName.gco:CharacterString.#text:§ISO 19115:2003/19139,ISO 19115:2003/19139,gmd:metadataStandardName£gco:CharacterString£#text:,gmd:metadataStandardName,gco:CharacterString,#text:,,,,,,,,
+67,gmd:metadataStandardVersion.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:metadataStandardVersion£gco:CharacterString£@xmlns:gco:,gmd:metadataStandardVersion,gco:CharacterString,@xmlns:gco:,,,,,,,,
+68,gmd:metadataStandardVersion.gco:CharacterString.#text:§1.0,1.0,gmd:metadataStandardVersion£gco:CharacterString£#text:,gmd:metadataStandardVersion,gco:CharacterString,#text:,,,,,,,,
+69,"gmd:referenceSystemInfo.#text:§
+    ""
+    ","
+    ""
+    ",gmd:referenceSystemInfo£#text:,gmd:referenceSystemInfo,#text:,,,,,,,,,
+70,"gmd:referenceSystemInfo.#text:§
+    ""
+  ","
+    ""
+  ",gmd:referenceSystemInfo£#text:,gmd:referenceSystemInfo,#text:,,,,,,,,,
+71,"gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.#text:§
+      ""
+      ","
+      ""
+      ",gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£#text:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,#text:,,,,,,,,
+72,"gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.#text:§
+      ""
+    ","
+      ""
+    ",gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£#text:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,#text:,,,,,,,,
+73,"gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.gmd:referenceSystemIdentifier.#text:§
+        ""
+        ","
+        ""
+        ",gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£#text:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,gmd:referenceSystemIdentifier,#text:,,,,,,,
+74,"gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.gmd:referenceSystemIdentifier.#text:§
+        ""
+      ","
+        ""
+      ",gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£#text:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,gmd:referenceSystemIdentifier,#text:,,,,,,,
+75,gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.gmd:referenceSystemIdentifier.gmd:RS_Identifier.gmd:code.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£gmd:RS_Identifier£gmd:code£gco:CharacterString£@xmlns:gco:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,gmd:referenceSystemIdentifier,gmd:RS_Identifier,gmd:code,gco:CharacterString,@xmlns:gco:,,,,
+76,gmd:referenceSystemInfo.gmd:MD_ReferenceSystem.gmd:referenceSystemIdentifier.gmd:RS_Identifier.gmd:code.gco:CharacterString.#text:§WGS 84 / RGF93 Lambert 93 / Altitude NGF,WGS 84 / RGF93 Lambert 93 / Altitude NGF,gmd:referenceSystemInfo£gmd:MD_ReferenceSystem£gmd:referenceSystemIdentifier£gmd:RS_Identifier£gmd:code£gco:CharacterString£#text:,gmd:referenceSystemInfo,gmd:MD_ReferenceSystem,gmd:referenceSystemIdentifier,gmd:RS_Identifier,gmd:code,gco:CharacterString,#text:,,,,
+77,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,#text:,,,,,,,
+78,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,#text:,,,,,,,
+79,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:title.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:title,gco:CharacterString,@xmlns:gco:,,,,
+80,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:title.gco:CharacterString.#text:§Profil en long (ligne d'eau) de la rivière Drôme de Crest à Livron-sur-Drôme - Juin 2014,Profil en long (ligne d'eau) de la rivière Drôme de Crest à Livron-sur-Drôme - Juin 2014,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:title,gco:CharacterString,#text:,,,,
+81,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:alternateTitle.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:alternateTitle£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:alternateTitle,@xmlns:gco:,,,,,
+82,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:alternateTitle.@gco:nilReason:§missing,missing,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:alternateTitle£@gco:nilReason:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:alternateTitle,@gco:nilReason:,,,,,
+83,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:alternateTitle.gco:CharacterString:§None,None,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:alternateTitle£gco:CharacterString:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:alternateTitle,gco:CharacterString:,,,,,
+84,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,#text:,,,,,
+85,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,#text:,,,,,
+86,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+87,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+88,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+            ","
+              ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+89,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:DateTime.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:DateTime£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:DateTime,@xmlns:gco:,,
+90,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:DateTime.#text:§2014-06-25T14:00:00,2014-06-25T14:00:00,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:DateTime£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:DateTime,#text:,,
+91,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,#text:,,,
+92,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,#text:,,,
+93,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeListValue:§creation,creation,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeListValue:,,
+94,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeList:,,
+95,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,#text:,,,,,
+96,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,#text:,,,,,
+97,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+98,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+99,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.#text:§
+              ""
+            ","
+              ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,#text:,,,,
+100,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:DateTime.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:DateTime£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:DateTime,@xmlns:gco:,,
+101,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:DateTime.#text:§2015-06-30T14:00:00,2015-06-30T14:00:00,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:DateTime£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:DateTime,#text:,,
+102,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,#text:,,,
+103,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,#text:,,,
+104,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeList:,,
+105,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeListValue:§publication,publication,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeListValue:,,
+106,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:editionDate.gco:Date.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:editionDate£gco:Date£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:editionDate,gco:Date,@xmlns:gco:,,,,
+107,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:editionDate.gco:Date.#text:§2014-07-31,2014-07-31,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:editionDate£gco:Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:editionDate,gco:Date,#text:,,,,
+108,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:presentationForm.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:presentationForm£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:presentationForm,#text:,,,,,
+109,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:presentationForm.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:presentationForm£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:presentationForm,#text:,,,,,
+110,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:presentationForm.gmd:CI_PresentationFormCode.@codeListValue:§mapDigital,mapDigital,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:presentationForm£gmd:CI_PresentationFormCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:presentationForm,gmd:CI_PresentationFormCode,@codeListValue:,,,,
+111,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:citation.gmd:CI_Citation.gmd:presentationForm.gmd:CI_PresentationFormCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_PresentationFormCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:citation£gmd:CI_Citation£gmd:presentationForm£gmd:CI_PresentationFormCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:citation,gmd:CI_Citation,gmd:presentationForm,gmd:CI_PresentationFormCode,@codeList:,,,,
+112,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:abstract.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:abstract,gco:CharacterString,@xmlns:gco:,,,,,,
+113,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:abstract.gco:CharacterString.#text:§Projet nappes/Rhône phase 5 - ZABR AE-RMC (2013-2015)
+Caractérisation des échanges nappes/rivières - transposition méthodologique du fleuve Rhône à un affluent (Drôme)
+Ligne d'eau (basses-eaux) relevée par DGPS embarqué sur canoë : données brutes, données corrigées automatiquement, données nettoyées pour les besoins du projet (shapefile)
+Auteurs : Frédéric Paran et Didier Graillot","Projet nappes/Rhône phase 5 - ZABR AE-RMC (2013-2015)
+Caractérisation des échanges nappes/rivières - transposition méthodologique du fleuve Rhône à un affluent (Drôme)
+Ligne d'eau (basses-eaux) relevée par DGPS embarqué sur canoë : données brutes, données corrigées automatiquement, données nettoyées pour les besoins du projet (shapefile)
+Auteurs : Frédéric Paran et Didier Graillot",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:abstract£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:abstract,gco:CharacterString,#text:,,,,,,
+114,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:purpose.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:purpose£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:purpose,gco:CharacterString,@xmlns:gco:,,,,,,
+115,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:purpose.gco:CharacterString.#text:§Ligne d'eau de référence de la Drôme en basses-eaux pour évaluer les échanges nappes/Drôme,Ligne d'eau de référence de la Drôme en basses-eaux pour évaluer les échanges nappes/Drôme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:purpose£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:purpose,gco:CharacterString,#text:,,,,,,
+116,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:status.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:status£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:status,#text:,,,,,,,
+117,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:status.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:status£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:status,#text:,,,,,,,
+118,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:status.gmd:MD_ProgressCode.@codeListValue:§completed,completed,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:status£gmd:MD_ProgressCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:status,gmd:MD_ProgressCode,@codeListValue:,,,,,,
+119,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:status.gmd:MD_ProgressCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_ProgressCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:status£gmd:MD_ProgressCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:status,gmd:MD_ProgressCode,@codeList:,,,,,,
+120,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,#text:,,,,,,,
+121,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,#text:,,,,,,,
+122,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+          ","
+          ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+123,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+          ","
+          ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+124,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+          ","
+          ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+125,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+          ","
+          ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+126,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+          ","
+          ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+127,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.#text:§
+          ""
+        ","
+          ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,#text:,,,,,,
+128,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:individualName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:individualName,gco:CharacterString,@xmlns:gco:,,,,
+129,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:individualName.gco:CharacterString.#text:§Frédéric Paran,Frédéric Paran,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:individualName£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:individualName,gco:CharacterString,#text:,,,,
+130,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:organisationName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:organisationName,gco:CharacterString,@xmlns:gco:,,,,
+131,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:organisationName.gco:CharacterString.#text:§Mines Saint-Etienne - Centre SPIN - Département GSE (GéoSciences et Environnement),Mines Saint-Etienne - Centre SPIN - Département GSE (GéoSciences et Environnement),gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:organisationName£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:organisationName,gco:CharacterString,#text:,,,,
+132,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:positionName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:positionName,gco:CharacterString,@xmlns:gco:,,,,
+133,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:positionName.gco:CharacterString.#text:§Ingénieur de recherche,Ingénieur de recherche,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:positionName£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:positionName,gco:CharacterString,#text:,,,,
+134,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,#text:,,,,,
+135,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,#text:,,,,,
+136,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,#text:,,,
+137,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,#text:,,,
+138,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:voice.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:voice,gco:CharacterString,@xmlns:gco:
+139,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:voice.gco:CharacterString.#text:§04 77 42 66 65,04 77 42 66 65,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:voice£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:voice,gco:CharacterString,#text:
+140,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,@xmlns:gco:,
+141,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.@gco:nilReason:§missing,missing,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£@gco:nilReason:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,@gco:nilReason:,
+142,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:phone.gmd:CI_Telephone.gmd:facsimile.gco:CharacterString:§None,None,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:phone£gmd:CI_Telephone£gmd:facsimile£gco:CharacterString:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:phone,gmd:CI_Telephone,gmd:facsimile,gco:CharacterString:,
+143,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,#text:,,,
+144,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,#text:,,,
+145,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:deliveryPoint.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:deliveryPoint,gco:CharacterString,@xmlns:gco:
+146,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:deliveryPoint.gco:CharacterString.#text:§158 cours Fauriel CS 62362,158 cours Fauriel CS 62362,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:deliveryPoint£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:deliveryPoint,gco:CharacterString,#text:
+147,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:city.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:city,gco:CharacterString,@xmlns:gco:
+148,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:city.gco:CharacterString.#text:§Saint-Etienne,Saint-Etienne,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:city£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:city,gco:CharacterString,#text:
+149,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,@xmlns:gco:,
+150,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.@gco:nilReason:§missing,missing,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£@gco:nilReason:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,@gco:nilReason:,
+151,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:administrativeArea.gco:CharacterString:§None,None,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:administrativeArea£gco:CharacterString:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:administrativeArea,gco:CharacterString:,
+152,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:postalCode.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:postalCode,gco:CharacterString,@xmlns:gco:
+153,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:postalCode.gco:CharacterString.#text:§42023,42023,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:postalCode£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:postalCode,gco:CharacterString,#text:
+154,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:country.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:country,gco:CharacterString,@xmlns:gco:
+155,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:country.gco:CharacterString.#text:§France,France,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:country£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:country,gco:CharacterString,#text:
+156,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:electronicMailAddress.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:electronicMailAddress£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:electronicMailAddress,gco:CharacterString,@xmlns:gco:
+157,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:contactInfo.gmd:CI_Contact.gmd:address.gmd:CI_Address.gmd:electronicMailAddress.gco:CharacterString.#text:§frederic.paran@mines-stetienne.fr,frederic.paran@mines-stetienne.fr,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:contactInfo£gmd:CI_Contact£gmd:address£gmd:CI_Address£gmd:electronicMailAddress£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:contactInfo,gmd:CI_Contact,gmd:address,gmd:CI_Address,gmd:electronicMailAddress,gco:CharacterString,#text:
+158,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:role.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:role£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:role,#text:,,,,,
+159,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:role.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:role£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:role,#text:,,,,,
+160,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:role.gmd:CI_RoleCode.@codeListValue:§author,author,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:role£gmd:CI_RoleCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:role,gmd:CI_RoleCode,@codeListValue:,,,,
+161,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:pointOfContact.gmd:CI_ResponsibleParty.gmd:role.gmd:CI_RoleCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_RoleCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:pointOfContact£gmd:CI_ResponsibleParty£gmd:role£gmd:CI_RoleCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:pointOfContact,gmd:CI_ResponsibleParty,gmd:role,gmd:CI_RoleCode,@codeList:,,,,
+162,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,#text:,,,,,,,
+163,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,#text:,,,,,,,
+164,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.gmd:MD_MaintenanceInformation.gmd:maintenanceAndUpdateFrequency.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£gmd:MD_MaintenanceInformation£gmd:maintenanceAndUpdateFrequency£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,gmd:MD_MaintenanceInformation,gmd:maintenanceAndUpdateFrequency,#text:,,,,,
+165,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.gmd:MD_MaintenanceInformation.gmd:maintenanceAndUpdateFrequency.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£gmd:MD_MaintenanceInformation£gmd:maintenanceAndUpdateFrequency£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,gmd:MD_MaintenanceInformation,gmd:maintenanceAndUpdateFrequency,#text:,,,,,
+166,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.gmd:MD_MaintenanceInformation.gmd:maintenanceAndUpdateFrequency.gmd:MD_MaintenanceFrequencyCode.@codeListValue:§notPlanned,notPlanned,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£gmd:MD_MaintenanceInformation£gmd:maintenanceAndUpdateFrequency£gmd:MD_MaintenanceFrequencyCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,gmd:MD_MaintenanceInformation,gmd:maintenanceAndUpdateFrequency,gmd:MD_MaintenanceFrequencyCode,@codeListValue:,,,,
+167,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceMaintenance.gmd:MD_MaintenanceInformation.gmd:maintenanceAndUpdateFrequency.gmd:MD_MaintenanceFrequencyCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_MaintenanceFrequencyCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceMaintenance£gmd:MD_MaintenanceInformation£gmd:maintenanceAndUpdateFrequency£gmd:MD_MaintenanceFrequencyCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceMaintenance,gmd:MD_MaintenanceInformation,gmd:maintenanceAndUpdateFrequency,gmd:MD_MaintenanceFrequencyCode,@codeList:,,,,
+168,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileName.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileName£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileName,gco:CharacterString,@xmlns:gco:,,,,
+169,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileName.gco:CharacterString.#text:§https://cat.indores.fr/geonetwork/srv/api/records/9bc0583a-8cbb-4dbf-ba3f-fe715264bbff/attachments/Well_trace.png,https://cat.indores.fr/geonetwork/srv/api/records/9bc0583a-8cbb-4dbf-ba3f-fe715264bbff/attachments/Well_trace.png,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileName£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileName,gco:CharacterString,#text:,,,,
+170,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileDescription.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileDescription£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileDescription,gco:CharacterString,@xmlns:gco:,,,,
+171,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileDescription.gco:CharacterString.#text:§Profil en long de la basse vallée de la Drôme (ligne d'eau),Profil en long de la basse vallée de la Drôme (ligne d'eau),gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileDescription£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileDescription,gco:CharacterString,#text:,,,,
+172,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileType.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileType£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileType,gco:CharacterString,@xmlns:gco:,,,,
+173,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:graphicOverview.gmd:MD_BrowseGraphic.gmd:fileType.gco:CharacterString.#text:§png,png,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:graphicOverview£gmd:MD_BrowseGraphic£gmd:fileType£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:graphicOverview,gmd:MD_BrowseGraphic,gmd:fileType,gco:CharacterString,#text:,,,,
+174,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+175,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§Hydrographie,Hydrographie,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+176,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeList:,,,,
+177,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeListValue:§theme,theme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeListValue:,,,,
+178,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:title.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:title,gco:CharacterString,@xmlns:gco:,,
+179,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:title.gco:CharacterString.#text:§GEMET - INSPIRE themes, version 1.0","GEMET - INSPIRE themes, version 1.0",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:title,gco:CharacterString,#text:,,
+180,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:Date.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:Date£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:Date,@xmlns:gco:
+181,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:Date.#text:§2008-06-01,2008-06-01,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:Date,#text:
+182,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeList:
+183,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeListValue:§publication,publication,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeListValue:
+184,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xmlns:gmx:§http://www.isotc211.org/2005/gmx,http://www.isotc211.org/2005/gmx,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xmlns:gmx:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xmlns:gmx:
+185,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xmlns:xlink:§http://www.w3.org/1999/xlink,http://www.w3.org/1999/xlink,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xmlns:xlink:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xmlns:xlink:
+186,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xlink:href:§https://metazabr.irstea.fr/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme,https://metazabr.irstea.fr/geonetwork/srv/fre/thesaurus.download?ref=external.theme.inspire-theme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xlink:href:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xlink:href:
+187,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.#text:§geonetwork.thesaurus.external.theme.inspire-theme,geonetwork.thesaurus.external.theme.inspire-theme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,#text:
+188,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+189,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§Ligne d'eau,Ligne d'eau,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+190,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+191,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§Shapefile,Shapefile,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+192,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+193,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§Basses-eau,Basses-eau,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+194,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeList:,,,,
+195,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeListValue:§theme,theme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeListValue:,,,,
+196,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+197,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§hydrologie,hydrologie,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+198,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeList:,,,,
+199,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeListValue:§theme,theme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeListValue:,,,,
+200,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:title.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:title,gco:CharacterString,@xmlns:gco:,,
+201,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:title.gco:CharacterString.#text:§GEMET,GEMET,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:title£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:title,gco:CharacterString,#text:,,
+202,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:Date.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:Date£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:Date,@xmlns:gco:
+203,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:date.gco:Date.#text:§2009-09-22,2009-09-22,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:date£gco:Date£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:date,gco:Date,#text:
+204,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#CI_DateTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeList:
+205,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:date.gmd:CI_Date.gmd:dateType.gmd:CI_DateTypeCode.@codeListValue:§publication,publication,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:date£gmd:CI_Date£gmd:dateType£gmd:CI_DateTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:date,gmd:CI_Date,gmd:dateType,gmd:CI_DateTypeCode,@codeListValue:
+206,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xmlns:gmx:§http://www.isotc211.org/2005/gmx,http://www.isotc211.org/2005/gmx,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xmlns:gmx:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xmlns:gmx:
+207,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xmlns:xlink:§http://www.w3.org/1999/xlink,http://www.w3.org/1999/xlink,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xmlns:xlink:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xmlns:xlink:
+208,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.@xlink:href:§https://metazabr.irstea.fr/geonetwork/srv/fre/thesaurus.download?ref=external.theme.gemet,https://metazabr.irstea.fr/geonetwork/srv/fre/thesaurus.download?ref=external.theme.gemet,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£@xlink:href:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,@xlink:href:
+209,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:thesaurusName.gmd:CI_Citation.gmd:identifier.gmd:MD_Identifier.gmd:code.gmx:Anchor.#text:§geonetwork.thesaurus.external.theme.gemet,geonetwork.thesaurus.external.theme.gemet,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:thesaurusName£gmd:CI_Citation£gmd:identifier£gmd:MD_Identifier£gmd:code£gmx:Anchor£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:thesaurusName,gmd:CI_Citation,gmd:identifier,gmd:MD_Identifier,gmd:code,gmx:Anchor,#text:
+210,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,@xmlns:gco:,,,,
+211,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:keyword.gco:CharacterString.#text:§Drôme,Drôme,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:keyword£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:keyword,gco:CharacterString,#text:,,,,
+212,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeList:,,,,
+213,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:descriptiveKeywords.gmd:MD_Keywords.gmd:type.gmd:MD_KeywordTypeCode.@codeListValue:§place,place,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:descriptiveKeywords£gmd:MD_Keywords£gmd:type£gmd:MD_KeywordTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:descriptiveKeywords,gmd:MD_Keywords,gmd:type,gmd:MD_KeywordTypeCode,@codeListValue:,,,,
+214,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useLimitation.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useLimitation,gco:CharacterString,@xmlns:gco:,,,,
+215,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useLimitation.gco:CharacterString.#text:§Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour,Utilisation libre sous réserve de mentionner la source (a minima le nom du producteur) et la date de sa dernière mise à jour,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useLimitation£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useLimitation,gco:CharacterString,#text:,,,,
+216,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:accessConstraints.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:accessConstraints,#text:,,,,,
+217,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:accessConstraints.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:accessConstraints,#text:,,,,,
+218,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:accessConstraints.gmd:MD_RestrictionCode.@codeListValue:§copyright,copyright,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£gmd:MD_RestrictionCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:accessConstraints,gmd:MD_RestrictionCode,@codeListValue:,,,,
+219,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:accessConstraints.gmd:MD_RestrictionCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:accessConstraints£gmd:MD_RestrictionCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:accessConstraints,gmd:MD_RestrictionCode,@codeList:,,,,
+220,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useConstraints.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useConstraints,#text:,,,,,
+221,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useConstraints.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useConstraints,#text:,,,,,
+222,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useConstraints.gmd:MD_RestrictionCode.@codeListValue:§copyright,copyright,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useConstraints,gmd:MD_RestrictionCode,@codeListValue:,,,,
+223,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:useConstraints.gmd:MD_RestrictionCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:useConstraints£gmd:MD_RestrictionCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:useConstraints,gmd:MD_RestrictionCode,@codeList:,,,,
+224,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:otherConstraints.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:otherConstraints£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:otherConstraints,@xmlns:gco:,,,,,
+225,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:otherConstraints.@gco:nilReason:§missing,missing,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:otherConstraints£@gco:nilReason:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:otherConstraints,@gco:nilReason:,,,,,
+226,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:resourceConstraints.gmd:MD_LegalConstraints.gmd:otherConstraints.gco:CharacterString:§None,None,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:resourceConstraints£gmd:MD_LegalConstraints£gmd:otherConstraints£gco:CharacterString:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:resourceConstraints,gmd:MD_LegalConstraints,gmd:otherConstraints,gco:CharacterString:,,,,,
+227,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialRepresentationType.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialRepresentationType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialRepresentationType,#text:,,,,,,,
+228,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialRepresentationType.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialRepresentationType£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialRepresentationType,#text:,,,,,,,
+229,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialRepresentationType.gmd:MD_SpatialRepresentationTypeCode.@codeListValue:§vector,vector,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialRepresentationType£gmd:MD_SpatialRepresentationTypeCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialRepresentationType,gmd:MD_SpatialRepresentationTypeCode,@codeListValue:,,,,,,
+230,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialRepresentationType.gmd:MD_SpatialRepresentationTypeCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_SpatialRepresentationTypeCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialRepresentationType£gmd:MD_SpatialRepresentationTypeCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialRepresentationType,gmd:MD_SpatialRepresentationTypeCode,@codeList:,,,,,,
+231,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,#text:,,,,,,,
+232,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,#text:,,,,,,,
+233,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.#text:§
+            ""
+            ","
+            ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,#text:,,,,,
+234,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.#text:§
+            ""
+          ","
+            ""
+          ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,#text:,,,,,
+235,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,#text:,,,,
+236,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.#text:§
+              ""
+            ","
+              ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,#text:,,,,
+237,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.gmd:denominator.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£gmd:denominator£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,gmd:denominator,#text:,,,
+238,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.gmd:denominator.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£gmd:denominator£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,gmd:denominator,#text:,,,
+239,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.gmd:denominator.gco:Integer.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£gmd:denominator£gco:Integer£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,gmd:denominator,gco:Integer,@xmlns:gco:,,
+240,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:spatialResolution.gmd:MD_Resolution.gmd:equivalentScale.gmd:MD_RepresentativeFraction.gmd:denominator.gco:Integer.#text:§1000,1000,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:spatialResolution£gmd:MD_Resolution£gmd:equivalentScale£gmd:MD_RepresentativeFraction£gmd:denominator£gco:Integer£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:spatialResolution,gmd:MD_Resolution,gmd:equivalentScale,gmd:MD_RepresentativeFraction,gmd:denominator,gco:Integer,#text:,,
+241,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:language.gco:CharacterString.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:language£gco:CharacterString£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:language,gco:CharacterString,@xmlns:gco:,,,,,,
+242,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:language.gco:CharacterString.#text:§fre,fre,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:language£gco:CharacterString£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:language,gco:CharacterString,#text:,,,,,,
+243,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:characterSet.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:characterSet£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:characterSet,#text:,,,,,,,
+244,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:characterSet.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:characterSet£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:characterSet,#text:,,,,,,,
+245,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:characterSet.gmd:MD_CharacterSetCode.@codeListValue:§utf8,utf8,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:characterSet£gmd:MD_CharacterSetCode£@codeListValue:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:characterSet,gmd:MD_CharacterSetCode,@codeListValue:,,,,,,
+246,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:characterSet.gmd:MD_CharacterSetCode.@codeList:§http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode,http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_CharacterSetCode,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:characterSet£gmd:MD_CharacterSetCode£@codeList:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:characterSet,gmd:MD_CharacterSetCode,@codeList:,,,,,,
+247,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:topicCategory.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:topicCategory£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:topicCategory,#text:,,,,,,,
+248,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:topicCategory.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:topicCategory£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:topicCategory,#text:,,,,,,,
+249,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:topicCategory.gmd:MD_TopicCategoryCode:§geoscientificInformation,geoscientificInformation,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:topicCategory£gmd:MD_TopicCategoryCode:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:topicCategory,gmd:MD_TopicCategoryCode:,,,,,,,
+250,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,#text:,,,,,,,
+251,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,#text:,,,,,,,
+252,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.#text:§
+              ""
+              ","
+              ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,#text:,,,,
+253,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.#text:§
+              ""
+            ","
+              ""
+            ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,#text:,,,,
+254,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.gmd:extent.gml:TimePeriod.@xmlns:gml:§http://www.opengis.net/gml,http://www.opengis.net/gml,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£gmd:extent£gml:TimePeriod£@xmlns:gml:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,gmd:extent,gml:TimePeriod,@xmlns:gml:,,
+255,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.gmd:extent.gml:TimePeriod.@gml:id:§d132821e435a1052958,d132821e435a1052958,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£gmd:extent£gml:TimePeriod£@gml:id:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,gmd:extent,gml:TimePeriod,@gml:id:,,
+256,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.gmd:extent.gml:TimePeriod.gml:beginPosition:§25 juin 2014,25 juin 2014,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£gmd:extent£gml:TimePeriod£gml:beginPosition:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,gmd:extent,gml:TimePeriod,gml:beginPosition:,,
+257,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:temporalElement.gmd:EX_TemporalExtent.gmd:extent.gml:TimePeriod.gml:endPosition:§26 juin 2014,26 juin 2014,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:temporalElement£gmd:EX_TemporalExtent£gmd:extent£gml:TimePeriod£gml:endPosition:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:temporalElement,gmd:EX_TemporalExtent,gmd:extent,gml:TimePeriod,gml:endPosition:,,
+258,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.#text:§
+        ""
+        ","
+        ""
+        ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,#text:,,,,,,,
+259,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.#text:§
+        ""
+      ","
+        ""
+      ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,#text:,,,,,,,
+260,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:westBoundLongitude.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:westBoundLongitude,#text:,,,
+261,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:westBoundLongitude.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:westBoundLongitude,#text:,,,
+262,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:westBoundLongitude.gco:Decimal.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£gco:Decimal£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:westBoundLongitude,gco:Decimal,@xmlns:gco:,,
+263,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:westBoundLongitude.gco:Decimal.#text:§4.832611083984375,4.832611083984375,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:westBoundLongitude£gco:Decimal£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:westBoundLongitude,gco:Decimal,#text:,,
+264,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:eastBoundLongitude.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:eastBoundLongitude,#text:,,,
+265,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:eastBoundLongitude.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:eastBoundLongitude,#text:,,,
+266,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:eastBoundLongitude.gco:Decimal.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£gco:Decimal£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:eastBoundLongitude,gco:Decimal,@xmlns:gco:,,
+267,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:eastBoundLongitude.gco:Decimal.#text:§5.0406646728515625,5.0406646728515625,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:eastBoundLongitude£gco:Decimal£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:eastBoundLongitude,gco:Decimal,#text:,,
+268,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:southBoundLatitude.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:southBoundLatitude,#text:,,,
+269,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:southBoundLatitude.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:southBoundLatitude,#text:,,,
+270,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:southBoundLatitude.gco:Decimal.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£gco:Decimal£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:southBoundLatitude,gco:Decimal,@xmlns:gco:,,
+271,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:southBoundLatitude.gco:Decimal.#text:§44.709658198123776,44.709658198123776,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:southBoundLatitude£gco:Decimal£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:southBoundLatitude,gco:Decimal,#text:,,
+272,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:northBoundLatitude.#text:§
+                ""
+                ","
+                ""
+                ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:northBoundLatitude,#text:,,,
+273,"gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:northBoundLatitude.#text:§
+                ""
+              ","
+                ""
+              ",gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:northBoundLatitude,#text:,,,
+274,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:northBoundLatitude.gco:Decimal.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£gco:Decimal£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:northBoundLatitude,gco:Decimal,@xmlns:gco:,,
+275,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:extent.gmd:EX_Extent.gmd:geographicElement.gmd:EX_GeographicBoundingBox.gmd:northBoundLatitude.gco:Decimal.#text:§44.77988550277277,44.77988550277277,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:extent£gmd:EX_Extent£gmd:geographicElement£gmd:EX_GeographicBoundingBox£gmd:northBoundLatitude£gco:Decimal£#text:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:extent,gmd:EX_Extent,gmd:geographicElement,gmd:EX_GeographicBoundingBox,gmd:northBoundLatitude,gco:Decimal,#text:,,
+276,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:supplementalInformation.@xmlns:gco:§http://www.isotc211.org/2005/gco,http://www.isotc211.org/2005/gco,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:supplementalInformation£@xmlns:gco:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:supplementalInformation,@xmlns:gco:,,,,,,,
+277,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:supplementalInformation.@gco:nilReason:§missing,missing,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:supplementalInformation£@gco:nilReason:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:supplementalInformation,@gco:nilReason:,,,,,,,
+278,gmd:identificationInfo.gmd:MD_DataIdentification.gmd:supplementalInformation.gco:CharacterString:§None,None,gmd:identificationInfo£gmd:MD_DataIdentification£gmd:supplementalInformation£gco:CharacterString:,gmd:identificationInfo,gmd:MD_DataIdentification,gmd:supplementalInformation,gco:CharacterString:,,,,,,,
+279,"gmd:distributionInfo.#text:§
+    ""
+    ","
+    ""
+    ",gmd:distributionInfo£#text:,gmd:distributionInfo,#text:,,,,,,,,,
+280,"gmd:distributionInfo.#text:§
+    ""
+  ","
+    ""
+  ",gmd:distributionInfo£#text:,gmd:distributionInfo,#text:,,,,,,,,,
+281,gmd:distributionInfo.gmd:MD_Distribution.gmd:distributionFormat:§None,None,gmd:distributionInfo£gmd:MD_Distribution£gmd:distributionFormat:,gmd:distributionInfo,gmd:MD_Distribution,gmd:distributionFormat:,,,,,,,,
+282,"gmd:distributionInfo.gmd:MD_Distribution.gmd:transferOptions.#text:§
+        ""
+        ","
+        ""
+        ",gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£#text:,gmd:distributionInfo,gmd:MD_Distribution,gmd:transferOptions,#text:,,,,,,,
+283,"gmd:distributionInfo.gmd:MD_Distribution.gmd:transferOptions.#text:§
+        ""
+      ","
+        ""
+      ",gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£#text:,gmd:distributionInfo,gmd:MD_Distribution,gmd:transferOptions,#text:,,,,,,,
+284,gmd:distributionInfo.gmd:MD_Distribution.gmd:transferOptions.gmd:MD_DigitalTransferOptions:§None,None,gmd:distributionInfo£gmd:MD_Distribution£gmd:transferOptions£gmd:MD_DigitalTransferOptions:,gmd:distributionInfo,gmd:MD_Distribution,gmd:transferOptions,gmd:MD_DigitalTransferOptions:,,,,,,,
+285,,,,,,,,,,,,,,
