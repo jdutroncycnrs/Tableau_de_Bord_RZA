@@ -43,9 +43,26 @@ couleur_subsubtitles = (60,150,160)
 taille_subsubtitles = "25px"
 
 ######################################################################################################################
-########### DATE #####################################################################################################
+########### PARAMETRES #####################################################################################################
 ######################################################################################################################
 d = datetime.date.today().year
+
+liste_ZAs_ = ["Zone atelier territoires uranifères",
+              " Zone Atelier Seine",
+              " Zone atelier Loire",
+              " Zone atelier bassin du Rhône",
+              " Zone atelier bassin de la Moselle",
+              " Zone atelier Alpes",
+              " Zone atelier arc jurassien",
+              " Zone atelier Armorique",
+              " Zone atelier Plaine et Val de Sèvre",
+              " Zone atelier environnementale urbaine",
+              " Zone atelier Hwange",
+              " Zone atelier Pyrénées Garonne",
+              " Zone atelier Brest Iroise",
+              " Zone Atelier Antarctique et Terres Australes",
+              " Zone Atelier Santé Environnement Camargue",
+              " Zone Atelier Argonne"]
 
 ###############################################################################################
 ########### POUR L'ADMINISTRATEUR ############################################################
@@ -77,23 +94,6 @@ if admin_action == admin_pass:
 ######################################################################################################################
 ########### SELECTION ZA #############################################################################################
 ######################################################################################################################
-liste_ZAs_ = ["Zone atelier territoires uranifères",
-              " Zone Atelier Seine",
-              " Zone atelier Loire",
-              " Zone atelier bassin du Rhône",
-              " Zone atelier bassin de la Moselle",
-              " Zone atelier Alpes",
-              " Zone atelier arc jurassien",
-              " Zone atelier Armorique",
-              " Zone atelier Plaine et Val de Sèvre",
-              " Zone atelier environnementale urbaine",
-              " Zone atelier Hwange",
-              " Zone atelier Pyrénées Garonne",
-              " Zone atelier Brest Iroise",
-              " Zone Atelier Antarctique et Terres Australes",
-              " Zone Atelier Santé Environnement Camargue",
-              " Zone Atelier Argonne"]
-
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :
@@ -123,7 +123,7 @@ else:
 ######################################################################################################################
 st.title(":grey[Extraction des publications sur HAL]")
 
-st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER")
+st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
 st.success("Selectionner une année de début de recherche (par défaut: année en cours) / TAPER ANNEE + ENTREE ")
 
 with st.spinner("Recherche en cours"):

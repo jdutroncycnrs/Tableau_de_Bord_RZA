@@ -169,6 +169,9 @@ fi = glob.glob(f"pages/data/uuids/uuid_cat_InDoRes_clean*.csv")
 
 st.title(':grey[Visualisation des fiches]')
 
+st.success("Si vous le souhaitez, filtrer le réseau ciblé (RZA ou OHM) (par défaut, tout apparait) / CASE A COCHER")
+st.success("Si vous le souhaitez, filtrer le groupe (ZA ou OHM) ciblé (par défaut, tout apparait) / LISTE DEROULANTE")
+
 # Si oui, on récupère le dernier enregistré ; si non, on récupère les identifiants à la date donnée
 if len(fi)!=0:
     fichier_uuids = fi[-1]

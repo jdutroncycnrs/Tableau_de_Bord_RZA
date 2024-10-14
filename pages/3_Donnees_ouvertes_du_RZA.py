@@ -246,8 +246,8 @@ with st.sidebar:
 
 ######################  TITRES  #######################################
 st.title(":grey[Donnees ouvertes du RZA]")
-st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER")
-st.success("Selectionner l'entrepôt dans lequel faire votre recherche / CASE A COCHER")
+st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
+st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
 
 if catalogues:
     st.title(":grey[Analyse des dépôts dans les geonetworks]")
