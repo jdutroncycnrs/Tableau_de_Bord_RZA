@@ -35,7 +35,7 @@ def scraping_GN(date):
         time.sleep(5)
         current_url = driver.current_url
 
-        with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt","w") as file:
+        with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt","w") as file:
             file.write(current_url)
 
 
@@ -75,7 +75,7 @@ def recup_group(uuid):
     return g
 
 def uuids_cleaning(date):
-    with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt") as file:
+    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
         t = file.read()
     t2 =t[70:]
     list_uuid_brutes= re.split(',', t2)
@@ -95,10 +95,10 @@ def uuids_cleaning(date):
         except:
             new_list_uuid2.append(new_list_uuid[j])
     df_uuid = pd.DataFrame(data= new_list_uuid2,columns=["uuid_cat_InDoRes"])
-    df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
+    df_uuid.to_csv(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean_{date}.csv")
 
 def uuids_cleaning2(date):
-    with open(f"pages/data/uuids/uuid_cat_InDoRes_{date}.txt") as file:
+    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
         t = file.read()
         # suppression de l'intro de l'url
         t2 =t[70:]
