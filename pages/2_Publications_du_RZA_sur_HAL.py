@@ -47,6 +47,33 @@ taille_subsubtitles = "25px"
 ######################################################################################################################
 d = datetime.date.today().year
 
+###############################################################################################
+########### POUR L'ADMINISTRATEUR ############################################################
+###############################################################################################
+
+# Mot de passe pour faire des récupérations automatisées
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+if admin_action == admin_pass:
+
+    RecupPublications = st.sidebar.button("Récupération des publications")
+    if RecupPublications:
+        with st.spinner("Connexion à HAL pour récupérer l'ensemble des publications"):
+                liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
+                df_global_hal_admin = pd.DataFrame(columns=liste_columns_hal)
+                for i, s in enumerate(liste_ZAs_):
+                        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:"{s.lower().strip()}"&rows=1500&wt=json&fq=producedDateY_i:[2000 TO {d}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
+                        df = afficher_publications_hal(url_type, s)
+                        dfi = pd.concat([df_global_hal_admin,df], axis=0)
+                        dfi.reset_index(inplace=True)
+                        dfi.drop(columns='index', inplace=True)
+                        df_global_hal_admin = dfi
+                df_global_hal_admin.sort_values(by='Ids', inplace=True, ascending=False)
+                df_global_hal_admin.reset_index(inplace=True)
+                df_global_hal_admin.drop(columns='index', inplace=True)
+                df_global_hal_admin.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
+
 ######################################################################################################################
 ########### SELECTION ZA #############################################################################################
 ######################################################################################################################
@@ -90,33 +117,6 @@ if annee_unique:
         end_year = start_year
 else:
         end_year = d
-
-###############################################################################################
-########### POUR L'ADMINISTRATEUR ############################################################
-###############################################################################################
-
-# Mot de passe pour faire des récupérations automatisées
-admin_pass = 'admin'
-admin_action = st.sidebar.text_input(label="Pour l'administrateur")
-
-if admin_action == admin_pass:
-
-    RecupPublications = st.sidebar.button("Récupération des publications")
-    if RecupPublications:
-        with st.spinner("Connexion à HAL pour récupérer l'ensemble des publications"):
-                liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
-                df_global_hal_admin = pd.DataFrame(columns=liste_columns_hal)
-                for i, s in enumerate(liste_ZAs_):
-                        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:"{s.lower().strip()}"&rows=1500&wt=json&fq=producedDateY_i:[2000 TO {d}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
-                        df = afficher_publications_hal(url_type, s)
-                        dfi = pd.concat([df_global_hal_admin,df], axis=0)
-                        dfi.reset_index(inplace=True)
-                        dfi.drop(columns='index', inplace=True)
-                        df_global_hal_admin = dfi
-                df_global_hal_admin.sort_values(by='Ids', inplace=True, ascending=False)
-                df_global_hal_admin.reset_index(inplace=True)
-                df_global_hal_admin.drop(columns='index', inplace=True)
-                df_global_hal_admin.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
 
 ######################################################################################################################
 ########### VISUALISATION ##########################################################################################
