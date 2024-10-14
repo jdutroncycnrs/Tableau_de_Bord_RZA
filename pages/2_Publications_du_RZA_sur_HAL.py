@@ -34,15 +34,22 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-########### CHOIX VISUELS ######################################
+######################################################################################################################
+########### CHOIX VISUELS ############################################################################################
+######################################################################################################################
 couleur_subtitles = (250,150,150)
 taille_subtitles = "25px"
 couleur_subsubtitles = (60,150,160)
 taille_subsubtitles = "25px"
 
-
+######################################################################################################################
+########### DATE #####################################################################################################
+######################################################################################################################
 d = datetime.date.today().year
-########### CHOIX ZA ######################################
+
+######################################################################################################################
+########### SELECTION ZA #############################################################################################
+######################################################################################################################
 liste_ZAs_ = ["Zone atelier territoires uranifères",
               " Zone Atelier Seine",
               " Zone atelier Loire",
@@ -67,6 +74,9 @@ if all_ZAs==True :
 else:
     Selection_ZA= st.sidebar.multiselect(label="Zones Ateliers", options=liste_ZAs_)
 
+######################################################################################################################
+########### SELECTION ANNEE ##########################################################################################
+######################################################################################################################
 col1,col2 = st.sidebar.columns(2)
 with col1:
         start_year = st.text_input(label='Année de début')
@@ -81,37 +91,78 @@ if annee_unique:
 else:
         end_year = d
 
+###############################################################################################
+########### POUR L'ADMINISTRATEUR ############################################################
+###############################################################################################
+
+# Mot de passe pour faire des récupérations automatisées
+admin_pass = 'admin'
+admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+if admin_action == admin_pass:
+
+    RecupPublications = st.sidebar.button("Récupération des publications")
+    if RecupPublications:
+        with st.spinner("Connexion à HAL pour récupérer l'ensemble des publications"):
+                liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
+                df_global_hal = pd.DataFrame(columns=liste_columns_hal)
+                for i, s in enumerate(liste_ZAs_):
+                        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:"{s.lower().strip()}"&rows=1500&wt=json&fq=producedDateY_i:[2000 TO {d}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
+                        df = afficher_publications_hal(url_type, s)
+                        dfi = pd.concat([df_global_hal,df], axis=0)
+                        dfi.reset_index(inplace=True)
+                        dfi.drop(columns='index', inplace=True)
+                        df_global_hal = dfi
+                df_global_hal.sort_values(by='Ids', inplace=True, ascending=False)
+                df_global_hal.reset_index(inplace=True)
+                df_global_hal.drop(columns='index', inplace=True)
+                df_global_hal.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
+
+######################################################################################################################
+########### VISUALISATION ##########################################################################################
+######################################################################################################################
 st.title(":grey[Extraction des publications sur HAL]")
 
+st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER")
+st.success("Selectionner une année de début de recherche (par défaut: année en cours) / TAPER ANNEE + ENTREE ")
 
-liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
-df_global_hal = pd.DataFrame(columns=liste_columns_hal)
-for i, s in enumerate(Selection_ZA):
-        url_type = f'http://api.archives-ouvertes.fr/search/?q=text:"{s.lower().strip()}"&rows=1500&wt=json&fq=producedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
-        df = afficher_publications_hal(url_type, s)
-        dfi = pd.concat([df_global_hal,df], axis=0)
-        dfi.reset_index(inplace=True)
-        dfi.drop(columns='index', inplace=True)
-        df_global_hal = dfi
-df_global_hal.sort_values(by='Ids', inplace=True, ascending=False)
-df_global_hal.reset_index(inplace=True)
-df_global_hal.drop(columns='index', inplace=True)
+with st.spinner("Recherche en cours"):
+        liste_columns_hal = ['Store','Entrepot','Ids','Titre et auteurs','Uri','Type','Type de document', 'Date de production']
+        df_global_hal = pd.DataFrame(columns=liste_columns_hal)
+        for i, s in enumerate(Selection_ZA):
+                url_type = f'http://api.archives-ouvertes.fr/search/?q=text:"{s.lower().strip()}"&rows=1500&wt=json&fq=producedDateY_i:[{start_year} TO {end_year}]&sort=docid asc&fl=docid,label_s,uri_s,submitType_s,docType_s, producedDateY_i'
+                df = afficher_publications_hal(url_type, s)
+                dfi = pd.concat([df_global_hal,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_global_hal = dfi
+        df_global_hal.sort_values(by='Ids', inplace=True, ascending=False)
+        df_global_hal.reset_index(inplace=True)
+        df_global_hal.drop(columns='index', inplace=True)
 
 if len(df_global_hal)==0:
      pass
 else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_global_hal))
-        #st.dataframe(df_global)
+        col1, col2 = st.columns(2)
+        with col1:
+                st.metric(label="Nombre de publications trouvées", value=len(df_global_hal))
 
-        #df_global_hal.to_csv("pages/data/Hal/Contenu_HAL_complet.csv")
-        csv = df.to_csv(index=False)
+        with col2:
+                if all_ZAs:
+                        selection_name = "All_ZAs"
+                else:
+                        selection_name = ""
+                        for i in range(len(Selection_ZA)):
+                                selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
 
-        # Download button
-        st.download_button(
-                label="Téléchargement des Données en CSV",
-                data=csv,
-                file_name='dataframe.csv',
-                mime='text/csv')
+                data_to_get = df.to_csv(index=False)
+                st.write("")
+                # Download button
+                st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=data_to_get,
+                        file_name=f'data_HAL_{selection_name}_from_{start_year}_to_{end_year}.csv',
+                        mime='text/csv')
 
         for i in range(len(df_global_hal)):
                 with st.container(border=True):
@@ -151,4 +202,3 @@ else:
                                 s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
                                 st.markdown(s_t0f,unsafe_allow_html=True)
                                 st.markdown(df_global_hal.loc[i,'Date de production'])
-
