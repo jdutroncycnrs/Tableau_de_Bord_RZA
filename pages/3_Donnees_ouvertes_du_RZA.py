@@ -13,9 +13,11 @@ import requests
 
 from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
-########### TITRE DE L'ONGLET ######################################
+######################################################################################################################
+########### TITRE DE L'ONGLET ########################################################################################
+######################################################################################################################
 st.set_page_config(
-    page_title="Autres entrepôts",
+    page_title="Donnees ouvertes du RZA",
     page_icon="👋",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -24,7 +26,9 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
-########### COULEURS SIDEBAR ######################################
+######################################################################################################################
+########### COULEURS DES PAGES #######################################################################################
+######################################################################################################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {

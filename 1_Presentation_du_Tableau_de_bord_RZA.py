@@ -1,7 +1,9 @@
 import streamlit as st
 from PIL import Image
 
-########### TITRE DE L'ONGLET ######################################
+######################################################################################################################
+########### TITRE DE L'ONGLET ########################################################################################
+######################################################################################################################
 st.set_page_config(
     page_title="Tableau de Bord RZA",
     page_icon="👋",
@@ -12,6 +14,9 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+######################################################################################################################
+########### COULEURS DES PAGES #######################################################################################
+######################################################################################################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
@@ -32,10 +37,13 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-########### LOGOS ##################################################
+
+######################################################################################################################
+########### LOGOS ####################################################################################################
+######################################################################################################################
 col1, col2 = st.columns(2)
-logo1 = Image.open("logo_CNRS.png")
-logo2 = Image.open("logo_RZA.png")
+logo1 = Image.open("pages/data/Images/logo_CNRS.png")
+logo2 = Image.open("pages/data/Images/logo_RZA.png")
 
 with col1:
     st.image(logo1, width=100)
@@ -43,27 +51,37 @@ with col2:
     st.image(logo2, width=300)
 
 
-########### TITRE DE BIENVENUE #####################################
+######################################################################################################################
+########### TITRE ET BIENVENUE #######################################################################################
+######################################################################################################################
 tit = 'Bienvenue sur le Tableau de Bord'
 s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
 st.markdown(s_tit,unsafe_allow_html=True)
 
 st.title(':grey[Science Ouverte du RZA]')
 
-"Différentes pages pour visualiser des informations:"
+st.subheader("Différentes pages pour visualiser des informations:")
 
-"- Page de présentation avec des éléments de documentations (ci-dessous)"
-"- Recherche automatique des publications d'articles sur HAL (sélection d'une ZA ou plusieurs)"
-"- Visualisation du contenu de Data.InDoRES"
-"- Recherche des dépôts de données dans d'autres entrepôts"
-"- Visualisation du contenu général de Cat.InDoRES "
-"- Possibilité de visualisation 'fiche par fiche'"
+proposals =  f"""<span style="font-size: 26 px;">
+<ol>
+<li style="font-size:15px";>ICI , Page de Présentation</li>
+<li style="font-size:15px";></li>
+<li style="font-size:15px";></li>
+<li style="font-size:15px";></li>
+<li style="font-size:15px";></li>
+<li style="font-size:15px";></li>
+<li style="font-size:15px";></li>
+</ol></span>"""
+
+st.markdown(proposals, unsafe_allow_html=True)
 
 
 st.sidebar.success("Selectionner une page ci-dessus")
 
-########## NUAGE DE MOTS ###########################################
-Nuage_mots = Image.open("nuage-de-mots.png")
+######################################################################################################################
+########### NUAGE DE MOTS ############################################################################################
+######################################################################################################################
+Nuage_mots = Image.open("pages/data/Images/nuage-de-mots.png")
 left_co,center_co,last_co = st.columns(3)
 with center_co:
     st.sidebar.image(Nuage_mots, width=300)
@@ -123,7 +141,7 @@ st.title(':grey[Documentations]')
 "   - En blanc: ce n'est pas OK"
 
 
-FAIR_principes = Image.open("Principes_FAIR.png")
+FAIR_principes = Image.open("pages/data/Images/Principes_FAIR.png")
 st.image(FAIR_principes, width=1000)
 
 st.title(':grey[Rappel des référents "Données" du RZA]')

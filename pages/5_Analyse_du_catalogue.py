@@ -10,10 +10,11 @@ from plotly.subplots import make_subplots
 from preparation_tableau import prepa_date, year, coordonnees, traitement_thesaurus, traitement_mots_cles, traitement_langues, traitement_standards, traitement_formats, traitement_orgas,traitement_droits,traitement_contacts
 pd.options.mode.chained_assignment = None
 
-
-########### TITRE DE L'ONGLET ######################################
+######################################################################################################################
+########### TITRE DE L'ONGLET ########################################################################################
+######################################################################################################################
 st.set_page_config(
-    page_title="Analyse globale des enregistrements dans le GeoNetwork",
+    page_title="Analyse du catalogue InDoRES",
     page_icon="👋",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -22,6 +23,9 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
+######################################################################################################################
+########### COULEURS DES PAGES #######################################################################################
+######################################################################################################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {

@@ -12,11 +12,11 @@ from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group, uuids_c
 from Traitement_records import transcript_json, recup_fiche, recup_fiche2, recup_themes_thesaurus_motsCles, recup_attachements, recup_ressources
 import ast
 
-###############################################################################
-########### TITRE ET CONFIG  DE L'ONGLET ######################################
-###############################################################################
+######################################################################################################################
+########### TITRE DE L'ONGLET ########################################################################################
+######################################################################################################################
 st.set_page_config(
-    page_title="Analyse des fiches de métadonnées du GeoNetwork",
+    page_title="Contenu du catalogue InDoRES",
     page_icon="👋",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -25,7 +25,9 @@ st.set_page_config(
         'About': "Application de suivi des outils de science ouverte du RZA, développé par Jérôme Dutroncy"}
 )
 
-########### COULEURS SIDEBAR ######################################
+######################################################################################################################
+########### COULEURS DES PAGES #######################################################################################
+######################################################################################################################
 st.markdown("""
  <style>
     [data-testid=stSidebar] {
