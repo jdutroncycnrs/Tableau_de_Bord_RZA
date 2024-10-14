@@ -40,7 +40,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-############ PARAMETRES ############################################
+######################################################################################################################
+########### PARAMETRES ###############################################################################################
+######################################################################################################################
 zoom = 4
 
 tableau = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
@@ -56,7 +58,9 @@ legend_font =15
 graph_title_color = "gray"
 graph_ticks_color = 'gray'
 
-###########  FILTRE DES CATALOGUES ####################################
+######################################################################################################################
+########### FILTRE CATALOGUES ########################################################################################
+######################################################################################################################
 
 liste_ZAs = ['zaa', 
              'zaaj', 
@@ -89,19 +93,19 @@ liste_OHMs = ['OHM Littoral méditerranéen',
               'DRIIHM']
 autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
 
-########### Choix OHM/RZA #############################################################
+######################################################################################################################
+########### SELECTION ZA #############################################################################################
+######################################################################################################################
 ## Le choix est exclusif ##############################################################
 if 'checkbox1' not in st.session_state:
     st.session_state.checkbox1 = False
 if 'checkbox2' not in st.session_state:
     st.session_state.checkbox2 = False
 
-# Function to handle checkbox1 change
 def handle_checkbox1_change():
     if st.session_state.checkbox1:
         st.session_state.checkbox2 = False
 
-# Function to handle checkbox2 change
 def handle_checkbox2_change():
     if st.session_state.checkbox2:
         st.session_state.checkbox1 = False
@@ -144,14 +148,18 @@ else:
     df_selected = tableau
     st.sidebar.metric('Nombre de fiches:',len(df_selected))
 
-##################### RAPPEL CAT.INDORES ##################################################################
+######################################################################################################################
+########### TITRE GENERAL ############################################################################################
+######################################################################################################################
 st.title(':grey[Visuels issus des métadonnées de Cat.InDoRes]')
 
 #adresse_catInDoRes = 'http://cat.indores.fr/geonetwork/srv/fre/catalog.search#/home'
 #s_adresse_catInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_catInDoRes}</p>"
 #st.markdown(s_adresse_catInDoRes ,unsafe_allow_html=True)
 
-##################### PREPARATION DATES ###################################################################
+#####################################################################################################################
+########### PREPARATION VISUALISATIONS DATES ########################################################################
+#####################################################################################################################
 df_selected_year = year(df_selected)
 try:
     df_selected_year_bis = df_selected_year.dropna(subset='Year')
@@ -166,11 +174,15 @@ rule = '6ME'
 df_date = prepa_date(df_selected_year, rule=rule)
 df_date_year = year(df_date)
 
-##################### PREPARATION COORDONNEES SPATIALES ####################################################
+#####################################################################################################################
+########### PREPARATION COORDONNEES SPATIALES #######################################################################
+#####################################################################################################################
 
 df_selected_year_coord = coordonnees(df_selected_year)
 
-###########################################################################################################
+#####################################################################################################################
+########### CHOIX VISUALISATIONS ####################################################################################
+#####################################################################################################################
 with st.container(border=True):
     
 
@@ -187,7 +199,7 @@ with st.container(border=True):
     if 'Analyse_FAIR' not in st.session_state:
         st.session_state.Analyse_FAIR = False
 
-    # Function to handle checkbox1 change
+
     def handle_button1_change():
         if st.session_state.Repartition_fiches:
             st.session_state.Evolution_temporelle = False
@@ -204,7 +216,6 @@ with st.container(border=True):
             st.session_state.Analyse_FAIR = False
             st.session_state.Repartition_fiches = False
 
-    # Function to handle checkbox2 change
     def handle_button3_change():
         if st.session_state.Repartition_spatiale:
             st.session_state.Evolution_temporelle = False
@@ -252,6 +263,9 @@ with st.container(border=True):
         Analyse_FAIR = st.checkbox(label='Analyse FAIR', key='Analyse_FAIR',on_change=handle_button6_change)
 
 
+#####################################################################################################################
+########### VISUALISATIONS REPARTITION FICHES #######################################################################
+#####################################################################################################################
 if Repartition_fiches:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=True)
     Counts = df_selected_year['GroupeEtMention'].value_counts()
@@ -279,6 +293,9 @@ if Repartition_fiches:
                     height=500)
     st.plotly_chart(fig_counts,use_container_width=True)
 
+#####################################################################################################################
+########### VISUALISATIONS EVOLUTIONS TEMPORELLES ###################################################################
+#####################################################################################################################
 elif Evolution_temporelle:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     fig_tempo = go.Figure()
@@ -309,7 +326,9 @@ elif Evolution_temporelle:
                 height=500)
     st.plotly_chart(fig_tempo, use_container_width=True)
 
-
+#####################################################################################################################
+########### VISUALISATIONS REPARTITIONS SPATIALES ###################################################################
+#####################################################################################################################
 elif Repartition_spatiale:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     df_selected_year_coord_dropna1 = df_selected_year_coord.dropna(subset='lat')
@@ -320,6 +339,10 @@ elif Repartition_spatiale:
     except:
         st.markdown("Désolé il n'y a pas de coordonnées à visualiser")
 
+
+#####################################################################################################################
+########### VISUALISATIONS AUTRES CHAMPS ############################################################################
+#####################################################################################################################
 elif Autres_champs:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     with st.container(border=True):
@@ -336,7 +359,6 @@ elif Autres_champs:
         if 'Droits' not in st.session_state:
             st.session_state.Droits = False
 
-        # Function to handle checkbox1 change
         def handle_button1_change():
             if st.session_state.Langues:
                 st.session_state.Standards = False
@@ -353,7 +375,6 @@ elif Autres_champs:
                 st.session_state.Contacts = False
                 st.session_state.Droits = False
 
-        # Function to handle checkbox2 change
         def handle_button3_change():
             if st.session_state.Formats:
                 st.session_state.Standards = False
@@ -605,6 +626,9 @@ elif Autres_champs:
         st.plotly_chart(fig_droits,use_container_width=True)
 
 
+#####################################################################################################################
+########### VISUALISATIONS DESCRIPTIONS ###################################################################
+#####################################################################################################################
 elif Description:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     liste_desc = ['Thèmes','Thesaurus','Mots Clés']
@@ -795,6 +819,10 @@ elif Description:
             df_sorted_value_counts_non.set_index('Mot_clé',inplace=True)
             st.table(df_sorted_value_counts_non)
 
+
+#####################################################################################################################
+########### VISUALISATIONS MATRICE FAIR #############################################################################
+#####################################################################################################################
 elif Analyse_FAIR:
     selection_dates_input = st.sidebar.slider('DATE MINI CHOISIE',min_value=start_year,max_value=end_year, disabled=False)
     liste_columns = ['F2','A1','I1','I2','R1','R2']
