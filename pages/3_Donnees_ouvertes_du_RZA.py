@@ -9,8 +9,6 @@ import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import requests
-
-
 from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ######################################################################################################################
@@ -69,41 +67,45 @@ graph_ticks_color = 'gray'
 
 
 ######################################################################################################################
-########### PARAMETRES DE CONNEXION ##################################################################################
+########### PARAMETRES  ##############################################################################################
 ######################################################################################################################
 
-######################## Data Indores ############################################
+d = datetime.date.today()
+
+######################################################################################################################
+######################## INDORES #####################################################################################
 BASE_URL="https://data.indores.fr"
 API_TOKEN="19f0769d-564f-44ac-809b-22853f186960"
 
-######################## RDG ############################################
+######################################################################################################################
+######################## RDG #########################################################################################
 BASE_URL="https://entrepot.recherche.data.gouv.fr/"
 API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 
-######################## Nakala ############################################
+######################################################################################################################
+######################## NAKALA ######################################################################################
 url_nakala = "https://api.nakala.fr/search"
 headers_nakala = {
   'X-API-KEY': 'c3cac1e9-cecc-a05c-bf8e-2459669a1f31',
   'accept': 'application/json'
 }
 
-######################## Zenodo ############################################
+######################################################################################################################
+######################## ZENODO ######################################################################################
 url_zenodo = 'https://zenodo.org/api/records/'
 zenodo_token = "OMMGEVUcApEKSt4JEkSK7OzpqZQPMvGKAlB2yP2MXG6APstRn2hWpiHfpjaA"
 headers_zenodo = {"Content-Type": "application/json"}
 
-########################## DRYAD #########################################
+######################################################################################################################
+########################## DRYAD #####################################################################################
 url_dryad = "https://datadryad.org/api/v2/search?"
 
-
-########################## GBIF #########################################
+######################################################################################################################
+########################## GBIF ######################################################################################
 url_gbif = "https://api.gbif.org/v1/dataset?"
 headers_gbif = {'accept': 'application/json'}
 
 
-######################################################################################################################
-########### SELECTION ZA #############################################################################################
-######################################################################################################################
 liste_ZAs_ = ["Zone atelier territoires uranifères",
               " Zone Atelier Seine",
               " Zone atelier Loire",
@@ -138,7 +140,9 @@ liste_ZAs_bis = [['Zone atelier territoires uranifères','36'],
               [' Zone Atelier Santé Environnement Camargue','10296'],
               [' Zone Atelier Argonne','10297']]
 
-d = datetime.date.today()
+######################################################################################################################
+########### SELECTION ZA #############################################################################################
+######################################################################################################################
 
 all_ZAs= st.sidebar.checkbox("Ensemble du réseau ZA")
 if all_ZAs==True :
@@ -167,7 +171,6 @@ with st.sidebar:
     if 'gbif' not in st.session_state:
         st.session_state.gbif = False
 
-# Function to handle checkbox1 change
     def handle_checkbox0_change():
         if st.session_state.catalogues:
             st.session_state.indores = False
@@ -177,7 +180,6 @@ with st.sidebar:
             st.session_state.nakala = False
             st.session_state.zenodo = False
 
-# Function to handle checkbox1 change
     def handle_checkbox1_change():
         if st.session_state.indores:
             st.session_state.catalogues = False
@@ -187,7 +189,6 @@ with st.sidebar:
             st.session_state.nakala = False
             st.session_state.zenodo = False
 
-    # Function to handle checkbox1 change
     def handle_checkbox2_change():
         if st.session_state.rdg:
             st.session_state.catalogues = False
@@ -197,8 +198,6 @@ with st.sidebar:
             st.session_state.nakala = False
             st.session_state.zenodo = False
             
-
-    # Function to handle checkbox2 change
     def handle_checkbox3_change():
         if st.session_state.nakala:
             st.session_state.catalogues = False
@@ -244,16 +243,26 @@ with st.sidebar:
     dryad = st.checkbox("DRYAD", key='dryad', on_change=handle_checkbox5_change)
     gbif = st.checkbox("GBIF", key='gbif', on_change=handle_checkbox6_change)
 
-######################  TITRES  #######################################
+######################################################################################################################
+########### TITRE GENERAL ############################################################################################
+######################################################################################################################
 st.title(":grey[Donnees ouvertes du RZA]")
 st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
 st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
 
+
+######################################################################################################################
+########## CATALOGUE INDORES #########################################################################################
+######################################################################################################################
 if catalogues:
+    ######################  TITRE CATALOGUES  #######################################
     st.title(":grey[Analyse des dépôts dans les geonetworks]")
 
+######################################################################################################################
+############ DATA INDORES ############################################################################################
+######################################################################################################################
 if indores:
-    ######################  TITRES  #######################################
+    ######################  TITRE INDORES  ##########################################
     st.title(":grey[Analyse des dépôts dans Data.InDoRes]")
 
     #adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
@@ -262,9 +271,9 @@ if indores:
 
     fichier = f'tableau_dataverses-{d}.csv'
 
-    fi = glob.glob(f"pages/data/tableau_dataverses*.csv")
+    fi = glob.glob(f"pages/data/Data_InDoRES/tableau_dataverses*.csv")
 
-    ###################### CREATION CONNEXION ##############################
+    ###################### CREATION CONNEXION #######################################
 
     def connect_to_dataverse(BASE_URL, API_TOKEN):
         try:
@@ -283,7 +292,7 @@ if indores:
             st.error(f"Connection error: {e}")
         return api
     
-    ###################### Indices des dataverses ##############################
+    ###################### Indices des dataverses ###################################
 
     def find_indices(lst, elements):
         indices = []
@@ -295,9 +304,9 @@ if indores:
         return indices
 
     
-    ###############################################################################################
-    ########### POUR L'ADMINISTRATEUR ############################################################
-    ###############################################################################################
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
 
     # Mot de passe pour faire des récupérations automatisées
     admin_pass = 'admin'
@@ -306,7 +315,7 @@ if indores:
 
     if admin_action == admin_pass:
 
-        # MAJ DES ENTREPOTS EXISTANTS ##########################################
+        # MAJ DES ENTREPOTS EXISTANTS #######################################################
         b1 = st.sidebar.button(label=" Mise à jour des entrepôts Dataverses dans Data.InDoRes ")
 
         if b1==True:
@@ -315,7 +324,7 @@ if indores:
                 Recup_dataverses(api,fichier)
 
 
-        # RECUPERATION DES CONTENUS VIA BOUTON ##########################################       
+        # RECUPERATION DES CONTENUS VIA BOUTON ##############################################       
         Recup_globale = st.sidebar.button('recupération des contenus')
         if Recup_globale:
             ids = find_indices(liste_ZAs_, Selection_ZA)
@@ -330,11 +339,13 @@ if indores:
                     dfi.reset_index(inplace=True)
                     dfi.drop(columns='index', inplace=True)
                     df_entrepot = dfi
-                df_entrepot.to_csv("pages/data/Contenu_DataInDoRES2.csv")
+                df_entrepot.to_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv")
 
-    ############################################################################
+    ##########################################################################################
+    ########### VISUALISATIONS ###############################################################
+    ##########################################################################################
 
-    df_complet = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
+    df_complet = pd.read_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv",index_col=[0])
 
     if all_ZAs:
         with st.container(border=True):
@@ -458,7 +469,9 @@ if indores:
                             st.markdown(s_t0i,unsafe_allow_html=True)
                             st.markdown(df_visu.loc[i,'Email'])
 
-    #############  VISU SUNBURST ###############################################
+    ##########################################################################################
+    ########### VISUALISATION SUNBURST #######################################################
+    ##########################################################################################
 
     visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
 
@@ -476,6 +489,9 @@ if indores:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
 
+######################################################################################################################
+#################### RECHERCHE DATA GOUV #############################################################################
+######################################################################################################################
 if rdg:
 
     ######################  TITRES  #######################################
@@ -485,7 +501,7 @@ if rdg:
     #s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
     #st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
 
-    ######################  PARAMETRES  #######################################
+    ######################  PARAMETRES  ###################################
 
     fichier = f'tableau_dataverses_rdg-{d}.csv'
 
@@ -498,7 +514,7 @@ if rdg:
         st.write('Il est nécessaire de mettre à jour vos entrepôts')
 
 
-    ###################### CREATION CONNEXION ##############################
+    ###################### CREATION CONNEXION #############################
     def connect_to_dataverse(BASE_URL, API_TOKEN):
         try:
             # Create a new API connection
@@ -516,7 +532,9 @@ if rdg:
             st.error(f"Connection error: {e}")
         return api
 
-     #############  VISU TABLEAU  OU SUNBURST ###############################################
+    ##########################################################################################
+    ########### VISUALISATION TABLEAU OU SUNBURST ############################################
+    ##########################################################################################
 
     if 'tab' not in st.session_state:
         st.session_state.tab = False
@@ -528,7 +546,6 @@ if rdg:
             st.session_state.sun = False
             
 
-    # Function to handle checkbox2 change
     def handle_sunburst_change():
         if st.session_state.sun:
             st.session_state.tab = False
@@ -567,7 +584,9 @@ if rdg:
         st.plotly_chart(fig,use_container_width=True)
 
 
-    ########## POUR L'ADMINISTRATEUR ########################################
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
     admin_pass = 'admin'
     admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
@@ -605,8 +624,9 @@ if rdg:
                         
                 df_entrepot_rdg.to_csv("pages/data/rechercheDataGouv/Contenu_RDG_complet.csv")
 
-    ############################################################################
-
+######################################################################################################################
+############################ NAKALA ##################################################################################
+######################################################################################################################
 if nakala:
     st.title(":grey[Analyse des dépôts dans Nakala]")
 
@@ -614,11 +634,14 @@ if nakala:
     #s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
     #st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
 
-    s = " ZA alpes"
-    params_nakala = {'q': f'{s}'}
+    s = 'ZA alpes'
+    params_nakala = {'q': f"{s}"}
     r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, s)
     st.write(r)
 
+######################################################################################################################
+############################ ZENODO ##################################################################################
+######################################################################################################################
 if zenodo:
     st.title(":grey[Analyse des dépôts dans Zenodo]")
 
@@ -669,6 +692,10 @@ if zenodo:
                     st.markdown(s_t0b,unsafe_allow_html=True)
                     st.markdown(df_visu_zenodo.loc[i,'ID'])
 
+
+######################################################################################################################
+################################# DRYAD ##############################################################################
+######################################################################################################################
 if dryad:
     st.title(":grey[Analyse des dépôts dans Dryad]")
 
@@ -757,7 +784,9 @@ if dryad:
                     with col3:
                         st.markdown(df_visu_dryad.loc[i,f'Email {b+1}'])
 
-
+######################################################################################################################
+############################## GBIF ##################################################################################
+######################################################################################################################
 if gbif:
     st.title(":grey[Analyse des dépôts dans GBIF]")
 

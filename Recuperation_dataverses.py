@@ -10,33 +10,22 @@ import streamlit as st
 from markdownify import markdownify as md
 
 
-def search_in_json(data, search_string):
-    if isinstance(data, dict):
-        # If data is a dictionary, search in values recursively
-        for key, value in data.items():
-            if search_string in key.lower() or search_in_json(value, search_string):
-                return True
-    elif isinstance(data, list):
-        # If data is a list, search in each item recursively
-        for item in data:
-            if search_in_json(item, search_string):
-                return True
-    elif isinstance(data, str):
-        # If data is a string, check if search_string is in it
-        if search_string in data.lower():
-            return True
-    return False
+##################################################################################################################
+############################################### ZENODO ###########################################################
+##################################################################################################################
+def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo):
+    
+    r = requests.get(url_zenodo,
+                    params=params_zenodo,
+                    headers=headers_zenodo)
+    
+    if r.status_code==200:
+        resp_zenodo = r.json()['hits']['hits']
+        
+    return resp_zenodo
 
-def Recup_contenu_dataverse(api,s):
-    datav = api.get_dataverse_contents(s)
-    datav_contenu = datav.json()
-    return datav_contenu
-
-def Recup_contenu_dataset(api,persistenteUrl):
-    dataset = api.get_dataset(persistenteUrl)
-    dataset_contenu = dataset.json()
-    return dataset_contenu
-
+##################################################################################################################
+######### RECUPERATION ZENODO ####################################################################################
 def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
     entrepot_selected = []
     store_z = []
@@ -72,86 +61,29 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
                                 'Titre':titre})
     return reponse_df
 
-def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
-    entrepot_selected = []
-    identifieurs = []
-    store_gbif = []
-    titre = []
-    auteur_prenom1 = []
-    auteur_nom1 = []
-    auteur_affiliation1 = []
-    auteur_email1 = []
-    resume = []
-    datesPublication = []
-    publication_url = []
-    try:
-        contenu_gbif = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
-        Nombre_gbif = contenu_gbif['count']
-        if Nombre_gbif !=0:
-            for i in range(Nombre_gbif):
-                try:
-                    identifieurs.append(contenu_gbif['results'][i]['doi'])
-                except:
-                    identifieurs.append("")
-                try:
-                    titre.append(contenu_gbif['results'][i]['title'])
-                except:
-                    titre.append("")
-                try:
-                    resume.append(contenu_gbif['results'][i]['description'])
-                except:
-                    resume.append("")
-                try:
-                    auteur_prenom1.append(contenu_gbif['results'][i]['contacts'][0]['firstName'])
-                except:
-                    auteur_prenom1.append("")
-                try:
-                    auteur_nom1.append(contenu_gbif['results'][i]['contacts'][0]['lastName'])
-                except:
-                    auteur_nom1.append("")
-                try:
-                    auteur_affiliation1.append(contenu_gbif['results'][i]['contacts'][0]['organization'])
-                except:
-                    auteur_affiliation1.append("")
-                try:
-                    auteur_email1.append(contenu_gbif['results'][i]['contacts'][0]['email'][0])
-                except:
-                    auteur_email1.append("")
-                try:
-                    if contenu_gbif['results'][i]['identifiers'][1]['type']=='URL':
-                        publication_url.append(contenu_gbif['results'][i]['identifiers'][1]['identifier'])
-                    elif contenu_gbif['results'][i]['identifiers'][0]['type']=='URL':
-                        publication_url.append(contenu_gbif['results'][i]['identifiers'][0]['identifier'])
-                    elif contenu_gbif['results'][i]['identifiers'][2]['type']=='URL':
-                        publication_url.append(contenu_gbif['results'][i]['identifiers'][2]['identifier'])
-                    else:
-                        publication_url.append("")
-                except:
-                    publication_url.append("")
-                try:
-                    datesPublication.append(contenu_gbif['results'][i]['pubDate'])
-                except:
-                    datesPublication.append("")
-                entrepot_selected.append(entrepot)
-                store_gbif.append('GBIF')
-    except:
-        pass
-    df_gbif = pd.DataFrame({'Store':store_gbif,
-                            'Entrepot':entrepot_selected,
-                             'ID':identifieurs,
-                            'Date de publication':datesPublication,
-                            'Titre':titre,
-                            'Auteur prénom 1':auteur_prenom1,
-                            'Auteur Nom 1':auteur_nom1,
-                            'Organisation 1':auteur_affiliation1,
-                            "Email 1":auteur_email1,
-                            'Résumé':resume,
-                            'Publication URL':publication_url
-                                })
-    return df_gbif
+##################################################################################################################
+################################################# NAKALA #########################################################
+##################################################################################################################
+def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
+    
+    r = requests.get(url_nakala,
+                    params=params_nakala,
+                    headers=headers_nakala)
+    
+    return r.json()['datas']
 
 
+#################################################################################################################
+################################################## DRYAD ########################################################
+#################################################################################################################
+def recuperation_dryad(url_dryad,params_dryad):
+    r = requests.get(url_dryad,
+                    params=params_dryad)
+    
+    return r.json()
 
+##################################################################################################################
+######### RECUPERATION DRYAD #####################################################################################
 def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
     entrepot_selected = []
     identifieurs = []
@@ -281,7 +213,134 @@ def Recup_contenu_dryad(url_dryad,params_dryad,entrepot):
                                 })
     return Nombre_dryad, df_dryad
 
+#################################################################################################################
+#################################################### GBIF #######################################################
+#################################################################################################################
+def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
+    
+    r = requests.get(url_gbif,
+                    params=params_gbif,
+                    headers=headers_gbif)
+    
+    return r.json()
 
+##################################################################################################################
+######### RECUPERATION GBIF ######################################################################################
+def Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,entrepot):
+    entrepot_selected = []
+    identifieurs = []
+    store_gbif = []
+    titre = []
+    auteur_prenom1 = []
+    auteur_nom1 = []
+    auteur_affiliation1 = []
+    auteur_email1 = []
+    resume = []
+    datesPublication = []
+    publication_url = []
+    try:
+        contenu_gbif = recuperation_gbif(url_gbif,params_gbif, headers_gbif)
+        Nombre_gbif = contenu_gbif['count']
+        if Nombre_gbif !=0:
+            for i in range(Nombre_gbif):
+                try:
+                    identifieurs.append(contenu_gbif['results'][i]['doi'])
+                except:
+                    identifieurs.append("")
+                try:
+                    titre.append(contenu_gbif['results'][i]['title'])
+                except:
+                    titre.append("")
+                try:
+                    resume.append(contenu_gbif['results'][i]['description'])
+                except:
+                    resume.append("")
+                try:
+                    auteur_prenom1.append(contenu_gbif['results'][i]['contacts'][0]['firstName'])
+                except:
+                    auteur_prenom1.append("")
+                try:
+                    auteur_nom1.append(contenu_gbif['results'][i]['contacts'][0]['lastName'])
+                except:
+                    auteur_nom1.append("")
+                try:
+                    auteur_affiliation1.append(contenu_gbif['results'][i]['contacts'][0]['organization'])
+                except:
+                    auteur_affiliation1.append("")
+                try:
+                    auteur_email1.append(contenu_gbif['results'][i]['contacts'][0]['email'][0])
+                except:
+                    auteur_email1.append("")
+                try:
+                    if contenu_gbif['results'][i]['identifiers'][1]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][1]['identifier'])
+                    elif contenu_gbif['results'][i]['identifiers'][0]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][0]['identifier'])
+                    elif contenu_gbif['results'][i]['identifiers'][2]['type']=='URL':
+                        publication_url.append(contenu_gbif['results'][i]['identifiers'][2]['identifier'])
+                    else:
+                        publication_url.append("")
+                except:
+                    publication_url.append("")
+                try:
+                    datesPublication.append(contenu_gbif['results'][i]['pubDate'])
+                except:
+                    datesPublication.append("")
+                entrepot_selected.append(entrepot)
+                store_gbif.append('GBIF')
+    except:
+        pass
+    df_gbif = pd.DataFrame({'Store':store_gbif,
+                            'Entrepot':entrepot_selected,
+                             'ID':identifieurs,
+                            'Date de publication':datesPublication,
+                            'Titre':titre,
+                            'Auteur prénom 1':auteur_prenom1,
+                            'Auteur Nom 1':auteur_nom1,
+                            'Organisation 1':auteur_affiliation1,
+                            "Email 1":auteur_email1,
+                            'Résumé':resume,
+                            'Publication URL':publication_url
+                                })
+    return df_gbif
+
+
+##################################################################################################################
+######### FILTRATION DES CONTENUS ################################################################################
+def search_in_json(data, search_string):
+    if isinstance(data, dict):
+        # If data is a dictionary, search in values recursively
+        for key, value in data.items():
+            if search_string in key.lower() or search_in_json(value, search_string):
+                return True
+    elif isinstance(data, list):
+        # If data is a list, search in each item recursively
+        for item in data:
+            if search_in_json(item, search_string):
+                return True
+    elif isinstance(data, str):
+        # If data is a string, check if search_string is in it
+        if search_string in data.lower():
+            return True
+    return False
+
+
+##################################################################################################################
+######### RECUPERATION CONTENU DATAVERSE #########################################################################
+def Recup_contenu_dataverse(api,s):
+    datav = api.get_dataverse_contents(s)
+    datav_contenu = datav.json()
+    return datav_contenu
+
+##################################################################################################################
+######### RECUPERATION CONTENU DATASET ###########################################################################
+def Recup_contenu_dataset(api,persistenteUrl):
+    dataset = api.get_dataset(persistenteUrl)
+    dataset_contenu = dataset.json()
+    return dataset_contenu
+
+##################################################################################################################
+######### RECUP GLOBAL DATAVERSE #################################################################################
 def Recup_contenu(api,s, entrepot_data, entrepot):
     identifieurs = []
     persistentUrls = []
@@ -539,7 +598,12 @@ def Recup_contenu(api,s, entrepot_data, entrepot):
                                 })
     return df_entrepot
 
+#######################################################################################################################################
+############# POUR CONNAITRE LES IDENTIFIANTS DES DATAVERSES ############
+#######################################################################################################################################
 
+##################################################################################################################
+######### RECUPERATION DES ENTREPOTS RDG #########################################################################
 def Recup_dataverses_rdg(api, fichier):
     RDG = api.get_dataverse_contents("root")
     RDG_json = RDG.json()
@@ -604,6 +668,9 @@ def Recup_dataverses_rdg(api, fichier):
     new_data.to_csv(f"pages/data/rechercheDataGouv/{fichier}")
 
 
+
+##################################################################################################################
+######### RECUPERATION DES ENTREPOTS DATA INDORES ################################################################
 def Recup_dataverses(api, fichier):
     # On peut aller chercher le contenu du dataverse
         # le status est rappelé puis on a une clé "data" dans laquelle on retrouve son contenu.
@@ -642,13 +709,13 @@ def Recup_dataverses(api, fichier):
             
         df_liste_dataverses_1['Dataverses_niv2']=liste
         df_liste_dataverses_1['Ids_niv2']=ids
-        df_liste_dataverses_1.to_csv(f"pages/data/liste_dataverses.csv")
+        df_liste_dataverses_1.to_csv(f"pages/data/Data_InDoRES/liste_dataverses.csv")
             
         df_liste_dataverses_2=pd.DataFrame(data=[liste,ids], index=['Dataverses_niv2','Ids_niv2'])
         df_liste_dataverses_2=df_liste_dataverses_2.T
-        df_liste_dataverses_2.to_csv(f"pages/data/liste_dataverses2.csv")
+        df_liste_dataverses_2.to_csv(f"pages/data/Data_InDoRES/liste_dataverses2.csv")
 
-        data = pd.read_csv(f"pages/data/liste_dataverses.csv")
+        data = pd.read_csv(f"pages/data/Data_InDoRES/liste_dataverses.csv")
         data.drop(columns=['Unnamed: 0'], inplace=True)
         for i in range(len(data)):
                 data.loc[i,'val']=int(len(re.split(',',data.loc[i,'Dataverses_niv2'].replace('[','').replace(']','').replace("'",'').strip())))
@@ -666,9 +733,9 @@ def Recup_dataverses(api, fichier):
                 i+=1
         new_data['val']=1
         new_data['niv0']="Data_InDoRes"
-        new_data.to_csv(f"pages/data/{fichier}")
+        new_data.to_csv(f"pages/data/Data_InDoRES/{fichier}")
 
-        dat = pd.read_csv(f"pages/data/{fichier}")
+        dat = pd.read_csv(f"pages/data/Data_InDoRES/{fichier}")
         dat_ = dat.copy()
         dat_.drop(columns=['Unnamed: 0'], inplace=True)
         dat_.dropna(axis=0,inplace=True)
@@ -712,92 +779,4 @@ def Recup_dataverses(api, fichier):
                 dat.loc[i,'niv3']=None
                 dat.loc[i,'ids_niv3']=None
         dat.drop(columns=['Dataverses_niv3','Ids_niv3'], inplace=True)
-        dat.to_csv(f"pages/data/{fichier}")
-
-def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo):
-    
-    r = requests.get(url_zenodo,
-                    params=params_zenodo,
-                    headers=headers_zenodo)
-    
-    if r.status_code==200:
-        resp_zenodo = r.json()['hits']['hits']
-        
-    return resp_zenodo
-    
-def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
-    
-    r = requests.get(url_nakala,
-                    params=params_nakala,
-                    headers=headers_nakala)
-    
-    return r.json()['datas']
-
-
-## SEANOE 
-"""from sickle import Sickle
-
-# SEANOE's OAI-PMH endpoint URL
-oai_url = "https://www.seanoe.org/oai/OAIHandler"
-
-# Initialize Sickle with the SEANOE OAI-PMH endpoint
-sickle = Sickle(oai_url)
-
-# Example request: List metadata formats
-def list_metadata_formats():
-    formats = sickle.ListMetadataFormats()
-    for metadata_format in formats:
-        print(metadata_format)
-
-# Example request: List records
-def list_records(metadata_prefix='oai_dc', from_date=None, until_date=None):
-    records = sickle.ListRecords(metadataPrefix=metadata_prefix, from_=from_date, until=until_date)
-    for record in records:
-        print(record.metadata)
-
-# Example request: Get record by ID
-def get_record(identifier, metadata_prefix='oai_dc'):
-    record = sickle.GetRecord(identifier=identifier, metadataPrefix=metadata_prefix)
-    print(record.metadata)
-
-# Run an example function
-list_metadata_formats()
-
-# Optionally, list records between dates or get a specific record
-# list_records(from_date="2022-01-01", until_date="2022-12-31")
-get_record(90452)  # Replace with actual identifier   """
-
-## RDG
-"""BASE_URL="https://entrepot.recherche.data.gouv.fr/"
-API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
-api = NativeApi(BASE_URL, API_TOKEN)
-
-datav = api.get_dataverse_contents(142915)
-datav_contenu = datav.json()
-
-for i in range(len(datav_contenu)):
-    if datav_contenu['data'][i]['type']=='dataverse':
-        print(datav_contenu['data'][i])
-    elif datav_contenu['data'][i]['type']=='dataset':
-        print(datav_contenu['data'][i])
-metadata = api.get_dataset(datav_contenu['data'][i]['persistentUrl'])
-metadata_json = metadata.json()
-data = metadata_json['data']['latestVersion']['metadataBlocks']
-print(json.dumps(data, indent=4))"""
-
-
-## DRYAD
-def recuperation_dryad(url_dryad,params_dryad):
-    r = requests.get(url_dryad,
-                    params=params_dryad)
-    
-    return r.json()
-
-## GBIF
-def recuperation_gbif(url_gbif,params_gbif, headers_gbif):
-    
-    r = requests.get(url_gbif,
-                    params=params_gbif,
-                    headers=headers_gbif)
-    
-    return r.json()
+        dat.to_csv(f"pages/data/Data_InDoRES/{fichier}")

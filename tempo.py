@@ -143,3 +143,38 @@ st.markdown('David Sarramia , Zone Atelier Territoires Uranifères - david.sarra
 st.markdown('Iris Barjhoux , Zone Atelier Environnementale Rurale - iris.barjhoux@univ-reims.fr')
 
 st.markdown('Jean-Claude Raynal  , Zone Atelier Santé Environnement Camargue - jean-claude.raynal@cnrs.fr')
+
+
+#################################################################################################################
+######### SEANOE ################################################################################################
+"""from sickle import Sickle
+
+# SEANOE's OAI-PMH endpoint URL
+oai_url = "https://www.seanoe.org/oai/OAIHandler"
+
+# Initialize Sickle with the SEANOE OAI-PMH endpoint
+sickle = Sickle(oai_url)
+
+# Example request: List metadata formats
+def list_metadata_formats():
+    formats = sickle.ListMetadataFormats()
+    for metadata_format in formats:
+        print(metadata_format)
+
+# Example request: List records
+def list_records(metadata_prefix='oai_dc', from_date=None, until_date=None):
+    records = sickle.ListRecords(metadataPrefix=metadata_prefix, from_=from_date, until=until_date)
+    for record in records:
+        print(record.metadata)
+
+# Example request: Get record by ID
+def get_record(identifier, metadata_prefix='oai_dc'):
+    record = sickle.GetRecord(identifier=identifier, metadataPrefix=metadata_prefix)
+    print(record.metadata)
+
+# Run an example function
+list_metadata_formats()
+
+# Optionally, list records between dates or get a specific record
+# list_records(from_date="2022-01-01", until_date="2022-12-31")
+get_record(90452)  # Replace with actual identifier   """
