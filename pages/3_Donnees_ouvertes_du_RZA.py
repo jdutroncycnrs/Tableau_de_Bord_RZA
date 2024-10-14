@@ -35,13 +35,7 @@ st.markdown("""
         background-color: rgb(6,51,87,0.2);
     }
     .st-emotion-cache-1dj0hjr {
-            color: #3b979f;
-    }
-    .st-emotion-cache-1rtdyuf {
-            color: #3b979f;
-    }
-    .st-emotion-cache-6tkfeg {
-            color: #3b979f;
+            color: #a9dba6;
     }
     .st-emotion-cache-1q2d4ya {
             color: #3b979f;
