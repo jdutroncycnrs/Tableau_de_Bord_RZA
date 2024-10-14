@@ -218,13 +218,19 @@ with st.sidebar:
     dryad = st.checkbox("DRYAD", key='dryad', on_change=handle_checkbox5_change)
     gbif = st.checkbox("GBIF", key='gbif', on_change=handle_checkbox6_change)
 
+######################  TITRES  #######################################
+st.title(":grey[Donnees ouvertes du RZA]")
+st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER")
+st.success("Selectionner l'entrepôt dans lequel faire votre recherche / CASE A COCHER")
+
+
 if indores:
     ######################  TITRES  #######################################
     st.title(":grey[Analyse des dépôts dans Data.InDoRes]")
 
-    adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
-    s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
-    st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
+    #adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
+    #s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
+    #st.markdown(s_adresse_dataInDoRes ,unsafe_allow_html=True)
 
     fichier = f'tableau_dataverses-{d}.csv'
 
@@ -302,40 +308,41 @@ if indores:
 
     df_complet = pd.read_csv("pages/data/Contenu_DataInDoRES2.csv",index_col=[0])
 
-    with st.container(border=True):
-        Nombre_depots = df_complet['Entrepot'].value_counts()
-        for i in range(len(liste_ZAs_)):
-            if liste_ZAs_[i] in Nombre_depots.index.values:
-                pass
-            else:
-                Nombre_depots[liste_ZAs_[i]]=0
-        df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
-        fig0= go.Figure()
-        for i, za in enumerate(df.index.values):
-            selec = df.index.values[i:i+1]
-            selec_len = df['Nombre_dépôts'].values[i:i+1]
-            fig0.add_trace(go.Bar(
-                            y=selec,
-                            x=selec_len,
-                            name=za,
-                            orientation = 'h',
-                            marker=dict(color=colors[i])
-                        ))
-        fig0.update_layout(
-                            title=dict(
-                                    text=f'Nombre de dépôts répertoriées',
-                                    font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
-                                    ),
-                            yaxis=dict(
-                                    tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
-                                    ),
-                                    xaxis=dict(
-                                        tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
-                                    ),
-                                    width=1000,
-                                    height=600,
-                                    showlegend=False)
-        st.plotly_chart(fig0,use_container_width=True)
+    if all_ZAs:
+        with st.container(border=True):
+            Nombre_depots = df_complet['Entrepot'].value_counts()
+            for i in range(len(liste_ZAs_)):
+                if liste_ZAs_[i] in Nombre_depots.index.values:
+                    pass
+                else:
+                    Nombre_depots[liste_ZAs_[i]]=0
+            df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
+            fig0= go.Figure()
+            for i, za in enumerate(df.index.values):
+                selec = df.index.values[i:i+1]
+                selec_len = df['Nombre_dépôts'].values[i:i+1]
+                fig0.add_trace(go.Bar(
+                                y=selec,
+                                x=selec_len,
+                                name=za,
+                                orientation = 'h',
+                                marker=dict(color=colors[i])
+                            ))
+            fig0.update_layout(
+                                title=dict(
+                                        text=f'Nombre de dépôts répertoriées',
+                                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
+                                        ),
+                                yaxis=dict(
+                                        tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                        ),
+                                        xaxis=dict(
+                                            tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                        ),
+                                        width=1000,
+                                        height=600,
+                                        showlegend=False)
+            st.plotly_chart(fig0,use_container_width=True)
 
     if len(Selection_ZA)!=0:
         df_visu = df_complet[df_complet['Entrepot'].isin(Selection_ZA)]
@@ -446,9 +453,9 @@ if rdg:
     ######################  TITRES  #######################################
     st.title(":grey[Analyse des dépôts dans Recherche Data Gouv]")
 
-    adresse_RDG = 'https://entrepot.recherche.data.gouv.fr/dataverse/root?q='
-    s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
-    st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
+    #adresse_RDG = 'https://entrepot.recherche.data.gouv.fr/dataverse/root?q='
+    #s_adresse_RDG = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_RDG}</p>"
+    #st.markdown(s_adresse_RDG ,unsafe_allow_html=True)
 
     ######################  PARAMETRES  #######################################
 
@@ -575,9 +582,9 @@ if rdg:
 if nakala:
     st.title(":grey[Analyse des dépôts dans Nakala]")
 
-    adresse_nakala = url_nakala
-    s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
-    st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
+    #adresse_nakala = url_nakala
+    #s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
+    #st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
 
     s = " ZA alpes"
     params_nakala = {'q': f'{s}'}
@@ -587,9 +594,9 @@ if nakala:
 if zenodo:
     st.title(":grey[Analyse des dépôts dans Zenodo]")
 
-    adresse_zenodo = url_zenodo
-    s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
-    st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
+    #adresse_zenodo = url_zenodo
+    #s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
+    #st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
 
     with st.spinner("Recherche en cours"):
         liste_columns = ['Store','Entrepot','ID','Titre']
@@ -637,9 +644,9 @@ if zenodo:
 if dryad:
     st.title(":grey[Analyse des dépôts dans Dryad]")
 
-    adresse_dryad = url_dryad
-    s_adresse_dryad = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dryad}</p>"
-    st.markdown(s_adresse_dryad ,unsafe_allow_html=True)
+    #adresse_dryad = url_dryad
+    #s_adresse_dryad = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dryad}</p>"
+    #st.markdown(s_adresse_dryad ,unsafe_allow_html=True)
 
     with st.spinner("Recherche en cours"):
         liste_columns_dryad = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
@@ -726,9 +733,9 @@ if dryad:
 if gbif:
     st.title(":grey[Analyse des dépôts dans GBIF]")
 
-    adresse_gbif = url_gbif
-    s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
-    st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
+    #adresse_gbif = url_gbif
+    #s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
+    #st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
 
     with st.spinner("Recherche en cours"):
         liste_columns_gbif = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
