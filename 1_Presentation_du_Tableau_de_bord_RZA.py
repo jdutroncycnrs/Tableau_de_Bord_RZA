@@ -67,7 +67,7 @@ guide = st.sidebar.button("Mode d'emploi")
 if guide:
     st.title(":grey[Mode d'emploi du site]")
 
-    tab1, tab2, tab3, tab4 =st.tabs(["Publications HAL","Données entreposées","Fiche de métadonnées", "Analyse globale du catalogue" ])
+    tab1, tab2, tab3, tab4 =st.tabs(["Publications HAL","Données RZA","Fiche de métadonnées", "Analyse globale du catalogue" ])
 
     with tab1:
         pass
@@ -82,17 +82,15 @@ else:
     
     st.title(':grey[Science Ouverte du RZA]')
 
-    st.subheader("Différentes pages pour visualiser des informations:")
+    st.subheader("Ce que contient ce site:")
 
-    proposals =  f"""<span style="font-size: 26 px;">
+    proposals =  f"""<span style="font-size: 35 px;">
     <ol>
-    <li style="font-size:15px";>ICI , Page de Présentation</li>
-    <li style="font-size:15px";></li>
-    <li style="font-size:15px";></li>
-    <li style="font-size:15px";></li>
-    <li style="font-size:15px";></li>
-    <li style="font-size:15px";></li>
-    <li style="font-size:15px";></li>
+    <li style="font-size:20px";>Page de Présentation et mode d'emploi => appuyer sur le bouton à gauche </li>
+    <li style="font-size:20px";>Page de recherche des publications sur HAL</li>
+    <li style="font-size:20px";>Page de recherche des données déposées / différents entrepôts accessibles</li>
+    <li style="font-size:20px";>Visualisation des fiches de métadonnées sur le catalogue InDoRES</li>
+    <li style="font-size:20px";>Analyse globale du contenu du catalogue InDoRES</li>
     </ol></span>"""
 
     st.markdown(proposals, unsafe_allow_html=True)
