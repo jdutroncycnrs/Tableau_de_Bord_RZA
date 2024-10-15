@@ -85,7 +85,7 @@ def uuids_cleaning2(date):
         cleaned_list_uuid_brutes = [string.replace("%22", "") for string in list_uuid_brutes]
         cleaned_list_uuid_brutes_ = [string.replace("%5B", "") for string in cleaned_list_uuid_brutes]
         df_uuid = pd.DataFrame(data= cleaned_list_uuid_brutes_,columns=["uuid_cat_InDoRes"])
-        df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
+        df_uuid.to_csv(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean_{date}.csv")
 
 
 ##################################################################################################

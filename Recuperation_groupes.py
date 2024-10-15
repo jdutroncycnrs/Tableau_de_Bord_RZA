@@ -36,99 +36,106 @@ liste_ohm_patagonia = []
 liste_ohm_fessenhiem = []
 
 
-df_group = pd.read_csv("pages/data/infos_MD2/infos_groupes.csv",index_col=[0])
-###############################################################################################
-############## ASSOCIATION DES GROUPES MANUELLEMENT ###########################################
-for i in range(len(df_group)):
-    if df_group.loc[i,"Identifiant"] in liste_zaa:
-        df_group.loc[i,"Groupe"]="zaa"
-    elif df_group.loc[i,"Identifiant"] in liste_zaaj:
-        df_group.loc[i,"Groupe"]="zaaj"
-    elif df_group.loc[i,"Identifiant"] in liste_zaar:
-        df_group.loc[i,"Groupe"]="zaar"
-    elif df_group.loc[i,"Identifiant"] in liste_zabr:
-        df_group.loc[i,"Groupe"]="zabr"
-    elif df_group.loc[i,"Identifiant"] in liste_zabri:
-        df_group.loc[i,"Groupe"]="zabri"
-    elif df_group.loc[i,"Identifiant"] in liste_zaeu:
-        df_group.loc[i,"Groupe"]="zaeu"
-    elif df_group.loc[i,"Identifiant"] in liste_zapygar:
-        df_group.loc[i,"Groupe"]="zapygar"
-    elif df_group.loc[i,"Identifiant"] in liste_zam:
-        df_group.loc[i,"Groupe"]="zam"
-    elif df_group.loc[i,"Identifiant"] in liste_zal:
-        df_group.loc[i,"Groupe"]="zal"
-    elif df_group.loc[i,"Identifiant"] in liste_zas:
-        df_group.loc[i,"Groupe"]="zas"
-    elif df_group.loc[i,"Identifiant"] in liste_zahwg:
-        df_group.loc[i,"Groupe"]="zahwg"
-    elif df_group.loc[i,"Identifiant"] in liste_zatu:
-        df_group.loc[i,"Groupe"]="zatu"
-    elif df_group.loc[i,"Identifiant"] in liste_zata:
-        df_group.loc[i,"Groupe"]="zata"
-    elif df_group.loc[i,"Identifiant"] in liste_zarg:
-        df_group.loc[i,"Groupe"]="zarg"
-    elif df_group.loc[i,"Identifiant"] in liste_zacam:
-        df_group.loc[i,"Groupe"]="zacam"
-    elif df_group.loc[i,"Identifiant"] in liste_zapvs:
-        df_group.loc[i,"Groupe"]="zapvs"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_pyrenees:
-        df_group.loc[i,"Groupe"]="OHM Pyrénées - haut Vicdessos"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_vr:
-        df_group.loc[i,"Groupe"]="OHM Vallée du Rhône"
-    elif df_group.loc[i,"Identifiant"] in liste_ohmi_tessekere:
-        df_group.loc[i,"Groupe"]="OHMi Téssékéré"
-    elif df_group.loc[i,"Identifiant"] in liste_ohmi_pimacounty:
-        df_group.loc[i,"Groupe"]="OHMi Pima County"
-    elif df_group.loc[i,"Identifiant"] in liste_ohmi_estarreja:
-        df_group.loc[i,"Groupe"]="OHMi Estarreja"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_littoralmediterraneen:
-        df_group.loc[i,"Groupe"]="OHM Littoral méditerranéen"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_bassinminierprovence:
-        df_group.loc[i,"Groupe"]="OHM Bassin Minier de Provence"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_oyapock:
-        df_group.loc[i,"Groupe"]="OHM Oyapock"
-    elif df_group.loc[i,"Identifiant"] in liste_ohmi_nunavik:
-        df_group.loc[i,"Groupe"]="OHMi Nunavik"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_littoralcaraibe:
-        df_group.loc[i,"Groupe"]="OHM Littoral Caraïbe"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_paysdebitche:
-        df_group.loc[i,"Groupe"]="OHM Pays de Bitche"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_patagonia:
-        df_group.loc[i,"Groupe"]="OHM Patagonia"
-    elif df_group.loc[i,"Identifiant"] in liste_ohm_fessenhiem:
-        df_group.loc[i,"Groupe"]="OHM Fessenheim"
+
+def recup_groupes(liste_uuids):
+    liste_groupes = ['']*len(liste_uuids)
+    df_group = pd.DataFrame({"Identifiant":liste_uuids,
+                             "Groupe":liste_groupes})
+
+    ###############################################################################################
+    ############## ASSOCIATION DES GROUPES MANUELLEMENT ###########################################
+    for i in range(len(df_group)):
+        if df_group.loc[i,"Identifiant"] in liste_zaa:
+            df_group.loc[i,"Groupe"]="zaa"
+        elif df_group.loc[i,"Identifiant"] in liste_zaaj:
+            df_group.loc[i,"Groupe"]="zaaj"
+        elif df_group.loc[i,"Identifiant"] in liste_zaar:
+            df_group.loc[i,"Groupe"]="zaar"
+        elif df_group.loc[i,"Identifiant"] in liste_zabr:
+            df_group.loc[i,"Groupe"]="zabr"
+        elif df_group.loc[i,"Identifiant"] in liste_zabri:
+            df_group.loc[i,"Groupe"]="zabri"
+        elif df_group.loc[i,"Identifiant"] in liste_zaeu:
+            df_group.loc[i,"Groupe"]="zaeu"
+        elif df_group.loc[i,"Identifiant"] in liste_zapygar:
+            df_group.loc[i,"Groupe"]="zapygar"
+        elif df_group.loc[i,"Identifiant"] in liste_zam:
+            df_group.loc[i,"Groupe"]="zam"
+        elif df_group.loc[i,"Identifiant"] in liste_zal:
+            df_group.loc[i,"Groupe"]="zal"
+        elif df_group.loc[i,"Identifiant"] in liste_zas:
+            df_group.loc[i,"Groupe"]="zas"
+        elif df_group.loc[i,"Identifiant"] in liste_zahwg:
+            df_group.loc[i,"Groupe"]="zahwg"
+        elif df_group.loc[i,"Identifiant"] in liste_zatu:
+            df_group.loc[i,"Groupe"]="zatu"
+        elif df_group.loc[i,"Identifiant"] in liste_zata:
+            df_group.loc[i,"Groupe"]="zata"
+        elif df_group.loc[i,"Identifiant"] in liste_zarg:
+            df_group.loc[i,"Groupe"]="zarg"
+        elif df_group.loc[i,"Identifiant"] in liste_zacam:
+            df_group.loc[i,"Groupe"]="zacam"
+        elif df_group.loc[i,"Identifiant"] in liste_zapvs:
+            df_group.loc[i,"Groupe"]="zapvs"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_pyrenees:
+            df_group.loc[i,"Groupe"]="OHM Pyrénées - haut Vicdessos"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_vr:
+            df_group.loc[i,"Groupe"]="OHM Vallée du Rhône"
+        elif df_group.loc[i,"Identifiant"] in liste_ohmi_tessekere:
+            df_group.loc[i,"Groupe"]="OHMi Téssékéré"
+        elif df_group.loc[i,"Identifiant"] in liste_ohmi_pimacounty:
+            df_group.loc[i,"Groupe"]="OHMi Pima County"
+        elif df_group.loc[i,"Identifiant"] in liste_ohmi_estarreja:
+            df_group.loc[i,"Groupe"]="OHMi Estarreja"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_littoralmediterraneen:
+            df_group.loc[i,"Groupe"]="OHM Littoral méditerranéen"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_bassinminierprovence:
+            df_group.loc[i,"Groupe"]="OHM Bassin Minier de Provence"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_oyapock:
+            df_group.loc[i,"Groupe"]="OHM Oyapock"
+        elif df_group.loc[i,"Identifiant"] in liste_ohmi_nunavik:
+            df_group.loc[i,"Groupe"]="OHMi Nunavik"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_littoralcaraibe:
+            df_group.loc[i,"Groupe"]="OHM Littoral Caraïbe"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_paysdebitche:
+            df_group.loc[i,"Groupe"]="OHM Pays de Bitche"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_patagonia:
+            df_group.loc[i,"Groupe"]="OHM Patagonia"
+        elif df_group.loc[i,"Identifiant"] in liste_ohm_fessenhiem:
+            df_group.loc[i,"Groupe"]="OHM Fessenheim"
+        else:
+            df_group.loc[i,"Groupe"]="Non trié"
 
 
-df_group.to_csv("pages/data/infos_MD2/infos_groupes.csv")
+    df_group.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
 
-print(len(df_group))
-print("zaa:",len(df_group[df_group['Groupe']=="zaa"]))
-print("zaaj:",len(df_group[df_group['Groupe']=="zaaj"]))
-print("zaar:",len(df_group[df_group['Groupe']=="zaar"]))
-print("zaeu:",len(df_group[df_group['Groupe']=="zaeu"]))
-print("zabr:",len(df_group[df_group['Groupe']=="zabr"]))
-print("zabri:",len(df_group[df_group['Groupe']=="zabri"]))
-print("zas:",len(df_group[df_group['Groupe']=="zas"]))
-print("zam:",len(df_group[df_group['Groupe']=="zam"]))
-print("zal:",len(df_group[df_group['Groupe']=="zal"]))
-print("zapygar:",len(df_group[df_group['Groupe']=="zapygar"]))
-print("zatu:",len(df_group[df_group['Groupe']=="zatu"]))
-print("zata:",len(df_group[df_group['Groupe']=="zata"]))
-print("zapvs:",len(df_group[df_group['Groupe']=="zapvs"]))
-print("zarg:",len(df_group[df_group['Groupe']=="zarg"]))
-print("zahwg:",len(df_group[df_group['Groupe']=="zahwg"]))
-print("zacam:",len(df_group[df_group['Groupe']=="zacam"]))
-print("OHM Pyrénées - haut Vicdessos:",len(df_group[df_group['Groupe']=="OHM Pyrénées - haut Vicdessos"]))
-print("OHM Vallée du Rhône:",len(df_group[df_group['Groupe']=="OHM Vallée du Rhône"]))
-print("OHMi Téssékéré:",len(df_group[df_group['Groupe']=="OHMi Téssékéré"]))
-print("OHMi Pima County:",len(df_group[df_group['Groupe']=="OHMi Pima County"]))
-print("OHMi Estarreja:",len(df_group[df_group['Groupe']=="OHMi Estarreja"]))
-print("OHM Littoral méditerranéen:",len(df_group[df_group['Groupe']=="OHM Littoral méditerranéen"]))
-print("OHM Bassin Minier de Provence:",len(df_group[df_group['Groupe']=="OHM Bassin Minier de Provence"]))
-print("OHM Oyapock:",len(df_group[df_group['Groupe']=="OHM Oyapock"]))
-print("OHMi Nunavik:",len(df_group[df_group['Groupe']=="OHMi Nunavik"]))
-print("OHM Littoral Caraïbe:",len(df_group[df_group['Groupe']=="OHM Littoral Caraïbe"]))
-print("OHM Pays de Bitche:",len(df_group[df_group['Groupe']=="OHM Pays de Bitche"]))
-print("OHM Patagonia:",len(df_group[df_group['Groupe']=="OHM Patagonia"]))
-print("OHM Fessenheim:",len(df_group[df_group['Groupe']=="OHM Fessenheim"]))
+    print(len(df_group))
+    print("zaa:",len(df_group[df_group['Groupe']=="zaa"]))
+    print("zaaj:",len(df_group[df_group['Groupe']=="zaaj"]))
+    print("zaar:",len(df_group[df_group['Groupe']=="zaar"]))
+    print("zaeu:",len(df_group[df_group['Groupe']=="zaeu"]))
+    print("zabr:",len(df_group[df_group['Groupe']=="zabr"]))
+    print("zabri:",len(df_group[df_group['Groupe']=="zabri"]))
+    print("zas:",len(df_group[df_group['Groupe']=="zas"]))
+    print("zam:",len(df_group[df_group['Groupe']=="zam"]))
+    print("zal:",len(df_group[df_group['Groupe']=="zal"]))
+    print("zapygar:",len(df_group[df_group['Groupe']=="zapygar"]))
+    print("zatu:",len(df_group[df_group['Groupe']=="zatu"]))
+    print("zata:",len(df_group[df_group['Groupe']=="zata"]))
+    print("zapvs:",len(df_group[df_group['Groupe']=="zapvs"]))
+    print("zarg:",len(df_group[df_group['Groupe']=="zarg"]))
+    print("zahwg:",len(df_group[df_group['Groupe']=="zahwg"]))
+    print("zacam:",len(df_group[df_group['Groupe']=="zacam"]))
+    print("OHM Pyrénées - haut Vicdessos:",len(df_group[df_group['Groupe']=="OHM Pyrénées - haut Vicdessos"]))
+    print("OHM Vallée du Rhône:",len(df_group[df_group['Groupe']=="OHM Vallée du Rhône"]))
+    print("OHMi Téssékéré:",len(df_group[df_group['Groupe']=="OHMi Téssékéré"]))
+    print("OHMi Pima County:",len(df_group[df_group['Groupe']=="OHMi Pima County"]))
+    print("OHMi Estarreja:",len(df_group[df_group['Groupe']=="OHMi Estarreja"]))
+    print("OHM Littoral méditerranéen:",len(df_group[df_group['Groupe']=="OHM Littoral méditerranéen"]))
+    print("OHM Bassin Minier de Provence:",len(df_group[df_group['Groupe']=="OHM Bassin Minier de Provence"]))
+    print("OHM Oyapock:",len(df_group[df_group['Groupe']=="OHM Oyapock"]))
+    print("OHMi Nunavik:",len(df_group[df_group['Groupe']=="OHMi Nunavik"]))
+    print("OHM Littoral Caraïbe:",len(df_group[df_group['Groupe']=="OHM Littoral Caraïbe"]))
+    print("OHM Pays de Bitche:",len(df_group[df_group['Groupe']=="OHM Pays de Bitche"]))
+    print("OHM Patagonia:",len(df_group[df_group['Groupe']=="OHM Patagonia"]))
+    print("OHM Fessenheim:",len(df_group[df_group['Groupe']=="OHM Fessenheim"]))

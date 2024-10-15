@@ -10,6 +10,7 @@ import plotly.express as px
 import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group, uuids_cleaning2
 from Traitement_records import transcript_json, recup_fiche2, recup_themes_thesaurus_motsCles, recup_attachements, recup_ressources
+from Recuperation_groupes import recup_groupes
 import ast
 
 ######################################################################################################################
@@ -220,11 +221,16 @@ if admin_action == admin_pass:
 
 ###############################################################################################
 # RECUPERATION DES GROUPES VIA BOUTON #########################################################
-
-    Recup_groupes = st.sidebar.button('recup des groupes')
+    col1, col2 = st.sidebar.columns(2)
+    with col1:
+        Recup_groupes = st.button('recup groupes')
+    with col2:
+        maj_groupes = st.button('maj')
     if Recup_groupes:
         with st.spinner("La récup des groupes est en cours"):
-            df_group = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv",index_col=[0])
+            liste_uuids = uuids['uuid_cat_InDoRes'].values
+            recup_groupes(liste_uuids)
+            #df_group = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv",index_col=[0])
             #for i in range(len(uuids)):
             #    u = uuids.loc[i,'uuid_cat_InDoRes']
             #    if u in df_group['Identifiant'].values:
@@ -240,7 +246,9 @@ if admin_action == admin_pass:
             #        df_group_.reset_index(inplace=True)
             #        df_group_.drop(columns='index',inplace=True)
             #        df_group = df_group_
-            df_group.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
+            #df_group.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
+    if maj_groupes:
+        pass
 
 ###############################################################################################
 # RECUP GLOBALE ###############################################################################
