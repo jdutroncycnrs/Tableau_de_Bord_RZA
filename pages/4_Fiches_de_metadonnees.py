@@ -212,7 +212,7 @@ st.success("Si vous le souhaitez, filtrer le groupe (ZA ou OHM) ciblé (par déf
 # Si oui, on récupère le dernier enregistré ; si non, on récupère les identifiants à la date donnée
 if len(fi)!=0:
     fichier_uuids = fi[-1]
-    derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[40:-4]}"
+    derniere_date_recup = f"Dernière date de récupération des identifiants: {fichier_uuids[52:-4]}"
     s_derniere_date_recup  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{derniere_date_recup}</p>"
     st.markdown(s_derniere_date_recup ,unsafe_allow_html=True)
     ############################## UUIDS ########################################
