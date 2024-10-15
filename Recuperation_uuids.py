@@ -8,6 +8,9 @@ import re
 import pandas as pd
 
 
+###############################################################################################
+############## RECUPERATION PAR SCRAPING DES UUIDS GLOBAL #######################################
+
 def scraping_GN(date):
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
@@ -44,7 +47,49 @@ def scraping_GN(date):
 
     driver.quit()
 
+###############################################################################################
+############## NETTOYAGE DES UUIDS RECUPERES (ANCIENNE VERSION) ###############################
+def uuids_cleaning(date):
+    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
+        t = file.read()
+    t2 =t[70:]
+    list_uuid_brutes= re.split(',', t2)
+    new_list_uuid = []
+    for i in range(1,len(list_uuid_brutes)):
+        if "urn:isogeo:metadata:uuid:" in list_uuid_brutes[i]:
+            new_list_uuid.append(list_uuid_brutes[i].replace("urn:isogeo:metadata:uuid:",''))
+        else:
+            try:
+                new_list_uuid.append(re.split('%22', list_uuid_brutes[i])[1])
+            except:
+                new_list_uuid.append(list_uuid_brutes[i])
+    new_list_uuid2 = []            
+    for j in range(0,len(new_list_uuid)):
+        try:
+            new_list_uuid2.append(re.split('%22', new_list_uuid[j])[1])
+        except:
+            new_list_uuid2.append(new_list_uuid[j])
+    df_uuid = pd.DataFrame(data= new_list_uuid2,columns=["uuid_cat_InDoRes"])
+    df_uuid.to_csv(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean_{date}.csv")
 
+
+###############################################################################################
+############## NETTOYAGE DES UUIDS RECUPERES ##################################################
+def uuids_cleaning2(date):
+    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
+        t = file.read()
+        # suppression de l'intro de l'url
+        t2 =t[70:]
+        # création d'une liste avec les identifiants
+        list_uuid_brutes= re.split(',', t2)
+        cleaned_list_uuid_brutes = [string.replace("%22", "") for string in list_uuid_brutes]
+        cleaned_list_uuid_brutes_ = [string.replace("%5B", "") for string in cleaned_list_uuid_brutes]
+        df_uuid = pd.DataFrame(data= cleaned_list_uuid_brutes_,columns=["uuid_cat_InDoRes"])
+        df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
+
+
+##################################################################################################
+############## RECUPERATION GROUPE PAR SCRAPING ##################################################
 def recup_group(uuid):
     chrome_options = Options()
     #chrome_options.add_experimental_option("detach", True)
@@ -74,52 +119,3 @@ def recup_group(uuid):
     driver.quit()
     return g
 
-def uuids_cleaning(date):
-    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
-        t = file.read()
-    t2 =t[70:]
-    list_uuid_brutes= re.split(',', t2)
-    new_list_uuid = []
-    for i in range(1,len(list_uuid_brutes)):
-        if "urn:isogeo:metadata:uuid:" in list_uuid_brutes[i]:
-            new_list_uuid.append(list_uuid_brutes[i].replace("urn:isogeo:metadata:uuid:",''))
-        else:
-            try:
-                new_list_uuid.append(re.split('%22', list_uuid_brutes[i])[1])
-            except:
-                new_list_uuid.append(list_uuid_brutes[i])
-    new_list_uuid2 = []            
-    for j in range(0,len(new_list_uuid)):
-        try:
-            new_list_uuid2.append(re.split('%22', new_list_uuid[j])[1])
-        except:
-            new_list_uuid2.append(new_list_uuid[j])
-    df_uuid = pd.DataFrame(data= new_list_uuid2,columns=["uuid_cat_InDoRes"])
-    df_uuid.to_csv(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_clean_{date}.csv")
-
-def uuids_cleaning2(date):
-    with open(f"pages/data/Cat_InDoRES/uuids/uuid_cat_InDoRes_{date}.txt") as file:
-        t = file.read()
-        # suppression de l'intro de l'url
-        t2 =t[70:]
-        # création d'une liste avec les identifiants
-        list_uuid_brutes= re.split(',', t2)
-        cleaned_list_uuid_brutes = [string.replace("%22", "") for string in list_uuid_brutes]
-        cleaned_list_uuid_brutes_ = [string.replace("%5B", "") for string in cleaned_list_uuid_brutes]
-        df_uuid = pd.DataFrame(data= cleaned_list_uuid_brutes_,columns=["uuid_cat_InDoRes"])
-        df_uuid.to_csv(f"pages/data/uuids/uuid_cat_InDoRes_clean_{date}.csv")
-
-def transcript_json(json_data, file, prefix=""):
-    if isinstance(json_data, dict):
-        for key, value in json_data.items():
-            if isinstance(value, dict) or isinstance(value, list):
-                transcript_json(value,file, f"{prefix}.{key}" if prefix else key)
-            else:
-                #print(f"{prefix}.{key}: {value}" if prefix else f"{key}: {value}")
-                file.write(f"{prefix}.{key}:!{value}," if prefix else f"{key}:!{value},")
-    elif isinstance(json_data, list):
-        for item in json_data:
-            transcript_json(item,file, prefix)
-    else:
-        #print(f"{prefix}: {json_data}" if prefix else f"{json_data}")
-        file.write(f"{prefix}:!{json_data}," if prefix else f"{json_data},")

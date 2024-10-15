@@ -9,7 +9,7 @@ import numpy as np
 import plotly.express as px
 import time
 from Recuperation_uuids import scraping_GN, uuids_cleaning, recup_group, uuids_cleaning2
-from Traitement_records import transcript_json, recup_fiche, recup_fiche2, recup_themes_thesaurus_motsCles, recup_attachements, recup_ressources
+from Traitement_records import transcript_json, recup_fiche2, recup_themes_thesaurus_motsCles, recup_attachements, recup_ressources
 import ast
 
 ######################################################################################################################
@@ -83,7 +83,7 @@ liste_ZAs = ['zaa',
              'zapygar', 
              'zam', 
              'zas',
-             'zah',
+             'zahwg',
              'zatu',
              'zata',
              'zarg',
@@ -93,7 +93,8 @@ liste_ZAs = ['zaa',
              ]
 
 liste_OHMs = ['OHM Littoral méditerranéen',
-              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
+              'OHM Oyapock',
+              'OHM Pyrénées - haut Vicdessos',
               'OHM Bassin Minier de Provence',
               'OHMi Pima County',
               'OHMi Nunavik',
@@ -102,6 +103,8 @@ liste_OHMs = ['OHM Littoral méditerranéen',
               'OHM Vallée du Rhône',
               'OHM Pays de Bitche',
               'OHM Littoral Caraïbe',
+              'OHM Patagonia',
+              'OHM Fessenheim',
               'DRIIHM']
 
 filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
@@ -119,7 +122,7 @@ filtre_mention =['ZAA','zaa ','Zone Atelier Alpes', 'ZAA - Alpes',
            'ZATA','Zone Atelier Antarctique et Terres Australes',
            'ZARG','Zone Atelier Argonne', 'ZARG - Argonne',
            'ZAPVS','Zone atelier Plaine et Val de Sèvre', 'ZAPVS - Plaine et Val de Sèvre',
-           'ZAH', 'Zone Atelier Hwange', 'ZAHV - Hwange',
+           'ZAHWG', 'Zone Atelier Hwange', 'ZAHV - Hwange',
            'OHMi Nunavik', 'OHM Oyapock', 'OHM Pays de Bitche', 'OHM Bassin Minier de Provence', 
            'OHMi Téssékéré', 'OHM Vallée du Rhône','OHMi Estarreja','OHM Pyrénées - haut Vicdessos', 
            'OHM Littoral méditerranéen', 'OHMi Pima County', 'OHM Littoral Caraïbe']
@@ -157,8 +160,6 @@ dico = {'ZABrI - Brest Iroise':'zabri',
         'zaa':'zaa', 
         'zabr':'zabr'}
 
-
-
 ###############################################################################################
 ############## RECUPERATION DES IDENTIFIANTS EXISTANTS ########################################
 
@@ -184,7 +185,7 @@ else:
     with st.spinner("Connexion au GeoNetwork et récupération des identifiants existants"):
         try:
             scraping_GN(d)
-            uuids_cleaning(d)
+            uuids_cleaning2(d)
             st.experimental_rerun()
         except:
             st.write('Il est impossible de récupérer les identifiants')
@@ -224,21 +225,21 @@ if admin_action == admin_pass:
     if Recup_groupes:
         with st.spinner("La récup des groupes est en cours"):
             df_group = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv",index_col=[0])
-            for i in range(len(uuids)):
-                u = uuids.loc[i,'uuid_cat_InDoRes']
-                if u in df_group['Identifiant'].values:
-                    pass
-                else:
-                    try:
-                        g = recup_group(uuid=u)
-                    except:
-                        g = ""
+            #for i in range(len(uuids)):
+            #    u = uuids.loc[i,'uuid_cat_InDoRes']
+            #    if u in df_group['Identifiant'].values:
+            #        pass
+            #    else:
+            #        try:
+            #            g = recup_group(uuid=u)
+            #        except:
+            #            g = ""
 
-                    df_group_i = pd.DataFrame({'Identifiant':[u], 'Groupe':[g]})
-                    df_group_ = pd.concat([df_group,df_group_i],axis=0)
-                    df_group_.reset_index(inplace=True)
-                    df_group_.drop(columns='index',inplace=True)
-                    df_group = df_group_
+            #        df_group_i = pd.DataFrame({'Identifiant':[u], 'Groupe':[g]})
+            #        df_group_ = pd.concat([df_group,df_group_i],axis=0)
+            #        df_group_.reset_index(inplace=True)
+            #        df_group_.drop(columns='index',inplace=True)
+            #        df_group = df_group_
             df_group.to_csv("pages/data/Cat_InDoRES/infos_MD2/infos_groupes.csv")
 
 ###############################################################################################
