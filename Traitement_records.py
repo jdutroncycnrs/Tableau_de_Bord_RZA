@@ -411,8 +411,8 @@ def recup_fiche2(url, identifieur, headers_json, filtre_mention):
                 Titre_Keywords.append(k)
 
             for s in Titre_Keywords:
-                if s in filtre_mention:
-                    mention = s
+                if s.lower() in filtre_mention:
+                    mention = s.lower()
                 else:
                     pass
 
