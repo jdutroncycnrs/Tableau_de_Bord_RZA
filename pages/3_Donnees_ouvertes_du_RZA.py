@@ -273,6 +273,179 @@ if indores:
 
     fi = glob.glob(f"pages/data/Data_InDoRES/tableau_dataverses*.csv")
 
+    
+    ##########################################################################################
+    ########### VISUALISATIONS ###############################################################
+    ##########################################################################################
+
+    df_complet = pd.read_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv",index_col=[0])
+
+    if all_ZAs:
+        with st.container(border=True):
+            Nombre_depots = df_complet['Entrepot'].value_counts()
+            for i in range(len(liste_ZAs_)):
+                if liste_ZAs_[i] in Nombre_depots.index.values:
+                    pass
+                else:
+                    Nombre_depots[liste_ZAs_[i]]=0
+            df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
+            fig0= go.Figure()
+            for i, za in enumerate(df.index.values):
+                selec = df.index.values[i:i+1]
+                selec_len = df['Nombre_dépôts'].values[i:i+1]
+                fig0.add_trace(go.Bar(
+                                y=selec,
+                                x=selec_len,
+                                name=za,
+                                orientation = 'h',
+                                marker=dict(color=colors[i])
+                            ))
+            fig0.update_layout(
+                                title=dict(
+                                        text=f'Nombre de dépôts répertoriées',
+                                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
+                                        ),
+                                yaxis=dict(
+                                        tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                        ),
+                                        xaxis=dict(
+                                            tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                        ),
+                                        width=1000,
+                                        height=600,
+                                        showlegend=False)
+            st.plotly_chart(fig0,use_container_width=True)
+
+    if len(Selection_ZA)!=0:
+        df_visu = df_complet[df_complet['Entrepot'].isin(Selection_ZA)]
+        df_visu.reset_index(inplace=True)
+        df_visu.drop(columns='index', inplace=True)
+        #st.dataframe(df_visu)
+
+        if len(Selection_ZA)==1:
+            col1,col2,col3 = st.columns([0.5,0.2,0.3])
+            with col1:
+                Visu_depots = f"Données publiées dans la {Selection_ZA[0]}"
+                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+            with col2:
+                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+            with col3:
+                dataInDoRES_to_get = df_visu.to_csv(index=False)
+                st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=dataInDoRES_to_get,
+                        file_name=f'data_InDoRES_{Selection_ZA[0]}_{d}.csv',
+                        mime='text/csv')
+        elif 1<len(Selection_ZA)<16:
+            selection_name = ""
+            for i in range(len(Selection_ZA)):
+                selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+            col1,col2,col3 = st.columns([0.5,0.2,0.3])
+            with col1:
+                Visu_depots = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+            with col2:
+                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+            with col3:
+                dataInDoRES_to_get = df_visu.to_csv(index=False)
+                st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=dataInDoRES_to_get,
+                        file_name=f'data_InDoRES_{selection_name}_{d}.csv',
+                        mime='text/csv')
+        elif len(Selection_ZA)==16:
+            selection_name = "All_ZAs"
+            col1,col2,col3 = st.columns([0.5,0.2,0.3])
+            with col1:
+                Visu_depots = f"Données publiées dans l'ensemble du réseau des Zones Ateliers"
+                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+            with col2:
+                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
+            with col3:
+                dataInDoRES_to_get = df_visu.to_csv(index=False)
+                st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=dataInDoRES_to_get,
+                        file_name=f'data_InDoRES_{selection_name}_{d}.csv',
+                        mime='text/csv')
+        
+        if len(df_visu)!=0:
+                for i in range(len(df_visu)):
+                    with st.container(border=True):
+                        t0 = f"FICHIER #{i+1}"
+                        s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                        st.markdown(s_t0,unsafe_allow_html=True)
+                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                        with col1:
+                            t0a = 'Titre'
+                            s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                            st.markdown(s_t0a,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Titre'])
+                        with col2:
+                            t0b = 'Thème'
+                            s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                            st.markdown(s_t0b,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Thème'])
+                        with col3:
+                            t0c = 'Date'
+                            s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                            st.markdown(s_t0c,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Date de publication'])
+                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                        with col1:
+                            t0d = 'Résumé'
+                            s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                            st.markdown(s_t0d,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Résumé'])
+                        with col2:
+                            t0e = 'Publication URL'
+                            s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                            st.markdown(s_t0e,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Publication URL'])
+                        with col3:
+                            t0f = 'DOI'
+                            s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                            st.markdown(s_t0f,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Url'])
+                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                        with col1:
+                            t0g = 'Auteur'
+                            s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                            st.markdown(s_t0g,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Auteur'])
+                        with col2:
+                            t0h = 'Organisation'
+                            s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                            st.markdown(s_t0h,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Organisation'])
+                        with col3:
+                            t0i = 'Email'
+                            s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                            st.markdown(s_t0i,unsafe_allow_html=True)
+                            st.markdown(df_visu.loc[i,'Email'])
+
+    ##########################################################################################
+    ########### VISUALISATION SUNBURST #######################################################
+    ##########################################################################################
+
+    visu_sunburst= st.checkbox("Voir l'ensemble des entrepôts existants")
+
+    if len(fi)!=0:
+        fich = fi[-1]
+        dataverses = pd.read_csv(fich)
+        if visu_sunburst:
+            fig = px.sunburst(dataverses, path=['niv0','niv1', 'niv2','niv3'], values='val')
+            fig.update_layout(
+                title=f'Visuel des différents Dataverses dans Data.InDoRes via {fich}',
+                width=1000,
+                height=1000)
+            st.plotly_chart(fig,use_container_width=True)
+    else:
+        st.write('Il est nécessaire de mettre à jour vos entrepôts')
+
     ###################### CREATION CONNEXION #######################################
 
     def connect_to_dataverse(BASE_URL, API_TOKEN):
@@ -340,154 +513,6 @@ if indores:
                     dfi.drop(columns='index', inplace=True)
                     df_entrepot = dfi
                 df_entrepot.to_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv")
-
-    ##########################################################################################
-    ########### VISUALISATIONS ###############################################################
-    ##########################################################################################
-
-    df_complet = pd.read_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv",index_col=[0])
-
-    if all_ZAs:
-        with st.container(border=True):
-            Nombre_depots = df_complet['Entrepot'].value_counts()
-            for i in range(len(liste_ZAs_)):
-                if liste_ZAs_[i] in Nombre_depots.index.values:
-                    pass
-                else:
-                    Nombre_depots[liste_ZAs_[i]]=0
-            df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
-            fig0= go.Figure()
-            for i, za in enumerate(df.index.values):
-                selec = df.index.values[i:i+1]
-                selec_len = df['Nombre_dépôts'].values[i:i+1]
-                fig0.add_trace(go.Bar(
-                                y=selec,
-                                x=selec_len,
-                                name=za,
-                                orientation = 'h',
-                                marker=dict(color=colors[i])
-                            ))
-            fig0.update_layout(
-                                title=dict(
-                                        text=f'Nombre de dépôts répertoriées',
-                                        font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
-                                        ),
-                                yaxis=dict(
-                                        tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
-                                        ),
-                                        xaxis=dict(
-                                            tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
-                                        ),
-                                        width=1000,
-                                        height=600,
-                                        showlegend=False)
-            st.plotly_chart(fig0,use_container_width=True)
-
-    if len(Selection_ZA)!=0:
-        df_visu = df_complet[df_complet['Entrepot'].isin(Selection_ZA)]
-        df_visu.reset_index(inplace=True)
-        df_visu.drop(columns='index', inplace=True)
-        #st.dataframe(df_visu)
-
-        if len(Selection_ZA)==1:
-            col1,col2 = st.columns([0.7,0.3])
-            with col1:
-                Visu_depots = f"Données publiées dans la {Selection_ZA[0]}"
-                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
-            with col2:
-                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
-        elif 1<len(Selection_ZA)<16:
-            col1,col2 = st.columns([0.7,0.3])
-            with col1:
-                Visu_depots = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
-                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
-            with col2:
-                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
-        elif len(Selection_ZA)==16:
-            col1,col2 = st.columns([0.7,0.3])
-            with col1:
-                Visu_depots = f"Données publiées dans l'ensemble du réseau des Zones Ateliers"
-                s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-                st.markdown(s_Visu_depots ,unsafe_allow_html=True)
-            with col2:
-                st.metric(label="Nombre de dépôts décomptés", value=len(df_visu))
-        
-        if len(df_visu)!=0:
-                for i in range(len(df_visu)):
-                    with st.container(border=True):
-                        t0 = f"FICHIER #{i+1}"
-                        s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
-                        st.markdown(s_t0,unsafe_allow_html=True)
-                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
-                        with col1:
-                            t0a = 'Titre'
-                            s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
-                            st.markdown(s_t0a,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Titre'])
-                        with col2:
-                            t0b = 'Thème'
-                            s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
-                            st.markdown(s_t0b,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Thème'])
-                        with col3:
-                            t0c = 'Date'
-                            s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
-                            st.markdown(s_t0c,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Date de publication'])
-                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
-                        with col1:
-                            t0d = 'Résumé'
-                            s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
-                            st.markdown(s_t0d,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Résumé'])
-                        with col2:
-                            t0e = 'Publication URL'
-                            s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
-                            st.markdown(s_t0e,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Publication URL'])
-                        with col3:
-                            t0f = 'DOI'
-                            s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
-                            st.markdown(s_t0f,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Url'])
-                        col1,col2, col3 = st.columns([0.6,0.2,0.2])
-                        with col1:
-                            t0g = 'Auteur'
-                            s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
-                            st.markdown(s_t0g,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Auteur'])
-                        with col2:
-                            t0h = 'Organisation'
-                            s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
-                            st.markdown(s_t0h,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Organisation'])
-                        with col3:
-                            t0i = 'Email'
-                            s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
-                            st.markdown(s_t0i,unsafe_allow_html=True)
-                            st.markdown(df_visu.loc[i,'Email'])
-
-    ##########################################################################################
-    ########### VISUALISATION SUNBURST #######################################################
-    ##########################################################################################
-
-    visu_sunburst= st.sidebar.checkbox("Voir l'ensemble des entrepôts existants")
-
-    if len(fi)!=0:
-        fich = fi[-1]
-        dataverses = pd.read_csv(fich)
-        if visu_sunburst:
-            fig = px.sunburst(dataverses, path=['niv0','niv1', 'niv2','niv3'], values='val')
-            fig.update_layout(
-                title=f'Visuel des différents Dataverses dans Data.InDoRes via {fich}',
-                width=1000,
-                height=1000)
-            st.plotly_chart(fig,use_container_width=True)
-    else:
-        st.write('Il est nécessaire de mettre à jour vos entrepôts')
-
 
 ######################################################################################################################
 #################### RECHERCHE DATA GOUV #############################################################################
