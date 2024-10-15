@@ -247,9 +247,6 @@ with st.sidebar:
 ########### TITRE GENERAL ############################################################################################
 ######################################################################################################################
 st.title(":grey[Donnees ouvertes du RZA]")
-st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
-st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
-
 
 ######################################################################################################################
 ########## CATALOGUE INDORES #########################################################################################
@@ -264,6 +261,9 @@ if catalogues:
 if indores:
     ######################  TITRE INDORES  ##########################################
     st.title(":grey[Analyse des dépôts dans Data.InDoRes]")
+
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
+    st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
 
     #adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
     #s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
@@ -574,13 +574,15 @@ if rdg:
         if st.session_state.sun:
             st.session_state.tab = False
 
+    st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
+    st.success("Vous pouvez aussi voir le contenu d'un entrepôt de votre en choix / COCHER LA CASE CI-DESSOUS A GAUCHE")
 
     col1,col2 = st.columns(2)
     with col1:
         tab = st.checkbox("Visualiser le contenu entier d'un entrepôt (non filtré)", key='tab', on_change=handle_tab_change)
     with col2:
         sun = st.checkbox("Voir l'ensemble des entrepôts existants", key='sun', on_change=handle_sunburst_change)
-
 
     if tab:
         dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
