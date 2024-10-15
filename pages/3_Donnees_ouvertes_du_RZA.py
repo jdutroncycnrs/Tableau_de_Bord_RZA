@@ -9,7 +9,7 @@ import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import requests
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_sans_check, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
 
 ######################################################################################################################
 ########### TITRE DE L'ONGLET ########################################################################################
@@ -273,7 +273,8 @@ if indores:
 
     fi = glob.glob(f"pages/data/Data_InDoRES/tableau_dataverses*.csv")
 
-    
+    visu_sunburst= st.checkbox("Voir l'ensemble des entrepôts existants")
+
     ##########################################################################################
     ########### VISUALISATIONS ###############################################################
     ##########################################################################################
@@ -302,7 +303,7 @@ if indores:
                             ))
             fig0.update_layout(
                                 title=dict(
-                                        text=f'Nombre de dépôts répertoriées',
+                                        text=f'Nombre de dépôts répertoriées sur Data.InDoRES',
                                         font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
                                         ),
                                 yaxis=dict(
@@ -430,8 +431,6 @@ if indores:
     ##########################################################################################
     ########### VISUALISATION SUNBURST #######################################################
     ##########################################################################################
-
-    visu_sunburst= st.checkbox("Voir l'ensemble des entrepôts existants")
 
     if len(fi)!=0:
         fich = fi[-1]
@@ -578,9 +577,9 @@ if rdg:
 
     col1,col2 = st.columns(2)
     with col1:
-        tab = st.checkbox("Filtrer le contenu d'un entrepôt", key='tab', on_change=handle_tab_change)
+        tab = st.checkbox("Visualiser le contenu entier d'un entrepôt (non filtré)", key='tab', on_change=handle_tab_change)
     with col2:
-        sun = st.checkbox("Voir le sunburst des entrepôts", key='sun', on_change=handle_sunburst_change)
+        sun = st.checkbox("Voir l'ensemble des entrepôts existants", key='sun', on_change=handle_sunburst_change)
 
 
     if tab:
@@ -588,17 +587,251 @@ if rdg:
         Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
         api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
         with st.spinner("Analyse en cours"):
-            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL', 'Check']
+            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
             df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
             s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
-            df = Recup_contenu(api_rdg, s, Selected_entrepot, Selection_ZA[0])
+            df = Recup_contenu_sans_check(api_rdg, s, Selected_entrepot, Selection_ZA[0])
             dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
             dfi.reset_index(inplace=True)
             dfi.drop(columns='index', inplace=True)
             df_entrepot_rdg_selected = dfi
-            df_entrepot_rdg_selected_ = df_entrepot_rdg_selected[df_entrepot_rdg_selected['Check']==True]
-            df_entrepot_rdg_selected_.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG_{Selection_ZA[0]}_{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
-        st.dataframe(df_entrepot_rdg_selected_,use_container_width=True)
+            #df_entrepot_rdg_selected.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG_{Selection_ZA[0]}_{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
+        #st.dataframe(df_entrepot_rdg_selected_,use_container_width=True)
+
+        if len(df_entrepot_rdg_selected)!=0:
+            col1,col2,col3 = st.columns([0.5,0.2,0.3])
+            with col1:
+                Visu_depots_rdg_selected = f"Données publiées dans {Selected_entrepot}"
+                s_Visu_depots_rdg_selected  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_rdg_selected}</p>"
+                st.markdown(s_Visu_depots_rdg_selected ,unsafe_allow_html=True)
+            with col2:
+                st.metric(label="Nombre de dépôts décomptés", value=len(df_entrepot_rdg_selected))
+            with col3:
+                dataRDG_selected_to_get = df_entrepot_rdg_selected.to_csv(index=False)
+                st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=dataRDG_selected_to_get,
+                        file_name=f'data_RDG_{Selected_entrepot}_{d}.csv',
+                           mime='text/csv')
+
+
+            for i in range(len(df_entrepot_rdg_selected)):
+                with st.container(border=True):
+                    t0 = f"FICHIER #{i+1}"
+                    s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                    st.markdown(s_t0,unsafe_allow_html=True)
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0a = 'Titre'
+                        s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                        st.markdown(s_t0a,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Titre'])
+                    with col2:
+                        t0b = 'Thème'
+                        s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                        st.markdown(s_t0b,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Thème'])
+                    with col3:
+                        t0c = 'Date'
+                        s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                        st.markdown(s_t0c,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Date de publication'])
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0d = 'Résumé'
+                        s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                        st.markdown(s_t0d,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Résumé'])
+                    with col2:
+                        t0e = 'Publication URL'
+                        s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                        st.markdown(s_t0e,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Publication URL'])
+                    with col3:
+                        t0f = 'DOI'
+                        s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                        st.markdown(s_t0f,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Url'])
+                    col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                    with col1:
+                        t0g = 'Auteur'
+                        s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                        st.markdown(s_t0g,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Auteur'])
+                    with col2:
+                        t0h = 'Organisation'
+                        s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                        st.markdown(s_t0h,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Organisation'])
+                    with col3:
+                        t0i = 'Email'
+                        s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                        st.markdown(s_t0i,unsafe_allow_html=True)
+                        st.markdown(df_entrepot_rdg_selected.loc[i,'Email'])
+        else:
+            col1,col2,col3 = st.columns([0.5,0.2,0.3])
+            with col1:
+                Visu_depots_rdg_selected = f"Données publiées dans {Selected_entrepot}"
+                s_Visu_depots_rdg_selected  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_rdg_selected}</p>"
+                st.markdown(s_Visu_depots_rdg_selected ,unsafe_allow_html=True)
+            with col2:
+                st.metric(label="Nombre de dépôts décomptés", value=len(df_entrepot_rdg_selected))
+            with col3:
+                pass
+
+    else:
+        ##########################################################################################
+        ########### VISUALISATIONS GENERALES ###############################################################
+        ##########################################################################################
+
+        df_rdg_complet = pd.read_csv("pages/data/rechercheDataGouv/Contenu_RDG_complet.csv",index_col=[0])
+
+        if all_ZAs:
+            with st.container(border=True):
+                Nombre_depots = df_rdg_complet['Entrepot'].value_counts()
+                for i in range(len(liste_ZAs_)):
+                    if liste_ZAs_[i] in Nombre_depots.index.values:
+                        pass
+                    else:
+                        Nombre_depots[liste_ZAs_[i]]=0
+                df = pd.DataFrame(Nombre_depots.values,index=Nombre_depots.index.values,columns=['Nombre_dépôts'])
+                fig0= go.Figure()
+                for i, za in enumerate(df.index.values):
+                    selec = df.index.values[i:i+1]
+                    selec_len = df['Nombre_dépôts'].values[i:i+1]
+                    fig0.add_trace(go.Bar(
+                                    y=selec,
+                                    x=selec_len,
+                                    name=za,
+                                    orientation = 'h',
+                                    marker=dict(color=colors[i])
+                                ))
+                fig0.update_layout(
+                                    title=dict(
+                                            text=f'Nombre de dépôts répertoriées sur RDG',
+                                            font=dict(size=graph_title_font, family='Arial', color=graph_title_color)
+                                            ),
+                                    yaxis=dict(
+                                            tickfont=dict(size=graph_yaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                            ),
+                                            xaxis=dict(
+                                                tickfont=dict(size=graph_xaxis_ticks_font, family='Arial', color=graph_ticks_color)   
+                                            ),
+                                            width=1000,
+                                            height=600,
+                                            showlegend=False)
+                st.plotly_chart(fig0,use_container_width=True)
+
+        if len(Selection_ZA)!=0:
+            df_rdg_visu = df_rdg_complet[df_rdg_complet['Entrepot'].isin(Selection_ZA)]
+            df_rdg_visu.reset_index(inplace=True)
+            df_rdg_visu.drop(columns='index', inplace=True)
+            #st.dataframe(df_visu)
+
+            if len(Selection_ZA)==1:
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_rdg = f"Données publiées dans la {Selection_ZA[0]}"
+                    s_Visu_depots_rdg  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_rdg}</p>"
+                    st.markdown(s_Visu_depots_rdg ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_rdg_visu))
+                with col3:
+                    dataRDG_to_get = df_rdg_visu.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=dataRDG_to_get,
+                            file_name=f'data_RDG_{Selection_ZA[0]}_{d}.csv',
+                            mime='text/csv')
+            elif 1<len(Selection_ZA)<16:
+                selection_name = ""
+                for i in range(len(Selection_ZA)):
+                    selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_rdg = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                    s_Visu_depots_rdg  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_rdg}</p>"
+                    st.markdown(s_Visu_depots_rdg ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_rdg_visu))
+                with col3:
+                    dataRDG_to_get = df_rdg_visu.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=dataRDG_to_get,
+                            file_name=f'data_RDG_{selection_name}_{d}.csv',
+                            mime='text/csv')
+            elif len(Selection_ZA)==16:
+                selection_name = "All_ZAs"
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_rdg = f"Données publiées dans l'ensemble du réseau des Zones Ateliers"
+                    s_Visu_depots_rdg  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_rdg}</p>"
+                    st.markdown(s_Visu_depots_rdg ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_rdg_visu))
+                with col3:
+                    dataRDG_to_get = df_rdg_visu.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=dataRDG_to_get,
+                            file_name=f'data_RDG_{selection_name}_{d}.csv',
+                            mime='text/csv')
+            
+            if len(df_rdg_visu)!=0:
+                    for i in range(len(df_rdg_visu)):
+                        with st.container(border=True):
+                            t0 = f"FICHIER #{i+1}"
+                            s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                            st.markdown(s_t0,unsafe_allow_html=True)
+                            col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                            with col1:
+                                t0a = 'Titre'
+                                s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                                st.markdown(s_t0a,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Titre'])
+                            with col2:
+                                t0b = 'Thème'
+                                s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                                st.markdown(s_t0b,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Thème'])
+                            with col3:
+                                t0c = 'Date'
+                                s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                                st.markdown(s_t0c,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Date de publication'])
+                            col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                            with col1:
+                                t0d = 'Résumé'
+                                s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                                st.markdown(s_t0d,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Résumé'])
+                            with col2:
+                                t0e = 'Publication URL'
+                                s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                                st.markdown(s_t0e,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Publication URL'])
+                            with col3:
+                                t0f = 'DOI'
+                                s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                                st.markdown(s_t0f,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Url'])
+                            col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                            with col1:
+                                t0g = 'Auteur'
+                                s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                                st.markdown(s_t0g,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Auteur'])
+                            with col2:
+                                t0h = 'Organisation'
+                                s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                                st.markdown(s_t0h,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Organisation'])
+                            with col3:
+                                t0i = 'Email'
+                                s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                                st.markdown(s_t0i,unsafe_allow_html=True)
+                                st.markdown(df_rdg_visu.loc[i,'Email'])
 
     if sun:
         fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
@@ -607,6 +840,7 @@ if rdg:
                     width=1000,
                     height=1000)
         st.plotly_chart(fig,use_container_width=True)
+
 
 
     ##########################################################################################
