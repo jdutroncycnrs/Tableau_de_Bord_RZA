@@ -89,9 +89,7 @@ liste_ZAs = ['zaa',
              'zata',
              'zarg',
              'zacam',
-             'zapvs',
-             'RZA',
-             ]
+             'zapvs']
 
 liste_OHMs = ['OHM Littoral méditerranéen',
               'OHM Oyapock',

@@ -45,7 +45,7 @@ st.markdown("""
 ######################################################################################################################
 zoom = 4
 
-tableau = pd.read_csv("pages/data/infos_MD2/Tableau_complet.csv", index_col=[0])
+tableau = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
 
 colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 graph_title_font = 24
@@ -77,9 +77,7 @@ liste_ZAs = ['zaa',
              'zata',
              'zarg',
              'zacam',
-             'zapvs',
-             'RZA', #RZA
-             ]
+             'zapvs']
 liste_OHMs = ['OHM Littoral méditerranéen',
               'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
               'OHM Bassin Minier de Provence',
@@ -89,9 +87,8 @@ liste_OHMs = ['OHM Littoral méditerranéen',
               'OHMi Estarreja',
               'OHM Vallée du Rhône',
               'OHM Pays de Bitche',
-              'OHM Littoral Caraïbe',
-              'DRIIHM']
-autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe']
+              'OHM Littoral Caraïbe']
+autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe','RZA','DRIIHM']
 
 ######################################################################################################################
 ########### SELECTION ZA #############################################################################################
@@ -285,7 +282,7 @@ if Repartition_fiches:
                             color=graph_ticks_color    
                         ),
                         title=dict(
-                            text = 'Zones ateliers',
+                            text = 'Zones',
                             font=dict(size=legend_title_font, family='Arial', color=graph_title_color)  
                         )
                     ),
@@ -845,8 +842,8 @@ elif Analyse_FAIR:
     fig7.update_layout(
             xaxis=dict(
                     title='Indicateurs FAIR',  
-                    title_font=dict(size=36, family='Arial', color='green'),  
-                    tickfont=dict(size=30, family='Arial', color='green')   
+                    title_font=dict(size=36, family='Arial', color=graph_title_color),  
+                    tickfont=dict(size=30, family='Arial', color=graph_title_color)   
                 ),
             yaxis=dict(
                     title='Index des enregistrements dans le catalogue',  
