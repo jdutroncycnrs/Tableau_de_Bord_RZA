@@ -1124,10 +1124,10 @@ if nakala:
     #s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
     #st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
 
-    s = 'ZA alpes'
-    params_nakala = {'q': f"{s}"}
-    r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, s)
-    st.write(r)
+    if len(Selection_ZA)!=0:
+        params_nakala = {'q': f'"{Selection_ZA[0].lower()}"'}
+        r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, Selection_ZA[0])
+        st.write(r)
 
 ######################################################################################################################
 ############################ ZENODO ##################################################################################
@@ -1138,33 +1138,63 @@ if zenodo:
     #adresse_zenodo = url_zenodo
     #s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
     #st.markdown(s_adresse_zenodo ,unsafe_allow_html=True)
-
-    with st.spinner("Recherche en cours"):
-        liste_columns = ['Store','Entrepot','ID','Titre']
-        df_global_zenodo = pd.DataFrame(columns=liste_columns)
-        for i, s in enumerate(Selection_ZA):
-            params_zenodo = {'q': s,
-                    'access_token': zenodo_token}
-            df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
-            dfi = pd.concat([df_global_zenodo,df], axis=0)
-            dfi.reset_index(inplace=True)
-            dfi.drop(columns='index', inplace=True)
-            df_global_zenodo = dfi
-        df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
-        df_global_zenodo.reset_index(inplace=True)
-        df_global_zenodo.drop(columns='index', inplace=True)
-
-    if len(df_global_zenodo)==0:
-        st.metric(label="Nombre de publications trouvées", value=len(df_global_zenodo))
+    if len(Selection_ZA)==0:
+        pass
     else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_global_zenodo))
-        #st.table(df_global_zenodo)
-        #df_global_zenodo.to_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv")
+        with st.spinner("Recherche en cours"):
+            liste_columns = ['Store','Entrepot','ID','Titre']
+            df_global_zenodo = pd.DataFrame(columns=liste_columns)
+            for i, s in enumerate(Selection_ZA):
+                params_zenodo = {'q': f'"{s.lower()}"',
+                        'access_token': zenodo_token}
+                
+                df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
+                dfi = pd.concat([df_global_zenodo,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_global_zenodo = dfi
+            df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
+            df_global_zenodo.reset_index(inplace=True)
+            df_global_zenodo.drop(columns='index', inplace=True)
 
         df_visu_zenodo = df_global_zenodo[df_global_zenodo['Entrepot'].isin(Selection_ZA)]
         df_visu_zenodo.reset_index(inplace=True)
         df_visu_zenodo.drop(columns='index', inplace=True)
 
+        
+
+        if len(df_visu_zenodo)!=0:
+            if len(Selection_ZA)==1:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_visu_zenodo))
+                with col3:
+                    datazenodo_to_get = df_visu_zenodo.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datazenodo_to_get,
+                        file_name=f'data_zenodo_{Selection_ZA[0]}_{d}.csv',
+                        mime='text/csv')
+            elif len(Selection_ZA)==16:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_visu_zenodo))
+                with col3:
+                    datazenodo_to_get = df_visu_zenodo.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datazenodo_to_get,
+                        file_name=f'data_zenodo_AllZAs_{d}.csv',
+                        mime='text/csv')
+            
         for i in range(len(df_visu_zenodo)):
             with st.container(border=True):
                 t0 = f"FICHIER #{i+1}"
@@ -1181,6 +1211,7 @@ if zenodo:
                     s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
                     st.markdown(s_t0b,unsafe_allow_html=True)
                     st.markdown(df_visu_zenodo.loc[i,'ID'])
+        
 
 
 ######################################################################################################################

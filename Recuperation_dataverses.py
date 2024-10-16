@@ -14,14 +14,32 @@ from markdownify import markdownify as md
 ############################################### ZENODO ###########################################################
 ##################################################################################################################
 def recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo):
-    
+    results = []
     r = requests.get(url_zenodo,
                     params=params_zenodo,
                     headers=headers_zenodo)
     
     if r.status_code==200:
         resp_zenodo = r.json()['hits']['hits']
-        
+
+    """while True:
+        resp_zenodo = requests.get(url_zenodo,
+                    params=params_zenodo,
+                    headers=headers_zenodo)
+        data = resp_zenodo.json()
+
+        # If there are no results, break the loop
+        if not data['hits']['hits']:
+            break
+
+        # Add current page's results to the total results
+        results.extend(data['hits']['hits'])
+
+        # Increment the page number to get the next set of results
+        params_zenodo['page'] += 1
+
+    print(f"Total results retrieved: {len(results)}")"""
+            
     return resp_zenodo
 
 ##################################################################################################################
