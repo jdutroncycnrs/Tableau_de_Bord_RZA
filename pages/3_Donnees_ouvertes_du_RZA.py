@@ -5,6 +5,8 @@ from pyDataverse.models import Dataset
 from pyDataverse.utils import read_file
 from pyDataverse.api import NativeApi
 import glob
+import re
+import ast
 import datetime
 import plotly.express as px
 import plotly.graph_objects as go
@@ -74,13 +76,13 @@ d = datetime.date.today()
 
 ######################################################################################################################
 ######################## INDORES #####################################################################################
-BASE_URL="https://data.indores.fr"
-API_TOKEN="19f0769d-564f-44ac-809b-22853f186960"
+BASE_URL_INDORES="https://data.indores.fr"
+API_TOKEN_INDORES="19f0769d-564f-44ac-809b-22853f186960"
 
 ######################################################################################################################
 ######################## RDG #########################################################################################
-BASE_URL="https://entrepot.recherche.data.gouv.fr/"
-API_TOKEN="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
+BASE_URL_RDG="https://entrepot.recherche.data.gouv.fr/"
+API_TOKEN_RDG="b02fd46a-2fb0-4ac3-8717-ae70ec35185a"
 
 ######################################################################################################################
 ######################## NAKALA ######################################################################################
@@ -254,6 +256,217 @@ st.title(":grey[Donnees ouvertes du RZA]")
 if catalogues:
     ######################  TITRE CATALOGUES  #######################################
     st.title(":grey[Analyse des dépôts dans les geonetworks]")
+    # tableau complet de Cat.indores
+    df_c = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
+    df_c.reset_index(drop=True, inplace=True)
+    
+
+    def transfo(input_string):
+    # Use ast.literal_eval to safely evaluate the string as a Python expression
+        return ast.literal_eval(input_string)
+
+    def transfo_bis(input_string):
+        # Use ast.literal_eval to safely evaluate the string as a Python expression
+        return input_string.replace(",","").replace("[","").replace("]","").replace("'","").replace("?","").replace("None","").replace("undefined","")
+
+    df_c['Url'] = df_c['Url'].apply(transfo_bis)
+
+    # Ajout d'une colonne booléenne pour la présence d'url => objectif : la filtrer
+    for i in range(len(df_c)):
+        if df_c.loc[i,'Url']!='':
+            df_c.loc[i,'Check_url']=True
+        else:
+            df_c.loc[i,'Check_url']=False
+
+    # Tableau complet des ressoucres
+    df_ress = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_fichiers_ressources.csv", index_col=[0])
+
+    # Tableau ressources avec les éléments du tableau complet => attention, qq fiches sortent du traitement
+    df_ress_ = pd.merge(df_c, df_ress, on='Identifiant', how='inner')
+
+    df_ress_checked = df_ress_[(df_ress_['Check_url'] == True) | (df_ress_['Check_BroAndSisters'] == True) | (df_ress_['Check_children'] == True) | (df_ress_['Check_parent'] == True) | (df_ress_['Check_fcats'] == True)]
+    df_ress_checked.reset_index(drop=True, inplace=True)
+
+    df_ress_visu_checked =df_ress_checked[df_ress_checked['GroupeEtMention'].isin(Selection_ZA)]
+    df_ress_visu_checked.reset_index(drop=True, inplace=True)
+
+    df_ress_visu_checked['Children']=df_ress_visu_checked['Children url (properties)']+df_ress_visu_checked['Urls children']
+    df_ress_visu_checked['Parent']=df_ress_visu_checked['Parent url (properties)']+df_ress_visu_checked['Urls brothersAndSisters']
+    df_ress_visu_checked['BroAndSisters']=df_ress_visu_checked['brothersAndSisters url (properties)']+df_ress_visu_checked['Urls parents']
+    df_ress_visu_checked['Fcats']=df_ress_visu_checked['hasfeaturecats url (properties)']+df_ress_visu_checked['Urls hasfeaturecats']+df_ress_visu_checked['facts url (properties)']
+
+    
+
+    sum_children = df_ress_visu_checked['Nombre_children'].sum()
+    sum_parent = df_ress_visu_checked['Nombre_parent'].sum()
+    sum_hassources = df_ress_visu_checked['Nombre_hassources'].sum()
+    sum_associated = df_ress_visu_checked['Nombre_associated'].sum()
+    sum_hasfeaturescats = df_ress_visu_checked['Nombre_hasfeaturescats'].sum()
+    sum_fcats = df_ress_visu_checked['Nombre_fcats'].sum()
+    sum_services = df_ress_visu_checked['Nombre_services'].sum()
+    sum_BroAndSisters = df_ress_visu_checked['Nombre_BroAndSisters'].sum()
+
+    col1,col2,col3,col4 = st.columns(4)
+    with col1:
+        st.metric(label='Brothers And Sisters', value=sum_BroAndSisters)
+    with col2:
+        st.metric(label='Childrens', value=sum_children)
+    with col3:
+        st.metric(label='Parents', value=sum_parent)
+    with col4:
+        st.metric(label="Catalogue d'attributs", value=sum_fcats)
+
+    def split_http(input_string):
+        split_urls = []
+        i = 0
+
+        while i < len(input_string):
+            # Look for the start of the next 'http' or 'https'
+            if input_string[i:i+4] == "http":
+                # Look for the next 'http' or end of string to get the whole URL
+                next_http = input_string.find("http", i + 4)
+                if next_http == -1:
+                    # If no more 'http' is found, grab the rest of the string
+                    split_urls.append(input_string[i:])
+                    break
+                else:
+                    # Append the current URL and move to the next
+                    split_urls.append(input_string[i:next_http])
+                    i = next_http
+            else:
+                i += 1
+
+        # Print the list of URLs
+        return split_urls
+    
+    liste_col_transfo = ['Nom du contact','orga du contact']
+    for x, col in enumerate(liste_col_transfo):
+        df_ress_visu_checked[col] = df_ress_visu_checked[col].apply(transfo)
+    liste_col_transfo_bis = ['Children','Parent','Fcats', 'BroAndSisters']
+    for x, col in enumerate(liste_col_transfo_bis):
+        df_ress_visu_checked[col] = df_ress_visu_checked[col].apply(transfo_bis)
+
+    columns_to_visualize = ['Titre', 'Date','Nom du contact','orga du contact','Url','Children','Parent','Fcats', 'BroAndSisters']
+    df_ress_visu_checked_ = df_ress_visu_checked[columns_to_visualize]
+
+    if len(Selection_ZA)==1:
+        col1, col2, col3 = st.columns([0.5,0.2,0.3])
+        with col1:
+            Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+            s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+            st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+        with col2:
+            st.metric(label="Nombre de fiches avec une url", value=len(df_ress_visu_checked_))
+        with col3:
+            datacatalogue_to_get = df_ress_visu_checked_.to_csv(index=False)
+            st.download_button(
+                label="Téléchargement des données sélectionnées en CSV",
+                data=datacatalogue_to_get,
+                file_name=f'cat_InDoRES_{Selection_ZA[0]}_{d}.csv',
+                mime='text/csv')
+    elif len(Selection_ZA)==16:
+        col1, col2, col3 = st.columns([0.5,0.2,0.3])
+        with col1:
+            Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+            s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+            st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+        with col2:
+            st.metric(label="Nombre de fiches avec une url", value=len(df_ress_visu_checked_))
+        with col3:
+            datacatalogue_to_get = df_ress_visu_checked_.to_csv(index=False)
+            st.download_button(
+                label="Téléchargement des données sélectionnées en CSV",
+                data=datacatalogue_to_get,
+                file_name=f'cat_InDoRES_AllZAs_{d}.csv',
+                mime='text/csv')
+
+    with st.container(border=True):
+        for i in range(len(df_ress_visu_checked_)):
+            t0 = f"FICHIER #{i+1}"
+            s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+            st.markdown(s_t0,unsafe_allow_html=True)
+            col1,col2 = st.columns(2)
+            with col1:
+                t0a = 'Titre'
+                s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                st.markdown(s_t0a,unsafe_allow_html=True)
+                st.markdown(df_ress_visu_checked_.loc[i,'Titre'])
+                t0c = 'Date'
+                s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                st.markdown(s_t0c,unsafe_allow_html=True)
+                st.markdown(df_ress_visu_checked_.loc[i,'Date'])
+                t0d = 'Nom du contact'
+                s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                st.markdown(s_t0d,unsafe_allow_html=True)
+                try:
+                    st.markdown(df_ress_visu_checked_.loc[i,'Nom du contact'][0])
+                except:
+                    pass
+                t0h = 'Organisation du contact'
+                s_t0h = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0h}</p>"
+                st.markdown(s_t0h,unsafe_allow_html=True)
+                try:
+                    st.markdown(df_ress_visu_checked_.loc[i,'orga du contact'][0])
+                except:
+                    pass
+            with col2:
+                if 'http' in df_ress_visu_checked_.loc[i,'Url']:
+                    url1_seperated = split_http(df_ress_visu_checked_.loc[i,'Url'])
+                    t0e = 'Lien URL'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    for j in range(len(url1_seperated)):
+                        st.markdown(url1_seperated[j])
+                else:
+                    url1_seperated = df_ress_visu_checked_.loc[i,'Url']
+                    t0e = 'Lien URL'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    st.markdown(url1_seperated)
+
+                if 'http' in df_ress_visu_checked_.loc[i,'Parent']:
+                    url_parent_seperated = split_http(df_ress_visu_checked_.loc[i,'Parent'])
+                    t0f = 'URL Parent'
+                    s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                    st.markdown(s_t0f,unsafe_allow_html=True)
+                    for k in range(len(url_parent_seperated)):
+                        st.markdown(url_parent_seperated[k])
+                else:
+                    url_parent_seperated = df_ress_visu_checked_.loc[i,'Parent']
+                    t0f = 'URL Parent'
+                    s_t0f = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0f}</p>"
+                    st.markdown(s_t0f,unsafe_allow_html=True)
+                    st.markdown(df_ress_visu_checked_.loc[i,'Parent'])
+
+                if 'http' in df_ress_visu_checked_.loc[i,'Children']:
+                    url_children_seperated = split_http(df_ress_visu_checked_.loc[i,'Children'])
+                    t0g = 'URL Children'
+                    s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                    st.markdown(s_t0g,unsafe_allow_html=True)
+                    for l in range(len(url_children_seperated)):
+                        st.markdown(url_children_seperated[l])
+                else:
+                    url_children_seperated = df_ress_visu_checked_.loc[i,'Children']
+                    t0g = 'URL Children'
+                    s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
+                    st.markdown(s_t0g,unsafe_allow_html=True)
+                    st.markdown(url_children_seperated)
+
+                url_broAndSisters_seperated = split_http(df_ress_visu_checked_.loc[i,'BroAndSisters'])
+                t0i = 'URL Brothers And Sisters'
+                s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                st.markdown(s_t0i,unsafe_allow_html=True)
+                for m in range(len(url_broAndSisters_seperated)):
+                    st.markdown(url_broAndSisters_seperated[m])
+
+                url_fcats_seperated = split_http(df_ress_visu_checked_.loc[i,'Fcats'])
+                t0i = 'URL Attributs'
+                s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
+                st.markdown(s_t0i,unsafe_allow_html=True)
+                for n in range(len(url_fcats_seperated)):
+                    st.markdown(url_fcats_seperated[n])
+
+
 
 ######################################################################################################################
 ############ DATA INDORES ############################################################################################
@@ -492,7 +705,7 @@ if indores:
 
         if b1==True:
             with st.spinner("Récupération des entrepôts existants"):
-                api = connect_to_dataverse(BASE_URL,  API_TOKEN)
+                api = connect_to_dataverse(BASE_URL_INDORES,  API_TOKEN_INDORES)
                 Recup_dataverses(api,fichier)
 
 
@@ -501,12 +714,13 @@ if indores:
         if Recup_globale:
             ids = find_indices(liste_ZAs_, Selection_ZA)
             with st.spinner("La récup globale est en cours"):
-                api = connect_to_dataverse(BASE_URL,  API_TOKEN)
-                liste_columns_df_entrepot=['selection','Entrepot','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+                api = connect_to_dataverse(BASE_URL_INDORES,  API_TOKEN_INDORES)
+                liste_columns_df_entrepot=['selection','Entrepot','Store','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
                 df_entrepot = pd.DataFrame(columns=liste_columns_df_entrepot)
                 for i, za in enumerate(Selection_ZA):
-                    s = liste_ZAs_bis[ids[i]][1]
-                    df = Recup_contenu(api, s, za)
+                    s = int(liste_ZAs_bis[ids[i]][1])
+                    print(s)
+                    df = Recup_contenu_sans_check(api, s, "Data.Indores", za)
                     dfi = pd.concat([df_entrepot,df], axis=0)
                     dfi.reset_index(inplace=True)
                     dfi.drop(columns='index', inplace=True)
@@ -587,7 +801,7 @@ if rdg:
     if tab:
         dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
         Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
-        api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+        api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
         with st.spinner("Analyse en cours"):
             liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
             df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
