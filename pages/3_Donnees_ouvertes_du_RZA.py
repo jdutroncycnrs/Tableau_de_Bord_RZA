@@ -799,20 +799,33 @@ if rdg:
         sun = st.checkbox("Voir l'ensemble des entrepôts existants", key='sun', on_change=handle_sunburst_change)
 
     if tab:
-        dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
-        Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
-        api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
-        with st.spinner("Analyse en cours"):
-            liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
-            df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
-            s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
-            df = Recup_contenu_sans_check(api_rdg, s, Selected_entrepot, Selection_ZA[0])
-            dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
-            dfi.reset_index(inplace=True)
-            dfi.drop(columns='index', inplace=True)
-            df_entrepot_rdg_selected = dfi
-            #df_entrepot_rdg_selected.to_csv(f"pages/data/rechercheDataGouv/Contenu_RDG_{Selection_ZA[0]}_{Selected_entrepot.replace(' ','_').replace('/','_')}.csv")
-        #st.dataframe(df_entrepot_rdg_selected_,use_container_width=True)
+        if len(Selection_ZA)!=0:
+            dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
+            Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
+            api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
+            with st.spinner("Analyse en cours"):
+                liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+                df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
+                s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
+                df = Recup_contenu_sans_check(api_rdg, s, Selected_entrepot, Selection_ZA[0])
+                dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_entrepot_rdg_selected = dfi
+        else:
+            dataverses['niv1-niv2']=dataverses['niv1']+' / '+dataverses['niv2']
+            Selected_entrepot = st.selectbox('Choisissez votre entrepôt dans la liste', dataverses['niv1-niv2'].values)
+            api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
+            with st.spinner("Analyse en cours"):
+                liste_columns_df_entrepot_rdg_selected=['selection','Entrepot','Dataverse','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
+                df_entrepot_rdg_selected = pd.DataFrame(columns=liste_columns_df_entrepot_rdg_selected)
+                s = int(dataverses['ids_niv2'][dataverses['niv1-niv2']==Selected_entrepot])
+                df = Recup_contenu_sans_check(api_rdg, s, Selected_entrepot, 'Aucun filtre')
+                dfi = pd.concat([df_entrepot_rdg_selected,df], axis=0)
+                dfi.reset_index(inplace=True)
+                dfi.drop(columns='index', inplace=True)
+                df_entrepot_rdg_selected = dfi
+
 
         if len(df_entrepot_rdg_selected)!=0:
             col1,col2,col3 = st.columns([0.5,0.2,0.3])
@@ -1048,6 +1061,8 @@ if rdg:
                                 s_t0i = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0i}</p>"
                                 st.markdown(s_t0i,unsafe_allow_html=True)
                                 st.markdown(df_rdg_visu.loc[i,'Email'])
+        else:
+            pass    
 
     if sun:
         fig = px.sunburst(dataverses, path=['niv0','niv1','niv2'], values='val')
@@ -1071,14 +1086,14 @@ if rdg:
 
         if b1==True:
             with st.spinner("Récupération des entrepôts existants"):
-                api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+                api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
                 Recup_dataverses_rdg(api_rdg,fichier)
 
     # RECUPERATION DES CONTENUS VIA BOUTON ##########################################       
         Recup_globale = st.sidebar.button('recupération des contenus')
         if Recup_globale:
             with st.spinner("La récup globale est en cours"):
-                api_rdg = connect_to_dataverse(BASE_URL,  API_TOKEN)
+                api_rdg = connect_to_dataverse(BASE_URL_RDG,  API_TOKEN_RDG)
                 liste_columns_df_entrepot_rdg=['selection','Entrepot','Store','ID','Url','Date de publication','Titre','Auteur','Organisation',"Email",'Résumé','Thème','Publication URL']
                 df_entrepot_rdg = pd.DataFrame(columns=liste_columns_df_entrepot_rdg)
                 for i in range(len(dataverses)):
