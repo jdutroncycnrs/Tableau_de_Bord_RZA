@@ -58,7 +58,7 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
     publication_url = []
     try:
         contenu_zenodo = recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo)
-        #st.write(contenu_zenodo)
+        st.write(contenu_zenodo)
         for i in range(len(contenu_zenodo)):
                 try:
                     identifieurs.append(contenu_zenodo[i]['id'])
