@@ -57,18 +57,6 @@ wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 70
 
-colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#F9A2BF','#3E9399','#3D4A81','#ECDCC5','#D2CFC8','grey','grey','grey']
-graph_title_font = 24
-graph_xaxis_ticks_font = 15
-graph_xaxis_title_font = 20
-graph_yaxis_ticks_font = 15
-graph_yaxis_title_font = 20
-legend_title_font = 15
-legend_font =15
-graph_title_color = "gray"
-graph_ticks_color = 'gray'
-
-
 ######################################################################################################################
 ########### PARAMETRES  ##############################################################################################
 ######################################################################################################################
@@ -350,8 +338,14 @@ if catalogues:
     for x, col in enumerate(liste_col_transfo_bis):
         df_ress_visu_checked[col] = df_ress_visu_checked[col].apply(transfo_bis)
 
-    columns_to_visualize = ['Titre', 'Date','Nom du contact','orga du contact','Url','Children','Parent','Fcats', 'BroAndSisters']
+    columns_to_visualize = ['GroupeEtMention','Titre', 'Date','Nom du contact','orga du contact','Url','Children','Parent','Fcats', 'BroAndSisters']
     df_ress_visu_checked_ = df_ress_visu_checked[columns_to_visualize]
+    df_ress_visu_checked__ = df_ress_visu_checked_.copy()
+    df_ress_visu_checked__['Url'] = df_ress_visu_checked__['Url'].apply(split_http)
+    df_ress_visu_checked__['Parent'] = df_ress_visu_checked__['Parent'].apply(split_http)
+    df_ress_visu_checked__['Children'] = df_ress_visu_checked__['Children'].apply(split_http)
+    df_ress_visu_checked__['BroAndSisters'] = df_ress_visu_checked__['BroAndSisters'].apply(split_http)
+    df_ress_visu_checked__['Fcats'] = df_ress_visu_checked__['Fcats'].apply(split_http)
 
     if len(Selection_ZA)==1:
         col1, col2, col3 = st.columns([0.5,0.2,0.3])
@@ -469,7 +463,23 @@ if catalogues:
                 st.markdown(s_t0i,unsafe_allow_html=True)
                 for n in range(len(url_fcats_seperated)):
                     st.markdown(url_fcats_seperated[n])
+    
 
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+
+    # Mot de passe pour faire des récupérations automatisées
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+
+    if admin_action == admin_pass:
+        # RECUPERATION DES CONTENUS VIA BOUTON ##############################################       
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                df_ress_visu_checked__.to_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked.csv")
 
 ######################################################################################################################
 ############ DATA INDORES ############################################################################################

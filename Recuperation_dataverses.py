@@ -78,7 +78,7 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
                 except:
                     datesPublication.append("")
                 try:
-                    publication_url.append(contenu_zenodo[i]['title'])
+                    publication_url.append(contenu_zenodo[i]['metadata']['doi'])
                 except:
                     publication_url.append("")
                 entrepot_selected.append(entrepot)
