@@ -57,6 +57,17 @@ wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 70
 
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
+graph_title_font = 24
+graph_xaxis_ticks_font = 15
+graph_xaxis_title_font = 20
+graph_yaxis_ticks_font = 15
+graph_yaxis_title_font = 20
+legend_title_font = 15
+legend_font =15
+graph_title_color = "gray"
+graph_ticks_color = 'gray'
+
 ######################################################################################################################
 ########### PARAMETRES  ##############################################################################################
 ######################################################################################################################
