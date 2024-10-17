@@ -1228,7 +1228,7 @@ if nakala:
                     dfn.reset_index(inplace=True)
                     dfn.drop(columns='index', inplace=True)
                     df_entrepot_nakala_selected = dfn
-                df_entrepot_nakala_selected.to_csv("pages/data/Nakala/Contenu_Nakala_complet.csv")
+                df_entrepot_nakala_selected.to_csv("pages/data/Nakala/Contenu_NAKALA_complet.csv")
 
 ######################################################################################################################
 ############################ ZENODO ##################################################################################
