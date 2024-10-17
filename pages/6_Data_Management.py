@@ -67,17 +67,6 @@ liste_ZAs_ = ["Zone atelier territoires uranifères",
               " Zone Atelier Antarctique et Terres Australes",
               " Zone Atelier Santé Environnement Camargue",
               " Zone Atelier Argonne"]
-liste_OHMs = ['OHM Littoral méditerranéen',
-              'OHM Oyapock','OHM Pyrénées - haut Vicdessos',
-              'OHM Bassin Minier de Provence',
-              'OHMi Pima County',
-              'OHMi Nunavik',
-              'OHMi Téssékéré',
-              'OHMi Estarreja',
-              'OHM Vallée du Rhône',
-              'OHM Pays de Bitche',
-              'OHM Littoral Caraïbe']
-autres = ['Groupe exemple','Dynafor','InDoRES','Aucun groupe','RZA','DRIIHM']
 
 
 ######################################################################################################################
