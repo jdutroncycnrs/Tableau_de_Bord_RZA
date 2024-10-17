@@ -1362,6 +1362,7 @@ if zenodo:
 if dryad:
     st.title(":grey[Analyse des dépôts dans Dryad]")
 
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
     #adresse_dryad = url_dryad
     #s_adresse_dryad = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dryad}</p>"
     #st.markdown(s_adresse_dryad ,unsafe_allow_html=True)
@@ -1383,19 +1384,45 @@ if dryad:
         df_dryad_global.reset_index(inplace=True)
         df_dryad_global.drop(columns='index', inplace=True)
     
-    if len(df_dryad_global)==0:
-        st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
-    else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
-        #st.dataframe(df_dryad_global,use_container_width=True)
-        #df_dryad_global.to_csv("pages/data/Dryad/Contenu_DRYAD_complet.csv")
+    if len(df_dryad_global)!=0:
+            if len(Selection_ZA)==1:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
+                with col3:
+                    datadryad_to_get = df_dryad_global.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datadryad_to_get,
+                        file_name=f'data_dryad_{Selection_ZA[0]}_{d}.csv',
+                        mime='text/csv')
+            elif len(Selection_ZA)==16:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_dryad_global))
+                with col3:
+                    datadryad_to_get = df_dryad_global.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datadryad_to_get,
+                        file_name=f'data_dryad_AllZAs_{d}.csv',
+                        mime='text/csv')
 
-        df_visu_dryad = df_dryad_global[df_dryad_global['Entrepot'].isin(Selection_ZA)]
-        df_visu_dryad.reset_index(inplace=True)
-        df_visu_dryad.drop(columns='index', inplace=True)
 
-        for i in range(len(df_visu_dryad)):
-            with st.container(border=True):
+    df_visu_dryad = df_dryad_global[df_dryad_global['Entrepot'].isin(Selection_ZA)]
+    df_visu_dryad.reset_index(inplace=True)
+    df_visu_dryad.drop(columns='index', inplace=True)
+
+    for i in range(len(df_visu_dryad)):
+        with st.container(border=True):
                 t0 = f"FICHIER #{i+1}"
                 s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
                 st.markdown(s_t0,unsafe_allow_html=True)
@@ -1426,7 +1453,7 @@ if dryad:
                     s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
                     st.markdown(s_t0e,unsafe_allow_html=True)
                     st.markdown(df_visu_dryad.loc[i,'Publication URL'])
-                col1,col2, col3 = st.columns([0.6,0.2,0.2])
+                col1,col2, col3 = st.columns([0.5,0.3,0.2])
                 with col1:
                     t0g = 'Auteur'
                     s_t0g = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0g}</p>"
@@ -1446,6 +1473,33 @@ if dryad:
                         st.markdown(df_visu_dryad.loc[i,f'Organisation {b+1}'])
                     with col3:
                         st.markdown(df_visu_dryad.loc[i,f'Email {b+1}'])
+    
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+    if admin_action == admin_pass:
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                liste_columns_dryad = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                            'Organisation 1',"Email 1",'Auteur prénom 2','Auteur Nom 2','Organisation 2',"Email 2",
+                            'Auteur prénom 3','Auteur Nom 3','Organisation 3',"Email 3",'Résumé','Thème','Publication URL']
+                df_dryad_global = pd.DataFrame(columns=liste_columns_dryad)
+                for i in range(len(liste_ZAs_)):
+                    params_dryad = {'q':liste_ZAs_[i]}
+                    Nombre_dryad, df_dryad = Recup_contenu_dryad(url_dryad,params_dryad, liste_ZAs_[i])
+                    dfi = pd.concat([df_dryad_global,df_dryad], axis=0)
+                    dfi.reset_index(inplace=True)
+                    dfi.drop(columns='index', inplace=True)
+                    df_dryad_global = dfi
+
+                df_dryad_global.sort_values(by='Date de publication', inplace=True, ascending=False)
+                df_dryad_global.reset_index(inplace=True)
+                df_dryad_global.drop(columns='index', inplace=True)
+                df_dryad_global.to_csv("pages/data/Dryad/Contenu_DRYAD_complet.csv")
 
 ######################################################################################################################
 ############################## GBIF ##################################################################################
@@ -1453,6 +1507,7 @@ if dryad:
 if gbif:
     st.title(":grey[Analyse des dépôts dans GBIF]")
 
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
     #adresse_gbif = url_gbif
     #s_adresse_gbif = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_gbif}</p>"
     #st.markdown(s_adresse_gbif ,unsafe_allow_html=True)
@@ -1463,7 +1518,7 @@ if gbif:
         df_gbif_global = pd.DataFrame(columns=liste_columns_gbif)
         for i in range(len(Selection_ZA)):
             params_gbif = {'q':Selection_ZA[i],
-                            'limit':1000}
+                            'size':1000}
             df_gbif = Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,Selection_ZA[i])
             dfi = pd.concat([df_gbif_global,df_gbif], axis=0)
             dfi.reset_index(inplace=True)
@@ -1475,19 +1530,43 @@ if gbif:
         df_gbif_global.drop(columns='index', inplace=True)
         df_gbif_global['Date de publication 2'] = pd.to_datetime(df_gbif_global['Date de publication']).dt.strftime('%Y-%m-%d')
 
-    df_gbif_global.to_csv("pages/data/Gbif/Contenu_GBIF_complet.csv")
+    if len(df_gbif_global)!=0:
+            if len(Selection_ZA)==1:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
+                with col3:
+                    datagbif_to_get = df_gbif_global.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datagbif_to_get,
+                        file_name=f'data_gbif_{Selection_ZA[0]}_{d}.csv',
+                        mime='text/csv')
+            elif len(Selection_ZA)==16:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
+                with col3:
+                    datagbif_to_get = df_gbif_global.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datagbif_to_get,
+                        file_name=f'data_gbif_AllZAs_{d}.csv',
+                        mime='text/csv')
 
-    if len(df_gbif_global)==0:
-        st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
-    else:
-        st.metric(label="Nombre de publications trouvées", value=len(df_gbif_global))
-        #st.dataframe(df_gbif_global)
+    df_visu_gbif = df_gbif_global[df_gbif_global['Entrepot'].isin(Selection_ZA)]
+    df_visu_gbif.reset_index(inplace=True)
+    df_visu_gbif.drop(columns='index', inplace=True)
 
-        df_visu_gbif = df_gbif_global[df_gbif_global['Entrepot'].isin(Selection_ZA)]
-        df_visu_gbif.reset_index(inplace=True)
-        df_visu_gbif.drop(columns='index', inplace=True)
-
-        for i in range(len(df_visu_gbif)):
+    for i in range(len(df_visu_gbif)):
             with st.container(border=True):
                 t0 = f"FICHIER #{i+1}"
                 s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
@@ -1508,7 +1587,7 @@ if gbif:
                     t0d = 'Résumé'
                     s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
                     st.markdown(s_t0d,unsafe_allow_html=True)
-                    st.markdown(df_visu_gbif.loc[i,'Résumé'])
+                    st.markdown(md(df_visu_gbif.loc[i,'Résumé']))
                 with col2:
                     t0e = 'Publication URL'
                     s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
@@ -1534,3 +1613,31 @@ if gbif:
                         st.markdown(df_visu_gbif.loc[i,f'Organisation {b+1}'])
                     with col3:
                         st.markdown(df_visu_gbif.loc[i,f'Email {b+1}'])
+    
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+    if admin_action == admin_pass:
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                liste_columns_gbif = ['Store','Entrepot','ID','Date de publication','Titre','Auteur prénom 1','Auteur Nom 1',
+                                'Organisation 1',"Email 1",'Résumé','Publication URL']
+                df_gbif_global = pd.DataFrame(columns=liste_columns_gbif)
+                for i in range(len(liste_ZAs_)):
+                    params_gbif = {'q':liste_ZAs_[i],
+                                    'size':1000}
+                    df_gbif = Recup_contenu_gbif(url_gbif,params_gbif,headers_gbif,liste_ZAs_[i])
+                    dfi = pd.concat([df_gbif_global,df_gbif], axis=0)
+                    dfi.reset_index(inplace=True)
+                    dfi.drop(columns='index', inplace=True)
+                    df_gbif_global = dfi
+
+                df_gbif_global.sort_values(by='Date de publication', inplace=True, ascending=False)
+                df_gbif_global.reset_index(inplace=True)
+                df_gbif_global.drop(columns='index', inplace=True)
+                df_gbif_global['Date de publication 2'] = pd.to_datetime(df_gbif_global['Date de publication']).dt.strftime('%Y-%m-%d')
+                df_gbif_global.to_csv("pages/data/Gbif/Contenu_GBIF_complet.csv")
