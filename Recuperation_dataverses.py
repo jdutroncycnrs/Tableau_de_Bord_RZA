@@ -49,25 +49,38 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
     store_z = []
     identifieurs = []
     titre = []
-    auteur_prenom1 = []
-    auteur_nom1 = []
-    auteur_affiliation1 = []
-    auteur_email1 = []
+    auteur = []
     resume = []
     datesPublication = []
     publication_url = []
     try:
         contenu_zenodo = recuperation_zenodo(url_zenodo,params_zenodo, headers_zenodo)
-        st.write(contenu_zenodo)
+        #st.write(contenu_zenodo)
         for i in range(len(contenu_zenodo)):
                 try:
                     identifieurs.append(contenu_zenodo[i]['id'])
                 except:
                     identifieurs.append("")
                 try:
-                    titre.append(contenu_zenodo[i]['metadata']['title'])
+                    titre.append(contenu_zenodo[i]['title'])
                 except:
                     titre.append("")
+                try:
+                    auteur.append(contenu_zenodo[i]['metadata']['creators'][0]['name'])
+                except:
+                    auteur.append("")
+                try:
+                    resume.append(contenu_zenodo[i]['metadata']['description'])
+                except:
+                    resume.append("")
+                try:
+                    datesPublication.append(contenu_zenodo[i]['metadata']['publication_date'])
+                except:
+                    datesPublication.append("")
+                try:
+                    publication_url.append(contenu_zenodo[i]['title'])
+                except:
+                    publication_url.append("")
                 entrepot_selected.append(entrepot)
                 store_z.append('Zenodo')
         
@@ -76,19 +89,71 @@ def Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, entrepot):
     reponse_df = pd.DataFrame({'Store':store_z,
                                'Entrepot':entrepot_selected,
                                'ID':identifieurs,
-                                'Titre':titre})
+                                'Titre':titre,
+                                'Auteur':auteur,
+                                "Résumé":resume,
+                                "Date de publication":datesPublication,
+                                "Publication Url": publication_url})
     return reponse_df
 
 ##################################################################################################################
 ################################################# NAKALA #########################################################
 ##################################################################################################################
-def recuperation_nakala(url_nakala,params_nakala, headers_nakala, ZA):
+def recuperation_nakala(url_nakala,params_nakala, headers_nakala):
     
     r = requests.get(url_nakala,
                     params=params_nakala,
                     headers=headers_nakala)
     
     return r.json()['datas']
+
+
+def Recup_contenu_nakala(url_nakala,params_nakala, headers_nakala, entrepot_data):
+    entrepot_selected = []
+    store_n = []
+    identifieurs = []
+    titre = []
+    auteur = []
+    datesPublication = []
+    publication_url = []
+    try:
+        contenu_nakala = recuperation_nakala(url_nakala,params_nakala, headers_nakala)
+        #st.write(contenu_nakala)
+        for i in range(len(contenu_nakala)):
+            try:
+                identifieurs.append(contenu_nakala[i]['identifier'])
+            except:
+                identifieurs.append("")
+            try:
+                datesPublication.append(contenu_nakala[i]['creDate'])
+            except:
+                datesPublication.append("")
+            try:
+                titre.append(contenu_nakala[i]['metas'][0]['value'])
+            except:
+                titre.append("")
+            try:
+                auteur.append(contenu_nakala[i]['rights'][0]['name'])
+            except:
+                auteur.append("")
+            try:
+                publication_url.append(contenu_nakala[i]['uri'])
+            except:
+                publication_url.append("")
+            entrepot_selected.append(entrepot_data)
+            store_n.append('Nakala')
+    
+    except:
+        pass
+    reponse_df = pd.DataFrame({'Store':store_n,
+                               'Entrepot':entrepot_selected,
+                               'ID':identifieurs,
+                                'Titre':titre,
+                                'Auteur':auteur,
+                                'Date de publication':datesPublication,
+                                'Publication Url':publication_url})
+
+    return reponse_df
 
 
 #################################################################################################################

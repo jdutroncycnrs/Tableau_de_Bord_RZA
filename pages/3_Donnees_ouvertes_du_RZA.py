@@ -11,7 +11,8 @@ import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 import requests
-from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_sans_check, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, recuperation_dryad, recuperation_gbif
+from markdownify import markdownify as md
+from Recuperation_dataverses import Recup_dataverses, Recup_contenu_dataverse,Recup_contenu, Recup_contenu_sans_check, Recup_contenu_dryad, Recup_contenu_zenodo,Recup_contenu_gbif, Recup_dataverses_rdg, recuperation_zenodo, recuperation_nakala, Recup_contenu_nakala, recuperation_dryad, recuperation_gbif
 
 ######################################################################################################################
 ########### TITRE DE L'ONGLET ########################################################################################
@@ -256,10 +257,13 @@ st.title(":grey[Donnees ouvertes du RZA]")
 if catalogues:
     ######################  TITRE CATALOGUES  #######################################
     st.title(":grey[Analyse des dépôts dans les geonetworks]")
+
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
+
     # tableau complet de Cat.indores
     df_c = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
     df_c.reset_index(drop=True, inplace=True)
-    
+    df_c_selected =df_c[df_c['GroupeEtMention'].isin(Selection_ZA)]
 
     def transfo(input_string):
     # Use ast.literal_eval to safely evaluate the string as a Python expression
@@ -352,7 +356,7 @@ if catalogues:
     if len(Selection_ZA)==1:
         col1, col2, col3 = st.columns([0.5,0.2,0.3])
         with col1:
-            Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+            Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]} / {len(df_c_selected)} fiches"
             s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
             st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
         with col2:
@@ -367,7 +371,7 @@ if catalogues:
     elif len(Selection_ZA)==16:
         col1, col2, col3 = st.columns([0.5,0.2,0.3])
         with col1:
-            Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+            Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau / {len(df_c_selected)} fiches"
             s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
             st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
         with col2:
@@ -467,7 +471,6 @@ if catalogues:
                     st.markdown(url_fcats_seperated[n])
 
 
-
 ######################################################################################################################
 ############ DATA INDORES ############################################################################################
 ######################################################################################################################
@@ -476,7 +479,6 @@ if indores:
     st.title(":grey[Analyse des dépôts dans Data.InDoRes]")
 
     st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
-    st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
 
     #adresse_dataInDoRes = 'https://data.indores.fr/dataverse/dataindores'
     #s_adresse_dataInDoRes = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_dataInDoRes}</p>"
@@ -788,7 +790,6 @@ if rdg:
         if st.session_state.sun:
             st.session_state.tab = False
 
-    st.success("Selectionner l'outil (entrepot ou geonetwork) dans lequel faire votre recherche / CASE A COCHER")
     st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
     st.success("Vous pouvez aussi voir le contenu d'un entrepôt de votre en choix / COCHER LA CASE CI-DESSOUS A GAUCHE")
 
@@ -1124,16 +1125,118 @@ if nakala:
     #s_adresse_nakala = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_nakala}</p>"
     #st.markdown(s_adresse_nakala ,unsafe_allow_html=True)
 
-    if len(Selection_ZA)!=0:
-        params_nakala = {'q': f'"{Selection_ZA[0].lower()}"'}
-        r = recuperation_nakala(url_nakala,params_nakala, headers_nakala, Selection_ZA[0])
-        st.write(r)
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
+
+    if len(Selection_ZA)==0:
+        df_entrepot_nakala_selected = []
+    else:
+        with st.spinner("Recherche en cours"):
+            liste_columns_df_entrepot_nakala_selected=['Store','Entrepot','ID','Titre','Auteur','Date de publication','Publication Url']
+            df_entrepot_nakala_selected = pd.DataFrame(columns=liste_columns_df_entrepot_nakala_selected)
+            for i, s in enumerate(Selection_ZA):
+                params_nakala = {'q': f'"{s.lower()}"',
+                                'size':1000}
+                df_nakala = Recup_contenu_nakala(url_nakala,params_nakala, headers_nakala, s)
+                dfn = pd.concat([df_entrepot_nakala_selected,df_nakala], axis=0)
+                dfn.reset_index(inplace=True)
+                dfn.drop(columns='index', inplace=True)
+                df_entrepot_nakala_selected = dfn
+                df_entrepot_nakala_selected.to_csv()
+
+            #st.dataframe(df_entrepot_nakala_selected)
+
+    
+    if len(df_entrepot_nakala_selected)!=0:
+        if len(Selection_ZA)==1:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur {Selection_ZA[0]}"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_entrepot_nakala_selected))
+                with col3:
+                    datanakala_to_get = df_entrepot_nakala_selected.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datanakala_to_get,
+                        file_name=f'data_nakala_{Selection_ZA[0]}_{d}.csv',
+                        mime='text/csv')
+        elif len(Selection_ZA)==16:
+                col1, col2, col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
+                    s_Sommes_check_selected_df  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Sommes_check_selected_df}</p>"
+                    st.markdown(s_Sommes_check_selected_df ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de publications trouvées", value=len(df_entrepot_nakala_selected))
+                with col3:
+                    datanakala_to_get = df_entrepot_nakala_selected.to_csv(index=False)
+                    st.download_button(
+                        label="Téléchargement des données sélectionnées en CSV",
+                        data=datanakala_to_get,
+                        file_name=f'data_nakala_AllZAs_{d}.csv',
+                        mime='text/csv')
+            
+        for i in range(len(df_entrepot_nakala_selected)):
+            with st.container(border=True):
+                t0 = f"FICHIER #{i+1}"
+                s_t0 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t0}</p>"
+                st.markdown(s_t0,unsafe_allow_html=True)
+                col1,col2 = st.columns([0.6,0.4])
+                with col1:
+                    t0a = 'Titre'
+                    s_t0a = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0a}</p>"
+                    st.markdown(s_t0a,unsafe_allow_html=True)
+                    st.markdown(df_entrepot_nakala_selected.loc[i,'Titre'])
+                with col2:
+                    t0b = 'Date'
+                    s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
+                    st.markdown(s_t0b,unsafe_allow_html=True)
+                    st.markdown(df_entrepot_nakala_selected.loc[i,'Date de publication'])
+                col1,col2 = st.columns([0.6,0.4])
+                with col1:
+                    t0e = 'Auteur'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    st.markdown(df_entrepot_nakala_selected.loc[i,'Auteur'])
+                with col2:
+                    t0d = 'Publication URL'
+                    s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                    st.markdown(s_t0d,unsafe_allow_html=True)
+                    st.markdown(df_entrepot_nakala_selected.loc[i,'Publication Url'])
+                    
+                
+
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+    if admin_action == admin_pass:
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                liste_columns_df_entrepot_nakala_selected=['Store','Entrepot','ID','Titre','Auteur','Date de publication','Résumé','Publication Url']
+                df_entrepot_nakala_selected = pd.DataFrame(columns=liste_columns_df_entrepot_nakala_selected)
+                for i, s in enumerate(liste_ZAs_):
+                    params_nakala = {'q': f'"{s.lower()}"',
+                                        'size':1000}
+                    df_nakala = Recup_contenu_nakala(url_nakala,params_nakala, headers_nakala, s)
+                    dfn = pd.concat([df_entrepot_nakala_selected,df_nakala], axis=0)
+                    dfn.reset_index(inplace=True)
+                    dfn.drop(columns='index', inplace=True)
+                    df_entrepot_nakala_selected = dfn
+                df_entrepot_nakala_selected.to_csv("pages/data/Nakala/Contenu_Nakala_complet.csv")
 
 ######################################################################################################################
 ############################ ZENODO ##################################################################################
 ######################################################################################################################
 if zenodo:
     st.title(":grey[Analyse des dépôts dans Zenodo]")
+
+    st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
 
     #adresse_zenodo = url_zenodo
     #s_adresse_zenodo = f"<p style='font-size:25px;color:rgb(150,150,150)'>{adresse_zenodo}</p>"
@@ -1142,7 +1245,7 @@ if zenodo:
         pass
     else:
         with st.spinner("Recherche en cours"):
-            liste_columns = ['Store','Entrepot','ID','Titre']
+            liste_columns = ['Store','Entrepot','ID','Titre','Auteur',"Résumé","Date de publication","Publication Url"]
             df_global_zenodo = pd.DataFrame(columns=liste_columns)
             for i, s in enumerate(Selection_ZA):
                 params_zenodo = {'q': f'"{s.lower()}"',
@@ -1207,12 +1310,51 @@ if zenodo:
                     st.markdown(s_t0a,unsafe_allow_html=True)
                     st.markdown(df_visu_zenodo.loc[i,'Titre'])
                 with col2:
-                    t0b = 'ID'
+                    t0b = 'Date'
                     s_t0b = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0b}</p>"
                     st.markdown(s_t0b,unsafe_allow_html=True)
-                    st.markdown(df_visu_zenodo.loc[i,'ID'])
-        
+                    st.markdown(df_visu_zenodo.loc[i,'Date de publication'])
+                col1,col2 = st.columns([0.8,0.2])
+                with col1:
+                    t0c = 'Résumé'
+                    s_t0c = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0c}</p>"
+                    st.markdown(s_t0c,unsafe_allow_html=True)
+                    st.markdown(md(df_visu_zenodo.loc[i,'Résumé']))
+                with col2:
+                    t0d = 'Publication URL'
+                    s_t0d = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0d}</p>"
+                    st.markdown(s_t0d,unsafe_allow_html=True)
+                    st.markdown(df_visu_zenodo.loc[i,'Publication Url'])
+                    t0e = 'Auteur'
+                    s_t0e = f"<p style='font-size:{taille_subsubtitles};color:rgb{couleur_subsubtitles}'>{t0e}</p>"
+                    st.markdown(s_t0e,unsafe_allow_html=True)
+                    st.markdown(df_visu_zenodo.loc[i,'Auteur'])
+    
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
 
+    if admin_action == admin_pass:
+        Recup_globale = st.sidebar.button('recupération des contenus')
+        if Recup_globale:
+            with st.spinner("La récup globale est en cours"):
+                liste_columns = ['Store','Entrepot','ID','Titre','Auteur',"Résumé","Date de publication","Publication Url"]
+                df_global_zenodo = pd.DataFrame(columns=liste_columns)
+                for i, s in enumerate(liste_ZAs_):
+                    params_zenodo = {'q': f'"{s.lower()}"',
+                            'access_token': zenodo_token}
+                    
+                    df = Recup_contenu_zenodo(url_zenodo,params_zenodo, headers_zenodo, s)
+                    dfi = pd.concat([df_global_zenodo,df], axis=0)
+                    dfi.reset_index(inplace=True)
+                    dfi.drop(columns='index', inplace=True)
+                    df_global_zenodo = dfi
+                df_global_zenodo.sort_values(by='ID', inplace=True, ascending=False)
+                df_global_zenodo.reset_index(inplace=True)
+                df_global_zenodo.drop(columns='index', inplace=True)
+                df_global_zenodo.to_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv")
 
 ######################################################################################################################
 ################################# DRYAD ##############################################################################
