@@ -329,7 +329,7 @@ if len(Selection_ZA)!=0:
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
 
-        st.subheader('Recensement sur le catalogue')
+        st.subheader('Recensements sur le catalogue')
 
         col1,col2,col3,col4,col5,col6 = st.columns(6)
         with col1:
@@ -492,7 +492,7 @@ if len(Selection_ZA)!=0:
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
 
-        st.subheader('Recensement sur le catalogue')
+        st.subheader('Recensements sur le catalogue')
 
         col1,col2,col3,col4,col5,col6 = st.columns(6)
         with col1:
@@ -651,7 +651,7 @@ if len(Selection_ZA)!=0:
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
 
-        st.subheader('Recensement sur le catalogue')
+        st.subheader('Recensements sur le catalogue')
 
         col1,col2,col3,col4,col5,col6 = st.columns(6)
         with col1:
