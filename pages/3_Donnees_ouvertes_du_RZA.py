@@ -349,7 +349,7 @@ if catalogues:
     for x, col in enumerate(liste_col_transfo_bis):
         df_ress_visu_checked[col] = df_ress_visu_checked[col].apply(transfo_bis)
 
-    columns_to_visualize = ['GroupeEtMention','Titre', 'Date','Nom du contact','orga du contact','Url','Children','Parent','Fcats', 'BroAndSisters']
+    columns_to_visualize = ['Identifiant','GroupeEtMention','Titre', 'Date','Nom du contact','orga du contact','Url','Children','Parent','Fcats', 'BroAndSisters']
     df_ress_visu_checked_ = df_ress_visu_checked[columns_to_visualize]
     df_ress_visu_checked__ = df_ress_visu_checked_.copy()
     df_ress_visu_checked__['Url'] = df_ress_visu_checked__['Url'].apply(split_http)

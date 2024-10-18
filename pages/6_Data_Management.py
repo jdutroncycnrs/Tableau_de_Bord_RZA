@@ -61,6 +61,8 @@ data_zenodo = pd.read_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv", index_
 data_gbif = pd.read_csv("pages/data/Gbif/Contenu_GBIF_complet.csv", index_col=[0])
 
 catalogue_checked = pd.read_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked.csv", index_col=[0])
+catalogue_checked_c = catalogue_checked.copy()
+
 
 catalogue = pd.read_csv("pages/data/Cat_InDoRES/infos_MD2/Tableau_complet.csv", index_col=[0])
 
@@ -187,40 +189,80 @@ if len(Selection_ZA)!=0:
     data_stored_count = data_stored['Store'].value_counts()
     df_data_stored_count = pd.DataFrame(data_stored_count)
 
-    #### TRAITEMENT CATALOGUE CHECKED
+
     def transfo(input_string):
         # Use ast.literal_eval to safely evaluate the string as a Python expression
         return ast.literal_eval(input_string)
     
+    ##########################################################################################
+    ########### POUR L'ADMINISTRATEUR ########################################################
+    ##########################################################################################
+
+    # Mot de passe pour faire des récupérations automatisées
+    admin_pass = 'admin'
+    admin_action = st.sidebar.text_input(label="Pour l'administrateur")
+
+
+    if admin_action == admin_pass:
+        # RECUPERATION DES CONTENUS VIA BOUTON ##############################################       
+        Check_depots = st.sidebar.checkbox('Vérifier les liens')
+        if Check_depots:
+            copie_to_write = pd.read_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked_stored.csv", index_col=[0])
+            columns_to_transfo = ['Url','Children','Parent','Fcats','BroAndSisters']
+            for x,col in enumerate(columns_to_transfo):
+                copie_to_write[col] = copie_to_write[col].apply(transfo)
+            edited_df = st.data_editor(copie_to_write)
+            edited_df.reset_index(inplace=True)
+
+            if st.button("Save Changes"):
+                # Save to CSV or any format
+                edited_df.to_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked_stored.csv", index=False)
+                st.success("DataFrame has been saved!")
+
+
+    #### TRAITEMENT CATALOGUE CHECKED
     columns_to_transfo = ['Url','Children','Parent','Fcats','BroAndSisters']
     for x,col in enumerate(columns_to_transfo):
-        catalogue_checked[col] = catalogue_checked[col].apply(transfo)
+        catalogue_checked_c[col] = catalogue_checked_c[col].apply(transfo)
 
-    catalogue_checked['Store']='A déterminer'
-    catalogue_checked_ = catalogue_checked[catalogue_checked['GroupeEtMention'].isin(Selection_ZA)]
+    liste_to_keep_copie = ['Identifiant','Store']
+    copie = pd.read_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked_stored.csv", index_col=[0])
+    copie_ = copie[liste_to_keep_copie]
 
-    catalogue_checked_count = catalogue_checked_['Store'].value_counts()
+    catalogue_checked_c_ = pd.merge(catalogue_checked_c, copie_, on='Identifiant', how='inner')
+    catalogue_checked_c_.to_csv("pages/data/Cat_InDoRES/Contenu_CatInDoRES_checked_stored.csv")
+    catalogue_checked_c__ = catalogue_checked_c_[catalogue_checked_c_['GroupeEtMention'].isin(Selection_ZA)]
+
+    catalogue_checked_count = catalogue_checked_c__['Store'].value_counts()
     df_catalogue_checked_count =pd.DataFrame(catalogue_checked_count)
+
+    #### TRAITEMENT CATALOGUE GENERAL
+    catalogue_ = catalogue[catalogue['GroupeEtMention'].isin(Selection_ZA)]
+    #st.dataframe(catalogue_)
 
     if len(Selection_ZA)==1:
         Visu_depots = f"Bilan pour la {Selection_ZA[0]}"
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
 
-        t_hal = f"HAL"
-        s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
-        st.markdown(s_thal,unsafe_allow_html=True)
-        st.table(HAL_count)
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            t_hal = f"HAL"
+            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
+            st.markdown(s_thal,unsafe_allow_html=True)
+            st.table(HAL_count)
 
-        t_stored = f"ENTREPOTS"
-        s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
-        st.markdown(s_tstored,unsafe_allow_html=True)
-        st.table(data_stored_count)
+        with col2:
+            t_stored = f"ENTREPOTS"
+            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
+            st.markdown(s_tstored,unsafe_allow_html=True)
+            st.table(data_stored_count)
 
-        t_cat_stored = f"DEPOTS AILLEURS"
-        s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
-        st.markdown(s_tcat_stored,unsafe_allow_html=True)
-        st.table(catalogue_checked_count)
+        with col3:
+            t_cat_stored = f"DEPOTS AILLEURS"
+            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
+            st.markdown(s_tcat_stored,unsafe_allow_html=True)
+            st.table(catalogue_checked_count)
 
     elif 1<len(Selection_ZA)<16:
         selection_name = ""
@@ -230,20 +272,24 @@ if len(Selection_ZA)!=0:
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
 
-        t_hal = f"HAL"
-        s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
-        st.markdown(s_thal,unsafe_allow_html=True)
-        st.table(HAL_count)
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            t_hal = f"HAL"
+            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
+            st.markdown(s_thal,unsafe_allow_html=True)
+            st.table(HAL_count)
 
-        t_stored = f"ENTREPOTS"
-        s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
-        st.markdown(s_tstored,unsafe_allow_html=True)
-        st.table(data_stored_count)
+        with col2:
+            t_stored = f"ENTREPOTS"
+            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
+            st.markdown(s_tstored,unsafe_allow_html=True)
+            st.table(data_stored_count)
 
-        t_cat_stored = f"DEPOTS AILLEURS"
-        s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
-        st.markdown(s_tcat_stored,unsafe_allow_html=True)
-        st.table(catalogue_checked_count)
+        with col3:
+            t_cat_stored = f"DEPOTS AILLEURS"
+            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
+            st.markdown(s_tcat_stored,unsafe_allow_html=True)
+            st.table(catalogue_checked_count)
 
     elif len(Selection_ZA)==16:
         selection_name = "All_ZAs"
@@ -251,20 +297,24 @@ if len(Selection_ZA)!=0:
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
 
-        t_hal = f"HAL"
-        s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
-        st.markdown(s_thal,unsafe_allow_html=True)
-        st.table(HAL_count)
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            t_hal = f"HAL"
+            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
+            st.markdown(s_thal,unsafe_allow_html=True)
+            st.table(HAL_count)
 
-        t_stored = f"ENTREPOTS"
-        s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
-        st.markdown(s_tstored,unsafe_allow_html=True)
-        st.table(data_stored_count)
+        with col2:
+            t_stored = f"ENTREPOTS"
+            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
+            st.markdown(s_tstored,unsafe_allow_html=True)
+            st.table(data_stored_count)
 
-        t_cat_stored = f"DEPOTS AILLEURS"
-        s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
-        st.markdown(s_tcat_stored,unsafe_allow_html=True)
-        st.table(catalogue_checked_count)
+        with col3:
+            t_cat_stored = f"DEPOTS AILLEURS"
+            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
+            st.markdown(s_tcat_stored,unsafe_allow_html=True)
+            st.table(catalogue_checked_count)
 
     
 
