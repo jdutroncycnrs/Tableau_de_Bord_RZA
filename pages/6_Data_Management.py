@@ -238,12 +238,19 @@ if len(Selection_ZA)!=0:
 
     #### TRAITEMENT CATALOGUE GENERAL
     catalogue_ = catalogue[catalogue['GroupeEtMention'].isin(Selection_ZA)]
-    #st.dataframe(catalogue_)
+    catalogue_F2_count = catalogue_['F2'].value_counts()
+    catalogue_I1_count = catalogue_['I1'].value_counts()
+    catalogue_I2_count = catalogue_['I2'].value_counts()
+    catalogue_I3_count = catalogue_['I3'].value_counts()
+    catalogue_R1_count = catalogue_['R1'].value_counts()
+    catalogue_R2_count = catalogue_['R2'].value_counts()
 
     if len(Selection_ZA)==1:
         Visu_depots = f"Bilan pour la {Selection_ZA[0]}"
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+
+        st.subheader('Publications')
 
         col1,col2,col3 = st.columns(3)
         with col1:
@@ -263,6 +270,45 @@ if len(Selection_ZA)!=0:
             s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
+
+        st.subheader('Recensement sur le catalogue')
+
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            t_cataF2 = f"IDENTIFICATION CONFORME"
+            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
+            st.markdown(s_tcataF2,unsafe_allow_html=True)
+            st.table(catalogue_F2_count)
+            
+        with col2:
+            t_cataI1 = f"FORMAT CONFORME"
+            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
+            st.markdown(s_tcataI1,unsafe_allow_html=True)
+            st.table(catalogue_I1_count)
+
+        with col3:
+            t_cataI3 = f"MOTS CLES RENSEIGNES"
+            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
+            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
+            st.table(catalogue_I3_count)
+
+        with col4:
+            t_cataI2 = f"THESAURUS RENSEIGNES"
+            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
+            st.markdown(s_tcataI2,unsafe_allow_html=True)
+            st.table(catalogue_I2_count)
+
+        with col5:
+            t_cataR1 = f"DROITS RENSEIGNES"
+            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
+            st.markdown(s_tcataR1,unsafe_allow_html=True)
+            st.table(catalogue_R1_count)
+
+        with col6:
+            t_cataR2 = f"GENEALOGIE DECRITE"
+            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
+            st.markdown(s_tcataR2,unsafe_allow_html=True)
+            st.table(catalogue_R2_count)
 
     elif 1<len(Selection_ZA)<16:
         selection_name = ""
@@ -272,6 +318,8 @@ if len(Selection_ZA)!=0:
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
 
+        st.subheader('Publications')
+
         col1,col2,col3 = st.columns(3)
         with col1:
             t_hal = f"HAL"
@@ -290,6 +338,45 @@ if len(Selection_ZA)!=0:
             s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
+
+        st.subheader('Recensement sur le catalogue')
+
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            t_cataF2 = f"IDENTIFICATION CONFORME"
+            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
+            st.markdown(s_tcataF2,unsafe_allow_html=True)
+            st.table(catalogue_F2_count)
+            
+        with col2:
+            t_cataI1 = f"FORMAT CONFORME"
+            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
+            st.markdown(s_tcataI1,unsafe_allow_html=True)
+            st.table(catalogue_I1_count)
+
+        with col3:
+            t_cataI3 = f"MOTS CLES RENSEIGNES"
+            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
+            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
+            st.table(catalogue_I3_count)
+
+        with col4:
+            t_cataI2 = f"THESAURUS RENSEIGNES"
+            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
+            st.markdown(s_tcataI2,unsafe_allow_html=True)
+            st.table(catalogue_I2_count)
+
+        with col5:
+            t_cataR1 = f"DROITS RENSEIGNES"
+            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
+            st.markdown(s_tcataR1,unsafe_allow_html=True)
+            st.table(catalogue_R1_count)
+
+        with col6:
+            t_cataR2 = f"GENEALOGIE DECRITE"
+            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
+            st.markdown(s_tcataR2,unsafe_allow_html=True)
+            st.table(catalogue_R2_count)
 
     elif len(Selection_ZA)==16:
         selection_name = "All_ZAs"
@@ -297,6 +384,8 @@ if len(Selection_ZA)!=0:
         s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
         st.markdown(s_Visu_depots ,unsafe_allow_html=True)
 
+        st.subheader('Publications')
+
         col1,col2,col3 = st.columns(3)
         with col1:
             t_hal = f"HAL"
@@ -316,7 +405,44 @@ if len(Selection_ZA)!=0:
             st.markdown(s_tcat_stored,unsafe_allow_html=True)
             st.table(catalogue_checked_count)
 
-    
+        st.subheader('Recensement sur le catalogue')
+
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            t_cataF2 = f"IDENTIF CONFORME"
+            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
+            st.markdown(s_tcataF2,unsafe_allow_html=True)
+            st.table(catalogue_F2_count)
+            
+        with col2:
+            t_cataI1 = f"FORMAT CONFORME"
+            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
+            st.markdown(s_tcataI1,unsafe_allow_html=True)
+            st.table(catalogue_I1_count)
+
+        with col3:
+            t_cataI3 = f"MOTS CLES RENSEIGNES"
+            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
+            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
+            st.table(catalogue_I3_count)
+
+        with col4:
+            t_cataI2 = f"THESAURUS RENSEIGNES"
+            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
+            st.markdown(s_tcataI2,unsafe_allow_html=True)
+            st.table(catalogue_I2_count)
+
+        with col5:
+            t_cataR1 = f"DROITS RENSEIGNES"
+            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
+            st.markdown(s_tcataR1,unsafe_allow_html=True)
+            st.table(catalogue_R1_count)
+
+        with col6:
+            t_cataR2 = f"GENEALOGIE DECRITE"
+            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
+            st.markdown(s_tcataR2,unsafe_allow_html=True)
+            st.table(catalogue_R2_count)
 
 
     ######################################################################################################################
