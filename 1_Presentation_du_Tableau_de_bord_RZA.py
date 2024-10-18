@@ -71,28 +71,113 @@ if guide:
 
     with tab1:
         publi_hal_guide =  f"""<span style="font-size: 35 px;">
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        <ul>
+        <li style="font-size:20px";>Une extraction est réalisée sur HAL avec comme requête : le nom de sa Zone Atelier ou l'ensemble des Zones Ateliers. </li>
+        <li style="font-size:20px";>La possibilité est laissée à l'utilisateur de choisir l'année du début de sa recherche. </li>
+        <li style="font-size:20px";>Si l'on souhaite l'année en cours uniquement, il n'y a rien à faire. </li>
+        <li style="font-size:20px";>Sinon, il s'agit de taper l'année de son choix. </li>
+        <li style="font-size:20px";>L'extraction sera alors faite jusqu'à la date du jour, sauf si l'on souhaite une année unique (dès lors la case "année unique" est à cocher) </li>
+        <li style="font-size:20px";>Il est proposé la possibilité de télécharger le résultat de sa sélection</li>
+        </ul></span>"""
         st.markdown(publi_hal_guide, unsafe_allow_html=True)
     with tab2:
         data_guide =  f"""<span style="font-size: 35 px;">
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        <ul>
+        <li style="font-size:20px";>Une extraction est réalisée sur différents entrepôts (Indores, RDG, Nakala, Zenodo, Dryad, Gbif) ou sur les ressources associées du catalogue (Geonetworks).</li>
+        <li style="font-size:20px";>Liste non exhaustive (d'autres peuvent être ajoutés à l'avenir si elle fournissent une API pour le faire.</li>
+        <li style="font-size:20px";>Il est proposé de choisir parmi les entrepôts proposés.</li>
+        <li style="font-size:20px";>Dès lors, il s'agit de définir sa requête : le nom de sa Zone Atelier ou l'ensemble des Zones Ateliers.</li>
+        <li style="font-size:20px";>Il est proposé la possibilité de télécharger le résultat de sa sélection</li>
+        </ul></span>"""
         st.markdown(data_guide, unsafe_allow_html=True)
     with tab3:
         fiches_guide =  f"""<span style="font-size: 35 px;">
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        <ul>
+        <li style="font-size:20px";>Connectée au catalogue InDoRes, cette page propose une lecture Fiche par Fiche des métadonnées enregistrées sur le catalogue.</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Attention, la visualisation se fait à partir d'un tableau préenregistré.</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>On visualise l'identifieur de la fiche. Un bouton + permet de parcourir les fiches une par une, un bouton R revient au début, un compteur compte les itérations.</li>
+        <li style="font-size:20px";>Sur chaque fiche, on retrouve les informations suivantes:</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Identification principale: Titre, Fiche parent s'il y en a, Résumé, Purpose (objet), Status, Fréquence de mise à jour, dates multiples</li>
+        <li style="font-size:15px";>Métadonnées générales: Date, Langue, Jeu de caractères, type, informations sur les auteurs, Informations sur le standard de la fiche de métadonnées</li>
+        <li style="font-size:15px";>Système de référence et limites géographiques: le ou les systèmes renseignés, et les coordonnées cardinales associées aux données</li>
+        <li style="font-size:15px";>Mots clés et thésaurus associés</li>
+        <li style="font-size:15px";>Contraintes: Limite d'accès ou d'usage, contrainte d'usages ou autres droits associés</li>
+        <li style="font-size:15px";>Distribution: Lien URL, Protocole associé, Nom de la ressource, sa description et son format</li>
+        <li style="font-size:15px";>Qualité: Niveau, Conformité, Généalogie, et portée</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>Sur le côté, est affiché le groupe d'appartenance de la fiche et l'éventuelle mention filtrée au travers des mots clés ou du titre.</li>
+        <li style="font-size:20px";>Il est proposé à l'utilisateur de filtrer le réseau de son choix: RZA ou OHM, encochant la case correspondante.</li>
+        <li style="font-size:20px";>Dès lors, l'utilisateur pourra sélection le groupe de son choix. </li>
+        </ul></span>"""
         st.markdown(fiches_guide, unsafe_allow_html=True)
     with tab4:
         analyse_guide =  f"""<span style="font-size: 35 px;">
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+         <ul>
+        <li style="font-size:20px";>Connectée au catalogue InDoRes, cette page propose une lecture Fiche par Fiche des métadonnées enregistrées sur le catalogue.</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Attention, la visualisation se fait à partir d'un tableau préenregistré.</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>Cette page permet de visualiser des graphiques généraux suivants:</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Répartition des fiches dans les sous-catalogues</li>
+        <li style="font-size:15px";>Evolution temporelle des recensements</li>
+        <li style="font-size:15px";>Répartition spatiale des données associées au réseau</li>
+        <li style="font-size:15px";>Autres champs:</li>
+        </ul>
+        <ul style="padding-left: 70px;">
+        <li style="font-size:15px";>Langues utilisées</li>
+        <li style="font-size:15px";>Standards utilisés</li>
+        <li style="font-size:15px";>Formats utilisés</li>
+        <li style="font-size:15px";>Organisations identifiées</li>
+        <li style="font-size:15px";>Contacts identifiés</li>
+        <li style="font-size:15px";>Droits et licences associées aux données</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Descriptions</li>
+        <li style="font-size:15px";>Analyse FAIR</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>Il est proposé à l'utilisateur de filtrer le réseau de son choix: RZA ou OHM, encochant la case correspondante.</li>
+        <li style="font-size:20px";>Dès lors, l'utilisateur pourra sélection le groupe de son choix. </li>
+        <li style="font-size:20px";>Il est possible aussi de choisir de visualiser qu'à partir d'une certaine date (la dernière année par exemple), en ajustant une glissière</li>
+        </ul></span>"""
         st.markdown(analyse_guide, unsafe_allow_html=True)
     with tab5:
         data_mana_guide =  f"""<span style="font-size: 35 px;">
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
-        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        <ul>
+        <li style="font-size:20px";>Un bilan est réalisé à partir de différents tableaux extraits précédemment (tableaux complets maintenus par l'administrateur)</li>
+        <li style="font-size:20px";>On décompte:</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Les publications et selon leur type</li>
+        <li style="font-size:15px";>Les données trouvées en accès libre</li>
+        <li style="font-size:15px";>Les données citées dans le catalogue => les liens sont régulièrement testés pour savoir s'ils fonctionnent</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>Il est aussi réalisé le bilan de champs renseignés ou pas dont un travail de curation sera nécessaire</li>
+        </ul>
+        <ul style="padding-left: 40px;">
+        <li style="font-size:15px";>Conformité de l'identification: nom, affiliation et informations sur l'auteur</li>
+        <li style="font-size:15px";>Conformité du format: ouvert ou pas</li>
+        <li style="font-size:15px";>Mots clés renseignés</li>
+        <li style="font-size:15px";>Thésaurus utilisés</li>
+        <li style="font-size:15px";>Droits renseignés</li>
+        <li style="font-size:15px";>Généalogie décrite</li>
+        </ul>
+        <ul>
+        <li style="font-size:20px";>Il est proposé à l'utilisateur de filtrer le réseau de son choix: RZA ou OHM, encochant la case correspondante.</li>
+        <li style="font-size:20px";>Dès lors, l'utilisateur pourra sélection le groupe de son choix. </li>
+        </ul></span>"""
         st.markdown(data_mana_guide, unsafe_allow_html=True)
 
 else:

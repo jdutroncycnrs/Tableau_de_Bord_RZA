@@ -174,20 +174,23 @@ if len(Selection_ZA)!=0:
     df_HAL_count = pd.DataFrame(HAL_count)
 
     #### TRAITEMENT INDORES
+    
     liste_to_keep_InDoRES = ['Entrepot','Url','Publication URL','Lien publication']
     data_Indores_ = data_Indores[data_Indores['Entrepot'].isin(Selection_ZA)]
-    data_Indores_.reset_index(inplace=True)
-    data_Indores_.drop(columns='index', inplace=True)
-    for i in range(len(data_Indores_)):
-        try:
-            if 'https' in data_Indores_.loc[i,'Publication URL']:
-                data_Indores_.loc[i,'Lien publication']= True
-        except:
-            data_Indores_.loc[i,'Lien publication']= False
-    data_Indores__ = data_Indores_[liste_to_keep_InDoRES]
-
     liste_to_keep = ['Entrepot','Url','Store']
-    data_Indores__toconcat = data_Indores_[liste_to_keep]
+    if len(data_Indores_)!=0:
+        data_Indores_.reset_index(inplace=True)
+        data_Indores_.drop(columns='index', inplace=True)
+        for i in range(len(data_Indores_)):
+            try:
+                if 'https' in data_Indores_.loc[i,'Publication URL']:
+                    data_Indores_.loc[i,'Lien publication']= True
+            except:
+                data_Indores_.loc[i,'Lien publication']= False
+        data_Indores__ = data_Indores_[liste_to_keep_InDoRES]
+        data_Indores__toconcat = data_Indores_[liste_to_keep]
+    else:
+        data_Indores__toconcat = pd.DataFrame()
 
     #### TRAITEMENT RDG
     data_RDG.rename(columns={'Publication Url':'Url'}, inplace=True)

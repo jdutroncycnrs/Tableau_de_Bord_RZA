@@ -1183,6 +1183,24 @@ if nakala:
                         data=datanakala_to_get,
                         file_name=f'data_nakala_{Selection_ZA[0]}_{d}.csv',
                         mime='text/csv')
+        elif 1<len(Selection_ZA)<16:
+                selection_name = ""
+                for i in range(len(Selection_ZA)):
+                    selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_nakala = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                    s_Visu_depots_nakala  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_nakala}</p>"
+                    st.markdown(s_Visu_depots_nakala ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_entrepot_nakala_selected))
+                with col3:
+                    datanakala_to_get = df_entrepot_nakala_selected.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=datanakala_to_get,
+                            file_name=f'data_nakala_{selection_name}_{d}.csv',
+                            mime='text/csv')            
         elif len(Selection_ZA)==16:
                 col1, col2, col3 = st.columns([0.5,0.2,0.3])
                 with col1:
@@ -1303,7 +1321,25 @@ if zenodo:
                         data=datazenodo_to_get,
                         file_name=f'data_zenodo_{Selection_ZA[0]}_{d}.csv',
                         mime='text/csv')
-            elif len(Selection_ZA)==16:
+        elif 1<len(Selection_ZA)<16:
+                selection_name = ""
+                for i in range(len(Selection_ZA)):
+                    selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_zenodo = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                    s_Visu_depots_zenodo  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_zenodo}</p>"
+                    st.markdown(s_Visu_depots_zenodo ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_visu_zenodo))
+                with col3:
+                    datazenodo_to_get = df_visu_zenodo.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=datazenodo_to_get,
+                            file_name=f'data_zenodo_{selection_name}_{d}.csv',
+                            mime='text/csv')    
+        elif len(Selection_ZA)==16:
                 col1, col2, col3 = st.columns([0.5,0.2,0.3])
                 with col1:
                     Sommes_check_selected_df = f"Décomptes sur l'ensemble du réseau"
@@ -1421,6 +1457,24 @@ if dryad:
                         data=datadryad_to_get,
                         file_name=f'data_dryad_{Selection_ZA[0]}_{d}.csv',
                         mime='text/csv')
+            elif 1<len(Selection_ZA)<16:
+                selection_name = ""
+                for i in range(len(Selection_ZA)):
+                    selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_dryad = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                    s_Visu_depots_dryad  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_dryad}</p>"
+                    st.markdown(s_Visu_depots_dryad ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_dryad_global))
+                with col3:
+                    datadryad_to_get = df_dryad_global.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=datadryad_to_get,
+                            file_name=f'data_dryad_{selection_name}_{d}.csv',
+                            mime='text/csv')
             elif len(Selection_ZA)==16:
                 col1, col2, col3 = st.columns([0.5,0.2,0.3])
                 with col1:
@@ -1567,6 +1621,24 @@ if gbif:
                         data=datagbif_to_get,
                         file_name=f'data_gbif_{Selection_ZA[0]}_{d}.csv',
                         mime='text/csv')
+            elif 1<len(Selection_ZA)<16:
+                selection_name = ""
+                for i in range(len(Selection_ZA)):
+                    selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+                col1,col2,col3 = st.columns([0.5,0.2,0.3])
+                with col1:
+                    Visu_depots_gbif = f"Données publiées dans les ZA suivantes: {Selection_ZA}"
+                    s_Visu_depots_gbif  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots_gbif}</p>"
+                    st.markdown(s_Visu_depots_gbif ,unsafe_allow_html=True)
+                with col2:
+                    st.metric(label="Nombre de dépôts décomptés", value=len(df_gbif_global))
+                with col3:
+                    datagbif_to_get = df_gbif_global.to_csv(index=False)
+                    st.download_button(
+                            label="Téléchargement des données sélectionnées en CSV",
+                            data=datagbif_to_get,
+                            file_name=f'data_gbif_{selection_name}_{d}.csv',
+                            mime='text/csv')
             elif len(Selection_ZA)==16:
                 col1, col2, col3 = st.columns([0.5,0.2,0.3])
                 with col1:
