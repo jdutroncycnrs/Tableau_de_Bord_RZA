@@ -59,7 +59,7 @@ HAL = pd.read_csv("pages/data/Hal/Contenu_HAL_complet.csv", index_col=[0])
 data_Indores = pd.read_csv("pages/data/Data_InDoRES/Contenu_DataInDoRES2.csv",index_col=[0])
 data_RDG = pd.read_csv("pages/data/rechercheDataGouv/Contenu_RDG_complet.csv", index_col=[0])
 data_dryad = pd.read_csv("pages/data/Dryad/Contenu_DRYAD_complet.csv", index_col=[0])
-data_nakala = pd.read_csv("pages/data/Nakala/Contenu_NAKALA_complet.csv", index_col=[0])
+data_nakala = pd.read_csv("pages/data/Nakala/Contenu_Nakala_complet.csv", index_col=[0])
 data_zenodo = pd.read_csv("pages/data/Zenodo/Contenu_ZENODO_complet.csv", index_col=[0])
 data_gbif = pd.read_csv("pages/data/Gbif/Contenu_GBIF_complet.csv", index_col=[0])
 
