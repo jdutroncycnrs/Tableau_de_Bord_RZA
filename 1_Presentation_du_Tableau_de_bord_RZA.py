@@ -62,21 +62,38 @@ s_tit= f"<p style='font-size:50px;color:rgb(140,140,140)'>{tit}</p>"
 st.markdown(s_tit,unsafe_allow_html=True)
 
 
-guide = st.sidebar.button("Mode d'emploi")
+guide = st.sidebar.checkbox("Mode d'emploi")
 
 if guide:
     st.title(":grey[Mode d'emploi du site]")
 
-    tab1, tab2, tab3, tab4 =st.tabs(["Publications HAL","Données RZA","Fiche de métadonnées", "Analyse globale du catalogue" ])
+    tab1, tab2, tab3, tab4, tab5 =st.tabs(["Publications HAL","Données RZA","Fiche de métadonnées", "Analyse globale du catalogue", "Data Management" ])
 
     with tab1:
-        pass
+        publi_hal_guide =  f"""<span style="font-size: 35 px;">
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        st.markdown(publi_hal_guide, unsafe_allow_html=True)
     with tab2:
-        pass
+        data_guide =  f"""<span style="font-size: 35 px;">
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        st.markdown(data_guide, unsafe_allow_html=True)
     with tab3:
-        pass
+        fiches_guide =  f"""<span style="font-size: 35 px;">
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        st.markdown(fiches_guide, unsafe_allow_html=True)
     with tab4:
-        pass
+        analyse_guide =  f"""<span style="font-size: 35 px;">
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        st.markdown(analyse_guide, unsafe_allow_html=True)
+    with tab5:
+        data_mana_guide =  f"""<span style="font-size: 35 px;">
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>
+        <span style="font-size:20px";>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv </span>"""
+        st.markdown(data_mana_guide, unsafe_allow_html=True)
 
 else:
     
@@ -86,11 +103,12 @@ else:
 
     proposals =  f"""<span style="font-size: 35 px;">
     <ol>
-    <li style="font-size:20px";>Page de présentation et mode d'emploi => appuyer sur le bouton à gauche </li>
+    <li style="font-size:20px";> ICI : Page de présentation et mode d'emploi => Cocher la case à gauche </li>
     <li style="font-size:20px";>Page de recherche des publications sur HAL</li>
     <li style="font-size:20px";>Page de recherche des données déposées / différents entrepôts accessibles</li>
     <li style="font-size:20px";>Visualisation des fiches de métadonnées sur le catalogue InDoRES</li>
     <li style="font-size:20px";>Analyse globale du contenu du catalogue InDoRES</li>
+    <li style="font-size:20px";>Une page de bilan et perspectives à traiter</li>
     </ol></span>"""
 
     st.markdown(proposals, unsafe_allow_html=True)

@@ -136,7 +136,7 @@ def create_pdf():
             pdf.ln()
 
         # Save the PDF to a temporary file
-        pdf_output = "example_table_from_df.pdf"
+        pdf_output = "example_extracted_pdf.pdf"
         pdf.output(pdf_output)
         return pdf_output
 
@@ -144,6 +144,8 @@ def create_pdf():
 ########### VISUALISATIONS ###########################################################################################
 ######################################################################################################################
 st.title(":grey[Bilan des recherches - Perspectives]")
+
+st.success("Selectionner une ou plusieurs zones ateliers (ou l'ensemble du réseau) / CASE A COCHER ou LISTE DEROULANTE")
 
 if len(Selection_ZA)!=0:
 
