@@ -3,6 +3,8 @@ import streamlit as st
 from fpdf import FPDF
 import re
 import ast
+import plotly.graph_objects as go
+import plotly.express as px
 
 ######################################################################################################################
 ########### TITRE DE L'ONGLET ########################################################################################
@@ -46,6 +48,7 @@ couleur_False = (200,0,0)
 wch_colour_box = (250,250,220)
 wch_colour_font = (90,90,90)
 fontsize = 70
+colors = ['#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0','#FEBB5F','#EFE9AE','#CDEAC0','#A0C6A9', '#FEC3A6','#FE938C','#E8BED3','#90B7CF','#7C9ACC','#9281C0']
 
 ######################################################################################################################
 ########### PARAMETRES ###############################################################################################
@@ -108,6 +111,34 @@ def extract_pattern(s):
     if end == -1:
         return None  # If closing ")" is not found, return None
     return "https://doi.org/" + s[start:end-2]  # Extract and return the substring
+
+######################################################################################################################
+########### CREATION PDF ############################################################################################
+######################################################################################################################
+
+def create_pdf():
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+
+        # Add text to the PDF
+        pdf.cell(200, 10, txt="Hello from Streamlit!", ln=True, align="C")
+        pdf.cell(200, 10, txt="This is a simple PDF example.", ln=True, align="C")
+
+        # Table header
+        pdf.set_font("Arial", 'B', 12)  # Bold font for header
+        for col in df_HAL_count.columns:
+            pdf.cell(40, 10, col, border=1)  # Adjust column width if needed
+        pdf.ln()
+        for index, row in df_HAL_count.iterrows():
+            for item in row:
+                pdf.cell(40, 10, str(item), border=1)  # Convert items to string if needed
+            pdf.ln()
+
+        # Save the PDF to a temporary file
+        pdf_output = "example_table_from_df.pdf"
+        pdf.output(pdf_output)
+        return pdf_output
 
 ######################################################################################################################
 ########### VISUALISATIONS ###########################################################################################
@@ -239,150 +270,43 @@ if len(Selection_ZA)!=0:
     #### TRAITEMENT CATALOGUE GENERAL
     catalogue_ = catalogue[catalogue['GroupeEtMention'].isin(Selection_ZA)]
     catalogue_F2_count = catalogue_['F2'].value_counts()
+    catalogue_F2_count_true = catalogue_F2_count.get(True,0)
+    catalogue_F2_count_false = catalogue_F2_count.get(False,0)
     catalogue_I1_count = catalogue_['I1'].value_counts()
+    catalogue_I1_count_true = catalogue_I1_count.get(True,0)
+    catalogue_I1_count_false = catalogue_I1_count.get(False,0)
     catalogue_I2_count = catalogue_['I2'].value_counts()
+    catalogue_I2_count_true = catalogue_I2_count.get(True,0)
+    catalogue_I2_count_false = catalogue_I2_count.get(False,0)
     catalogue_I3_count = catalogue_['I3'].value_counts()
+    catalogue_I3_count_true = catalogue_I3_count.get(True,0)
+    catalogue_I3_count_false = catalogue_I3_count.get(False,0)
     catalogue_R1_count = catalogue_['R1'].value_counts()
+    catalogue_R1_count_true = catalogue_R1_count.get(True,0)
+    catalogue_R1_count_false = catalogue_R1_count.get(False,0)
     catalogue_R2_count = catalogue_['R2'].value_counts()
+    catalogue_R2_count_true = catalogue_R2_count.get(True,0)
+    catalogue_R2_count_false = catalogue_R2_count.get(False,0)
 
     if len(Selection_ZA)==1:
-        Visu_depots = f"Bilan pour la {Selection_ZA[0]}"
-        s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-        st.markdown(s_Visu_depots ,unsafe_allow_html=True)
-
-        st.subheader('Publications')
-
-        col1,col2,col3 = st.columns(3)
+        col1, col2 = st.columns([0.7,0.3])
         with col1:
-            t_hal = f"HAL"
-            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
-            st.markdown(s_thal,unsafe_allow_html=True)
-            st.table(HAL_count)
-
+            Visu_depots = f"Bilan pour la {Selection_ZA[0]}"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
         with col2:
-            t_stored = f"ENTREPOTS"
-            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
-            st.markdown(s_tstored,unsafe_allow_html=True)
-            st.table(data_stored_count)
+            pdf_file = create_pdf()
 
-        with col3:
-            t_cat_stored = f"DEPOTS AILLEURS"
-            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
-            st.markdown(s_tcat_stored,unsafe_allow_html=True)
-            st.table(catalogue_checked_count)
-
-        st.subheader('Recensement sur le catalogue')
-
-        col1,col2,col3,col4,col5,col6 = st.columns(6)
-        with col1:
-            t_cataF2 = f"IDENTIFICATION CONFORME"
-            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
-            st.markdown(s_tcataF2,unsafe_allow_html=True)
-            st.table(catalogue_F2_count)
-            
-        with col2:
-            t_cataI1 = f"FORMAT CONFORME"
-            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
-            st.markdown(s_tcataI1,unsafe_allow_html=True)
-            st.table(catalogue_I1_count)
-
-        with col3:
-            t_cataI3 = f"MOTS CLES RENSEIGNES"
-            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
-            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            st.table(catalogue_I3_count)
-
-        with col4:
-            t_cataI2 = f"THESAURUS RENSEIGNES"
-            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
-            st.markdown(s_tcataI2,unsafe_allow_html=True)
-            st.table(catalogue_I2_count)
-
-        with col5:
-            t_cataR1 = f"DROITS RENSEIGNES"
-            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
-            st.markdown(s_tcataR1,unsafe_allow_html=True)
-            st.table(catalogue_R1_count)
-
-        with col6:
-            t_cataR2 = f"GENEALOGIE DECRITE"
-            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
-            st.markdown(s_tcataR2,unsafe_allow_html=True)
-            st.table(catalogue_R2_count)
-
-    elif 1<len(Selection_ZA)<16:
-        selection_name = ""
-        for i in range(len(Selection_ZA)):
-            selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
-        Visu_depots = f"Bilan pour les ZA suivantes: {Selection_ZA}"
-        s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-        st.markdown(s_Visu_depots ,unsafe_allow_html=True)
-
-        st.subheader('Publications')
-
-        col1,col2,col3 = st.columns(3)
-        with col1:
-            t_hal = f"HAL"
-            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
-            st.markdown(s_thal,unsafe_allow_html=True)
-            st.table(HAL_count)
-
-        with col2:
-            t_stored = f"ENTREPOTS"
-            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
-            st.markdown(s_tstored,unsafe_allow_html=True)
-            st.table(data_stored_count)
-
-        with col3:
-            t_cat_stored = f"DEPOTS AILLEURS"
-            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
-            st.markdown(s_tcat_stored,unsafe_allow_html=True)
-            st.table(catalogue_checked_count)
-
-        st.subheader('Recensement sur le catalogue')
-
-        col1,col2,col3,col4,col5,col6 = st.columns(6)
-        with col1:
-            t_cataF2 = f"IDENTIFICATION CONFORME"
-            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
-            st.markdown(s_tcataF2,unsafe_allow_html=True)
-            st.table(catalogue_F2_count)
-            
-        with col2:
-            t_cataI1 = f"FORMAT CONFORME"
-            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
-            st.markdown(s_tcataI1,unsafe_allow_html=True)
-            st.table(catalogue_I1_count)
-
-        with col3:
-            t_cataI3 = f"MOTS CLES RENSEIGNES"
-            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
-            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            st.table(catalogue_I3_count)
-
-        with col4:
-            t_cataI2 = f"THESAURUS RENSEIGNES"
-            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
-            st.markdown(s_tcataI2,unsafe_allow_html=True)
-            st.table(catalogue_I2_count)
-
-        with col5:
-            t_cataR1 = f"DROITS RENSEIGNES"
-            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
-            st.markdown(s_tcataR1,unsafe_allow_html=True)
-            st.table(catalogue_R1_count)
-
-        with col6:
-            t_cataR2 = f"GENEALOGIE DECRITE"
-            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
-            st.markdown(s_tcataR2,unsafe_allow_html=True)
-            st.table(catalogue_R2_count)
-
-    elif len(Selection_ZA)==16:
-        selection_name = "All_ZAs"
-        Visu_depots = f"Bilan pour l'ensemble du réseau des Zones Ateliers"
-        s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
-        st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+            # Read the created PDF file
+            with open(pdf_file, "rb") as f:
+                pdf_data = f.read()
+            # Streamlit download button
+            st.download_button(
+                label="Download PDF",
+                data=pdf_data,
+                file_name="generated_pdf.pdf",
+                mime="application/pdf"
+                    )
 
         st.subheader('Publications')
 
@@ -412,77 +336,434 @@ if len(Selection_ZA)!=0:
             t_cataF2 = f"IDENTIF CONFORME"
             s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
             st.markdown(s_tcataF2,unsafe_allow_html=True)
-            st.table(catalogue_F2_count)
+            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+                    names=['True','False'])
+            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_F2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_F2_counts,use_container_width=True)
             
         with col2:
             t_cataI1 = f"FORMAT CONFORME"
             s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
             st.markdown(s_tcataI1,unsafe_allow_html=True)
-            st.table(catalogue_I1_count)
+            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+                    names=['True','False'])
+            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I1_counts,use_container_width=True)
 
         with col3:
             t_cataI3 = f"MOTS CLES RENSEIGNES"
             s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
             st.markdown(s_tcataI3 ,unsafe_allow_html=True)
-            st.table(catalogue_I3_count)
+            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I3_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I3_counts,use_container_width=True)
 
         with col4:
             t_cataI2 = f"THESAURUS RENSEIGNES"
             s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
             st.markdown(s_tcataI2,unsafe_allow_html=True)
-            st.table(catalogue_I2_count)
+            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I2_counts,use_container_width=True)
 
         with col5:
             t_cataR1 = f"DROITS RENSEIGNES"
             s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
             st.markdown(s_tcataR1,unsafe_allow_html=True)
-            st.table(catalogue_R1_count)
+            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+                    names=['True','False'])
+            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R1_counts,use_container_width=True)
+
 
         with col6:
             t_cataR2 = f"GENEALOGIE DECRITE"
             s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
             st.markdown(s_tcataR2,unsafe_allow_html=True)
-            st.table(catalogue_R2_count)
+            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+                    names=['True','False'])
+            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R2_counts,use_container_width=True)
+
+    elif 1<len(Selection_ZA)<16:
+        col1, col2 = st.columns([0.7,0.3])
+        with col1:
+            selection_name = ""
+            for i in range(len(Selection_ZA)):
+                selection_name+=Selection_ZA[i].strip().replace("Zone atelier", "ZA ").replace(" ","")
+            Visu_depots = f"Bilan pour les ZA suivantes: {Selection_ZA}"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+        with col2:
+            pdf_file = create_pdf()
+
+            # Read the created PDF file
+            with open(pdf_file, "rb") as f:
+                pdf_data = f.read()
+            # Streamlit download button
+            st.download_button(
+                label="Download PDF",
+                data=pdf_data,
+                file_name="generated_pdf.pdf",
+                mime="application/pdf"
+                    )
 
 
-    ######################################################################################################################
-    ########### CREATION PDF ############################################################################################
-    ######################################################################################################################
+        st.subheader('Publications')
 
-    def create_pdf():
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("Arial", size=12)
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            t_hal = f"HAL"
+            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
+            st.markdown(s_thal,unsafe_allow_html=True)
+            st.table(HAL_count)
 
-        # Add text to the PDF
-        pdf.cell(200, 10, txt="Hello from Streamlit!", ln=True, align="C")
-        pdf.cell(200, 10, txt="This is a simple PDF example.", ln=True, align="C")
+        with col2:
+            t_stored = f"ENTREPOTS"
+            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
+            st.markdown(s_tstored,unsafe_allow_html=True)
+            st.table(data_stored_count)
 
-        # Table header
-        pdf.set_font("Arial", 'B', 12)  # Bold font for header
-        for col in df_HAL_count.columns:
-            pdf.cell(40, 10, col, border=1)  # Adjust column width if needed
-        pdf.ln()
-        for index, row in df_HAL_count.iterrows():
-            for item in row:
-                pdf.cell(40, 10, str(item), border=1)  # Convert items to string if needed
-            pdf.ln()
+        with col3:
+            t_cat_stored = f"DEPOTS AILLEURS"
+            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
+            st.markdown(s_tcat_stored,unsafe_allow_html=True)
+            st.table(catalogue_checked_count)
 
-        # Save the PDF to a temporary file
-        pdf_output = "example_table_from_df.pdf"
-        pdf.output(pdf_output)
-        return pdf_output
+        st.subheader('Recensement sur le catalogue')
 
-    pdf_file = create_pdf()
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            t_cataF2 = f"IDENTIF CONFORME"
+            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
+            st.markdown(s_tcataF2,unsafe_allow_html=True)
+            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+                    names=['True','False'])
+            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_F2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_F2_counts,use_container_width=True)
+            
+        with col2:
+            t_cataI1 = f"FORMAT CONFORME"
+            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
+            st.markdown(s_tcataI1,unsafe_allow_html=True)
+            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+                    names=['True','False'])
+            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I1_counts,use_container_width=True)
 
-    # Read the created PDF file
-    with open(pdf_file, "rb") as f:
-        pdf_data = f.read()
+        with col3:
+            t_cataI3 = f"MOTS CLES RENSEIGNES"
+            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
+            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
+            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I3_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I3_counts,use_container_width=True)
 
-    # Streamlit download button
-    st.download_button(
-        label="Download PDF",
-        data=pdf_data,
-        file_name="generated_pdf.pdf",
-        mime="application/pdf"
-            )
+        with col4:
+            t_cataI2 = f"THESAURUS RENSEIGNES"
+            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
+            st.markdown(s_tcataI2,unsafe_allow_html=True)
+            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I2_counts,use_container_width=True)
+
+        with col5:
+            t_cataR1 = f"DROITS RENSEIGNES"
+            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
+            st.markdown(s_tcataR1,unsafe_allow_html=True)
+            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+                    names=['True','False'])
+            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R1_counts,use_container_width=True)
+
+        with col6:
+            t_cataR2 = f"GENEALOGIE DECRITE"
+            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
+            st.markdown(s_tcataR2,unsafe_allow_html=True)
+            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+                    names=['True','False'])
+            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R2_counts,use_container_width=True)
+
+    elif len(Selection_ZA)==16:
+        col1, col2 = st.columns([0.7,0.3])
+        with col1:
+            selection_name = "All_ZAs"
+            Visu_depots = f"Bilan pour l'ensemble du réseau des Zones Ateliers"
+            s_Visu_depots  = f"<p style='font-size:25px;color:rgb(150,150,150)'>{Visu_depots}</p>"
+            st.markdown(s_Visu_depots ,unsafe_allow_html=True)
+        with col2:
+            pdf_file = create_pdf()
+
+            # Read the created PDF file
+            with open(pdf_file, "rb") as f:
+                pdf_data = f.read()
+            # Streamlit download button
+            st.download_button(
+                label="Download PDF",
+                data=pdf_data,
+                file_name="generated_pdf.pdf",
+                mime="application/pdf"
+                    )
+
+        st.subheader('Publications')
+
+        col1,col2,col3 = st.columns(3)
+        with col1:
+            t_hal = f"HAL"
+            s_thal = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_hal}</p>"
+            st.markdown(s_thal,unsafe_allow_html=True)
+            st.table(HAL_count)
+
+        with col2:
+            t_stored = f"ENTREPOTS"
+            s_tstored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_stored}</p>"
+            st.markdown(s_tstored,unsafe_allow_html=True)
+            st.table(data_stored_count)
+
+        with col3:
+            t_cat_stored = f"DEPOTS AILLEURS"
+            s_tcat_stored = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cat_stored}</p>"
+            st.markdown(s_tcat_stored,unsafe_allow_html=True)
+            st.table(catalogue_checked_count)
+
+        st.subheader('Recensement sur le catalogue')
+
+        col1,col2,col3,col4,col5,col6 = st.columns(6)
+        with col1:
+            t_cataF2 = f"IDENTIF CONFORME"
+            s_tcataF2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataF2}</p>"
+            st.markdown(s_tcataF2,unsafe_allow_html=True)
+            fig_F2_counts = px.pie(values=[catalogue_F2_count_true,catalogue_F2_count_false], 
+                    names=['True','False'])
+            fig_F2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_F2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_F2_counts,use_container_width=True)
+            
+        with col2:
+            t_cataI1 = f"FORMAT CONFORME"
+            s_tcataI1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI1}</p>"
+            st.markdown(s_tcataI1,unsafe_allow_html=True)
+            fig_I1_counts = px.pie(values=[catalogue_I1_count_true,catalogue_I1_count_false], 
+                    names=['True','False'])
+            fig_I1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I1_counts,use_container_width=True)
+
+        with col3:
+            t_cataI3 = f"MOTS CLES RENSEIGNES"
+            s_tcataI3  = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI3 }</p>"
+            st.markdown(s_tcataI3 ,unsafe_allow_html=True)
+            fig_I3_counts = px.pie(values=[catalogue_I3_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I3_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I3_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I3_counts,use_container_width=True)
+
+        with col4:
+            t_cataI2 = f"THESAURUS RENSEIGNES"
+            s_tcataI2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataI2}</p>"
+            st.markdown(s_tcataI2,unsafe_allow_html=True)
+            fig_I2_counts = px.pie(values=[catalogue_I2_count_true,catalogue_I3_count_false], 
+                    names=['True','False'])
+            fig_I2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_I2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_I2_counts,use_container_width=True)
+
+        with col5:
+            t_cataR1 = f"DROITS RENSEIGNES"
+            s_tcataR1 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR1}</p>"
+            st.markdown(s_tcataR1,unsafe_allow_html=True)
+            fig_R1_counts = px.pie(values=[catalogue_R1_count_true,catalogue_R1_count_false], 
+                    names=['True','False'])
+            fig_R1_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R1_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R1_counts,use_container_width=True)
+
+        with col6:
+            t_cataR2 = f"GENEALOGIE DECRITE"
+            s_tcataR2 = f"<p style='font-size:{taille_subtitles};color:rgb{couleur_subtitles}'>{t_cataR2}</p>"
+            st.markdown(s_tcataR2,unsafe_allow_html=True)
+            fig_R2_counts = px.pie(values=[catalogue_R2_count_true,catalogue_R2_count_false], 
+                    names=['True','False'])
+            fig_R2_counts.update_traces(hoverinfo='label+percent', textinfo='value', textfont_size=20,
+                                marker=dict(colors=colors, line=dict(color='#000000', width=2)))
+            fig_R2_counts.update_layout(
+                        legend=dict(
+                            orientation="h",  # Horizontal legend
+                            yanchor="bottom", # Anchor at the bottom
+                            y=-0.2,           # Adjust position below the chart
+                            xanchor="center", # Center the legend
+                            x=0.5
+                        )
+                    )
+            st.plotly_chart(fig_R2_counts,use_container_width=True)
